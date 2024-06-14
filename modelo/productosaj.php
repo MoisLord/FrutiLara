@@ -136,7 +136,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'incluir';
-			$r['mensaje'] =  'Ya existe el codigo';
+			$r['mensaje'] =  'Ya existe el Producto';
 		}
 		
 		//Listo eso es todo y es igual para el resto de las operaciones
@@ -179,7 +179,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'modificar';
-			    $r['mensaje'] =  'No existe el codigo';
+			    $r['mensaje'] =  'No existe el Producto';
 		}
 		return $r;
 	}
@@ -207,7 +207,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe el codigo';
+			$r['mensaje'] =  'No existe el Producto';
 		}
 		return $r;
 	}

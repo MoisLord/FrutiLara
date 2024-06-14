@@ -13,7 +13,7 @@ $(document).ready(function(){
             enviaAjax(datos, 'consultatr');
         }
     });
-    
+
         
         
         $("#nombre").on("keypress",function(e){
@@ -117,14 +117,14 @@ $(document).ready(function(){
     //funcion para enlazar al DataTablet
     function destruyeDT(){
         //1 se destruye el datatablet
-        if ($.fn.DataTable.isDataTable("#tablaclientes")) {
-                $("#tablaclientes").DataTable().destroy();
+        if ($.fn.DataTable.isDataTable("#tablaproducto")) {
+                $("#tablaproducto").DataTable().destroy();
         }
     }
     function crearDT(){
         //se crea nuevamente
-        if (!$.fn.DataTable.isDataTable("#tablaclientes")) {
-                $("#tablaclientes").DataTable({
+        if (!$.fn.DataTable.isDataTable("#tablaproducto")) {
+                $("#tablaproducto").DataTable({
                   language: {
                     lengthMenu: "Mostrar _MENU_ por página",
                     zeroRecords: "No se encontraron personas",
@@ -227,8 +227,8 @@ $(document).ready(function(){
         $("#nombre").val($(linea).find("td:eq(1)").text());
         $("#tipo").val($(linea).find("td:eq(2)").text());
         $("#minimo").val($(linea).find("td:eq(3)").text());
-        $("#maximo").val($(linea).find("td:eq(3)").text());
-        $("#porcentaje").val($(linea).find("td:eq(3)").text());
+        $("#maximo").val($(linea).find("td:eq(4)").text());
+        $("#porcentaje").val($(linea).find("td:eq(5)").text());
         
     }
     
@@ -259,8 +259,8 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#nombre").val(lee.mensaje[0][2]);
-                           $("#tipo").val(lee.mensaje[0][3]);
+                           $("#codigo").val(lee.mensaje[0][2]);
+                           $("#nombre").val(lee.mensaje[0][3]);
                         }
                         else if (lee.resultado == "incluir" || 
                         lee.resultado == "modificar" || 
