@@ -219,7 +219,7 @@ class productosaj extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from clientes");
+			$resultado = $co->query("Select * from producto");
 			
 			if($resultado){
 				
