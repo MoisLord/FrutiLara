@@ -43,42 +43,7 @@ REGISTRO DE CLIENTES
 			   />
 			</div>
 		</div>
-
-        <!--<div class="row mb-3">
-			<div class="col-md-8">
-			   <label for="direccionlocal">Dirección Local</label>
-			   <input class="form-control" type="text" id="direccionlocal"
-					name="direccionlocal"/>
-			   <span id="sdireccionlocal"></span>
-			</div>
-		</div>-->
-		
-		<!--<div class="row mb-3">
-			<div class="col-md-3">
-				<label  for="masculino">
-				   Masculino	
-				   <input class="form-control" type="radio" value="M" id="masculino" name="sexo" />
-				</label>
-				<label  for="femenino">
-				   Femenino	
-				   <input class="form-control" type="radio" value="F" id="femenino" name="sexo" />
-				</label>
-			</div>
-			<div class="col-md-9">
-			   <label for="gradodeinstruccion">Grado de Instruccion</label>
-			   <select class="form-control" id="gradodeinstruccion" 
-					name = "gradodeinstruccion">
-					<option value="PRIMARIA">Primaria</option>
-					<option value="BACHILLER">Bachiller</option>
-					<option value="TSU">TSU</option>
-					<option value="GRADO">Grado Superior</option>
-					<option value="POSTGRADO">Post Grado</option>
-			   </select>
-			</div>
-		</div>-->
-		
-		
-		
+			
 		<div class="row">
 			<div class="col-md-12">
 				<hr/>
