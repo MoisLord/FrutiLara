@@ -27,7 +27,7 @@
 		<div class="col">
 		   <label for="telefono">Telefono</label>
 		   <input class="form-control" type="text" id="Telefono" name="telefono" />
-		   <span id="stelefono"></span>
+		   <span id="sTelefono"></span>
 		</div>
 		<div class="col">
 		   <label for="Direccion">Dirección</label>
