@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2024 a las 05:21:06
+-- Tiempo de generación: 14-06-2024 a las 15:39:17
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -157,31 +157,18 @@ ALTER TABLE `usuario`
 --
 
 --
--- Filtros para la tabla `clientes`
---
-ALTER TABLE `clientes`
-  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`cedula`) REFERENCES `salida_producto` (`cedula_cliente`);
-
---
 -- Filtros para la tabla `ingreso_producto`
 --
 ALTER TABLE `ingreso_producto`
   ADD CONSTRAINT `ingreso_producto_ibfk_1` FOREIGN KEY (`rif_proveedor`) REFERENCES `proveedores` (`rif`),
-  ADD CONSTRAINT `ingreso_producto_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`),
-  ADD CONSTRAINT `ingreso_producto_ibfk_3` FOREIGN KEY (`cifra`) REFERENCES `salida_producto` (`cifra`);
-
---
--- Filtros para la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `ingreso_producto` (`codigo_producto`);
+  ADD CONSTRAINT `ingreso_producto_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
 
 --
 -- Filtros para la tabla `salida_producto`
 --
 ALTER TABLE `salida_producto`
-  ADD CONSTRAINT `salida_producto_ibfk_2` FOREIGN KEY (`cedula_cliente`) REFERENCES `clientes` (`cedula`),
-  ADD CONSTRAINT `salida_producto_ibfk_3` FOREIGN KEY (`cifra`) REFERENCES `ingreso_producto` (`cifra`);
+  ADD CONSTRAINT `salida_producto_ibfk_3` FOREIGN KEY (`cifra`) REFERENCES `ingreso_producto` (`cifra`),
+  ADD CONSTRAINT `salida_producto_ibfk_4` FOREIGN KEY (`cedula_cliente`) REFERENCES `clientes` (`cedula`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
