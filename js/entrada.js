@@ -52,7 +52,7 @@ $("#facturar").on("click",function(){
 		}
 	}
 	else{
-		muestraMensaje("Debe ingresar un cliente registrado !!!");
+		muestraMensaje("Debe ingresar un proveedor registrado !!!");
 	}
 });
 	
@@ -210,22 +210,6 @@ mensaje){
 	}
 }
 
-function coloca(linea){
-	$("#cedula").val($(linea).find("td:eq(0)").text());
-	$("#apellidos").val($(linea).find("td:eq(1)").text());
-	$("#nombres").val($(linea).find("td:eq(2)").text());
-	$("#fechadenacimiento").val($(linea).find("td:eq(3)").text());
-	if($(linea).find("td:eq(4)").text()=="M"){
-		$("#masculino").prop('checked','checked');
-		$("#femenino").prop('checked','');
-	}
-	else{
-		$("#femenino").prop('checked','checked');
-		$("#masculino").prop('checked','');
-	}
-	$("#gradodeinstruccion").val($(linea).find("td:eq(5)").text());
-	
-}
 function redondearDecimales(numero, decimales) {
 	return Number(Math.round(numero +'e'+ decimales) +'e-'+ decimales).toFixed(decimales);
 	
