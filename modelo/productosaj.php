@@ -17,51 +17,69 @@ class productosaj extends datos{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $cedula; //recuerden que en php, las variables no tienen tipo predefinido
-	private $nombre_apellido;
-	private $ciudad;
-	private $telefono;
+	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
+	private $nombre;
+	private $tipo;
+	private $minimo;
+    private $maximo;
+    private $porcentaje;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
 	
-	function set_cedula($valor){
-		$this->cedula = $valor; //fijencen como se accede a los elementos dentro de una clase
+	function set_codigo($valor){
+		$this->codigo = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 		//a un elemento de this, es decir esta clase
 		//luego el nombre del elemento sin el $
 	}
-	//lo mismo que se hizo para cedula se hace para usuario y clave
+	//lo mismo que se hizo para codigo se hace para usuario y clave
 	
-	function set_nombre_apellido($valor){
-		$this->nombre_apellido = $valor;
+	function set_nombre($valor){
+		$this->nombre = $valor;
 	}
 	
-	function set_ciudad($valor){
-		$this->ciudad = $valor;
+	function set_tipo($valor){
+		$this->tipo = $valor;
 	}
 	
-	function set_telefono($valor){
-		$this->telefono = $valor;
+	function set_minimo($valor){
+		$this->minimo = $valor;
 	}
 	
+    function set_maximo($valor){
+		$this->maximo = $valor;
+	}
+
+    function set_porcentaje($valor){
+		$this->porcentaje = $valor;
+	}
+
 	//ahora la misma cosa pero para leer, es decir get
 	
-	function get_cedula(){
-		return $this->cedula;
+	function get_codigo(){
+		return $this->codigo;
 	}
 	
-	function get_nombre_apellido(){
-		return $this->nombre_apellido;
+	function get_nombre(){
+		return $this->nombre;
 	}
 	
-	function get_ciudad(){
-		return $this->ciudad;
+	function get_tipo(){
+		return $this->tipo;
 	}
 	
-	function get_telefono(){
-		return $this->telefono;
+	function get_minimo(){
+		return $this->minimo;
+	}
+
+    function get_maximo(){
+		return $this->maximo;
+	}
+
+    function get_porcentaje(){
+		return $this->porcentaje;
 	}
 	
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
@@ -71,11 +89,11 @@ class productosaj extends datos{
 		//datos, ahora debemos ejecutar las operaciones para realizar las consultas 
 		
 		//Lo primero que debemos hacer es consultar por el campo clave
-		//en este caso la cedula, para ello se creo la funcion existe
+		//en este caso la codigo, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
-		if(!$this->existe($this->cedula)){
-			//si estamos aca es porque la cedula no existe es decir se puede incluir
+		if(!$this->existe($this->codigo)){
+			//si estamos aca es porque la codigo no existe es decir se puede incluir
 			//los pasos a seguir son
 			//1 Se llama a la funcion conecta 
 			$co = $this->conecta();
@@ -84,27 +102,33 @@ class productosaj extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("Insert into clientes(
-						cedula,
-						nombre_apellido,
-						ciudad,
-						telefono
+					$p = $co->prepare("Insert into producto(
+						codigo,
+						nombre,
+						tipo,
+						minimo,
+                        maximo,
+                        porcentaje
 						)
 						Values(
-						:cedula,
-						:nombre_apellido,
-						:ciudad,
-						:telefono
+						:codigo,
+						:nombre,
+						:tipo,
+						:minimo,
+                        :maximo,
+                        :porcentaje
 						)");
-					$p->bindParam(':cedula',$this->cedula);		
-					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
-					$p->bindParam(':ciudad',$this->ciudad);	
-					$p->bindParam(':telefono',$this->telefono);
+					$p->bindParam(':codigo',$this->codigo);		
+					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':tipo',$this->tipo);	
+					$p->bindParam(':minimo',$this->minimo);
+                    $p->bindParam(':maximo',$this->maximo);
+                    $p->bindParam(':porcentaje',$this->porcentaje);
 					
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Registro Inluido';
+			            $r['mensaje'] =  'Producto Inluido';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -112,7 +136,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'incluir';
-			$r['mensaje'] =  'Ya existe la cedula';
+			$r['mensaje'] =  'Ya existe el codigo';
 		}
 		
 		//Listo eso es todo y es igual para el resto de las operaciones
@@ -126,24 +150,28 @@ class productosaj extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->cedula)){
+		if($this->existe($this->codigo)){
 			try {
-				$p = $co->prepare("Update clientes set 
-						nombre_apellido = :nombre_apellido,
-						ciudad = :ciudad,
-						telefono = :telefono
+				$p = $co->prepare("Update producto set 
+						nombre = :nombre,
+						tipo = :tipo,
+						minimo = :minimo,
+                        maximo = :maximo,
+                        porcentaje = :porcentaje
 						where
-						cedula = :cedula
+						codigo = :codigo
 						");
-					$p->bindParam(':cedula',$this->cedula);		
-					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
-					$p->bindParam(':ciudad',$this->ciudad);
-					$p->bindParam(':telefono',$this->telefono);
+					$p->bindParam(':codigo',$this->codigo);		
+					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':tipo',$this->tipo);
+					$p->bindParam(':minimo',$this->minimo);
+                    $p->bindParam(':maximo',$this->maximo);
+                    $p->bindParam(':porcentaje',$this->porcentaje);
 					
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
-			            $r['mensaje'] =  'Registro Modificado';
+			            $r['mensaje'] =  'Producto Modificado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -151,7 +179,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'modificar';
-			    $r['mensaje'] =  'No existe la cedula';
+			    $r['mensaje'] =  'No existe el codigo';
 		}
 		return $r;
 	}
@@ -160,18 +188,18 @@ class productosaj extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->cedula)){
+		if($this->existe($this->codigo)){
 			try {
-					$p = $co->prepare("delete from clientes 
+					$p = $co->prepare("delete from producto
 					    where
-						cedula = :cedula
+						codigo = :codigo
 						");
-					$p->bindParam(':cedula',$this->cedula);		
+					$p->bindParam(':codigo',$this->codigo);		
 					
 					
 					$p->execute();
 					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'Registro Eliminado';
+			        $r['mensaje'] =  'Producto Eliminado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -179,7 +207,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe la cedula';
+			$r['mensaje'] =  'No existe el codigo';
 		}
 		return $r;
 	}
@@ -199,16 +227,22 @@ class productosaj extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['cedula'];
+							$respuesta = $respuesta.$r['codigo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre_apellido'];
+							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['ciudad'];
+							$respuesta = $respuesta.$r['tipo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['telefono'];
+							$respuesta = $respuesta.$r['minimo'];
+						$respuesta = $respuesta."</td>";
+                        $respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['maximo'];
+						$respuesta = $respuesta."</td>";
+                        $respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['porcentaje'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
@@ -229,12 +263,12 @@ class productosaj extends datos{
 	}
 	
 	
-	private function existe($cedula){
+	private function existe($codigo){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from clientes where cedula='$cedula'");
+			$resultado = $co->query("Select * from producto where codigo='$codigo'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -259,7 +293,7 @@ class productosaj extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from clientes where cedula='$this->cedula'");
+			$resultado = $co->query("Select * from producto where codigo='$this->codigo'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
