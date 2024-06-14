@@ -1,19 +1,19 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
-        $("#cedula").on("keypress",function(e){
-            validarkeypress(/^[0-9-\b]*$/,e);
-        });
-        
-        $("#cedula").on("keyup",function(){
-            validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#scedula"),"El formato debe ser 9999999 ");
-            if($("#cedula").val().length > 7){
-              var datos = new FormData();
-                datos.append('accion','consultatr');
-                datos.append('cedula',$(this).val());
-                enviaAjax(datos,'consultatr');	
-            }
-        });
+    $("#codigo").on("keypress", function(e) {
+        validarkeypress(/^[a-zA-Z0-9]*$/,e);
+    });
+    
+    $("#codigo").on("keyup", function() {
+        validarkeyup(/^[a-zA-Z0-9]*$/,$(this),
+            $("#scodigo"),"El formato debe ser alfanumérico");
+        if($("#codigo").val().length > 0) {
+            var datos = new FormData();
+            datos.append('accion','consultatr');
+            datos.append('codigo',$(this).val());
+            enviaAjax(datos,'consultatr');
+        }
+    });
         
         
         $("#nombre_apellido").on("keypress",function(e){
@@ -47,7 +47,7 @@ $(document).ready(function(){
         if(validarenvio()){
             var datos = new FormData();
             datos.append('accion','incluir');
-            datos.append('cedula',$("#cedula").val());
+            datos.append('codigo',$("#codigo").val());
             datos.append('nombre_apellido',$("#nombre_apellido").val());
             datos.append('ciudad',$("#ciudad").val());
             datos.append('telefono',$("#telefono").val());
@@ -59,7 +59,7 @@ $(document).ready(function(){
     
             var datos = new FormData();
             datos.append('accion','modificar');
-            datos.append('cedula',$("#cedula").val());
+            datos.append('codigo',$("#codigo").val());
             datos.append('nombre_apellido',$("#nombre_apellido").val());
             datos.append('ciudad',$("#ciudad").val());
             datos.append('telefono',$("#telefono").val());
@@ -70,9 +70,9 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-            $("#scedula"),"El formato debe ser 9999999")==0){
-            muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
+            $("#scodigo"),"El formato debe ser 9999999")==0){
+            muestraMensaje("La codigo debe coincidir con el formato <br/>"+ 
                             "99999999");	
             
         }
@@ -80,7 +80,7 @@ $(document).ready(function(){
             
             var datos = new FormData();
             datos.append('accion','eliminar');
-            datos.append('cedula',$("#cedula").val());
+            datos.append('codigo',$("#codigo").val());
             enviaAjax(datos);
         }
         
@@ -130,9 +130,9 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-            $("#scedula"),"El formato debe ser 9999999")==0){
-            muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
+            $("#scodigo"),"El formato debe ser 9999999")==0){
+            muestraMensaje("La codigo debe coincidir con el formato <br/>"+ 
                             "99999999");	
             return false;					
         }	
@@ -196,7 +196,7 @@ $(document).ready(function(){
     
     //funcion para pasar de la lista a el formulario
     function coloca(linea){
-        $("#cedula").val($(linea).find("td:eq(0)").text());
+        $("#codigo").val($(linea).find("td:eq(0)").text());
         $("#nombre_apellido").val($(linea).find("td:eq(1)").text());
         $("#ciudad").val($(linea).find("td:eq(2)").text());
         $("#telefono").val($(linea).find("td:eq(3)").text());
@@ -267,7 +267,7 @@ $(document).ready(function(){
     
     function limpia(){
         
-        $("#cedula").val("");
+        $("#codigo").val("");
         $("#nombre_apellido").val("");
         $("#ciudad").val("");
         $("#telefono").val("");
