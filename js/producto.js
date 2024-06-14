@@ -3,7 +3,6 @@ $(document).ready(function(){
     $("#codigo").on("keypress", function(e) {
         validarkeypress(/^[a-zA-Z0-9\b]*$/, e);
     });
-    
     $("#codigo").on("keyup", function() {
         validarkeyup(/^[a-zA-Z0-9]{7,8}$/, $(this),
             $("#scodigo"), "El formato debe ser alfanumérico de 7 u 8 caracteres");
