@@ -20,7 +20,7 @@ class proveedor extends datos{
 	private $rif; //recuerden que en php, las variables no tienen tipo predefinido
 	private $Nombre;
 	private $Telefono;
-	private $direccion;
+	private $Direccion;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
@@ -29,7 +29,7 @@ class proveedor extends datos{
 		$this->rif = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 		//a un elemento de this, es decir esta clase
-		//luego el nombre del elemento sin el $
+		//luego el Nombre del elemento sin el $
 	}
 	//lo mismo que se hizo para cedula se hace para usuario y clave
 	
@@ -37,11 +37,11 @@ class proveedor extends datos{
 		$this->Nombre = $valor;
 	}
 	
-	function set_telefono($valor){
+	function set_Telefono($valor){
 		$this->Telefono = $valor;
 	}
-	function set_direccion($valor){
-		$this->direccion=$valor;
+	function set_Direccion($valor){
+		$this->Direccion=$valor;
 	}
 	
 	//ahora la misma cosa pero para leer, es decir get
@@ -57,8 +57,8 @@ class proveedor extends datos{
 	function get_Telefono(){
 		return $this->Telefono;
 	}
-	function get_direccion(){
-		return $this->direccion;
+	function get_Direccion(){
+		return $this->Direccion;
 	}
 	
 	
@@ -84,20 +84,20 @@ class proveedor extends datos{
 				
 					$p = $co->prepare("insert to proveedores(
 						rif,
-						nombre,
-						telefono,
+						Nombre,
+						Telefono,
 						Direccion
 						)
 						values(
 						:rif,
-						:nombre,
-						:telefono,
+						:Nombre,
+						:Telefono,
 						:Direccion
 						)");
 					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':telefono',$this->telefono);	
-					$p->bindParam(':Direccion',$this->direccion);	
+					$p->bindParam(':Nombre',$this->Nombre);
+					$p->bindParam(':Telefono',$this->Telefono);	
+					$p->bindParam(':Direccion',$this->Direccion);	
 					
 					$p->execute();
 					
@@ -127,16 +127,16 @@ class proveedor extends datos{
 		if($this->existe($this->rif)){
 			try {
 				$p = $co->prepare("update proveedores set
-						nombre = :nombre,
-						telefono = :telefono,
+						Nombre = :Nombre,
+						Telefono = :Telefono,
 						Direccion = :Direccion
 						where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':telefono',$this->telefono);	
-					$p->bindParam(':Direccion',$this->direccion);	
+					$p->bindParam(':Nombre',$this->Nombre);
+					$p->bindParam(':Telefono',$this->Telefono);	
+					$p->bindParam(':Direccion',$this->Direccion);	
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -199,10 +199,10 @@ class proveedor extends datos{
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre'];
+							$respuesta = $respuesta.$r['Nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['telefono'];
+							$respuesta = $respuesta.$r['Telefono'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['Direccion'];
