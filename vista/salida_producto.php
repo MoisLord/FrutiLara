@@ -13,20 +13,19 @@
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once("comunes/menu.php"); ?>
 <div class="container text-center h2 text-primary">
-<hr/>	
 Salida de Productos
 <hr/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
-<div class="container">
-
+<div class="container
+    <!-- FILA DE BOTONES -->
 	<div class="row">
 		<div class="col-md-8">
 			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
-			   <button type="button" class="btn btn-success" id="listadodeclientes" name="listadodeclientes">LISTADO DE CLIENTES</button>
-			   <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
+			   <button type="button" class="btn btn-success" id="listadodeareas" name="listadodeareas">LISTADO DE CLIENTES</button>
+			   <button type="button" class="btn btn-success" id="listadodeequipo" name="listadodeequipo">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
     <!-- FIN DE FILA BOTONES -->
@@ -119,10 +118,10 @@ Salida de Productos
 			<th>Codigo del Producto</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeclientes">
+		<tbody id="listadodeareas">
 		  <?php
-			if(!empty($consultaclientes)){
-				echo $consultaclientes;
+			if(!empty($consultaareas)){
+				echo $consultaareas;
 			}
 		  ?>
 		</tbody>
@@ -155,10 +154,10 @@ Salida de Productos
 			<th>Fecha</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeproductos">
+		<tbody id="listadodeequipo">
 		  <?php
-			if(!empty($consultaproductos)){
-				echo $consultaproductos;
+			if(!empty($consultaequipo)){
+				echo $consultaequipo;
 			}
 		  ?>
 		</tbody>
@@ -171,7 +170,7 @@ Salida de Productos
 </div>
 <!--fin de seccion modal-->
 
-<script type="text/javascript" src="js/salida.js"></script>
+<script type="text/javascript" src="js/salida_producto.js"></script>
 
 </body>
 </html>
