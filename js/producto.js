@@ -25,12 +25,28 @@ $(document).ready(function(){
         });
         
         
-        $("#minimo").on("keypress",function(e){
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+        $("#minimo").on("keypress", function(e) {
+            validarkeypress(/^[0-9]*$/, e);
         });
-        $("#minimo").on("keyup",function(){
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#sminimo"),"Solo letras  entre 3 y 30 caracteres");
+        
+        $("#minimo").on("keyup", function() {
+            validarkeyup(/^[0-9]{2,}$/, $(this), $("#sminimo"), "Solo números, mínimo 2 dígitos");
+        });
+
+        $("#maximo").on("keypress", function(e) {
+            validarkeypress(/^[0-9]*$/, e);
+        });
+        
+        $("#maximo").on("keyup", function() {
+            validarkeyup(/^[0-9]{2,}$/, $(this), $("#smaximo"), "Solo números, mínimo 2 dígitos");
+        });
+
+        $("#porcentaje").on("keypress", function(e) {
+            validarkeypress(/^[0-9]*$/, e);
+        });
+        
+        $("#porcentaje").on("keyup", function() {
+            validarkeyup(/^[0-9]{2,}$/, $(this), $("#sporcentaje"), "Solo números, mínimo 2 dígitos");
         });
         
         
@@ -142,11 +158,18 @@ $(document).ready(function(){
             muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
-        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-        $("#minimo"),$("#sminimo"),"Solo letras  entre 3 y 30 caracteres")==0){
-        muestraMensaje("Mireccion donde reside <br/>Solo letras  entre 3 y 30 caracteres");
-        return false;
-    }
+        else if (validarkeyup(/^[0-9]{2,}$/, $("#minimo"), $("#sminimo"), "Solo números, mínimo 3 dígitos") == 0) {
+            muestraMensaje("Minimo debe ser <br/>Solo números, mínimo 2 dígitos");
+            return false;
+        }
+        else if (validarkeyup(/^[0-9]{2,}$/, $("#maximo"), $("#smaximo"), "Solo números, mínimo 3 dígitos") == 0) {
+            muestraMensaje("Maximo debe ser <br/>Solo números, mínimo 2 dígitos");
+            return false;
+        }
+        else if (validarkeyup(/^[0-9]{2,}$/, $("#porcentaje"), $("#sporcentaje"), "Solo números, mínimo 3 dígitos") == 0) {
+            muestraMensaje("Porcentaje debe ser <br/>Solo números, mínimo 2 dígitos");
+            return false;
+        }
         
         return true;
     }
@@ -235,6 +258,8 @@ $(document).ready(function(){
                         else if (lee.resultado == "encontro") {
                            $("#nombre").val(lee.mensaje[0][2]);
                            $("#minimo").val(lee.mensaje[0][3]);
+                           $("#maximo").val(lee.mensaje[0][4]);
+                           $("#porcentaje").val(lee.mensaje[0][5]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
