@@ -6,14 +6,14 @@ require_once('modelo/datos.php');
 
 class entrada extends datos{
     
-	function facturar($id_clientes,$id_producto,$cantidad,$precio){
+	function facturar($codigo_ingreso,$id_producto,$cantidad,$precio){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 		   $fecha = date('Y-m-d');
-		   $guarda = $co->query("insert into factura(fecha_factura,
-		   id_cliente) 
-		   values ('$fecha','$id_cliente')");
+		   $guarda = $co->query("insert into ingreso_producto(fecha_entrega,
+		   codigo_ingreso) 
+		   values ('$fecha','$codigo_ingreso')");
 		   $lid = $co->lastInsertId(); //retorna el valor del campo
 		   //autoincremental
 		   
@@ -59,10 +59,7 @@ class entrada extends datos{
 				
 				$respuesta = '';
 				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacliente(this);'>";
-						$respuesta = $respuesta."<td style='display:none'>";
-							$respuesta = $respuesta.$r['id_cliente'];
-						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaproveedor(this);'>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
@@ -103,9 +100,6 @@ class entrada extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaproducto(this);'>";
-						$respuesta = $respuesta."<td style='display:none'>";
-							$respuesta = $respuesta.$r['id_producto'];
-						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo'];
 						$respuesta = $respuesta."</td>";

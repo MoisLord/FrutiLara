@@ -37,7 +37,7 @@ Pantalla de Entradas
 	<div class="row">
 		<div class="col-md-8 input-group">
 		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
-		   <input class="form-control" type="text" id="idcliente" name="idcliente" style="display:none"/>
+		   <input class="form-control" type="text" id="idproveedor" name="idproveedor" style="display:none"/>
 		   <button type="button" class="btn btn-primary" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
 		</div>
 	</div>
@@ -120,8 +120,8 @@ Pantalla de Entradas
 		</thead>
 		<tbody id="listadodeproveedores">
 		  <?php
-			if(!empty($consultaclientes)){
-				echo $consultaclientes;
+			if(!empty($cosultaproveedores)){
+				echo $cosultaproveedores;
 			}
 		  ?>
 		</tbody>
@@ -150,8 +150,10 @@ Pantalla de Entradas
 		    <th style="display:none">Id</th>
 			<th>Codigo</th>
 			<th>Nombre</th>
-			<th>Existencia</th>
-			<th>PVP</th>
+			<th>Tipo</th>
+			<th>Max</th>
+			<th>Min</th>
+			<th>%</th>
 		  </tr>
 		</thead>
 		<tbody id="listadodeproductos">

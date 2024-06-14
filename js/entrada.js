@@ -22,7 +22,7 @@ $("#cedulacliente").on("keyup",function(){
 	var encontro = false;
 	$("#listadodeproveedores tr").each(function(){
 		if(rif == $(this).find("td:eq(1)").text()){
-			colocacliente($(this));
+			colocaproveedor($(this));
 			encontro = true;
 		} 
 	});
@@ -156,9 +156,9 @@ function eliminalineadetalle(boton){
 
 
 //funcion para colocar datos del cliente en pantalla
-function colocacliente(linea){
+function colocaproveedor(linea){
 	$("#cedulacliente").val($(linea).find("td:eq(1)").text());
-	$("#idcliente").val($(linea).find("td:eq(0)").text());
+	$("#idproveedor").val($(linea).find("td:eq(0)").text());
 	$("#datosdelcliente").html($(linea).find("td:eq(2)").text()+
 	"  "+$(linea).find("td:eq(3)").text()+"  "+
 	$(linea).find("td:eq(4)").text());

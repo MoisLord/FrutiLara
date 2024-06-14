@@ -23,10 +23,10 @@ require_once("modelo/".$pagina.".php");
 	  if(!empty($_POST)){
 		  
 		//$mensaje = count($_POST['idp']);
-		$mensaje = $o->facturar($_POST['idcliente'],$_POST['idp'],$_POST['cant'],$_POST['pvp']);
+		$mensaje = $o->facturar($_POST['idproveedor'],$_POST['idp'],$_POST['cant'],$_POST['pvp']);
 		 
 	  }
-	  $consultaclientes = $o->listadodeproveedores();
+	  $consultaproveedores = $o->listadodeproveedores();
 	  $consultaproductos = $o->listadodeproductos();
 	  require_once("vista/".$pagina.".php"); 
   }
