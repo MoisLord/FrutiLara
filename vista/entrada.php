@@ -170,7 +170,7 @@ Pantalla de Entradas
 </div>
 <!--fin de seccion modal-->
 
-<script type="text/javascript" src="js/ventasht.js"></script>
+<script type="text/javascript" src="js/entrada.js"></script>
 
 </body>
 </html>

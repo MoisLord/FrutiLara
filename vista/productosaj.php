@@ -4,12 +4,12 @@
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
-<div class="container text-center h2 text-primary">
+<div class="container text-center h2 text-success">
 <hr/>
 <hr/>
 <hr/>
-REGISTRO DE CLIENTES
-<hr/>
+REGISTRO DE PRODUCTOS
+<hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form method="post" id="f" autocomplete="off">
@@ -43,63 +43,28 @@ REGISTRO DE CLIENTES
 			   />
 			</div>
 		</div>
-
-        <!--<div class="row mb-3">
-			<div class="col-md-8">
-			   <label for="direccionlocal">Dirección Local</label>
-			   <input class="form-control" type="text" id="direccionlocal"
-					name="direccionlocal"/>
-			   <span id="sdireccionlocal"></span>
-			</div>
-		</div>-->
-		
-		<!--<div class="row mb-3">
-			<div class="col-md-3">
-				<label  for="masculino">
-				   Masculino	
-				   <input class="form-control" type="radio" value="M" id="masculino" name="sexo" />
-				</label>
-				<label  for="femenino">
-				   Femenino	
-				   <input class="form-control" type="radio" value="F" id="femenino" name="sexo" />
-				</label>
-			</div>
-			<div class="col-md-9">
-			   <label for="gradodeinstruccion">Grado de Instruccion</label>
-			   <select class="form-control" id="gradodeinstruccion" 
-					name = "gradodeinstruccion">
-					<option value="PRIMARIA">Primaria</option>
-					<option value="BACHILLER">Bachiller</option>
-					<option value="TSU">TSU</option>
-					<option value="GRADO">Grado Superior</option>
-					<option value="POSTGRADO">Post Grado</option>
-			   </select>
-			</div>
-		</div>-->
-		
-		
 		
 		<div class="row">
 			<div class="col-md-12">
-				<hr/>
+            <hr class="border border-success border-3 opacity-65">
 			</div>
 		</div>
 
 		<div class="row mt-3 justify-content-center">
 			<div class="col-md-2">
-				   <button type="button" class="btn btn-primary" id="incluir" >INCLUIR</button>
+				   <button type="button" class="btn btn-success" id="incluir" >INCLUIR</button>
 			</div>
 			<div class="col-md-2">	
-				   <button type="button" class="btn btn-primary" id="consultar" >CONSULTAR</button>
+				   <button type="button" class="btn btn-success" id="consultar" >CONSULTAR</button>
 			</div>
 			<div class="col-md-2">	
-				   <button type="button" class="btn btn-primary" id="modificar" >MODIFICAR</button>
+				   <button type="button" class="btn btn-success" id="modificar" >MODIFICAR</button>
 			</div>
 			<div class="col-md-2">	
-				   <button type="button" class="btn btn-primary" id="eliminar" >ELIMINAR</button>
+				   <button type="button" class="btn btn-success" id="eliminar" >ELIMINAR</button>
 			</div>
 			<div class="col-md-2">	
-				   <a href="." class="btn btn-primary">REGRESAR</a>
+				   <a href="." class="btn btn-success">REGRESAR</a>
 			</div>
 		</div>
 	</div>	
