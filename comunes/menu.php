@@ -22,7 +22,7 @@
             <a class="nav-link" href="#">Clientes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Entrada</a>
+            <a class="nav-link" href="?pagina=ventasht">Entrada</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Salida</a>
