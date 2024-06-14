@@ -100,7 +100,7 @@ class proveedor extends datos{
 		}
 		else{
 			$r['resultado'] = 'incluir';
-			$r['mensaje'] =  'Ya existe la cedula';
+			$r['mensaje'] =  'Ya existe el rif';
 		}
 		
 		//Listo eso es todo y es igual para el resto de las operaciones
@@ -116,33 +116,15 @@ class proveedor extends datos{
 		$r = array();
 		if($this->existe($this->rif)){
 			try {
-				/**
-				$aux = "Update personas set 
-						apellidos = $this->apellidos,
-						nombres = $this->nombres,
-						fechadenacimiento = $this->fechadenacimiento,
-						sexo = $this->sexo,
-						gradodeinstruccion = $this->gradodeinstruccion
+				$p = $co->prepare("UPDATE proveedores SET
+						nombre = :nombre,
+						telefono = :telefono
 						where
-						cedula = $this->cedula";
-				echo $aux;
-				exit;
-				**/
-				$p = $co->prepare("Update personas set 
-						apellidos = :apellidos,
-						nombres = :nombres,
-						fechadenacimiento = :fechadenacimiento,
-						sexo = :sexo,
-						gradodeinstruccion = :gradodeinstruccion
-						where
-						cedula = :cedula
+						rif = :rif
 						");
-					$p->bindParam(':cedula',$this->cedula);		
-					$p->bindParam(':apellidos',$this->apellidos);
-					$p->bindParam(':nombres',$this->nombres);	
-					$p->bindParam(':fechadenacimiento',$this->fechadenacimiento);
-					$p->bindParam(':sexo',$this->sexo);		
-					$p->bindParam(':gradodeinstruccion',$this->gradodeinstruccion);
+					$p->bindParam(':rif',$this->rif);		
+					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':telefono',$this->telefono);	
 					
 					$p->execute();
 					
@@ -155,7 +137,7 @@ class proveedor extends datos{
 		}
 		else{
 			$r['resultado'] = 'modificar';
-			    $r['mensaje'] =  'No existe la cedula';
+			    $r['mensaje'] =  'No existe el rif';
 		}
 		return $r;
 	}
@@ -166,11 +148,11 @@ class proveedor extends datos{
 		$r = array();
 		if($this->existe($this->rif)){
 			try {
-					$p = $co->prepare("delete from personas 
-					    where
-						cedula = :cedula
+					$p = $co->prepare("DELETE From proveedores 
+					    WHERE
+						rif = :rif
 						");
-					$p->bindParam(':cedula',$this->cedula);		
+					$p->bindParam(':rif',$this->rif);		
 					
 					
 					$p->execute();
@@ -183,7 +165,7 @@ class proveedor extends datos{
 		}
 		else{
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe la cedula';
+			$r['mensaje'] =  'No existe el rif';
 		}
 		return $r;
 	}
@@ -195,7 +177,7 @@ class proveedor extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from personas");
+			$resultado = $co->query("SELECT * FROM proveedores");
 			
 			if($resultado){
 				
@@ -203,24 +185,14 @@ class proveedor extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['cedula'];
+							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['apellidos'];
+							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombres'];
+							$respuesta = $respuesta.$r['telefono'];
 						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['fechadenacimiento'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['sexo'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['gradodeinstruccion'];
-						$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."</tr>";
 				}
 				$r['resultado'] = 'consultar';
 				$r['mensaje'] =  $respuesta;
@@ -239,12 +211,12 @@ class proveedor extends datos{
 	}
 	
 	
-	private function existe($cedula){
+	private function existe($rif){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from personas where cedula='$cedula'");
+			$resultado = $co->query("SELECT * FROM proveedores WHERE rif='$rif'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -269,7 +241,7 @@ class proveedor extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from personas where cedula='$this->cedula'");
+			$resultado = $co->query("SELECT * FROM proveedores where rif='$this->rif'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
@@ -291,22 +263,7 @@ class proveedor extends datos{
 		}
 		return $r;
 		
-	}
-	
-	function obtienefecha(){
-		$r = array();
-		
-			  $f = date('Y-m-d');
-		      $f1 = strtotime ('-18 year' , strtotime($f)); 
-		      $f1 = date ('Y-m-d',$f1);
-			  $r['resultado'] = 'obtienefecha';
-			  $r['mensaje'] =  $f1;
-		
-		return $r;
-	}
-
-	
-	
+	}	
 	
 }
 ?>

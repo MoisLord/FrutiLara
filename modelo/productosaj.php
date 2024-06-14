@@ -128,18 +128,6 @@ class productosaj extends datos{
 		$r = array();
 		if($this->existe($this->cedula)){
 			try {
-				/**
-				$aux = "Update personas set 
-						nombre_apellido = $this->nombre_apellido,
-						nombres = $this->nombres,
-						fechadenacimiento = $this->fechadenacimiento,
-						sexo = $this->sexo,
-						gradodeinstruccion = $this->gradodeinstruccion
-						where
-						cedula = $this->cedula";
-				echo $aux;
-				exit;
-				**/
 				$p = $co->prepare("Update clientes set 
 						nombre_apellido = :nombre_apellido,
 						ciudad = :ciudad,
