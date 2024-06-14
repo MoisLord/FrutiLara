@@ -12,8 +12,11 @@
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
+<hr/>
+<hr/>
+<hr/>
 <div class="container text-center h2 text-primary">
-Pantalla Ventas
+Pantalla de Entradas
 <hr/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
@@ -23,7 +26,7 @@ Pantalla Ventas
     <!-- FILA DE BOTONES -->
 	<div class="row">
 		<div class="col-md-4">
-			   <button type="button" class="btn btn-primary" id="facturar" name="facturar">FACTURAR</button>
+			   <button type="button" class="btn btn-primary" id="facturar" name="facturar">INGRESAR</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA BOTONES -->
