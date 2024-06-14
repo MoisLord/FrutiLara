@@ -128,7 +128,7 @@ REGISTRO DE PRODUCTOS
   </div>
 </div>
 <!--fin de seccion modal-->
-<script type="text/javascript" src="js/productosaj.js"></script>
+<script type="text/javascript" src="js/producto.js"></script>
 
 </body>
 </html>
