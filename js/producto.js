@@ -1,19 +1,19 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
-        $("#codigo").on("keypress",function(e){
-            validarkeypress(/^[0-9-\b]*$/,e);
-        });
-        
-        $("#codigo").on("keyup",function(){
-            validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#scodigo"),"El formato debe ser 1232332 ");
-            if($("#codigo").val().length > 7){
-              var datos = new FormData();
-                datos.append('accion','consultatr');
-                datos.append('codigo',$(this).val());
-                enviaAjax(datos,'consultatr');	
-            }
-        });
+    $("#codigo").on("keypress", function(e) {
+        validarkeypress(/^[a-zA-Z0-9\b]*$/, e);
+    });
+    
+    $("#codigo").on("keyup", function() {
+        validarkeyup(/^[a-zA-Z0-9]{7,8}$/, $(this),
+            $("#scodigo"), "El formato debe ser alfanumérico de 7 u 8 caracteres");
+        if ($("#codigo").val().length > 7) {
+            var datos = new FormData();
+            datos.append('accion', 'consultatr');
+            datos.append('codigo', $(this).val());
+            enviaAjax(datos, 'consultatr');
+        }
+    });
         
         
         $("#nombre_apellido").on("keypress",function(e){
