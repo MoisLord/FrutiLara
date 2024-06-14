@@ -20,6 +20,7 @@ class proveedor extends datos{
 	private $rif; //recuerden que en php, las variables no tienen tipo predefinido
 	private $Nombre;
 	private $Telefono;
+	private $direccion;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
@@ -37,7 +38,10 @@ class proveedor extends datos{
 	}
 	
 	function set_telefono($valor){
-		$this->telefono = $valor;
+		$this->Telefono = $valor;
+	}
+	function set_direccion($valor){
+		$this->direccion=$valor;
 	}
 	
 	//ahora la misma cosa pero para leer, es decir get
@@ -52,6 +56,9 @@ class proveedor extends datos{
 	
 	function get_Telefono(){
 		return $this->Telefono;
+	}
+	function get_direccion(){
+		return $this->direccion;
 	}
 	
 	
@@ -78,16 +85,19 @@ class proveedor extends datos{
 					$p = $co->prepare("INSERT TO proveedores(
 						rif,
 						nombre,
-						telefono
+						telefono,
+						Direccion
 						)
 						Values(
 						:rif,
 						:nombre,
-						:telefono
+						:telefono,
+						:Direccion
 						)");
 					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->nombre);
 					$p->bindParam(':telefono',$this->telefono);	
+					$p->bindParam(':Direccion',$this->direccion);	
 					
 					$p->execute();
 					
@@ -118,14 +128,15 @@ class proveedor extends datos{
 			try {
 				$p = $co->prepare("UPDATE proveedores SET
 						nombre = :nombre,
-						telefono = :telefono
+						telefono = :telefono,
+						Direccion = :Direccion
 						where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->nombre);
 					$p->bindParam(':telefono',$this->telefono);	
-					
+					$p->bindParam(':Direccion',$this->direccion);	
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -192,6 +203,9 @@ class proveedor extends datos{
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['telefono'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['Direccion'];
 						$respuesta = $respuesta."</td>";
 				}
 				$r['resultado'] = 'consultar';
