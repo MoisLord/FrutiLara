@@ -22,7 +22,7 @@ require_once("modelo/".$pagina.".php");
 	  
 	  
 	  $o = new productosaj(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
-	  //clase personasht
+	  //clase productosaj
 	  
 	  if(!empty($_POST)){
 		  
