@@ -10,24 +10,24 @@
 	Pantalla de Proveedores
 <hr/>
 </div>
-<<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
+<<div class="container"> 
 	<form method="post" id="f" autocomplete="off">
     <div class="row">
 		<div class="col">
-		   <label for="cedula">rif</label>
-		   <input class="form-control" type="text" id="cedula" name="cedula" />
-		   <span id="scedula"></span>
+		   <label for="rif">rif</label>
+		   <input class="form-control" type="text" id="rif" name="rif" />
+		   <span id="srif"></span>
 		</div>
 
 		<div class="col">
-		   <label for="telefono">Nombre</label>
-		   <input class="form-control" type="text" id="telefono" name="telefono" />
-		   <span id="stelefono"></span>
+		   <label for="Nombre">Nombre</label>
+		   <input class="form-control" type="text" id="Nombre" name="Nombre" />
+		   <span id="sNombre"></span>
 		</div>
 		<div class="col">
-		   <label for="correo">Telefono</label>
-		   <input class="form-control" type="text" id="correo" name="correo" />
-		   <span id="scorreo"></span>
+		   <label for="telefono">Telefono</label>
+		   <input class="form-control" type="text" id="Telefono" name="telefono" />
+		   <span id="stelefono"></span>
 		</div>
 	</div>
 
@@ -103,6 +103,6 @@
 
 
 <!--Llamada a las librerias de javascript para las validaciones de esta pagina -->
-<script type="text/javascript" src="js/usuariosaj.js"></script>
+<script type="text/javascript" src="js/proveedor.js"></script>
 </body>
 </html>
