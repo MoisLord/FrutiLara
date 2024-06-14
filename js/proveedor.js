@@ -6,11 +6,11 @@ $(document).ready(function(){
         
         $("#rif").on("keyup",function(){
             validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#scedula"),"El formato debe ser 9999999 ");
-            if($("#cedula").val().length > 7){
+            $("#srif"),"El formato debe ser 9999999 ");
+            if($("#rif").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
-                datos.append('cedula',$(this).val());
+                datos.append('rif',$(this).val());
                 enviaAjax(datos,'consultatr');	
             }
         });
@@ -38,7 +38,7 @@ $(document).ready(function(){
             datos.append('accion','incluir');
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
-            datos.append('telefono',$("#Telefono").val());
+            datos.append('Telefono',$("#Telefono").val());
             datos.append('Direccion',$("#Direccion").val());
             enviaAjax(datos);
         }
@@ -50,8 +50,8 @@ $(document).ready(function(){
             datos.append('accion','modificar');
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
-            datos.append('telefono',$("#Telefono").val());
-            datos.append('Direccion',$("#telefono").val());
+            datos.append('Telefono',$("#Telefono").val());
+            datos.append('Direccion',$("#Direccion").val());
             enviaAjax(datos);
             
         }
@@ -60,7 +60,7 @@ $(document).ready(function(){
     $("#eliminar").on("click",function(){
         
         if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-            $("#scedula"),"El formato debe ser 9999999")==0){
+            $("#srif"),"El formato debe ser 9999999")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "99999999");	
             
@@ -69,7 +69,7 @@ $(document).ready(function(){
             
             var datos = new FormData();
             datos.append('accion','eliminar');
-            datos.append('cedula',$("#rif").val());
+            datos.append('rif',$("#rif").val());
             enviaAjax(datos);
         }
         
@@ -129,7 +129,8 @@ $(document).ready(function(){
             $("#Nombre"),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres")==0){
             muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
-        }else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+        }
+        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
         $("#Direccion"),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres")==0){
         muestraMensaje("Direccion donde reside <br/>Solo letras  entre 3 y 30 caracteres");
         return false;
@@ -220,6 +221,7 @@ $(document).ready(function(){
                         else if (lee.resultado == "encontro") {
                            $("#Nombre").val(lee.mensaje[0][2]);
                            $("#Direccion").val(lee.mensaje[0][3]);
+                           
                         }
                         else if (lee.resultado == "incluir" || 
                         lee.resultado == "modificar" || 
