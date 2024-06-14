@@ -116,16 +116,6 @@ class proveedor extends datos{
 		$r = array();
 		if($this->existe($this->rif)){
 			try {
-				/*
-				$aux = "UPDATE proveedores SET
-						rif = $this->rif,
-						nombre = $this->Nombre,
-						telefono = $this->Telefono
-						where
-						cedula = $this->rif";
-				echo $aux;
-				exit;
-				*/
 				$p = $co->prepare("UPDATE proveedores SET
 						nombre = :nombre,
 						telefono = :telefono
