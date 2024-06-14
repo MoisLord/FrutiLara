@@ -1,32 +1,14 @@
 <html> 
 <?php require_once("comunes/encabezado.php"); ?>
+<?php require_once('comunes/menu.php'); ?>
 <body>
 <div class="container-fluid p-0">
-  <div class="row no-gutters min-vh-100">
-    <div class="col-12 d-flex flex-column justify-content-center align-items-center" style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center;">
-      <h1 class="text-danger font-weight-bold mb-6 display-1">Biea Frutilara</h1>
-      <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas </p>
-    </div>
-  </div>
-</div>
-
-<?php require_once('comunes/menu.php'); ?>
 <div class="container text-center h2 text-primary">
 Pantalla Personal
 <hr/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-	<div class="container">
-		<div class="row mt-3 justify-content-center">
-		    <div class="col-md-2">
-			   <button type="button" class="btn btn-primary" id="incluir" >INCLUIR</button>
-			</div>
-					
-			<div class="col-md-2">	
-			    <a href="." class="btn btn-primary">REGRESAR</a>
-			</div>
-		</div>
-	</div>
+	
 	<div class="container">
 	   <div class="table-responsive">
 		<table class="table table-striped table-hover" id="tablapersona">
@@ -51,6 +33,17 @@ Pantalla Personal
 	   </table>
 	  </div>
   </div>
+  <div class="container">
+		<div class="row mt-3 justify-content-center">
+		    <div class="col-md-2">
+			   <button type="button" class="btn btn-primary" id="incluir" >INCLUIR</button>
+			</div>
+					
+			<div class="col-md-2">	
+			    <a href="." class="btn btn-primary">REGRESAR</a>
+			</div>
+		</div>
+	</div>
 </div> <!-- fin de container -->
 
 
@@ -162,8 +155,6 @@ Pantalla Personal
 </div>
 <!--fin de seccion modal-->
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
-<?php require_once("comunes/modal.php"); ?>
-<script type="text/javascript" src="js/personasaj2.js"></script>
 
 </body>
 </html>
