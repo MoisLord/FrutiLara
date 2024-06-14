@@ -17,16 +17,16 @@ REGISTRO DE PRODUCTOS
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md-4">
-			   <label for="cedula">Cedula</label>
-			   <input class="form-control" type="text" id="cedula"
-				name="cedula"/>
-			   <span id="scedula"></span>
+			   <label for="codigo">Codigo del Producto</label>
+			   <input class="form-control" type="text" id="codigo"
+				name="codigo"/>
+			   <span id="scodigo"></span>
 			</div>
 			<div class="col-md-8">
-			   <label for="nombre_apellido">Nombre y Apellido</label>
-			   <input class="form-control" type="text" id="nombre_apellido"
-				name="nombre_apellido"/>
-			   <span id="snombre_apellido"></span>
+			   <label for="nombre">Nombre del Producto</label>
+			   <input class="form-control" type="text" id="nombre"
+				name="nombre"/>
+			   <span id="snombre"></span>
 			</div>
 		</div>
 		
@@ -86,7 +86,7 @@ REGISTRO DE PRODUCTOS
 		<table class="table table-striped table-hover" id="tablaclientes">
 		<thead>
 		  <tr>
-			<th>Cedula</th>
+			<th>codigo</th>
 			<th>Nombre y Apellido</th>
 			<th>Ciudad donde vive</th>
 			<th>Teléfono</th>
