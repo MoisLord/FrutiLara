@@ -12,8 +12,11 @@
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
+<hr/>
+<hr/>
+<hr/>
 <div class="container text-center h2 text-primary">
-Pantalla Ventas
+Pantalla de Salidas
 <hr/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->

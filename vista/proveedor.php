@@ -4,6 +4,9 @@
 <body>
 <div class="container-fluid p-0">
 <div class="container text-center h2 text-primary">
+<hr/>
+<hr/>
+<hr/>
 Pantalla Personal
 <hr/>
 </div>

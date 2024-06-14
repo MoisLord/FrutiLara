@@ -5,6 +5,9 @@
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <div class="container text-center h2 text-primary">
+<hr/>
+<hr/>
+<hr/>
 REGISTRO DE CLIENTES
 <hr/>
 </div>
