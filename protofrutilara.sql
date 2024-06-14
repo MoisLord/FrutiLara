@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2024 a las 18:53:09
+-- Tiempo de generación: 14-06-2024 a las 19:19:59
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -71,7 +71,7 @@ CREATE TABLE `proveedores` (
   `rif` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `telefono` varchar(11) NOT NULL,
-  `Dirección` varchar(18) NOT NULL
+  `Direccion` varchar(18) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------

@@ -29,6 +29,11 @@
 		   <input class="form-control" type="text" id="Telefono" name="telefono" />
 		   <span id="stelefono"></span>
 		</div>
+		<div class="col">
+		   <label for="Direccion">Dirección</label>
+		   <input class="form-control" type="text" id="Direccion" name="Direccion" />
+		   <span id="sDireccion"></span>
+		</div>
 	</div>
 
 	<div class="row">
