@@ -29,7 +29,26 @@ REGISTRO DE PRODUCTOS
 			   <span id="snombre"></span>
 			</div>
 		</div>
-		
+
+        <div class="row"> 
+            <div class="col-md-6"> 
+                <div class="form-check form-check-inline"> 
+                <h6>Tipo de Productos</h6>
+                <input class="form-check-input" type="radio" name="tipo" id="tipo1" value="option1">
+                <label class="form-check-label" for="tipo1">Viveres</label> 
+            </div> 
+            <div class="form-check form-check-inline"> 
+                <input class="form-check-input" type="radio" name="tipo" id="tipo2" value="option2" checked> 
+                <label class="form-check-label" for="tipo2">Hortalizas</label> 
+            </div> 
+        </div> 
+        <div class="col-md-6"> 
+            <label for="ciudad">Ciudad donde vive</label> 
+            <input class="form-control" type="text" id="ciudad" name="ciudad"> 
+            <span id="sciudad"></span> 
+        </div> 
+        </div>
+        
 		<div class="row mb-3">
 			<div class="col-md-8">
 			   <label for="ciudad">Ciudad donde vive</label>
