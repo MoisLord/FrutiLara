@@ -48,8 +48,8 @@ require_once("modelo/".$pagina.".php");
 		  else{		  
 			  $o->set_rif($_POST['rif']);
 			  $o->set_Nombre($_POST['Nombre']);
-			  $o->set_telefono($_POST['Telefono']);
-			  $o->set_direccion($_POST['Direccion']);
+			  $o->set_Telefono($_POST['Telefono']);
+			  $o->set_Direccion($_POST['Direccion']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }

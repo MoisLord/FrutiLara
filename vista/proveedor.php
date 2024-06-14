@@ -1,5 +1,8 @@
 <html> 
 <?php require_once("comunes/encabezado.php"); ?>
+<body>
+<!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
+<?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <body>
 <div class="container-fluid p-0">
@@ -47,7 +50,7 @@
 			   <button type="button" class="btn btn-primary" id="incluir" name="incluir">INCLUIR</button>
 		</div>
 		<div class="col">	
-			   <button type="button" class="btn btn-primary" id="consultar"data-toggle="modal" data-target="#modal1" name="consultar">CONSULTAR</button>
+			   <button type="button" class="btn btn-primary" id="consultar"name="consultar">CONSULTAR</button>
 		</div>
 		<div class="col">	
 			   <button type="button" class="btn btn-primary" id="modificar" name="modificar">MODIFICAR</button>

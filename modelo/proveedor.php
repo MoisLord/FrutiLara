@@ -37,10 +37,10 @@ class proveedor extends datos{
 		$this->Nombre = $valor;
 	}
 	
-	function set_telefono($valor){
+	function set_Telefono($valor){
 		$this->Telefono = $valor;
 	}
-	function set_direccion($valor){
+	function set_Direccion($valor){
 		$this->direccion=$valor;
 	}
 	
@@ -57,7 +57,7 @@ class proveedor extends datos{
 	function get_Telefono(){
 		return $this->Telefono;
 	}
-	function get_direccion(){
+	function get_Direccion(){
 		return $this->direccion;
 	}
 	
@@ -82,22 +82,22 @@ class proveedor extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("insert to proveedores(
+					$p = $co->prepare("insert into proveedores(
 						rif,
 						nombre,
 						telefono,
-						Direccion
+						direccion
 						)
 						values(
 						:rif,
 						:nombre,
 						:telefono,
-						:Direccion
+						:direccion
 						)");
 					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':telefono',$this->telefono);	
-					$p->bindParam(':Direccion',$this->direccion);	
+					$p->bindParam(':nombre',$this->Nombre);
+					$p->bindParam(':telefono',$this->Telefono);	
+					$p->bindParam(':direccion',$this->direccion);	
 					
 					$p->execute();
 					
@@ -129,14 +129,14 @@ class proveedor extends datos{
 				$p = $co->prepare("update proveedores set
 						nombre = :nombre,
 						telefono = :telefono,
-						Direccion = :Direccion
+						direccion = :direccion
 						where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->nombre);
 					$p->bindParam(':telefono',$this->telefono);	
-					$p->bindParam(':Direccion',$this->direccion);	
+					$p->bindParam(':direccion',$this->direccion);	
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -160,7 +160,7 @@ class proveedor extends datos{
 		if($this->existe($this->rif)){
 			try {
 					$p = $co->prepare("delete from proveedores 
-					    WHERE
+					    where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
@@ -205,7 +205,7 @@ class proveedor extends datos{
 							$respuesta = $respuesta.$r['telefono'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['Direccion'];
+							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 				}
