@@ -23,9 +23,9 @@ Salida de Productos
     <!-- FILA DE BOTONES -->
 	<div class="row">
 		<div class="col-md-8">
-			   <button type="button" class="btn btn-primary" id="registrar" name="registrar">REGISTRAR</button>
-			   <button type="button" class="btn btn-primary" id="listadodeareas" name="listadodeareas">LISTADO DE CLIENTES</button>
-			   <button type="button" class="btn btn-primary" id="listadodeequipo" name="listadodeequipo">LISTADO DE PRODUCTOS</button>
+			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
+			   <button type="button" class="btn btn-success" id="listadodeareas" name="listadodeareas">LISTADO DE CLIENTES</button>
+			   <button type="button" class="btn btn-success" id="listadodeequipo" name="listadodeequipo">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
     <!-- FIN DE FILA BOTONES -->
