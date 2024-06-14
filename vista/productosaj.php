@@ -30,30 +30,29 @@ REGISTRO DE PRODUCTOS
 			</div>
 		</div>
 
-        <div class="row"> 
-            <div class="col-md-5"> 
-                <select class="form-select" aria-label="Default select example"> 
-                <option selected>Tipos De Productos</option> 
-                <option value="1">Viveres</option> 
-                <option value="2">Hortalizas</option> 
-                <option value="3">Frutas</option> 
-                <option value="3">Charcuteria</option> 
-                <option value="3">Bebidas</option> 
-                <option value="3">Empaquetados</option> 
-            </select> 
-        </div> 
-        <div class="col-md-7"> 
-            <div class="input-group"> 
-                <label for="minimo" class="input-group-text">Minimo</label> 
-                <input class="form-control" type="text" id="minimo" name="minimo"> 
-                <span id="sminimo"></span> 
-            </div> 
-        </div> 
-        </div>
+		<div class="row"> 
+    <div class="col-md-5">
+        <label for="tipo-producto">Tipo de Producto</label>
+        <select class="form-select" aria-label="Default select example" id="tipo-producto"> 
+            <option selected></option> 
+            <option value="1">Viveres</option> 
+            <option value="2">Hortalizas</option> 
+            <option value="3">Frutas</option> 
+            <option value="3">Charcuteria</option> 
+            <option value="3">Bebidas</option> 
+            <option value="3">Empaquetados</option> 
+        </select> 
+    </div> 
+    <div class="col-md-7">
+        <label for="minimo">Mínimo</label>
+        <input class="form-control" type="text" id="minimo" name="minimo"/>
+    </div>
+</div>
+
         
-		<div class="row mb-3">
+		<div class="row mb-4">
             
-			<div class="col-md-">
+			<div class="col-md-6">
 			   <label for="maximo">Maximo</label>
 			   <input class="form-control" type="text" id="maximo"
 					name="maximo"/>
@@ -97,9 +96,9 @@ REGISTRO DE PRODUCTOS
 <!-- seccion del modal -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
-        <h5 class="modal-title">CLIENTES REGISTRADOS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">PRODUCTOS REGISTRADOS</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -108,10 +107,12 @@ REGISTRO DE PRODUCTOS
 		<table class="table table-striped table-hover" id="tablaclientes">
 		<thead>
 		  <tr>
-			<th>codigo</th>
-			<th>Nombre y Apellido</th>
-			<th>Ciudad donde vive</th>
-			<th>Teléfono</th>
+			<th>Codigo Producto</th>
+			<th>Nombre Producto</th>
+			<th>Tipo de Productos</th>
+			<th>Minimo</th>
+			<th>Maximo</th>
+			<th>Porcentaje</th>
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
