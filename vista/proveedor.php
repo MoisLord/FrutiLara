@@ -7,71 +7,29 @@
 <hr/>
 <hr/>
 <hr/>
-Pantalla Personal
+	Pantalla de Proveedores
 <hr/>
 </div>
 <<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
     <div class="row">
 		<div class="col">
-		   <label for="cedula">telefono</label>
+		   <label for="cedula">rif</label>
 		   <input class="form-control" type="text" id="cedula" name="cedula" />
 		   <span id="scedula"></span>
 		</div>
 
 		<div class="col">
-		   <label for="telefono">Telefono</label>
+		   <label for="telefono">Nombre</label>
 		   <input class="form-control" type="text" id="telefono" name="telefono" />
 		   <span id="stelefono"></span>
 		</div>
 		<div class="col">
-		   <label for="correo">Correo</label>
+		   <label for="correo">Telefono</label>
 		   <input class="form-control" type="text" id="correo" name="correo" />
 		   <span id="scorreo"></span>
 		</div>
 	</div>
 
-    <div class="row">
-		
-		<div class="col">
-		   <label for="usuario">Usuario</label>
-		   <input class="form-control" type="text" id="usuario" name="usuario" />
-		   <span id="susuario"></span>
-		</div>
-		
-		<div class="col">
-		   <label for="clave">Clave</label>
-		   <input class="form-control" type="password" id="clave" name="clave" />
-		   <span id="sclave"></span>
-		</div>
-		
-	</div>
-	
-	
-	<div class="row">
-		<div class="col">
-		   <label for="cargo">Cargo</label>
-		   <select class="form-control" type="text" id="cargo" name="cargo">
-			<option value="GERENTE">GERENTE</option>
-			<option value="ADMINISTRADOR">ADMINISTRADOR</option>
-			<option value="SECRETARIA">SECRETARIA</option>
-		   </select>
-		</div>
-		<div class="col">
-		   <label for="fecha">Fecha</label>
-		   <input class="form-control" type="date" id="fecha" name="fecha" />
-		   <span id="sfecha"></span>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col">
-		   <label for="direccion">Dirección</label>
-		   <input class="form-control" type="text" id="direccion" name="direccion" />
-		   <span id="sdireccion"></span>
-		</div>
-	</div>
-	
-	
 	<div class="row">
 		<div class="col">
 			<hr/>
