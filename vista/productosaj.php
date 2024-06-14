@@ -31,34 +31,35 @@ REGISTRO DE PRODUCTOS
 		</div>
 
         <div class="row"> 
-            <div class="col-md-6"> 
-                <div class="form-check form-check-inline"> 
-                <h6>Tipo de Productos</h6>
-                <input class="form-check-input" type="radio" name="tipo" id="tipo1" value="option1">
-                <label class="form-check-label" for="tipo1">Viveres</label> 
-                <span id="stipo"></span>
-            </div> 
-            <div class="form-check form-check-inline"> 
-                <input class="form-check-input" type="radio" name="tipo" id="tipo2" value="option2" checked> 
-                <label class="form-check-label" for="tipo2">Hortalizas</label> 
-                <span id="stipo"></span>
-            </div> 
+            <div class="col-md-5"> 
+                <select class="form-select" aria-label="Default select example"> 
+                <option selected>Tipos De Productos</option> 
+                <option value="1">Viveres</option> 
+                <option value="2">Hortalizas</option> 
+                <option value="3">Frutas</option> 
+                <option value="3">Charcuteria</option> 
+                <option value="3">Bebidas</option> 
+                <option value="3">Empaquetados</option> 
+            </select> 
         </div> 
-        <div class="col-md-6"> 
-            <label for="minimo">Minimo</label> 
-            <input class="form-control" type="text" id="minimo" name="minimo"> 
-            <span id="sminimo"></span> 
+        <div class="col-md-7"> 
+            <div class="input-group"> 
+                <label for="minimo" class="input-group-text">Minimo</label> 
+                <input class="form-control" type="text" id="minimo" name="minimo"> 
+                <span id="sminimo"></span> 
+            </div> 
         </div> 
         </div>
         
 		<div class="row mb-3">
-			<div class="col-md-4">
+            
+			<div class="col-md-">
 			   <label for="maximo">Maximo</label>
 			   <input class="form-control" type="text" id="maximo"
 					name="maximo"/>
 			   <span id="smaximo"></span>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-6">
 			   <label for="porcentaje">Porcentaje</label>
 			   <input class="form-control" type="text" id="porcentaje" name="porcentaje"/>
                <span id="sporcentaje"></span>
