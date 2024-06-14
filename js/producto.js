@@ -13,6 +13,7 @@ $(document).ready(function(){
             enviaAjax(datos, 'consultatr');
         }
     });
+    
         
         
         $("#nombre").on("keypress",function(e){
