@@ -103,6 +103,6 @@
 
 
 <!--Llamada a las librerias de javascript para las validaciones de esta pagina -->
-<script type="text/javascript" src="js/usuariosaj.js"></script>
+<script type="text/javascript" src="js/proveedor.js"></script>
 </body>
 </html>
