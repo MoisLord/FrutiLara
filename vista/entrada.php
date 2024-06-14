@@ -80,9 +80,9 @@ Pantalla de Entradas
 				    <th>X</th>
 					<th style="display:none">Id</th>
 					<th>Codigo</th>
-					<th>Nombre</th>
+					<th>Descripción</th>
 					<th>CANT</th>
-					<th>PVP</th>
+					<th>%</th>
 					<th>SUB TOT</th>
 				  </tr>
 				</thead>
@@ -112,8 +112,8 @@ Pantalla de Entradas
 		<thead>
 		  <tr>
 		    <th style="display:none">Id</th>
-			<th>Cedula</th>
-			<th>Nombre</th>
+			<th>Rif</th>
+			<th>Empresa</th>
 			<th>Telefono</th>
 			<th>Direccion</th>
 		  </tr>

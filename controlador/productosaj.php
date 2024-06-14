@@ -35,21 +35,21 @@ require_once("modelo/".$pagina.".php");
 			 echo  json_encode($o->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
-			 $o->set_cedula($_POST['cedula']); 
+			 $o->set_codigo($_POST['codigo']); 
 			 echo  json_encode($o->consultatr());  
 		  }
-		  /*elseif($accion=='obtienefecha'){
-			 echo json_encode($o->obtienefecha());
-		  }*/
+
 		  elseif($accion=='eliminar'){
-			 $o->set_cedula($_POST['cedula']);
+			 $o->set_codigo($_POST['codigo']);
 			 echo  json_encode($o->eliminar());
 		  }
 		  else{		  
-			  $o->set_cedula($_POST['cedula']);
-			  $o->set_nombre_apellido($_POST['nombre_apellido']);
-			  $o->set_ciudad($_POST['ciudad']);
-			  $o->set_telefono($_POST['telefono']);
+			  $o->set_codigo($_POST['codigo']);
+			  $o->set_nombre($_POST['nombre']);
+			  $o->set_tipo($_POST['tipo']);
+			  $o->set_minimo($_POST['minimo']);
+              $o->set_maximo($_POST['maximo']);
+              $o->set_porcentaje($_POST['porcentaje']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }
