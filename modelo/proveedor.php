@@ -41,7 +41,7 @@ class proveedor extends datos{
 		$this->Telefono = $valor;
 	}
 	function set_Direccion($valor){
-		$this->Direccion=$valor;
+		$this->direccion=$valor;
 	}
 	
 	//ahora la misma cosa pero para leer, es decir get
@@ -58,7 +58,7 @@ class proveedor extends datos{
 		return $this->Telefono;
 	}
 	function get_Direccion(){
-		return $this->Direccion;
+		return $this->direccion;
 	}
 	
 	
@@ -82,22 +82,22 @@ class proveedor extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("insert to proveedores(
+					$p = $co->prepare("insert into proveedores(
 						rif,
-						Nombre,
-						Telefono,
-						Direccion
+						nombre,
+						telefono,
+						direccion
 						)
 						values(
 						:rif,
-						:Nombre,
-						:Telefono,
-						:Direccion
+						:nombre,
+						:telefono,
+						:direccion
 						)");
 					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':Nombre',$this->Nombre);
-					$p->bindParam(':Telefono',$this->Telefono);	
-					$p->bindParam(':Direccion',$this->Direccion);	
+					$p->bindParam(':nombre',$this->Nombre);
+					$p->bindParam(':telefono',$this->Telefono);	
+					$p->bindParam(':direccion',$this->direccion);	
 					
 					$p->execute();
 					
@@ -127,16 +127,16 @@ class proveedor extends datos{
 		if($this->existe($this->rif)){
 			try {
 				$p = $co->prepare("update proveedores set
-						Nombre = :Nombre,
-						Telefono = :Telefono,
-						Direccion = :Direccion
+						nombre = :nombre,
+						telefono = :telefono,
+						direccion = :direccion
 						where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':Nombre',$this->Nombre);
-					$p->bindParam(':Telefono',$this->Telefono);	
-					$p->bindParam(':Direccion',$this->Direccion);	
+					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':telefono',$this->telefono);	
+					$p->bindParam(':direccion',$this->direccion);	
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -160,7 +160,7 @@ class proveedor extends datos{
 		if($this->existe($this->rif)){
 			try {
 					$p = $co->prepare("delete from proveedores 
-					    WHERE
+					    where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
@@ -205,7 +205,7 @@ class proveedor extends datos{
 							$respuesta = $respuesta.$r['Telefono'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['Direccion'];
+							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 				}

@@ -1,5 +1,6 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
+<<<<<<< HEAD:js/producto.js
     $("#codigo").on("keypress", function(e) {
         validarkeypress(/^[a-zA-Z0-9]*$/, e);
     });
@@ -13,6 +14,22 @@ $(document).ready(function(){
             enviaAjax(datos, 'consultatr');
         }
     });
+=======
+        $("#cedula").on("keypress",function(e){
+            validarkeypress(/^[0-9-\b]*$/,e);
+        });
+        
+        $("#cedula").on("keyup",function(){
+            validarkeyup(/^[0-9]{7,8}$/,$(this),
+            $("#scedula"),"El formato debe ser 9999999 ");
+            if($("#cedula").val().length > 7){
+              var datos = new FormData();
+                datos.append('accion','consultatr');
+                datos.append('cedula',$(this).val());
+                enviaAjax(datos,'consultatr');	
+            }
+        });
+>>>>>>> 3712c39374f413919ce66ed3a5cfe2ecd350e4d2:js/productosaj.js
         
         
         $("#nombre").on("keypress",function(e){

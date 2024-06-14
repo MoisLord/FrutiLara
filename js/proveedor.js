@@ -19,12 +19,20 @@ $(document).ready(function(){
         $("#Nombre").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
+        $("#Nombre").on("keyup",function(){
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+            $(this),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres");
+        });
         
         
         $("#Direccion").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
-    
+        $("#Direccion").on("keyup",function(){
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+            $(this),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres");
+        });
+        
         
     //FIN DE VALIDACION DE DATOS
     
