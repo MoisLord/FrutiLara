@@ -41,11 +41,7 @@ class proveedor extends datos{
 		$this->Telefono = $valor;
 	}
 	function set_Direccion($valor){
-<<<<<<< HEAD
 		$this->direccion=$valor;
-=======
-		$this->Direccion=$valor;
->>>>>>> 35e9043163e129a02503fab47476cb432b66403b
 	}
 	
 	//ahora la misma cosa pero para leer, es decir get
@@ -62,11 +58,7 @@ class proveedor extends datos{
 		return $this->Telefono;
 	}
 	function get_Direccion(){
-<<<<<<< HEAD
 		return $this->direccion;
-=======
-		return $this->Direccion;
->>>>>>> 35e9043163e129a02503fab47476cb432b66403b
 	}
 	
 	
@@ -92,7 +84,6 @@ class proveedor extends datos{
 				
 					$p = $co->prepare("insert into proveedores(
 						rif,
-<<<<<<< HEAD
 						nombre,
 						telefono,
 						direccion
@@ -107,22 +98,6 @@ class proveedor extends datos{
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
-=======
-						Nombre,
-						Telefono,
-						Direccion
-						)
-						values(
-						:rif,
-						:Nombre,
-						:Telefono,
-						:Direccion
-						)");
-					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':Nombre',$this->Nombre);
-					$p->bindParam(':Telefono',$this->Telefono);	
-					$p->bindParam(':Direccion',$this->Direccion);	
->>>>>>> 35e9043163e129a02503fab47476cb432b66403b
 					
 					$p->execute();
 					
@@ -152,28 +127,16 @@ class proveedor extends datos{
 		if($this->existe($this->rif)){
 			try {
 				$p = $co->prepare("update proveedores set
-<<<<<<< HEAD
 						nombre = :nombre,
 						telefono = :telefono,
 						direccion = :direccion
-=======
-						Nombre = :Nombre,
-						Telefono = :Telefono,
-						Direccion = :Direccion
->>>>>>> 35e9043163e129a02503fab47476cb432b66403b
 						where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
-<<<<<<< HEAD
 					$p->bindParam(':nombre',$this->nombre);
 					$p->bindParam(':telefono',$this->telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
-=======
-					$p->bindParam(':Nombre',$this->Nombre);
-					$p->bindParam(':Telefono',$this->Telefono);	
-					$p->bindParam(':Direccion',$this->Direccion);	
->>>>>>> 35e9043163e129a02503fab47476cb432b66403b
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
