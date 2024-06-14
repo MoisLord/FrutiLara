@@ -1,13 +1,12 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
     $("#codigo").on("keypress", function(e) {
-        validarkeypress(/^[a-zA-Z0-9\b]*$/, e);
+        validarkeypress(/^[a-zA-Z0-9]*$/, e);
     });
     
     $("#codigo").on("keyup", function() {
-        validarkeyup(/^[a-zA-Z0-9]{7,8}$/, $(this),
-            $("#scodigo"), "El formato debe ser alfanumérico de 7 u 8 caracteres");
-        if ($("#codigo").val().length > 7) {
+        validarkeyup(/^.{3,}$/, $(this), $("#scodigo"), "Formato alfanumérico minimo 3 caracteres");
+        if ($("#codigo").val().length > 0) {
             var datos = new FormData();
             datos.append('accion', 'consultatr');
             datos.append('codigo', $(this).val());
@@ -16,22 +15,37 @@ $(document).ready(function(){
     });
         
         
-        $("#nombre_apellido").on("keypress",function(e){
+        $("#nombre").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         
-        $("#nombre_apellido").on("keyup",function(){
+        $("#nombre").on("keyup",function(){
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#snombre_apellido"),"Solo letras  entre 3 y 30 caracteres");
+            $(this),$("#snombre"),"Solo letras  entre 3 y 30 caracteres");
         });
         
-        $("#ciudad").on("keypress",function(e){
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+        $("#minimo").on("keypress", function(e) {
+            validarkeypress(/^[0-9]*$/, e);
         });
         
-        $("#ciudad").on("keyup",function(){
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#sciudad"),"Solo letras  entre 3 y 30 caracteres");
+        $("#minimo").on("keyup", function() {
+            validarkeyup(/^[0-9]{3,}$/, $(this), $("#sminimo"), "Ingrese solamente números mínimo 3 caracteres");
+        });
+
+        $("#maximo").on("keypress", function(e) {
+            validarkeypress(/^[0-9]*$/, e);
+        });
+        
+        $("#maximo").on("keyup", function() {
+            validarkeyup(/^[0-9]{3,}$/, $(this), $("#smaximo"), "Ingrese solamente números mínimo 3 caracteres");
+        });
+
+        $("#porcentaje").on("keypress", function(e) {
+            validarkeypress(/^[0-9]*$/, e);
+        });
+        
+        $("#porcentaje").on("keyup", function() {
+            validarkeyup(/^[0-9]{3,}$/, $(this), $("#sporcentaje"), "Ingrese solamente números mínimo 3 caracteres");
         });
         
         
@@ -47,10 +61,12 @@ $(document).ready(function(){
         if(validarenvio()){
             var datos = new FormData();
             datos.append('accion','incluir');
-            datos.append('cedula',$("#cedula").val());
-            datos.append('nombre_apellido',$("#nombre_apellido").val());
-            datos.append('ciudad',$("#ciudad").val());
-            datos.append('telefono',$("#telefono").val());
+            datos.append('codigo',$("#codigo").val());
+            datos.append('nombre',$("#nombre").val());
+            datos.append('tipo',$("#tipo").val());
+            datos.append('minimo',$("#minimo").val());
+            datos.append('maximo',$("#maximo").val());
+            datos.append('porcentaje',$("#porcentaje").val());
             enviaAjax(datos);
         }
     });
@@ -59,10 +75,12 @@ $(document).ready(function(){
     
             var datos = new FormData();
             datos.append('accion','modificar');
-            datos.append('cedula',$("#cedula").val());
-            datos.append('nombre_apellido',$("#nombre_apellido").val());
-            datos.append('ciudad',$("#ciudad").val());
-            datos.append('telefono',$("#telefono").val());
+            datos.append('codigo',$("#codigo").val());
+            datos.append('nombre',$("#nombre").val());
+            datos.append('tipo',$("#tipo").val());
+            datos.append('minimo',$("#minimo").val());
+            datos.append('maximo',$("#maximo").val());
+            datos.append('porcentaje',$("#porcentaje").val());
             enviaAjax(datos);
             
         }
@@ -70,17 +88,16 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-            $("#scedula"),"El formato debe ser 9999999")==0){
-            muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
-                            "99999999");	
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
+            $("#scodigo"),"El codigo debe ser correcto")==0){
+            muestraMensaje("El codigo debe ser valido");	
             
         }
         else{	
             
             var datos = new FormData();
             datos.append('accion','eliminar');
-            datos.append('cedula',$("#cedula").val());
+            datos.append('codigo',$("#codigo").val());
             enviaAjax(datos);
         }
         
@@ -130,20 +147,29 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-            $("#scedula"),"El formato debe ser 9999999")==0){
-            muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
-                            "99999999");	
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
+            $("#scodigo"),"El formato debe ser Valido")==0){
+            muestraMensaje("El Codigo debe ser Valido");	
             return false;					
         }	
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("#nombre_apellido"),$("#snombre_apellido"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres");
+            $("#nombre"),$("#snombre"),"Minimo 3 caracter solamente letras")==0){
+            muestraMensaje("Nombre del Producto <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("ciudad"),$("#ciudad"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Ciudad donde reside <br/>Solo letras  entre 3 y 30 caracteres");
+            $("minimo"),$("#minimo"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("Minimo debe ser <br/>Solo letras  entre 3 y 30 caracteres");
+            return false;
+        }
+        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+            $("maximo"),$("#maximo"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("Maximo debe ser <br/>Solo letras  entre 3 y 30 caracteres");
+            return false;
+        }
+        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+            $("porcentaje"),$("#porcentaje"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("Porcentaje debe ser <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
         
@@ -196,10 +222,12 @@ $(document).ready(function(){
     
     //funcion para pasar de la lista a el formulario
     function coloca(linea){
-        $("#cedula").val($(linea).find("td:eq(0)").text());
-        $("#nombre_apellido").val($(linea).find("td:eq(1)").text());
-        $("#ciudad").val($(linea).find("td:eq(2)").text());
-        $("#telefono").val($(linea).find("td:eq(3)").text());
+        $("#codigo").val($(linea).find("td:eq(0)").text());
+        $("#nombre").val($(linea).find("td:eq(1)").text());
+        $("#tipo").val($(linea).find("td:eq(2)").text());
+        $("#minimo").val($(linea).find("td:eq(3)").text());
+        $("#maximo").val($(linea).find("td:eq(3)").text());
+        $("#porcentaje").val($(linea).find("td:eq(3)").text());
         
     }
     
@@ -230,8 +258,8 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#nombre_apellido").val(lee.mensaje[0][2]);
-                           $("#ciudad").val(lee.mensaje[0][3]);
+                           $("#nombre").val(lee.mensaje[0][2]);
+                           $("#tipo").val(lee.mensaje[0][3]);
                         }
                         else if (lee.resultado == "incluir" || 
                         lee.resultado == "modificar" || 
@@ -267,10 +295,12 @@ $(document).ready(function(){
     
     function limpia(){
         
-        $("#cedula").val("");
-        $("#nombre_apellido").val("");
-        $("#ciudad").val("");
-        $("#telefono").val("");
+        $("#codigo").val("");
+        $("#nombre").val("");
+        $("#tipo").val("");
+        $("#minimo").val("");
+        $("#maximo").val("");
+        $("#porcentaje").val("");
         
     }
     
