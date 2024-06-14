@@ -6,7 +6,7 @@ require_once('modelo/datos.php');
 
 class ventasht extends datos{
     
-	function facturar($id_cliente,$id_producto,$cantidad,$precio){
+	function facturar($id_clientes,$id_producto,$cantidad,$precio){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
@@ -53,7 +53,7 @@ class ventasht extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from cliente");
+			$resultado = $co->query("Select * from clientes");
 			
 			if($resultado){
 				
@@ -64,17 +64,18 @@ class ventasht extends datos{
 							$respuesta = $respuesta.$r['id_cliente'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['cedula_cliente'];
+							$respuesta = $respuesta.$r['cedula'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre_cliente'];
+							$respuesta = $respuesta.$r['nombre_apellido'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['telefono_cliente'];
+							$respuesta = $respuesta.$r['ciudad'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['direccion'];
+							$respuesta = $respuesta.$r['telefono'];
 						$respuesta = $respuesta."</td>";
+						
 					$respuesta = $respuesta."</tr>";
 				}
 				return $respuesta;
