@@ -24,7 +24,7 @@ Salida de Productos
 	<div class="row">
 		<div class="col-md-8">
 			   <button type="button" class="btn btn-primary" id="registrar" name="registrar">REGISTRAR</button>
-			   <button type="button" class="btn btn-primary" id="listadodeclientes" name="listadodeareaslistadodeclientes">LISTADO DE CLIENTES</button>
+			   <button type="button" class="btn btn-primary" id="listadodeclientes" name="listadodeclientes">LISTADO DE CLIENTES</button>
 			   <button type="button" class="btn btn-primary" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
