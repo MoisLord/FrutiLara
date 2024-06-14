@@ -1,7 +1,7 @@
 <div class= "col-12">
 <nav class="navbar bg-success fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">FRUTILARA</a>
+    <a class="navbar-brand" href="?pagina=principal">FRUTILARA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
