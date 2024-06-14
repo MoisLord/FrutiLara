@@ -82,13 +82,13 @@ class proveedor extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("INSERT TO proveedores(
+					$p = $co->prepare("insert to proveedores(
 						rif,
 						nombre,
 						telefono,
 						Direccion
 						)
-						Values(
+						values(
 						:rif,
 						:nombre,
 						:telefono,
@@ -126,7 +126,7 @@ class proveedor extends datos{
 		$r = array();
 		if($this->existe($this->rif)){
 			try {
-				$p = $co->prepare("UPDATE proveedores SET
+				$p = $co->prepare("update proveedores set
 						nombre = :nombre,
 						telefono = :telefono,
 						Direccion = :Direccion
@@ -159,7 +159,7 @@ class proveedor extends datos{
 		$r = array();
 		if($this->existe($this->rif)){
 			try {
-					$p = $co->prepare("DELETE From proveedores 
+					$p = $co->prepare("delete from proveedores 
 					    WHERE
 						rif = :rif
 						");
@@ -188,7 +188,7 @@ class proveedor extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("SELECT * FROM proveedores");
+			$resultado = $co->query("select * from proveedores");
 			
 			if($resultado){
 				
@@ -230,7 +230,7 @@ class proveedor extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("SELECT * FROM proveedores WHERE rif='$rif'");
+			$resultado = $co->query("select * from proveedores where rif='$rif'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -255,7 +255,7 @@ class proveedor extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("SELECT * FROM proveedores where rif='$this->rif'");
+			$resultado = $co->query("select * from proveedores where rif='$this->rif'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
