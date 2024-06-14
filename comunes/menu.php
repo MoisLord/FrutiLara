@@ -16,7 +16,7 @@
             <a class="nav-link active" aria-current="page" href="#">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Proveedores</a>
+            <a class="nav-link" href="?pagina=proveedor">Proveedores</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Clientes</a>
