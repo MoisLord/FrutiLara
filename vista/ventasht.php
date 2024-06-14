@@ -38,7 +38,7 @@ Pantalla de Entradas
 		<div class="col-md-8 input-group">
 		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
 		   <input class="form-control" type="text" id="idcliente" name="idcliente" style="display:none"/>
-		   <button type="button" class="btn btn-primary" id="listadodeclientes" name="listadodeclientes">LISTADO DE CLIENTES</button>
+		   <button type="button" class="btn btn-primary" id="listadodeclientes" name="listadodeclientes">LISTADO DE PROVEEDORES</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR CLIENTE -->
