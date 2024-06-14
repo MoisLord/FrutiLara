@@ -38,7 +38,7 @@ Pantalla de Entradas
 		<div class="col-md-8 input-group">
 		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
 		   <input class="form-control" type="text" id="idcliente" name="idcliente" style="display:none"/>
-		   <button type="button" class="btn btn-primary" id="listadodeclientes" name="listadodeclientes">LISTADO DE PROVEEDORES</button>
+		   <button type="button" class="btn btn-primary" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR CLIENTE -->
@@ -80,9 +80,9 @@ Pantalla de Entradas
 				    <th>X</th>
 					<th style="display:none">Id</th>
 					<th>Codigo</th>
-					<th>Nombre</th>
+					<th>Descripción</th>
 					<th>CANT</th>
-					<th>PVP</th>
+					<th>%</th>
 					<th>SUB TOT</th>
 				  </tr>
 				</thead>
@@ -98,11 +98,11 @@ Pantalla de Entradas
 </div> <!-- fin de container -->
 
 
-<!-- seccion del modal clientes -->
+<!-- seccion del modal proveedores -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-info">
-        <h5 class="modal-title">Listado de clientes</h5>
+        <h5 class="modal-title">Listado de proveedores</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -112,13 +112,13 @@ Pantalla de Entradas
 		<thead>
 		  <tr>
 		    <th style="display:none">Id</th>
-			<th>Cedula</th>
-			<th>Nombre</th>
+			<th>Rif</th>
+			<th>Empresa</th>
 			<th>Telefono</th>
 			<th>Direccion</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeclientes">
+		<tbody id="listadodeproveedores">
 		  <?php
 			if(!empty($consultaclientes)){
 				echo $consultaclientes;
