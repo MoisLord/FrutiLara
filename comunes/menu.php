@@ -1,11 +1,10 @@
 <div class= "col-12">
 <nav class="navbar text-light bg-success fixed-top">
   <div class="container-fluid">
-<<<<<<< HEAD
-    <a class="navbar-brand" href=".">FRUTILARA</a>
-=======
-    <a class="navbar-brand text-light" href="?pagina=principal">FRUTILARA</a>
->>>>>>> 570a664eca4ed8c5db1b02f6ee9d39232c08c7b3
+<!-- <<<<<<< HEAD -->
+    <a class="navbar-brand text-light" href=".">FRUTILARA</a>
+<!-- ======= -->
+<!-- >>>>>>> 570a664eca4ed8c5db1b02f6ee9d39232c08c7b3 -->
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
