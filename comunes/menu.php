@@ -25,7 +25,7 @@
             <a class="nav-link" href="?pagina=ventasht">Entrada</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Salida</a>
+            <a class="nav-link" href="?pagina=salida">Salida</a>
           </li>
         </ul>
       </div>
