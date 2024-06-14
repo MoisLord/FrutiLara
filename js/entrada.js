@@ -6,7 +6,7 @@ if($.trim($("#mensajes").text()) != ""){
 //Fin de seccion de mostrar envio en modal mensaje//	
 	
 //boton para levantar modal de clientes
-$("#listadodeclientes").on("click",function(){
+$("#listadodeproveedores").on("click",function(){
 	$("#modalclientes").modal("show");
 });
 
@@ -18,10 +18,10 @@ $("#listadodeproductos").on("click",function(){
 
 //evento keyup de input cedulacliente	
 $("#cedulacliente").on("keyup",function(){
-	var cedula = $(this).val();
+	var rif = $(this).val();
 	var encontro = false;
-	$("#listadodeclientes tr").each(function(){
-		if(cedula == $(this).find("td:eq(1)").text()){
+	$("#listadodeproveedores tr").each(function(){
+		if(rif == $(this).find("td:eq(1)").text()){
 			colocacliente($(this));
 			encontro = true;
 		} 
@@ -71,11 +71,11 @@ function verificaproductos(){
 
 //function para buscar si existe el cliente 
 function existecliente(){
-	var cedula = $("#cedulacliente").val();
+	var rif = $("#cedulacliente").val();
 	var existe = false;
-	$("#listadodeclientes tr").each(function(){
+	$("#listadodeproveedores tr").each(function(){
 		
-		if(cedula == $(this).find("td:eq(1)").text()){
+		if(rif == $(this).find("td:eq(1)").text()){
 			existe = true;
 		}
 	});

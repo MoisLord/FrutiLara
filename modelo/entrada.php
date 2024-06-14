@@ -48,12 +48,12 @@ class entrada extends datos{
 	}
 	
 	
-	function listadodeclientes(){
+	function listadodeproveedores(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from clientes");
+			$resultado = $co->query("Select * from proveedores");
 			
 			if($resultado){
 				
@@ -64,16 +64,16 @@ class entrada extends datos{
 							$respuesta = $respuesta.$r['id_cliente'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['cedula'];
+							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre_apellido'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['ciudad'];
+							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['telefono'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
 						
 					$respuesta = $respuesta."</tr>";
