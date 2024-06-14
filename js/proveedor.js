@@ -67,7 +67,7 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#rif"),
             $("#srif"),"El formato debe ser 9999999")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "99999999");	
