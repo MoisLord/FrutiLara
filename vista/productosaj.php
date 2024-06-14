@@ -32,8 +32,8 @@ REGISTRO DE PRODUCTOS
 
 		<div class="row"> 
     <div class="col-md-5">
-        <label for="tipo-producto">Tipo de Producto</label>
-        <select class="form-select" aria-label="Default select example" id="tipo-producto"> 
+        <label for="tipo">Tipo de Producto</label>
+        <select class="form-select" aria-label="Default select example" id="tipo"> 
             <option selected></option> 
             <option value="tipo">Viveres</option> 
             <option value="tipo">Hortalizas</option> 
@@ -127,8 +127,8 @@ REGISTRO DE PRODUCTOS
     </div>
   </div>
 </div>
-<!--fin de seccion modal-->
-<script type="text/javascript" src="js/productosaj.js"></script>
+
+<script type="text/javascript" src="js/producto.js"></script>
 
 </body>
 </html>
