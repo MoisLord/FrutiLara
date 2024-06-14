@@ -1,7 +1,7 @@
 <?php
-class datos{
+class dato{
 	private $ip = "localhost";
-    private $bd = "protofrutilara";
+    private $bd = "clase17";
     private $usuario = "root";
     private $contrasena = "";
    

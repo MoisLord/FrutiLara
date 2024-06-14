@@ -19,7 +19,7 @@
             <a class="nav-link" href="?pagina=proveedor">Proveedores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Clientes</a>
+            <a class="nav-link" href="?pagina=clientes">Clientes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?pagina=ventasht">Entrada</a>
