@@ -96,9 +96,9 @@ REGISTRO DE PRODUCTOS
 <!-- seccion del modal -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
-        <h5 class="modal-title">CLIENTES REGISTRADOS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">PRODUCTOS REGISTRADOS</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -107,10 +107,12 @@ REGISTRO DE PRODUCTOS
 		<table class="table table-striped table-hover" id="tablaclientes">
 		<thead>
 		  <tr>
-			<th>codigo</th>
-			<th>Nombre y Apellido</th>
-			<th>Ciudad donde vive</th>
-			<th>Teléfono</th>
+			<th>Codigo Producto</th>
+			<th>Nombre Producto</th>
+			<th>Tipo de Productos</th>
+			<th>Minimo</th>
+			<th>Maximo</th>
+			<th>Porcentaje</th>
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
