@@ -21,7 +21,7 @@ require_once("modelo/".$pagina.".php");
 	  //para poderlos usar
 	  
 	  
-	  $o = new clientes(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
+	  $o = new productosaj(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
 	  //clase personasht
 	  
 	  if(!empty($_POST)){
