@@ -1,37 +1,40 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
-        $("#rif").on("keypress",function(e){
+        $("#cedula").on("keypress",function(e){
             validarkeypress(/^[0-9-\b]*$/,e);
         });
         
-        $("#rif").on("keyup",function(){
+        $("#cedula").on("keyup",function(){
             validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#srif"),"El formato debe ser 9999999 ");
-            if($("#rif").val().length > 7){
+            $("#scedula"),"El formato debe ser 9999999 ");
+            if($("#cedula").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
-                datos.append('rif',$(this).val());
+                datos.append('cedula',$(this).val());
                 enviaAjax(datos,'consultatr');	
             }
         });
         
         
-        $("#Nombre").on("keypress",function(e){
+        $("#nombre_apellido").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
-        $("#Nombre").on("keyup",function(){
+        
+        $("#nombre_apellido").on("keyup",function(){
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres");
+            $(this),$("#snombre_apellido"),"Solo letras  entre 3 y 30 caracteres");
+        });
+        
+        $("#ciudad").on("keypress",function(e){
+            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+        });
+        
+        $("#ciudad").on("keyup",function(){
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+            $(this),$("#sciudad"),"Solo letras  entre 3 y 30 caracteres");
         });
         
         
-        $("#Direccion").on("keypress",function(e){
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
-        });
-        $("#Direccion").on("keyup",function(){
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres");
-        });
         
         
     //FIN DE VALIDACION DE DATOS
@@ -44,10 +47,10 @@ $(document).ready(function(){
         if(validarenvio()){
             var datos = new FormData();
             datos.append('accion','incluir');
-            datos.append('rif',$("#rif").val());
-            datos.append('Nombre',$("#Nombre").val());
-            datos.append('Telefono',$("#Telefono").val());
-            datos.append('Direccion',$("#Direccion").val());
+            datos.append('cedula',$("#cedula").val());
+            datos.append('nombre_apellido',$("#nombre_apellido").val());
+            datos.append('ciudad',$("#ciudad").val());
+            datos.append('telefono',$("#telefono").val());
             enviaAjax(datos);
         }
     });
@@ -56,10 +59,10 @@ $(document).ready(function(){
     
             var datos = new FormData();
             datos.append('accion','modificar');
-            datos.append('rif',$("#rif").val());
-            datos.append('Nombre',$("#Nombre").val());
-            datos.append('Telefono',$("#Telefono").val());
-            datos.append('Direccion',$("#Direccion").val());
+            datos.append('cedula',$("#cedula").val());
+            datos.append('nombre_apellido',$("#nombre_apellido").val());
+            datos.append('ciudad',$("#ciudad").val());
+            datos.append('telefono',$("#telefono").val());
             enviaAjax(datos);
             
         }
@@ -68,8 +71,8 @@ $(document).ready(function(){
     $("#eliminar").on("click",function(){
         
         if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-            $("#srif"),"El formato debe ser 9999999")==0){
-            muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
+            $("#scedula"),"El formato debe ser 9999999")==0){
+            muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
                             "99999999");	
             
         }
@@ -77,7 +80,7 @@ $(document).ready(function(){
             
             var datos = new FormData();
             datos.append('accion','eliminar');
-            datos.append('rif',$("#rif").val());
+            datos.append('cedula',$("#cedula").val());
             enviaAjax(datos);
         }
         
@@ -96,14 +99,14 @@ $(document).ready(function(){
     //funcion para enlazar al DataTablet
     function destruyeDT(){
         //1 se destruye el datatablet
-        if ($.fn.DataTable.isDataTable("#tablaproveedores")) {
-                $("#tablaproveedores").DataTable().destroy();
+        if ($.fn.DataTable.isDataTable("#tablaclientes")) {
+                $("#tablaclientes").DataTable().destroy();
         }
     }
     function crearDT(){
         //se crea nuevamente
-        if (!$.fn.DataTable.isDataTable("#tablaproveedores")) {
-                $("#tablaproveedores").DataTable({
+        if (!$.fn.DataTable.isDataTable("#tablaclientes")) {
+                $("#tablaclientes").DataTable({
                   language: {
                     lengthMenu: "Mostrar _MENU_ por página",
                     zeroRecords: "No se encontraron personas",
@@ -127,22 +130,22 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#rif"),
-            $("#srif"),"El formato debe ser 9999999")==0){
-            muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
+            $("#scedula"),"El formato debe ser 9999999")==0){
+            muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
                             "99999999");	
             return false;					
         }	
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("#Nombre"),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
+            $("#nombre_apellido"),$("#snombre_apellido"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-        $("#Direccion"),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres")==0){
-        muestraMensaje("Direccion donde reside <br/>Solo letras  entre 3 y 30 caracteres");
-        return false;
-    }
+            $("ciudad"),$("#ciudad"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("Ciudad donde reside <br/>Solo letras  entre 3 y 30 caracteres");
+            return false;
+        }
         
         return true;
     }
@@ -193,10 +196,10 @@ $(document).ready(function(){
     
     //funcion para pasar de la lista a el formulario
     function coloca(linea){
-        $("#rif").val($(linea).find("td:eq(0)").text());
-        $("#Nombre").val($(linea).find("td:eq(1)").text());
-        $("#Telefono").val($(linea).find("td:eq(2)").text());
-        $("#Direccion").val($(linea).find("td:eq(3)").text());
+        $("#cedula").val($(linea).find("td:eq(0)").text());
+        $("#nombre_apellido").val($(linea).find("td:eq(1)").text());
+        $("#ciudad").val($(linea).find("td:eq(2)").text());
+        $("#telefono").val($(linea).find("td:eq(3)").text());
         
     }
     
@@ -227,9 +230,8 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#Nombre").val(lee.mensaje[0][2]);
-                           $("#Direccion").val(lee.mensaje[0][3]);
-                           
+                           $("#nombre_apellido").val(lee.mensaje[0][2]);
+                           $("#ciudad").val(lee.mensaje[0][3]);
                         }
                         else if (lee.resultado == "incluir" || 
                         lee.resultado == "modificar" || 
@@ -265,10 +267,10 @@ $(document).ready(function(){
     
     function limpia(){
         
-        $("#rif").val("");
-        $("#Nombre").val("");
-        $("#Telefono").val("");
-        $("#Direccion").val("");
+        $("#cedula").val("");
+        $("#nombre_apellido").val("");
+        $("#ciudad").val("");
+        $("#telefono").val("");
         
     }
     

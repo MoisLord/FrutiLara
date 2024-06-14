@@ -13,14 +13,15 @@
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once("comunes/menu.php"); ?>
 <div class="container text-center h2 text-primary">
+<hr/>	
 Salida de Productos
 <hr/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
-<div class="container
-    <!-- FILA DE BOTONES -->
+<div class="container">
+
 	<div class="row">
 		<div class="col-md-8">
 			   <button type="button" class="btn btn-primary" id="registrar" name="registrar">REGISTRAR</button>
@@ -118,10 +119,10 @@ Salida de Productos
 			<th>Codigo del Producto</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeareas">
+		<tbody id="listadodeclientes">
 		  <?php
-			if(!empty($consultaareas)){
-				echo $consultaareas;
+			if(!empty($consultaclientes)){
+				echo $consultaclientes;
 			}
 		  ?>
 		</tbody>
@@ -154,10 +155,10 @@ Salida de Productos
 			<th>Fecha</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeequipo">
+		<tbody id="listadodeproductos">
 		  <?php
-			if(!empty($consultaequipo)){
-				echo $consultaequipo;
+			if(!empty($consultaproductos)){
+				echo $consultaproductos;
 			}
 		  ?>
 		</tbody>

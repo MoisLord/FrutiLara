@@ -32,20 +32,21 @@ REGISTRO DE PRODUCTOS
 
 		<div class="row"> 
     <div class="col-md-5">
-        <label for="tipo-producto">Tipo de Producto</label>
-        <select class="form-select" aria-label="Default select example" id="tipo-producto"> 
+        <label for="tipo">Tipo de Producto</label>
+        <select class="form-select" aria-label="Default select example" id="tipo"> 
             <option selected></option> 
-            <option value="1">Viveres</option> 
-            <option value="2">Hortalizas</option> 
-            <option value="3">Frutas</option> 
-            <option value="3">Charcuteria</option> 
-            <option value="3">Bebidas</option> 
-            <option value="3">Empaquetados</option> 
+            <option value="tipo">Viveres</option> 
+            <option value="tipo">Hortalizas</option> 
+            <option value="tipo">Frutas</option> 
+            <option value="tipo">Charcuteria</option> 
+            <option value="tipo">Bebidas</option> 
+            <option value="tipo">Empaquetados</option> 
         </select> 
     </div> 
     <div class="col-md-7">
         <label for="minimo">Mínimo</label>
         <input class="form-control" type="text" id="minimo" name="minimo"/>
+		<span id="sminimo"></span>
     </div>
 </div>
 
@@ -126,8 +127,8 @@ REGISTRO DE PRODUCTOS
     </div>
   </div>
 </div>
-<!--fin de seccion modal-->
-<script type="text/javascript" src="js/clientes.js"></script>
+
+<script type="text/javascript" src="js/producto.js"></script>
 
 </body>
 </html>

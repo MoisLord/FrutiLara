@@ -26,7 +26,7 @@ require_once("modelo/".$pagina.".php");
 		$mensaje = $o->facturar($_POST['idcliente'],$_POST['idp'],$_POST['cant'],$_POST['pvp']);
 		 
 	  }
-	  $consultaclientes = $o->listadodeclientes();
+	  $consultaclientes = $o->listadodeproveedores();
 	  $consultaproductos = $o->listadodeproductos();
 	  require_once("vista/".$pagina.".php"); 
   }

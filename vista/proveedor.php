@@ -1,5 +1,8 @@
 <html> 
 <?php require_once("comunes/encabezado.php"); ?>
+<body>
+<!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
+<?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <body>
 <div class="container-fluid p-0">
@@ -25,8 +28,8 @@
 		   <span id="sNombre"></span>
 		</div>
 		<div class="col">
-		   <label for="telefono">Telefono</label>
-		   <input class="form-control" type="text" id="Telefono" name="telefono" />
+		   <label for="Telefono">Telefono</label>
+		   <input class="form-control" type="text" id="Telefono" name="Telefono" />
 		   <span id="sTelefono"></span>
 		</div>
 		<div class="col">
@@ -47,8 +50,7 @@
 			   <button type="button" class="btn btn-primary" id="incluir" name="incluir">INCLUIR</button>
 		</div>
 		<div class="col">	
-			   <button type="button" class="btn btn-primary" id="consultar" 
-			   data-toggle="modal" data-target="#modal1" name="consultar">CONSULTAR</button>
+			   <button type="button" class="btn btn-primary" id="consultar"name="consultar">CONSULTAR</button>
 		</div>
 		<div class="col">	
 			   <button type="button" class="btn btn-primary" id="modificar" name="modificar">MODIFICAR</button>
@@ -66,36 +68,25 @@
 <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-info">
-        <h5 class="modal-title">Listado de Usuarios</h5>
+        <h5 class="modal-title">Proveedores Registrados</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-content">
-		<table class="table table-striped table-hover">
+	    <!--se agrega un id para poder enlazar con el datatablet--> 
+		<table class="table table-striped table-hover" id="tablaproveedores">
 		<thead>
 		  <tr>
-			<th>Cedula</th>
-			<th>Usuario</th>
-			<th>Clave</th>
+			<th>Rif</th>
+			<th>Nombre del proveedor</th>
+			<th>Telefono</th>
+			<th>Direccion</th>
 		  </tr>
 		</thead>
-		<tbody>
-		  <tr>
-			<td>12345678</td>
-			<td>Pedro</td>
-			<td>******</td>
-		  </tr>
-		  <tr>
-			<td>77777777</td>
-			<td>Maria</td>
-			<td>*******</td>
-		  </tr>
-		  <tr>
-			<td>99999999</td>
-			<td>Tanos</td>
-			<td>*******</td>
-		  </tr>
+		<tbody id="resultadoconsulta">
+		  
+		  
 		</tbody>
 		</table>
     </div>

@@ -20,7 +20,7 @@ class proveedor extends datos{
 	private $rif; //recuerden que en php, las variables no tienen tipo predefinido
 	private $Nombre;
 	private $Telefono;
-	private $direccion;
+	private $Direccion;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
@@ -29,7 +29,7 @@ class proveedor extends datos{
 		$this->rif = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 		//a un elemento de this, es decir esta clase
-		//luego el nombre del elemento sin el $
+		//luego el Nombre del elemento sin el $
 	}
 	//lo mismo que se hizo para cedula se hace para usuario y clave
 	
@@ -37,10 +37,10 @@ class proveedor extends datos{
 		$this->Nombre = $valor;
 	}
 	
-	function set_telefono($valor){
+	function set_Telefono($valor){
 		$this->Telefono = $valor;
 	}
-	function set_direccion($valor){
+	function set_Direccion($valor){
 		$this->direccion=$valor;
 	}
 	
@@ -57,7 +57,7 @@ class proveedor extends datos{
 	function get_Telefono(){
 		return $this->Telefono;
 	}
-	function get_direccion(){
+	function get_Direccion(){
 		return $this->direccion;
 	}
 	
@@ -82,22 +82,22 @@ class proveedor extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("INSERT TO proveedores(
+					$p = $co->prepare("insert into proveedores(
 						rif,
 						nombre,
 						telefono,
-						Direccion
+						direccion
 						)
-						Values(
+						values(
 						:rif,
 						:nombre,
 						:telefono,
-						:Direccion
+						:direccion
 						)");
 					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':telefono',$this->telefono);	
-					$p->bindParam(':Direccion',$this->direccion);	
+					$p->bindParam(':nombre',$this->Nombre);
+					$p->bindParam(':telefono',$this->Telefono);	
+					$p->bindParam(':direccion',$this->direccion);	
 					
 					$p->execute();
 					
@@ -126,17 +126,17 @@ class proveedor extends datos{
 		$r = array();
 		if($this->existe($this->rif)){
 			try {
-				$p = $co->prepare("UPDATE proveedores SET
+				$p = $co->prepare("update proveedores set
 						nombre = :nombre,
 						telefono = :telefono,
-						Direccion = :Direccion
+						direccion = :direccion
 						where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->nombre);
 					$p->bindParam(':telefono',$this->telefono);	
-					$p->bindParam(':Direccion',$this->direccion);	
+					$p->bindParam(':direccion',$this->direccion);	
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -159,8 +159,8 @@ class proveedor extends datos{
 		$r = array();
 		if($this->existe($this->rif)){
 			try {
-					$p = $co->prepare("DELETE From proveedores 
-					    WHERE
+					$p = $co->prepare("delete from proveedores 
+					    where
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
@@ -188,7 +188,7 @@ class proveedor extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("SELECT * FROM proveedores");
+			$resultado = $co->query("select * from proveedores");
 			
 			if($resultado){
 				
@@ -199,14 +199,15 @@ class proveedor extends datos{
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre'];
+							$respuesta = $respuesta.$r['Nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['telefono'];
+							$respuesta = $respuesta.$r['Telefono'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['Direccion'];
+							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
 				}
 				$r['resultado'] = 'consultar';
 				$r['mensaje'] =  $respuesta;
@@ -230,7 +231,7 @@ class proveedor extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("SELECT * FROM proveedores WHERE rif='$rif'");
+			$resultado = $co->query("select * from proveedores where rif='$rif'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -255,7 +256,7 @@ class proveedor extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("SELECT * FROM proveedores where rif='$this->rif'");
+			$resultado = $co->query("select * from proveedores where rif='$this->rif'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
