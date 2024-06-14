@@ -1,55 +1,37 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
-    $("#codigo").on("keypress", function(e) {
-        validarkeypress(/^[a-zA-Z0-9]*$/, e);
-    });
-    
-    $("#codigo").on("keyup", function() {
-        validarkeyup(/^.{3,}$/, $(this), $("#scodigo"), "Formato alfanumérico minimo 3 caracteres");
-        if ($("#codigo").val().length > 0) {
-            var datos = new FormData();
-            datos.append('accion', 'consultatr');
-            datos.append('codigo', $(this).val());
-            enviaAjax(datos, 'consultatr');
-        }
-    });
-
+        $("#codigo").on("keypress",function(e){
+            validarkeypress(/^[0-9-\b]*$/,e);
+        });
+        
+        $("#codigo").on("keyup",function(){
+            validarkeyup(/^[0-9]{7,8}$/,$(this),
+            $("#scodigo"),"El Formato Debe Ser Numerico ");
+            if($("#codigo").val().length > 7){
+              var datos = new FormData();
+                datos.append('accion','consultatr');
+                datos.append('codigo',$(this).val());
+                enviaAjax(datos,'consultatr');	
+            }
+        });
         
         
         $("#nombre").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
-        
         $("#nombre").on("keyup",function(){
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
             $(this),$("#snombre"),"Solo letras  entre 3 y 30 caracteres");
         });
         
-        $("#minimo").on("keypress", function(e) {
-            validarkeypress(/^[0-9]*$/, e);
-        });
         
-        $("#minimo").on("keyup", function() {
-            validarkeyup(/^[0-9]{3,}$/, $(this), $("#sminimo"), "Ingrese solamente números mínimo 3 caracteres");
+        $("#minimo").on("keypress",function(e){
+            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
-
-        $("#maximo").on("keypress", function(e) {
-            validarkeypress(/^[0-9]*$/, e);
+        $("#minimo").on("keyup",function(){
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+            $(this),$("#sminimo"),"Solo letras  entre 3 y 30 caracteres");
         });
-        
-        $("#maximo").on("keyup", function() {
-            validarkeyup(/^[0-9]{3,}$/, $(this), $("#smaximo"), "Ingrese solamente números mínimo 3 caracteres");
-        });
-
-        $("#porcentaje").on("keypress", function(e) {
-            validarkeypress(/^[0-9]*$/, e);
-        });
-        
-        $("#porcentaje").on("keyup", function() {
-            validarkeyup(/^[0-9]{3,}$/, $(this), $("#sporcentaje"), "Ingrese solamente números mínimo 3 caracteres");
-        });
-        
-        
         
         
     //FIN DE VALIDACION DE DATOS
@@ -90,8 +72,9 @@ $(document).ready(function(){
     $("#eliminar").on("click",function(){
         
         if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
-            $("#scodigo"),"El codigo debe ser correcto")==0){
-            muestraMensaje("El codigo debe ser valido");	
+            $("#scodigo"),"El formato debe ser Numerico")==0){
+            muestraMensaje("El Codigo debe coincidir con el formato <br/>"+ 
+                            "99999999");	
             
         }
         else{	
@@ -149,30 +132,21 @@ $(document).ready(function(){
     //Validación de todos los campos antes del envio
     function validarenvio(){
         if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
-            $("#scodigo"),"El formato debe ser Valido")==0){
-            muestraMensaje("El Codigo debe ser Valido");	
+            $("#scodigo"),"El formato debe ser Numerico")==0){
+            muestraMensaje("El codigo debe coincidir con el formato <br/>"+ 
+                            "99999999");	
             return false;					
         }	
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("#nombre"),$("#snombre"),"Minimo 3 caracter solamente letras")==0){
-            muestraMensaje("Nombre del Producto <br/>Solo letras  entre 3 y 30 caracteres");
+            $("#nombre"),$("#snombre"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("minimo"),$("#minimo"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Minimo debe ser <br/>Solo letras  entre 3 y 30 caracteres");
-            return false;
-        }
-        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("maximo"),$("#maximo"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Maximo debe ser <br/>Solo letras  entre 3 y 30 caracteres");
-            return false;
-        }
-        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("porcentaje"),$("#porcentaje"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Porcentaje debe ser <br/>Solo letras  entre 3 y 30 caracteres");
-            return false;
-        }
+        $("#minimo"),$("#sminimo"),"Solo letras  entre 3 y 30 caracteres")==0){
+        muestraMensaje("Mireccion donde reside <br/>Solo letras  entre 3 y 30 caracteres");
+        return false;
+    }
         
         return true;
     }
@@ -259,8 +233,9 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#codigo").val(lee.mensaje[0][2]);
-                           $("#nombre").val(lee.mensaje[0][3]);
+                           $("#nombre").val(lee.mensaje[0][2]);
+                           $("#minimo").val(lee.mensaje[0][3]);
+                           
                         }
                         else if (lee.resultado == "incluir" || 
                         lee.resultado == "modificar" || 
@@ -304,4 +279,3 @@ $(document).ready(function(){
         $("#porcentaje").val("");
         
     }
-    

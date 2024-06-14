@@ -35,12 +35,12 @@ REGISTRO DE PRODUCTOS
         <label for="tipo">Tipo de Producto</label>
         <select class="form-select" aria-label="Default select example" id="tipo"> 
             <option selected></option> 
-            <option value="tipo">Viveres</option> 
-            <option value="tipo">Hortalizas</option> 
-            <option value="tipo">Frutas</option> 
-            <option value="tipo">Charcuteria</option> 
-            <option value="tipo">Bebidas</option> 
-            <option value="tipo">Empaquetados</option> 
+            <option value="Viveres">Viveres</option> 
+            <option value="Hortalizas">Hortalizas</option> 
+            <option value="Frutas">Frutas</option> 
+            <option value="Charcuteria">Charcuteria</option> 
+            <option value="Bebidas">Bebidas</option> 
+            <option value="Empaquetados">Empaquetados</option> 
         </select> 
     </div> 
     <div class="col-md-7">
