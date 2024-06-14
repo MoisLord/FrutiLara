@@ -18,7 +18,7 @@ require_once("modelo/".$pagina.".php");
 	  
 	  
 	  
-	  $o = new ventasht(); 
+	  $o = new entrada(); 
 	  
 	  if(!empty($_POST)){
 		  

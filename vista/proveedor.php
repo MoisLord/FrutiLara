@@ -11,6 +11,7 @@
 <hr/>
 </div>
 <<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
+	<form method="post" id="f" autocomplete="off">
     <div class="row">
 		<div class="col">
 		   <label for="cedula">rif</label>
@@ -54,6 +55,7 @@
 			   <a href="." class="btn btn-primary">REGRESAR</a>
 		</div>
 	</div>
+	</form>
 </div> <!-- fin de container -->
 <!-- seccion del modal -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
