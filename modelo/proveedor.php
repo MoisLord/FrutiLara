@@ -134,8 +134,8 @@ class proveedor extends datos{
 						rif = :rif
 						");
 					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':telefono',$this->telefono);	
+					$p->bindParam(':nombre',$this->Nombre);
+					$p->bindParam(':telefono',$this->Telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
 					$p->execute();
 					
@@ -199,15 +199,15 @@ class proveedor extends datos{
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['Nombre'];
+							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['Telefono'];
+							$respuesta = $respuesta.$r['telefono'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
+						$respuesta = $respuesta."</td>";
 				}
 				$r['resultado'] = 'consultar';
 				$r['mensaje'] =  $respuesta;
