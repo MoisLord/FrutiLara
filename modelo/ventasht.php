@@ -4,7 +4,7 @@ require_once('modelo/datos.php');
 
 
 
-class ventasht extends datos{
+class ventasht extends dato{
     
 	function facturar($id_cliente,$id_producto,$cantidad,$precio){
 		$co = $this->conecta();
