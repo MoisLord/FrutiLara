@@ -120,8 +120,8 @@ Pantalla de Entradas
 		</thead>
 		<tbody id="listadodeproveedores">
 		  <?php
-			if(!empty($cosultaproveedores)){
-				echo $cosultaproveedores;
+			if(!empty($consultaproveedores)){
+				echo $consultaproveedores;
 			}
 		  ?>
 		</tbody>

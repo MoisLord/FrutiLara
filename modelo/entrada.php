@@ -6,14 +6,14 @@ require_once('modelo/datos.php');
 
 class entrada extends datos{
     
-	function facturar($codigo_ingreso,$id_producto,$cantidad,$precio){
+	function facturar($id_cliente,$id_producto,$cantidad,$precio){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 		   $fecha = date('Y-m-d');
-		   $guarda = $co->query("insert into ingreso_producto(fecha_entrega,
-		   codigo_ingreso) 
-		   values ('$fecha','$codigo_ingreso')");
+		   $guarda = $co->query("insert into factura(fecha_factura,
+		   id_cliente) 
+		   values ('$fecha','$id_cliente')");
 		   $lid = $co->lastInsertId(); //retorna el valor del campo
 		   //autoincremental
 		   
