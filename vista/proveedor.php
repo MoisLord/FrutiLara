@@ -13,7 +13,7 @@
 	PROVEEDORES
 <hr class="border border-success border-3 opacity-65">
 </div>
-<<div class="container"> 
+<div class="container"> 
 	<form method="post" id="f" autocomplete="off">
     <div class="row">
 		<div class="col">
