@@ -15,7 +15,7 @@
 <hr/>
 <hr/>
 <hr/>
-<div class="container text-center h2 text-primary">
+<div class="container text-center h2 text-success">
 Salida de Productos
 <hr/>
 </div>

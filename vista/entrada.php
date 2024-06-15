@@ -13,7 +13,7 @@
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <hr/>
-<div class="container text-center h2 text-primary">
+<div class="container text-center h2 text-success">
 Pantalla de Entradas
 <hr/>
 </div>
