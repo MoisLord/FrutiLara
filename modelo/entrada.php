@@ -11,7 +11,7 @@ class entrada extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 		   $fecha = date('Y-m-d');
-		   $guarda = $co->query("insert into factura(fecha_factura,
+		   $guarda = $co->query("insert into ingreso_producto(fecha_entrega,
 		   id_cliente) 
 		   values ('$fecha','$id_cliente')");
 		   $lid = $co->lastInsertId(); //retorna el valor del campo

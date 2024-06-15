@@ -12,6 +12,9 @@
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once("comunes/menu.php"); ?>
+<hr/>
+<hr/>
+<hr/>
 <div class="container text-center h2 text-primary">
 Salida de Productos
 <hr/>
@@ -19,7 +22,7 @@ Salida de Productos
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
-<div class="container
+<div class="container">
     <!-- FILA DE BOTONES -->
 	<div class="row">
 		<div class="col-md-8">

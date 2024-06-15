@@ -24,7 +24,7 @@ Pantalla de Entradas
     <!-- FILA DE BOTONES -->
 	<div class="row">
 		<div class="col-md-4">
-			   <button type="button" class="btn btn-primary" id="facturar" name="facturar">INGRESAR</button>
+			   <button type="button" class="btn btn-success" id="facturar" name="facturar">INGRESAR</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA BOTONES -->
@@ -38,7 +38,7 @@ Pantalla de Entradas
 		<div class="col-md-8 input-group">
 		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
 		   <input class="form-control" type="text" id="idproveedor" name="idproveedor" style="display:none"/>
-		   <button type="button" class="btn btn-primary" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
+		   <button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR CLIENTE -->
@@ -62,7 +62,7 @@ Pantalla de Entradas
 		<div class="col-md-8 input-group">
 		   <input class="form-control" type="text" id="codigoproducto" name="codigoproducto" />
 		   <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
-		   <button type="button" class="btn btn-primary" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
+		   <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
