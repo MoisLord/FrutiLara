@@ -129,7 +129,7 @@ function colocaproducto(linea){
 					$(linea).find("td:eq(6)").text()+
 		   `</td>
 		   <td>`+
-					redondearDecimales($(linea).find("td:eq(7)").text()*1,2)+
+					redondearDecimales($(linea).find("td:eq(6)").text()*1,2)+
 		   `</td>
 		   </tr>`;
 		$("#detalledeventa").append(l);
