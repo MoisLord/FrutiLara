@@ -29,7 +29,7 @@
             <a class="nav-link text-light" href="?pagina=entrada">Entrada</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="?pagina=salida_producto">Salida</a>
+            <a class="nav-link text-light" href="?pagina=salida">Salida</a>
           </li>
         </ul>
       </div>
