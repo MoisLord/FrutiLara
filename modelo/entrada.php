@@ -100,6 +100,9 @@ class entrada extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaproducto(this);'>";
+					$respuesta = $respuesta."<td style='display:none'>";
+							$respuesta = $respuesta.$r['id_producto'];
+						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo'];
 						$respuesta = $respuesta."</td>";
