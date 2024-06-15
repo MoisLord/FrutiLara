@@ -4,12 +4,12 @@
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
-<div class="container text-center h2 text-primary">
+<div class="container text-center h2 text-success">
 <hr/>
 <hr/>
 <hr/>
 REGISTRO DE CLIENTES
-<hr/>
+<hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form method="post" id="f" autocomplete="off">
@@ -77,7 +77,7 @@ REGISTRO DE CLIENTES
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-info">
         <h5 class="modal-title">CLIENTES REGISTRADOS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
