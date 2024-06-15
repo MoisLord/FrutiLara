@@ -14,8 +14,8 @@
 <?php require_once('comunes/menu.php'); ?>
 <hr/>
 <div class="container text-center h2 text-success">
-Pantalla de Entradas
-<hr/>
+PANTALLA DE ENTRADAS
+<hr class="border border-success border-3 opacity-65"/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
@@ -30,7 +30,7 @@ Pantalla de Entradas
 	<!-- FIN DE FILA BOTONES -->
 	<div class="row">
 		<div class="col">
-			<hr/>
+			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
 	<!-- FILA DE INPUT Y BUSCAR CLIENTE -->
@@ -68,7 +68,7 @@ Pantalla de Entradas
 	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
 	<div class="row">
 		<div class="col">
-			<hr/>
+			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
 	<!-- FILA DE DETALLES DE LA VENTA -->
@@ -101,9 +101,9 @@ Pantalla de Entradas
 <!-- seccion del modal proveedores -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
+    <div class="modal-header text-light bg-success">
         <h5 class="modal-title">Listado de proveedores</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -137,9 +137,9 @@ Pantalla de Entradas
 <!-- seccion del modal productos -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalproductos">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
+    <div class="modal-header text-light bg-success">
         <h5 class="modal-title">Listado de productos</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>

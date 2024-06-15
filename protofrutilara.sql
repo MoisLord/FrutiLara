@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2024 a las 21:39:13
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 15-06-2024 a las 04:51:44
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`cedula`, `nombre_apellido`, `ciudad`, `telefono`) VALUES
-('30405571', 'Moises Contreras', 'barquismeto', '04120483397');
+('29896041', 'Adrian Duin', 'Barquisimeto', '04245550211');
 
 -- --------------------------------------------------------
 
@@ -48,8 +48,10 @@ INSERT INTO `clientes` (`cedula`, `nombre_apellido`, `ciudad`, `telefono`) VALUE
 --
 
 CREATE TABLE `ingreso_producto` (
+  `codigo_ingreso` int(11) NOT NULL,
   `rif_proveedor` varchar(50) NOT NULL,
   `codigo_producto` int(50) NOT NULL,
+  `cantidad` varchar(30) NOT NULL,
   `cifra` varchar(30) NOT NULL,
   `fecha_entrega` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -64,9 +66,17 @@ CREATE TABLE `producto` (
   `codigo` int(50) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `tipo` varchar(15) NOT NULL,
-  `cifra` varchar(30) NOT NULL,
-  `precio` varchar(30) NOT NULL
+  `minimo` varchar(50) NOT NULL,
+  `maximo` varchar(50) NOT NULL,
+  `porcentaje` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`codigo`, `nombre`, `tipo`, `minimo`, `maximo`, `porcentaje`) VALUES
+(1234567, 'Zarahoria', 'Hortalizas', '20', '700', '12');
 
 -- --------------------------------------------------------
 
@@ -86,7 +96,7 @@ CREATE TABLE `proveedores` (
 --
 
 INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
-('30405571', 'Moises', '04120483397', 'pueblo nuevo ');
+('29896041', 'Adrixian', '04245550211', 'aqui');
 
 -- --------------------------------------------------------
 
@@ -95,8 +105,9 @@ INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
 --
 
 CREATE TABLE `salida_producto` (
+  `codigo_salida` int(11) NOT NULL,
   `cedula_cliente` varchar(8) NOT NULL,
-  `codigo_producto` varchar(50) NOT NULL,
+  `codigo_producto_salida` varchar(50) NOT NULL,
   `cifra` varchar(50) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -128,8 +139,10 @@ ALTER TABLE `clientes`
 -- Indices de la tabla `ingreso_producto`
 --
 ALTER TABLE `ingreso_producto`
+  ADD PRIMARY KEY (`codigo_ingreso`),
   ADD UNIQUE KEY `rif_proveedor` (`rif_proveedor`),
-  ADD UNIQUE KEY `codigo_producto` (`codigo_producto`);
+  ADD UNIQUE KEY `codigo_producto` (`codigo_producto`),
+  ADD UNIQUE KEY `cifra` (`cifra`);
 
 --
 -- Indices de la tabla `producto`
@@ -149,8 +162,10 @@ ALTER TABLE `proveedores`
 -- Indices de la tabla `salida_producto`
 --
 ALTER TABLE `salida_producto`
+  ADD PRIMARY KEY (`codigo_salida`),
   ADD UNIQUE KEY `cedula_cliente` (`cedula_cliente`),
-  ADD UNIQUE KEY `codigo_producto` (`codigo_producto`);
+  ADD UNIQUE KEY `cifra` (`cifra`),
+  ADD UNIQUE KEY `codigo_producto_salida` (`codigo_producto_salida`) USING BTREE;
 
 --
 -- Indices de la tabla `usuario`
@@ -173,8 +188,8 @@ ALTER TABLE `ingreso_producto`
 -- Filtros para la tabla `salida_producto`
 --
 ALTER TABLE `salida_producto`
-  ADD CONSTRAINT `salida_producto_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `proveedores` (`rif`),
-  ADD CONSTRAINT `salida_producto_ibfk_2` FOREIGN KEY (`cedula_cliente`) REFERENCES `clientes` (`cedula`);
+  ADD CONSTRAINT `salida_producto_ibfk_3` FOREIGN KEY (`cifra`) REFERENCES `ingreso_producto` (`cifra`),
+  ADD CONSTRAINT `salida_producto_ibfk_4` FOREIGN KEY (`cedula_cliente`) REFERENCES `clientes` (`cedula`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
