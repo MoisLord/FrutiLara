@@ -46,25 +46,25 @@ REGISTRO DE CLIENTES
 			
 		<div class="row">
 			<div class="col-md-12">
-				<hr/>
+            <hr class="border border-success border-3 opacity-65">
 			</div>
 		</div>
 
 		<div class="row mt-3 justify-content-center">
 			<div class="col-md-2">
-				   <button type="button" class="btn btn-primary" id="incluir" >INCLUIR</button>
+				   <button type="button" class="btn btn-success" id="incluir" >INCLUIR</button>
 			</div>
 			<div class="col-md-2">	
-				   <button type="button" class="btn btn-primary" id="consultar" >CONSULTAR</button>
+				   <button type="button" class="btn btn-success" id="consultar" >CONSULTAR</button>
 			</div>
 			<div class="col-md-2">	
-				   <button type="button" class="btn btn-primary" id="modificar" >MODIFICAR</button>
+				   <button type="button" class="btn btn-success" id="modificar" >MODIFICAR</button>
 			</div>
 			<div class="col-md-2">	
-				   <button type="button" class="btn btn-primary" id="eliminar" >ELIMINAR</button>
+				   <button type="button" class="btn btn-success" id="eliminar" >ELIMINAR</button>
 			</div>
 			<div class="col-md-2">	
-				   <a href="." class="btn btn-primary">REGRESAR</a>
+				   <a href="." class="btn btn-success">REGRESAR</a>
 			</div>
 		</div>
 	</div>	
