@@ -4,8 +4,8 @@
 <!-- <<<<<<< HEAD -->
     <img src="img/logo.png" alt="" style="width:50px;">
     <a class="navbar-brand text-light" href=".">FRUTILARA</a>
-<!-- ======= -->
-<!-- >>>>>>> 570a664eca4ed8c5db1b02f6ee9d39232c08c7b3 -->
+
+
     <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
