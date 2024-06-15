@@ -6,13 +6,13 @@ require_once('modelo/datos.php');
 
 class entrada extends datos{
     
-	function facturar($rif_proveedor,$codigo_producto,$cantidad,$cifra){
+	function facturar($codigo,$cantidad,$cifra){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 		   $fecha = date('Y-m-d');
-		   $guarda = $co->query("insert into ingreso_producto(codigo_ingreso, rif_proveedor, codigo_producto, cantidad, cifra, fecha_entrega) 
-		   values ('$codigo_ingreso','$rif_proveedor','$codigo_producto','$cantidad','$cifra','$fecha')");
+		   $guarda = $co->query("insert into ingreso_producto(codigo_ingreso, cantidad, cifra, fecha_entrega) 
+		   values (':codigo_ingreso',':cantidad',':cifra',':fecha_entrega')");
 		   $lid = $co->lastInsertId(); //retorna el valor del campo
 		   //autoincremental
 		   
@@ -24,7 +24,7 @@ class entrada extends datos{
 		   //para ello primero buscamos el tamaño del arreglos
 		   //y luego ubicamos cada posicion
 		  
-		   
+		   $console.log(mensaje);
 		   return "Ingreso procesado, numero de recepción: $lid";
 		}	
 		catch(Exception $e){
