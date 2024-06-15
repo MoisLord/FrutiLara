@@ -6,18 +6,18 @@
 <?php require_once('comunes/menu.php'); ?>
 <body>
 <div class="container-fluid p-0">
-<div class="container text-center h2 text-primary">
+<div class="container text-center h2 text-success">
 <hr/>
 <hr/>
 <hr/>
-	Pantalla de Proveedores
-<hr/>
+	PROVEEDORES
+<hr class="border border-success border-3 opacity-65">
 </div>
 <<div class="container"> 
 	<form method="post" id="f" autocomplete="off">
     <div class="row">
 		<div class="col">
-		   <label for="rif">rif</label>
+		   <label for="rif">Rif</label>
 		   <input class="form-control" type="text" id="rif" name="rif" />
 		   <span id="srif"></span>
 		</div>
@@ -40,26 +40,26 @@
 	</div>
 
 	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
+			<div class="col-md-12">
+            <hr class="border border-success border-3 opacity-65">
+			</div>
 	</div>
 
 	<div class="row">
 		<div class="col">
-			   <button type="button" class="btn btn-primary" id="incluir" name="incluir">INCLUIR</button>
+			   <button type="button" class="btn btn-success" id="incluir" name="incluir">INCLUIR</button>
 		</div>
 		<div class="col">	
-			   <button type="button" class="btn btn-primary" id="consultar" data-toggle="modal" data-target="#modal1" name="consultar">CONSULTAR</button>
+			   <button type="button" class="btn btn-success" id="consultar" data-toggle="modal" data-target="#modal1" name="consultar">CONSULTAR</button>
 		</div>
 		<div class="col">	
-			   <button type="button" class="btn btn-primary" id="modificar" name="modificar">MODIFICAR</button>
+			   <button type="button" class="btn btn-success" id="modificar" name="modificar">MODIFICAR</button>
 		</div>
 		<div class="col">	
-			   <button type="button" class="btn btn-primary" id="eliminar" name="eliminar">ELIMINAR</button>
+			   <button type="button" class="btn btn-success" id="eliminar" name="eliminar">ELIMINAR</button>
 		</div>
 		<div class="col">	
-			   <a href="." class="btn btn-primary">REGRESAR</a>
+			   <a href="." class="btn btn-success">REGRESAR</a>
 		</div>
 	</div>
 	</form>
@@ -67,9 +67,9 @@
 <!-- seccion del modal -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
-        <h5 class="modal-title">Proveedores Registrados</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">PROVEEDORES REGISTRADOS</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
