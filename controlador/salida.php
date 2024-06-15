@@ -29,6 +29,6 @@ require_once("modelo/".$pagina.".php");
 	  require_once("vista/".$pagina.".php"); 
   }
   else{
-	  echo "pagina no conectada";
+	  echo "pagina en construccion";
   }
 ?>
