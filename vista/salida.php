@@ -131,7 +131,7 @@ Salida de Productos
 		</table>
     </div>
 	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
     </div>
   </div>
 </div>
@@ -167,7 +167,7 @@ Salida de Productos
 		</table>
     </div>
 	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
     </div>
   </div>
 </div>
