@@ -75,7 +75,7 @@ REGISTRO DE CLIENTES
 <!-- seccion del modal -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
+    <div class="modal-header text-light bg-success">
         <h5 class="modal-title">CLIENTES REGISTRADOS</h5>
         <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
