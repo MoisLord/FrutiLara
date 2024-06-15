@@ -173,7 +173,7 @@ Salida de Productos
 </div>
 <!--fin de seccion modal-->
 
-<script type="text/javascript" src="js/salida_producto.js"></script>
+<script type="text/javascript" src="js/salida.js"></script>
 
 </body>
 </html>
