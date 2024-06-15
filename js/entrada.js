@@ -124,12 +124,12 @@ function colocaproducto(linea){
 		   <td>
 		       <input type="text" name="pvp[]" style="display:none"
 			   value="`+
-					$(linea).find("td:eq(4)").text()+
+					$(linea).find("td:eq(6)").text()+
 			   `"/>`+
-					$(linea).find("td:eq(4)").text()+
+					$(linea).find("td:eq(6)").text()+
 		   `</td>
 		   <td>`+
-					redondearDecimales($(linea).find("td:eq(4)").text()*1,2)+
+					redondearDecimales($(linea).find("td:eq(7)").text()*1,2)+
 		   `</td>
 		   </tr>`;
 		$("#detalledeventa").append(l);
@@ -155,7 +155,7 @@ function eliminalineadetalle(boton){
 // fin de funcion de eliminar linea
 
 
-//funcion para colocar datos del cliente en pantalla
+//funcion para colocar datos del proveedor en pantalla
 function colocaproveedor(linea){
 	$("#cedulacliente").val($(linea).find("td:eq(1)").text());
 	$("#idproveedor").val($(linea).find("td:eq(0)").text());
