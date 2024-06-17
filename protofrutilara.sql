@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2024 a las 04:51:44
+-- Tiempo de generación: 17-06-2024 a las 20:46:01
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -24,22 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clientes`
+-- Estructura de tabla para la tabla `categoria`
 --
 
-CREATE TABLE `clientes` (
-  `cedula` varchar(8) NOT NULL,
+CREATE TABLE `categoria` (
+  `id` int(11) NOT NULL,
+  `codigo_categoria` varchar(50) NOT NULL,
+  `tipo` varchar(50) NOT NULL,
+  `unidadMedNormal` varchar(20) NOT NULL,
+  `unidadMedAlt` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empleados`
+--
+
+CREATE TABLE `empleados` (
+  `id` int(11) NOT NULL,
+  `cedula` int(20) NOT NULL,
   `nombre_apellido` varchar(50) NOT NULL,
-  `ciudad` varchar(50) NOT NULL,
-  `telefono` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`cedula`, `nombre_apellido`, `ciudad`, `telefono`) VALUES
-('29896041', 'Adrian Duin', 'Barquisimeto', '04245550211');
+  `telefono` varchar(15) NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `fechaNacimiento` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -48,13 +58,26 @@ INSERT INTO `clientes` (`cedula`, `nombre_apellido`, `ciudad`, `telefono`) VALUE
 --
 
 CREATE TABLE `ingreso_producto` (
-  `codigo_ingreso` int(11) NOT NULL,
+  `id_ingreso` int(11) NOT NULL,
+  `codigo_ingreso` varchar(11) NOT NULL,
   `rif_proveedor` varchar(50) NOT NULL,
   `codigo_producto` int(50) NOT NULL,
   `cantidad` varchar(30) NOT NULL,
-  `cifra` varchar(30) NOT NULL,
+  `unidad_medida` varchar(20) NOT NULL,
   `fecha_entrega` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `marca`
+--
+
+CREATE TABLE `marca` (
+  `id` int(11) NOT NULL,
+  `modelo` varchar(20) NOT NULL,
+  `marca` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -63,20 +86,14 @@ CREATE TABLE `ingreso_producto` (
 --
 
 CREATE TABLE `producto` (
+  `id` int(11) NOT NULL,
   `codigo` int(50) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `tipo` varchar(15) NOT NULL,
   `minimo` varchar(50) NOT NULL,
   `maximo` varchar(50) NOT NULL,
-  `porcentaje` varchar(50) NOT NULL
+  `id_marca` varchar(50) NOT NULL,
+  `id_categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Volcado de datos para la tabla `producto`
---
-
-INSERT INTO `producto` (`codigo`, `nombre`, `tipo`, `minimo`, `maximo`, `porcentaje`) VALUES
-(1234567, 'Zarahoria', 'Hortalizas', '20', '700', '12');
 
 -- --------------------------------------------------------
 
@@ -85,6 +102,7 @@ INSERT INTO `producto` (`codigo`, `nombre`, `tipo`, `minimo`, `maximo`, `porcent
 --
 
 CREATE TABLE `proveedores` (
+  `id` int(11) NOT NULL,
   `rif` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `telefono` varchar(11) NOT NULL,
@@ -95,8 +113,9 @@ CREATE TABLE `proveedores` (
 -- Volcado de datos para la tabla `proveedores`
 --
 
-INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
-('29896041', 'Adrixian', '04245550211', 'aqui');
+INSERT INTO `proveedores` (`id`, `rif`, `nombre`, `telefono`, `direccion`) VALUES
+(1, '29896041', 'Adrian', '04245550211', 'aqui'),
+(2, '14825337', 'Alix', '04145550011', 'alla');
 
 -- --------------------------------------------------------
 
@@ -105,10 +124,11 @@ INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
 --
 
 CREATE TABLE `salida_producto` (
-  `codigo_salida` int(11) NOT NULL,
-  `cedula_cliente` varchar(8) NOT NULL,
-  `codigo_producto_salida` varchar(50) NOT NULL,
-  `cifra` varchar(50) NOT NULL,
+  `id_salida` int(11) NOT NULL,
+  `codigo_salida` varchar(50) NOT NULL,
+  `cedula_empleados` varchar(15) NOT NULL,
+  `codigo_producto` varchar(50) NOT NULL,
+  `unidad_medida` varchar(50) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -119,6 +139,7 @@ CREATE TABLE `salida_producto` (
 --
 
 CREATE TABLE `usuario` (
+  `id_usuarios` int(11) NOT NULL,
   `tipo_usuario` varchar(50) NOT NULL,
   `cedula` int(8) NOT NULL,
   `clave` varchar(50) NOT NULL
@@ -129,49 +150,123 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Indices de la tabla `clientes`
+-- Indices de la tabla `categoria`
 --
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`cedula`),
-  ADD UNIQUE KEY `cedula` (`cedula`);
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `Alternativa` (`unidadMedAlt`) USING BTREE,
+  ADD UNIQUE KEY `tipo_producto` (`tipo`) USING BTREE,
+  ADD UNIQUE KEY `Normal` (`unidadMedNormal`) USING BTREE,
+  ADD UNIQUE KEY `dar_categoria` (`codigo_categoria`) USING BTREE;
+
+--
+-- Indices de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `CI` (`cedula`) USING BTREE;
 
 --
 -- Indices de la tabla `ingreso_producto`
 --
 ALTER TABLE `ingreso_producto`
-  ADD PRIMARY KEY (`codigo_ingreso`),
+  ADD PRIMARY KEY (`id_ingreso`) USING BTREE,
   ADD UNIQUE KEY `rif_proveedor` (`rif_proveedor`),
   ADD UNIQUE KEY `codigo_producto` (`codigo_producto`),
-  ADD UNIQUE KEY `cifra` (`cifra`);
+  ADD UNIQUE KEY `cifra` (`unidad_medida`);
+
+--
+-- Indices de la tabla `marca`
+--
+ALTER TABLE `marca`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `dar_marcaMod` (`modelo`) USING BTREE;
 
 --
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`codigo`),
-  ADD UNIQUE KEY `codigo` (`codigo`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `codigo` (`codigo`) USING BTREE,
+  ADD KEY `obtener_marcaMod` (`id_marca`),
+  ADD KEY `obtener_categoria` (`id_categoria`);
 
 --
 -- Indices de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  ADD PRIMARY KEY (`rif`),
+  ADD PRIMARY KEY (`id`) USING BTREE,
   ADD UNIQUE KEY `rif` (`rif`);
 
 --
 -- Indices de la tabla `salida_producto`
 --
 ALTER TABLE `salida_producto`
-  ADD PRIMARY KEY (`codigo_salida`),
-  ADD UNIQUE KEY `cedula_cliente` (`cedula_cliente`),
-  ADD UNIQUE KEY `cifra` (`cifra`),
-  ADD UNIQUE KEY `codigo_producto_salida` (`codigo_producto_salida`) USING BTREE;
+  ADD PRIMARY KEY (`id_salida`) USING BTREE,
+  ADD UNIQUE KEY `fecha_salida` (`fecha`) USING BTREE,
+  ADD UNIQUE KEY `unidad_salida` (`unidad_medida`) USING BTREE,
+  ADD UNIQUE KEY `codigo_producto_salida` (`codigo_producto`) USING BTREE,
+  ADD UNIQUE KEY `CI_empeleados` (`cedula_empleados`) USING BTREE,
+  ADD UNIQUE KEY `salida` (`codigo_salida`) USING BTREE;
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`cedula`);
+  ADD PRIMARY KEY (`id_usuarios`) USING BTREE,
+  ADD KEY `CI` (`cedula`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ingreso_producto`
+--
+ALTER TABLE `ingreso_producto`
+  MODIFY `id_ingreso` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `marca`
+--
+ALTER TABLE `marca`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `producto`
+--
+ALTER TABLE `producto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `salida_producto`
+--
+ALTER TABLE `salida_producto`
+  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -181,15 +276,8 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `ingreso_producto`
 --
 ALTER TABLE `ingreso_producto`
-  ADD CONSTRAINT `ingreso_producto_ibfk_1` FOREIGN KEY (`rif_proveedor`) REFERENCES `proveedores` (`rif`),
-  ADD CONSTRAINT `ingreso_producto_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
-
---
--- Filtros para la tabla `salida_producto`
---
-ALTER TABLE `salida_producto`
-  ADD CONSTRAINT `salida_producto_ibfk_3` FOREIGN KEY (`cifra`) REFERENCES `ingreso_producto` (`cifra`),
-  ADD CONSTRAINT `salida_producto_ibfk_4` FOREIGN KEY (`cedula_cliente`) REFERENCES `clientes` (`cedula`);
+  ADD CONSTRAINT `ingreso_producto_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`),
+  ADD CONSTRAINT `ingreso_producto_ibfk_3` FOREIGN KEY (`rif_proveedor`) REFERENCES `proveedores` (`rif`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

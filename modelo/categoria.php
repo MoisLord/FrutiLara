@@ -226,7 +226,6 @@ class productosaj extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
-					
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo'];
 						$respuesta = $respuesta."</td>";
