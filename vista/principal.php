@@ -7,8 +7,6 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="img/fondo.jpg" class="d-block w-100" alt="...">
-      <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
-      <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
     </div>
     <div class="carousel-item">
       <img src="img/2.jpg" class="d-block w-100" alt="...">
@@ -16,6 +14,8 @@
     <div class="carousel-item">
       <img src="img/3.jpg" class="d-block w-100" alt="...">
     </div>
+    <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
+    <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
