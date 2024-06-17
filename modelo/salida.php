@@ -20,7 +20,7 @@ class salida_producto extends datos{
 		   //una vez que se tiene lleno el maestro de factura, se pasa a 
 		   //llenar el detalle de la venta
 		   
-		   //como los datos id_producto, cantidad y precio son 
+		   //como los datos cedula_producto, cantidad y precio son 
 		   //arreglos, los recorreresmo utilizando un for
 		   //para ello primero buscamos el tamaño del arreglos
 		   //y luego ubicamos cada posicion
