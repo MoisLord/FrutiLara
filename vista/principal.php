@@ -15,15 +15,15 @@
     <div class="carousel-item">
       <img src="img/2.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
-        <h1 class="text-danger font-weight-bold mb-6 display-1">Slide 2 Title</h1>
-        <p class="text-danger font-weight-bold lead display-4">Slide 2 Description</p>
+      <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
+        <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="img/3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
-        <h1 class="text-danger font-weight-bold mb-6 display-1">Slide 3 Title</h1>
-        <p class="text-danger font-weight-bold lead display-4">Slide 3 Description</p>
+      <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
+        <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
   </div>
