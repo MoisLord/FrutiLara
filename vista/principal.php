@@ -4,6 +4,14 @@
 <?php require_once("comunes/menu.php"); ?>
 
 <header>
+<div class="container-fluid p-0">
+  <div class="row no-gutters min-vh-100">
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center mask bg-gradient-primary" style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center;">
+      <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
+      <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
+    </div>
+  </div>
+</div>
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -344,11 +352,11 @@
     <div class="min-vh-75 position-absolute w-100 top-0">
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon position-absolute bottom-50 ms-n7" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">Anterior</span>
       </a>
       <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon position-absolute bottom-50 me-n7" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">Siguiente</span>
       </a>
     </div>
   </div>
