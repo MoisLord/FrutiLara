@@ -26,10 +26,10 @@
             <a class="nav-link text-light" href="?pagina=clientes">Clientes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="?pagina=entrada">Entrada</a>
+            <a class="nav-link text-light" href="?pagina=categoria">Categorias de producto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="?pagina=salida">Salida</a>
+            <a class="nav-link text-light" href="?pagina=marca">Marca de productos</a>
           </li>
         </ul>
       </div>
