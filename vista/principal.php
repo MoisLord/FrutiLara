@@ -14,13 +14,8 @@
     <div class="carousel-item">
       <img src="img/3.jpg" class="d-block w-100" alt="...">
     </div>
-<<<<<<< HEAD
     <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
     <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
-=======
-      <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
-      <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
->>>>>>> 04cad53c95a65f989cb84c1f6896b052c96f4d8f
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
