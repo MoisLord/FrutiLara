@@ -6,30 +6,33 @@
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <span class="mask bg-gradient-dark">
-        <img src="img/fondo.jpg" class="d-block w-100" alt="...">
-      </span>
-      <div class="carousel-caption">
-        <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
-        <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
+      <div class="position-relative">
+        <img src="img/fondo.jpg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+      </div>
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="text-white font-weight-bolder mb-6 display-1">Bienvenido a Frutilara</h1>
+        <p class="text-white font-weight-bolder lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
     <div class="carousel-item">
-      <span class="mask bg-gradient-dark">
-        <img src="img/2.jpg" class="d-block w-100" alt="...">
-      </span>
-      <div class="carousel-caption">
-        <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
-        <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
+      <div class="position-relative">
+        <img src="img/2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+      </div>
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="text-white font-weight-bolder mb-6 display-1">Bienvenido a Frutilara</h1>
+        <p class="text-white font-weight-bolder lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
     <div class="carousel-item">
-      <span class="mask bg-gradient-dark">
-        <img src="img/3.jpg" class="d-block w-100" alt="...">
-      </span>
-      <div class="carousel-caption">
-        <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
-        <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
+      <div class="position-relative">
+        <img src="img/3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+      </div>
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="text-white font-weight-bolder mb-6 display-1">Bienvenido a Frutilara</h1>
+        <p class="text-white font-weight-bolder lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
   </div>
