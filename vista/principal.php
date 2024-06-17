@@ -49,7 +49,7 @@
       </div>
     </div>
   </nav>
-  <div class="page-header min-vh-100" style="background-image: url(../../assets/img/meeting.jpg);">
+  <div class="page-header min-vh-100" style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center;">
     <span class="mask bg-gradient-primary"></span>
     <div class="container">
       <div class="row">
