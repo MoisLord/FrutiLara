@@ -6,23 +6,23 @@
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/fondo.jpg" class="d-block w-100" alt="...">
+      <img src="img/fondo.jpg" class="d-block w-100 bg-opacity-75" alt="...">
       <div class="carousel-caption">
         <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
         <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img/2.jpg" class="d-block w-100" alt="...">
+      <img src="img/2.jpg" class="d-block w-100 bg-opacity-75" alt="...">
       <div class="carousel-caption">
-      <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
+        <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
         <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img/3.jpg" class="d-block w-100" alt="...">
+      <img src="img/3.jpg" class="d-block w-100 bg-opacity-75" alt="...">
       <div class="carousel-caption">
-      <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
+        <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
         <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
