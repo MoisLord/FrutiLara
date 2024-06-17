@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2024 a las 19:59:04
+-- Tiempo de generación: 17-06-2024 a las 20:46:01
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `id` int(11) NOT NULL,
+  `codigo_categoria` varchar(50) NOT NULL,
   `tipo` varchar(50) NOT NULL,
   `unidadMedNormal` varchar(20) NOT NULL,
   `unidadMedAlt` varchar(20) NOT NULL
@@ -124,6 +125,7 @@ INSERT INTO `proveedores` (`id`, `rif`, `nombre`, `telefono`, `direccion`) VALUE
 
 CREATE TABLE `salida_producto` (
   `id_salida` int(11) NOT NULL,
+  `codigo_salida` varchar(50) NOT NULL,
   `cedula_empleados` varchar(15) NOT NULL,
   `codigo_producto` varchar(50) NOT NULL,
   `unidad_medida` varchar(50) NOT NULL,
@@ -155,7 +157,7 @@ ALTER TABLE `categoria`
   ADD UNIQUE KEY `Alternativa` (`unidadMedAlt`) USING BTREE,
   ADD UNIQUE KEY `tipo_producto` (`tipo`) USING BTREE,
   ADD UNIQUE KEY `Normal` (`unidadMedNormal`) USING BTREE,
-  ADD UNIQUE KEY `dar_categoria` (`id`) USING BTREE;
+  ADD UNIQUE KEY `dar_categoria` (`codigo_categoria`) USING BTREE;
 
 --
 -- Indices de la tabla `empleados`
@@ -178,7 +180,7 @@ ALTER TABLE `ingreso_producto`
 --
 ALTER TABLE `marca`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `dar_marcaMod` (`id`);
+  ADD KEY `dar_marcaMod` (`modelo`) USING BTREE;
 
 --
 -- Indices de la tabla `producto`
@@ -205,7 +207,7 @@ ALTER TABLE `salida_producto`
   ADD UNIQUE KEY `unidad_salida` (`unidad_medida`) USING BTREE,
   ADD UNIQUE KEY `codigo_producto_salida` (`codigo_producto`) USING BTREE,
   ADD UNIQUE KEY `CI_empeleados` (`cedula_empleados`) USING BTREE,
-  ADD UNIQUE KEY `salida` (`id_salida`) USING BTREE;
+  ADD UNIQUE KEY `salida` (`codigo_salida`) USING BTREE;
 
 --
 -- Indices de la tabla `usuario`
@@ -240,7 +242,7 @@ ALTER TABLE `ingreso_producto`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`

@@ -8,7 +8,7 @@
 <hr/>
 <hr/>
 <hr/>
-REGISTRO DE PRODUCTOS
+REGISTRO DE CATEGORIAS DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
@@ -17,52 +17,27 @@ REGISTRO DE PRODUCTOS
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md-4">
-			   <label for="codigo">Codigo del Producto</label>
-			   <input class="form-control" type="text" id="codigo"
-				name="codigo"/>
-			   <span id="scodigo"></span>
+			   <label for="codigo_categoria">Codigo de categoria</label>
+			   <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria"/>
+			   <span id="scodigo_categoria"></span>
 			</div>
 			<div class="col-md-8">
-			   <label for="nombre">Nombre del Producto</label>
-			   <input class="form-control" type="text" id="nombre"
-				name="nombre"/>
-			   <span id="snombre"></span>
+			   <label for="tipo">tipo de Producto</label>
+			   <input class="form-control" type="text" id="tipo" name="tipo"/>
+			   <span id="stipo"></span>
 			</div>
-		</div>
-
-		<div class="row"> 
-    <div class="col-md-5">
-        <label for="tipo">Tipo de Producto</label>
-        <select class="form-select" aria-label="Default select example" id="tipo"> 
-            <option selected></option> 
-            <option value="Viveres">Viveres</option> 
-            <option value="Hortalizas">Hortalizas</option> 
-            <option value="Frutas">Frutas</option> 
-            <option value="Charcuteria">Charcuteria</option> 
-            <option value="Bebidas">Bebidas</option> 
-            <option value="Empaquetados">Empaquetados</option> 
-        </select> 
-    </div> 
-    <div class="col-md-7">
-        <label for="minimo">Mínimo</label>
-        <input class="form-control" type="text" id="minimo" name="minimo"/>
-		<span id="sminimo"></span>
-    </div>
-</div>
-
+		</div>    
         
 		<div class="row mb-4">
-            
 			<div class="col-md-6">
-			   <label for="maximo">Maximo</label>
-			   <input class="form-control" type="text" id="maximo"
-					name="maximo"/>
-			   <span id="smaximo"></span>
-			</div>
+        		<label for="undidadMedNormal">Unidad de medida común</label>
+       			<input class="form-control" type="text" id="undidadMedNormal" name="undidadMedNormal"/>
+				<span id="sundidadMedNormal"></span>
+    		</div>
 			<div class="col-md-6">
-			   <label for="porcentaje">Porcentaje</label>
-			   <input class="form-control" type="text" id="porcentaje" name="porcentaje"/>
-               <span id="sporcentaje"></span>
+			   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
+			   <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt"/>
+			   <span id="sunidadMedAlt"></span>
 			</div>
 		</div>
 		
@@ -108,12 +83,10 @@ REGISTRO DE PRODUCTOS
 		<table class="table table-striped table-hover" id="tablaclientes">
 		<thead>
 		  <tr>
-			<th>Codigo Producto</th>
-			<th>Nombre Producto</th>
-			<th>Tipo de Productos</th>
-			<th>Minimo</th>
-			<th>Maximo</th>
-			<th>Porcentaje</th>
+			<th>Codigo de categoria</th>
+			<th>tipo de Producto</th>
+			<th>Unidad de medida común</th>	
+			<th>Unidad de Medida Alternativa</th>
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
