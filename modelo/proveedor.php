@@ -196,9 +196,6 @@ class proveedor extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['id'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";

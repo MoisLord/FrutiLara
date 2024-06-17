@@ -23,7 +23,7 @@
             <a class="nav-link text-light" href="?pagina=proveedor">Proveedores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="?pagina=clientes">Clientes</a>
+            <a class="nav-link text-light" href="?pagina=clientes">Empleados</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="?pagina=categoria">Categorias de producto</a>
