@@ -12,14 +12,14 @@
         <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
-    <div class="carousel-item page-header min-vh-75 m-3 border-radius-xl">
+    <div class="carousel-item">
       <img src="img/2.jpg" class="d-block w-100 bg-opacity-25" alt="...">
       <div class="carousel-caption">
         <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
         <p class="text-danger font-weight-bold lead display-4">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
-    <div class="carousel-item page-header min-vh-75 m-3 border-radius-xl">
+    <div class="carousel-item">
       <img src="img/3.jpg" class="d-block w-100 bg-opacity-25" alt="...">
       <div class="carousel-caption">
         <h1 class="text-danger font-weight-bold mb-6 display-1">Bienvenido a Frutilara</h1>
