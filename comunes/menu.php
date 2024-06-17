@@ -1,5 +1,5 @@
 <div class= "col-12">
-<nav class="navbar text-light bg-success.bg-gradient fixed-top">
+<nav class="navbar text-light .bg-success.bg-gradient fixed-top">
   <div class="container-fluid">
 <!-- <<<<<<< HEAD -->
     <img src="img/logo.png" alt="" style="width:50px;">
