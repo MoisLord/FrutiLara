@@ -1,7 +1,7 @@
 <?php
   
 //llamada al archivo que contiene la clase
-//usuarios, en ella estara el codigo que me //permitirá
+//usuarios, en ella estara el modelo que me //permitirá
 //guardar, consultar y modificar dentro de mi base //de datos
 
 
@@ -21,8 +21,8 @@ require_once("modelo/".$pagina.".php");
 	  //para poderlos usar
 	  
 	  
-	  $o = new productosaj(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
-	  //clase productosaj
+	  $o = new marca(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
+	  //clase marca
 	  
 	  if(!empty($_POST)){
 		  
@@ -35,21 +35,17 @@ require_once("modelo/".$pagina.".php");
 			 echo  json_encode($o->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
-			 $o->set_codigo($_POST['codigo']); 
+			 $o->set_modelo($_POST['modelo']); 
 			 echo  json_encode($o->consultatr());  
 		  }
 
 		  elseif($accion=='eliminar'){
-			 $o->set_codigo($_POST['codigo']);
+			 $o->set_modelo($_POST['modelo']);
 			 echo  json_encode($o->eliminar());
 		  }
 		  else{		  
-			  $o->set_codigo($_POST['codigo']);
-			  $o->set_nombre($_POST['nombre']);
-			  $o->set_tipo($_POST['tipo']);
-			  $o->set_minimo($_POST['minimo']);
-              $o->set_maximo($_POST['maximo']);
-              $o->set_porcentaje($_POST['porcentaje']);
+			  $o->set_modelo($_POST['modelo']);
+			  $o->set_marca($_POST['marca']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }

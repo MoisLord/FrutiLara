@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2024 a las 19:36:54
+-- Tiempo de generación: 17-06-2024 a las 19:59:04
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -74,8 +74,8 @@ CREATE TABLE `ingreso_producto` (
 
 CREATE TABLE `marca` (
   `id` int(11) NOT NULL,
-  `marca` varchar(50) NOT NULL,
-  `modelo` varchar(20) NOT NULL
+  `modelo` varchar(20) NOT NULL,
+  `marca` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -113,7 +113,8 @@ CREATE TABLE `proveedores` (
 --
 
 INSERT INTO `proveedores` (`id`, `rif`, `nombre`, `telefono`, `direccion`) VALUES
-(1, '29896041', 'Adrian', '04245550211', 'aqui');
+(1, '29896041', 'Adrian', '04245550211', 'aqui'),
+(2, '14825337', 'Alix', '04145550011', 'alla');
 
 -- --------------------------------------------------------
 
@@ -251,7 +252,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `salida_producto`

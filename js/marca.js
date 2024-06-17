@@ -1,52 +1,27 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
-        $("#codigo").on("keypress",function(e){
+        $("#modelo").on("keypress",function(e){
             validarkeypress(/^[0-9-\b]*$/,e);
         });
         
-        $("#codigo").on("keyup",function(){
-            validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#scodigo"),"El Formato Debe Ser Numerico ");
-            if($("#codigo").val().length > 7){
+        $("#modelo").on("keyup",function(){
+            validarkeyup(/^[0-9]{7,20}$/,$(this),
+            $("#smodelo"),"El Formato Debe Ser Numerico ");
+            if($("#modelo").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
-                datos.append('codigo',$(this).val());
+                datos.append('modelo',$(this).val());
                 enviaAjax(datos,'consultatr');	
             }
         });
         
         
-        $("#nombre").on("keypress",function(e){
+        $("#marca").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
-        $("#nombre").on("keyup",function(){
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#snombre"),"Solo letras  entre 3 y 30 caracteres");
-        });
-        
-        
-        $("#minimo").on("keypress", function(e) {
-            validarkeypress(/^[0-9]*$/, e);
-        });
-        
-        $("#minimo").on("keyup", function() {
-            validarkeyup(/^[0-9]{2,}$/, $(this), $("#sminimo"), "Solo números, mínimo 2 dígitos");
-        });
-
-        $("#maximo").on("keypress", function(e) {
-            validarkeypress(/^[0-9]*$/, e);
-        });
-        
-        $("#maximo").on("keyup", function() {
-            validarkeyup(/^[0-9]{2,}$/, $(this), $("#smaximo"), "Solo números, mínimo 2 dígitos");
-        });
-
-        $("#porcentaje").on("keypress", function(e) {
-            validarkeypress(/^[0-9]*$/, e);
-        });
-        
-        $("#porcentaje").on("keyup", function() {
-            validarkeyup(/^[0-9]{2,}$/, $(this), $("#sporcentaje"), "Solo números, mínimo 2 dígitos");
+        $("#marca").on("keyup",function(){
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,40}$/,
+            $(this),$("#smarca"),"Solo letras  entre 3 y 40 caracteres");
         });
         
         
@@ -60,12 +35,8 @@ $(document).ready(function(){
         if(validarenvio()){
             var datos = new FormData();
             datos.append('accion','incluir');
-            datos.append('codigo',$("#codigo").val());
-            datos.append('nombre',$("#nombre").val());
-            datos.append('tipo',$("#tipo").val());
-            datos.append('minimo',$("#minimo").val());
-            datos.append('maximo',$("#maximo").val());
-            datos.append('porcentaje',$("#porcentaje").val());
+            datos.append('modelo',$("#modelo").val());
+            datos.append('marca',$("#marca").val());
             enviaAjax(datos);
         }
     });
@@ -74,12 +45,8 @@ $(document).ready(function(){
     
             var datos = new FormData();
             datos.append('accion','modificar');
-            datos.append('codigo',$("#codigo").val());
-            datos.append('nombre',$("#nombre").val());
-            datos.append('tipo',$("#tipo").val());
-            datos.append('minimo',$("#minimo").val());
-            datos.append('maximo',$("#maximo").val());
-            datos.append('porcentaje',$("#porcentaje").val());
+            datos.append('modelo',$("#modelo").val());
+            datos.append('marca',$("#marca").val());
             enviaAjax(datos);
             
         }
@@ -87,9 +54,9 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
-            $("#scodigo"),"El formato debe ser Numerico")==0){
-            muestraMensaje("El Codigo debe coincidir con el formato <br/>"+ 
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#modelo"),
+            $("#smodelo"),"El formato debe ser Numerico")==0){
+            muestraMensaje("El modelo debe coincidir con el formato <br/>"+ 
                             "99999999");	
             
         }
@@ -97,7 +64,7 @@ $(document).ready(function(){
             
             var datos = new FormData();
             datos.append('accion','eliminar');
-            datos.append('codigo',$("#codigo").val());
+            datos.append('modelo',$("#modelo").val());
             enviaAjax(datos);
         }
         
@@ -116,19 +83,19 @@ $(document).ready(function(){
     //funcion para enlazar al DataTablet
     function destruyeDT(){
         //1 se destruye el datatablet
-        if ($.fn.DataTable.isDataTable("#tablaproducto")) {
-                $("#tablaproducto").DataTable().destroy();
+        if ($.fn.DataTable.isDataTable("#tablamarca")) {
+                $("#tablamarca").DataTable().destroy();
         }
     }
     function crearDT(){
         //se crea nuevamente
-        if (!$.fn.DataTable.isDataTable("#tablaproducto")) {
-                $("#tablaproducto").DataTable({
+        if (!$.fn.DataTable.isDataTable("#tablamarca")) {
+                $("#tablamarca").DataTable({
                   language: {
                     lengthMenu: "Mostrar _MENU_ por página",
-                    zeroRecords: "No se encontraron personas",
+                    zeroRecords: "No se encontraron marcas",
                     info: "Mostrando página _PAGE_ de _PAGES_",
-                    infoEmpty: "No hay personas registradas",
+                    infoEmpty: "No hay marcas registradas",
                     infoFiltered: "(filtrado de _MAX_ registros totales)",
                     search: "Buscar:",
                     paginate: {
@@ -147,27 +114,15 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
-            $("#scodigo"),"El formato debe ser Numerico")==0){
-            muestraMensaje("El codigo debe coincidir con el formato <br/>"+ 
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#modelo"),
+            $("#smodelo"),"El formato debe ser Numerico")==0){
+            muestraMensaje("El modelo debe coincidir con el formato <br/>"+ 
                             "99999999");	
             return false;					
         }	
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("#nombre"),$("#snombre"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
-            return false;
-        }
-        else if (validarkeyup(/^[0-9]{2,}$/, $("#minimo"), $("#sminimo"), "Solo números, mínimo 3 dígitos") == 0) {
-            muestraMensaje("Minimo debe ser <br/>Solo números, mínimo 2 dígitos");
-            return false;
-        }
-        else if (validarkeyup(/^[0-9]{2,}$/, $("#maximo"), $("#smaximo"), "Solo números, mínimo 3 dígitos") == 0) {
-            muestraMensaje("Maximo debe ser <br/>Solo números, mínimo 2 dígitos");
-            return false;
-        }
-        else if (validarkeyup(/^[0-9]{2,}$/, $("#porcentaje"), $("#sporcentaje"), "Solo números, mínimo 3 dígitos") == 0) {
-            muestraMensaje("Porcentaje debe ser <br/>Solo números, mínimo 2 dígitos");
+            $("#marca"),$("#smarca"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("marca <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
         
@@ -220,12 +175,8 @@ $(document).ready(function(){
     
     //funcion para pasar de la lista a el formulario
     function coloca(linea){
-        $("#codigo").val($(linea).find("td:eq(0)").text());
-        $("#nombre").val($(linea).find("td:eq(1)").text());
-        $("#tipo").val($(linea).find("td:eq(2)").text());
-        $("#minimo").val($(linea).find("td:eq(3)").text());
-        $("#maximo").val($(linea).find("td:eq(4)").text());
-        $("#porcentaje").val($(linea).find("td:eq(5)").text());
+        $("#modelo").val($(linea).find("td:eq(0)").text());
+        $("#marca").val($(linea).find("td:eq(1)").text());
         
     }
     
@@ -256,10 +207,7 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#nombre").val(lee.mensaje[0][2]);
-                           $("#minimo").val(lee.mensaje[0][3]);
-                           $("#maximo").val(lee.mensaje[0][4]);
-                           $("#porcentaje").val(lee.mensaje[0][5]);
+                           $("#marca").val(lee.mensaje[0][2]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
@@ -296,11 +244,7 @@ $(document).ready(function(){
     
     function limpia(){
         
-        $("#codigo").val("");
-        $("#nombre").val("");
-        $("#tipo").val("");
-        $("#minimo").val("");
-        $("#maximo").val("");
-        $("#porcentaje").val("");
+        $("#modelo").val("");
+        $("#marca").val("");
         
     }
