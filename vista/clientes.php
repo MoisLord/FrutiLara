@@ -8,7 +8,7 @@
 <hr/>
 <hr/>
 <hr/>
-REGISTRO DE CLIENTES
+REGISTRO DE EMPLEADOS
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
