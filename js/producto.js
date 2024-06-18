@@ -208,13 +208,23 @@ $(document).ready(function(){
     }
     
     //funcion para pasar de la lista a el formulario
-    function coloca(linea){
-        $("#codigo").val($(linea).find("td:eq(0)").text());
-        $("#nombre").val($(linea).find("td:eq(1)").text());
-        $("#minimo").val($(linea).find("td:eq(2)").text());
-        $("#maximo").val($(linea).find("td:eq(3)").text());
-        $("#id_marca").val($(linea).find("td:eq(4)").text());
-        $("#id_categoria").val($(linea).find("td:eq(5)").text());
+    function pone(pos,accion){
+	
+        linea=$(pos).closest('tr');
+    
+    
+        if(accion==0){
+            $("#proceso").text("MODIFICAR");
+        }
+        else{
+            $("#proceso").text("ELIMINAR");
+        }
+        $("#codigo").val($(linea).find("td:eq(1)").text());
+        $("#nombre").val($(linea).find("td:eq(2)").text());
+        $("#minimo").val($(linea).find("td:eq(3)").text());
+        $("#maximo").val($(linea).find("td:eq(4)").text());
+        $("#id_marca").val($(linea).find("td:eq(5)").text());
+        $("#id_categoria").val($(linea).find("td:eq(6)").text());
     }
     
     //funcion que envia y recibe datos por AJAX
