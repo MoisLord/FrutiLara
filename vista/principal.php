@@ -11,8 +11,13 @@
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       </div>
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+<<<<<<< HEAD
+        <h1 class="text-danger font-weight-bolder mb-6 display-1" style="font-weight: 800;">Bienvenido a Frutilara</h1>
+        <p class="text-warning font-weight-bolder lead display-4" style="font-weight: 600;">Donde Comer Saludable es mas Sabroso</p>
+=======
         <h1 class="text-danger font-weight-bolder mb-6 display-1">Bienvenido a Frutilara</h1>
         <p class="text-warning font-weight-bold lead display-4">Donde Comer Saludable es más Sabroso</p>
+>>>>>>> cb1e666fe1e16a8a08bed8537d0448deb88c9c92
       </div>
     </div>
     <div class="carousel-item">
@@ -21,8 +26,13 @@
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       </div>
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+<<<<<<< HEAD
+        <h1 class="text-danger font-weight-bolder mb-6 display-1" style="font-weight: 800;">Bienvenido a Frutilara</h1>
+        <p class="text-warning font-weight-bolder lead display-4" style="font-weight: 600;">"Donde Comer Saludable es mas Sabroso</p>
+=======
         <h1 class="text-danger font-weight-bolder mb-6 display-1">Bienvenido a Frutilara</h1>
         <p class="text-warning font-weight-bold lead display-4">Donde Comer Saludable es más Sabroso</p>
+>>>>>>> cb1e666fe1e16a8a08bed8537d0448deb88c9c92
       </div>
     </div>
     <div class="carousel-item">
@@ -31,8 +41,13 @@
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       </div>
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+<<<<<<< HEAD
+        <h1 class="text-danger font-weight-bolder mb-6 display-1" style="font-weight: 800;">Bienvenido a Frutilara</h1>
+        <p class="text-warning font-weight-bolder lead display-4" style="font-weight: 600;>Donde Comer Saludable es mas Sabroso</p>
+=======
         <h1 class="text-danger font-weight-bolder mb-6 display-1">Bienvenido a Frutilara</h1>
         <p class="text-warning font-weight-bold lead display-4">Donde Comer Saludable es más Sabroso</p>
+>>>>>>> cb1e666fe1e16a8a08bed8537d0448deb88c9c92
       </div>
     </div>
   </div>
