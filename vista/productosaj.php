@@ -71,13 +71,13 @@ PRODUCTOS
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Codigo Producto</th>
-      <th scope="col">Nombre Producto</th>
-      <th scope="col">Minimo</th>
-      <th scope="col">Maximo</th>
-	  <th scope="col">Marca</th>
-	  <th scope="col">Categoria</th>
-	  <th scope="col"></th>
+      <th>Codigo Producto</th>
+      <th>Nombre Producto</th>
+      <th>Minimo</th>
+      <th>Maximo</th>
+	  <th>Marca</th>
+	  <th>Categoria</th>
+	  <th></th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
