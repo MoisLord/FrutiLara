@@ -48,8 +48,8 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_nombre($_POST['nombre']);
 			  $o->set_minimo($_POST['minimo']);
               $o->set_maximo($_POST['maximo']);
-              $o->set_porcentaje($_POST['id_marca']);
-			  $o->set_tipo($_POST['id_categoria']);
+              $o->set_id_marca($_POST['id_marca']);
+			  $o->set_id_categoria($_POST['id_categoria']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }

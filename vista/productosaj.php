@@ -68,23 +68,37 @@ PRODUCTOS
 </form>
 
 <div class="col-8 p-4">
-<table class="table table-striped table-hover" id="tablaclientes">
-		<thead class="bg-info">
-		  <tr>
-			<th>Codigo Producto</th>
-			<th>Nombre Producto</th>
-			<th>Minimo</th>
-			<th>Maximo</th>
-			<th>Categoria</th>
-			<th>Marca</th>
-			<th></th>
-		  </tr>
-		</thead>
-		<tbody id="resultadoconsulta">
-		  
-		  
-		</tbody>
-		</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Codigo Producto</th>
+      <th scope="col">Nombre Producto</th>
+      <th scope="col">Minimo</th>
+      <th scope="col">Maximo</th>
+	  <th scope="col">Marca</th>
+	  <th scope="col">Categoria</th>
+	  <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr>
+      <td>123456789</td>
+      <td>Manzana</td>
+      <td>20</td>
+	  <td>79</td>
+	  <td>Manzanera</td>
+	  <td>Frutas</td>
+	  <td>
+	  <div class="mb-1">	
+				   <button type="button" class="btn btn-success" id="modificar" >MODIFICAR</button>
+			</div>
+			<div class="mb-1">	
+				   <button type="button" class="btn btn-success" id="eliminar" >ELIMINAR</button>
+			</div>
+	  </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
