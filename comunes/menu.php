@@ -5,7 +5,7 @@
     <link href="css/menu.css" rel="stylesheet">
 
     <img src="img/logo.png" alt="" style="width:50px;">
-    <a class="navbar-brand text-white" style="font-weight: 800;" href="#">FRUTILARA</a>
+    <a class="navbar-brand text-white" style="font-weight: 600;" href="#">FRUTILARA</a>
 
 
     <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
