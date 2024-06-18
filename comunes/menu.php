@@ -5,7 +5,7 @@
     <link href="css/menu.css" rel="stylesheet">
 
     <img src="img/logo.png" alt="" style="width:50px;">
-    <a class="navbar-brand text-white" style="font-weight: 600;" href="#">FRUTILARA</a>
+    <a class="navbar-brand text-warning" style="font-weight: 600;" href="#">FRUTILARA</a>
 
 
     <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -19,19 +19,19 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link mx-lg-2 text-white"  href="?pagina=productosaj">Productos</a>
+            <a class="nav-link mx-lg-2 text-warning"  href="?pagina=productosaj">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2 text-white" href="?pagina=proveedor">Proveedores</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=proveedor">Proveedores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2 text-white" href="?pagina=clientes">Empleados</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=clientes">Empleados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2 text-white" href="?pagina=categoria">Categorias de producto</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=categoria">Categorias de producto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2 text-white" href="?pagina=marca">Marcas de productos</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=marca">Marcas de productos</a>
           </li>
         </ul>
       </div>
