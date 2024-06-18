@@ -1,5 +1,5 @@
 <div class= "col-12">
-<nav class="navbar text-warning bg-success bg-gradient fixed-top">
+<nav class="navbar navbar-expand-lg text-warning bg-success bg-gradient fixed-top">
   <div class="container-fluid">
 
     <img src="img/logo.png" alt="" style="width:50px;">
@@ -17,19 +17,19 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link text-warning"  href="?pagina=productosaj">Productos</a>
+            <a class="nav-link mx-lg-2 text-warning"  href="?pagina=productosaj">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-warning" href="?pagina=proveedor">Proveedores</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=proveedor">Proveedores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-warning" href="?pagina=clientes">Empleados</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=clientes">Empleados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-warning" href="?pagina=categoria">Categorias de producto</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=categoria">Categorias de producto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-warning" href="?pagina=marca">Marca de productos</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=marca">Marca de productos</a>
           </li>
         </ul>
       </div>
