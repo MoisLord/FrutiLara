@@ -111,12 +111,12 @@ class productosaj extends datos{
 					id_categoria
 					)
 					Values(
-					'$this->codigo',
-					'$this->nombre',
-					'$this->minimo',
-					'$this->maximo',
-					'$this->id_marca',
-					'$this->id_categoria'
+					:codigo,
+					:nombre,
+					:minimo,
+					:maximo,
+					:id_marca,
+					:id_categoria
 					)");
 					$r['resultado'] = 'incluir';
 					$r['mensaje'] =  'Producto Inluido';
