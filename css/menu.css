@@ -28,7 +28,7 @@
     height: 2px;
     background-color: rgb(187, 255, 0);
     visibility: hidden;
-    transition: 0.3 ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .nav-link:hover::before {
