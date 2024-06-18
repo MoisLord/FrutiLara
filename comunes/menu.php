@@ -31,7 +31,7 @@
             <a class="nav-link mx-lg-2 text-warning" href="?pagina=categoria">Categorias de producto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2 text-warning" href="?pagina=marca">Marca de productos</a>
+            <a class="nav-link mx-lg-2 text-warning" href="?pagina=marca">Marcas de productos</a>
           </li>
         </ul>
       </div>
