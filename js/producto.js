@@ -279,6 +279,8 @@ function enviaAjax(datos) {
            $("#nombre").val(lee.mensaje[0][2]);
            $("#minimo").val(lee.mensaje[0][3]);
            $("#maximo").val(lee.mensaje[0][4]);
+           $("#id_marca").val(lee.mensaje[0][5]);
+           $("#id_categoria").val(lee.mensaje[0][6]);
            
         }
         else if (lee.resultado == "incluir" || 
