@@ -1,11 +1,3 @@
-function pone_fecha(){
-	
-	
-	var datos = new FormData();
-	datos.append('accion','obtienefecha');
-	enviaAjax(datos);	
-	
-}
 function consultar(){
 	var datos = new FormData();
 	datos.append('accion','consultar');
