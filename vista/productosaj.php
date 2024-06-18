@@ -68,38 +68,26 @@ PRODUCTOS
 </form>
 
 <div class="col-8 p-4">
-<table class="table">
-  <thead>
-    <tr>
-      <th>Codigo Producto</th>
-      <th>Nombre Producto</th>
-      <th>Minimo</th>
-      <th>Maximo</th>
-	  <th>Marca</th>
-	  <th>Categoria</th>
-	  <th></th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-    <tr>
-      <td>123456789</td>
-      <td>Manzana</td>
-      <td>20</td>
-	  <td>79</td>
-	  <td>Manzanera</td>
-	  <td>Frutas</td>
-	  <td>
-	  <div class="mb-1">	
-				   <button type="button" class="btn btn-success" id="modificar" >MODIFICAR</button>
-			</div>
-			<div class="mb-1">	
-				   <button type="button" class="btn btn-success" id="eliminar" >ELIMINAR</button>
-			</div>
-	  </td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<div class="container">
+	   <div class="table-responsive">
+		<table class="table table-striped table-hover" id="tablaproducto">
+			<thead>
+			  <tr>
+				<th>Codigo Producto</th>
+				<th>Nombre Producto</th>
+				<th>Minimo</th>
+				<th>Maximo</th>
+				<th>Marca</th>
+				<th>Categoria</th>
+			  </tr>
+			</thead>
+			<tbody id="resultadoconsulta">
+			  
+			  
+			</tbody>
+	   </table>
+	  </div>
+  </div>
 </div>
 
 
