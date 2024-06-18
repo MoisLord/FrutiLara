@@ -30,9 +30,9 @@ REGISTRO DE CATEGORIAS DE PRODUCTOS
         
 		<div class="row mb-4">
 			<div class="col-md-6">
-        		<label for="undidadMedNormal">Unidad de medida común</label>
-       			<input class="form-control" type="text" id="undidadMedNormal" name="undidadMedNormal"/>
-				<span id="sundidadMedNormal"></span>
+        		<label for="unidadMedNormal">Unidad de medida común</label>
+       			<input class="form-control" type="text" id="unidadMedNormal" name="unidadMedNormal"/>
+				<span id="sunidadMedNormal"></span>
     		</div>
 			<div class="col-md-6">
 			   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
@@ -80,7 +80,7 @@ REGISTRO DE CATEGORIAS DE PRODUCTOS
     </div>
     <div class="modal-content">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
-		<table class="table table-striped table-hover" id="tablaclientes">
+		<table class="table table-striped table-hover" id="tablacategoria">
 		<thead>
 		  <tr>
 			<th>Codigo de categoria</th>
@@ -101,7 +101,7 @@ REGISTRO DE CATEGORIAS DE PRODUCTOS
   </div>
 </div>
 
-<script type="text/javascript" src="js/producto.js"></script>
+<script type="text/javascript" src="js/categoria.js"></script>
 
 </body>
 </html>

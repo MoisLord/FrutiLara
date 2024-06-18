@@ -1,6 +1,6 @@
 <?php
 //llamda al archivo que contiene la clase
-//datos, en ella posteriormente se colcora el codigo
+//datos, en ella posteriormente se colcora el codigo_categoria
 //para enlazar a su base de datos
 require_once('modelo/datos.php');
 
@@ -9,7 +9,7 @@ require_once('modelo/datos.php');
 //que decirle a esta clase que puede usar los mismos metodos
 //que estan en la clase de dodne hereda (La padre) como sir fueran de el
 
-class productosaj extends datos{
+class categoria extends datos{
 	//el primer paso dentro de la clase
 	//sera declarar los atributos (variables) que describen la clase
 	//para nostros no es mas que colcoar los inputs (controles) de
@@ -17,70 +17,55 @@ class productosaj extends datos{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
-	private $nombre;
+	private $codigo_categoria; //recuerden que en php, las variables no tienen tipo predefinido
 	private $tipo;
-	private $minimo;
-    private $maximo;
-    private $porcentaje;
+	private $unidadMedNormal;
+    private $unidadMedAlt;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
 	
-	function set_codigo($valor){
-		$this->codigo = $valor; //fijencen como se accede a los elementos dentro de una clase
+	function set_codigo_categoria($valor){
+		$this->codigo_categoria = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 		//a un elemento de this, es decir esta clase
 		//luego el nombre del elemento sin el $
 	}
-	//lo mismo que se hizo para codigo se hace para usuario y clave
+	//lo mismo que se hizo para codigo_categoria se hace para usuario y clave
 	
-	function set_nombre($valor){
-		$this->nombre = $valor;
-	}
 	
 	function set_tipo($valor){
 		$this->tipo = $valor;
 	}
 	
-	function set_minimo($valor){
-		$this->minimo = $valor;
+	function set_unidadMedNormal($valor){
+		$this->unidadMedNormal = $valor;
 	}
 	
-    function set_maximo($valor){
-		$this->maximo = $valor;
+    function set_unidadMedAlt($valor){
+		$this->unidadMedAlt = $valor;
 	}
 
-    function set_porcentaje($valor){
-		$this->porcentaje = $valor;
-	}
 
 	//ahora la misma cosa pero para leer, es decir get
 	
-	function get_codigo(){
-		return $this->codigo;
-	}
-	
-	function get_nombre(){
-		return $this->nombre;
+	function get_codigo_categoria(){
+		return $this->codigo_categoria;
 	}
 	
 	function get_tipo(){
 		return $this->tipo;
 	}
 	
-	function get_minimo(){
-		return $this->minimo;
+	function get_unidadMedNormal(){
+		return $this->unidadMedNormal;
 	}
 
-    function get_maximo(){
-		return $this->maximo;
+    function get_unidadMedAlt(){
+		return $this->unidadMedAlt;
 	}
 
-    function get_porcentaje(){
-		return $this->porcentaje;
-	}
 	
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
 	
@@ -89,11 +74,11 @@ class productosaj extends datos{
 		//datos, ahora debemos ejecutar las operaciones para realizar las consultas 
 		
 		//Lo primero que debemos hacer es consultar por el campo clave
-		//en este caso la codigo, para ello se creo la funcion existe
+		//en este caso la codigo_categoria, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
-		if(!$this->existe($this->codigo)){
-			//si estamos aca es porque la codigo no existe es decir se puede incluir
+		if(!$this->existe($this->codigo_categoria)){
+			//si estamos aca es porque la codigo_categoria no existe es decir se puede incluir
 			//los pasos a seguir son
 			//1 Se llama a la funcion conecta 
 			$co = $this->conecta();
@@ -102,33 +87,27 @@ class productosaj extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("Insert into producto(
-						codigo,
-						nombre,
+					$p = $co->prepare("Insert into categoria(
+						codigo_categoria,
 						tipo,
-						minimo,
-                        maximo,
-                        porcentaje
+						unidadMedNormal,
+                        unidadMedAlt
 						)
 						Values(
-						:codigo,
-						:nombre,
+						:codigo_categoria,
 						:tipo,
-						:minimo,
-                        :maximo,
-                        :porcentaje
+						:unidadMedNormal,
+                        :unidadMedAlt
 						)");
-					$p->bindParam(':codigo',$this->codigo);		
-					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
 					$p->bindParam(':tipo',$this->tipo);	
-					$p->bindParam(':minimo',$this->minimo);
-                    $p->bindParam(':maximo',$this->maximo);
-                    $p->bindParam(':porcentaje',$this->porcentaje);
+					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
+                    $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
 					
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Producto Inluido';
+			            $r['mensaje'] =  'categoria Inluido';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -136,7 +115,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'incluir';
-			$r['mensaje'] =  'Ya existe el Producto';
+			$r['mensaje'] =  'Ya existe el categoria';
 		}
 		
 		//Listo eso es todo y es igual para el resto de las operaciones
@@ -150,28 +129,24 @@ class productosaj extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->codigo)){
+		if($this->existe($this->codigo_categoria)){
 			try {
-				$p = $co->prepare("Update producto set 
-						nombre = :nombre,
+				$p = $co->prepare("Update categoria set 
 						tipo = :tipo,
-						minimo = :minimo,
-                        maximo = :maximo,
-                        porcentaje = :porcentaje
+						unidadMedNormal = :unidadMedNormal,
+                        unidadMedAlt = :unidadMedAlt
 						where
-						codigo = :codigo
+						codigo_categoria = :codigo_categoria
 						");
-					$p->bindParam(':codigo',$this->codigo);		
-					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
 					$p->bindParam(':tipo',$this->tipo);
-					$p->bindParam(':minimo',$this->minimo);
-                    $p->bindParam(':maximo',$this->maximo);
-                    $p->bindParam(':porcentaje',$this->porcentaje);
+					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
+                    $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
 					
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
-			            $r['mensaje'] =  'Producto Modificado';
+			            $r['mensaje'] =  'Categoria Modificada';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -179,7 +154,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'modificar';
-			    $r['mensaje'] =  'No existe el Producto';
+			    $r['mensaje'] =  'No existe la Categoria';
 		}
 		return $r;
 	}
@@ -188,18 +163,18 @@ class productosaj extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->codigo)){
+		if($this->existe($this->codigo_categoria)){
 			try {
-					$p = $co->prepare("delete from producto
+					$p = $co->prepare("delete from categoria
 					    where
-						codigo = :codigo
+						codigo_categoria = :codigo_categoria
 						");
-					$p->bindParam(':codigo',$this->codigo);		
+					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
 					
 					
 					$p->execute();
 					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'Producto Eliminado';
+			        $r['mensaje'] =  'Categoria Eliminada';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -207,7 +182,7 @@ class productosaj extends datos{
 		}
 		else{
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe el Producto';
+			$r['mensaje'] =  'No existe la Categoria';
 		}
 		return $r;
 	}
@@ -219,7 +194,7 @@ class productosaj extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from producto");
+			$resultado = $co->query("Select * from categoria");
 			
 			if($resultado){
 				
@@ -227,22 +202,16 @@ class productosaj extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['codigo'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre'];
+							$respuesta = $respuesta.$r['codigo_categoria'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['tipo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['minimo'];
+							$respuesta = $respuesta.$r['unidadMedNormal'];
 						$respuesta = $respuesta."</td>";
                         $respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['maximo'];
-						$respuesta = $respuesta."</td>";
-                        $respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['porcentaje'];
+							$respuesta = $respuesta.$r['unidadMedAlt'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
@@ -263,12 +232,12 @@ class productosaj extends datos{
 	}
 	
 	
-	private function existe($codigo){
+	private function existe($codigo_categoria){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from producto where codigo='$codigo'");
+			$resultado = $co->query("Select * from categoria where codigo_categoria='$codigo_categoria'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -293,7 +262,7 @@ class productosaj extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from producto where codigo='$this->codigo'");
+			$resultado = $co->query("Select * from categoria where codigo_categoria='$this->codigo_categoria'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
