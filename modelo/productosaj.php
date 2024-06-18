@@ -102,49 +102,38 @@ class productosaj extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("Insert into producto(
-						codigo,
-						nombre,
-						minimo,
-                        maximo,
-                        id_marca,
-						id_categoria
-						)
-						Values(
-						:codigo,
-						:nombre,
-						:minimo,
-                        :maximo,
-                        :id_marca,
-						:id_categoria
-						)");
-					$p->bindParam(':codigo',$this->codigo);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':minimo',$this->minimo);
-                    $p->bindParam(':maximo',$this->maximo);
-                    $p->bindParam(':id_marca',$this->id_marca);
-					$p->bindParam(':id_categoria',$this->id_categoria);	
-					
-					$p->execute();
-					
-						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Producto Inluido';
-			} catch(Exception $e) {
-				$r['resultado'] = 'error';
-			    $r['mensaje'] =  $e->getMessage();
-			}
+				$co->query("Insert into producto(
+					codigo,
+					nombre,
+					minimo,
+					maximo,
+					id_marca,
+					id_categoria
+					)
+					Values(
+					'$this->codigo',
+					'$this->nombre',
+					'$this->minimo',
+					'$this->maximo',
+					'$this->id_marca',
+					'$this->id_categoria'
+					)");
+					$r['resultado'] = 'incluir';
+					$r['mensaje'] =  'Producto Inluido';
+		} catch(Exception $e) {
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
 		}
-		else{
-			$r['resultado'] = 'incluir';
-			$r['mensaje'] =  'Ya existe el Producto';
-		}
-		
-		//Listo eso es todo y es igual para el resto de las operaciones
-		//incluir, modificar y eliminar
-		//solo cambia para buscar 
-		return $r;
-		
 	}
+	else{
+		$r['resultado'] = 'incluir';
+		$r['mensaje'] =  'Ya existe';
+	}
+	return $r;
+	//Listo eso es todo y es igual para el resto de las operaciones
+	//incluir, modificar y eliminar
+	//solo cambia para buscar 
+}
 	
 	function modificar(){
 		$co = $this->conecta();
@@ -152,24 +141,16 @@ class productosaj extends datos{
 		$r = array();
 		if($this->existe($this->codigo)){
 			try {
-				$p = $co->prepare("Update producto set 
-						nombre = :nombre,
-						minimo = :minimo,
-                        maximo = :maximo,
-                        id_marca = :id_marca,
-						id_categoria = :id_categoria
+				$co->query("Update producto set 
+					    codigo = '$this->codigo',
+						nombre = '$this->nombre',
+						minimo = '$this->minimo',
+						maximo = '$this->maximo',
+						id_marca = '$this->id_marca',
+						id_categoria = '$this->id_categoria'
 						where
-						codigo = :codigo
+						codigo = '$this->codigo'
 						");
-					$p->bindParam(':codigo',$this->codigo);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':minimo',$this->minimo);
-                    $p->bindParam(':maximo',$this->maximo);
-                    $p->bindParam(':id_marca',$this->id_marca);
-					$p->bindParam(':id_categoria',$this->id_categoria);
-					
-					$p->execute();
-					
 						$r['resultado'] = 'modificar';
 			            $r['mensaje'] =  'Producto Modificado';
 			} catch(Exception $e) {
@@ -190,27 +171,23 @@ class productosaj extends datos{
 		$r = array();
 		if($this->existe($this->codigo)){
 			try {
-					$p = $co->prepare("delete from producto
-					    where
-						codigo = :codigo
-						");
-					$p->bindParam(':codigo',$this->codigo);		
-					
-					
-					$p->execute();
-					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'Producto Eliminado';
-			} catch(Exception $e) {
+				$co->query("delete from producto 
+				where
+				codigo = '$this->codigo'
+				");
+				$r['resultado'] = 'eliminar';
+				$r['mensaje'] =  'Producto Eliminado';
+				} catch(Exception $e) {
 				$r['resultado'] = 'error';
-			    $r['mensaje'] =  $e->getMessage();
-			}
-		}
-		else{
-			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe el Producto';
-		}
-		return $r;
-	}
+				$r['mensaje'] =  $e->getMessage();
+					}
+				}
+				else{
+				$r['resultado'] = 'eliminar';
+				$r['mensaje'] =  'No existe el codigo';
+				}
+				return $r;
+				}
 	
 	
 	function consultar(){

@@ -13,7 +13,7 @@
 			</div>    
      </div>
      <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn btn-primary bg-success">
+        <a href="#" data-dismiss="modal" class="btn btn-primary">
 		<span class="glyphicon glyphicon-home"></span>
 		Cerrar</a>
      </div>
