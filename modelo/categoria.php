@@ -132,11 +132,9 @@ class categoria extends datos{
 		if($this->existe($this->codigo_categoria)){
 			try {
 				$p = $co->prepare("Update categoria set 
-						nombre = :nombre,
 						tipo = :tipo,
 						unidadMedNormal = :unidadMedNormal,
                         unidadMedAlt = :unidadMedAlt,
-                        porcentaje = :porcentaje
 						where
 						codigo_categoria = :codigo_categoria
 						");
