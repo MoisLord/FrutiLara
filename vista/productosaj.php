@@ -69,8 +69,7 @@ PRODUCTOS
 
 <div class="col-8 p-4">
 <div class="container">
-	</div>
-	<div class="container">
+	
 	   <div class="table-responsive">
 		<table class="table table-striped table-hover" id="tablaproducto">
 			<thead>
@@ -90,7 +89,7 @@ PRODUCTOS
 			</tbody>
 	   </table>
 	  </div>
-  </div>
+  
 
   
 </div>
