@@ -1,11 +1,11 @@
 <div class= "col-12">
-<nav class="navbar navbar-expand-lg text-warning bg-success bg-gradient fixed-top">
+<nav class="navbar navbar-expand-lg text-white bg-success bg-gradient fixed-top">
   <div class="container-fluid">
 
     <link href="css/menu.css" rel="stylesheet">
 
     <img src="img/logo.png" alt="" style="width:50px;">
-    <a class="navbar-brand text-warning" href="#">FRUTILARA</a>
+    <a class="navbar-brand text-white" href="#">FRUTILARA</a>
 
 
     <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
