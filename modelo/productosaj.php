@@ -225,7 +225,17 @@ class productosaj extends datos{
 				
 				$respuesta = '';
 				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta = $respuesta."<tr>";
+					    $respuesta = $respuesta."<td>";
+							$respuesta = $respuesta."<button type='button'
+							class='btn btn-primary w-100 small-width mb-3' 
+							onclick='pone(this,0)'
+						    >Modificar</button><br/>";
+							$respuesta = $respuesta."<button type='button'
+							class='btn btn-primary w-100 small-width mt-2' 
+							onclick='pone(this,1)'
+						    >Eliminar</button><br/>";
+						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo'];
 						$respuesta = $respuesta."</td>";
@@ -235,10 +245,10 @@ class productosaj extends datos{
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['minimo'];
 						$respuesta = $respuesta."</td>";
-                        $respuesta = $respuesta."<td>";
+						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['maximo'];
 						$respuesta = $respuesta."</td>";
-                        $respuesta = $respuesta."<td>";
+						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['id_marca'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
