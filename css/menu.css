@@ -2,7 +2,7 @@
     border: none;
     font-size: 1.25rem;
 }
-.navbar-toggler:focus, .btn-closebg-danger:focus {
+.navbar-toggler:focus {
     box-shadow: none;
     outline: none;
 }
