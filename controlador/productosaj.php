@@ -46,10 +46,10 @@ require_once("modelo/".$pagina.".php");
 		  else{		  
 			  $o->set_codigo($_POST['codigo']);
 			  $o->set_nombre($_POST['nombre']);
-			  $o->set_tipo($_POST['tipo']);
 			  $o->set_minimo($_POST['minimo']);
               $o->set_maximo($_POST['maximo']);
-              $o->set_porcentaje($_POST['porcentaje']);
+              $o->set_porcentaje($_POST['id_marca']);
+			  $o->set_tipo($_POST['id_categoria']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }

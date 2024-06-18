@@ -40,14 +40,6 @@ $(document).ready(function(){
         $("#maximo").on("keyup", function() {
             validarkeyup(/^[0-9]{2,}$/, $(this), $("#smaximo"), "Solo números, mínimo 2 dígitos");
         });
-
-        $("#porcentaje").on("keypress", function(e) {
-            validarkeypress(/^[0-9]*$/, e);
-        });
-        
-        $("#porcentaje").on("keyup", function() {
-            validarkeyup(/^[0-9]{2,}$/, $(this), $("#sporcentaje"), "Solo números, mínimo 2 dígitos");
-        });
         
         
     //FIN DE VALIDACION DE DATOS
@@ -62,10 +54,10 @@ $(document).ready(function(){
             datos.append('accion','incluir');
             datos.append('codigo',$("#codigo").val());
             datos.append('nombre',$("#nombre").val());
-            datos.append('tipo',$("#tipo").val());
             datos.append('minimo',$("#minimo").val());
             datos.append('maximo',$("#maximo").val());
-            datos.append('porcentaje',$("#porcentaje").val());
+            datos.append('id_marca',$("#id_marca").val());
+            datos.append('id_categoria',$("#id_categoria").val());
             enviaAjax(datos);
         }
     });
@@ -76,10 +68,10 @@ $(document).ready(function(){
             datos.append('accion','modificar');
             datos.append('codigo',$("#codigo").val());
             datos.append('nombre',$("#nombre").val());
-            datos.append('tipo',$("#tipo").val());
             datos.append('minimo',$("#minimo").val());
             datos.append('maximo',$("#maximo").val());
-            datos.append('porcentaje',$("#porcentaje").val());
+            datos.append('id_marca',$("#id_marca").val());
+            datos.append('id_categoria',$("#id_categoria").val());
             enviaAjax(datos);
             
         }
@@ -166,10 +158,7 @@ $(document).ready(function(){
             muestraMensaje("Maximo debe ser <br/>Solo números, mínimo 2 dígitos");
             return false;
         }
-        else if (validarkeyup(/^[0-9]{2,}$/, $("#porcentaje"), $("#sporcentaje"), "Solo números, mínimo 3 dígitos") == 0) {
-            muestraMensaje("Porcentaje debe ser <br/>Solo números, mínimo 2 dígitos");
-            return false;
-        }
+
         
         return true;
     }
@@ -222,11 +211,10 @@ $(document).ready(function(){
     function coloca(linea){
         $("#codigo").val($(linea).find("td:eq(0)").text());
         $("#nombre").val($(linea).find("td:eq(1)").text());
-        $("#tipo").val($(linea).find("td:eq(2)").text());
-        $("#minimo").val($(linea).find("td:eq(3)").text());
-        $("#maximo").val($(linea).find("td:eq(4)").text());
-        $("#porcentaje").val($(linea).find("td:eq(5)").text());
-        
+        $("#minimo").val($(linea).find("td:eq(2)").text());
+        $("#maximo").val($(linea).find("td:eq(3)").text());
+        $("#id_marca").val($(linea).find("td:eq(4)").text());
+        $("#id_categoria").val($(linea).find("td:eq(5)").text());
     }
     
     //funcion que envia y recibe datos por AJAX
@@ -259,7 +247,6 @@ $(document).ready(function(){
                            $("#nombre").val(lee.mensaje[0][2]);
                            $("#minimo").val(lee.mensaje[0][3]);
                            $("#maximo").val(lee.mensaje[0][4]);
-                           $("#porcentaje").val(lee.mensaje[0][5]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
@@ -298,9 +285,9 @@ $(document).ready(function(){
         
         $("#codigo").val("");
         $("#nombre").val("");
-        $("#tipo").val("");
         $("#minimo").val("");
         $("#maximo").val("");
-        $("#porcentaje").val("");
+        $("#id_marca").val("");
+        $("#id_categoria").val("");
         
     }

@@ -19,10 +19,10 @@ class productosaj extends datos{
 	
 	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
 	private $nombre;
-	private $tipo;
 	private $minimo;
     private $maximo;
-    private $porcentaje;
+    private $id_marca;
+	private $id_categoria;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
@@ -40,10 +40,6 @@ class productosaj extends datos{
 		$this->nombre = $valor;
 	}
 	
-	function set_tipo($valor){
-		$this->tipo = $valor;
-	}
-	
 	function set_minimo($valor){
 		$this->minimo = $valor;
 	}
@@ -52,8 +48,12 @@ class productosaj extends datos{
 		$this->maximo = $valor;
 	}
 
-    function set_porcentaje($valor){
-		$this->porcentaje = $valor;
+    function set_id_marca($valor){
+		$this->id_marca = $valor;
+	}
+	
+	function set_id_categoria($valor){
+		$this->id_categoria = $valor;
 	}
 
 	//ahora la misma cosa pero para leer, es decir get
@@ -66,10 +66,6 @@ class productosaj extends datos{
 		return $this->nombre;
 	}
 	
-	function get_tipo(){
-		return $this->tipo;
-	}
-	
 	function get_minimo(){
 		return $this->minimo;
 	}
@@ -78,8 +74,12 @@ class productosaj extends datos{
 		return $this->maximo;
 	}
 
-    function get_porcentaje(){
-		return $this->porcentaje;
+    function get_id_marca(){
+		return $this->id_marca;
+	}
+
+	function get_id_categoria(){
+		return $this->id_categoria;
 	}
 	
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
@@ -105,25 +105,25 @@ class productosaj extends datos{
 					$p = $co->prepare("Insert into producto(
 						codigo,
 						nombre,
-						tipo,
 						minimo,
                         maximo,
-                        porcentaje
+                        id_marca,
+						id_categoria
 						)
 						Values(
 						:codigo,
 						:nombre,
-						:tipo,
 						:minimo,
                         :maximo,
-                        :porcentaje
+                        :id_marca,
+						:id_categoria
 						)");
 					$p->bindParam(':codigo',$this->codigo);		
 					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':tipo',$this->tipo);	
 					$p->bindParam(':minimo',$this->minimo);
                     $p->bindParam(':maximo',$this->maximo);
-                    $p->bindParam(':porcentaje',$this->porcentaje);
+                    $p->bindParam(':id_marca',$this->id_marca);
+					$p->bindParam(':id_categoria',$this->id_categoria);	
 					
 					$p->execute();
 					
@@ -154,19 +154,19 @@ class productosaj extends datos{
 			try {
 				$p = $co->prepare("Update producto set 
 						nombre = :nombre,
-						tipo = :tipo,
 						minimo = :minimo,
                         maximo = :maximo,
-                        porcentaje = :porcentaje
+                        id_marca = :id_marca,
+						id_categoria = :id_categoria
 						where
 						codigo = :codigo
 						");
 					$p->bindParam(':codigo',$this->codigo);		
 					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':tipo',$this->tipo);
 					$p->bindParam(':minimo',$this->minimo);
                     $p->bindParam(':maximo',$this->maximo);
-                    $p->bindParam(':porcentaje',$this->porcentaje);
+                    $p->bindParam(':id_marca',$this->id_marca);
+					$p->bindParam(':id_categoria',$this->id_categoria);
 					
 					$p->execute();
 					
@@ -234,16 +234,16 @@ class productosaj extends datos{
 							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['tipo'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['minimo'];
 						$respuesta = $respuesta."</td>";
                         $respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['maximo'];
 						$respuesta = $respuesta."</td>";
                         $respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['porcentaje'];
+							$respuesta = $respuesta.$r['id_marca'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['id_categoria'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
