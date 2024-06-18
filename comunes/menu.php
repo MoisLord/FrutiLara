@@ -1,6 +1,7 @@
 <div class= "col-12">
 <nav class="navbar text-warning bg-success bg-gradient fixed-top">
   <div class="container-fluid">
+    
     <link href="css/menu.css" rel="stylesheet">
 
     <img src="img/logo.png" alt="" style="width:50px;">
