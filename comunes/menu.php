@@ -1,5 +1,5 @@
 <div class= "col-12">
-<nav class="navbar navbar-expand-lg text-warning bg-success bg-gradient fixed-top">
+<nav class="navbar text-warning bg-success bg-gradient fixed-top">
   <div class="container-fluid">
 
     <img src="img/logo.png" alt="" style="width:50px;">
@@ -14,7 +14,7 @@
         <h5 class="offcanvas-title text-warning" id="offcanvasNavbarLabel">Donde Comer Saludable es mas Sabroso</h5>
         <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body navbar-expand-lg">
+      <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
             <a class="nav-link mx-lg-2 text-warning"  href="?pagina=productosaj">Productos</a>
