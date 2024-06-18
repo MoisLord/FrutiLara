@@ -134,7 +134,7 @@ class categoria extends datos{
 				$p = $co->prepare("Update categoria set 
 						tipo = :tipo,
 						unidadMedNormal = :unidadMedNormal,
-                        unidadMedAlt = :unidadMedAlt,
+                        unidadMedAlt = :unidadMedAlt
 						where
 						codigo_categoria = :codigo_categoria
 						");
