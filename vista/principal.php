@@ -6,7 +6,7 @@
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="position-relative">
+      <div class="position-relative border-radius-xl">
         <img src="img/fondo.jpg" class="d-block w-100 h-50" alt="...">
         <div class="position-absolute top-0 start-0 w-100 h-50 bg-dark opacity-50"></div>
       </div>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <div class="position-relative">
+      <div class="position-relative border-radius-xl">
         <img src="img/2.jpg" class="d-block w-100 h-50 object-fit-cover" alt="...">
         <div class="position-absolute top-0 start-0 w-100 h-50 bg-dark opacity-50"></div>
       </div>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <div class="position-relative">
+      <div class="position-relative border-radius-xl">
         <img src="img/3.jpg" class="d-block w-100 h-50 object-fit-cover" alt="...">
         <div class="position-absolute top-0 start-0 w-100 h-50 bg-dark opacity-50"></div>
       </div>
