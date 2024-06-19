@@ -4,7 +4,10 @@
 <?php require_once("comunes/menu.php"); ?>
 
 <header>
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="position-relative">
@@ -45,6 +48,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+</div>
+</div>
 </div>
 </header>
     
