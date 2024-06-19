@@ -67,5 +67,5 @@
     width: 200%; /* ajusta el ancho del contenedor del mask */
     height: 200%; /* ajusta el alto del contenedor del mask */
     background-color: #000; /* ajusta el color de fondo del mask */
-    opacity: 0.5; /* ajusta la opacidad del mask */
+    opacity: 50; /* ajusta la opacidad del mask */
 }
