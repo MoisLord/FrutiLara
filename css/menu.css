@@ -22,7 +22,7 @@
 }
 
 .nav-link:hover, .nav-link.active {
-    color: #ff4500;
+    color: #ff3c00;
 }
 
 @media (min-width: 991px){
