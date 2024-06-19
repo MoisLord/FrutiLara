@@ -48,3 +48,24 @@
 .font-weight-bolder {
     color: #ff1493;
 }
+
+.carousel-inner {
+    height: 100vh; /* ajusta el alto del contenedor del carousel */
+  }
+  
+  .carousel-item {
+    height: 100vh; /* ajusta el alto de cada item del carousel */
+  }
+  
+  .carousel-item img {
+    object-fit: cover; /* ajusta el tamaño de la imagen para que cubra todo el espacio */
+    width: 100%; /* ajusta el ancho de la imagen */
+    height: 100%; /* ajusta el alto de la imagen */
+  }
+  
+  .mask {
+    width: 100%; /* ajusta el ancho del contenedor del mask */
+    height: 100%; /* ajusta el alto del contenedor del mask */
+    background-color: #000; /* ajusta el color de fondo del mask */
+    opacity: 0.5; /* ajusta la opacidad del mask */
+  }

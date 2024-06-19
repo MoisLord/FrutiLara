@@ -10,36 +10,32 @@
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="position-relative">
-        <img src="img/fondo.jpg" class="d-block w-100 h-50 object-fit-scale rounded-2" alt="...">
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-      </div>
-      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+    <span class="mask bg-dark opacity-50">
+              <img src="img/fondo.jpg" class="d-block w-100 h-100" alt="...">
+            </span>
+          </div>
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
         <h1 class="font-weight-bolder mb-6 display-1" style="font-weight: 600;">Bienvenido a Frutilara</h1>
         <p class="font-weight-bolder lead display-4" style="font-weight: 200;">Donde Comer Saludable es mas Sabroso</p>
       </div>
-    </div>
-    <div class="carousel-item">
-      <div class="position-relative">
-        <img src="img/2.jpg" class="d-block w-100 h-50 object-fit-scale rounded-2" alt="...">
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-      </div>
-      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <div class="carousel-item">
+            <span class="mask bg-dark opacity-50">
+              <img src="img/2.jpg" class="d-block w-100 h-100" alt="...">
+            </span>
+          </div>
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
         <h1 class="font-weight-bolder mb-6 display-1" style="font-weight: 600;">Bienvenido a Frutilara</h1>
         <p class="font-weight-bolder lead display-4" style="font-weight: 200;">Donde Comer Saludable es mas Sabroso</p>
       </div>
-    </div>
-    <div class="carousel-item">
-      <div class="position-relative">
-        <img src="img/3.jpg" class="d-block w-100 h-50 object-fit-scale rounded-2" alt="...">
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-      </div>
-      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <div class="carousel-item">
+            <span class="mask bg-dark opacity-50">
+              <img src="img/3.jpg" class="d-block w-100 h-100" alt="...">
+            </span>
+          </div>
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
         <h1 class="font-weight-bolder mb-6 display-1" style="font-weight: 600;">Bienvenido a Frutilara</h1>
         <p class="font-weight-bolder lead display-4" style="font-weight: 200;">Donde Comer Saludable es mas Sabroso</p>
       </div>
-    </div>
-  </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -49,10 +45,11 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-</div>
-</div>
+    </div>
+  </div>
 </div>
 </header>
+
     
 
 <!--
