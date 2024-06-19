@@ -9,6 +9,7 @@
     <div class="carousel-item active">
       <div class="position-relative">
         <img src="img/fondo.jpg" class="page-header min-vh-75 m-3 border-radius-xl" alt="...">
+        <span class="mask bg-gradient-dark"></span>
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       </div>
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
