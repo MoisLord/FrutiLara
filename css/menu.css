@@ -17,13 +17,13 @@
 
 .navbar-brand {
     font-weight: 500;
-    color: #ff4500;
+    color: #ffffff;
     font-size: 24px;
     transition: 0.3s color;
 }
 
 .nav-link {
-    color: #ff4500;
+    color: #ffffff;
     font-weight: 800;
     position: relative;
 }
