@@ -44,3 +44,7 @@
         visibility: visible;
     }
 }
+
+.hi, .p{
+    color: #ff1493;
+}
