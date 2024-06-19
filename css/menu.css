@@ -8,6 +8,13 @@
     outline: none;
 }
 
+.navbar {
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+
 .navbar-brand {
     font-weight: 500;
     color: #ff4500;
