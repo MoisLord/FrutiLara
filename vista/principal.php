@@ -11,7 +11,7 @@
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       </div>
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-        <h1 class="text-danger font-weight-bolder mb-6 display-1" style="font-weight: 600;">Bienvenido a Frutilara</h1>
+        <h1 class="text-warning font-weight-bolder mb-6 display-1" style="font-weight: 600;">Bienvenido a Frutilara</h1>
         <p class="text-warning font-weight-bolder lead display-4" style="font-weight: 200;">Donde Comer Saludable es mas Sabroso</p>
       </div>
     </div>
