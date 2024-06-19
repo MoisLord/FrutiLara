@@ -1,5 +1,5 @@
 <div class= "col-12">
-<nav class="navbar navbar-expand-lg text-white bg-success bg-gradient fixed-top">
+<nav class="navbar navbar-expand-lg bg-success bg-gradient fixed-top">
   <div class="container-fluid">
 
     <link href="css/menu.css" rel="stylesheet">
