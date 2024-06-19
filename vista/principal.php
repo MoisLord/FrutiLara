@@ -7,8 +7,8 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="position-relative">
-        <img src="img/fondo.jpg" class="d-block w-100 h-100" alt="...">
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+        <img src="img/fondo.jpg" class="d-block w-50 h-100" alt="...">
+        <div class="position-absolute top-0 start-0 w-50 h-100 bg-dark opacity-50"></div>
       </div>
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
         <h1 class="text-warning font-weight-bolder mb-6 display-1" style="font-weight: 600;">Bienvenido a Frutilara</h1>
