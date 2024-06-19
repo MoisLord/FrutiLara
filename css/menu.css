@@ -50,11 +50,11 @@
 }
 
 .carousel-inner {
-    height: 100vh; /* ajusta el alto del contenedor del carousel */
+    height: 200vh; /* ajusta el alto del contenedor del carousel */
   }
   
   .carousel-item {
-    height: 100vh; /* ajusta el alto de cada item del carousel */
+    height: 200vh; /* ajusta el alto de cada item del carousel */
   }
   
   .carousel-item img {
