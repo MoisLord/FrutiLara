@@ -7,7 +7,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="position-relative">
-        <img src="img/fondo.jpg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+        <img src="img/fondo.jpg" class="d-block w-100 h-100" alt="...">
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       </div>
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
