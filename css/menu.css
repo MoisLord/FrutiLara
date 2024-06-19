@@ -59,13 +59,13 @@
   
   .carousel-item img {
     object-fit: cover; /* ajusta el tamaño de la imagen para que cubra todo el espacio */
-    width: 100%; /* ajusta el ancho de la imagen */
-    height: 100%; /* ajusta el alto de la imagen */
+    width: 200%; /* ajusta el ancho de la imagen */
+    height: 200%; /* ajusta el alto de la imagen */
   }
   
   .mask {
-    width: 100%; /* ajusta el ancho del contenedor del mask */
-    height: 100%; /* ajusta el alto del contenedor del mask */
+    width: 200%; /* ajusta el ancho del contenedor del mask */
+    height: 200%; /* ajusta el alto del contenedor del mask */
     background-color: #000; /* ajusta el color de fondo del mask */
     opacity: 0.5; /* ajusta la opacidad del mask */
   }
