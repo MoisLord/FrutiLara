@@ -66,17 +66,17 @@
   
   .carousel-item {
     text-align: center;
-  }
+    height: 100vh; /* Establece la altura del carousel-item en toda la pantalla */
+    width: 100vw; /* Establece la anchura del carousel-item en toda la pantalla */
+}
   
   .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 0 auto;
-    display: block;
+    height: 100%; /* Establece la altura de la imagen en toda la pantalla */
+    width: 100%; /* Establece la anchura de la imagen en toda la pantalla */
+    object-fit: cover; /* Establece la imagen para que cubra toda la pantalla */
+    border-radius: 10px; /* Elimina el borde redondeado para que la imagen cubra toda la pantalla */
   }
-  
+
   .mask {
     width: 100%;
     height: 100%;
@@ -86,7 +86,10 @@
   }
 
   .carousel-item span.mask {
-    opacity: 0.5; /* Agrega opacidad a la máscara */
+    background-color: rgba(0, 0, 0, 0.5); /* Agrega opacidad oscura al fondo */
+    height: 100%; /* Establece la altura del span en toda la pantalla */
+    width: 100%; /* Establece la anchura del span en toda la pantalla */
+    display: block; /* Establece el display en block para que cubra toda la pantalla */
   }
 
   .slider-box {
