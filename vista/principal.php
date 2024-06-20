@@ -58,12 +58,5 @@
               <p class="font-weight-bolder lead display-4" style="font-weight: 200;">Donde Comer Saludable es mas Sabroso</p>
             </div>
           </div>
-          <!-- agregar marco blanco -->
-          <div class="carousel-inner-border">
-            <div class="border border-white rounded"></div>
-          </div>
-          <!-- fin marco blanco -->
-          <button class="carousel-control-prev"></button>
-
 </body>
 </html>
