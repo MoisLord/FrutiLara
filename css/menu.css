@@ -51,6 +51,12 @@
 .font-weight-bolder {
     color: #ff9900;
 }
+
+.h1, .p{
+    border: 2px solid #000000; /* Borde negro */
+    padding: 10px;
+    font-size: 18px;
+}
 /* fIN DE MENU */
 
 /* Inicio de Principal */
