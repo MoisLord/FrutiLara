@@ -53,8 +53,6 @@
     position: relative;
   }
   
-  
-  
   .carousel-item {
     text-align: center;
     height: 100vh; /* Establece la altura del carousel-item en toda la pantalla */
