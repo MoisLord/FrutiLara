@@ -67,13 +67,12 @@
   .carousel-item {
     text-align: center;
     height: 100vh; /* Establece la altura del carousel-item en toda la pantalla */
-    width: 100vw; /* Establece la anchura del carousel-item en toda la pantalla */
+    width: 100vh; /* Establece la anchura del carousel-item en toda la pantalla */
 }
   
   .carousel-item img {
     height: 100%; /* Establece la altura de la imagen en toda la pantalla */
     width: 100%; /* Establece la anchura de la imagen en toda la pantalla */
-    object-fit: cover; /* Establece la imagen para que cubra toda la pantalla */
     border-radius: 0px; /* Elimina el borde redondeado para que la imagen cubra toda la pantalla */
   }
 
