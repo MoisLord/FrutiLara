@@ -9,9 +9,6 @@
 }
 
 .navbar{
-    background: #11998e;
-    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
-    background: linear-gradient(to right, #38ef7d, #11998e);
     height: 80px;
     margin: 20px;
     border-radius: 16px;
@@ -49,7 +46,7 @@
 }
 
 .font-weight-bolder {
-    color: #ff9900;
+    color: #ff009d;
     border: 2px solid #000000; /* Borde negro */
     padding: 10px;
     font-size: 18px;
