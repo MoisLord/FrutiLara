@@ -57,8 +57,8 @@
   
   .carousel-item {
     text-align: center;
-    height: 150vh; /* Establece la altura del carousel-item en toda la pantalla */
-    width: 150vh; /* Establece la anchura del carousel-item en toda la pantalla */
+    height: 100vh; /* Establece la altura del carousel-item en toda la pantalla */
+    width: 100vh; /* Establece la anchura del carousel-item en toda la pantalla */
 }
   
   .carousel-item img {
