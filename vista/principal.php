@@ -10,7 +10,7 @@
       <div class="col-md-12">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active object-fit-cover">
               <span class="mask bg-dark opacity-50 d-block w-100 h-100 mx-auto">
                 <img src="img/fondo.jpg" class="d-block w-100 h-100 mx-auto" alt="...">
               </span>
@@ -19,7 +19,7 @@
               <h1 class="font-weight-bolder mb-6 display-1" style="font-weight: 600;">Bienvenido a Frutilara</h1>
               <p class="font-weight-bolder lead display-4" style="font-weight: 200;">Donde Comer Saludable es mas Sabroso</p>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item object-fit-cover">
               <span class="mask bg-dark opacity-50 d-block w-100 h-100 mx-auto">
                 <img src="img/2.jpg" class="d-block w-100 h-100 mx-auto" alt="...">
               </span>
@@ -28,7 +28,7 @@
               <h1 class="font-weight-bolder mb-6 display-1" style="font-weight: 600;">Bienvenido a Frutilara</h1>
               <p class="font-weight-bolder lead display-4" style="font-weight: 200;">Donde Comer Saludable es mas Sabroso</p>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item object-fit-cover">
               <span class="mask bg-dark opacity-50 d-block w-100 h-100 mx-auto">
                 <img src="img/3.jpg" class="d-block w-100 h-100 mx-auto" alt="...">
               </span>
