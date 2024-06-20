@@ -9,13 +9,13 @@
 }
 
 .navbar{
+    background: #11998e;
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+    background: linear-gradient(to right, #38ef7d, #11998e);
     height: 80px;
     margin: 20px;
     border-radius: 16px;
     padding: 0.5rem;
-    background: #11998e;
-    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
-    background: linear-gradient(to right, #38ef7d, #11998e);
 }
 
 .nav-link {
