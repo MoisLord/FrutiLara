@@ -4,26 +4,6 @@
 <?php require_once("comunes/menu.php"); ?>
 
 <header>
-  <style>
-    .carousel-item {
-      height: 100vh;
-      width: 100vw;
-    }
-
-    .carousel-item span.mask {
-      background-color: rgba(0, 0, 0, 0.5);
-      height: 100%;
-      width: 100%;
-      display: block;
-    }
-
-    .carousel-item img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 0;
-    }
-  </style>
   <!-- Resto del código -->
   <div class="container-fluid">
     <div class="row justify-content-center">
