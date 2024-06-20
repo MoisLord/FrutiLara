@@ -41,5 +41,6 @@
   </button>
 </div>
 </header>
+<script type="text/javascript" src="js/principal.js"></script>
 </body>
 </html>
