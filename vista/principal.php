@@ -23,7 +23,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <span class="mask bg-dark opacity-50 d-block w-100 h-100 mx-auto">
-                <img src="img/fondo.jpg" class="d-block w-100 h-100 mx-auto p-2" alt="...">
+                <img src="img/fondo.jpg" class="d-block w-100 h-100 mx-auto" alt="...">
               </span>
             </div>
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
@@ -32,7 +32,7 @@
             </div>
             <div class="carousel-item">
               <span class="mask bg-dark opacity-50 d-block w-100 h-100 mx-auto">
-                <img src="img/2.jpg" class="d-block w-100 h-100 mx-auto p-2" alt="...">
+                <img src="img/2.jpg" class="d-block w-100 h-100 mx-auto" alt="...">
               </span>
             </div>
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
@@ -41,7 +41,7 @@
             </div>
             <div class="carousel-item">
               <span class="mask bg-dark opacity-50 d-block w-100 h-100 mx-auto">
-                <img src="img/3.jpg" class="d-block w-100 h-100 mx-auto p-2" alt="...">
+                <img src="img/3.jpg" class="d-block w-100 h-100 mx-auto" alt="...">
               </span>
             </div>
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
