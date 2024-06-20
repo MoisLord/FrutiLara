@@ -4,7 +4,6 @@
 <?php require_once("comunes/menu.php"); ?>
 
 <header>
-  <!-- Resto del código -->
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-md-12">
