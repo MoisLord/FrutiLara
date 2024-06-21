@@ -8,11 +8,15 @@
 <hr/>
 <hr/>
 <hr/>
+<hr/>
+<hr/>
+<hr/>
 REGISTRO DE CATEGORIAS DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
-<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-   <form method="post" id="f" autocomplete="off">
+<div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
+   <form class="col-4 p-2" method="post" id="f" autocomplete="off">
+   <h4 class="text-center text-success">Registro de Productos</h4>
 	
 	<div class="container">	
 		<div class="row mb-3">
@@ -22,7 +26,7 @@ REGISTRO DE CATEGORIAS DE PRODUCTOS
 			   <span id="scodigo_categoria"></span>
 			</div>
 			<div class="col-md-8">
-			   <label for="tipo">tipo de Producto</label>
+			   <label for="tipo">Tipo de Producto</label>
 			   <input class="form-control" type="text" id="tipo" name="tipo"/>
 			   <span id="stipo"></span>
 			</div>

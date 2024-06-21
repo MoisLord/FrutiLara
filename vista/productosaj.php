@@ -10,11 +10,14 @@
 <hr/>
 <hr/>
 <hr/>
+<hr/>
+<hr/>
+<hr/>
 PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container-fluid row">
-<form class="col-4 p-2">
+<form class="col-4 p-2" method="post" id="f" autocomplete="off">
 	<h4 class="text-center text-success">Registro de Productos</h4>
 <div class="mb-3">
 			   <label for="codigo">Codigo del Producto</label>
