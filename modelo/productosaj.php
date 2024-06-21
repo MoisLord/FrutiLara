@@ -102,7 +102,7 @@ class productosaj extends datos{
 			$r = array();
 			try {
 				
-				$co->query("Insert into producto(
+				$p = $co->prepare("Insert into producto(
 					codigo,
 					nombre,
 					minimo,
@@ -130,10 +130,8 @@ class productosaj extends datos{
 		$r['mensaje'] =  'Ya existe';
 	}
 	return $r;
-	//Listo eso es todo y es igual para el resto de las operaciones
-	//incluir, modificar y eliminar
-	//solo cambia para buscar 
-}
+
+	}
 	
 	function modificar(){
 		$co = $this->conecta();
@@ -141,16 +139,26 @@ class productosaj extends datos{
 		$r = array();
 		if($this->existe($this->codigo)){
 			try {
-				$co->query("Update producto set 
-					    codigo = '$this->codigo',
-						nombre = '$this->nombre',
-						minimo = '$this->minimo',
-						maximo = '$this->maximo',
-						id_marca = '$this->id_marca',
-						id_categoria = '$this->id_categoria'
-						where
-						codigo = '$this->codigo'
+				$p = $co->prepare("Update producto set 
+				codigo = :codigo,
+				nombre = :nombre,
+				minimo, = :minimo,
+				maximo, = :maximo,
+				id_marca, = :id_marca,
+				id_categoria = :id_categoria
+				where
+				codigo = :codigo
 						");
+
+						$p->bindParam(':codigo',$this->codigo);		
+					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':minimo',$this->minimo);
+                    $p->bindParam(':maximo',$this->maximo);
+					$p->bindParam(':id_marca',$this->id_marca);
+					$p->bindParam(':id_categoria',$this->id_categoria);
+					
+					$p->execute();
+
 						$r['resultado'] = 'modificar';
 			            $r['mensaje'] =  'Producto Modificado';
 			} catch(Exception $e) {
@@ -171,10 +179,16 @@ class productosaj extends datos{
 		$r = array();
 		if($this->existe($this->codigo)){
 			try {
-				$co->query("delete from producto 
+				$p = $co->prepare("delete from producto 
 				where
-				codigo = '$this->codigo'
+				codigo = codigo
 				");
+
+				$p->bindParam(':codigo',$this->codigo);		
+					
+					
+					$p->execute();
+
 				$r['resultado'] = 'eliminar';
 				$r['mensaje'] =  'Producto Eliminado';
 				} catch(Exception $e) {
@@ -202,17 +216,7 @@ class productosaj extends datos{
 				
 				$respuesta = '';
 				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr>";
-					    $respuesta = $respuesta."<td>";
-							$respuesta = $respuesta."<button type='button'
-							class='btn btn-success w-100 small-width mb-3' 
-							onclick='pone(this,0)'
-						    >Modificar</button><br/>";
-							$respuesta = $respuesta."<button type='button'
-							class='btn btn-success w-100 small-width mt-2' 
-							onclick='pone(this,1)'
-						    >Eliminar</button><br/>";
-						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo'];
 						$respuesta = $respuesta."</td>";
@@ -222,15 +226,15 @@ class productosaj extends datos{
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['minimo'];
 						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
+                        $respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['maximo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['id_marca'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['id_categoria'];
-						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta.$r['id_marca'];
+					$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."<td>";
+					$respuesta = $respuesta.$r['id_categoria'];
+				$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
 				$r['resultado'] = 'consultar';
