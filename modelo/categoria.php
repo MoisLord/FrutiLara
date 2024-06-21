@@ -107,7 +107,7 @@ class categoria extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'categoria Inluido';
+			            $r['mensaje'] =  'La Categoria ha sido Registrada';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -115,7 +115,7 @@ class categoria extends datos{
 		}
 		else{
 			$r['resultado'] = 'incluir';
-			$r['mensaje'] =  'Ya existe el categoria';
+			$r['mensaje'] =  'Ya existe la categoria';
 		}
 		
 		//Listo eso es todo y es igual para el resto de las operaciones
@@ -146,7 +146,7 @@ class categoria extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
-			            $r['mensaje'] =  'Categoria Modificada';
+			            $r['mensaje'] =  'La Categoria ha sido Editada';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -174,7 +174,7 @@ class categoria extends datos{
 					
 					$p->execute();
 					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'Categoria Eliminada';
+			        $r['mensaje'] =  'La Categoria ha sido Borrada';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
