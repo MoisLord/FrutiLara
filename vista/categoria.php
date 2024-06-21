@@ -55,39 +55,36 @@ CATEGORIAS DE PRODUCTOS
 			</div>
 		</div>
 
-		<div class="row mt-3 justify-content-center">
-			<div class="col-md-2">
-				   <button type="button" class="btn btn-success" id="incluir" >INCLUIR</button>
+		<div class="row mt-3 justify-content-left">
+			<div class="col-md-3">
+				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
+			</div>
+			<div class="col-md-3">	
+				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
+			</div>
+			
+			<div class="col-md-3">	
+		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
 			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="consultar" >CONSULTAR</button>
+				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
 			</div>
-			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="modificar" >MODIFICAR</button>
 			</div>
-			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="eliminar" >ELIMINAR</button>
-			</div>
+			<div class="row mt-3 justify-content-left">
 			<div class="col-md-2">	
 				   <a href="." class="btn btn-success">REGRESAR</a>
 			</div>
-		</div>
+			</div>
 	</div>	
 	</form>
 
 
 
-<!-- seccion del modal -->
-<!-- <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">PRODUCTOS REGISTRADOS</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div> -->
+
 	<div class="col-8 p-4">
 	<div class="container">
+	<h5 class="modal-title text-center text-success">CLIENTES REGISTRADOS</h5>
+	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablacategoria">
 		<thead>
@@ -103,8 +100,18 @@ CATEGORIAS DE PRODUCTOS
 		  
 		</tbody>
 		</table>
+		
     </div>
 </div>
+<!-- seccion del modal -->
+<!-- <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">PRODUCTOS REGISTRADOS</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div> 	-->
 </div> <!-- fin de container -->
 <script type="text/javascript" src="js/categoria.js"></script>
 

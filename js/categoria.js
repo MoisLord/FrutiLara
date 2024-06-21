@@ -189,7 +189,17 @@ $(document).ready(function(){
     }
     
     //funcion para pasar de la lista a el formulario
-    function coloca(linea){
+    function coloca(pos,accion){
+	
+        linea=$(pos).closest('tr');
+    
+    
+        if(accion==0){
+            $("#proceso").text("MODIFICAR");
+        }
+        else{
+            $("#proceso").text("ELIMINAR");
+        }
         $("#codigo_categoria").val($(linea).find("td:eq(0)").text());
         $("#tipo").val($(linea).find("td:eq(1)").text());
         $("#unidadMedNormal").val($(linea).find("td:eq(2)").text());
@@ -218,7 +228,6 @@ $(document).ready(function(){
                            destruyeDT();
                            $("#resultadoconsulta").html(lee.mensaje);
                            crearDT();
-                           $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
                            $("#tipo").val(lee.mensaje[0][2]);
