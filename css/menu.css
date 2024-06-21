@@ -36,7 +36,7 @@
         transform: translateX(-50%);
         width: 0;
         height: 2px;
-        background-image: linear-gradient(to right,#7DDA58,#FFDE59,#FE9900,#E4080A,#BFD641);
+        background-image: #7DDA58;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }
