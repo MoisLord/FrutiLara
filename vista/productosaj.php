@@ -70,6 +70,7 @@ PRODUCTOS
 	</div>
 </form>
 
+
 <div class="col-8 p-4">
 <div class="container">
 	
@@ -93,7 +94,7 @@ PRODUCTOS
 	   </table>
 	  </div>
   
-
+	  </div>
   
 </div>
 

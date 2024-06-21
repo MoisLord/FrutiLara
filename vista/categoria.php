@@ -11,21 +11,23 @@
 <hr/>
 <hr/>
 <hr/>
-REGISTRO DE CATEGORIAS DE PRODUCTOS
+CATEGORIAS DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
-   <h4 class="text-center text-success">Registro de Productos</h4>
+   <h4 class="text-center text-success">Registro de Categorias de Productos</h4>
 	
 	<div class="container">	
 		<div class="row mb-3">
-			<div class="col-md-4">
+			<div class="col-md">
 			   <label for="codigo_categoria">Codigo de categoria</label>
 			   <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria"/>
 			   <span id="scodigo_categoria"></span>
 			</div>
-			<div class="col-md-8">
+			</div>
+			<div class="row mb-3">
+			<div class="col-md">
 			   <label for="tipo">Tipo de Producto</label>
 			   <input class="form-control" type="text" id="tipo" name="tipo"/>
 			   <span id="stipo"></span>
@@ -33,12 +35,14 @@ REGISTRO DE CATEGORIAS DE PRODUCTOS
 		</div>    
         
 		<div class="row mb-4">
-			<div class="col-md-6">
+			<div class="col-md">
         		<label for="unidadMedNormal">Unidad de medida común</label>
        			<input class="form-control" type="text" id="unidadMedNormal" name="unidadMedNormal"/>
 				<span id="sunidadMedNormal"></span>
     		</div>
-			<div class="col-md-6">
+			</div>
+			<div class="row mb-4">
+			<div class="col-md">
 			   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
 			   <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt"/>
 			   <span id="sunidadMedAlt"></span>
@@ -70,19 +74,20 @@ REGISTRO DE CATEGORIAS DE PRODUCTOS
 		</div>
 	</div>	
 	</form>
-</div> <!-- fin de container -->
+
 
 
 <!-- seccion del modal -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
+<!-- <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
         <h5 class="modal-title">PRODUCTOS REGISTRADOS</h5>
         <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
-    </div>
-    <div class="modal-content">
+    </div> -->
+	<div class="col-8 p-4">
+	<div class="container">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablacategoria">
 		<thead>
@@ -99,12 +104,8 @@ REGISTRO DE CATEGORIAS DE PRODUCTOS
 		</tbody>
 		</table>
     </div>
-	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
-  </div>
 </div>
-
+</div> <!-- fin de container -->
 <script type="text/javascript" src="js/categoria.js"></script>
 
 </body>
