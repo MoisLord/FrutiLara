@@ -9,6 +9,7 @@
 }
 
 .navbar{
+    background-image: linear-gradient(to right,#7DDA58,#FFDE59,#FE9900,#E4080A,#BFD641);
     height: 80px;
     margin: 20px;
     border-radius: 16px;
@@ -34,7 +35,7 @@
         transform: translateX(-50%);
         width: 0;
         height: 2px;
-        background-image: linear-gradient(to right,#7DDA58,#FFDE59,#FE9900,#E4080A,#BFD641);
+        background-image: #7DDA58;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }
@@ -47,9 +48,10 @@
 
 .font-weight-bolder {
     color: #ff9900;
-    border: 2px solid #000000; /* Borde negro */
-    padding: 10px;
-    font-size: 18px;
+}
+.h1, .p{
+    -webkit-text-stroke: 1px black;
+    text-shadow: 1px 1px 0 black;
 }
 /* fIN DE MENU */
 
