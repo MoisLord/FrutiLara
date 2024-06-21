@@ -1,4 +1,5 @@
 <div class= "col-12">
+<nav class="navbar navbar-expand-lg bg-success bg-gradient fixed-top">
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
 
