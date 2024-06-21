@@ -14,13 +14,20 @@ $(document).ready(function(){
                 enviaAjax(datos,'consultatr');	
             }
         });
+        $("#tipo").on("keypress", function(e) {
+            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+        });
         
+        $("#tipo").on("keyup", function() {
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#stipo"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
+        });
+
         $("#unidadMedNormal").on("keypress", function(e) {
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         
         $("#unidadMedNormal").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sunidadMedNormal"), "Solo letras, de entre 3 a 20 digitos");
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sunidadMedNormal"), "Debe colocar la unidad de medida más común con solo letras, entre 3 a 20 digitos");
         });
 
         $("#unidadMedAlt").on("keypress", function(e) {
@@ -28,7 +35,7 @@ $(document).ready(function(){
         });
         
         $("#unidadMedAlt").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sunidadMedAlt"), "Solo números, de entre 3 a 20 digitos");
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sunidadMedAlt"), "Debe colocar la unidad de medida alternativa con solo números, entre 3 a 20 digitos");
         });
 
         
