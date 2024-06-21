@@ -52,7 +52,7 @@
 }
 .h1, .p{
     -webkit-text-stroke: 1px black;
-    text-stroke: 1px black;
+    text-shadow: 1px 1px 0 black;
 }
 /* fIN DE MENU */
 
