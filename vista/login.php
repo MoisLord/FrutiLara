@@ -6,6 +6,16 @@
     <title>Login</title>
 </head>
 <body>
-    
+    <div class="form-container">
+        <div class="signup-container">
+            <h2 class="form-title">Login</h2>
+            <form accept="#">
+                <div class="form-holder">
+                    <input type="text" class="input" placeholder="Nombre">
+                    <input type="password" class="input" placeholder="Contraseña">
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
