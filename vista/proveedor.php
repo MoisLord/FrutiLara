@@ -5,34 +5,37 @@
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <body>
-<div class="container-fluid p-0">
 <div class="container text-center h2 text-success">
+<hr/>
+<hr/>
 <hr/>
 <hr/>
 <hr/>
 	PROVEEDORES
 <hr class="border border-success border-3 opacity-65">
 </div>
-<div class="container"> 
+<div class="container-fluid row"> 
 	<form method="post" id="f" autocomplete="off">
-    <div class="row">
-		<div class="col">
+	<h4 class="text-center text-success">Registro de proveedores</h4>
+	<div class="container">	
+    <div class="row mb-3">
+		<div class="col-md">
 		   <label for="rif">Rif</label>
 		   <input class="form-control" type="text" id="rif" name="rif" />
 		   <span id="srif"></span>
 		</div>
 
-		<div class="col">
+		<div class="col-md">
 		   <label for="Nombre">Nombre</label>
 		   <input class="form-control" type="text" id="Nombre" name="Nombre" />
 		   <span id="sNombre"></span>
 		</div>
-		<div class="col">
+		<div class="col-md">
 		   <label for="Telefono">Telefono</label>
 		   <input class="form-control" type="text" id="Telefono" name="Telefono" />
 		   <span id="sTelefono"></span>
 		</div>
-		<div class="col">
+		<div class="col-md">
 		   <label for="Direccion">Dirección</label>
 		   <input class="form-control" type="text" id="Direccion" name="Direccion" />
 		   <span id="sDireccion"></span>
@@ -45,7 +48,7 @@
 			</div>
 	</div>
 
-	<div class="row">
+	<div class="row mt-3 justify-content-left">
 		<div class="col">
 			   <button type="button" class="btn btn-success" id="incluir" name="incluir">INCLUIR</button>
 		</div>
@@ -62,25 +65,21 @@
 			   <a href="." class="btn btn-success">REGRESAR</a>
 		</div>
 	</div>
+	</div>	
 	</form>
-</div> <!-- fin de container -->
-<!-- seccion del modal -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">PROVEEDORES REGISTRADOS</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
+</div> 
+	
+<div class="col-8 p-4">
+	<div class="container">
+	<h5 class="modal-title text-center text-success">PROVEEDORES</h5>
+	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablaproveedores">
 		<thead>
 		  <tr>
 			<th>Rif</th>
 			<th>Nombre del proveedor</th>
-			<th>Telefono</th>
+			<th>Telefonon</th>	
 			<th>Direccion</th>
 		  </tr>
 		</thead>
@@ -89,15 +88,8 @@
 		  
 		</tbody>
 		</table>
-    </div>
-	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
-  </div>
+
 </div>
-<!--fin de seccion modal-->
-
-
 <!--Llamada a las librerias de javascript para las validaciones de esta pagina -->
 <script type="text/javascript" src="js/proveedor.js"></script>
 </body>
