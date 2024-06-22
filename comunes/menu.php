@@ -25,7 +25,7 @@
             <a class="nav-link mx-lg-2" href="?pagina=proveedor">Proveedores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" href="?pagina=clientes">Empleados</a>
+            <a class="nav-link mx-lg-2" href="?pagina=empleados">Empleados</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" href="?pagina=categoria">Categorias de producto</a>
