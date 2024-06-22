@@ -9,7 +9,7 @@
 //pagina sera cargada, se le asigna un valor por defecto
 //en este caso principal para cuando se carga por primera vez
  
-$pagina = "login"; 
+$pagina = "principal"; 
 
 
 //condicional que lee la solicitud
