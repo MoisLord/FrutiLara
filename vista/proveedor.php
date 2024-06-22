@@ -11,13 +11,12 @@
 <hr/>
 <hr/>
 <hr/>
-CATEGORIAS DE PRODUCTOS
+PANTALLA DE PROVEEDORES
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
    <h4 class="text-center text-success">REGISTRO DE PROVEEDORES</h4>
-	
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
@@ -83,7 +82,7 @@ CATEGORIAS DE PRODUCTOS
 
 	<div class="col-8 p-4">
 	<div class="container">
-	<h5 class="modal-title text-center text-success">PROVEEDORES</h5>
+	<h5 class="modal-title text-center text-success">PROVEEDORES REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablaproveedores">
@@ -103,15 +102,7 @@ CATEGORIAS DE PRODUCTOS
 
     </div>
 </div>
-<!-- seccion del modal -->
-<!-- <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">PRODUCTOS REGISTRADOS</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div> 	-->
+
 </div> <!-- fin de container -->
 <script type="text/javascript" src="js/categoria.js"></script>
 
