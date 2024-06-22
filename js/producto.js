@@ -142,24 +142,26 @@ $("#maximo").on("keyup", function() {
   //Validación de todos los campos antes del envio
   function validarenvio(){
     if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
-        $("#scodigo"),"El formato debe ser Numerico")==0){
-        muestraMensaje("El codigo debe coincidir con el formato <br/>"+ 
-                        "12345678");	
-        return false;					
+		$("#scodigo"),"El formato debe ser 9999999")==0){
+	    muestraMensaje("El codigo debe coincidir con el formato <br/>"+ 
+						"99999999");	
+		return false;			
     }	
 
-   else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-    $("#nombre"),$("#snombre"),"Solo letras  entre 3 y 30 caracteres")==0){
-    muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
-    return false;
-    }
+    else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+		$("#nombre"),$("#snombre"),"Solo letras  entre 3 y 30 caracteres")==0){
+		muestraMensaje("Nombre del Producto <br/>Solo letras  entre 3 y 30 caracteres");
+		return false;
+	}
 
-   else if (validarkeyup(/^[0-9]{2,}$/, $("#minimo"), $("#sminimo"), "Solo números, mínimo 3 dígitos") == 0) {
+   else if (validarkeyup(/^[0-9]{2,}$/, 
+   $("#minimo"), $("#sminimo"), "Solo números, mínimo 3 dígitos") == 0) {
     muestraMensaje("Minimo debe ser <br/>Solo números, mínimo 2 dígitos");
     return false;
     }
     
-    else if (validarkeyup(/^[0-9]{2,}$/, $("#maximo"), $("#smaximo"), "Solo números, mínimo 3 dígitos") == 0) {
+    else if (validarkeyup(/^[0-9]{2,}$/, 
+    $("#maximo"), $("#smaximo"), "Solo números, mínimo 3 dígitos") == 0) {
       muestraMensaje("Maximo debe ser <br/>Solo números, mínimo 2 dígitos");
       return false;
   }
