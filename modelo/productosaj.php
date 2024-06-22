@@ -118,6 +118,16 @@ class productosaj extends datos{
 					:id_marca,
 					:id_categoria
 					)");
+
+					$p->bindParam(':codigo',$this->codigo);		
+					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':minimo',$this->minimo);
+					$p->bindParam(':maximo',$this->maximo);
+					$p->bindParam(':id_marca',$this->id_marca);
+					$p->bindParam(':id_categoria',$this->id_categoria);
+					
+					$p->execute();
+
 					$r['resultado'] = 'incluir';
 					$r['mensaje'] =  'Producto Inluido';
 		} catch(Exception $e) {

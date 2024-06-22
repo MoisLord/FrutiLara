@@ -79,31 +79,28 @@ PRODUCTOS
 
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-3">
-				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
+				   <button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
+			<div class="col-md-1"></div>
 			<div class="col-md-3">	
-				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
+				   <button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
 			</div>
-			
+			<div class="col-md-1"></div>
 			<div class="col-md-3">	
-		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+				   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
-			<div class="col-md-2">	
+			<div class="row mb-3"></div>
+			<div class="col-md-3">	
 				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
 			</div>
-			</div>
-			<div class="row mt-3 justify-content-left">
-			<div class="col-md-2">	
-				   <a href="." class="btn btn-success">REGRESAR</a>
-			</div>
-			</div>
-	</div>	
+		</div>
+	</div>
 	</form>
 
 
 
 
-	<div class="col-8 p-4">
+<div class="col-8 p-4">
 	<div class="container">
 	<h5 class="modal-title text-center text-success">PRODUCTOS REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
@@ -126,6 +123,8 @@ PRODUCTOS
 		</table>
 		
     </div>
+</div>
+
 </div>
 
 <script type="text/javascript" src="js/producto.js"></script>
