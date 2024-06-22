@@ -4,72 +4,84 @@
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
-<body>
 <div class="container text-center h2 text-success">
 <hr/>
 <hr/>
 <hr/>
 <hr/>
 <hr/>
-	PROVEEDORES
+<hr/>
+CATEGORIAS DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
-<div class="container-fluid row"> 
-	<form method="post" id="f" autocomplete="off">
-	<h4 class="text-center text-success">Registro de proveedores</h4>
+<div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
+   <form class="col-4 p-2" method="post" id="f" autocomplete="off">
+   <h4 class="text-center text-success">REGISTRO DE PROVEEDORES</h4>
+	
 	<div class="container">	
-    <div class="row mb-3">
-		<div class="col-md">
-		   <label for="rif">Rif</label>
-		   <input class="form-control" type="text" id="rif" name="rif" />
-		   <span id="srif"></span>
+		<div class="row mb-3">
+			<div class="col-md">
+			   <label for="codigo_categoria">Rif</label>
+			   <input class="form-control" type="text" id="rif" name="rif" />
+			   <span id="srif"></span>
+			</div>
+			</div>
+			<div class="row mb-3">
+			<div class="col-md">
+			   <label for="tipo">Nombre del proveedor</label>
+			   <input class="form-control" type="text" id="Nombre" name="Nombre" />
+			   <span id="sNombre"></span>
+			</div>
+		</div>    
+        
+		<div class="row mb-4">
+			<div class="col-md">
+        		<label for="unidadMedNormal">Telefono</label>
+				<input class="form-control" type="text" id="Telefono" name="Telefono" />
+				<span id="sTelefono"></span>
+    		</div>
+			</div>
+			<div class="row mb-4">
+			<div class="col-md">
+			   <label for="unidadMedAlt">Dirección</label>
+			   <input class="form-control" type="text" id="Direccion" name="Direccion" />
+			   <span id="sDireccion"></span>
+			</div>
 		</div>
-
-		<div class="col-md">
-		   <label for="Nombre">Nombre</label>
-		   <input class="form-control" type="text" id="Nombre" name="Nombre" />
-		   <span id="sNombre"></span>
-		</div>
-		<div class="col-md">
-		   <label for="Telefono">Telefono</label>
-		   <input class="form-control" type="text" id="Telefono" name="Telefono" />
-		   <span id="sTelefono"></span>
-		</div>
-		<div class="col-md">
-		   <label for="Direccion">Dirección</label>
-		   <input class="form-control" type="text" id="Direccion" name="Direccion" />
-		   <span id="sDireccion"></span>
-		</div>
-	</div>
-
-	<div class="row">
+		
+		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
 			</div>
-	</div>
+		</div>
 
-	<div class="row mt-3 justify-content-left">
-		<div class="col">
-			   <button type="button" class="btn btn-success" id="incluir" name="incluir">INCLUIR</button>
-		</div>
-		<div class="col">	
-			   <button type="button" class="btn btn-success" id="consultar" data-toggle="modal" data-target="#modal1" name="consultar">CONSULTAR</button>
-		</div>
-		<div class="col">	
-			   <button type="button" class="btn btn-success" id="modificar" name="modificar">MODIFICAR</button>
-		</div>
-		<div class="col">	
-			   <button type="button" class="btn btn-success" id="eliminar" name="eliminar">ELIMINAR</button>
-		</div>
-		<div class="col">	
-			   <a href="." class="btn btn-success">REGRESAR</a>
-		</div>
-	</div>
+		<div class="row mt-3 justify-content-left">
+			<div class="col-md-3">
+				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
+			</div>
+			<div class="col-md-3">	
+				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
+			</div>
+			
+			<div class="col-md-3">	
+		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+			</div>
+			<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
+			</div>
+			</div>
+			<div class="row mt-3 justify-content-left">
+			<div class="col-md-2">	
+				   <a href="." class="btn btn-success">REGRESAR</a>
+			</div>
+			</div>
 	</div>	
 	</form>
-</div> 
-	
-<div class="col-8 p-4">
+
+
+
+
+	<div class="col-8 p-4">
 	<div class="container">
 	<h5 class="modal-title text-center text-success">PROVEEDORES</h5>
 	<hr class="border border-success border-3 opacity-65">
@@ -89,8 +101,19 @@
 		</tbody>
 		</table>
 
+    </div>
 </div>
-<!--Llamada a las librerias de javascript para las validaciones de esta pagina -->
-<script type="text/javascript" src="js/proveedor.js"></script>
+<!-- seccion del modal -->
+<!-- <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">PRODUCTOS REGISTRADOS</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div> 	-->
+</div> <!-- fin de container -->
+<script type="text/javascript" src="js/categoria.js"></script>
+
 </body>
 </html>
