@@ -26,14 +26,33 @@ $(document).ready(function(){
 		$(this),$("#snombre_apellido"),"Solo letras  entre 3 y 30 caracteres");
 	});
 	
-	$("#ciudad").on("keypress",function(e){
-		validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+	$("#telefono").on("keypress",function(e){
+		validarkeypress(/^[0-9\b-]*$/,e);
 	});
 	
-	$("#ciudad").on("keyup",function(){
-		validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-		$(this),$("#sciudad"),"Solo letras  entre 3 y 30 caracteres");
+	$("#telefono").on("keyup",function(){
+	    validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$(this),$("#stelefono"),"El formato debe ser 9999-9999999");
 	});
+
+	$("#correo").on("keypress",function(e){
+		validarkeypress(/^[A-Za-z@_.\b\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
+	});
+	
+	$("#correo").on("keyup",function(){
+		validarkeyup(/^[A-Za-z_\u00f1\u00d1\u00E0-\u00FC-]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
+		$(this),$("#scorreo"),"El formato debe ser alguien@servidor.com");
+	});
+
+	$("#direccion").on("keypress",function(e){
+		validarkeypress(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
+	});
+	
+	$("#direccion").on("keyup",function(){
+		validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{6,35}$/,
+		$(this),$("#sdireccion"),"Solo letras y/o numeros entre 6 y 35 caracteres");
+	});
+
+
 	
 	
 	
@@ -50,8 +69,10 @@ $("#incluir").on("click",function(){
 		datos.append('accion','incluir');
 		datos.append('cedula',$("#cedula").val());
 		datos.append('nombre_apellido',$("#nombre_apellido").val());
-		datos.append('ciudad',$("#ciudad").val());
 		datos.append('telefono',$("#telefono").val());
+		datos.append('correo',$("#correo").val());
+		datos.append('direccion',$("#direccion").val());
+		datos.append('fechaNacimiento',$("#fechaNacimiento").val());
 		enviaAjax(datos);
 	}
 });
@@ -62,8 +83,10 @@ $("#modificar").on("click",function(){
 		datos.append('accion','modificar');
 		datos.append('cedula',$("#cedula").val());
 		datos.append('nombre_apellido',$("#nombre_apellido").val());
-		datos.append('ciudad',$("#ciudad").val());
 		datos.append('telefono',$("#telefono").val());
+		datos.append('correo',$("#correo").val());
+		datos.append('direccion',$("#direccion").val());
+		datos.append('fechaNacimiento',$("#fechaNacimiento").val());
 		enviaAjax(datos);
 		
 	}
@@ -100,14 +123,14 @@ $("#consultar").on("click",function(){
 //funcion para enlazar al DataTablet
 function destruyeDT(){
 	//1 se destruye el datatablet
-	if ($.fn.DataTable.isDataTable("#tablaclientes")) {
-            $("#tablaclientes").DataTable().destroy();
+	if ($.fn.DataTable.isDataTable("#tablaempleados")) {
+            $("#tablaempleados").DataTable().destroy();
     }
 }
 function crearDT(){
 	//se crea nuevamente
-    if (!$.fn.DataTable.isDataTable("#tablaclientes")) {
-            $("#tablaclientes").DataTable({
+    if (!$.fn.DataTable.isDataTable("#tablaempleados")) {
+            $("#tablaempleados").DataTable({
               language: {
                 lengthMenu: "Mostrar _MENU_ por página",
                 zeroRecords: "No se encontraron personas",
@@ -142,10 +165,20 @@ function validarenvio(){
 		muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres");
 		return false;
 	}
-	else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-		$("ciudad"),$("#ciudad"),"Solo letras  entre 3 y 30 caracteres")==0){
-		muestraMensaje("Ciudad donde reside <br/>Solo letras  entre 3 y 30 caracteres");
-		return false;
+	else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$("#telefono"),
+		 $("#stelefono"),"El formato debe ser 9999-9999999")==0){
+		 muestraMensaje("error",4000,"Valida","Verifique el Telefono");
+	     return false;
+	}
+	else if(validarkeyup(/^[A-Za-z_\u00f1\u00d1\u00E0-\u00FC-]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
+		$("#correo"),$("#scorreo"),"El formato debe ser alguien@servidor.com")==0){
+		muestraMensaje("error",4000,"Valida","Verifique el Correo");
+		 return false;
+	}
+	else if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{6,35}$/,
+		$("#direccion"),$("#sdireccion"),"Solo letras y/o numeros entre 6 y 35 caracteres")==0){
+		muestraMensaje("error",4000,"Valida","Verifique la direccion");
+		return false;				
 	}
 	
 	return true;
@@ -199,8 +232,10 @@ mensaje){
 function coloca(linea){
 	$("#cedula").val($(linea).find("td:eq(0)").text());
 	$("#nombre_apellido").val($(linea).find("td:eq(1)").text());
-	$("#ciudad").val($(linea).find("td:eq(2)").text());
-	$("#telefono").val($(linea).find("td:eq(3)").text());
+	$("#telefono").val($(linea).find("td:eq(2)").text());
+	$("#correo").val($(linea).find("td:eq(3)").text());
+	$("#direccion").val($(linea).find("td:eq(4)").text());
+	$("#fechaNacimiento").val($(linea).find("td:eq(5)").text());
 	
 }
 
@@ -221,19 +256,19 @@ function enviaAjax(datos){
 			console.log(respuesta);
 				try {
 					var lee = JSON.parse(respuesta);
-					if (lee.resultado == "obtienefecha") {
-					
-					}
-					else if (lee.resultado == "consultar") {
-					   destruyeDT();
-					   $("#resultadoconsulta").html(lee.mensaje);
-					   crearDT();
-					   $("#modal1").modal("show");
-					}
-					else if (lee.resultado == "encontro") {
-					   $("#nombre_apellido").val(lee.mensaje[0][2]);
-					   $("#ciudad").val(lee.mensaje[0][3]);
-					}
+					if (lee.resultado == "consultar") {
+						destruyeDT();
+						$("#resultadoconsulta").html(lee.mensaje);
+						crearDT();
+					 }
+					 else if (lee.resultado == "encontro") {
+						$("#nombre_apellido").val(lee.mensaje[0][2]);
+						$("#telefono").val(lee.mensaje[0][3]);
+						$("#correo").val(lee.mensaje[0][4]);
+						$("#direccion").val(lee.mensaje[0][5]);
+						$("#fechaNacimiento").val(lee.mensaje[0][6]);
+						
+					 }
 					else if (lee.resultado == "incluir" || 
 					lee.resultado == "modificar" || 
 					lee.resultado == "eliminar") {
@@ -270,7 +305,9 @@ function limpia(){
 	
 	$("#cedula").val("");
 	$("#nombre_apellido").val("");
-	$("#ciudad").val("");
 	$("#telefono").val("");
+	$("#correo").val("");
+	$("#direccion").val("");
+	$("#fechaNacimiento").val("");
 	
 }

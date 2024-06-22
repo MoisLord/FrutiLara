@@ -67,7 +67,6 @@ GESTIÓN DE EMPLEADOS
 			   <label for="fechaNacimiento">Fecha de Nacimiento</label>
 			   <input class="form-control" type="date" id="fechaNacimiento" name="fechaNacimiento" 
 			   />
-			   <span id="sfechaNacimiento"></span>
 			</div>
 		</div>
 			
@@ -96,11 +95,35 @@ GESTIÓN DE EMPLEADOS
 		</div>
 	</div>	
 	</form>
+
+	<div class="col-8 p-4">
+	<div class="container">
+	<h5 class="modal-title text-center text-success">EMPLEADOS REGISTRADOS</h5>
+	<hr class="border border-success border-3 opacity-65">
+	    <!--se agrega un id para poder enlazar con el datatablet--> 
+		<table class="table table-striped table-hover" id="tablaempleados">
+		<thead>
+		  <tr>
+			<th>Cédula</th>
+			<th>Nombre y Apellido</th>
+			<th>Télefono</th>	
+			<th>Correo</th>
+			<th>Dirección</th>
+			<th>Fecha Naci</th>
+		  </tr>
+		</thead>
+		<tbody id="resultadoconsulta">
+		  
+		  
+		</tbody>
+		</table>
+		
+    </div>
 </div> <!-- fin de container -->
 
 
 <!-- seccion del modal -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
+<!--<div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
         <h5 class="modal-title">EMPLEADOS REGISTRADOS</h5>
@@ -109,7 +132,7 @@ GESTIÓN DE EMPLEADOS
         </button>
     </div>
     <div class="modal-content">
-	    <!--se agrega un id para poder enlazar con el datatablet--> 
+	    e!--se agrega un id para poder enlazar con el datatablet--e> 
 		<table class="table table-striped table-hover" id="tablaclientes">
 		<thead>
 		  <tr>
@@ -129,9 +152,9 @@ GESTIÓN DE EMPLEADOS
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
   </div>
-</div>
+</div>-->
 <!--fin de seccion modal-->
-<script type="text/javascript" src="js/clientes.js"></script>
+<script type="text/javascript" src="js/empleados.js"></script>
 
 </body>
 </html>
