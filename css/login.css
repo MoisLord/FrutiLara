@@ -50,3 +50,11 @@ body {
     text-align: center;
     font-size: 28px;
 }
+
+.form-container, .form-holder {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 50px;
+    transition: 0.3s ease;
+}
