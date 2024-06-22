@@ -105,16 +105,18 @@ PRODUCTOS
 
 	<div class="col-8 p-4">
 	<div class="container">
-	<h5 class="modal-title text-center text-success">CLIENTES REGISTRADOS</h5>
+	<h5 class="modal-title text-center text-success">PRODUCTOS REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablacategoria">
 		<thead>
 		  <tr>
-			<th>Codigo de categoria</th>
-			<th>tipo de Producto</th>
-			<th>Unidad de medida común</th>	
-			<th>Unidad de Medida Alternativa</th>
+			<th>Codigo Productos</th>
+			<th>Nombre Productos</th>
+			<th>Minimo</th>	
+			<th>Maximo</th>
+			<th>Marca</th>
+			<th>Categoria</th>
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
