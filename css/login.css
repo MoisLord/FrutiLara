@@ -12,3 +12,11 @@ body {
     background: linear-gradient(to right, #38ef7d, #11998e);
     font-family: 'Fira Sans', sans-serif;
 }
+
+.form-container {
+    background-color: #222;
+    height: 550px;
+    width: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+}
