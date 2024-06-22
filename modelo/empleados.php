@@ -19,8 +19,10 @@ class clientes extends datos{
 	
 	private $cedula; //recuerden que en php, las variables no tienen tipo predefinido
 	private $nombre_apellido;
-	private $ciudad;
 	private $telefono;
+	private $correo;
+	private $direccion;
+	private $fechaNacimiento;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
@@ -38,12 +40,20 @@ class clientes extends datos{
 		$this->nombre_apellido = $valor;
 	}
 	
-	function set_ciudad($valor){
-		$this->ciudad = $valor;
-	}
-	
 	function set_telefono($valor){
 		$this->telefono = $valor;
+	}
+
+	function set_correo($valor){
+		$this->correo = $valor;
+	}
+
+	function set_direccion($valor){
+		$this->direccion = $valor;
+	}
+
+	function set_fechaNacimiento($valor){
+		$this->fechaNacimiento = $valor;
 	}
 	
 	//ahora la misma cosa pero para leer, es decir get
@@ -56,12 +66,20 @@ class clientes extends datos{
 		return $this->nombre_apellido;
 	}
 	
-	function get_ciudad(){
-		return $this->ciudad;
-	}
-	
 	function get_telefono(){
 		return $this->telefono;
+	}
+
+	function get_correo(){
+		return $this->correo;
+	}
+
+	function get_direccion(){
+		return $this->direccion;
+	}
+
+	function get_fechaNacimiento(){
+		return $this->fechaNacimiento;
 	}
 	
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
@@ -84,22 +102,28 @@ class clientes extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("Insert into clientes(
+					$p = $co->prepare("Insert into empleados(
 						cedula,
 						nombre_apellido,
-						ciudad,
-						telefono
+						telefono,
+						correo,
+						direccion,
+						fechaNacimiento
 						)
 						Values(
 						:cedula,
 						:nombre_apellido,
-						:ciudad,
-						:telefono
+						:telefono,
+						:correo,
+						:direccion,
+						:fechaNacimiento
 						)");
 					$p->bindParam(':cedula',$this->cedula);		
 					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
-					$p->bindParam(':ciudad',$this->ciudad);	
 					$p->bindParam(':telefono',$this->telefono);
+					$p->bindParam(':correo',$this->correo);
+					$p->bindParam(':direccion',$this->direccion);
+					$p->bindParam(':fechaNacimiento',$this->fechaNacimiento);
 					
 					$p->execute();
 					
@@ -128,17 +152,21 @@ class clientes extends datos{
 		$r = array();
 		if($this->existe($this->cedula)){
 			try {
-				$p = $co->prepare("Update clientes set 
+				$p = $co->prepare("Update empleados set 
 						nombre_apellido = :nombre_apellido,
-						ciudad = :ciudad,
-						telefono = :telefono
+						telefono = :telefono,
+						correo = :correo,
+						direccion = :direccion,
+						fechaNacimiento = :fechaNacimiento
 						where
 						cedula = :cedula
 						");
 					$p->bindParam(':cedula',$this->cedula);		
 					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
-					$p->bindParam(':ciudad',$this->ciudad);
 					$p->bindParam(':telefono',$this->telefono);
+					$p->bindParam(':correo',$this->correo);
+					$p->bindParam(':direccion',$this->direccion);
+					$p->bindParam(':fechaNacimiento',$this->fechaNacimiento);
 					
 					$p->execute();
 					
@@ -162,7 +190,7 @@ class clientes extends datos{
 		$r = array();
 		if($this->existe($this->cedula)){
 			try {
-					$p = $co->prepare("delete from clientes 
+					$p = $co->prepare("delete from empleados 
 					    where
 						cedula = :cedula
 						");
@@ -191,7 +219,7 @@ class clientes extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from clientes");
+			$resultado = $co->query("Select * from empleados");
 			
 			if($resultado){
 				
@@ -205,10 +233,16 @@ class clientes extends datos{
 							$respuesta = $respuesta.$r['nombre_apellido'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['ciudad'];
+							$respuesta = $respuesta.$r['telefono'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['telefono'];
+							$respuesta = $respuesta.$r['correo'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['direccion'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['fechaNacimiento'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
@@ -234,7 +268,7 @@ class clientes extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from clientes where cedula='$cedula'");
+			$resultado = $co->query("Select * from empleados where cedula='$cedula'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -259,7 +293,7 @@ class clientes extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from clientes where cedula='$this->cedula'");
+			$resultado = $co->query("Select * from empleados where cedula='$this->cedula'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    

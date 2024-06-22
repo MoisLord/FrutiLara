@@ -48,8 +48,10 @@ require_once("modelo/".$pagina.".php");
 		  else{		  
 			  $o->set_cedula($_POST['cedula']);
 			  $o->set_nombre_apellido($_POST['nombre_apellido']);
-			  $o->set_ciudad($_POST['ciudad']);
 			  $o->set_telefono($_POST['telefono']);
+			  $o->set_correo($_POST['correo']);
+			  $o->set_direccion($_POST['direccion']);
+			  $o->set_fechaNacimiento($_POST['fechaNacimiento']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }

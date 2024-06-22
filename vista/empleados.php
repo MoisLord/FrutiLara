@@ -8,21 +8,27 @@
 <hr/>
 <hr/>
 <hr/>
-REGISTRO DE EMPLEADOS
+<hr/>
+<hr/>
+<hr/>
+GESTIÓN DE EMPLEADOS
 <hr class="border border-success border-3 opacity-65">
 </div>
-<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-   <form method="post" id="f" autocomplete="off">
-	
+<div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
+   <form class="col-4 p-2" method="post" id="f" autocomplete="off">
+   <h4 class="text-center text-success">Registro de Empleados</h4>
+
 	<div class="container">	
 		<div class="row mb-3">
-			<div class="col-md-4">
+			<div class="col-md">
 			   <label for="cedula">Cedula</label>
 			   <input class="form-control" type="text" id="cedula"
 				name="cedula"/>
 			   <span id="scedula"></span>
 			</div>
-			<div class="col-md-8">
+		</div>
+		<div class="row mb-3">
+			<div class="col-md">
 			   <label for="nombre_apellido">Nombre y Apellido</label>
 			   <input class="form-control" type="text" id="nombre_apellido"
 				name="nombre_apellido"/>
@@ -31,16 +37,37 @@ REGISTRO DE EMPLEADOS
 		</div>
 		
 		<div class="row mb-3">
-			<div class="col-md-8">
-			   <label for="ciudad">Ciudad donde vive</label>
-			   <input class="form-control" type="text" id="ciudad"
-					name="ciudad"/>
-			   <span id="sciudad"></span>
-			</div>
-			<div class="col-md-4">
+			<div class="col-md">
 			   <label for="telefono">Teléfono</label>
 			   <input class="form-control" type="text" id="telefono" name="telefono" 
 			   />
+			   <span id="stelefono"></span>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-md">
+			   <label for="correo">Correo</label>
+			   <input class="form-control" type="text" id="correo" name="correo" 
+			   />
+			   <span id="scorreo"></span>
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md">
+			   <label for="direccion">Dirección</label>
+			   <input class="form-control" type="text" id="direccion" name="direccion" 
+			   />
+			   <span id="sdireccion"></span>
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md">
+			   <label for="fechaNacimiento">Fecha de Nacimiento</label>
+			   <input class="form-control" type="date" id="fechaNacimiento" name="fechaNacimiento" 
+			   />
+			   <span id="sfechaNacimiento"></span>
 			</div>
 		</div>
 			
@@ -50,21 +77,21 @@ REGISTRO DE EMPLEADOS
 			</div>
 		</div>
 
-		<div class="row mt-3 justify-content-center">
-			<div class="col-md-2">
-				   <button type="button" class="btn btn-success" id="incluir" >INCLUIR</button>
+		<div class="row mt-3 justify-content-left">
+			<div class="col-md-3">
+				   <button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
-			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="consultar" >CONSULTAR</button>
+			<div class="col-md-1"></div>
+			<div class="col-md-3">	
+				   <button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
 			</div>
-			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="modificar" >MODIFICAR</button>
+			<div class="col-md-1"></div>
+			<div class="col-md-3">	
+				   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
-			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="eliminar" >ELIMINAR</button>
-			</div>
-			<div class="col-md-2">	
-				   <a href="." class="btn btn-success">REGRESAR</a>
+			<div class="row mb-3"></div>
+			<div class="col-md-3">	
+				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
 			</div>
 		</div>
 	</div>	
@@ -76,7 +103,7 @@ REGISTRO DE EMPLEADOS
 <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">CLIENTES REGISTRADOS</h5>
+        <h5 class="modal-title">EMPLEADOS REGISTRADOS</h5>
         <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
