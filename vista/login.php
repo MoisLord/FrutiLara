@@ -14,6 +14,7 @@
                     <input type="text" class="input" placeholder="Nombre">
                     <input type="password" class="input" placeholder="Contraseña">
                 </div>
+                <button class="submit-btn">Entrar</button>
             </form>
         </div>
     </div>
