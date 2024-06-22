@@ -32,4 +32,5 @@ body {
     background: url(login.jpg) no-repeat;
     background-position: left bottom;
     background-size: cover;
+    opacity: 0.8;
 }
