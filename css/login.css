@@ -15,6 +15,10 @@ body {
 
 .form-container {
     background-color: #222;
+    background: url(../img/login.jpg) no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    opacity: 0.8;
     height: 550px;
     width: 350px;
     border-radius: 15px;
@@ -29,10 +33,6 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    background: url(login.jpg) no-repeat;
-    background-position: left bottom;
-    background-size: cover;
-    opacity: 0.8;
 }
 
 .signup-container {
@@ -45,16 +45,51 @@ body {
     transition: 0.3s ease;
 }
 
-.form-container, .form-title {
+.form-container .form-title {
     color: #fff;
     text-align: center;
     font-size: 28px;
 }
 
-.form-container, .form-holder {
+.form-container .form-holder {
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
     margin-top: 50px;
+    transition: 0.3s ease;
+}
+
+.form-container .form-holder input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 45px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    font-size: 12px;
+}
+
+.form-container .form-holder input:last-child {
+    border-bottom: 0;
+}
+
+.form-container .form-holder input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.form-container .submit-btn {
+    background-color: #63b28b;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+    padding: 15px 45px;
+    margin: 15px auto;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
     transition: 0.3s ease;
 }
