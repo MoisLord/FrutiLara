@@ -81,7 +81,7 @@ $("#maximo").on("keyup", function() {
   
   $("#eliminar").on("click",function(){
     
-    if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
+    if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
     $("#scodigo"),"El formato debe ser Numerico")==0){
       muestraMensaje("El Codigo debe coincidir con el formato <br/>"+ 
                       "12345678");		
