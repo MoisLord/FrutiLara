@@ -45,7 +45,7 @@ body {
     transition: 0.3s ease;
 }
 
-.form-title {
+.form-container .form-title {
     color: #fff;
     text-align: center;
     font-size: 28px;
@@ -55,7 +55,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 50px;
     transition: 0.3s ease;
 }
 
