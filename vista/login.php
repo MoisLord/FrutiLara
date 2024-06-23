@@ -2,7 +2,7 @@
 <link href="css/login.css" rel="stylesheet">
 <body>
     <div class="form-container">
-        <div class="signup-container">
+        <div class="signup-container slide-up">
             <h2 class="form-title">Iniciar Sesion</h2>
             <form action="vista/principal.php" method="post">
                 <div class="form-holder">
@@ -12,6 +12,7 @@
                 <button class="submit-btn">Entrar</button>
             </form>
         </div>
+
     </div>
 </body>
 </html>

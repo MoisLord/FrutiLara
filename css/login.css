@@ -43,13 +43,12 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 65%;
-    transition: 0.3s ease;
 }
 
 .form-container .form-title {
     color: #fff;
     text-align: center;
-    font-size: 28px;
+    font-size: 40px;
 }
 
 .form-container .form-holder {
@@ -94,3 +93,9 @@ body {
     cursor: pointer;
     transition: 0.3s ease;
 }
+
+.form-container .submit-btn:hover {
+    background-color: #53cb94;
+}
+
+ 
