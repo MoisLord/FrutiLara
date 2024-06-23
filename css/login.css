@@ -81,4 +81,15 @@ body {
 
 .form-container .submit-btn {
     background-color: #63b28b;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+    padding: 15px 45px;
+    margin: 15px auto;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
