@@ -17,69 +17,51 @@ class login extends datos{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
-	private $nombre;
-	private $minimo;
-    private $maximo;
-    private $id_marca;
-	private $id_categoria;
+	private $id_usuarios; //recuerden que en php, las variables no tienen tipo predefinido
+	private $tipo_usuario;
+	private $cedula;
+    private $clave;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
 	
-	function set_codigo($valor){
-		$this->codigo = $valor; //fijencen como se accede a los elementos dentro de una clase
+	function set_id_usuarios($valor){
+		$this->id_usuarios = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 		//a un elemento de this, es decir esta clase
 		//luego el nombre del elemento sin el $
 	}
 	//lo mismo que se hizo para codigo se hace para usuario y clave
 	
-	function set_nombre($valor){
-		$this->nombre = $valor;
+	function set_tipo_usuario($valor){
+		$this->tipo_usuario = $valor;
 	}
 	
-	function set_minimo($valor){
-		$this->minimo = $valor;
+	function set_cedula($valor){
+		$this->cedula = $valor;
 	}
 	
-    function set_maximo($valor){
-		$this->maximo = $valor;
-	}
-
-    function set_id_marca($valor){
-		$this->id_marca = $valor;
-	}
-	
-	function set_id_categoria($valor){
-		$this->id_categoria = $valor;
+    function set_clave($valor){
+		$this->clave = $valor;
 	}
 
 	//ahora la misma cosa pero para leer, es decir get
 	
-	function get_codigo(){
-		return $this->codigo;
+	function get_id_usuarios(){
+		return $this->id_usuarios;
 	}
 	
-	function get_nombre(){
-		return $this->nombre;
+	function get_tipo_usuario(){
+		return $this->tipo_usuario;
 	}
 	
-	function get_minimo(){
-		return $this->minimo;
+	function get_cedula(){
+		return $this->cedula;
 	}
 
-    function get_maximo(){
-		return $this->maximo;
-	}
-
-    function get_id_marca(){
-		return $this->id_marca;
-	}
-
-	function get_id_categoria(){
-		return $this->id_categoria;
+    function get_clave(){
+		return $this->clave;
 	}
 	
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
@@ -92,7 +74,7 @@ class login extends datos{
 		//en este caso la codigo, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
-		if(!$this->existe($this->codigo)){
+		if(!$this->existe($this->id_usuarios)){
 			//si estamos aca es porque la codigo no existe es decir se puede incluir
 			//los pasos a seguir son
 			//1 Se llama a la funcion conecta 
@@ -102,34 +84,28 @@ class login extends datos{
 			$r = array();
 			try {
 				
-				$p = $co->prepare("Insert into producto(
-					codigo,
-					nombre,
-					minimo,
-					maximo,
-					id_marca,
-					id_categoria
+				$p = $co->prepare("Insert into usuario(
+					id_usuarios,
+					tipo_usuario,
+					cedula,
+					clave
 					)
 					Values(
-					:codigo,
-					:nombre,
-					:minimo,
-					:maximo,
-					:id_marca,
-					:id_categoria
+					:id_usuarios,
+					:tipo_usuario,
+					:cedula,
+					:clave
 					)");
 
-					$p->bindParam(':codigo',$this->codigo);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':minimo',$this->minimo);
-					$p->bindParam(':maximo',$this->maximo);
-					$p->bindParam(':id_marca',$this->id_marca);
-					$p->bindParam(':id_categoria',$this->id_categoria);
-					
+					$p->bindParam(':id_usuarios',$this->id_usuarios);		
+					$p->bindParam(':tipo_usuario',$this->tipo_usuario);
+					$p->bindParam(':cedula',$this->cedula);
+					$p->bindParam(':clave',$this->clave);
+
 					$p->execute();
 
 					$r['resultado'] = 'incluir';
-					$r['mensaje'] =  'Producto Inluido';
+					$r['mensaje'] =  'Usuario Inluido';
 		} catch(Exception $e) {
 			$r['resultado'] = 'error';
 			$r['mensaje'] =  $e->getMessage();
@@ -137,7 +113,7 @@ class login extends datos{
 	}
 	else{
 		$r['resultado'] = 'incluir';
-		$r['mensaje'] =  'Ya existe';
+		$r['mensaje'] =  'Ya existe Usuario';
 	}
 	return $r;
 
@@ -149,28 +125,24 @@ class login extends datos{
 		$r = array();
 		if($this->existe($this->codigo)){
 			try {
-				$p = $co->prepare("Update producto set 
-				codigo = :codigo,
-				nombre = :nombre,
-				minimo, = :minimo,
-				maximo, = :maximo,
-				id_marca, = :id_marca,
-				id_categoria = :id_categoria
+				$p = $co->prepare("Update usuario set 
+				id_usuarios = :id_usuarios,
+				tipo_usuario = :tipo_usuario,
+				cedula, = :cedula,
+				clave, = :clave
 				where
-				codigo = :codigo
+				id_usuario = :id_usuario
 						");
 
-						$p->bindParam(':codigo',$this->codigo);		
-					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':minimo',$this->minimo);
-                    $p->bindParam(':maximo',$this->maximo);
-					$p->bindParam(':id_marca',$this->id_marca);
-					$p->bindParam(':id_categoria',$this->id_categoria);
+						$p->bindParam(':id_usuarios',$this->id_usuarios);		
+					$p->bindParam(':tipo_usuario',$this->tipo_usuario);
+					$p->bindParam(':cedula',$this->cedula);
+					$p->bindParam(':clave',$this->clave);
 					
 					$p->execute();
 
 						$r['resultado'] = 'modificar';
-			            $r['mensaje'] =  'Producto Modificado';
+			            $r['mensaje'] =  'Usuario Modificado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -178,7 +150,7 @@ class login extends datos{
 		}
 		else{
 			$r['resultado'] = 'modificar';
-			    $r['mensaje'] =  'No existe el Producto';
+			    $r['mensaje'] =  'No existe el Usuario';
 		}
 		return $r;
 	}
@@ -189,18 +161,18 @@ class login extends datos{
 		$r = array();
 		if($this->existe($this->codigo)){
 			try {
-				$p = $co->prepare("delete from producto 
+				$p = $co->prepare("delete from usuario 
 				where
-				codigo = codigo
+				id_usuarios = id_usuarios
 				");
 
-				$p->bindParam(':codigo',$this->codigo);		
+				$p->bindParam(':id_usuarios',$this->id_usuarios);		
 					
 					
 					$p->execute();
 
 				$r['resultado'] = 'eliminar';
-				$r['mensaje'] =  'Producto Eliminado';
+				$r['mensaje'] =  'Usuario Eliminado';
 				} catch(Exception $e) {
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
@@ -208,7 +180,7 @@ class login extends datos{
 				}
 				else{
 				$r['resultado'] = 'eliminar';
-				$r['mensaje'] =  'No existe el codigo';
+				$r['mensaje'] =  'No existe el Usuario';
 				}
 				return $r;
 				}
@@ -220,7 +192,7 @@ class login extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from producto");
+			$resultado = $co->query("Select * from usuario");
 			
 			if($resultado){
 				
@@ -228,23 +200,17 @@ class login extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['codigo'];
+							$respuesta = $respuesta.$r['id_usuarios'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre'];
+							$respuesta = $respuesta.$r['tipo_usuario'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['minimo'];
+							$respuesta = $respuesta.$r['cedula'];
 						$respuesta = $respuesta."</td>";
                         $respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['maximo'];
+							$respuesta = $respuesta.$r['clave'];
 						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-						$respuesta = $respuesta.$r['id_marca'];
-					$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."<td>";
-					$respuesta = $respuesta.$r['id_categoria'];
-				$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
 				$r['resultado'] = 'consultar';
@@ -264,12 +230,12 @@ class login extends datos{
 	}
 	
 	
-	private function existe($codigo){
+	private function existe($id_usuarios){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from producto where codigo='$codigo'");
+			$resultado = $co->query("Select * from producto where id_usuarios='$id_usuarios'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -294,7 +260,7 @@ class login extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from producto where codigo='$this->codigo'");
+			$resultado = $co->query("Select * from producto where id_usuarios='$this->id_usuarios'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
