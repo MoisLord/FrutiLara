@@ -15,6 +15,7 @@ body {
 
 .form-container {
     background-color: #222;
+    background: url(../img/login.jpg) no-repeat;
     height: 550px;
     width: 350px;
     border-radius: 15px;
@@ -29,7 +30,6 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    background: url() no-repeat;
     background-position: left bottom;
     background-size: cover;
     opacity: 0.8;
