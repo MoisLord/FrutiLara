@@ -7,9 +7,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #11998e;
-    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
-    background: linear-gradient(to right, #38ef7d, #11998e);
+    background: #DCE35B;
+    background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
+    background: linear-gradient(to right, #45B649, #DCE35B);
+
     font-family: 'Fira Sans', sans-serif;
 }
 
