@@ -23,15 +23,15 @@ body {
 }
 
 .form-container::after {
-    background: url(../img/login.jpg) no-repeat;
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    background: url(../img/login.jpg) no-repeat;
     background-position: left bottom;
-    background-size: cover;
+    background-size: contain;
     opacity: 0.8;
 }
 
