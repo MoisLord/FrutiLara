@@ -70,3 +70,11 @@ body {
     width: 100%;
     font-size: 12px;
 }
+
+.form-container .form-holder input:last-child {
+    border-bottom: 0;
+}
+
+.form-container .form-holder input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
