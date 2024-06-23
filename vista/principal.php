@@ -1,5 +1,4 @@
 <html>
-<?php require_once("../vista/login.php"); ?>
 <?php require_once("comunes/encabezado.php"); ?>
 <body> 
 <?php require_once("comunes/menu.php"); ?>
