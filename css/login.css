@@ -45,13 +45,13 @@ body {
     transition: 0.3s ease;
 }
 
-.form-container, .form-title {
+.form-container .form-title {
     color: #fff;
     text-align: center;
     font-size: 28px;
 }
 
-.form-container, .form-holder {
+.form-container .form-holder {
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
@@ -60,5 +60,5 @@ body {
 }
 
 .form-container, .form-holder input {
-    
+
 }
