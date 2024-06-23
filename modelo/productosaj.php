@@ -191,7 +191,7 @@ class productosaj extends datos{
 			try {
 				$p = $co->prepare("delete from producto 
 				where
-				codigo = codigo
+				codigo = :codigo
 				");
 
 				$p->bindParam(':codigo',$this->codigo);		
