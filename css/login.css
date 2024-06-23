@@ -18,7 +18,7 @@ body {
     background: url(../img/login.jpg) no-repeat;
     background-position: left bottom;
     background-size: cover;
-    opacity: 0.8;
+    opacity: 1.8;
     height: 550px;
     width: 350px;
     border-radius: 15px;
@@ -45,7 +45,7 @@ body {
     transition: 0.3s ease;
 }
 
-.form-container .form-title {
+.form-title {
     color: #fff;
     text-align: center;
     font-size: 28px;
