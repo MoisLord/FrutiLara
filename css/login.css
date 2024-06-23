@@ -31,7 +31,7 @@ body {
     right: 0;
     background: url(../img/login.jpg) no-repeat;
     background-position: left bottom;
-    background-size:unset;
+    background-size: cover form-container;
     opacity: 0.8;
 }
 
