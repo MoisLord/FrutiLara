@@ -214,7 +214,17 @@ $("#maximo").on("keyup", function() {
   }
   
   //funcion para pasar de la lista a el formulario
-  function coloca(linea){
+  function coloca(pos,accion){
+    linea=$(pos).closest('tr');
+    
+    
+    if(accion==0){
+        $("#proceso").text("MODIFICAR");
+    }
+    else{
+        $("#proceso").text("ELIMINAR");
+    }
+
     $("#codigo").val($(linea).find("td:eq(0)").text());
     $("#nombre").val($(linea).find("td:eq(1)").text());
     $("#minimo").val($(linea).find("td:eq(2)").text());
