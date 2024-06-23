@@ -78,3 +78,7 @@ body {
 .form-container .form-holder input::placeholder {
     color: rgba(0, 0, 0, 0.4);
 }
+
+.form-container .submit-btn {
+    background-color: #63b28b;
+}
