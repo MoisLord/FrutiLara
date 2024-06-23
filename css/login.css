@@ -15,7 +15,6 @@ body {
 
 .form-container {
     background-color: #222;
-    background: url(../img/login.jpg) no-repeat;
     height: 550px;
     width: 350px;
     border-radius: 15px;
@@ -24,6 +23,7 @@ body {
 }
 
 .form-container::after {
+    background: url(../img/login.jpg) no-repeat;
     content: '';
     position: absolute;
     top: 0;
