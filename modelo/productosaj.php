@@ -152,9 +152,9 @@ class productosaj extends datos{
 				$p = $co->prepare("Update producto set 
 				codigo = :codigo,
 				nombre = :nombre,
-				minimo, = :minimo,
-				maximo, = :maximo,
-				id_marca, = :id_marca,
+				minimo = :minimo,
+				maximo = :maximo,
+				id_marca = :id_marca,
 				id_categoria = :id_categoria
 				where
 				codigo = :codigo
