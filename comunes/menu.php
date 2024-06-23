@@ -33,6 +33,9 @@
           <li class="nav-item">
             <a class="nav-link mx-lg-2" href="?pagina=marca">Marcas de productos</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="?pagina=login">Inicio Sesion</a>
+          </li>
         </ul>
       </div>
     </div>
