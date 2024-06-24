@@ -17,29 +17,20 @@ class login extends datos{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $id_usuarios; //recuerden que en php, las variables no tienen tipo predefinido
+	private $cedula; //recuerden que en php, las variables no tienen tipo predefinido
 	private $tipo_usuario;
-	private $cedula;
     private $clave;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
 	
-	function set_id_usuarios($valor){
-		$this->id_usuarios = $valor; //fijencen como se accede a los elementos dentro de una clase
-		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
-		//a un elemento de this, es decir esta clase
-		//luego el nombre del elemento sin el $
+	function set_cedula($valor){
+		$this->cedula = $valor;
 	}
-	//lo mismo que se hizo para codigo se hace para usuario y clave
 	
 	function set_tipo_usuario($valor){
 		$this->tipo_usuario = $valor;
-	}
-	
-	function set_cedula($valor){
-		$this->cedula = $valor;
 	}
 	
     function set_clave($valor){
@@ -48,16 +39,12 @@ class login extends datos{
 
 	//ahora la misma cosa pero para leer, es decir get
 	
-	function get_id_usuarios(){
-		return $this->id_usuarios;
+	function get_cedula(){
+		return $this->cedula;
 	}
 	
 	function get_tipo_usuario(){
 		return $this->tipo_usuario;
-	}
-	
-	function get_cedula(){
-		return $this->cedula;
 	}
 
     function get_clave(){
@@ -74,7 +61,7 @@ class login extends datos{
 		//en este caso la codigo, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
-		if(!$this->existe($this->id_usuarios)){
+		if(!$this->existe($this->cedula)){
 			//si estamos aca es porque la codigo no existe es decir se puede incluir
 			//los pasos a seguir son
 			//1 Se llama a la funcion conecta 
@@ -123,15 +110,15 @@ class login extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->codigo)){
+		if($this->existe($this->cedula)){
 			try {
 				$p = $co->prepare("Update usuario set 
 				id_usuarios = :id_usuarios,
 				tipo_usuario = :tipo_usuario,
-				cedula, = :cedula,
-				clave, = :clave
+				cedula = :cedula,
+				clave = :clave
 				where
-				id_usuario = :id_usuario
+				cedula = :cedula
 						");
 
 						$p->bindParam(':id_usuarios',$this->id_usuarios);		
@@ -159,14 +146,14 @@ class login extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->codigo)){
+		if($this->existe($this->cedula)){
 			try {
 				$p = $co->prepare("delete from usuario 
 				where
-				id_usuarios = id_usuarios
+				cedula = cedula
 				");
 
-				$p->bindParam(':id_usuarios',$this->id_usuarios);		
+				$p->bindParam(':cedula',$this->id_usuarios);		
 					
 					
 					$p->execute();
@@ -230,12 +217,12 @@ class login extends datos{
 	}
 	
 	
-	private function existe($id_usuarios){
+	private function existe($cedula){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from producto where id_usuarios='$id_usuarios'");
+			$resultado = $co->query("Select * from producto where cedula='$cedula'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -260,7 +247,7 @@ class login extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from producto where id_usuarios='$this->id_usuarios'");
+			$resultado = $co->query("Select * from producto where cedula='$this->cedula'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    

@@ -34,18 +34,17 @@ require_once("modelo/".$pagina.".php");
 			 echo  json_encode($o->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
-			 $o->set_id_usuarios($_POST['id_usuarios']); 
+			 $o->set_cedula($_POST['cedula']); 
 			 echo  json_encode($o->consultatr());  
 		  }
 
 		  elseif($accion=='eliminar'){
-			 $o->set_id_usuarios($_POST['id_usuarios']);
+			 $o->set_cedula($_POST['cedula']);
 			 echo  json_encode($o->eliminar());
 		  }
 		  else{		  
-			  $o->set_id_usuarios($_POST['id_usuarios']);
-			  $o->set_tipo_usuario($_POST['tipo_usuario']);
 			  $o->set_cedula($_POST['cedula']);
+			  $o->set_tipo_usuario($_POST['tipo_usuario']);
 			  $o->set_clave($_POST['clave']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
