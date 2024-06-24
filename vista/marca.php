@@ -35,19 +35,6 @@ REGISTRO DE MARCAS DE PRODUCTOS
 			   <span id="snombre"></span>
 			</div>
 		</div>
-
-		<div class="mb-3">
-        <label for="id_categoria">Categoria</label>
-        <select class="form-select" aria-label="Default select example" id="id_categoria"> 
-            <option selected></option> 
-            <option value="Viveres">Viveres</option> 
-            <option value="Hortalizas">Hortalizas</option> 
-            <option value="Frutas">Frutas</option> 
-            <option value="Charcuteria">Charcuteria</option> 
-            <option value="Bebidas">Bebidas</option> 
-            <option value="Empaquetados">Empaquetados</option> 
-        </select> 
-    	</div> 
 		
 		<div class="row">
 			<div class="col-md-12">
