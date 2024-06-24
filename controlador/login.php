@@ -1,11 +1,11 @@
 <?php
   
 //llamada al archivo que contiene la clase
-//productosaj, en ella estara el codigo que me permitirá
-//guardar, consultar y modificar dentro de mi base de datos
+//usuarios, en ella estara el codigo que me //permitirá
+//guardar, consultar y modificar dentro de mi base //de datos
 
 
-//lo primero que se debe hacer es verificar al igual que en la vista que exista el archivo
+//lo primero que se debe hacer es verificar al //igual que en la vista que exista el archivo
 if (!is_file("modelo/".$pagina.".php")){
 	//alli pregunte que si no es archivo se niega //con !
 	//si no existe envio mensaje y me salgo
@@ -21,8 +21,7 @@ require_once("modelo/".$pagina.".php");
 	  //para poderlos usar
 	  
 	  
-	  $o = new productosaj(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
-	  //clase productosaj
+	  $o = new login();
 	  
 	  if(!empty($_POST)){
 		  
@@ -35,21 +34,18 @@ require_once("modelo/".$pagina.".php");
 			 echo  json_encode($o->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
-			 $o->set_codigo($_POST['codigo']); 
+			 $o->set_cedula($_POST['cedula']); 
 			 echo  json_encode($o->consultatr());  
 		  }
 
 		  elseif($accion=='eliminar'){
-			 $o->set_codigo($_POST['codigo']);
+			 $o->set_cedula($_POST['cedula']);
 			 echo  json_encode($o->eliminar());
 		  }
 		  else{		  
-			  $o->set_codigo($_POST['codigo']);
-			  $o->set_nombre($_POST['nombre']);
-			  $o->set_minimo($_POST['minimo']);
-			  $o->set_maximo($_POST['maximo']);
-              $o->set_id_marca($_POST['id_marca']);
-			  $o->set_id_categoria($_POST['id_categoria']);
+			  $o->set_cedula($_POST['cedula']);
+			  $o->set_tipo_usuario($_POST['tipo_usuario']);
+			  $o->set_clave($_POST['clave']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }
