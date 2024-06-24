@@ -1,18 +1,17 @@
 
 $(document).ready(function(){
   //VALIDACION DE DATOS	
-  $("#codigo").on("keypress",function(e){
-    validarkeypress(/^[0-9-\b]*$/,e);
+  $("#codigo").on("keypress", function(e) {
+    validarkeypress(/^[a-z0-9]+$/i, e);
 });
 
-$("#codigo").on("keyup",function(){
-    validarkeyup(/^[0-9]{7,8}$/,$(this),
-    $("#scodigo"),"El Formato Debe Ser Numerico ");
-    if($("#codigo").val().length > 7){
-      var datos = new FormData();
-        datos.append('accion','consultatr');
-        datos.append('codigo',$(this).val());
-        enviaAjax(datos,'consultatr');	
+$("#codigo").on("keyup", function() {
+    validarkeyup(/^[a-z0-9]{2,50}$/i, $(this), $("#scodigo"), "El código debe tener minimo 2 caracteres");
+    if ($("#codigo").val().length >= 2) {
+        var datos = new FormData();
+        datos.append('accion', 'consultatr');
+        datos.append('codigo', $(this).val());
+        enviaAjax(datos, 'consultatr');
     }
 });
     
@@ -22,7 +21,7 @@ $("#nombre").on("keypress",function(e){
 });
 $("#nombre").on("keyup",function(){
   validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-  $(this),$("#snombre"),"Solo letras  entre 3 y 30 caracteres");
+  $(this),$("#snombre"),"Solo letras minimo 3 caracteres");
 });
     
 $("#minimo").on("keypress", function(e) {
@@ -37,6 +36,14 @@ $("#maximo").on("keypress", function(e) {
 });
 $("#maximo").on("keyup", function() {
   validarkeyup(/^[0-9]{2,}$/, $(this), $("#smaximo"), "Solo números, mínimo 2 dígitos");
+});
+
+$("#id_marca").on("keypress",function(e){
+  validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+});
+$("#id_marca").on("keyup",function(){
+  validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,50}$/,
+  $(this),$("#sid_marca"),"Solo letras minimo 3 caracteres");
 });
   
   
@@ -81,12 +88,12 @@ $("#maximo").on("keyup", function() {
   
   $("#eliminar").on("click",function(){
     
-    if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
-    $("#scodigo"),"El formato debe ser Numerico")==0){
-      muestraMensaje("El Codigo debe coincidir con el formato <br/>"+ 
-                      "12345678");		
+    if (validarkeyup(/^[a-z0-9]{2,50}$/, $("#codigo"), $("#scodigo"), 
+    "El Codigo debe ser minimo 2 caracteres") == 0) {
+    muestraMensaje("El Código debe coincidir con el formato <br/>" +
+    "JGG1232asdd minimo 2 caracteres");
+}
       
-    }
     else{	
         
       var datos = new FormData();
@@ -141,16 +148,16 @@ $("#maximo").on("keyup", function() {
   
   //Validación de todos los campos antes del envio
   function validarenvio(){
-    if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo"),
-		$("#scodigo"),"El formato debe ser 9999999")==0){
-	    muestraMensaje("El codigo debe coincidir con el formato <br/>"+ 
-						"99999999");	
-		return false;			
-    }	
+    if(validarkeyup(/^[a-z0-9]{2,50}$/i,$("#codigo"),
+    $("#scodigo"),"El código debe tener minimo 2 caracteres")==0){
+    muestraMensaje("El código debe coincidir con el formato <br/>"+ 
+                    "12DD65aa123AA");    
+    return false;            
+}
 
     else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-		$("#nombre"),$("#snombre"),"Solo letras  entre 3 y 30 caracteres")==0){
-		muestraMensaje("Nombre del Producto <br/>Solo letras  entre 3 y 30 caracteres");
+		$("#nombre"),$("#snombre"),"Solo letras minimo 3 caracteres")==0){
+		muestraMensaje("Nombre del Producto <br/>Solo letras minimo 3 caracteres");
 		return false;
 	}
 
@@ -165,6 +172,12 @@ $("#maximo").on("keyup", function() {
       muestraMensaje("Maximo debe ser <br/>Solo números, mínimo 2 dígitos");
       return false;
   }
+
+  else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,50}$/,
+  $("#id_marca"),$("#sid_marca"),"Solo letras minimo 3 y caracteres")==0){
+  muestraMensaje("Marca del Producto <br/>Solo letras minimo 3 y caracteres");
+  return false;
+}
     
     return true;
   }
