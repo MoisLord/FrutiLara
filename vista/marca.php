@@ -13,7 +13,7 @@
 <hr/>
 <hr/>
 <hr/>
-REGISTRO DE MARCAS DE PRODUCTOS
+MARCAS
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
@@ -67,7 +67,7 @@ REGISTRO DE MARCAS DE PRODUCTOS
 
 	<div class="col-8 p-4">
 	<div class="container">
-	<h5 class="modal-title text-center text-success">REGISTRO DE MARCAS DE PRODUCTOS</h5>
+	<h5 class="modal-title text-center text-success">MARCAS REGISTRADAS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablaproducto">
