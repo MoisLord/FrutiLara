@@ -2,11 +2,11 @@
 $(document).ready(function(){
   //VALIDACION DE DATOS	
   $("#codigo").on("keypress", function(e) {
-    validarkeypress(/^[a-z0-9]+$/i, e);
+    validarkeypress(/^[0-9]+$/, e);
 });
 
 $("#codigo").on("keyup", function() {
-    validarkeyup(/^[a-z0-9]{2,50}$/i, $(this), $("#scodigo"), "El código debe tener minimo 2 caracteres");
+    validarkeyup(/^[0-9]{2,50}$/, $(this), $("#scodigo"), "El código debe tener mínimo 2 dígitos");
     if ($("#codigo").val().length >= 2) {
         var datos = new FormData();
         datos.append('accion', 'consultatr');
@@ -25,17 +25,17 @@ $("#nombre").on("keyup",function(){
 });
     
 $("#minimo").on("keypress", function(e) {
-  validarkeypress(/^[0-9]*$/, e);
+  validarkeypress(/^[a-zA-Z0-9\s]+$/, e);
 });
 $("#minimo").on("keyup", function() {
-  validarkeyup(/^[0-9]{2,}$/, $(this), $("#sminimo"), "Solo números, mínimo 2 dígitos");
+  validarkeyup(/^[a-zA-Z0-9\s]{2,50}$/, $(this), $("#sminimo"), "Debe tener mínimo 2 caracteres");
 });
-  
+
 $("#maximo").on("keypress", function(e) {
-  validarkeypress(/^[0-9]*$/, e);
+  validarkeypress(/^[a-zA-Z0-9\s]+$/, e);
 });
 $("#maximo").on("keyup", function() {
-  validarkeyup(/^[0-9]{2,}$/, $(this), $("#smaximo"), "Solo números, mínimo 2 dígitos");
+  validarkeyup(/^[a-zA-Z0-9\s]{2,50}$/, $(this), $("#smaximo"), "Debe tener mínimo 2 caracteres");
 });
 
 $("#id_marca").on("keypress",function(e){
@@ -88,11 +88,9 @@ $("#id_marca").on("keyup",function(){
   
   $("#eliminar").on("click",function(){
     
-    if (validarkeyup(/^[a-z0-9]{2,50}$/, $("#codigo"), $("#scodigo"), 
-    "El Codigo debe ser minimo 2 caracteres") == 0) {
-    muestraMensaje("El Código debe coincidir con el formato <br/>" +
-    "JGG1232asdd minimo 2 caracteres");
-}
+    if (validarkeyup(/^[0-9]{1,50}$/, $("#codigo"), $("#scodigo"), "El Código debe ser Numerico") == 0) {
+      muestraMensaje("El Código debe ser Numerico");
+  }
       
     else{	
         
@@ -148,12 +146,10 @@ $("#id_marca").on("keyup",function(){
   
   //Validación de todos los campos antes del envio
   function validarenvio(){
-    if(validarkeyup(/^[a-z0-9]{2,50}$/i,$("#codigo"),
-    $("#scodigo"),"El código debe tener minimo 2 caracteres")==0){
-    muestraMensaje("El código debe coincidir con el formato <br/>"+ 
-                    "12DD65aa123AA");    
-    return false;            
-}
+    if(validarkeyup(/^[0-9]{2,50}$/,$("#codigo"),$("#scodigo"),"El código debe tener mínimo 2 dígitos")==0){
+      muestraMensaje("El código debe tener mínimo 2 dígitos");
+      return false;
+  }
 
     else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
 		$("#nombre"),$("#snombre"),"Solo letras minimo 3 caracteres")==0){
@@ -161,17 +157,17 @@ $("#id_marca").on("keyup",function(){
 		return false;
 	}
 
-   else if (validarkeyup(/^[0-9]{2,}$/, 
-   $("#minimo"), $("#sminimo"), "Solo números, mínimo 3 dígitos") == 0) {
-    muestraMensaje("Minimo debe ser <br/>Solo números, mínimo 2 dígitos");
+  else if (validarkeyup(/^[a-zA-Z0-9\s]{2,50}$/, $("#minimo"), $("#sminimo"), 
+  "Debe tener mínimo 2 caracteres") == 0) {
+    muestraMensaje("Debe tener mínimo 2 caracteres");
     return false;
-    }
+}
     
-    else if (validarkeyup(/^[0-9]{2,}$/, 
-    $("#maximo"), $("#smaximo"), "Solo números, mínimo 3 dígitos") == 0) {
-      muestraMensaje("Maximo debe ser <br/>Solo números, mínimo 2 dígitos");
-      return false;
-  }
+  else if (validarkeyup(/^[a-zA-Z0-9\s]{2,50}$/, $("#maximo"), $("#smaximo"), 
+  "Debe tener mínimo 2 caracteres") == 0) {
+  muestraMensaje("Debe tener mínimo 2 caracteres");
+  return false;
+}
 
   else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,50}$/,
   $("#id_marca"),$("#sid_marca"),"Solo letras minimo 3 y caracteres")==0){
