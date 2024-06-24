@@ -1,4 +1,4 @@
-<html> 
+<html>
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
