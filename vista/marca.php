@@ -24,15 +24,15 @@ MARCAS
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="codigo">Modelo o modelo de marca</label>
-			   <input class="form-control" type="text" id="codigo" name="codigo"/>
-			   <span id="scodigo"></span>
+			   <input class="form-control" type="text" id="modelo" name="modelo"/>
+			   <span id="smodelo"></span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="nombre">Marca</label>
-			   <input class="form-control" type="text" id="nombre" name="nombre"/>
-			   <span id="snombre"></span>
+			   <input class="form-control" type="text" id="marca" name="marca"/>
+			   <span id="smarca"></span>
 			</div>
 		</div>
 		
