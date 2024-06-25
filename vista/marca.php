@@ -88,7 +88,7 @@ MARCAS DE PRODUCTOS
 
 </div>
 
-<script type="text/javascript" src="js/producto.js"></script>
+<script type="text/javascript" src="js/marca.js"></script>
 
 </body>
 </html>
