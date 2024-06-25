@@ -13,7 +13,7 @@
 <hr/>
 <hr/>
 <hr/>
-MARCAS
+MARCAS DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
