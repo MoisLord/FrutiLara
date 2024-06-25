@@ -1,65 +1,44 @@
 <?php
-  
-//llamada al archivo que contiene la clase
-//usuarios, en ella estara el codigo que me //permitirá
-//guardar, consultar y modificar dentro de mi base //de datos
-
-
-//lo primero que se debe hacer es verificar al //igual que en la vista que exista el archivo
-if (!is_file("modelo/".$pagina.".php")){
-	//alli pregunte que si no es archivo se niega //con !
-	//si no existe envio mensaje y me salgo
-	echo "Falta definir la clase ".$pagina;
-	exit;
-}  
-require_once("modelo/".$pagina.".php");  
-  if(is_file("vista/".$pagina.".php")){
-	  
-	  //bien si estamos aca es porque existe la //vista y la clase
-	  //por lo que lo primero que debemos hace es //realizar una instancia de la clase
-	  //instanciar es crear una variable local, //que contiene los metodos de la clase
-	  //para poderlos usar
-	  
-	  
-	  $o = new login();
-	  
+  if(!is_file("modelo/".$pagina.".php")){
+	  echo "Falta el modelo";
+	  exit;
+  }
+  require_once("modelo/".$pagina.".php"); 
+  if(is_file("vista/".$pagina.".php")){ 
 	  if(!empty($_POST)){
 		  
-		  //como ya sabemos si estamos aca es //porque se recibio alguna informacion
-		  //de la vista, por lo que lo primero que //debemos hacer ahora que tenemos una 
-		  //clase es guardar esos valores en ella //con los metodos set
-		  $accion = $_POST['accion'];
+		  $o = new login();
 		  
-		  if($accion=='consultar'){
-			 echo  json_encode($o->consultar());  
+		  if($_POST['accion']=='entrar'){
+			$o->set_cedula($_POST['cedula']);
+		    $o->set_clave($_POST['clave']);  
+			$m = $o->existe();
+			if($m['resultado']=='existe'){
+			  session_destroy(); //elimina cualquier version anterio de sesion	
+			  session_start(); //inicia el entorno de sesion
+			  //asigna una clave nivel con el valor obtenido de la base de datos
+			  $_SESSION['nivel'] = $m['mensaje'];
+			  
+			  // Esta nueva instruccion lo que hace es 
+			  //redireccionar el flujo de nuevo al index.php FrontController
+			  //para obligar a que se carguen los privilegios de la sesion
+			  header('Location: . ');
+			  //Similar al exit, die termina la ejecucion de esta pagina 
+			  //y previene que se cargue de nuevo esta vista (entrada.php)
+			  die();
+			}
+			else{
+			  $mensaje = $m['mensaje'];
+			}
+			
 		  }
-		  elseif($accion=='consultatr'){
-			 $o->set_cedula($_POST['cedula']); 
-			 echo  json_encode($o->consultatr());  
-		  }
-
-		  elseif($accion=='eliminar'){
-			 $o->set_cedula($_POST['cedula']);
-			 echo  json_encode($o->eliminar());
-		  }
-		  else{		  
-			  $o->set_cedula($_POST['cedula']);
-			  $o->set_tipo_usuario($_POST['tipo_usuario']);
-			  $o->set_clave($_POST['clave']);
-			  if($accion=='incluir'){
-				echo  json_encode($o->incluir());
-			  }
-			  elseif($accion=='modificar'){
-				echo  json_encode($o->modificar());
-			  }
-		  }
-		  exit;
+		  
+		 
 	  }
-	  
 	  
 	  require_once("vista/".$pagina.".php"); 
   }
   else{
-	  echo "pagina en construccion";
+	  echo "Falta la vista";
   }
 ?>
