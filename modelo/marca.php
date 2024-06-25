@@ -17,7 +17,6 @@ class marca extends datos{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $id;
 	private $modelo; //recuerden que en php, las variables no tienen tipo predefinido
 	private $marca;
 	
@@ -25,27 +24,19 @@ class marca extends datos{
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
 	
-	function set_id($valor){
-		$this->id = $valor; //fijencen como se accede a los elementos dentro de una clase
+	function set_modelo($valor){
+		$this->modelo = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 		//a un elemento de this, es decir esta clase
 		//luego el marca del elemento sin el $
 	}
 	//lo mismo que se hizo para modelo se hace para usuario y clave
 	
-	function set_modelo($valor){
-		$this->modelo = $valor;
-	}
-
 	function set_marca($valor){
 		$this->marca = $valor;
 	}
 
 	//ahora la misma cosa pero para leer, es decir get
-
-	function get_id(){
-		return $this->id;
-	}
 	
 	function get_modelo(){
 		return $this->modelo;
