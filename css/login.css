@@ -38,6 +38,9 @@ form{
     background-color:black;
     border: none;
     border-radius: 20px;
+    background: url(../img/login.jpg) no-repeat;
+    background-position: left bottom;
+    background-size: cover;
     color: green;
 }
 
