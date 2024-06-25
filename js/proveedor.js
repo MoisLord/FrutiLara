@@ -1,12 +1,12 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
         $("#rif").on("keypress",function(e){
-            validarkeypress(/^[0-9-\b]*$/,e);
+            validarkeypress(/^[JVG0-9-\b]*$/,e);
         });
         
         $("#rif").on("keyup",function(){
-            validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#srif"),"El formato debe ser 9999999 ");
+            validarkeyup(/^[JVG]{1}[-]{1}[0-9]{7,8}$/,$(this),
+		$("#srif"),"El formato debe ser J-092348760 o G-00003454");
             if($("#rif").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
@@ -24,7 +24,13 @@ $(document).ready(function(){
             $(this),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres");
         });
         
+        $("#Telefono").on("keypress",function(e){
+            validarkeypress(/^[0-9\b-]*$/,e);
+        });
         
+        $("#Telefono").on("keyup",function(){
+            validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$(this),$("#sTelefono"),"El formato debe ser 0412-15478964");
+        });
         $("#Direccion").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
@@ -32,7 +38,6 @@ $(document).ready(function(){
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
             $(this),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres");
         });
-        
         
     //FIN DE VALIDACION DE DATOS
     
@@ -130,7 +135,7 @@ $(document).ready(function(){
         if(validarkeyup(/^[0-9]{7,8}$/,$("#rif"),
             $("#srif"),"El formato debe ser 9999999")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
-                            "99999999");	
+                            "J-092348760 o G-00003454");	
             return false;					
         }	
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
@@ -142,7 +147,11 @@ $(document).ready(function(){
         $("#Direccion"),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres")==0){
         muestraMensaje("Direccion donde reside <br/>Solo letras  entre 3 y 30 caracteres");
         return false;
-    }
+        }
+        else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$("#telefono"),
+        $("#stelefono"),"El formato debe ser 0412-15478964")==0){
+        muestraMensaje("Verifique el telefono");
+        return false;}
         
         return true;
     }
