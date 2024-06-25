@@ -35,9 +35,7 @@ form{
     width: 600px;
     border: 2px solid black;
     padding: 6rem;
-    background: url(../img/login.jpg) no-repeat;
-    background-position: left bottom;
-    background-size: cover;
+    background-color:black;
     border: none;
     border-radius: 20px;
     color: green;
