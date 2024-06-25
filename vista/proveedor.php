@@ -104,7 +104,7 @@ PANTALLA DE PROVEEDORES
 </div>
 
 </div> <!-- fin de container -->
-<script type="text/javascript" src="js/categoria.js"></script>
+<script type="text/javascript" src="js/proveedor.js"></script>
 
 </body>
 </html>
