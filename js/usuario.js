@@ -20,7 +20,7 @@ $(document).ready(function(){
         });
         
         $("#clave").on("keyup", function() {
-            validarkeyup(/^[0-9A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sclave"), "Debe colocar una contraseña con letras y números, entre 3 a 20 digitos");
+            validarkeyup(/^[0-9A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{7,15}$/, $(this), $("#sclave"), "Debe colocar una contraseña con letras y números, entre 7 a 15 digitos");
         });
         
         
@@ -121,8 +121,8 @@ $(document).ready(function(){
                             "00000000");	
             return false;					
         }	
-        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#clave"), $("#sclave"), "Solo números y letras, entre 3 a 20 dígitos") == 0) {
-            muestraMensaje("La clave debe ser <br/>Solo números y letras, entre 3 a 20 dígitos");
+        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{7,15}$/, $("#clave"), $("#sclave"), "Solo números y letras, entre 7 a 15 dígitos") == 0) {
+            muestraMensaje("La clave debe ser <br/>Solo números y letras, entre 7 a 15 dígitos");
             return false;
         }
         
