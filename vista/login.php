@@ -54,8 +54,9 @@ Iniciar Sesion
 
 	<div class="row justify-content-center mt-5">
 		
-		<div class="col-md-3 d-flex justify-content-center">	
-			   <a href="?pagina=principal" class="btn btn-primary w-100 small-width">INGRESAR</a>
+	<div class="col-md-3 d-flex justify-content-center">
+			   <button type="button" class="btn btn-primary w-100 small-width" 
+			   id="entrar" name="entrar">ENTRAR</button>
 		</div>
 	</div>
 </div>
