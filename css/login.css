@@ -22,14 +22,27 @@ body {
 /*FORMULARIO NUEVO*/
 
 .form-container{
-    width: 600px;
-    height: 550px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     border: 2px solid black;
     padding: 6rem;
     border: none;
     border-radius: 20px;
+    width: 600px;
+    height: 550px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url(../img/login.jpg) no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    opacity: 0.8;
 }
 
 h1{
