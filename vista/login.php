@@ -14,7 +14,7 @@
 ?>	
 </div>
 
-<div class="container text-center h2 text-primary">
+<div class="container text-center h2 text-danger">
 Iniciar Sesion
 <hr/>
 </div>
