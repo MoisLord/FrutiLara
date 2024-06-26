@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-06-2024 a las 15:18:43
+-- Tiempo de generación: 26-06-2024 a las 02:02:57
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -34,6 +34,15 @@ CREATE TABLE `categoria` (
   `unidadMedNormal` varchar(20) NOT NULL,
   `unidadMedAlt` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `codigo_categoria`, `tipo`, `unidadMedNormal`, `unidadMedAlt`) VALUES
+(3, '1566654', 'polarres', 'alta', 'baja'),
+(4, '13465644', 'polar', 'alta', 'media'),
+(5, '12345645', 'manza', 'alta ', 'media');
 
 -- --------------------------------------------------------
 
@@ -79,6 +88,13 @@ CREATE TABLE `marca` (
   `marca` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`id`, `modelo`, `marca`) VALUES
+(7, '12345678', 'polar');
+
 -- --------------------------------------------------------
 
 --
@@ -108,13 +124,6 @@ CREATE TABLE `proveedores` (
   `telefono` varchar(11) NOT NULL,
   `direccion` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `proveedores`
---
-
-INSERT INTO `proveedores` (`id`, `rif`, `nombre`, `telefono`, `direccion`) VALUES
-(1, '6546465', 'polar', '04120483397', 'calle fuerte de pueblo nuevo');
 
 -- --------------------------------------------------------
 
@@ -153,7 +162,7 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `codigo_categoria` (`codigo_categoria`);
+  ADD UNIQUE KEY `codigo_categoria` (`codigo_categoria`);
 
 --
 -- Indices de la tabla `empleados`
@@ -167,24 +176,24 @@ ALTER TABLE `empleados`
 --
 ALTER TABLE `ingreso_producto`
   ADD PRIMARY KEY (`id_ingreso`),
-  ADD KEY `rif_proveedor` (`rif_proveedor`),
-  ADD KEY `codigo_producto` (`codigo_producto`);
+  ADD KEY `codigo_producto` (`codigo_producto`) USING BTREE,
+  ADD KEY `rif_proveedor` (`rif_proveedor`) USING BTREE;
 
 --
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `marca` (`marca`);
+  ADD UNIQUE KEY `marca` (`marca`);
 
 --
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `codigo` (`codigo`),
-  ADD UNIQUE KEY `id_marca` (`id_marca`),
-  ADD UNIQUE KEY `id_categoria` (`id_categoria`);
+  ADD UNIQUE KEY `codigo` (`codigo`) USING BTREE,
+  ADD KEY `id_marca` (`id_marca`) USING BTREE,
+  ADD KEY `id_categoria` (`id_categoria`) USING BTREE;
 
 --
 -- Indices de la tabla `proveedores`
@@ -215,13 +224,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `ingreso_producto`
@@ -233,19 +242,19 @@ ALTER TABLE `ingreso_producto`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `salida_producto`
@@ -264,23 +273,18 @@ ALTER TABLE `usuario`
 --
 
 --
--- Filtros para la tabla `categoria`
---
-ALTER TABLE `categoria`
-  ADD CONSTRAINT `categoria_ibfk_1` FOREIGN KEY (`codigo_categoria`) REFERENCES `producto` (`id_categoria`);
-
---
 -- Filtros para la tabla `ingreso_producto`
 --
 ALTER TABLE `ingreso_producto`
-  ADD CONSTRAINT `ingreso_producto_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`),
-  ADD CONSTRAINT `ingreso_producto_ibfk_2` FOREIGN KEY (`rif_proveedor`) REFERENCES `proveedores` (`rif`);
+  ADD CONSTRAINT `ingreso_producto_ibfk_2` FOREIGN KEY (`rif_proveedor`) REFERENCES `proveedores` (`rif`),
+  ADD CONSTRAINT `ingreso_producto_ibfk_3` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
 
 --
--- Filtros para la tabla `marca`
+-- Filtros para la tabla `producto`
 --
-ALTER TABLE `marca`
-  ADD CONSTRAINT `marca_ibfk_1` FOREIGN KEY (`marca`) REFERENCES `producto` (`id_marca`);
+ALTER TABLE `producto`
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`codigo_categoria`),
+  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`marca`);
 
 --
 -- Filtros para la tabla `salida_producto`
