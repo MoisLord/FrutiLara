@@ -65,7 +65,7 @@ $(document).ready(function(){
         }	
         else if(validarkeyup(/^[A-Za-z0-9]{7,15}$/,
             $("#clave"),$("#sclave"),"Solo letras y numeros entre 7 y 15 caracteres")==0){
-            muestraMensaje("Nombres <br/>Solo letras y numeros entre 7 y 15 caracteres");
+            muestraMensaje("Clave <br/>Solo letras y numeros entre 7 y 15 caracteres");
             return false;
         }
         
