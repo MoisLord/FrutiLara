@@ -22,7 +22,7 @@
 			  // Esta nueva instruccion lo que hace es 
 			  //redireccionar el flujo de nuevo al index.php FrontController
 			  //para obligar a que se carguen los privilegios de la sesion
-			  header('Location: ?pagina=principal ');
+			  header('Location: href="?pagina=principal ');
 			  //Similar al exit, die termina la ejecucion de esta pagina 
 			  //y previene que se cargue de nuevo esta vista (entrada.php)
 			  die();
