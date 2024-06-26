@@ -16,7 +16,6 @@ body {
     flex-direction: column;
     
 
-    /* FORMULARIO VIEJO
 
     min-height: 100vh;
     display: flex;
@@ -26,7 +25,7 @@ body {
     background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
     background: linear-gradient(to right, #45B649, #DCE35B);
 
-    font-family: 'Fira Sans', sans-serif;*/
+    font-family: 'Fira Sans', sans-serif;
 }
 
 /*FORMULARIO NUEVO*/
