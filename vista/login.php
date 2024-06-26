@@ -22,7 +22,8 @@ Iniciar Sesion
 
 
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-<form method="post" action="#" id="f">
+
+<form method="post" action="" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
 <div class="container">
     
@@ -46,6 +47,7 @@ Iniciar Sesion
 	
 	
 	
+	
 	<div class="row">
 		<div class="col">
 			<hr/>
@@ -53,9 +55,7 @@ Iniciar Sesion
 	</div>
 
 	<div class="row justify-content-center mt-5">
-		
-
-	<div class="col-md-3 d-flex justify-content-center">
+		<div class="col-md-3 d-flex justify-content-center">
 			   <button type="button" class="btn btn-danger w-100 small-width" 
 			   id="entrar" name="entrar">ENTRAR</button>
 		</div>
