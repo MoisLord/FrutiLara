@@ -32,19 +32,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.form-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url(../img/login.jpg) no-repeat;
-    background-position: left bottom;
-    background-size: cover;
-    opacity: 0.8;
-}
-
 h1{
     display: block;
     border: 2px solid black;
