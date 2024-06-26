@@ -41,7 +41,7 @@ form{
     color: green;
 }
 
-.row mt-3 {
+.container {
     background-color: #222;
     background: url(../img/login.jpg) no-repeat;
     background-position: left bottom;
