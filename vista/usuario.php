@@ -11,43 +11,37 @@
 <hr/>
 <hr/>
 <hr/>
-CATEGORIAS DE PRODUCTOS
+USUARIOS DEL SISTEMA
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
-   <h4 class="text-center text-success">Registro de Categorias de Productos</h4>
+   <h4 class="text-center text-success">Registro de Usuarios</h4>
 	
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="codigo_categoria">Codigo de categoria</label>
-			   <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria"/>
-			   <span id="scodigo_categoria"></span>
+			   <label for="cedula">Cedula</label>
+			   <input class="form-control" type="text" id="cedula" name="cedula"/>
+			   <span id="scedula"></span>
 			</div>
 			</div>
-			<div class="row mb-3">
-			<div class="col-md">
-			   <label for="tipo">Tipo de Producto</label>
-			   <input class="form-control" type="text" id="tipo" name="tipo"/>
-			   <span id="stipo"></span>
-			</div>
-		</div>    
+			<div class="mb-3">
+        <label for="tipo_usuario">Tipos de usuario</label>
+        <select class="form-select" aria-label="Default select example" id="tipo_usuario"> 
+            <option value="ADMINISTRADOR">Administrador</option> 
+            <option value="EMPLEADO">Empleado</option> 
+        </select> 
+    	</div> 
         
 		<div class="row mb-4">
 			<div class="col-md">
-        		<label for="unidadMedNormal">Unidad de medida común</label>
-       			<input class="form-control" type="text" id="unidadMedNormal" name="unidadMedNormal"/>
-				<span id="sunidadMedNormal"></span>
+        		<label for="clave">Contraseña</label>
+       			<input class="form-control" type="text" id="clave" name="clave"/>
+				<span id="sclave"></span>
     		</div>
 			</div>
-			<div class="row mb-4">
-			<div class="col-md">
-			   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
-			   <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt"/>
-			   <span id="sunidadMedAlt"></span>
-			</div>
-		</div>
+			
 		
 		<div class="row">
 			<div class="col-md-12">
@@ -83,16 +77,15 @@ CATEGORIAS DE PRODUCTOS
 
 	<div class="col-8 p-4">
 	<div class="container">
-	<h5 class="modal-title text-center text-success">CLIENTES REGISTRADOS</h5>
+	<h5 class="modal-title text-center text-success">USUARIOS REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
-		<table class="table table-striped table-hover" id="tablacategoria">
+		<table class="table table-striped table-hover" id="tablausuario">
 		<thead>
 		  <tr>
-			<th>Codigo de categoria</th>
-			<th>tipo de Producto</th>
-			<th>Unidad de medida común</th>	
-			<th>Unidad de Medida Alternativa</th>
+			<th>Cedula</th>
+			<th>Tipo de usuario</th>
+			<th>Contraseña</th>	
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
@@ -113,7 +106,7 @@ CATEGORIAS DE PRODUCTOS
         </button>
     </div> 	-->
 </div> <!-- fin de container -->
-<script type="text/javascript" src="js/categoria.js"></script>
+<script type="text/javascript" src="js/usuario.js"></script>
 
 </body>
 </html>

@@ -1,43 +1,34 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
-        $("#codigo_categoria").on("keypress",function(e){
+        $("#cedula").on("keypress",function(e){
             validarkeypress(/^[0-9-\b]*$/,e);
         });
         
-        $("#codigo_categoria").on("keyup",function(){
+        $("#cedula").on("keyup",function(){
             validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#scodigo_categoria"),"El Formato Debe Ser Numerico ");
-            if($("#codigo_categoria").val().length > 7){
+            $("#scedula"),"El Formato Debe Ser Numerico ");
+            if($("#cedula").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
-                datos.append('codigo_categoria',$(this).val());
+                datos.append('cedula',$(this).val());
                 enviaAjax(datos,'consultatr');	
             }
         });
-        $("#tipo").on("keypress", function(e) {
+        $("#tipo_usuario").on("keypress", function(e) {
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         
-        $("#tipo").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#stipo"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
+        $("#tipo_usuario").on("keyup", function() {
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#stipo_usuario"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
         });
 
-        $("#unidadMedNormal").on("keypress", function(e) {
+        $("#clave").on("keypress", function(e) {
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         
-        $("#unidadMedNormal").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sunidadMedNormal"), "Debe colocar la unidad de medida más común con solo letras, entre 3 a 20 digitos");
+        $("#clave").on("keyup", function() {
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sclave"), "Debe colocar la unidad de medida más común con solo letras, entre 3 a 20 digitos");
         });
-
-        $("#unidadMedAlt").on("keypress", function(e) {
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
-        });
-        
-        $("#unidadMedAlt").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sunidadMedAlt"), "Debe colocar la unidad de medida alternativa con solo números, entre 3 a 20 digitos");
-        });
-
         
         
     //FIN DE VALIDACION DE DATOS
@@ -50,10 +41,9 @@ $(document).ready(function(){
         if(validarenvio()){
             var datos = new FormData();
             datos.append('accion','incluir');
-            datos.append('codigo_categoria',$("#codigo_categoria").val());
-            datos.append('tipo',$("#tipo").val());
-            datos.append('unidadMedNormal',$("#unidadMedNormal").val());
-            datos.append('unidadMedAlt',$("#unidadMedAlt").val());
+            datos.append('cedula',$("#cedula").val());
+            datos.append('tipo_usuario',$("#tipo_usuario").val());
+            datos.append('clave',$("#clave").val());
             enviaAjax(datos);
         }
     });
@@ -62,10 +52,9 @@ $(document).ready(function(){
     
             var datos = new FormData();
             datos.append('accion','modificar');
-            datos.append('codigo_categoria',$("#codigo_categoria").val());
-            datos.append('tipo',$("#tipo").val());
-            datos.append('unidadMedNormal',$("#unidadMedNormal").val());
-            datos.append('unidadMedAlt',$("#unidadMedAlt").val());
+            datos.append('cedula',$("#cedula").val());
+            datos.append('tipo_usuario',$("#tipo_usuario").val());
+            datos.append('clave',$("#clave").val());
             enviaAjax(datos);
             
         }
@@ -73,8 +62,8 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo_categoria"),
-            $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
+            $("#scedula"),"El formato debe ser Numerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
                             "12345678");	
             
@@ -83,7 +72,7 @@ $(document).ready(function(){
             
             var datos = new FormData();
             datos.append('accion','eliminar');
-            datos.append('codigo_categoria',$("#codigo_categoria").val());
+            datos.append('cedula',$("#cedula").val());
             enviaAjax(datos);
         }
         
@@ -102,19 +91,19 @@ $(document).ready(function(){
     //funcion para enlazar al DataTablet
     function destruyeDT(){
         //1 se destruye el datatablet
-        if ($.fn.DataTable.isDataTable("#tablacategoria")) {
-                $("#tablacategoria").DataTable().destroy();
+        if ($.fn.DataTable.isDataTable("#tablausuario")) {
+                $("#tablausuario").DataTable().destroy();
         }
     }
     function crearDT(){
         //se crea nuevamente
-        if (!$.fn.DataTable.isDataTable("#tablacategoria")) {
-                $("#tablacategoria").DataTable({
+        if (!$.fn.DataTable.isDataTable("#tablausuario")) {
+                $("#tablausuario").DataTable({
                   language: {
                     lengthMenu: "Mostrar _MENU_ por página",
-                    zeroRecords: "No se encontraron categorias",
+                    zeroRecords: "No se encontraron usuarios",
                     info: "Mostrando página _PAGE_ de _PAGES_",
-                    infoEmpty: "No hay categorias registradas",
+                    infoEmpty: "No hay usuarios registrados",
                     infoFiltered: "(filtrado de _MAX_ registros totales)",
                     search: "Buscar:",
                     paginate: {
@@ -133,13 +122,13 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo_categoria"),
-            $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
+        if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
+            $("#scedula"),"El formato debe ser Numerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
                             "12345678");	
             return false;					
         }	
-        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#unidadMedNormal"), $("#sunidadMedNormal"), "Solo letras, entre 3 a 20 dígitos") == 0) {
+        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#clave"), $("#sclave"), "Solo letras, entre 3 a 20 dígitos") == 0) {
             muestraMensaje("unidad Medida Normal debe ser <br/>Solo letras, entre 3 a 20 dígitos");
             return false;
         }
@@ -207,9 +196,9 @@ $(document).ready(function(){
         else{
             $("#proceso").text("ELIMINAR");
         }
-        $("#codigo_categoria").val($(linea).find("td:eq(0)").text());
-        $("#tipo").val($(linea).find("td:eq(1)").text());
-        $("#unidadMedNormal").val($(linea).find("td:eq(2)").text());
+        $("#cedula").val($(linea).find("td:eq(0)").text());
+        $("#tipo_usuario").val($(linea).find("td:eq(1)").text());
+        $("#clave").val($(linea).find("td:eq(2)").text());
         $("#unidadMedAlt").val($(linea).find("td:eq(3)").text());
         
     }
@@ -237,9 +226,8 @@ $(document).ready(function(){
                            crearDT();
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#tipo").val(lee.mensaje[0][2]);
-                           $("#unidadMedNormal").val(lee.mensaje[0][3]);
-                           $("#unidadMedAlt").val(lee.mensaje[0][4]);
+                           $("#tipo_usuario").val(lee.mensaje[0][2]);
+                           $("#clave").val(lee.mensaje[0][3]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
@@ -276,9 +264,8 @@ $(document).ready(function(){
     
     function limpia(){
         
-        $("#codigo_categoria").val("");
-        $("#tipo").val("");
-        $("#unidadMedNormal").val("");
-        $("#unidadMedAlt").val("");
+        $("#cedula").val("");
+        $("#tipo_usuario").val("ADMINISTRADOR");
+        $("#clave").val("");
         
     }

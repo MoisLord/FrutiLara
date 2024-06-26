@@ -1,7 +1,7 @@
 <?php
   
 //llamada al archivo que contiene la clase
-//usuarios, en ella estara el codigo_categoria que me //permitirá
+//usuarios, en ella estara el cedula que me //permitirá
 //guardar, consultar y modificar dentro de mi base //de datos
 
 
@@ -21,7 +21,7 @@ require_once("modelo/".$pagina.".php");
 	  //para poderlos usar
 	  
 	  
-	  $o = new categoria(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
+	  $o = new usuario(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
 	  //clase productosaj
 	  
 	  if(!empty($_POST)){
@@ -35,19 +35,18 @@ require_once("modelo/".$pagina.".php");
 			 echo  json_encode($o->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
-			 $o->set_codigo_categoria($_POST['codigo_categoria']); 
+			 $o->set_cedula($_POST['cedula']); 
 			 echo  json_encode($o->consultatr());  
 		  }
 
 		  elseif($accion=='eliminar'){
-			 $o->set_codigo_categoria($_POST['codigo_categoria']);
+			 $o->set_cedula($_POST['cedula']);
 			 echo  json_encode($o->eliminar());
 		  }
 		  else{		  
-			  $o->set_codigo_categoria($_POST['codigo_categoria']);
-			  $o->set_tipo($_POST['tipo']);
-			  $o->set_unidadMedNormal($_POST['unidadMedNormal']);
-              $o->set_unidadMedAlt($_POST['unidadMedAlt']);
+			  $o->set_cedula($_POST['cedula']);
+			  $o->set_tipo_usuario($_POST['tipo_usuario']);
+			  $o->set_clave($_POST['clave']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }
