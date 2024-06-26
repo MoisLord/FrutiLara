@@ -35,9 +35,6 @@ form{
     width: 600px;
     border: 2px solid black;
     padding: 6rem;
-    background: url(../img/login.jpg) no-repeat;
-    background-position: left bottom;
-    background-size: cover;
     background-color:black;
     border: none;
     border-radius: 20px;
@@ -100,7 +97,7 @@ a{
 a:hover{
     color: green;
 }
-/*FORMULARIO VIEJO
+
 .form-container {
     background-color: #222;
     background: url(../img/login.jpg) no-repeat;
@@ -113,7 +110,7 @@ a:hover{
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-
+/*FORMULARIO VIEJO
 .form-container::after {
     content: '';
     position: absolute;
