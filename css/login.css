@@ -41,6 +41,19 @@ form{
     color: green;
 }
 
+.row mt-3 {
+    background-color: #222;
+    background: url(../img/login.jpg) no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    opacity: 0.8;
+    height: 550px;
+    width: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
 h1{
     display: block;
     border: 2px solid black;
