@@ -22,7 +22,7 @@ Iniciar Sesion
 
 
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-<form method="post" action="procesar_login.php" id="f">
+<form method="post" action="#" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
 <div class="container">
     
