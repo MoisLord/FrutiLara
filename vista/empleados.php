@@ -78,22 +78,20 @@ GESTIÓN DE EMPLEADOS
 
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-3">
-				   <button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
+				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
-			<div class="col-md-1"></div>
 			<div class="col-md-3">	
-				   <button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
+				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
 			</div>
-			<div class="col-md-1"></div>
+			
 			<div class="col-md-3">	
-				   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
-			<div class="row mb-3"></div>
-			<div class="col-md-3">	
+			<div class="col-md-2">	
 				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
 			</div>
-		</div>
-		<div class="row mt-3 justify-content-left">
+			</div>
+			<div class="row mt-3 justify-content-left">
 			<div class="col-md-2">	
 				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 			</div>
