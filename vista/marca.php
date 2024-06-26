@@ -70,7 +70,7 @@ MARCAS DE PRODUCTOS
 	<h5 class="modal-title text-center text-success">MARCAS REGISTRADAS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
-		<table class="table table-striped table-hover" id="tablaproducto">
+		<table class="table table-striped table-hover" id="tablamarca">
 		<thead>
 		  <tr>
 			<th>Registro de Marcas</th>
