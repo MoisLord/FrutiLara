@@ -56,7 +56,7 @@ Iniciar Sesion
 		
 
 	<div class="col-md-3 d-flex justify-content-center">
-			   <button type="button" class="btn btn-danger w-150 small-width" 
+			   <button type="button" class="btn btn-danger w-100 small-width" 
 			   id="entrar" name="entrar">ENTRAR</button>
 		</div>
 	</div>
