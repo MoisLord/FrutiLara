@@ -83,7 +83,7 @@ CATEGORIAS DE PRODUCTOS
 
 	<div class="col-8 p-4">
 	<div class="container">
-	<h5 class="modal-title text-center text-success">CLIENTES REGISTRADOS</h5>
+	<h5 class="modal-title text-center text-success">CATEGORIAS REGISTRADAS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablacategoria">
