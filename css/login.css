@@ -30,6 +30,7 @@ body {
     padding: 6rem;
     border: none;
     border-radius: 20px;
+    background: url(../img/login.jpg) no-repeat;
 }
 
 h1{
