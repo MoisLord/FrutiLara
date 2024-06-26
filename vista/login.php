@@ -24,7 +24,7 @@ Iniciar Sesion
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="procesar_login.php" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
-<div class="container" style="background-image: url('login.jpg'); background-size: cover; background-position: center; opacity: 0.5;">
+<div class="container">
     
     <div class="row mt-3">
 		
