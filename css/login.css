@@ -29,13 +29,6 @@ body {
     font-family: 'Fira Sans', sans-serif;*/
 }
 
-.login-container {
-	background-image: url("../img/login.jpg");
-	background-size: cover;
-	background-position: center;
-	opacity: 0.8;
-}
-
 /*FORMULARIO NUEVO*/
 
 form{
