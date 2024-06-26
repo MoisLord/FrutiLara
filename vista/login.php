@@ -14,7 +14,7 @@
 ?>	
 </div>
 
-<div class="container text-center h2 text-primary">
+<div class="container text-center h2 text-danger">
 Iniciar Sesion
 <hr/>
 </div>
@@ -22,7 +22,7 @@ Iniciar Sesion
 
 
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-<form method="post" action="" id="f">
+<form method="post" action="procesar_login.php" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
 <div class="container">
     
@@ -54,6 +54,7 @@ Iniciar Sesion
 
 	<div class="row justify-content-center mt-5">
 		
+
 	<div class="col-md-3 d-flex justify-content-center">
 			   <button type="button" class="btn btn-primary w-100 small-width" 
 			   id="entrar" name="entrar">ENTRAR</button>
