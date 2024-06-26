@@ -12,11 +12,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    min-height: 100vh;
-    display: flex;
-    font-family: 'Fira Sans', sans-serif;
 }
 
 /*FORMULARIO NUEVO*/
@@ -31,6 +26,11 @@ body {
     border: none;
     border-radius: 20px;
     background: url(../img/login.jpg) no-repeat;
+    height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 h1{
