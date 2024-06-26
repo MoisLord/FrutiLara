@@ -71,7 +71,7 @@ PANTALLA DE PROVEEDORES
 			</div>
 			<div class="row mt-3 justify-content-left">
 			<div class="col-md-2">	
-				   <a href="." class="btn btn-success">REGRESAR</a>
+				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 			</div>
 			</div>
 	</div>	
