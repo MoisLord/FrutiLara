@@ -14,20 +14,13 @@ $(document).ready(function(){
                 enviaAjax(datos,'consultatr');	
             }
         });
-        $("#tipo_usuario").on("keypress", function(e) {
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
-        });
-        
-        $("#tipo_usuario").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#stipo_usuario"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
-        });
 
         $("#clave").on("keypress", function(e) {
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+            validarkeypress(/^[0-9A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         
         $("#clave").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sclave"), "Debe colocar la unidad de medida más común con solo letras, entre 3 a 20 digitos");
+            validarkeyup(/^[0-9A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sclave"), "Debe colocar una contraseña con letras y números, entre 3 a 20 digitos");
         });
         
         
@@ -64,8 +57,8 @@ $(document).ready(function(){
         
         if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
             $("#scedula"),"El formato debe ser Numerico")==0){
-            muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
-                            "12345678");	
+            muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
+                            "00000000");	
             
         }
         else{	
@@ -124,16 +117,12 @@ $(document).ready(function(){
     function validarenvio(){
         if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
             $("#scedula"),"El formato debe ser Numerico")==0){
-            muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
-                            "12345678");	
+            muestraMensaje("La cedula  debe coincidir con el formato <br/>"+ 
+                            "00000000");	
             return false;					
         }	
-        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#clave"), $("#sclave"), "Solo letras, entre 3 a 20 dígitos") == 0) {
-            muestraMensaje("unidad Medida Normal debe ser <br/>Solo letras, entre 3 a 20 dígitos");
-            return false;
-        }
-        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#unidadMedAlt"), $("#sunidadMedAlt"), "Solo letras, entre 3 a 20 dígitos") == 0) {
-            muestraMensaje("unidad de Medidida Alterna debe ser <br/>Solo letras, entre 3 a 20 dígitos");
+        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#clave"), $("#sclave"), "Solo números y letras, entre 3 a 20 dígitos") == 0) {
+            muestraMensaje("La clave debe ser <br/>Solo números y letras, entre 3 a 20 dígitos");
             return false;
         }
         
