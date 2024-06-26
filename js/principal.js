@@ -1,5 +1,5 @@
-// Initialize the carousel with automatic sliding
+// Inicializar el carrusel con deslizamiento automático.
 $('#carouselExample').carousel({
-    interval: 10000, // Slide every 5 seconds
-    pause: false // Don't pause the carousel on hover
+    interval: 10000, // Desliza cada 5 segundos
+    pause: false // No pausar el carrusel al pasar el mouse
   });
