@@ -30,7 +30,7 @@ body {
 }
 
 .login-container {
-	background-image: url("css/login.jpg");
+	background-image: url("../img/login.jpg");
 	background-size: cover;
 	background-position: center;
 	opacity: 0.8;
