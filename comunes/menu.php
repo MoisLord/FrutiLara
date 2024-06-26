@@ -36,9 +36,6 @@
           <li class="nav-item">
             <a class="nav-link mx-lg-2" href="?pagina=usuario">Usuarios</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" href="?pagina=login">Inicio Sesion</a>
-          </li>
         </ul>
       </div>
     </div>
