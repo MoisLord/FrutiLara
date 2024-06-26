@@ -55,7 +55,7 @@ Iniciar Sesion
 	<div class="row justify-content-center mt-5">
 		
 		<div class="col-md-3 d-flex justify-content-center">	
-			   <a href="?pagina=principal" class="btn btn-danger w-100 small-width">INGRESAR</a>
+			   <a href="?pagina=principal" class="btn btn-danger w-150 small-width">INGRESAR</a>
 		</div>
 	</div>
 </div>
