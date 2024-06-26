@@ -21,7 +21,7 @@ Iniciar Sesion
 
 
 
-<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
+<div class="container login-container mt-5 mb-5"> <!-- todo el contenido ira dentro de esta etiqueta-->
 
 <form method="post" action="" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
@@ -55,9 +55,9 @@ Iniciar Sesion
 	</div>
 
 	<div class="row justify-content-center mt-5">
-	<div class="col-md-3 d-flex justify-content-center">	
-			   <a href="?pagina=principal" class="btn btn-danger w-100 small-width">INGRESAR</a>
-		</div>
+		<div class="col-md-3 d-flex justify-content-center">
+			   <button type="button" class="btn btn-danger w-100 small-width" 
+			   id="entrar" name="entrar">ENTRAR</button>
 		</div>
 	</div>
 </div>
