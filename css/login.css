@@ -14,29 +14,22 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    
-
-
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #DCE35B;
-    background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
-    background: linear-gradient(to right, #45B649, #DCE35B);
-
     font-family: 'Fira Sans', sans-serif;
 }
 
 /*FORMULARIO NUEVO*/
 
-form{
+.form-container{
     width: 600px;
     border: 2px solid black;
     padding: 6rem;
     border: none;
     border-radius: 20px;
-    color: green;
+    background: url(../img/login.jpg) no-repeat;
+    background-position: left bottom;
+    background-size: cover;
 }
 
 h1{
