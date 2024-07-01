@@ -45,7 +45,7 @@ CREATE TABLE `empleados` (
   `id` int(11) NOT NULL,
   `cedula` int(20) NOT NULL,
   `nombre_apellido` varchar(50) NOT NULL,
-  `telefono` varchar(15) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `direccion` varchar(100) NOT NULL,
   `fechaNacimiento` varchar(20) NOT NULL
