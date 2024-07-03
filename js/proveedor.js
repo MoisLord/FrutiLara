@@ -15,10 +15,10 @@ $(document).ready(function(){
             }
         });
         $("#factura").on("keypress",function(e){
-            validarkeypress(/^[0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+            validarkeypress(/^[0-9-\b]*$/,e);
         });
         $("#factura").on("keyup",function(){
-            validarkeyup(/^[0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,8}$/,
+            validarkeyup(/^[0-9]{7,8}$/,$(this),
             $(this),$("#sfactura"),"el formato debe ser ej: 00004275");
         });
         
@@ -163,7 +163,7 @@ $(document).ready(function(){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "J-092348760 o G-00003454");	
             return false;					
-        }else if(validarkeyup(/^[0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,8}$/,
+        }else if(validarkeyup(/^[0-9\b]{7,8}$/,
         $("#factura"),$("#sfactura"),"Solo numeros  entre 3 y 8 caracteres")==0){
         muestraMensaje("el formato debe ser ej: 00004275");
         return false;
