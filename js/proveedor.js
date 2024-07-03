@@ -15,10 +15,10 @@ $(document).ready(function(){
             }
         });
         $("#factura").on("keypress",function(e){
-            validarkeypress(/^[0-9-\b]*$/,e);
+            validarkeypress(/^[0-9\b]*$/,e);
         });
         $("#factura").on("keyup",function(){
-            validarkeyup(/^[0-9]{7,8}$/,$(this),
+            validarkeyup(/^[0-9]{4,7}$/,$(this),
             $(this),$("#sfactura"),"el formato debe ser ej: 00004275");
         });
         
@@ -29,13 +29,6 @@ $(document).ready(function(){
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
             $(this),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres");
         });
-        $("#vendedor").on("keypress",function(e){
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
-        });
-        $("#vendedor").on("keyup",function(){
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#svendedor"),"Solo letras  entre 3 y 30 caracteres");
-        });
         $("#chofer").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
@@ -43,7 +36,13 @@ $(document).ready(function(){
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
             $(this),$("#schofer"),"Solo letras  entre 3 y 30 caracteres");
         });
-        
+        $("#vendedor").on("keypress",function(e){
+            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+        });
+        $("#vendedor").on("keyup",function(){
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+            $(this),$("#svendedor"),"Solo letras  entre 3 y 30 caracteres");
+        });
         $("#Telefono").on("keypress",function(e){
             validarkeypress(/^[0-9\b-]*$/,e);
         });
@@ -72,8 +71,8 @@ $(document).ready(function(){
             datos.append('rif',$("#rif").val());
             datos.append('factura',$("#factura").val());
             datos.append('Nombre',$("#Nombre").val());
-            datos.append('vendedor',$("#vendedor").val());
             datos.append('chofer',$("#chofer").val());
+            datos.append('vendedor',$("#vendedor").val());
             datos.append('Telefono',$("#Telefono").val());
             datos.append('Direccion',$("#Direccion").val());
             enviaAjax(datos);
@@ -87,8 +86,8 @@ $(document).ready(function(){
             datos.append('rif',$("#rif").val());
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
-            datos.append('vendedor',$("#vendedor").val());
             datos.append('chofer',$("#chofer").val());
+            datos.append('vendedor',$("#vendedor").val());
             datos.append('Telefono',$("#Telefono").val());
             datos.append('Direccion',$("#Direccion").val());
             enviaAjax(datos);
@@ -163,8 +162,8 @@ $(document).ready(function(){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "J-092348760 o G-00003454");	
             return false;					
-        }else if(validarkeyup(/^[0-9\b]{7,8}$/,
-        $("#factura"),$("#sfactura"),"Solo numeros  entre 3 y 8 caracteres")==0){
+        }else if(validarkeyup(/^[0-9\b]{4,8}$/,
+        $("#factura"),$("#sfactura"),"Solo numeros  entre 4 y 8 caracteres")==0){
         muestraMensaje("el formato debe ser ej: 00004275");
         return false;
         }
@@ -174,13 +173,13 @@ $(document).ready(function(){
             return false;
         }
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("#vendedor"),$("#svendedor"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Nombre del vendedor<br/>Solo letras  entre 3 y 30 caracteres");
+            $("#chofer"),$("#schofer"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("Nombre del chofer <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("#chofer"),$("#schofer"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("Nombre del chofer <br/>Solo letras  entre 3 y 30 caracteres");
+            $("#vendedor"),$("#svendedor"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("Nombre del vendedor<br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
         else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$("#Telefono"),
@@ -246,8 +245,8 @@ $(document).ready(function(){
         $("#rif").val($(linea).find("td:eq(0)").text());
         $("#factura").val($(linea).find("td:eq(1)").text());
         $("#Nombre").val($(linea).find("td:eq(2)").text());
-        $("#vendedor").val($(linea).find("td:eq(3)").text());
-        $("#chofer").val($(linea).find("td:eq(4)").text());
+        $("#chofer").val($(linea).find("td:eq(3)").text());
+        $("#vendedor").val($(linea).find("td:eq(4)").text());
         $("#Telefono").val($(linea).find("td:eq(5)").text());
         $("#Direccion").val($(linea).find("td:eq(6)").text());
         
@@ -321,8 +320,8 @@ $(document).ready(function(){
         $("#rif").val("");
         $("#factura").val("");
         $("#Nombre").val("");
-        $("#vendedor").val("");
         $("#chofer").val("");
+        $("#vendedor").val("");
         $("#Telefono").val("");
         $("#Direccion").val("");
         

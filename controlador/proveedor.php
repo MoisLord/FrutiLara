@@ -50,7 +50,7 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_factura($_POST['factura']);
 			  $o->set_Nombre($_POST['Nombre']);
 			  $o->set_chofer($_POST['chofer']);
-			  $o->set_vendedor($_POST['Vendedor']);
+			  $o->set_vendedor($_POST['vendedor']);
 			  $o->set_Telefono($_POST['Telefono']);
 			  $o->set_Direccion($_POST['Direccion']);
 			  if($accion=='incluir'){

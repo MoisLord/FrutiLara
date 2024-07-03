@@ -20,8 +20,8 @@ class proveedor extends datos{
 	private $rif; //recuerden que en php, las variables no tienen tipo predefinido
 	private $factura;
 	private $Nombre;
-	private $vendedor;
 	private $chofer;
+	private $vendedor;
 	private $Telefono;
 	private $Direccion;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
@@ -41,11 +41,11 @@ class proveedor extends datos{
 	function set_Nombre($valor){
 		$this->Nombre = $valor;
 	}
-	function set_vendedor($valor){
-		$this->vendedor = $valor;
-	}
 	function set_chofer($valor){
 		$this->chofer = $valor;
+	}
+	function set_vendedor($valor){
+		$this->vendedor = $valor;
 	}
 	function set_Telefono($valor){
 		$this->Telefono = $valor;
@@ -66,11 +66,12 @@ class proveedor extends datos{
 	function get_Nombre(){
 		return $this->Nombre;
 	}
-	function get_vendedor(){
-		return $this->vendedor;
-	}
+	
 	function get_chofer(){
 		return $this->chofer;
+	}
+	function get_vendedor(){
+		return $this->vendedor;
 	}
 	
 	function get_Telefono(){
@@ -112,7 +113,10 @@ class proveedor extends datos{
 						)
 						values(
 						:rif,
+						:codigo_factura,
 						:nombre,
+						:nombre_chofer,
+						:nombre_vendedor,
 						:telefono,
 						:direccion
 						)");
@@ -233,13 +237,13 @@ class proveedor extends datos{
 							$respuesta = $respuesta.$r['codigo_factura'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['nombre'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['nombre_chofer'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['nombre_vendedor'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['telefono'];
