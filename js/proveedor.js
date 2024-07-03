@@ -18,7 +18,7 @@ $(document).ready(function(){
             validarkeypress(/^[0-9\b]*$/,e);
         });
         $("#factura").on("keyup",function(){
-            validarkeyup(/^[0-9]{4,7}$/,$(this),
+            validarkeyup(/^[0-9]{4,8}$/,$(this),
             $(this),$("#sfactura"),"el formato debe ser ej: 00004275");
         });
         
