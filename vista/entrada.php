@@ -13,8 +13,12 @@
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
 <div class="container text-center h2 text-success">
-PANTALLA DE ENTRADAS
+NOTAS DE ENTRADA DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65"/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
@@ -23,8 +27,10 @@ PANTALLA DE ENTRADAS
 <div class="container">
     <!-- FILA DE BOTONES -->
 	<div class="row">
-		<div class="col-md-4">
-			   <button type="button" class="btn btn-success" id="facturar" name="facturar">INGRESAR</button>
+		<div class="col-md-8">
+			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
+			   <button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
+			   <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA BOTONES -->
@@ -33,23 +39,23 @@ PANTALLA DE ENTRADAS
 			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
-	<!-- FILA DE INPUT Y BUSCAR CLIENTE -->
+	<!-- FILA DE INPUT Y BUSCAR PROVEEDOR -->
+	<h6>Rif del Proveedor</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
 		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
 		   <input class="form-control" type="text" id="idproveedor" name="idproveedor" style="display:none"/>
-		   <button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
 		</div>
 	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR CLIENTE -->
+	<!-- FIN DE FILA INPUT Y BUSCAR PROVEEDOR -->
 	
-	<!-- FILA DE DATOS DEL CLIENTE -->
+	<!-- FILA DE DATOS DEL PROVEEDOR -->
 	<div class="row">
 		<div class="col-md-12" id="datosdelcliente">
 		   
 		</div>
 	</div>
-	<!-- FIN DE FILA DATOS DEL CLIENTE -->
+	<!-- FIN DE FILA DATOS DEL PROVEEDOR -->
 		
 	<div class="row">
 		<div class="col">
@@ -58,11 +64,11 @@ PANTALLA DE ENTRADAS
 	</div>
 
     <!-- FILA DE BUSQUEDA DE PRODUCTOS -->
+	<h6>Codigo del Producto</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
 		   <input class="form-control" type="text" id="codigoproducto" name="codigoproducto" />
 		   <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
-		   <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
@@ -71,7 +77,7 @@ PANTALLA DE ENTRADAS
 			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
-	<!-- FILA DE DETALLES DE LA VENTA -->
+	<!-- FILA DE DETALLES DE SALIDA -->
 	<div class="row">
 		<div class="col-md-12">
 		   <table class="table table-striped table-hover">
@@ -92,7 +98,7 @@ PANTALLA DE ENTRADAS
 			</table>
 		</div>
 	</div>
-	<!-- FIN DE FILA DETALLES DE LA VENTA -->
+	<!-- FIN DE FILA DETALLES DE SALIDA -->
 </div>
 </form>
 </div> <!-- fin de container -->

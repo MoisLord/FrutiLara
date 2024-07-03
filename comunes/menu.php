@@ -18,6 +18,9 @@
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="?pagina=entrada">Notas de Entrada</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" href="?pagina=productosaj">Productos</a>
           </li>
@@ -35,6 +38,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" href="?pagina=usuario">Usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="?pagina=salida">Notas de Salida</a>
           </li>
         </ul>
       </div>

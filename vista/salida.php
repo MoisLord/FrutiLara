@@ -15,9 +15,11 @@
 <hr/>
 <hr/>
 <hr/>
-<div class="container text-center h2 text-success">
-Salida de Productos
 <hr/>
+<hr/>
+<div class="container text-center h2 text-success">
+NOTAS DE SALIDA DE PRODUCTOS
+<hr class="border border-success border-3 opacity-65"/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
@@ -34,7 +36,7 @@ Salida de Productos
     <!-- FIN DE FILA BOTONES -->
 	<div class="row">
 		<div class="col">
-			<hr/>
+			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
     <!-- FILA DE INPUT Y BUSCAR Productos -->
@@ -73,7 +75,7 @@ Salida de Productos
 	<!-- FIN DE FILA DE INPUT Y BUSQUEDA DE EQUIPO -->
 	<div class="row">
 		<div class="col">
-			<hr/>
+			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
 
