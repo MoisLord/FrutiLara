@@ -20,32 +20,48 @@ PANTALLA DE PROVEEDORES
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="codigo_categoria">Rif</label>
+			   <label for="rif">Rif</label>
 			   <input class="form-control" type="text" id="rif" name="rif" />
 			   <span id="srif"></span>
+			</div>
+			<div class="col-md">
+			   <label for="codigo_factura">Codigo de factura</label>
+			   <input class="form-control" type="text" id="factura" name="factura" />
+			   <span id="sDireccion"></span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
-			   <label for="tipo">Nombre del proveedor</label>
+			   <label for="nombre_proveedor">Nombre del proveedor</label>
 			   <input class="form-control" type="text" id="Nombre" name="Nombre" />
 			   <span id="sNombre"></span>
 			</div>
 		</div>    
+		<div class="col-md">
+			   <label for="Nombre_vendedor">Nombre del vendedor</label>
+			   <input class="form-control" type="text" id="vendedor" name="Vendedor" />
+			   <span id="sDireccion"></span>
+		</div>
+		<div class="col-md">
+			   <label for="nombre_chofer">Nombre del chofer</label>
+			   <input class="form-control" type="text" id="chofer" name="chofer" />
+			   <span id="sDireccion"></span>
+		</div>
         
 		<div class="row mb-4">
 			<div class="col-md">
-        		<label for="unidadMedNormal">Telefono</label>
+        		<label for="telefono">Telefono</label>
 				<input class="form-control" type="text" id="Telefono" name="Telefono" />
 				<span id="sTelefono"></span>
     		</div>
-			</div>
-			<div class="row mb-4">
+		</div>
+		<div class="row mb-4">
 			<div class="col-md">
-			   <label for="unidadMedAlt">Dirección</label>
+			   <label for="Direccion">Dirección</label>
 			   <input class="form-control" type="text" id="Direccion" name="Direccion" />
 			   <span id="sDireccion"></span>
 			</div>
+			
 		</div>
 		
 		<div class="row">
