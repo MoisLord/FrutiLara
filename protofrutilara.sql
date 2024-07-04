@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-07-2024 a las 20:10:18
+-- Tiempo de generación: 05-07-2024 a las 00:40:15
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categoria` (
-  `id` int(11) NOT NULL,
   `codigo_categoria` varchar(40) NOT NULL,
   `tipo` varchar(20) NOT NULL,
   `unidadMedNormal` varchar(20) NOT NULL,
@@ -39,10 +38,10 @@ CREATE TABLE `categoria` (
 -- Volcado de datos para la tabla `categoria`
 --
 
-INSERT INTO `categoria` (`id`, `codigo_categoria`, `tipo`, `unidadMedNormal`, `unidadMedAlt`) VALUES
-(3, '1566654', 'polarres', 'alta', 'baja'),
-(4, '13465644', 'polar', 'alta', 'media'),
-(5, '12345645', 'manza', 'alta ', 'media');
+INSERT INTO `categoria` (`codigo_categoria`, `tipo`, `unidadMedNormal`, `unidadMedAlt`) VALUES
+('12345645', 'manza', 'alta ', 'media'),
+('13465644', 'polar', 'alta', 'media'),
+('1566654', 'polarres', 'alta', 'baja');
 
 -- --------------------------------------------------------
 
@@ -51,13 +50,11 @@ INSERT INTO `categoria` (`id`, `codigo_categoria`, `tipo`, `unidadMedNormal`, `u
 --
 
 CREATE TABLE `detalle_entrada` (
-  `id` int(11) NOT NULL,
-  `codigo_entrada` varchar(50) NOT NULL,
-  `rif_proveedore` varchar(50) NOT NULL,
-  `codigo_productos` varchar(50) NOT NULL,
-  `cantidad` varchar(30) NOT NULL,
-  `cifra` varchar(30) NOT NULL,
-  `fecha` date NOT NULL
+  `id_entrada` varchar(30) NOT NULL,
+  `rif_proveedores` varchar(50) NOT NULL,
+  `codigo_producto` varchar(50) NOT NULL,
+  `cantidad_producto` varchar(30) NOT NULL,
+  `cifra` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -67,11 +64,11 @@ CREATE TABLE `detalle_entrada` (
 --
 
 CREATE TABLE `detalle_salida` (
-  `id` int(11) NOT NULL,
-  `codigo_salida` varchar(50) NOT NULL,
-  `id_producto` varchar(30) NOT NULL,
-  `id_cedula` varchar(10) NOT NULL,
-  `estado` varchar(20) NOT NULL,
+  `id_salida` varchar(40) NOT NULL,
+  `cedula_empleado` varchar(10) NOT NULL,
+  `codigo_producto` varchar(50) NOT NULL,
+  `cantidad_producto` varchar(50) NOT NULL,
+  `estado` varchar(30) NOT NULL,
   `cifra` varchar(30) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -83,7 +80,6 @@ CREATE TABLE `detalle_salida` (
 --
 
 CREATE TABLE `empleados` (
-  `id` int(11) NOT NULL,
   `cedula` varchar(10) NOT NULL,
   `nombre_apellido` varchar(30) NOT NULL,
   `telefono` varchar(50) NOT NULL,
@@ -95,18 +91,25 @@ CREATE TABLE `empleados` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ingreso_producto`
+-- Estructura de tabla para la tabla `entrada`
 --
 
-CREATE TABLE `ingreso_producto` (
-  `id_ingreso` int(11) NOT NULL,
-  `codigo_ingreso` varchar(11) NOT NULL,
+CREATE TABLE `entrada` (
+  `id_salida` varchar(30) NOT NULL,
   `rif_proveedor` varchar(50) NOT NULL,
-  `codigo_factura` varchar(50) NOT NULL,
-  `codigo_producto` varchar(50) NOT NULL,
-  `cantidad` varchar(30) NOT NULL,
-  `cifra` varchar(30) NOT NULL,
-  `fecha_entrega` date NOT NULL
+  `codigo_producto` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `inventario`
+--
+
+CREATE TABLE `inventario` (
+  `id_salida` varchar(50) NOT NULL,
+  `id_entrada` varchar(50) NOT NULL,
+  `codigo_producto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -116,7 +119,6 @@ CREATE TABLE `ingreso_producto` (
 --
 
 CREATE TABLE `marca` (
-  `id` int(11) NOT NULL,
   `modelo` varchar(20) NOT NULL,
   `marca` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -125,8 +127,8 @@ CREATE TABLE `marca` (
 -- Volcado de datos para la tabla `marca`
 --
 
-INSERT INTO `marca` (`id`, `modelo`, `marca`) VALUES
-(7, '12345678', 'polar');
+INSERT INTO `marca` (`modelo`, `marca`) VALUES
+('12345678', 'polar');
 
 -- --------------------------------------------------------
 
@@ -135,7 +137,6 @@ INSERT INTO `marca` (`id`, `modelo`, `marca`) VALUES
 --
 
 CREATE TABLE `producto` (
-  `id` int(11) NOT NULL,
   `codigo` varchar(50) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `minimo` varchar(50) NOT NULL,
@@ -151,30 +152,29 @@ CREATE TABLE `producto` (
 --
 
 CREATE TABLE `proveedores` (
-  `id` int(11) NOT NULL,
   `rif` varchar(50) NOT NULL,
-  `codigo_factura` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `nombre_chofer` varchar(30) NOT NULL,
-  `nombre_vendedor` varchar(30) NOT NULL,
-  `telefono` varchar(11) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
   `direccion` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
+('J-0154546', 'polar', '0412-154788', 'calle 12 xdxasdsadassdad');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `salida_producto`
+-- Estructura de tabla para la tabla `salida`
 --
 
-CREATE TABLE `salida_producto` (
-  `id_salida` int(11) NOT NULL,
-  `codigo_salida` varchar(50) NOT NULL,
-  `cedula_cliente` varchar(10) NOT NULL,
-  `codigo_producto` varchar(30) NOT NULL,
-  `estado` varchar(20) NOT NULL,
-  `cifra` varchar(30) NOT NULL,
-  `fecha` date NOT NULL
+CREATE TABLE `salida` (
+  `id_salida` varchar(30) NOT NULL,
+  `cedula_empleado` varchar(11) NOT NULL,
+  `codigo_producto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -205,54 +205,55 @@ INSERT INTO `usuario` (`id_usuarios`, `tipo_usuario`, `cedula`, `clave`) VALUES
 -- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `codigo_categoria` (`codigo_categoria`);
 
 --
 -- Indices de la tabla `detalle_entrada`
 --
 ALTER TABLE `detalle_entrada`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `codigo_entrada` (`codigo_entrada`);
+  ADD PRIMARY KEY (`id_entrada`),
+  ADD KEY `rif_proveedores` (`rif_proveedores`),
+  ADD KEY `codigo_producto` (`codigo_producto`);
 
 --
 -- Indices de la tabla `detalle_salida`
 --
 ALTER TABLE `detalle_salida`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `codigo_salida` (`codigo_salida`),
-  ADD KEY `id_producto` (`id_producto`),
-  ADD KEY `id_cedula` (`id_cedula`);
+  ADD PRIMARY KEY (`id_salida`),
+  ADD KEY `cedula_empleado` (`cedula_empleado`),
+  ADD KEY `codigo_producto` (`codigo_producto`);
 
 --
 -- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `cedula` (`cedula`);
 
 --
--- Indices de la tabla `ingreso_producto`
+-- Indices de la tabla `entrada`
 --
-ALTER TABLE `ingreso_producto`
-  ADD PRIMARY KEY (`id_ingreso`),
-  ADD UNIQUE KEY `codigo_ingreso` (`codigo_ingreso`),
-  ADD KEY `codigo_producto` (`codigo_producto`) USING BTREE,
-  ADD KEY `rif_proveedor` (`rif_proveedor`) USING BTREE,
-  ADD KEY `codigo_factura` (`codigo_factura`);
+ALTER TABLE `entrada`
+  ADD KEY `rif_proveedor` (`rif_proveedor`),
+  ADD KEY `codigo_producto` (`codigo_producto`);
+
+--
+-- Indices de la tabla `inventario`
+--
+ALTER TABLE `inventario`
+  ADD KEY `id_salida` (`id_salida`),
+  ADD KEY `id_entrada` (`id_entrada`),
+  ADD KEY `codigo_producto` (`codigo_producto`);
 
 --
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
-  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `marca` (`marca`);
 
 --
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `codigo` (`codigo`) USING BTREE,
   ADD KEY `id_marca` (`id_marca`) USING BTREE,
   ADD KEY `id_categoria` (`id_categoria`) USING BTREE;
@@ -261,17 +262,13 @@ ALTER TABLE `producto`
 -- Indices de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `rif` (`rif`),
-  ADD UNIQUE KEY `codigo_factura` (`codigo_factura`);
+  ADD PRIMARY KEY (`rif`);
 
 --
--- Indices de la tabla `salida_producto`
+-- Indices de la tabla `salida`
 --
-ALTER TABLE `salida_producto`
-  ADD PRIMARY KEY (`id_salida`),
-  ADD UNIQUE KEY `codigo_salida` (`codigo_salida`),
-  ADD KEY `cedula_cliente` (`cedula_cliente`),
+ALTER TABLE `salida`
+  ADD KEY `cedula_empleado` (`cedula_empleado`),
   ADD KEY `codigo_producto` (`codigo_producto`);
 
 --
@@ -283,60 +280,6 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `categoria`
---
-ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `detalle_entrada`
---
-ALTER TABLE `detalle_entrada`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `detalle_salida`
---
-ALTER TABLE `detalle_salida`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `empleados`
---
-ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `ingreso_producto`
---
-ALTER TABLE `ingreso_producto`
-  MODIFY `id_ingreso` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `marca`
---
-ALTER TABLE `marca`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de la tabla `producto`
---
-ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
---
--- AUTO_INCREMENT de la tabla `proveedores`
---
-ALTER TABLE `proveedores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `salida_producto`
---
-ALTER TABLE `salida_producto`
-  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -352,21 +295,28 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `detalle_entrada`
 --
 ALTER TABLE `detalle_entrada`
-  ADD CONSTRAINT `detalle_entrada_ibfk_1` FOREIGN KEY (`codigo_entrada`) REFERENCES `ingreso_producto` (`codigo_ingreso`);
+  ADD CONSTRAINT `detalle_entrada_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
 
 --
 -- Filtros para la tabla `detalle_salida`
 --
 ALTER TABLE `detalle_salida`
-  ADD CONSTRAINT `detalle_salida_ibfk_1` FOREIGN KEY (`codigo_salida`) REFERENCES `salida_producto` (`codigo_salida`);
+  ADD CONSTRAINT `detalle_salida_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
 
 --
--- Filtros para la tabla `ingreso_producto`
+-- Filtros para la tabla `entrada`
 --
-ALTER TABLE `ingreso_producto`
-  ADD CONSTRAINT `ingreso_producto_ibfk_2` FOREIGN KEY (`rif_proveedor`) REFERENCES `proveedores` (`rif`),
-  ADD CONSTRAINT `ingreso_producto_ibfk_3` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`),
-  ADD CONSTRAINT `ingreso_producto_ibfk_4` FOREIGN KEY (`codigo_factura`) REFERENCES `proveedores` (`codigo_factura`);
+ALTER TABLE `entrada`
+  ADD CONSTRAINT `entrada_ibfk_1` FOREIGN KEY (`rif_proveedor`) REFERENCES `proveedores` (`rif`),
+  ADD CONSTRAINT `entrada_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `detalle_entrada` (`rif_proveedores`);
+
+--
+-- Filtros para la tabla `inventario`
+--
+ALTER TABLE `inventario`
+  ADD CONSTRAINT `inventario_ibfk_1` FOREIGN KEY (`id_salida`) REFERENCES `detalle_salida` (`id_salida`),
+  ADD CONSTRAINT `inventario_ibfk_2` FOREIGN KEY (`id_entrada`) REFERENCES `detalle_entrada` (`id_entrada`),
+  ADD CONSTRAINT `inventario_ibfk_3` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
 
 --
 -- Filtros para la tabla `producto`
@@ -376,11 +326,11 @@ ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`marca`);
 
 --
--- Filtros para la tabla `salida_producto`
+-- Filtros para la tabla `salida`
 --
-ALTER TABLE `salida_producto`
-  ADD CONSTRAINT `salida_producto_ibfk_1` FOREIGN KEY (`cedula_cliente`) REFERENCES `empleados` (`cedula`),
-  ADD CONSTRAINT `salida_producto_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
+ALTER TABLE `salida`
+  ADD CONSTRAINT `salida_ibfk_1` FOREIGN KEY (`cedula_empleado`) REFERENCES `empleados` (`cedula`),
+  ADD CONSTRAINT `salida_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `detalle_salida` (`codigo_producto`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
