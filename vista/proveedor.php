@@ -24,11 +24,6 @@ PANTALLA DE PROVEEDORES
 			   <input class="form-control" type="text" id="rif" name="rif" />
 			   <span id="srif"></span>
 			</div>
-			<div class="col-md">
-			   <label for="codigo_factura">Codigo de factura</label>
-			   <input class="form-control" type="text" id="factura" name="factura" />
-			   <span id="sfactura"></span>
-			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
@@ -37,18 +32,7 @@ PANTALLA DE PROVEEDORES
 			   <span id="sNombre"></span>
 			</div>
 		</div>    
-		
-		<div class="col-md">
-			   <label for="nombre_chofer">Nombre del chofer</label>
-			   <input class="form-control" type="text" id="chofer" name="chofer" />
-			   <span id="schofer"></span>
-		</div>
-		<div class="col-md">
-			   <label for="Nombre_vendedor">Nombre del vendedor</label>
-			   <input class="form-control" type="text" id="vendedor" name="vendedor" />
-			   <span id="svendedor"></span>
-		</div>
-        
+	
 		<div class="row mb-4">
 			<div class="col-md">
         		<label for="telefono">Telefono</label>
@@ -106,10 +90,7 @@ PANTALLA DE PROVEEDORES
 		<thead>
 		  <tr>
 			<th>Rif</th>
-			<th>codigo de factura</th>
 			<th>Nombre del proveedor</th>
-			<th>Nombre del chofer</th>
-			<th>Nombre del vendedor</th>
 			<th>Telefonon</th>	
 			<th>Direccion</th>
 		  </tr>

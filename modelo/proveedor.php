@@ -18,10 +18,7 @@ class proveedor extends datos{
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
 	private $rif; //recuerden que en php, las variables no tienen tipo predefinido
-	private $factura;
 	private $Nombre;
-	private $chofer;
-	private $vendedor;
 	private $Telefono;
 	private $Direccion;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
@@ -35,17 +32,8 @@ class proveedor extends datos{
 		//luego el Nombre del elemento sin el $
 	}
 	//lo mismo que se hizo para cedula se hace para usuario y clave
-	function set_factura($valor){
-		$this->factura = $valor;
-	}
 	function set_Nombre($valor){
 		$this->Nombre = $valor;
-	}
-	function set_chofer($valor){
-		$this->chofer = $valor;
-	}
-	function set_vendedor($valor){
-		$this->vendedor = $valor;
 	}
 	function set_Telefono($valor){
 		$this->Telefono = $valor;
@@ -59,21 +47,9 @@ class proveedor extends datos{
 	function get_rif(){
 		return $this->rif;
 	}
-	function get_factura(){
-		return $this->factura;
-	}
-	
 	function get_Nombre(){
 		return $this->Nombre;
 	}
-	
-	function get_chofer(){
-		return $this->chofer;
-	}
-	function get_vendedor(){
-		return $this->vendedor;
-	}
-	
 	function get_Telefono(){
 		return $this->Telefono;
 	}
@@ -104,27 +80,18 @@ class proveedor extends datos{
 				
 					$p = $co->prepare("insert into proveedores(
 						rif,
-						codigo_factura,
 						nombre,
-						nombre_chofer,
-						nombre_vendedor,
 						telefono,
 						direccion
 						)
 						values(
 						:rif,
-						:codigo_factura,
 						:nombre,
-						:nombre_chofer,
-						:nombre_vendedor,
 						:telefono,
 						:direccion
 						)");
-					$p->bindParam(':rif',$this->rif);	
-					$p->bindParam(':codigo_factura',$this->factura);	
+					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->Nombre);
-					$p->bindParam(':nombre_chofer',$this->chofer);
-					$p->bindParam(':nombre_vendedor',$this->vendedor);
 					$p->bindParam(':telefono',$this->Telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
 					
@@ -156,20 +123,14 @@ class proveedor extends datos{
 		if($this->existe($this->rif)){
 			try {
 				$p = $co->prepare("update proveedores set
-						codigo_factura = :codigo_factura,
 						nombre = :nombre,
-						nombre_chofer = :nombre_chofer,
-						nombre_vendedor = :nombre_vendedor,
 						telefono = :telefono,
 						direccion = :direccion
 						where
 						rif = :rif
 						");
-					$p->bindParam(':rif',$this->rif);	
-					$p->bindParam(':codigo_factura',$this->factura);		
+					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->Nombre);
-					$p->bindParam(':nombre_chofer',$this->chofer);
-					$p->bindParam(':nombre_vendedor',$this->vendedor);
 					$p->bindParam(':telefono',$this->Telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
 					$p->execute();
@@ -234,16 +195,7 @@ class proveedor extends datos{
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['codigo_factura'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['nombre'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre_chofer'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre_vendedor'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['telefono'];
