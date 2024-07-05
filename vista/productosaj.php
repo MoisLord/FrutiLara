@@ -61,25 +61,24 @@ PRODUCTOS
   		<div class="input-group-prepend">
 		<button type="button" class="btn btn-success" id="listadoMarca" name="listadoMarca">LISTADO DE MARCA</button>
   		</div>
-		
-		<input class="form-control" type="text" id="marcas" name="marcas"/>
-		<input class="form-control" type="text" id="modelo" name="modelo" style="display:none"/>
+		<input class="form-control" type="text" id="modelo" name="modelo" />
+		<input class="form-control" type="text" id="marcas" name="marcas"style="display:none"/>
 		</div>
 		<div class="col-md-12" id="datosmarca">
+
+
 		</div>
 		<div class="input-group mb-3">
   		<div class="input-group-prepend">
 		  <button type="button" class="btn btn-success" id="listadoCategoria" name="listadoCategoria">LISTADO DE CATEGORIAS</button>
   		</div>
-		  <input class="form-control" type="text" id="tipo" name="tipo" />
-		  <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria" style="display:none"/>
+		  
+		  <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria" />
+		  <input class="form-control" type="text" id="tipo" name="tipo" style="display:none"/>
 		  <input class="form-control" type="text" id="unidadMedNormal" name="unidadMedNormal" style="display:none"/>
 		  <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt" style="display:none"/>
 		</div>
 
-		<div class="col-md">
-		<button type="button" class="btn btn-success" id="registrar" name="registrar">AÑADIR</button>
-			</div>
 		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
@@ -144,7 +143,6 @@ PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		    <th style="display:none">Id</th>
 			<th>Registro de Marcas</th>
 			<th>Marca</th>
 		  </tr>
@@ -178,7 +176,6 @@ PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		    <th style="display:none">Id</th>
 			<th>Codigo de categoria</th>
 			<th>tipo de Producto</th>
 			<th>Unidad de medida común</th>	

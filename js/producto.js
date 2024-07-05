@@ -12,7 +12,7 @@ $("#listadoCategoria").on("click",function(){
 	$("#modalCategorias").modal("show");
 });
 
-$("#marcas").on("keyup",function(){
+$("#modelo").on("keyup",function(){
 	var modelo = $(this).val();
 	var encontro = false;
 	$("#listadoMarca tr").each(function(){
@@ -25,7 +25,7 @@ $("#marcas").on("keyup",function(){
 		$("#datosmarca").html("");
 	}
 });	
-$("#tipo").on("keyup",function(){
+$("#codigo_categoria").on("keyup",function(){
 	var codigo = $(this).val();
 	$("#modalCategorias tr").each(function(){
 		if(codigo == $(this).find("td:eq(1)").text()){
@@ -35,12 +35,12 @@ $("#tipo").on("keyup",function(){
 });	
 
 function colocaMarca(linea){
-  $("#marcas").val($(linea).find("td:eq(0)").text());
-  $("#modelo").val($(linea).find("td:eq(1)").text());
+  $("#modelo").val($(linea).find("td:eq(0)").text());
+  $("#marcas").val($(linea).find("td:eq(1)").text());
 }
 function colocacategorias(linea){
-  $("#tipo").val($(linea).find("td:eq(0)").text());
-  $("#codigo_categoria").val($(linea).find("td:eq(1)").text());
+  $("#codigo_categoria").val($(linea).find("td:eq(0)").text());
+  $("#tipo").val($(linea).find("td:eq(1)").text());
 	$("#unidadMedNormal").html($(linea).find("td:eq(2)").text());
   $("#unidadMedAlt").html($(linea).find("td:eq(3)").text());
 
