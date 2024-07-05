@@ -59,19 +59,22 @@ PRODUCTOS
 		
 		<div class="input-group mb-3">
   		<div class="input-group-prepend">
-		<button type="button" class="btn btn-success" id="listadoMarca" name="listadodeproveedores">LISTADO DE MARCA</button>
+		<button type="button" class="btn btn-success" id="listadoMarca" name="listadoMarca">LISTADO DE MARCA</button>
   		</div>
-  		<input class="form-control" type="text" id="ModeloMarca" name="cedulacliente" />
-		<input class="form-control" type="text" id="marcas" name="idproveedor" style="display:none"/>
+		
+		<input class="form-control" type="text" id="marcas" name="marcas"/>
+		<input class="form-control" type="text" id="modelo" name="modelo" style="display:none"/>
 		</div>
 		<div class="col-md-12" id="datosmarca">
 		</div>
 		<div class="input-group mb-3">
   		<div class="input-group-prepend">
-		  <button type="button" class="btn btn-success" id="listadoCategoria" name="listadodeproductos">LISTADO DE CATEGORIAS</button>
+		  <button type="button" class="btn btn-success" id="listadoCategoria" name="listadoCategoria">LISTADO DE CATEGORIAS</button>
   		</div>
-		  <input class="form-control" type="text" id="categorias" name="codigoproducto" />
-		  <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
+		  <input class="form-control" type="text" id="tipo" name="tipo" />
+		  <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria" style="display:none"/>
+		  <input class="form-control" type="text" id="unidadMedNormal" name="unidadMedNormal" style="display:none"/>
+		  <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt" style="display:none"/>
 		</div>
 
 		<div class="col-md">
@@ -146,7 +149,7 @@ PRODUCTOS
 			<th>Marca</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeproveedores">
+		<tbody id="listadoMarca">
 		  <?php
 			if(!empty($consultaMarca)){
 				echo $consultaMarca;
@@ -182,7 +185,7 @@ PRODUCTOS
 			<th>Unidad de Medida Alternativa</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeproductos">
+		<tbody id="listadoCategoria">
 		  <?php
 			if(!empty($consultaCategoria)){
 				echo $consultaCategoria;
