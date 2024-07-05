@@ -49,28 +49,27 @@ PRODUCTOS
 			   <span id="smaximo"></span>
 			</div>
 		</div>
-
-			<div class="row mb-4">
-			<div class="col-md">
-			   <label for="id_marca">Marca</label>
-			   <input class="form-control" type="text" id="id_marca" name="id_marca"/>
-			   <span id="sid_marca"></span>
-			</div>
+		
+		<div class="input-group mb-3">
+  		<div class="input-group-prepend">
+		<button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE MARCA</button>
+  		</div>
+  		<input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
+		<input class="form-control" type="text" id="idproveedor" name="idproveedor" style="display:none"/>
+		</div>
+		<div class="col-md-12" id="datosdelcliente">
+		</div>
+		<div class="input-group mb-3">
+  		<div class="input-group-prepend">
+		  <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE CATEGORIAS</button>
+  		</div>
+		  <input class="form-control" type="text" id="codigoproducto" name="codigoproducto" />
+		  <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
 		</div>
 
-		<div class="mb-3">
-        <label for="id_categoria">Categoria</label>
-        <select class="form-select" aria-label="Default select example" id="id_categoria"> 
-            <option selected></option> 
-            <option value="Viveres">Viveres</option> 
-            <option value="Hortalizas">Hortalizas</option> 
-            <option value="Frutas">Frutas</option> 
-            <option value="Charcuteria">Charcuteria</option> 
-            <option value="Bebidas">Bebidas</option> 
-            <option value="Empaquetados">Empaquetados</option> 
-        </select> 
-    	</div> 
-		
+		<div class="col-md">
+		<button type="button" class="btn btn-success" id="registrar" name="registrar">AÑADIR</button>
+			</div>
 		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
@@ -100,9 +99,6 @@ PRODUCTOS
 	</div>	
 	</form>
 
-
-
-
 	<div class="col-8 p-4">
 	<div class="container">
 	<h5 class="modal-title text-center text-success">PRODUCTOS REGISTRADOS</h5>
@@ -126,6 +122,77 @@ PRODUCTOS
 		</table>
 		
     </div>
+	<div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">LISTADO DE MARCA</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content">
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+		    <th style="display:none">Id</th>
+			<th>Rif</th>
+			<th>Empresa</th>
+			<th>Telefono</th>
+			<th>Direccion</th>
+		  </tr>
+		</thead>
+		<tbody id="listadodeproveedores">
+		  <?php
+			if(!empty($consultaproveedores)){
+				echo $consultaproveedores;
+			}
+		  ?>
+		</tbody>
+		</table>
+    </div>
+	<div class="modal-footer bg-light">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+<!--fin de seccion modal-->
+
+<!-- seccion del modal productos -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalproductos">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">LISTADO DE CATEGORIAS</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content">
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+		    <th style="display:none">Id</th>
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Tipo</th>
+			<th>Max</th>
+			<th>Min</th>
+			<th>%</th>
+		  </tr>
+		</thead>
+		<tbody id="listadodeproductos">
+		  <?php
+			if(!empty($consultaproductos)){
+				echo $consultaproductos;
+			}
+		  ?>
+		</tbody>
+		</table>
+    </div>
+	<div class="modal-footer bg-light">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
 </div>
 
 </div>
