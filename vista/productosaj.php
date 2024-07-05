@@ -123,7 +123,7 @@ PRODUCTOS
 		
     </div>
 	<div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
-  <div class="modal-dialog modal-lg" role="document">
+  	<div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
         <h5 class="modal-title">LISTADO DE MARCA</h5>
         <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
