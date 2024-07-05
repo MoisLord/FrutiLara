@@ -1,6 +1,13 @@
 <html> 
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
+<div id="mensajes" style="display:none">
+<?php
+	if(!empty($mensaje)){
+		echo $mensaje;
+	}
+?>	
+</div>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
@@ -52,18 +59,18 @@ PRODUCTOS
 		
 		<div class="input-group mb-3">
   		<div class="input-group-prepend">
-		<button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE MARCA</button>
+		<button type="button" class="btn btn-success" id="listadoMarca" name="listadodeproveedores">LISTADO DE MARCA</button>
   		</div>
-  		<input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
-		<input class="form-control" type="text" id="idproveedor" name="idproveedor" style="display:none"/>
+  		<input class="form-control" type="text" id="ModeloMarca" name="cedulacliente" />
+		<input class="form-control" type="text" id="marcas" name="idproveedor" style="display:none"/>
 		</div>
-		<div class="col-md-12" id="datosdelcliente">
+		<div class="col-md-12" id="datosmarca">
 		</div>
 		<div class="input-group mb-3">
   		<div class="input-group-prepend">
-		  <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE CATEGORIAS</button>
+		  <button type="button" class="btn btn-success" id="listadoCategoria" name="listadodeproductos">LISTADO DE CATEGORIAS</button>
   		</div>
-		  <input class="form-control" type="text" id="codigoproducto" name="codigoproducto" />
+		  <input class="form-control" type="text" id="categorias" name="codigoproducto" />
 		  <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
 		</div>
 
@@ -122,7 +129,7 @@ PRODUCTOS
 		</table>
 		
     </div>
-	<div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
+	<div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
   	<div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
         <h5 class="modal-title">LISTADO DE MARCA</h5>
@@ -141,8 +148,8 @@ PRODUCTOS
 		</thead>
 		<tbody id="listadodeproveedores">
 		  <?php
-			if(!empty($consultaproveedores)){
-				echo $consultaproveedores;
+			if(!empty($$consultaMarca)){
+				echo $$consultaMarca;
 			}
 		  ?>
 		</tbody>
@@ -156,7 +163,7 @@ PRODUCTOS
 <!--fin de seccion modal-->
 
 <!-- seccion del modal productos -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalproductos">
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalCategorias">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
         <h5 class="modal-title">LISTADO DE CATEGORIAS</h5>
@@ -177,8 +184,8 @@ PRODUCTOS
 		</thead>
 		<tbody id="listadodeproductos">
 		  <?php
-			if(!empty($consultaproductos)){
-				echo $consultaproductos;
+			if(!empty($consultaCategoria)){
+				echo $consultaCategoria;
 			}
 		  ?>
 		</tbody>

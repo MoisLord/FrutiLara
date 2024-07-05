@@ -1,5 +1,57 @@
 
 $(document).ready(function(){
+  if($.trim($("#mensajes").text()) != ""){
+	muestraMensaje($("#mensajes").html());
+}
+$("#listadoMarca").on("click",function(){
+	$("#modalMarca").modal("show");
+});
+
+//boton para levantar modal de productos
+$("#listadoCategoria").on("click",function(){
+	$("#modalCategorias").modal("show");
+});
+
+$("#ModeloMarca").on("keyup",function(){
+	var modelo = $(this).val();
+	var encontro = false;
+	$("#listadoMarca tr").each(function(){
+		if(modelo == $(this).find("td:eq(1)").text()){
+			colocaMarca($(this));
+			encontro = true;
+		} 
+	});
+	if(!encontro){
+		$("#datosmarca").html("");
+	}
+});	
+$("#categorias").on("keyup",function(){
+	var codigo = $(this).val();
+	$("#modalCategorias tr").each(function(){
+		if(codigo == $(this).find("td:eq(1)").text()){
+			colocacategorias($(this));
+		}
+	});
+});	
+
+function colocaMarca(linea){
+	$("#ModeloMarca").val($(linea).find("td:eq(1)").text());
+	$("#marcas").val($(linea).find("td:eq(0)").text());
+	$("#ModeloMarca").html($(linea).find("td:eq(2)").text()+
+	"  "+$(linea).find("td:eq(3)").text()+"  "+
+	$(linea).find("td:eq(4)").text());
+}
+function colocacategorias(linea){
+	var id = $(linea).find("td:eq(0)").text();
+	var encontro = false;
+	
+	$("#resultadoconsulta tr").each(function(){
+		if(id*1 == $(this).find("td:eq(1)").text()*1){
+			encontro = true
+		} 
+	});
+}
+
   //VALIDACION DE DATOS	
   $("#codigo").on("keypress", function(e) {
     validarkeypress(/^[0-9]+$/, e);

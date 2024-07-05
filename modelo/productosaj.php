@@ -81,7 +81,82 @@ class productosaj extends datos{
 	function get_id_categoria(){
 		return $this->id_categoria;
 	}
+
+	function listadoMarca(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		try{
+			
+			$resultado = $co->query("Select * from marca");
+			
+			if($resultado){
+				
+				$respuesta = '';
+				foreach($resultado as $r){
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaMarca(this);'>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['modelo'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['marca'];
+						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
+				}
+				return $respuesta;
+			    
+			}
+			else{
+				return '';
+			}
+			
+		}catch(Exception $e){
+			return $e->getMessage();
+		}
+		
+	}
+	function listadoCategoria(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		try{
+			
+			$resultado = $co->query("Select * from categoria");
+			
+			if($resultado){
+				
+				$respuesta = '';
+				foreach($resultado as $r){
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacategorias(this);'>";
+						$respuesta = $respuesta."<td style='display:none'>";
+							$respuesta = $respuesta.$r['codigo_categoria'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['tipo'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['unidadMedNormal'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['unidadMedAlt'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['unidadMedAlt'];
+						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
+				}
+				return $respuesta;
+			    
+			}
+			else{
+				return '';
+			}
+			
+		}catch(Exception $e){
+			return $e->getMessage();
+		}
+		
+	}
 	
+
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
 	
 	function incluir(){
@@ -160,7 +235,7 @@ class productosaj extends datos{
 				codigo = :codigo
 						");
 
-						$p->bindParam(':codigo',$this->codigo);		
+					$p->bindParam(':codigo',$this->codigo);		
 					$p->bindParam(':nombre',$this->nombre);
 					$p->bindParam(':minimo',$this->minimo);
                     $p->bindParam(':maximo',$this->maximo);

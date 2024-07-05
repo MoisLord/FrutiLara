@@ -57,10 +57,11 @@ require_once("modelo/".$pagina.".php");
 				echo  json_encode($o->modificar());
 			  }
 		  }
+		 
 		  exit;
 	  }
-	  
-	  
+	  $consultaMarca = $o->listadoMarca();
+	  $consultaCategoria = $o->listadoCategoria();
 	  require_once("vista/".$pagina.".php"); 
   }
   else{
