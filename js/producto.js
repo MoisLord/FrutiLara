@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   if($.trim($("#mensajes").text()) != ""){
 	muestraMensaje($("#mensajes").html());
@@ -35,8 +34,9 @@ $("#codigo_categoria").on("keyup",function(){
 });	
 
 function colocaMarca(linea){
-  $("#modelo").val($(linea).find("td:eq(0)").text());
-  $("#marcas").val($(linea).find("td:eq(1)").text());
+  $("#modelo").val($(linea).find("td:eq(1)").text());
+  $("#datosmarca").html($(linea).find("td:eq(2)").text()+
+	"  "+$(linea).find("td:eq(3)").text());
 }
 function colocacategorias(linea){
   $("#codigo_categoria").val($(linea).find("td:eq(0)").text());
@@ -84,18 +84,6 @@ $("#maximo").on("keyup", function() {
   validarkeyup(/^[a-zA-Z0-9\s]{2,50}$/, $(this), $("#smaximo"), "Debe tener mínimo 2 caracteres");
 });
 
-$("#id_marca").on("keypress",function(e){
-  validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
-});
-$("#id_marca").on("keyup",function(){
-  validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,50}$/,
-  $(this),$("#sid_marca"),"Solo letras minimo 3 caracteres");
-});
-  
-  
-    
-    
-    
     
   //FIN DE VALIDACION DE DATOS
   
@@ -215,11 +203,7 @@ $("#id_marca").on("keyup",function(){
   return false;
 }
 
-  else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,50}$/,
-  $("#id_marca"),$("#sid_marca"),"Solo letras minimo 3 y caracteres")==0){
-  muestraMensaje("Marca del Producto <br/>Solo letras minimo 3 y caracteres");
-  return false;
-}
+
     
     return true;
   }
@@ -269,17 +253,7 @@ $("#id_marca").on("keyup",function(){
   }
   
   //funcion para pasar de la lista a el formulario
-  function coloca(pos,accion){
-    linea=$(pos).closest('tr');
-    
-    
-    if(accion==0){
-        $("#proceso").text("MODIFICAR");
-    }
-    else{
-        $("#proceso").text("ELIMINAR");
-    }
-
+  function coloca(linea){
     $("#codigo").val($(linea).find("td:eq(0)").text());
     $("#nombre").val($(linea).find("td:eq(1)").text());
     $("#minimo").val($(linea).find("td:eq(2)").text());
@@ -353,7 +327,7 @@ $("#id_marca").on("keyup",function(){
   
   function limpia(){
     
-    $("#codigo").val("");
+        $("#codigo").val("");
         $("#nombre").val("");
         $("#minimo").val("");
         $("#maximo").val("");

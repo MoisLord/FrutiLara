@@ -94,7 +94,7 @@ class productosaj extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaMarca(this);'>";
-						$respuesta = $respuesta."<td>";
+					$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['modelo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
@@ -126,7 +126,7 @@ class productosaj extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacategorias(this);'>";
-						$respuesta = $respuesta."<td style='display:none'>";
+						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo_categoria'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
@@ -134,9 +134,6 @@ class productosaj extends datos{
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['unidadMedNormal'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['unidadMedAlt'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['unidadMedAlt'];
