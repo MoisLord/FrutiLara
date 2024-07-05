@@ -26,23 +26,31 @@ $("#modelo").on("keyup",function(){
 });	
 $("#codigo_categoria").on("keyup",function(){
 	var codigo = $(this).val();
+  var encontro = false;
 	$("#modalCategorias tr").each(function(){
 		if(codigo == $(this).find("td:eq(1)").text()){
 			colocacategorias($(this));
+      encontro = true;
 		}
 	});
+  if(!encontro){
+		$("#datoscategoria").html("");
+	}
 });	
 
 function colocaMarca(linea){
   $("#modelo").val($(linea).find("td:eq(1)").text());
+  $("#idmarca").val($(linea).find("td:eq(0)").text());
   $("#datosmarca").html($(linea).find("td:eq(2)").text()+
 	"  "+$(linea).find("td:eq(3)").text());
 }
 function colocacategorias(linea){
-  $("#codigo_categoria").val($(linea).find("td:eq(0)").text());
-  $("#tipo").val($(linea).find("td:eq(1)").text());
-	$("#unidadMedNormal").html($(linea).find("td:eq(2)").text());
-  $("#unidadMedAlt").html($(linea).find("td:eq(3)").text());
+  $("#codigo_categoria").val($(linea).find("td:eq(1)").text());
+  $("#idcategoria").val($(linea).find("td:eq(0)").text());
+  $("#datoscategoria").html($(linea).find("td:eq(2)").text()+
+	"  "+$(linea).find("td:eq(3)").text()+
+  "  "+	$(linea).find("td:eq(4)").text()+
+  "  "+$(linea).find("td:eq(5)").text());
 
 }
 

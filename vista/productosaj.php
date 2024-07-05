@@ -56,29 +56,33 @@ PRODUCTOS
 			   <span id="smaximo"></span>
 			</div>
 		</div>
-		
+		<div class="row mb-4">
 		<div class="input-group mb-3">
-  		<div class="input-group-prepend">
 		<button type="button" class="btn btn-success" id="listadoMarca" name="listadoMarca">LISTADO DE MARCA</button>
-  		</div>
 		<input class="form-control" type="text" id="modelo" name="modelo" />
 		<input class="form-control" type="text" id="marcas" name="marcas"style="display:none"/>
 		</div>
-		<div class="col-md-12" id="datosmarca">
-
-
 		</div>
+
+	<div class="row">
+		<div class="col-md-12" id="datosmarca">   
+		</div>
+	</div>
+		
+		<div class="row mb-4">
 		<div class="input-group mb-3">
-  		<div class="input-group-prepend">
+
 		  <button type="button" class="btn btn-success" id="listadoCategoria" name="listadoCategoria">LISTADO DE CATEGORIAS</button>
-  		</div>
 		  
 		  <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria" />
-		  <input class="form-control" type="text" id="tipo" name="tipo" style="display:none"/>
-		  <input class="form-control" type="text" id="unidadMedNormal" name="unidadMedNormal" style="display:none"/>
-		  <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt" style="display:none"/>
+		  <input class="form-control" type="text" id="idcategoria" name="idcategoria" style="display:none"/>
+		</div>
 		</div>
 
+	<div class="row">
+		<div class="col-md-12" id="datoscategoria">   
+		</div>
+	</div>
 		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
