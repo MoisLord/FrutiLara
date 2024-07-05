@@ -148,8 +148,8 @@ PRODUCTOS
 		</thead>
 		<tbody id="listadodeproveedores">
 		  <?php
-			if(!empty($$consultaMarca)){
-				echo $$consultaMarca;
+			if(!empty($consultaMarca)){
+				echo $consultaMarca;
 			}
 		  ?>
 		</tbody>
