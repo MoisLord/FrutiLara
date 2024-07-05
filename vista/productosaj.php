@@ -135,10 +135,8 @@ PRODUCTOS
 		<thead>
 		  <tr>
 		    <th style="display:none">Id</th>
-			<th>Rif</th>
-			<th>Empresa</th>
-			<th>Telefono</th>
-			<th>Direccion</th>
+			<th>Registro de Marcas</th>
+			<th>Marca</th>
 		  </tr>
 		</thead>
 		<tbody id="listadodeproveedores">
