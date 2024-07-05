@@ -171,12 +171,10 @@ PRODUCTOS
 		<thead>
 		  <tr>
 		    <th style="display:none">Id</th>
-			<th>Codigo</th>
-			<th>Nombre</th>
-			<th>Tipo</th>
-			<th>Max</th>
-			<th>Min</th>
-			<th>%</th>
+			<th>Codigo de categoria</th>
+			<th>tipo de Producto</th>
+			<th>Unidad de medida común</th>	
+			<th>Unidad de Medida Alternativa</th>
 		  </tr>
 		</thead>
 		<tbody id="listadodeproductos">
