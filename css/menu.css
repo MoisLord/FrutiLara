@@ -19,12 +19,13 @@
 
 .nav-link {
     color: #ffffff;
-    font-weight: 6000;
+    font-weight: 600;
     position: relative;
 }
 
 .nav-link:hover, .nav-link.active {
     color: #fcfcfcda;
+    font-weight: 600;
 }
 
 @media (min-width: 991px){
