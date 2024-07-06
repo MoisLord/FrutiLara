@@ -17,7 +17,7 @@
         <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-2">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
         <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=entrada">Notas de Entrada</a>
           </li>
