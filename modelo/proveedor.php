@@ -1,37 +1,27 @@
 <?php
-//llamda al archivo que contiene la clase
-//datos, en ella posteriormente se colcora el codigo
-//para enlazar a su base de datos
+/*La linea de codigo numero 3, llama una vez el archivo datos.php ubicado en la carpeta modelo  del mvc*/ 
 require_once('modelo/datos.php');
 
-//declaracion de la clase usuarios que hereda de la clase datos
-//la herencia se declara con la palabra extends y no es mas 
-//que decirle a esta clase que puede usar los mismos metodos
-//que estan en la clase de dodne hereda (La padre) como sir fueran de el
-
+/*Declaración de la clase proveedor en la cual hereda clase datos (La conexion de la base de datos)
+Claramente lo hereda con la palabra "Extends"*/ 
 class proveedor extends datos{
-	//el primer paso dentro de la clase
-	//sera declarar los atributos (variables) que describen la clase
-	//para nostros no es mas que colcoar los inputs (controles) de
-	//la vista como variables aca
-	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
-	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $rif; //recuerden que en php, las variables no tienen tipo predefinido
+	/*Dentro de la clases proveedor 
+	se declara atributos con modificadores de acceso de tipo private en la cual estarán  predefinido
+*/
+	private $rif; 
 	private $Nombre;
 	private $Telefono;
 	private $Direccion;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
-	
+	/*Una vez declarado los atributos falta colocar los metodos getter(leer) y setter(colocar) ya que esos atributos private(No podemos acceder
+	esos atributos desde fuera)para acceder a ellas el metodo set tomara parametro de una varaiable en caso el getter retornara*/ 
 	function set_rif($valor){
-		$this->rif = $valor; //fijencen como se accede a los elementos dentro de una clase
-		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
-		//a un elemento de this, es decir esta clase
-		//luego el Nombre del elemento sin el $
+		$this->rif = $valor; 
 	}
-	//lo mismo que se hizo para cedula se hace para usuario y clave
+	
 	function set_Nombre($valor){
 		$this->Nombre = $valor;
 	}
@@ -42,7 +32,6 @@ class proveedor extends datos{
 		$this->direccion=$valor;
 	}
 	
-	//ahora la misma cosa pero para leer, es decir get
 	
 	function get_rif(){
 		return $this->rif;
@@ -58,11 +47,10 @@ class proveedor extends datos{
 	}
 	
 	
-	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
+	
 	
 	function incluir(){
-		//Ok ya tenemos la base de datos y la funcion conecta dentro de la clase
-		//datos, ahora debemos ejecutar las operaciones para realizar las consultas 
+		
 		
 		//Lo primero que debemos hacer es consultar por el campo clave
 		//en este caso la cedula, para ello se creo la funcion existe
@@ -223,25 +211,28 @@ class proveedor extends datos{
 	
 	
 	private function existe($rif){
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		/*Esta funcion hara que la variable rif verifique que exista */
+		$co = $this->conecta();// esta linea conectara la base de datos mediante de un llamado desde clase datos
+		
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// esta linea (objeto de datos php)verificara los error en la base de datos
 		try{
-			
+			//Entramos un un try catch en la cual es perfecto para manejar excepciones 
+			// dentro del try se hace select de tabla proveedores donde rif
 			$resultado = $co->query("select * from proveedores where rif='$rif'");
 			
-			
+			//en esta parte se da una verificacion de los datos proporcionados 
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
-
+					// si esa fila hay datos retornara true
 				return true;
 			    
 			}
 			else{
-				
+				// si no hay retornara false
 				return false;;
 			}
 			
-		}catch(Exception $e){
+		}catch(Exception $e){//
 			return false;
 		}
 	}
