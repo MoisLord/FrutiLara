@@ -5,7 +5,7 @@
 
 
     <img src="img/logo.png" alt="" style="width:50px;">
-    <a class="navbar-brand text-white" style="font-weight: 900;" href=".">FRUTILARA</a>
+    <a class="navbar-brand text-white" style="font-weight: 600;" href=".">FRUTILARA</a>
 
 
     <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -19,28 +19,28 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
         <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=entrada">Notas de Entrada</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=entrada">Notas de Entrada</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=productosaj">Productos</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=productosaj">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=proveedor">Proveedores</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=proveedor">Proveedores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=empleados">Empleados</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=empleados">Empleados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=categoria">Categorias de producto</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=categoria">Categorias de producto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=marca">Marcas de productos</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=marca">Marcas de productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=usuario">Usuarios</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=usuario">Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=salida">Notas de Salida</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=salida">Notas de Salida</a>
           </li>
         </ul>
       </div>
