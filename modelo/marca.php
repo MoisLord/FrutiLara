@@ -1,7 +1,7 @@
 <?php
 //llamda al archivo que contiene la clase
-//datos, en ella posteriormente se colcora el modelo
-//para enlazar a su base de datos
+//datos, en ella posteriormente coloque el modelo
+//para enlazar a la base de datos
 require_once('modelo/datos.php');
 
 //declaracion de la clase usuarios que hereda de la clase datos
