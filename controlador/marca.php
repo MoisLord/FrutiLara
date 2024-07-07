@@ -2,7 +2,7 @@
   
 //llamada al archivo que contiene la clase
 //Marca, en ella estara el modelo que me permitirá
-//guardar osea incluir, consultar, eliminar y modificar dentro de mi base de datos
+//guardar osea incluir, consultar, eliminar y modificar dentro de la base de datos
 
 
 //lo primero que se debe hacer es verificar al //igual que en la vista que exista el archivo
