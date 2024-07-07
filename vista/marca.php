@@ -5,7 +5,7 @@
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 
-
+<!--Aqui coloque el Contenedor del Texto del Modulo Marca-->
 <div class="container text-center h2 text-success">
 <hr/>
 <hr/>
