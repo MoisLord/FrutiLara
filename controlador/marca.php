@@ -24,9 +24,11 @@ require_once("modelo/".$pagina.".php");
 	  
 	  if(!empty($_POST)){
 		  
-		  //como ya sabemos si estamos aca es //porque se recibio alguna informacion
-		  //de la vista, por lo que lo primero que //debemos hacer ahora que tenemos una 
-		  //clase es guardar esos valores en ella //con los metodos set
+		  //ahora ya recibido alguna informacion
+		  //de la vista, ya se hace una clase para guardar
+		  //esos valores en ella con los metodos set
+		  //para poder guardarlos en la base de datos
+		  
 		  $accion = $_POST['accion'];
 		  
 		  if($accion=='consultar'){
