@@ -19,8 +19,8 @@ require_once("modelo/".$pagina.".php");
 	  //una instancia de la clase (instanciar) es crear una variable local,
 	  //que contiene los metodos de la clase para poderlo usar
 	  
-	  $o = new marca(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
-	  //clase marca
+	  $o = new marca(); //ahora nuestro objeto se llama $o y
+	  //es una copia en memoria de la clase Marca
 	  
 	  if(!empty($_POST)){
 		  
