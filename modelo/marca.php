@@ -1,6 +1,6 @@
 <?php
 //llamda al archivo que contiene la clase
-//datos, en ella esta guardad en la carpeta modelo
+//datos, en ella esta guardada en la carpeta modelo
 //para enlazar a la base de datos
 require_once('modelo/datos.php');
 
@@ -8,7 +8,7 @@ require_once('modelo/datos.php');
 //la herencia se declara con la palabra extends y no es mas 
 //que decirle a esta clase que puede usar los mismos metodos
 //que estan en la clase de donde hereda (El padre) que en este
-//caso el padre es datos.php como si fueran de el
+//caso el padre es la clase datos en (datos.php) como si fueran de el
 
 class marca extends datos{
 	//el primer paso dentro de la clase
