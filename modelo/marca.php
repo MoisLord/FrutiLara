@@ -1,13 +1,14 @@
 <?php
 //llamda al archivo que contiene la clase
-//datos, en ella posteriormente coloque el modelo
+//datos, en ella esta guardad en la carpeta modelo
 //para enlazar a la base de datos
 require_once('modelo/datos.php');
 
-//declaracion de la clase usuarios que hereda de la clase datos
+//Aqui declare la clase Marca que hereda de la clase datos
 //la herencia se declara con la palabra extends y no es mas 
 //que decirle a esta clase que puede usar los mismos metodos
-//que estan en la clase de donde hereda (El padre) como si fueran de el
+//que estan en la clase de donde hereda (El padre) que en este
+//caso el padre es datos.php como si fueran de el
 
 class marca extends datos{
 	//el primer paso dentro de la clase
