@@ -18,7 +18,7 @@ class marca extends datos{
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 
 	//Aqui coloque los inputs de la vista
-	private $modelo; //recuerden que en php, las variables no tienen tipo predefinido
+	private $modelo; //recordatorio que en php, las variables no tienen tipo predefinido
 	private $marca;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
