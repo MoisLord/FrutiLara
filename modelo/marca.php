@@ -23,7 +23,7 @@ class marca extends datos{
 	private $marca;
 	
 	//Ok ya puesto los atributos, pero ahora como son privados no podemos acceder a ellos
-	//desde fuera a ellos desde fuera por lo que debemos colocar metodos (funciones)
+	//desde afuera por lo que debemos colocar metodos (funciones)
 	//que me permitan leer (get) y colocar (set) valores en ello
 	
 	function set_modelo($valor){
@@ -32,7 +32,7 @@ class marca extends datos{
 		// que indica que apunte a un elemento de this, osea esta clase
 		//luego el marca el elemento sin el simbolo ($)
 	}
-	//lo mismo que se hizo para modelo se hace para usuario y clave
+	//lo mismo que se hizo para modelo se hace para marca
 	
 	function set_marca($valor){
 		$this->marca = $valor;
@@ -48,26 +48,25 @@ class marca extends datos{
 		return $this->marca;
 	}
 	
-	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
+	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
 	
 	function incluir(){
-		//Ok ya tenemos la base de datos y la funcion conecta dentro de la clase
-		//datos, ahora debemos ejecutar las operaciones para realizar las consultas 
+		//ya hecho la base de datos y la funcion conecta dentro de la clase
+		//datos, ahora hay que ejecutar las operaciones para realizar las consultas 
 		
-		//Lo primero que debemos hacer es consultar por el campo clave
-		//en este caso la modelo, para ello se creo la funcion existe
+		//Lo primero que hay que hacer es consultar por el campo modelo
+		//en este caso la de modelo, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
 		if(!$this->existe($this->modelo)){
-			//si estamos aca es porque la modelo no existe es decir se puede incluir
-			//los pasos a seguir son
-			//1 Se llama a la funcion conecta 
+			//como modelo no existe, es decir, se puede incluir
+			//los pasos ahora son
+			//1) Se llama a la función conecta 
 			$co = $this->conecta();
 			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//2 Se ejecuta el sql
+			//2) Se ejecuta el sql
 			$r = array();
 			try {
-				
 					$p = $co->prepare("Insert into marca(
 						modelo,
 						marca
@@ -93,8 +92,8 @@ class marca extends datos{
 			$r['mensaje'] =  'Ya existe la marca';
 		}
 		
-		//Listo eso es todo y es igual para el resto de las operaciones
-		//incluir, modificar y eliminar
+		//ya realizado la función incluir este metodo se repite para el resto 
+		//de las operaciones como son, Consultar, Modificar y Eliminar
 		//solo cambia para buscar 
 		return $r;
 		
