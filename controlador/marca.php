@@ -1,7 +1,7 @@
 <?php
   
 //llamada al archivo que contiene la clase
-//usuarios, en ella estara el modelo que me //permitirá
+//Marca, en ella estara el modelo que me //permitirá
 //guardar, consultar y modificar dentro de mi base //de datos
 
 
