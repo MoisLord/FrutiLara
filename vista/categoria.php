@@ -1,7 +1,7 @@
 <html> 
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
-<!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
+<!--Llamar al archivo modal.php, y menu.php-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <div class="container text-center h2 text-success">
@@ -14,7 +14,7 @@
 CATEGORIAS DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
-<div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
+<div class="container-fluid row"> <!-- comienzo del contenedor de campos -->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
    <h4 class="text-center text-success">Registro de Categorias de Productos</h4>
 	
@@ -47,14 +47,16 @@ CATEGORIAS DE PRODUCTOS
 			   <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt"/>
 			   <span id="sunidadMedAlt"></span>
 			</div>
-		</div>
-		
+		</div> <!-- fin del contenedor de campos -->
+
+		<!-- linea divisora de campos y botones -->
 		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
 			</div>
 		</div>
 
+		<!-- Incio de la sección de contenedor de los botones -->
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-3">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
@@ -74,8 +76,8 @@ CATEGORIAS DE PRODUCTOS
 			<div class="col-md-2">	
 				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 			</div>
-			</div>
-	</div>	
+			</div><!-- fin de la sección de contenedor de los botones -->
+	</div> <!-- fin de la sección de contenedor  -->
 	</form>
 
 
@@ -85,7 +87,7 @@ CATEGORIAS DE PRODUCTOS
 	<div class="container">
 	<h5 class="modal-title text-center text-success">CATEGORIAS REGISTRADAS</h5>
 	<hr class="border border-success border-3 opacity-65">
-	    <!--se agrega un id para poder enlazar con el datatablet--> 
+	    <!--se coloca un id para enlazar con el datatablet y la configuración de esta en el archivo categoria.js--> 
 		<table class="table table-striped table-hover" id="tablacategoria">
 		<thead>
 		  <tr>
@@ -103,15 +105,7 @@ CATEGORIAS DE PRODUCTOS
 		
     </div>
 </div>
-<!-- seccion del modal -->
-<!-- <div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">PRODUCTOS REGISTRADOS</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div> 	-->
+
 </div> <!-- fin de container -->
 <script type="text/javascript" src="js/categoria.js"></script>
 
