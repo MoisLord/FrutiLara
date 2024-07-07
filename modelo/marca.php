@@ -21,9 +21,9 @@ class marca extends datos{
 	private $modelo; //recordatorio que en php, las variables no tienen tipo predefinido
 	private $marca;
 	
-	//Ok ya puesto los atributos, pero ahora como son privados no podemos acceder a ellos desde fuera
-	//a ellos desde fuera por lo que debemos colocar metodos (funciones) que me permitan
-	//leer (get) y colocar (set) valores en ello
+	//Ok ya puesto los atributos, pero ahora como son privados no podemos acceder a ellos
+	//desde fuera a ellos desde fuera por lo que debemos colocar metodos (funciones)
+	//que me permitan leer (get) y colocar (set) valores en ello
 	
 	function set_modelo($valor){
 		$this->modelo = $valor; //fijencen como se accede a los elementos dentro de una clase
