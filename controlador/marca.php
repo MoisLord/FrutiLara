@@ -15,10 +15,9 @@ if (!is_file("modelo/".$pagina.".php")){
 require_once("modelo/".$pagina.".php");  
   if(is_file("vista/".$pagina.".php")){
 	  
-	  //bien si existe la vista y la clase, lo primero que se hace es
-	  //realizar una instancia de la clase (instanciar) es crear
-	  //una variable local, que contiene los metodos de la clase para poderlo usar
-	  
+	  //bien si existe la vista y la clase, lo primero es realizar
+	  //una instancia de la clase (instanciar) es crear una variable local,
+	  //que contiene los metodos de la clase para poderlo usar
 	  
 	  $o = new marca(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
 	  //clase marca
