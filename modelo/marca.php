@@ -27,8 +27,8 @@ class marca extends datos{
 	
 	function set_modelo($valor){
 		$this->modelo = $valor; //este es como se accede a los elementos dentro de una clase
-		//this singnifica (esto), es decir, esta clase luego ( -> ) simbolo que indica que
-		//apunte a un elemento de this, osea esta clase
+		//this singnifica (esto), es decir, esta clase luego se usa el simbolo ( -> )
+		// que indica que apunte a un elemento de this, osea esta clase
 		//luego el marca el elemento sin el simbolo ($)
 	}
 	//lo mismo que se hizo para modelo se hace para usuario y clave
