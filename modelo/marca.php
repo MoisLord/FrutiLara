@@ -7,17 +7,17 @@ require_once('modelo/datos.php');
 //declaracion de la clase usuarios que hereda de la clase datos
 //la herencia se declara con la palabra extends y no es mas 
 //que decirle a esta clase que puede usar los mismos metodos
-//que estan en la clase de donde hereda (La padre) como si fueran de el
+//que estan en la clase de donde hereda (El padre) como si fueran de el
 
 class marca extends datos{
 	//el primer paso dentro de la clase
-	//sera declarar los atributos (variables) que describen la clase
-	//para nosotros no es mas que colocar los inputs (controles) de
-	//la vista como variables aca
+	//es declarar los atributos (variables) que describen la clase
+	//para colocar los inputs del archivo (controles) de
+	//la vista como variables
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
-	//misma clase, la forma de colcoarlo privado es usando la palabra private
+	//misma clase, la forma de colcocarlo en privado es usando la palabra private
 
-	//Aqui coloque los inputs de la vista
+	//Aqui coloque los inputs de la vista en private
 	private $modelo; //recordatorio que en php, las variables no tienen tipo predefinido
 	private $marca;
 	
