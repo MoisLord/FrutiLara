@@ -5,7 +5,7 @@
 //guardar osea incluir, consultar, eliminar y modificar dentro de la base de datos
 
 
-//lo primero que se debe hacer es verificar al //igual que en la vista que exista el archivo
+//aqui hice verificar si al igual que en la vista existe el archivo
 if (!is_file("modelo/".$pagina.".php")){
 	//alli pregunte que si no es archivo se niega //con !
 	//si no existe envio mensaje y me salgo
