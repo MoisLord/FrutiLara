@@ -124,39 +124,6 @@ GESTIÓN DE EMPLEADOS
     </div>
 </div> <!-- fin de container -->
 
-
-<!-- seccion del modal -->
-<!--<div class="modal fade" tabindex="-1" role="dialog"  id="modal1">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">EMPLEADOS REGISTRADOS</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
-	    e!--se agrega un id para poder enlazar con el datatablet--e> 
-		<table class="table table-striped table-hover" id="tablaclientes">
-		<thead>
-		  <tr>
-			<th>Cedula</th>
-			<th>Nombre y Apellido</th>
-			<th>Ciudad donde vive</th>
-			<th>Teléfono</th>
-		  </tr>
-		</thead>
-		<tbody id="resultadoconsulta">
-		  
-		  
-		</tbody>
-		</table>
-    </div>
-	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
-  </div>
-</div>-->
-<!--fin de seccion modal-->
 <script type="text/javascript" src="js/empleados.js"></script>
 
 </body>
