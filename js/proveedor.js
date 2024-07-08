@@ -5,7 +5,7 @@ $(document).ready(function(){
         });
         
         $("#rif").on("keyup",function(){
-            validarkeyup(/^[JVG]{1}[-]{1}[0-9]{7,9}$/,$(this),
+            validarkeyup(/^[JVG]{1}[-]{1}[0-9]{9,9}$/,$(this),
 		$("#srif"),"El formato debe ser J-092348760 o G-00003454");
             if($("#rif").val().length > 7){
               var datos = new FormData();
@@ -236,7 +236,8 @@ $(document).ready(function(){
                         }
                         else if (lee.resultado == "encontro") {
                            $("#Nombre").val(lee.mensaje[0][2]);
-                           $("#Direccion").val(lee.mensaje[0][3]);
+                           $("#Telefono").val(lee.mensaje[0][3]);
+                           $("#Direccion").val(lee.mensaje[0][4]);
                            
                         }
                         else if (lee.resultado == "incluir" || 

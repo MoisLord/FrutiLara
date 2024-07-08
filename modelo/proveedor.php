@@ -78,7 +78,7 @@ class proveedor extends datos{
 						:telefono,
 						:direccion
 						)");
-					$p->bindParam(':rif',$this->rif);		
+					$p->bindParam(':rif',$this->rif);		//Esta funcion bindparam() vinculara con una variable como una referencia
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
