@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-07-2024 a las 00:40:15
+-- Tiempo de generación: 08-07-2024 a las 05:08:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -95,7 +95,7 @@ CREATE TABLE `empleados` (
 --
 
 CREATE TABLE `entrada` (
-  `id_salida` varchar(30) NOT NULL,
+  `id_entrada` varchar(30) NOT NULL,
   `rif_proveedor` varchar(50) NOT NULL,
   `codigo_producto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -163,7 +163,7 @@ CREATE TABLE `proveedores` (
 --
 
 INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
-('J-0154546', 'polar', '0412-154788', 'calle 12 xdxasdsadassdad');
+('J-12345678', 'polar', '0412-0483396', 'calle 12 xdxasdsadassdad');
 
 -- --------------------------------------------------------
 
@@ -205,7 +205,7 @@ INSERT INTO `usuario` (`id_usuarios`, `tipo_usuario`, `cedula`, `clave`) VALUES
 -- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  ADD UNIQUE KEY `codigo_categoria` (`codigo_categoria`);
+  ADD PRIMARY KEY (`codigo_categoria`);
 
 --
 -- Indices de la tabla `detalle_entrada`
@@ -248,7 +248,7 @@ ALTER TABLE `inventario`
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
-  ADD UNIQUE KEY `marca` (`marca`);
+  ADD PRIMARY KEY (`modelo`);
 
 --
 -- Indices de la tabla `producto`
@@ -323,7 +323,7 @@ ALTER TABLE `inventario`
 --
 ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`codigo_categoria`),
-  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`marca`);
+  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`modelo`);
 
 --
 -- Filtros para la tabla `salida`
