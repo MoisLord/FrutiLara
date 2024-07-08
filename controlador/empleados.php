@@ -1,34 +1,26 @@
 <?php
   
 //llamada al archivo que contiene la clase
-//usuarios, en ella estara el codigo que me //permitirá
-//guardar, consultar y modificar dentro de mi base //de datos
+//empleados, en ella estara el codigo que me permitirá
+//guardar, consultar y modificar dentro de mi base de datos
 
 
-//lo primero que se debe hacer es verificar al //igual que en la vista que exista el archivo
+//verificar que exista el archivo
 if (!is_file("modelo/".$pagina.".php")){
-	//alli pregunte que si no es archivo se niega //con !
-	//si no existe envio mensaje y me salgo
+	//busca el archivo si no existe manda el siguiente mensaje
 	echo "Falta definir la clase ".$pagina;
 	exit;
 }  
 require_once("modelo/".$pagina.".php");  
   if(is_file("vista/".$pagina.".php")){
 	  
-	  //bien si estamos aca es porque existe la //vista y la clase
-	  //por lo que lo primero que debemos hace es //realizar una instancia de la clase
-	  //instanciar es crear una variable local, //que contiene los metodos de la clase
-	  //para poderlos usar
+	   //si existe creamos una intancia que es una variable local
 	  
-	  
-	  $o = new clientes(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
-	  //clase personasht
+	  $o = new empleados(); //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
 	  
 	  if(!empty($_POST)){
 		  
-		  //como ya sabemos si estamos aca es //porque se recibio alguna informacion
-		  //de la vista, por lo que lo primero que //debemos hacer ahora que tenemos una 
-		  //clase es guardar esos valores en ella //con los metodos set
+		  // se recibio informacion de la vista 
 		  $accion = $_POST['accion'];
 		  
 		  if($accion=='consultar'){
@@ -38,9 +30,7 @@ require_once("modelo/".$pagina.".php");
 			 $o->set_cedula($_POST['cedula']); 
 			 echo  json_encode($o->consultatr());  
 		  }
-		  /*elseif($accion=='obtienefecha'){
-			 echo json_encode($o->obtienefecha());
-		  }*/
+
 		  elseif($accion=='eliminar'){
 			 $o->set_cedula($_POST['cedula']);
 			 echo  json_encode($o->eliminar());
