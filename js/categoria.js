@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //VALIDACION DE DATOS	
+    //Finalización del sector para la validación de los datos	
         $("#codigo_categoria").on("keypress",function(e){
             validarkeypress(/^[0-9-\b]*$/,e);
         });
@@ -40,11 +40,11 @@ $(document).ready(function(){
 
         
         
-    //FIN DE VALIDACION DE DATOS
+    //Finalización del sector para la validación de los datos
     
     
     
-    //CONTROL DE BOTONES
+    //Comienzo del sector para el control de botones
     
     $("#incluir").on("click",function(){
         if(validarenvio()){
@@ -94,14 +94,14 @@ $(document).ready(function(){
         datos.append('accion','consultar');
         enviaAjax(datos);
     });
-    //FIN DE CONTROL DE BOTONES	
+    //Finalización del sector para el control de botones	
     
     });
     
     
     //funcion para enlazar al DataTablet
     function destruyeDT(){
-        //1 se destruye el datatablet
+        //se destruye el datatablet
         if ($.fn.DataTable.isDataTable("#tablacategoria")) {
                 $("#tablacategoria").DataTable().destroy();
         }
@@ -131,7 +131,7 @@ $(document).ready(function(){
     }
     
     
-    //Validación de todos los campos antes del envio
+    //Comienzo del sector para la validación de todos los campos antes del envio
     function validarenvio(){
         if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo_categoria"),
             $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
@@ -149,7 +149,7 @@ $(document).ready(function(){
         }
         
         return true;
-    }
+    }//Finalización del sector para la validación de todos los campos antes del envio
     
     
     //Funcion que muestra el modal con un mensaje
@@ -226,8 +226,8 @@ $(document).ready(function(){
                 processData: false,
                 cache: false,
                 beforeSend: function () {},
-                timeout: 10000, //tiempo unidadMedAlt de espera por la respuesta del servidor
-                success: function(respuesta) {//si resulto exitosa la transmision
+                timeout: 10000, //tiempo de espera por la respuesta del servidor
+                success: function(respuesta) {//si el resultado de  la transmision es exitoso
                 console.log(respuesta);
                     try {
                         var lee = JSON.parse(respuesta);
@@ -257,9 +257,8 @@ $(document).ready(function(){
                    
                 },
                 error: function (request, status, err) {
-                  // si ocurrio un error en la trasmicion
-                  // o recepcion via ajax entra aca
-                  // y se muestran los mensaje del error
+                  // al ocurrir un error en la trasmicion o recepcion via se muestran los mensaje del error
+                  
                   if (status == "timeout") {
                     //pasa cuando superan los 10000 10 segundos de timeout
                     muestraMensaje("Servidor ocupado, intente de nuevo");
@@ -273,7 +272,7 @@ $(document).ready(function(){
         }); 
         
     }
-    
+    //Inicio de función "limpia" para retirar la info de los campos tras alguna acción
     function limpia(){
         
         $("#codigo_categoria").val("");
@@ -281,4 +280,4 @@ $(document).ready(function(){
         $("#unidadMedNormal").val("");
         $("#unidadMedAlt").val("");
         
-    }
+    } //Fin de función "limpia" para retirar la info de los campos tras alguna acción

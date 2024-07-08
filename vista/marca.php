@@ -5,7 +5,7 @@
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 
-
+<!--Aqui coloque el Contenedor del Texto del Modulo Marca-->
 <div class="container text-center h2 text-success">
 <hr/>
 <hr/>
@@ -16,7 +16,7 @@
 MARCAS DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
-<div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
+<div class="container-fluid row"> <!--Aqui contendra el registro con sus inputs-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
    <h4 class="text-center text-success">Registro de Marcas</h4>
 	
@@ -35,13 +35,17 @@ MARCAS DE PRODUCTOS
 			   <span id="smarca"></span>
 			</div>
 		</div>
+		<!--Fin de los Inputs-->
 		
+		<!--Aqui me encargue de hacer una linea divisora-->
 		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
 			</div>
 		</div>
-
+		<!--Fin de la linea divisora-->
+		
+		<!--Aqui Contiene los botones del CRUD-->
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-3">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
@@ -64,6 +68,7 @@ MARCAS DE PRODUCTOS
 			</div>
 	</div>	
 	</form>
+	<!--Fin de los botones del CRUD-->
 
 
 

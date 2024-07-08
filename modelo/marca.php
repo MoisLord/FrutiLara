@@ -1,42 +1,44 @@
 <?php
 //llamda al archivo que contiene la clase
-//datos, en ella posteriormente se colcora el modelo
-//para enlazar a su base de datos
+//datos, en ella esta guardada en la carpeta modelo
+//para enlazar a la base de datos
 require_once('modelo/datos.php');
 
-//declaracion de la clase usuarios que hereda de la clase datos
+//Aqui declare la clase Marca que hereda de la clase datos
 //la herencia se declara con la palabra extends y no es mas 
 //que decirle a esta clase que puede usar los mismos metodos
-//que estan en la clase de dodne hereda (La padre) como sir fueran de el
+//que estan en la clase de donde hereda (El padre) que en este
+//caso el padre es la clase datos en (datos.php) como si fueran de el
 
 class marca extends datos{
 	//el primer paso dentro de la clase
-	//sera declarar los atributos (variables) que describen la clase
-	//para nostros no es mas que colcoar los inputs (controles) de
-	//la vista como variables aca
+	//es declarar los atributos (variables) que describen la clase
+	//para colocar los inputs del archivo (controles) de
+	//la vista como variables
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
-	//misma clase, la forma de colcoarlo privado es usando la palabra private
-	
-	private $modelo; //recuerden que en php, las variables no tienen tipo predefinido
+	//misma clase, la forma de colcocarlo en privado es usando la palabra private
+
+	//Aqui coloque los inputs de la vista en private
+	private $modelo; //recordatorio que en php, las variables no tienen tipo predefinido
 	private $marca;
 	
-	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
-	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
-	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
+	//Ok ya puesto los atributos, pero ahora como son privados no podemos acceder a ellos
+	//desde afuera por lo que debemos colocar metodos (funciones)
+	//que me permitan leer (get) y colocar (set) valores en ello
 	
 	function set_modelo($valor){
-		$this->modelo = $valor; //fijencen como se accede a los elementos dentro de una clase
-		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
-		//a un elemento de this, es decir esta clase
-		//luego el marca del elemento sin el $
+		$this->modelo = $valor; //este es como se accede a los elementos dentro de una clase
+		//this singnifica (esto), es decir, esta clase luego se usa el simbolo ( -> )
+		// que indica que apunte a un elemento de this, osea esta clase
+		//luego el marca el elemento sin el simbolo ($)
 	}
-	//lo mismo que se hizo para modelo se hace para usuario y clave
+	//lo mismo que se hizo para modelo se hace para marca
 	
 	function set_marca($valor){
 		$this->marca = $valor;
 	}
 
-	//ahora la misma cosa pero para leer, es decir get
+	//ahora el mismo procedimiento pero para leer, es decir (get)
 	
 	function get_modelo(){
 		return $this->modelo;
@@ -46,26 +48,25 @@ class marca extends datos{
 		return $this->marca;
 	}
 	
-	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
+	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
 	
 	function incluir(){
-		//Ok ya tenemos la base de datos y la funcion conecta dentro de la clase
-		//datos, ahora debemos ejecutar las operaciones para realizar las consultas 
+		//ya hecho la base de datos y la funcion conecta dentro de la clase
+		//datos, ahora hay que ejecutar las operaciones para realizar las consultas 
 		
-		//Lo primero que debemos hacer es consultar por el campo clave
-		//en este caso la modelo, para ello se creo la funcion existe
+		//Lo primero que hay que hacer es consultar por el campo modelo
+		//en este caso la de modelo, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
 		if(!$this->existe($this->modelo)){
-			//si estamos aca es porque la modelo no existe es decir se puede incluir
-			//los pasos a seguir son
-			//1 Se llama a la funcion conecta 
+			//como modelo no existe, es decir, se puede incluir
+			//los pasos ahora son
+			//1) Se llama a la función conecta 
 			$co = $this->conecta();
 			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//2 Se ejecuta el sql
+			//2) Se ejecuta el sql
 			$r = array();
 			try {
-				
 					$p = $co->prepare("Insert into marca(
 						modelo,
 						marca
@@ -91,8 +92,8 @@ class marca extends datos{
 			$r['mensaje'] =  'Ya existe la marca';
 		}
 		
-		//Listo eso es todo y es igual para el resto de las operaciones
-		//incluir, modificar y eliminar
+		//ya realizado la función incluir este metodo se repite para el resto 
+		//de las operaciones como son, Consultar, Modificar y Eliminar
 		//solo cambia para buscar 
 		return $r;
 		

@@ -1,39 +1,24 @@
 <?php
-//llamda al archivo que contiene la clase
-//datos, en ella posteriormente se colcora el codigo_categoria
-//para enlazar a su base de datos
+//Se llama al archivo que contiene la clase, para enlazar a la base de datos
 require_once('modelo/datos.php');
 
-//declaracion de la clase usuarios que hereda de la clase datos
-//la herencia se declara con la palabra extends y no es mas 
-//que decirle a esta clase que puede usar los mismos metodos
-//que estan en la clase de dodne hereda (La padre) como sir fueran de el
+//declaracion de la clase "categoria" que hereda de la clase "datos"
 
 class categoria extends datos{
-	//el primer paso dentro de la clase
-	//sera declarar los atributos (variables) que describen la clase
-	//para nostros no es mas que colcoar los inputs (controles) de
-	//la vista como variables aca
-	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
-	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $codigo_categoria; //recuerden que en php, las variables no tienen tipo predefinido
+	//Se declaran los atributos (variables) que describen la clase
+	private $codigo_categoria; 
 	private $tipo;
 	private $unidadMedNormal;
     private $unidadMedAlt;
 	
-	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
-	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
-	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
+	
+	//Se añaden los metodos (funciones) que me permitan leer (get) y colocar (set)
+	//Comienzo del sector de metodos de set
 	
 	function set_codigo_categoria($valor){
-		$this->codigo_categoria = $valor; //fijencen como se accede a los elementos dentro de una clase
-		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
-		//a un elemento de this, es decir esta clase
-		//luego el nombre del elemento sin el $
+		$this->codigo_categoria = $valor; 
 	}
-	//lo mismo que se hizo para codigo_categoria se hace para usuario y clave
-	
 	
 	function set_tipo($valor){
 		$this->tipo = $valor;
@@ -46,10 +31,9 @@ class categoria extends datos{
     function set_unidadMedAlt($valor){
 		$this->unidadMedAlt = $valor;
 	}
+	//Final del sector de metodos de set
 
-
-	//ahora la misma cosa pero para leer, es decir get
-	
+	//Comienzo del sector de metodos de get
 	function get_codigo_categoria(){
 		return $this->codigo_categoria;
 	}
@@ -65,25 +49,21 @@ class categoria extends datos{
     function get_unidadMedAlt(){
 		return $this->unidadMedAlt;
 	}
-
+	//Final del sector de metodos de get
 	
-	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
-	
+	//Creación de los metodos para incluir, consultar y eliminar
+	//Comienzo del sector del metodo "incluir"
 	function incluir(){
-		//Ok ya tenemos la base de datos y la funcion conecta dentro de la clase
-		//datos, ahora debemos ejecutar las operaciones para realizar las consultas 
 		
-		//Lo primero que debemos hacer es consultar por el campo clave
-		//en este caso la codigo_categoria, para ello se creo la funcion existe
-		//que retorna true en caso de exitir el registro
+		
+		//Se consulta el campo clave, se comprueba que "codigo_categoria" no exista, es decir, se puede incluir
+		
 		
 		if(!$this->existe($this->codigo_categoria)){
-			//si estamos aca es porque la codigo_categoria no existe es decir se puede incluir
-			//los pasos a seguir son
-			//1 Se llama a la funcion conecta 
+			//Se llama a la funcion conecta 
 			$co = $this->conecta();
 			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//2 Se ejecuta el sql
+			//Se ejecuta el sql
 			$r = array();
 			try {
 				
@@ -117,14 +97,11 @@ class categoria extends datos{
 			$r['resultado'] = 'incluir';
 			$r['mensaje'] =  'Ya existe la categoria';
 		}
-		
-		//Listo eso es todo y es igual para el resto de las operaciones
-		//incluir, modificar y eliminar
-		//solo cambia para buscar 
 		return $r;
 		
 	}
-	
+	//Finalización del sector del metodo "incluir"
+	//Comienzo del sector del metodo "modificar"
 	function modificar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -158,7 +135,8 @@ class categoria extends datos{
 		}
 		return $r;
 	}
-	
+	//Finalización del sector del metodo "modificar"
+	//Comienzo del sector del metodo "eliminar"
 	function eliminar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -186,8 +164,8 @@ class categoria extends datos{
 		}
 		return $r;
 	}
-	
-	
+	//Finalización del sector del metodo "eliminar"
+	//Comienzo del sector del metodo "consultar"
 	function consultar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -230,8 +208,8 @@ class categoria extends datos{
 		}
 		return $r;
 	}
-	
-	
+	//Finalización del sector del metodo "consultar"
+	//Creación del sector del metodo "existe"
 	private function existe($codigo_categoria){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -255,7 +233,8 @@ class categoria extends datos{
 			return false;
 		}
 	}
-	
+	//Finalización de la creación del metodo "existe"
+	//Comienzo del sector del metodo "consultartr"
 	function consultatr(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -285,6 +264,6 @@ class categoria extends datos{
 		return $r;
 		
 	}
-		
-}
+//Finalización del sector del metodo "consultartr"		
+} //Finalización de la declaracion de la clase "categoria" que hereda de la clase "datos"
 ?>
