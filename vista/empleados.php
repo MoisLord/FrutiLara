@@ -81,10 +81,6 @@ GESTIÓN DE EMPLEADOS
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
 			<div class="col-md-3">	
-				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
-			</div>
-			
-			<div class="col-md-3">	
 		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
 			<div class="col-md-2">	
@@ -115,9 +111,12 @@ GESTIÓN DE EMPLEADOS
 			<th>Fecha Naci</th>
 		  </tr>
 		</thead>
-		<tbody id="resultadoconsulta">
-		  
-		  
+		<tbody>
+		  <?php
+			if(!empty($consulta)){
+				echo $consulta;
+			}
+		  ?>
 		</tbody>
 		</table>
 		
