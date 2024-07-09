@@ -40,6 +40,9 @@
             <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=usuario">Usuarios</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=cliente">Clientes</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=salida">Notas de Salida</a>
           </li>
         </ul>
