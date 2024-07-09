@@ -30,7 +30,7 @@ MARCAS DE PRODUCTOS
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
-			   <label for="nombre">Marca</label>
+			   <label for="nombre">Descripción de la Marca</label>
 			   <input class="form-control" type="text" id="marca" name="marca"/>
 			   <span id="smarca"></span>
 			</div>

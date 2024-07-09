@@ -28,7 +28,7 @@ CATEGORIAS DE PRODUCTOS
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
-			   <label for="tipo">Tipo de Producto</label>
+			   <label for="tipo">Descripción de la categoria</label>
 			   <input class="form-control" type="text" id="tipo" name="tipo"/>
 			   <span id="stipo"></span>
 			</div>
