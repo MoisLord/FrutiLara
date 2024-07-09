@@ -4,6 +4,10 @@
     font-weight: 1200px;
 }
 
+.font-weight-bolder lead display-4 {
+    font-weight: 400px;
+}
+
 .carousel-inner {
   height: 100vh;
 }
