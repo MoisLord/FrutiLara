@@ -47,33 +47,3 @@
     }
 }
 /* fIN DE MENU */
-
-/* Inicio de Principal */
-.font-weight-bolder {
-    color: #ff9900;
-    font-weight: 1200px;
-}
-
-.carousel-inner {
-  height: 100vh;
-}
-
-.carousel-item {
-  height: 100vh;
-}
-
-.carousel-item img {
-  object-fit: cover;
-  width: 100%;
-  height: 100vh;
-}
-
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-/* fIN DE PRINCIPAL */
