@@ -19,7 +19,10 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
         <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=entrada">Notas de Entrada</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=marca">Marcas de productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=categoria">Categorias de producto</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=productosaj">Productos</a>
@@ -31,16 +34,13 @@
             <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=empleados">Empleados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=categoria">Categorias de producto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=marca">Marcas de productos</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=clientes">Clientes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=usuario">Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=cliente">Clientes</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=entrada">Notas de Entrada</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 900;" href="?pagina=salida">Notas de Salida</a>
