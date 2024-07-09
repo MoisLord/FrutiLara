@@ -1,42 +1,46 @@
 <?php
+  
 //llamada al archivo que contiene la clase
-//Se verificara que en el modelo exista el archivo
+//empleados, en ella estara el codigo que me permitirá
+//guardar, consultar y modificar dentro de mi base de datos
+
+
+//verificar que exista el archivo
 if (!is_file("modelo/".$pagina.".php")){
-	//si no existe se envía un mensaje
+	//busca el archivo si no existe manda el siguiente mensaje
 	echo "Falta definir la clase ".$pagina;
 	exit;
 }  
-//lo primero que se debe hacer es verificar que en el modelo exista el archivo
 require_once("modelo/".$pagina.".php");  
   if(is_file("vista/".$pagina.".php")){
 	  
-	  //Se realiza una instancia de la clase
-
-	  $o = new categoria(); 
-	  //ahora nuestro objeto se llama $o y es una copia en memoria de la clase categoria
+	   //si existe creamos una intancia que es una variable local
+	  
+	  $o = new clientes(); //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
 	  
 	  if(!empty($_POST)){
 		  
-		  //Se guardan los valores dentro de la clase con los metodos set
+		  // se recibio informacion de la vista 
 		  $accion = $_POST['accion'];
 		  
 		  if($accion=='consultar'){
 			 echo  json_encode($o->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
-			 $o->set_codigo_categoria($_POST['codigo_categoria']); 
+			 $o->set_cedula($_POST['cedula']); 
 			 echo  json_encode($o->consultatr());  
 		  }
 
 		  elseif($accion=='eliminar'){
-			 $o->set_codigo_categoria($_POST['codigo_categoria']);
+			 $o->set_cedula($_POST['cedula']);
 			 echo  json_encode($o->eliminar());
 		  }
 		  else{		  
-			  $o->set_codigo_categoria($_POST['codigo_categoria']);
-			  $o->set_tipo($_POST['tipo']);
-			  $o->set_unidadMedNormal($_POST['unidadMedNormal']);
-              $o->set_unidadMedAlt($_POST['unidadMedAlt']);
+			  $o->set_cedula($_POST['cedula']);
+			  $o->set_nombre_apellido($_POST['nombre_apellido']);
+			  $o->set_telefono($_POST['telefono']);
+			  $o->set_correo($_POST['correo']);
+			  $o->set_direccion($_POST['direccion']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }
