@@ -42,20 +42,29 @@ PRODUCTOS
 			   <span id="snombre"></span>
 			</div>
 		</div>    
-        
+		<div class="row mb-3">
 		<div class="row mb-4">
 			<div class="col-md">
-        		<label for="minimo">Minimo</label>
+        		<label for="">Existencia Total</label>
+       			<input class="form-control" type="text" id="" name=""/>
+				<span id=""></span>
+    		</div>
+		</div>    
+
+		<div class="row mb-4">
+			<div class="col-md">
+        		<label for="minimo">Minima Existencia</label>
        			<input class="form-control" type="text" id="minimo" name="minimo"/>
 				<span id="sminimo"></span>
     		</div>
 
 			<div class="col-md">
-			   <label for="maximo">Maximo</label>
+			   <label for="maximo">Maxima Existencia</label>
 			   <input class="form-control" type="text" id="maximo" name="maximo"/>
 			   <span id="smaximo"></span>
 			</div>
 		</div>
+		
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		<button type="button" class="btn btn-success" id="listadoMarca" name="listadoMarca">LISTADO DE MARCA</button>
