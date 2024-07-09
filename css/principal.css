@@ -1,6 +1,9 @@
 /* Inicio de Principal */
 .font-weight-bolder {
     color: #ff9900;
+}
+
+.font-weight-bolder mb-6 display-1 {
     font-weight: 1200px;
 }
 
