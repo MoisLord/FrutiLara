@@ -1,41 +1,76 @@
 /* Inicio del Footer */
-/* Estilos para el footer */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 .footer {
-    background-color: #fa0bd2; /* Fondo claro */
-    padding: 20px; /* Espacio entre el contenido y el borde */
-    text-align: center; /* Centrar el contenido */
+    position: relative;
+    width: 100%;
+    background: #fc00bd;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   
-  /* Estilos para el menu */
+  footer ul {
+    list-style: none; /* quita los puntos de la lista */
+    margin: 0; /* quita el margen */
+    padding: 0; /* quita el padding */
+    display: flex; /* hace que los elementos se muestren en línea */
+    justify-content: center; /* distribuye los elementos en línea */
+  }
+  
+  footer li {
+    margin-right: 20px; /* espacio entre los elementos */
+  }
+  
+  footer a {
+    color: #337ab7; /* texto azul */
+    text-decoration: none; /* quita el subrayado */
+  }
+  
+  footer a:hover {
+    color: #23527c; /* texto azul oscuro al pasar el mouse */
+  }
+
   .menu {
-    list-style: none; /* Quitar puntos de lista */
-    margin: 0; /* Quitar margen */
-    padding: 0; /* Quitar padding */
-    display: flex; /* Mostrar elementos en una línea */
-    justify-content: center; /* Centrar elementos */
-  }
-  
-  .menu-elem {
-    margin-right: 20px; /* Espacio entre elementos */
-  }
-  
-  .menu-icon {
-    font-size: 18px; /* Tamaño de icono */
-    color: #fff; /* Color de icono */
-    text-decoration: none; /* Quitar subrayado */
-  }
-  
-  /* Estilos para el texto */
-  .text {
-    font-size: 16px; /* Tamaño de texto */
-    color: #fff; /* Color de texto */
-    margin-top: 10px; /* Espacio entre texto y icono */
-  }
-  
-  /* Estilos para el icono de shop */
-  .bi.bi-shop {
-    font-size: 24px; /* Tamaño de icono */
-    color: #fff; /* Color de icono */
-    margin: 0 10px; /* Espacio entre icono y texto */
-  }
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.menu-elem {
+    list-style: none;
+}
+
+.menu-icon {
+    color: #fff;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    opacity: 1;
+}
+
+.text {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
 /* Fin del Footer */
