@@ -3,16 +3,6 @@
     color: #ff9900;
 }
 
-h1 {
-    font-weight: 1200px;
-    font-size: 1200px;
-}
-
-p {
-    font-weight: 400px;
-    font-size: 400px;
-}
-
 .carousel-inner {
   height: 100vh;
 }
