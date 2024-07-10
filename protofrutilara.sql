@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-07-2024 a las 05:08:45
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 10-07-2024 a las 18:25:49
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `codigo_categoria` varchar(40) NOT NULL,
-  `tipo` varchar(20) NOT NULL,
+  `descripcion_categoria` varchar(20) NOT NULL,
   `unidadMedNormal` varchar(20) NOT NULL,
   `unidadMedAlt` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -38,10 +38,29 @@ CREATE TABLE `categoria` (
 -- Volcado de datos para la tabla `categoria`
 --
 
-INSERT INTO `categoria` (`codigo_categoria`, `tipo`, `unidadMedNormal`, `unidadMedAlt`) VALUES
-('12345645', 'manza', 'alta ', 'media'),
-('13465644', 'polar', 'alta', 'media'),
-('1566654', 'polarres', 'alta', 'baja');
+INSERT INTO `categoria` (`codigo_categoria`, `descripcion_categoria`, `unidadMedNormal`, `unidadMedAlt`) VALUES
+('0023467', 'viveres', 'kgr', 'sdf'),
+('12345678', 'viveres', 'kilos', 'caja');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cliente`
+--
+
+CREATE TABLE `cliente` (
+  `cedula` varchar(10) NOT NULL,
+  `nombre_apellido` varchar(30) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
+  `direccion` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`cedula`, `nombre_apellido`, `telefono`, `direccion`) VALUES
+('29896041', 'adriano', '0424-0248961', 'por alla');
 
 -- --------------------------------------------------------
 
@@ -52,9 +71,7 @@ INSERT INTO `categoria` (`codigo_categoria`, `tipo`, `unidadMedNormal`, `unidadM
 CREATE TABLE `detalle_entrada` (
   `id_entrada` varchar(30) NOT NULL,
   `rif_proveedores` varchar(50) NOT NULL,
-  `codigo_producto` varchar(50) NOT NULL,
-  `cantidad_producto` varchar(30) NOT NULL,
-  `cifra` varchar(30) NOT NULL
+  `codigo_producto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -66,11 +83,8 @@ CREATE TABLE `detalle_entrada` (
 CREATE TABLE `detalle_salida` (
   `id_salida` varchar(40) NOT NULL,
   `cedula_empleado` varchar(10) NOT NULL,
-  `codigo_producto` varchar(50) NOT NULL,
-  `cantidad_producto` varchar(50) NOT NULL,
-  `estado` varchar(30) NOT NULL,
-  `cifra` varchar(30) NOT NULL,
-  `fecha` date NOT NULL
+  `cedula_cliente` varchar(50) NOT NULL,
+  `codigo_producto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -88,6 +102,13 @@ CREATE TABLE `empleados` (
   `fechaNacimiento` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`cedula`, `nombre_apellido`, `telefono`, `correo`, `direccion`, `fechaNacimiento`) VALUES
+('11898335', 'Eduardo Carreros', '0412-0581988', 'eduardovenega@hotmail.com', 'zona Oeste', '1980-03-17');
+
 -- --------------------------------------------------------
 
 --
@@ -96,20 +117,8 @@ CREATE TABLE `empleados` (
 
 CREATE TABLE `entrada` (
   `id_entrada` varchar(30) NOT NULL,
-  `rif_proveedor` varchar(50) NOT NULL,
-  `codigo_producto` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `inventario`
---
-
-CREATE TABLE `inventario` (
-  `id_salida` varchar(50) NOT NULL,
-  `id_entrada` varchar(50) NOT NULL,
-  `codigo_producto` varchar(50) NOT NULL
+  `codigo_producto` varchar(50) NOT NULL,
+  `Cantidad_producto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -119,16 +128,29 @@ CREATE TABLE `inventario` (
 --
 
 CREATE TABLE `marca` (
-  `modelo` varchar(20) NOT NULL,
-  `marca` varchar(50) NOT NULL
+  `id_marca` varchar(20) NOT NULL,
+  `descripcion_marca` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `marca`
 --
 
-INSERT INTO `marca` (`modelo`, `marca`) VALUES
-('12345678', 'polar');
+INSERT INTO `marca` (`id_marca`, `descripcion_marca`) VALUES
+('00002345', 'polar'),
+('12345678', 'mavesa');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modelo`
+--
+
+CREATE TABLE `modelo` (
+  `id_modelo` varchar(30) NOT NULL,
+  `descripcion_Modelo` varchar(50) NOT NULL,
+  `id_marca` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -139,9 +161,10 @@ INSERT INTO `marca` (`modelo`, `marca`) VALUES
 CREATE TABLE `producto` (
   `codigo` varchar(50) NOT NULL,
   `nombre` varchar(30) NOT NULL,
+  `cantidad_total` varchar(50) NOT NULL,
   `minimo` varchar(50) NOT NULL,
   `maximo` varchar(50) NOT NULL,
-  `id_marca` varchar(50) NOT NULL,
+  `id_modelo` varchar(50) NOT NULL,
   `id_categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -163,7 +186,7 @@ CREATE TABLE `proveedores` (
 --
 
 INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
-('J-12345678', 'polar', '0412-0483396', 'calle 12 xdxasdsadassdad');
+('J-118983358', 'antonio carrero', '0414-5046237', 'oeste');
 
 -- --------------------------------------------------------
 
@@ -173,8 +196,8 @@ INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
 
 CREATE TABLE `salida` (
   `id_salida` varchar(30) NOT NULL,
-  `cedula_empleado` varchar(11) NOT NULL,
-  `codigo_producto` varchar(50) NOT NULL
+  `codigo_producto` varchar(50) NOT NULL,
+  `Cantidad_producto` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -208,6 +231,12 @@ ALTER TABLE `categoria`
   ADD PRIMARY KEY (`codigo_categoria`);
 
 --
+-- Indices de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`cedula`);
+
+--
 -- Indices de la tabla `detalle_entrada`
 --
 ALTER TABLE `detalle_entrada`
@@ -221,7 +250,8 @@ ALTER TABLE `detalle_entrada`
 ALTER TABLE `detalle_salida`
   ADD PRIMARY KEY (`id_salida`),
   ADD KEY `cedula_empleado` (`cedula_empleado`),
-  ADD KEY `codigo_producto` (`codigo_producto`);
+  ADD KEY `codigo_producto` (`codigo_producto`),
+  ADD KEY `cedula_cliente` (`cedula_cliente`);
 
 --
 -- Indices de la tabla `empleados`
@@ -233,30 +263,29 @@ ALTER TABLE `empleados`
 -- Indices de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  ADD KEY `rif_proveedor` (`rif_proveedor`),
-  ADD KEY `codigo_producto` (`codigo_producto`);
-
---
--- Indices de la tabla `inventario`
---
-ALTER TABLE `inventario`
-  ADD KEY `id_salida` (`id_salida`),
-  ADD KEY `id_entrada` (`id_entrada`),
   ADD KEY `codigo_producto` (`codigo_producto`);
 
 --
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
-  ADD PRIMARY KEY (`modelo`);
+  ADD PRIMARY KEY (`id_marca`);
+
+--
+-- Indices de la tabla `modelo`
+--
+ALTER TABLE `modelo`
+  ADD PRIMARY KEY (`id_modelo`),
+  ADD KEY `id_marca` (`id_marca`);
 
 --
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
   ADD UNIQUE KEY `codigo` (`codigo`) USING BTREE,
-  ADD KEY `id_marca` (`id_marca`) USING BTREE,
-  ADD KEY `id_categoria` (`id_categoria`) USING BTREE;
+  ADD KEY `id_marca` (`id_modelo`) USING BTREE,
+  ADD KEY `id_categoria` (`id_categoria`) USING BTREE,
+  ADD KEY `id_modelo` (`id_modelo`);
 
 --
 -- Indices de la tabla `proveedores`
@@ -268,7 +297,6 @@ ALTER TABLE `proveedores`
 -- Indices de la tabla `salida`
 --
 ALTER TABLE `salida`
-  ADD KEY `cedula_empleado` (`cedula_empleado`),
   ADD KEY `codigo_producto` (`codigo_producto`);
 
 --
@@ -295,42 +323,41 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `detalle_entrada`
 --
 ALTER TABLE `detalle_entrada`
-  ADD CONSTRAINT `detalle_entrada_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
+  ADD CONSTRAINT `detalle_entrada_ibfk_1` FOREIGN KEY (`rif_proveedores`) REFERENCES `proveedores` (`rif`),
+  ADD CONSTRAINT `detalle_entrada_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `entrada` (`codigo_producto`);
 
 --
 -- Filtros para la tabla `detalle_salida`
 --
 ALTER TABLE `detalle_salida`
-  ADD CONSTRAINT `detalle_salida_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
+  ADD CONSTRAINT `detalle_salida_ibfk_1` FOREIGN KEY (`cedula_empleado`) REFERENCES `empleados` (`cedula`),
+  ADD CONSTRAINT `detalle_salida_ibfk_2` FOREIGN KEY (`cedula_cliente`) REFERENCES `cliente` (`cedula`),
+  ADD CONSTRAINT `detalle_salida_ibfk_3` FOREIGN KEY (`codigo_producto`) REFERENCES `salida` (`codigo_producto`);
 
 --
 -- Filtros para la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  ADD CONSTRAINT `entrada_ibfk_1` FOREIGN KEY (`rif_proveedor`) REFERENCES `proveedores` (`rif`),
-  ADD CONSTRAINT `entrada_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `detalle_entrada` (`rif_proveedores`);
+  ADD CONSTRAINT `entrada_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
 
 --
--- Filtros para la tabla `inventario`
+-- Filtros para la tabla `modelo`
 --
-ALTER TABLE `inventario`
-  ADD CONSTRAINT `inventario_ibfk_1` FOREIGN KEY (`id_salida`) REFERENCES `detalle_salida` (`id_salida`),
-  ADD CONSTRAINT `inventario_ibfk_2` FOREIGN KEY (`id_entrada`) REFERENCES `detalle_entrada` (`id_entrada`),
-  ADD CONSTRAINT `inventario_ibfk_3` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
+ALTER TABLE `modelo`
+  ADD CONSTRAINT `modelo_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id_marca`);
 
 --
 -- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`codigo_categoria`),
-  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`modelo`);
+  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_modelo`) REFERENCES `modelo` (`id_modelo`);
 
 --
 -- Filtros para la tabla `salida`
 --
 ALTER TABLE `salida`
-  ADD CONSTRAINT `salida_ibfk_1` FOREIGN KEY (`cedula_empleado`) REFERENCES `empleados` (`cedula`),
-  ADD CONSTRAINT `salida_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `detalle_salida` (`codigo_producto`);
+  ADD CONSTRAINT `salida_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
