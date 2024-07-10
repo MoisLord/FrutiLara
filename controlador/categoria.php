@@ -34,7 +34,7 @@ require_once("modelo/".$pagina.".php");
 		  }
 		  else{		  
 			  $o->set_codigo_categoria($_POST['codigo_categoria']);
-			  $o->set_tipo($_POST['tipo']);
+			  $o->set_descripcion_categoria($_POST['descripcion_categoria']);
 			  $o->set_unidadMedNormal($_POST['unidadMedNormal']);
               $o->set_unidadMedAlt($_POST['unidadMedAlt']);
 			  if($accion=='incluir'){

@@ -14,12 +14,12 @@ $(document).ready(function(){
                 enviaAjax(datos,'consultatr');	
             }
         });
-        $("#tipo").on("keypress", function(e) {
+        $("#descripcion_categoria").on("keypress", function(e) {
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         
-        $("#tipo").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#stipo"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
+        $("#descripcion_categoria").on("keyup", function() {
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sdescripcion_categoria"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
         });
 
         $("#unidadMedNormal").on("keypress", function(e) {
@@ -51,7 +51,7 @@ $(document).ready(function(){
             var datos = new FormData();
             datos.append('accion','incluir');
             datos.append('codigo_categoria',$("#codigo_categoria").val());
-            datos.append('tipo',$("#tipo").val());
+            datos.append('descripcion_categoria',$("#descripcion_categoria").val());
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             enviaAjax(datos);
@@ -63,7 +63,7 @@ $(document).ready(function(){
             var datos = new FormData();
             datos.append('accion','modificar');
             datos.append('codigo_categoria',$("#codigo_categoria").val());
-            datos.append('tipo',$("#tipo").val());
+            datos.append('descripcion_categoria',$("#descripcion_categoria").val());
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             enviaAjax(datos);
@@ -139,6 +139,10 @@ $(document).ready(function(){
                             "12345678");	
             return false;					
         }	
+        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#descripcion_categoria"), $("#sdescripcion_categoria"), "Solo letras, entre 3 a 20 dígitos") == 0) {
+            muestraMensaje("La descripción debe ser <br/>Solo letras, entre 3 a 20 dígitos");
+            return false;
+        }
         else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#unidadMedNormal"), $("#sunidadMedNormal"), "Solo letras, entre 3 a 20 dígitos") == 0) {
             muestraMensaje("unidad Medida Normal debe ser <br/>Solo letras, entre 3 a 20 dígitos");
             return false;
@@ -208,7 +212,7 @@ $(document).ready(function(){
             $("#proceso").text("ELIMINAR");
         }
         $("#codigo_categoria").val($(linea).find("td:eq(0)").text());
-        $("#tipo").val($(linea).find("td:eq(1)").text());
+        $("#descripcion_categoria").val($(linea).find("td:eq(1)").text());
         $("#unidadMedNormal").val($(linea).find("td:eq(2)").text());
         $("#unidadMedAlt").val($(linea).find("td:eq(3)").text());
         
@@ -237,7 +241,7 @@ $(document).ready(function(){
                            crearDT();
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#tipo").val(lee.mensaje[0][2]);
+                           $("#descripcion_categoria").val(lee.mensaje[0][2]);
                            $("#unidadMedNormal").val(lee.mensaje[0][3]);
                            $("#unidadMedAlt").val(lee.mensaje[0][4]);
                            
@@ -276,7 +280,7 @@ $(document).ready(function(){
     function limpia(){
         
         $("#codigo_categoria").val("");
-        $("#tipo").val("");
+        $("#descripcion_categoria").val("");
         $("#unidadMedNormal").val("");
         $("#unidadMedAlt").val("");
         

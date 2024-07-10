@@ -8,7 +8,7 @@ class categoria extends datos{
 	
 	//Se declaran los atributos (variables) que describen la clase
 	private $codigo_categoria; 
-	private $tipo;
+	private $descripcion_categoria;
 	private $unidadMedNormal;
     private $unidadMedAlt;
 	
@@ -20,8 +20,8 @@ class categoria extends datos{
 		$this->codigo_categoria = $valor; 
 	}
 	
-	function set_tipo($valor){
-		$this->tipo = $valor;
+	function set_descripcion_categoria($valor){
+		$this->descripcion_categoria = $valor;
 	}
 	
 	function set_unidadMedNormal($valor){
@@ -38,8 +38,8 @@ class categoria extends datos{
 		return $this->codigo_categoria;
 	}
 	
-	function get_tipo(){
-		return $this->tipo;
+	function get_descripcion_categoria(){
+		return $this->descripcion_categoria;
 	}
 	
 	function get_unidadMedNormal(){
@@ -69,18 +69,18 @@ class categoria extends datos{
 				
 					$p = $co->prepare("Insert into categoria(
 						codigo_categoria,
-						tipo,
+						descripcion_categoria,
 						unidadMedNormal,
                         unidadMedAlt
 						)
 						Values(
 						:codigo_categoria,
-						:tipo,
+						:descripcion_categoria,
 						:unidadMedNormal,
                         :unidadMedAlt
 						)");
 					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
-					$p->bindParam(':tipo',$this->tipo);	
+					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);	
 					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
                     $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
 					
@@ -109,14 +109,14 @@ class categoria extends datos{
 		if($this->existe($this->codigo_categoria)){
 			try {
 				$p = $co->prepare("Update categoria set 
-						tipo = :tipo,
+						descripcion_categoria = :descripcion_categoria,
 						unidadMedNormal = :unidadMedNormal,
                         unidadMedAlt = :unidadMedAlt
 						where
 						codigo_categoria = :codigo_categoria
 						");
 					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
-					$p->bindParam(':tipo',$this->tipo);
+					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);
 					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
                     $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
 					
@@ -183,7 +183,7 @@ class categoria extends datos{
 							$respuesta = $respuesta.$r['codigo_categoria'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['tipo'];
+							$respuesta = $respuesta.$r['descripcion_categoria'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['unidadMedNormal'];
