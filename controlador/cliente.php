@@ -16,7 +16,7 @@ require_once("modelo/".$pagina.".php");
 	  
 	   //si existe creamos una intancia que es una variable local
 	  
-	  $o = new clientes(); //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
+	  $o = new cliente(); //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
 	  
 	  if(!empty($_POST)){
 		  
@@ -39,7 +39,6 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_cedula($_POST['cedula']);
 			  $o->set_nombre_apellido($_POST['nombre_apellido']);
 			  $o->set_telefono($_POST['telefono']);
-			  $o->set_correo($_POST['correo']);
 			  $o->set_direccion($_POST['direccion']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
@@ -51,6 +50,7 @@ require_once("modelo/".$pagina.".php");
 		  exit;
 	  }
 	  
+	  $consulta = $o->consultar();
 	  
 	  require_once("vista/".$pagina.".php"); 
   }

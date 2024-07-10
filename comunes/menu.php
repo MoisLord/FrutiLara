@@ -36,7 +36,7 @@
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=empleados">EMPLEADOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=clientes">CLIENTES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=cliente">CLIENTES</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">

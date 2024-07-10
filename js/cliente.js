@@ -34,15 +34,6 @@ $(document).ready(function(){
 	    validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$(this),$("#stelefono"),"El formato debe ser 9999-9999999");
 	});
 
-	$("#correo").on("keypress",function(e){
-		validarkeypress(/^[A-Za-z@_.\b\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
-	});
-	
-	$("#correo").on("keyup",function(){
-		validarkeyup(/^[A-Za-z_\u00f1\u00d1\u00E0-\u00FC-]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
-		$(this),$("#scorreo"),"El formato debe ser alguien@servidor.com");
-	});
-
 	$("#direccion").on("keypress",function(e){
 		validarkeypress(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
 	});
@@ -70,7 +61,6 @@ $("#incluir").on("click",function(){
 		datos.append('cedula',$("#cedula").val());
 		datos.append('nombre_apellido',$("#nombre_apellido").val());
 		datos.append('telefono',$("#telefono").val());
-		datos.append('correo',$("#correo").val());
 		datos.append('direccion',$("#direccion").val());
 		enviaAjax(datos);
 	}
@@ -83,7 +73,6 @@ $("#modificar").on("click",function(){
 		datos.append('cedula',$("#cedula").val());
 		datos.append('nombre_apellido',$("#nombre_apellido").val());
 		datos.append('telefono',$("#telefono").val());
-		datos.append('correo',$("#correo").val());
 		datos.append('direccion',$("#direccion").val());
 		enviaAjax(datos);
 		
@@ -168,11 +157,6 @@ function validarenvio(){
 		 muestraMensaje("error",4000,"Valida","Verifique el Telefono");
 	     return false;
 	}
-	else if(validarkeyup(/^[A-Za-z_\u00f1\u00d1\u00E0-\u00FC-]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
-		$("#correo"),$("#scorreo"),"El formato debe ser alguien@servidor.com")==0){
-		muestraMensaje("error",4000,"Valida","Verifique el Correo");
-		 return false;
-	}
 	else if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{6,35}$/,
 		$("#direccion"),$("#sdireccion"),"Solo letras y/o numeros entre 6 y 35 caracteres")==0){
 		muestraMensaje("error",4000,"Valida","Verifique la direccion");
@@ -231,8 +215,7 @@ function coloca(linea){
 	$("#cedula").val($(linea).find("td:eq(0)").text());
 	$("#nombre_apellido").val($(linea).find("td:eq(1)").text());
 	$("#telefono").val($(linea).find("td:eq(2)").text());
-	$("#correo").val($(linea).find("td:eq(3)").text());
-	$("#direccion").val($(linea).find("td:eq(4)").text());
+	$("#direccion").val($(linea).find("td:eq(3)").text());
 	
 }
 
@@ -259,10 +242,9 @@ function enviaAjax(datos){
 						crearDT();
 					 }
 					 else if (lee.resultado == "encontro") {
-						$("#nombre_apellido").val(lee.mensaje[0][2]);
-						$("#telefono").val(lee.mensaje[0][3]);
-						$("#correo").val(lee.mensaje[0][4]);
-						$("#direccion").val(lee.mensaje[0][5]);
+						$("#nombre_apellido").val(lee.mensaje[0][1]);
+						$("#telefono").val(lee.mensaje[0][2]);
+						$("#direccion").val(lee.mensaje[0][3]);
 						
 					 }
 					else if (lee.resultado == "incluir" || 
@@ -302,7 +284,6 @@ function limpia(){
 	$("#cedula").val("");
 	$("#nombre_apellido").val("");
 	$("#telefono").val("");
-	$("#correo").val("");
 	$("#direccion").val("");
 	
 }
