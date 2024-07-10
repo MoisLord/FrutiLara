@@ -2,7 +2,6 @@
 <?php require_once("comunes/encabezado.php"); ?>
 <body> 
 <?php require_once("comunes/menu.php"); ?>
-<link href="../css/principal.css" rel="stylesheet">
 
 <header>
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -43,5 +42,20 @@
 </div>
 </header>
 <script type="text/javascript" src="js/principal.js"></script>
+<footer>
+  <nav>
+    <ul>
+      <li><a href="#">MARCAS DE PRODUCTOS</a></li>
+      <li><a href="#">MODELO DE PRODUCTOS</a></li>
+      <li><a href="#">CATEGORIAS DE PRODUCTOS</a></li>
+      <li><a href="#">PRODUCTOS</a></li>
+      <li><a href="#">PROVEEDORES</a></li>
+      <li><a href="#">EMPLEADOS</a></li>
+      <li><a href="#">CLIENTES</a></li>
+      <li><a href="#">INVENTARIO</a></li>
+      <li><a href="#">USUARIOS</a></li>
+    </ul>
+  </nav>
+</footer>
 </body>
 </html>
