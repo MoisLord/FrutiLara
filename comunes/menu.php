@@ -35,17 +35,17 @@
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=clientes">CLIENTES</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=inventario">INVENTARIO</a>
-          </li>
+          <li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown">
+					INVENTARIO
+				  </a>
+				  <div class="dropdown-menu">
+					<a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=entrada">Notas de Entrada</a>
+          <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=salida">Notas de Salida</a>
+				  </div>
+			  </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=usuario">USUARIOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=entrada">Notas de Entrada</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=salida">Notas de Salida</a>
           </li>
         </ul>
       </div>
