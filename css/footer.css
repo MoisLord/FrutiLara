@@ -23,7 +23,7 @@ footer {
     margin: 0; /* quita el margen */
     padding: 0; /* quita el padding */
     display: flex; /* hace que los elementos se muestren en línea */
-    justify-content: space-between; /* distribuye los elementos en línea */
+    justify-content: center; /* distribuye los elementos en línea */
   }
   
   footer li {
