@@ -42,20 +42,36 @@
   </button>
 </div>
 <div>
-<footer>
-  <nav>
-    <ul>
-      <li><a href="#">MARCAS DE PRODUCTOS</a></li>
-      <li><a href="#">MODELO DE PRODUCTOS</a></li>
-      <li><a href="#">CATEGORIAS DE PRODUCTOS</a></li>
-      <li><a href="#">PRODUCTOS</a></li>
-      <li><a href="#">PROVEEDORES</a></li>
-      <li><a href="#">EMPLEADOS</a></li>
-      <li><a href="#">CLIENTES</a></li>
-      <li><a href="#">INVENTARIO</a></li>
-      <li><a href="#">USUARIOS</a></li>
-    </ul>
-  </nav>
+<footer class="footer">
+  <ul class="menu">
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> MARCAS DE PRODUCTOS </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> MODELO DE PRODUCTOS </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> CATEGORIAS DE PRODUCTOS </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> PRODUCTOS </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> PROVEEDORES </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> EMPLEADOS </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> CLIENTES </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> INVENTARIO </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> USUARIOS </a>
+    </li>
+  </ul>
 </footer>
 </div>
 </header>
