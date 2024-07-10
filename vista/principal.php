@@ -72,6 +72,7 @@
       <a href="" class="menu-icon"> USUARIOS </a>
     </li>
   </ul>
+  <p class="text"> Frutilara | donde comer saludable es mas sabroso</p>
 </footer>
 </div>
 </header>
