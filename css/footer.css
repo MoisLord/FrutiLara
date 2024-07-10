@@ -13,4 +13,10 @@ body {
     min-height: 100vh;
     background-color: #fff;
 }
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #fc00bd;
+}
 /* Fin del Footer */
