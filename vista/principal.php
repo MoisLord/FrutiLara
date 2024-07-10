@@ -43,13 +43,6 @@
 </div>
 <div>
 <footer class="footer">
-  <ul class="social-icon">
-    <li class="icon-elem">
-      <a href="" class="icon">
-        <i class="bi bi-shop"></i>
-      </a>
-    </li>
-  </ul>
   <ul class="menu">
     <li class="menu-elem">
       <a href="" class="menu-icon"> MARCAS DE PRODUCTOS </a>
