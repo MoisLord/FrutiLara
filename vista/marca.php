@@ -23,15 +23,15 @@ MARCAS DE PRODUCTOS
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="codigo">Modelo o modelo de marca</label>
-			   <input class="form-control" type="text" id="modelo" name="modelo"/>
-			   <span id="smodelo"></span>
+			   <label for="id_marca">Modelo o modelo de marca</label>
+			   <input class="form-control" type="text" id="id_marca" name="id_marca"/>
+			   <span id="sid_marca"></span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
-			   <label for="nombre">Descripción de la Marca</label>
-			   <input class="form-control" type="text" id="marca" name="marca"/>
+			   <label for="descripcion_marca">Descripción de la Marca</label>
+			   <input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca"/>
 			   <span id="smarca"></span>
 			</div>
 		</div>
@@ -49,9 +49,6 @@ MARCAS DE PRODUCTOS
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-3">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
-			</div>
-			<div class="col-md-3">	
-				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
 			</div>
 			
 			<div class="col-md-3">	
@@ -81,8 +78,8 @@ MARCAS DE PRODUCTOS
 		<table class="table table-striped table-hover" id="tablamarca">
 		<thead>
 		  <tr>
-			<th>Registro de Marcas</th>
-			<th>Marca</th>
+			<th>Codigo de Marcas</th>
+			<th>Marcas</th>
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
