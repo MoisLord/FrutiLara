@@ -6,14 +6,6 @@
     font-family: sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    min-height: 100vh;
-    background-color: #fc00bd;
-}
-
 .footer {
     position: relative;
     width: 100%;
