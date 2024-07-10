@@ -11,6 +11,7 @@ class productosaj extends datos{
 
 	private $codigo; // las variables no tienen tipo predefinido
 	private $nombre;
+	private $cantidad_total;
 	private $minimo;
     private $maximo;
     private $id_marca;
@@ -29,6 +30,9 @@ class productosaj extends datos{
 		$this->nombre = $valor;
 	}
 	
+	function set_cantidad_total($valor){
+		$this->cantidad_total = $valor;
+	}
 	function set_minimo($valor){
 		$this->minimo = $valor;
 	}
@@ -55,6 +59,10 @@ class productosaj extends datos{
 		return $this->nombre;
 	}
 	
+	function get_cantidad_total(){
+		return $this->cantidad_total;
+	}
+
 	function get_minimo(){
 		return $this->minimo;
 	}
@@ -84,10 +92,10 @@ class productosaj extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaMarca(this);'>";
 					$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['modelo'];
+							$respuesta = $respuesta.$r['id_marca'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['marca'];
+							$respuesta = $respuesta.$r['descripcion_marca'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
@@ -119,7 +127,7 @@ class productosaj extends datos{
 							$respuesta = $respuesta.$r['codigo_categoria'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['tipo'];
+							$respuesta = $respuesta.$r['descripcion_categoria'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['unidadMedNormal'];
@@ -162,6 +170,7 @@ class productosaj extends datos{
 				$p = $co->prepare("Insert into producto(
 					codigo,
 					nombre,
+					cantidad_total,
 					minimo,
 					maximo,
 					id_marca,
@@ -170,6 +179,7 @@ class productosaj extends datos{
 					Values(
 					:codigo,
 					:nombre,
+					:cantidad_total,
 					:minimo,
 					:maximo,
 					:id_marca,
@@ -178,6 +188,7 @@ class productosaj extends datos{
 
 					$p->bindParam(':codigo',$this->codigo);		
 					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':cantidad_total',$this->cantidad_total);
 					$p->bindParam(':minimo',$this->minimo);
 					$p->bindParam(':maximo',$this->maximo);
 					$p->bindParam(':id_marca',$this->id_marca);
@@ -209,6 +220,7 @@ class productosaj extends datos{
 				$p = $co->prepare("Update producto set 
 				codigo = :codigo,
 				nombre = :nombre,
+				catidad_total = :catidad_total,
 				minimo = :minimo,
 				maximo = :maximo,
 				id_marca = :id_marca,
@@ -219,6 +231,7 @@ class productosaj extends datos{
 
 					$p->bindParam(':codigo',$this->codigo);		
 					$p->bindParam(':nombre',$this->nombre);
+					$p->bindParam(':cantidad_total',$this->cantidad_total);
 					$p->bindParam(':minimo',$this->minimo);
                     $p->bindParam(':maximo',$this->maximo);
 					$p->bindParam(':id_marca',$this->id_marca);
@@ -289,6 +302,9 @@ class productosaj extends datos{
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['nombre'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['cantidad_total'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['minimo'];
