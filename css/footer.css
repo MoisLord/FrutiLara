@@ -44,4 +44,12 @@
 .menu-icon:hover {
     opacity: 1;
 }
+
+.text {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
 /* Fin del Footer */
