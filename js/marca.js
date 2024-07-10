@@ -16,12 +16,12 @@ $(document).ready(function(){
         });
         
         
-        $("#descripacion_marca").on("keypress",function(e){
+        $("#descripcion_marca").on("keypress",function(e){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
-        $("#descripacion_marca").on("keyup",function(){
+        $("#descripcion_marca").on("keyup",function(){
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,40}$/,
-            $(this),$("#sdescripacion_marca"),"Solo letras  entre 3 y 40 caracteres");
+            $(this),$("#sdescripcion_marca"),"Solo letras  entre 3 y 40 caracteres");
         });
         
         
@@ -36,7 +36,7 @@ $(document).ready(function(){
             var datos = new FormData();
             datos.append('accion','incluir');
             datos.append('id_marca',$("#id_marca").val());
-            datos.append('descripacion_marca',$("#descripacion_marca").val());
+            datos.append('descripcion_marca',$("#descripcion_marca").val());
             enviaAjax(datos);
         }
     });
@@ -46,7 +46,7 @@ $(document).ready(function(){
             var datos = new FormData();
             datos.append('accion','modificar');
             datos.append('id_marca',$("#id_marca").val());
-            datos.append('descripacion_marca',$("#descripacion_marca").val());
+            datos.append('descripcion_marca',$("#descripcion_marca").val());
             enviaAjax(datos);
             
         }
@@ -121,8 +121,8 @@ $(document).ready(function(){
             return false;					
         }	
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("#descripacion_marca"),$("#sdescripacion_marca"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("descripacion_marca <br/>Solo letras  entre 3 y 30 caracteres");
+            $("#descripcion_marca"),$("#sdescripcion_marca"),"Solo letras  entre 3 y 30 caracteres")==0){
+            muestraMensaje("descripcion_marca <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
         
@@ -176,7 +176,7 @@ $(document).ready(function(){
     //funcion para pasar de la lista a el formulario
     function coloca(linea){
         $("#id_marca").val($(linea).find("td:eq(0)").text());
-        $("#descripacion_marca").val($(linea).find("td:eq(1)").text());
+        $("#descripcion_marca").val($(linea).find("td:eq(1)").text());
         
     }
     
@@ -207,7 +207,7 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#descripacion_marca").val(lee.mensaje[0][2]);
+                           $("#descripcion_marca").val(lee.mensaje[0][2]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
@@ -245,6 +245,6 @@ $(document).ready(function(){
     function limpia(){
         
         $("#id_marca").val("");
-        $("#descripacion_marca").val("");
+        $("#descripcion_marca").val("");
         
     }
