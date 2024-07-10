@@ -40,8 +40,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-</header>
-<script type="text/javascript" src="js/principal.js"></script>
+<div>
 <footer>
   <nav>
     <ul>
@@ -57,5 +56,8 @@
     </ul>
   </nav>
 </footer>
+</div>
+</header>
+<script type="text/javascript" src="js/principal.js"></script>
 </body>
 </html>
