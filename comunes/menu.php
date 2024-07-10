@@ -41,6 +41,8 @@
 				  </a>
 				  <div class="dropdown-menu">
 					<a class="dropdown-item" style="font-weight: 600; font-size: 15;" href="?pagina=entrada">Notas de Entrada</a>
+          </div>
+          <div class="dropdown-menu">
           <a class="dropdown-item" style="font-weight: 600; font-size: 15;" href="?pagina=salida">Notas de Salida</a>
 				  </div>
 			  </li>
