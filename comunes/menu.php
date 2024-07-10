@@ -36,6 +36,9 @@
             <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=clientes">CLIENTES</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=inventario">INVENTARIO</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600;" href="?pagina=usuario">USUARIOS</a>
           </li>
           <li class="nav-item">
