@@ -4,16 +4,15 @@
 //para enlazar a la base de datos
 require_once('modelo/datos.php');
 
-// se declara la clase clientes que hereda de datos
+// se declara la clase cliente que hereda de datos
 
-class clientes extends datos{
+class cliente extends datos{
 
 	// se declaran como atributos privados
 
 	private $cedula; // las variables no tienen tipo predefinido
 	private $nombre_apellido;
 	private $telefono;
-	private $correo;
 	private $direccion;
 	
 	// se colocan metodo (Que serian funciones) seria get o set
@@ -33,10 +32,6 @@ class clientes extends datos{
 		$this->telefono = $valor;
 	}
 
-	function set_correo($valor){
-		$this->correo = $valor;
-	}
-
 	function set_direccion($valor){
 		$this->direccion = $valor;
 	}
@@ -54,9 +49,6 @@ class clientes extends datos{
 		return $this->telefono;
 	}
 
-	function get_correo(){
-		return $this->correo;
-	}
 
 	function get_direccion(){
 		return $this->direccion;
@@ -77,24 +69,21 @@ class clientes extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("Insert into clientes(
+					$p = $co->prepare("Insert into cliente(
 						cedula,
 						nombre_apellido,
 						telefono,
-						correo,
 						direccion
 						)
 						Values(
 						:cedula,
 						:nombre_apellido,
 						:telefono,
-						:correo,
 						:direccion
 						)");
 					$p->bindParam(':cedula',$this->cedula);		
 					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
 					$p->bindParam(':telefono',$this->telefono);
-					$p->bindParam(':correo',$this->correo);
 					$p->bindParam(':direccion',$this->direccion);
 					
 					$p->execute();
@@ -121,10 +110,9 @@ class clientes extends datos{
 		$r = array();
 		if($this->existe($this->cedula)){
 			try {
-				$p = $co->prepare("Update clientes set 
+				$p = $co->prepare("Update cliente set 
 						nombre_apellido = :nombre_apellido,
 						telefono = :telefono,
-						correo = :correo,
 						direccion = :direccion
 						where
 						cedula = :cedula
@@ -132,7 +120,6 @@ class clientes extends datos{
 					$p->bindParam(':cedula',$this->cedula);		
 					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
 					$p->bindParam(':telefono',$this->telefono);
-					$p->bindParam(':correo',$this->correo);
 					$p->bindParam(':direccion',$this->direccion);
 					
 					$p->execute();
@@ -157,7 +144,7 @@ class clientes extends datos{
 		$r = array();
 		if($this->existe($this->cedula)){
 			try {
-					$p = $co->prepare("delete from clientes 
+					$p = $co->prepare("delete from cliente 
 					    where
 						cedula = :cedula
 						");
@@ -186,7 +173,7 @@ class clientes extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from clientes");
+			$resultado = $co->query("Select * from cliente");
 			
 			if($resultado){
 				
@@ -203,27 +190,20 @@ class clientes extends datos{
 							$respuesta = $respuesta.$r['telefono'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['correo'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
-				$r['resultado'] = 'consultar';
-				$r['mensaje'] =  $respuesta;
+				return $respuesta;
 			    
 			}
 			else{
-				$r['resultado'] = 'consultar';
-				$r['mensaje'] =  '';
+				return '';
 			}
 			
 		}catch(Exception $e){
-			$r['resultado'] = 'error';
-			$r['mensaje'] =  $e->getMessage();
+			return $e->getMessage();
 		}
-		return $r;
 	}
 	
 	
@@ -232,7 +212,7 @@ class clientes extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from clientes where cedula='$cedula'");
+			$resultado = $co->query("Select * from cliente where cedula='$cedula'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -257,7 +237,7 @@ class clientes extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from clientes where cedula='$this->cedula'");
+			$resultado = $co->query("Select * from cliente where cedula='$this->cedula'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    

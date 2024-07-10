@@ -44,14 +44,6 @@ GESTIÓN DE CLIENTES
 			   <span id="stelefono"></span>
 			</div>
 		</div>
-		<div class="row mb-3">
-			<div class="col-md">
-			   <label for="correo">Correo</label>
-			   <input class="form-control" type="text" id="correo" name="correo" 
-			   />
-			   <span id="scorreo"></span>
-			</div>
-		</div>
 
 		<div class="row mb-3">
 			<div class="col-md">
@@ -72,9 +64,6 @@ GESTIÓN DE CLIENTES
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-3">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
-			</div>
-			<div class="col-md-3">	
-				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
 			</div>
 			
 			<div class="col-md-3">	
@@ -102,13 +91,16 @@ GESTIÓN DE CLIENTES
 		  <tr>
 			<th>Cédula</th>
 			<th>Nombre y Apellido</th>
-			<th>Télefono</th>	
-			<th>Correo</th>
+			<th>Télefono</th>
 			<th>Dirección</th>
 		  </tr>
 		</thead>
-		<tbody id="resultadoconsulta">
-		  
+		<tbody>
+		<?php
+			if(!empty($consulta)){
+				echo $consulta;
+			}
+		  ?>
 		  
 		</tbody>
 		</table>
@@ -116,7 +108,7 @@ GESTIÓN DE CLIENTES
     </div>
 </div> <!-- fin de container -->
 
-<script type="text/javascript" src="js/clientes.js"></script>
+<script type="text/javascript" src="js/cliente.js"></script>
 
 </body>
 </html>

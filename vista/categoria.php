@@ -61,9 +61,6 @@ CATEGORIAS DE PRODUCTOS
 			<div class="col-md-3">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
-			<div class="col-md-3">	
-				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
-			</div>
 			
 			<div class="col-md-3">	
 		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
@@ -92,7 +89,7 @@ CATEGORIAS DE PRODUCTOS
 		<thead>
 		  <tr>
 			<th>Codigo de categoria</th>
-			<th>tipo de Producto</th>
+			<th>Descripción de la categoria</th>
 			<th>Unidad de medida común</th>	
 			<th>Unidad de Medida Alternativa</th>
 		  </tr>
