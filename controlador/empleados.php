@@ -21,8 +21,8 @@ require_once("modelo/".$pagina.".php");
 	  if(!empty($_POST)){
 		  
 		  // se recibio informacion de la vista 
-
-		  $o->set_cedula($_POST['cedula']);
+		  $accion = $_POST['accion'];
+		  	  $o->set_cedula($_POST['cedula']);
 			  $o->set_nombre_apellido($_POST['nombre_apellido']);
 			  $o->set_telefono($_POST['telefono']);
 			  $o->set_correo($_POST['correo']);
