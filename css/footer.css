@@ -32,5 +32,10 @@ body {
     position: relative;
     align-items: center;
     margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.menu-elem {
+    list-style: none;
 }
 /* Fin del Footer */
