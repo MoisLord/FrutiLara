@@ -75,32 +75,3 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 /* fIN DE PRINCIPAL */
-
-/* Inicio del Footer */
-footer {
-    background-color: #f0f0f0; /* fondo gris claro */
-    padding: 20px; /* espacio entre el contenido y el borde */
-    text-align: center; /* texto centrado */
-  }
-  
-  footer ul {
-    list-style: none; /* quita los puntos de la lista */
-    margin: 0; /* quita el margen */
-    padding: 0; /* quita el padding */
-    display: flex; /* hace que los elementos se muestren en línea */
-    justify-content: space-between; /* distribuye los elementos en línea */
-  }
-  
-  footer li {
-    margin-right: 20px; /* espacio entre los elementos */
-  }
-  
-  footer a {
-    color: #337ab7; /* texto azul */
-    text-decoration: none; /* quita el subrayado */
-  }
-  
-  footer a:hover {
-    color: #23527c; /* texto azul oscuro al pasar el mouse */
-  }
-/* Fin del Footer */
