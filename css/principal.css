@@ -3,11 +3,11 @@
     color: #ff9900;
 }
 
-.font-weight-bolder mb-6 display-1 {
+h1 {
     font-weight: 1200px;
 }
 
-.font-weight-bolder lead display-4 {
+p {
     font-weight: 400px;
 }
 
