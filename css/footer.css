@@ -58,11 +58,13 @@
     display: inline-block;
     text-decoration: none;
     margin: 5px 10px;
+    opacity: 0.50;
     transition: 0.3s;
 }
 
 .menu-icon:hover {
     opacity: 1;
+    color: #fff;
 }
 
 svg {
