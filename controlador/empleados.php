@@ -21,27 +21,38 @@ require_once("modelo/".$pagina.".php");
 	  if(!empty($_POST)){
 		  
 		  // se recibio informacion de la vista 
-		  $accion = $_POST['accion'];
-		  	  $o->set_cedula($_POST['cedula']);
+		   $accion = $_POST['accion'];
+		  
+		  if($accion=='consultar'){
+			 echo  json_encode($o->consultar());  
+		  }
+		  elseif($accion=='consultatr'){
+			 $o->set_cedula($_POST['cedula']); 
+			 echo  json_encode($o->consultatr());  
+		  }
+
+		  elseif($accion=='eliminar'){
+			 $o->set_cedula($_POST['cedula']);
+			 echo  json_encode($o->eliminar());
+		  }
+		  else{		  
+			  $o->set_cedula($_POST['cedula']);
 			  $o->set_nombre_apellido($_POST['nombre_apellido']);
 			  $o->set_telefono($_POST['telefono']);
 			  $o->set_correo($_POST['correo']);
 			  $o->set_direccion($_POST['direccion']);
 			  $o->set_fechaNacimiento($_POST['fechaNacimiento']);
-
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }
-
 			  elseif($accion=='modificar'){
 				echo  json_encode($o->modificar());
 			  }
-		
-		  elseif($accion=='eliminar'){
-			 $o->set_cedula($_POST['cedula']);
-			 echo  json_encode($o->eliminar());
 		  }
+		  exit;
 	  }
+	  
+	  
 	  $consulta = $o->consultar();
 	  
 	  require_once("vista/".$pagina.".php"); 
