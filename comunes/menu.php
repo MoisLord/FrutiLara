@@ -18,34 +18,34 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
         <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=marca">MARCAS DE PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=marca">MARCAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=categoria">CATEGORIAS DE PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=categoria">CATEGORIAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=productosaj">PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=productosaj">PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=proveedor">PROVEEDORES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=proveedor">PROVEEDORES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=empleados">EMPLEADOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=empleados">EMPLEADOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=clientes">CLIENTES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=clientes">CLIENTES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=inventario">INVENTARIO</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=inventario">INVENTARIO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=usuario">USUARIOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=usuario">USUARIOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=entrada">Notas de Entrada</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=entrada">Notas de Entrada</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 20;" href="?pagina=salida">Notas de Salida</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=salida">Notas de Salida</a>
           </li>
         </ul>
       </div>
