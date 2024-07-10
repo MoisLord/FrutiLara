@@ -262,11 +262,11 @@ function enviaAjax(datos){
 						crearDT();
 					 }
 					 else if (lee.resultado == "encontro") {
-						$("#nombre_apellido").val(lee.mensaje[0][2]);
-						$("#telefono").val(lee.mensaje[0][3]);
-						$("#correo").val(lee.mensaje[0][4]);
-						$("#direccion").val(lee.mensaje[0][5]);
-						$("#fechaNacimiento").val(lee.mensaje[0][6]);
+						$("#nombre_apellido").val(lee.mensaje[0][1]);
+						$("#telefono").val(lee.mensaje[0][2]);
+						$("#correo").val(lee.mensaje[0][3]);
+						$("#direccion").val(lee.mensaje[0][4]);
+						$("#fechaNacimiento").val(lee.mensaje[0][5]);
 						
 					 }
 					else if (lee.resultado == "incluir" || 
