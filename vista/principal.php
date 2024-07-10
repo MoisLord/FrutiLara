@@ -2,7 +2,7 @@
 <?php require_once("comunes/encabezado.php"); ?>
 <body> 
 <?php require_once("comunes/menu.php"); ?>
-<link href="css/footer.css" rel="stylesheet" type="text/css">
+<link href="../css/footer.css" rel="stylesheet" type="text/css">
 
 <header>
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
