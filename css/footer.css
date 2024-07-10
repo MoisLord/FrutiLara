@@ -6,7 +6,7 @@
     font-family: sans-serif;
 }
 
-.footer {
+footer {
     position: relative;
     width: 100%;
     background: #fc00bd;
@@ -16,9 +16,30 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+  }
+  
+  footer ul {
+    list-style: none; /* quita los puntos de la lista */
+    margin: 0; /* quita el margen */
+    padding: 0; /* quita el padding */
+    display: flex; /* hace que los elementos se muestren en línea */
+    justify-content: center; /* distribuye los elementos en línea */
+  }
+  
+  footer li {
+    margin-right: 20px; /* espacio entre los elementos */
+  }
+  
+  footer a {
+    color: #337ab7; /* texto azul */
+    text-decoration: none; /* quita el subrayado */
+  }
+  
+  footer a:hover {
+    color: #23527c; /* texto azul oscuro al pasar el mouse */
+  }
 
-.menu {
+  menu {
     display: flex;
     justify-content: center;
     position: relative;
@@ -27,7 +48,29 @@
     flex-wrap: wrap;
 }
 
-.menu-elem {
+menu-elem {
     list-style: none;
+}
+
+menu-icon {
+    color: #fff;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+menu-icon:hover {
+    opacity: 1;
+}
+
+text {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 /* Fin del Footer */
