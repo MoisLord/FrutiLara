@@ -21,6 +21,9 @@
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=marca">MARCAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=modelo">MODELO DE PRODUCTOS</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 15;" href="?pagina=categoria">CATEGORIAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
