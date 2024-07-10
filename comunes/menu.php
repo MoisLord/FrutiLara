@@ -40,8 +40,15 @@
     INVENTARIO
   </a>
   <div class="dropdown-menu">
-    <a class="dropdown-item font-weight-bold" href="?pagina=entrada">Notas de Entrada</a>
-    <a class="dropdown-item font-weight-bold" href="?pagina=salida">Notas de Salida</a>
+    <?php
+    $items = array(
+      array('href' => '?pagina=entrada', 'text' => 'Notas de Entrada'),
+      array('href' => '?pagina=salida', 'text' => 'Notas de Salida'),
+    );
+    foreach ($items as $item) {
+      echo '<a class="dropdown-item font-weight-bold" href="' . $item['href'] . '">' . $item['text'] . '</a>';
+    }
+    ?>
   </div>
 </li>
           <li class="nav-item">
