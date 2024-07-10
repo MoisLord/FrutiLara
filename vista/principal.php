@@ -2,7 +2,6 @@
 <?php require_once("comunes/encabezado.php"); ?>
 <body> 
 <?php require_once("comunes/menu.php"); ?>
-<link href="../css/footer.css" rel="stylesheet" type="text/css">
 
 <header>
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -41,6 +40,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<link href="../css/footer.css" rel="stylesheet" type="text/css">
 <div>
 <footer class="footer">
   <ul class="menu">
