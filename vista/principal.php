@@ -4,6 +4,8 @@
 <?php require_once("comunes/menu.php"); ?>
 
 <header>
+<link rel="stylesheet" type="text/css" href="footer.css">
+
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -40,7 +42,6 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<link href="../css/footer.css" rel="stylesheet" type="text/css">
 <div>
 <footer class="footer">
   <ul class="menu">
