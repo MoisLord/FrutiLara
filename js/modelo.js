@@ -1,50 +1,30 @@
 
 $(document).ready(function(){
 //VALIDACION DE DATOS	
-	$("#cedula").on("keypress",function(e){
+	$("#id_modelo").on("keypress",function(e){
 		validarkeypress(/^[0-9-\b]*$/,e);
 	});
 	
-	$("#cedula").on("keyup",function(){
+	$("#id_modelo").on("keyup",function(){
 		validarkeyup(/^[0-9]{7,8}$/,$(this),
-		$("#scedula"),"El formato debe ser 9999999 ");
-		if($("#cedula").val().length > 7){
+		$("#sid_modelo"),"El formato debe ser 9999999 ");
+		if($("#id_modelo").val().length > 7){
 		  var datos = new FormData();
 		    datos.append('accion','consultatr');
-			datos.append('cedula',$(this).val());
+			datos.append('id_modelo',$(this).val());
 			enviaAjax(datos,'consultatr');	
 		}
 	});
 	
 	
-	$("#nombre_apellido").on("keypress",function(e){
+	$("#descripcion_modelo").on("keypress",function(e){
 		validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
 	});
 	
-	$("#nombre_apellido").on("keyup",function(){
+	$("#descripcion_modelo").on("keyup",function(){
 		validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-		$(this),$("#snombre_apellido"),"Solo letras  entre 3 y 30 caracteres");
+		$(this),$("#sdescripcion_modelo"),"Solo letras  entre 3 y 30 caracteres");
 	});
-	
-	$("#telefono").on("keypress",function(e){
-		validarkeypress(/^[0-9\b-]*$/,e);
-	});
-	
-	$("#telefono").on("keyup",function(){
-	    validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$(this),$("#stelefono"),"El formato debe ser 9999-9999999");
-	});
-
-	$("#direccion").on("keypress",function(e){
-		validarkeypress(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
-	});
-	
-	$("#direccion").on("keyup",function(){
-		validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{6,35}$/,
-		$(this),$("#sdireccion"),"Solo letras y/o numeros entre 6 y 35 caracteres");
-	});
-
-
-	
 	
 	
 	
@@ -58,10 +38,9 @@ $("#incluir").on("click",function(){
 	if(validarenvio()){
 		var datos = new FormData();
 		datos.append('accion','incluir');
-		datos.append('cedula',$("#cedula").val());
-		datos.append('nombre_apellido',$("#nombre_apellido").val());
-		datos.append('telefono',$("#telefono").val());
-		datos.append('direccion',$("#direccion").val());
+		datos.append('id_modelo',$("#id_modelo").val());
+		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
+		datos.append('id_marca',$("#id_marca").val());
 		enviaAjax(datos);
 	}
 });
@@ -70,10 +49,9 @@ $("#modificar").on("click",function(){
 
 		var datos = new FormData();
 		datos.append('accion','modificar');
-		datos.append('cedula',$("#cedula").val());
-		datos.append('nombre_apellido',$("#nombre_apellido").val());
-		datos.append('telefono',$("#telefono").val());
-		datos.append('direccion',$("#direccion").val());
+		datos.append('id_modelo',$("#id_modelo").val());
+		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
+		datos.append('id_marca',$("#id_marca").val());
 		enviaAjax(datos);
 		
 	}
@@ -81,9 +59,9 @@ $("#modificar").on("click",function(){
 
 $("#eliminar").on("click",function(){
 	
-	if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-		$("#scedula"),"El formato debe ser 9999999")==0){
-	    muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
+	if(validarkeyup(/^[0-9]{7,8}$/,$("#id_modelo"),
+		$("#sid_modelo"),"El formato debe ser 9999999")==0){
+	    muestraMensaje("La id_modelo debe coincidir con el formato <br/>"+ 
 						"99999999");	
 		
 	}
@@ -91,7 +69,7 @@ $("#eliminar").on("click",function(){
 	    
 		var datos = new FormData();
 		datos.append('accion','eliminar');
-		datos.append('cedula',$("#cedula").val());
+		datos.append('id_modelo',$("#id_modelo").val());
 		enviaAjax(datos);
 	}
 	
@@ -141,20 +119,20 @@ function crearDT(){
 
 //Validación de todos los campos antes del envio
 function validarenvio(){
-	if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-		$("#scedula"),"El formato debe ser 9999999")==0){
-	    muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
+	if(validarkeyup(/^[0-9]{7,8}$/,$("#id_modelo"),
+		$("#sid_modelo"),"El formato debe ser 9999999")==0){
+	    muestraMensaje("La id_modelo debe coincidir con el formato <br/>"+ 
 						"99999999");	
 		return false;					
 	}	
 	else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-		$("#nombre_apellido"),$("#snombre_apellido"),"Solo letras  entre 3 y 30 caracteres")==0){
+		$("#descripcion_modelo"),$("#sdescripcion_modelo"),"Solo letras  entre 3 y 30 caracteres")==0){
 		muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres");
 		return false;
 	}
-	else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$("#telefono"),
-		 $("#stelefono"),"El formato debe ser 9999-9999999")==0){
-		 muestraMensaje("error",4000,"Valida","Verifique el Telefono");
+	else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$("#id_marca"),
+		 $("#sid_marca"),"El formato debe ser 9999-9999999")==0){
+		 muestraMensaje("error",4000,"Valida","Verifique el id_marca");
 	     return false;
 	}
 	else if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{6,35}$/,
@@ -212,9 +190,9 @@ mensaje){
 
 //funcion para pasar de la lista a el formulario
 function coloca(linea){
-	$("#cedula").val($(linea).find("td:eq(0)").text());
-	$("#nombre_apellido").val($(linea).find("td:eq(1)").text());
-	$("#telefono").val($(linea).find("td:eq(2)").text());
+	$("#id_modelo").val($(linea).find("td:eq(0)").text());
+	$("#descripcion_modelo").val($(linea).find("td:eq(1)").text());
+	$("#id_marca").val($(linea).find("td:eq(2)").text());
 	$("#direccion").val($(linea).find("td:eq(3)").text());
 	
 }
@@ -242,8 +220,8 @@ function enviaAjax(datos){
 						crearDT();
 					 }
 					 else if (lee.resultado == "encontro") {
-						$("#nombre_apellido").val(lee.mensaje[0][1]);
-						$("#telefono").val(lee.mensaje[0][2]);
+						$("#descripcion_modelo").val(lee.mensaje[0][1]);
+						$("#id_marca").val(lee.mensaje[0][2]);
 						$("#direccion").val(lee.mensaje[0][3]);
 						
 					 }
@@ -281,9 +259,9 @@ function enviaAjax(datos){
 
 function limpia(){
 	
-	$("#cedula").val("");
-	$("#nombre_apellido").val("");
-	$("#telefono").val("");
+	$("#id_modelo").val("");
+	$("#descripcion_modelo").val("");
+	$("#id_marca").val("");
 	$("#direccion").val("");
 	
 }

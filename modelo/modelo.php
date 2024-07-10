@@ -4,64 +4,54 @@
 //para enlazar a la base de datos
 require_once('modelo/datos.php');
 
-// se declara la clase cliente que hereda de datos
+// se declara la clase modelo que hereda de datos
 
-class cliente extends datos{
+class modelo extends datos{
 
 	// se declaran como atributos privados
 
-	private $cedula; // las variables no tienen tipo predefinido
-	private $nombre_apellido;
-	private $telefono;
-	private $direccion;
-	
+	private $id_modelo; // las variables no tienen tipo predefinido
+	private $descripcion_modelo;
+	private $id_marca;
 	// se colocan metodo (Que serian funciones) seria get o set
 	
-	function set_cedula($valor){
-		$this->cedula = $valor; 
+	function set_id_modelo($valor){
+		$this->id_modelo = $valor; 
 	}
 
-	// estamos usando un metodo por set y se usa para la clase cedula que seria el this
-		//lo mismo que se hizo para cedula se hace para el resto
+	// estamos usando un metodo por set y se usa para la clase id_modelo que seria el this
+		//lo mismo que se hizo para id_modelo se hace para el resto
 	
-	function set_nombre_apellido($valor){
-		$this->nombre_apellido = $valor;
+	function set_descripcion_modelo($valor){
+		$this->descripcion_modelo = $valor;
 	}
 	
-	function set_telefono($valor){
-		$this->telefono = $valor;
+	function set_id_marca($valor){
+		$this->id_marca = $valor;
 	}
 
-	function set_direccion($valor){
-		$this->direccion = $valor;
-	}
 
 	//ahora la misma cosa pero para get
-	function get_cedula(){
-		return $this->cedula;
+	function get_id_modelo(){
+		return $this->id_modelo;
 	}
 	
-	function get_nombre_apellido(){
-		return $this->nombre_apellido;
+	function get_descripcion_modelo(){
+		return $this->descripcion_modelo;
 	}
 	
-	function get_telefono(){
-		return $this->telefono;
-	}
-
-
-	function get_direccion(){
-		return $this->direccion;
+	function get_id_marca(){
+		return $this->id_marca;
 	}
 
 	// metodos para incluir, consultar y eliminar
 	
 	function incluir(){
-		// se consulta en este caso cedula, para ello se creo la funcion existe
+		// se consulta en este caso id_modelo, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
-		if(!$this->existe($this->cedula)){
-			//cedula no existe es decir se puede incluir
+		if(!$this->existe($this->id_modelo)){
+			//id_modelo no existe es decir se puede incluir
 			//funcion conecta 
 			$co = $this->conecta();
 			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -69,22 +59,19 @@ class cliente extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("Insert into cliente(
-						cedula,
-						nombre_apellido,
-						telefono,
-						direccion
+					$p = $co->prepare("Insert into modelo(
+						id_modelo,
+						descripcion_modelo,
+						id_marca
 						)
 						Values(
-						:cedula,
-						:nombre_apellido,
-						:telefono,
-						:direccion
+						:id_modelo,
+						:descripcion_modelo,
+						:id_marca
 						)");
-					$p->bindParam(':cedula',$this->cedula);		
-					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
-					$p->bindParam(':telefono',$this->telefono);
-					$p->bindParam(':direccion',$this->direccion);
+					$p->bindParam(':id_modelo',$this->id_modelo);		
+					$p->bindParam(':descripcion_modelo',$this->descripcion_modelo);
+					$p->bindParam(':id_marca',$this->id_marca);
 					
 					$p->execute();
 					
@@ -97,7 +84,7 @@ class cliente extends datos{
 		}
 		else{
 			$r['resultado'] = 'incluir';
-			$r['mensaje'] =  'Ya existe la cedula';
+			$r['mensaje'] =  'Ya existe la id_modelo';
 		}
 		
 		return $r;
@@ -108,19 +95,17 @@ class cliente extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->cedula)){
+		if($this->existe($this->id_modelo)){
 			try {
-				$p = $co->prepare("Update cliente set 
-						nombre_apellido = :nombre_apellido,
-						telefono = :telefono,
-						direccion = :direccion
+				$p = $co->prepare("Update modelo set 
+						descripcion_modelo = :descripcion_modelo,
+						id_marca = :id_marca
 						where
-						cedula = :cedula
+						id_modelo = :id_modelo
 						");
-					$p->bindParam(':cedula',$this->cedula);		
-					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
-					$p->bindParam(':telefono',$this->telefono);
-					$p->bindParam(':direccion',$this->direccion);
+					$p->bindParam(':id_modelo',$this->id_modelo);		
+					$p->bindParam(':descripcion_modelo',$this->descripcion_modelo);
+					$p->bindParam(':id_marca',$this->id_marca);
 					
 					$p->execute();
 					
@@ -133,7 +118,7 @@ class cliente extends datos{
 		}
 		else{
 			$r['resultado'] = 'modificar';
-			    $r['mensaje'] =  'No existe la cedula';
+			    $r['mensaje'] =  'No existe el modelo';
 		}
 		return $r;
 	}
@@ -142,13 +127,13 @@ class cliente extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->cedula)){
+		if($this->existe($this->id_modelo)){
 			try {
-					$p = $co->prepare("delete from cliente 
+					$p = $co->prepare("delete from modelo 
 					    where
-						cedula = :cedula
+						id_modelo = :id_modelo
 						");
-					$p->bindParam(':cedula',$this->cedula);		
+					$p->bindParam(':id_modelo',$this->id_modelo);		
 					
 					
 					$p->execute();
@@ -161,7 +146,7 @@ class cliente extends datos{
 		}
 		else{
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe la cedula';
+			$r['mensaje'] =  'No existe la id_modelo';
 		}
 		return $r;
 	}
@@ -173,7 +158,7 @@ class cliente extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from cliente");
+			$resultado = $co->query("Select * from modelo");
 			
 			if($resultado){
 				
@@ -181,16 +166,13 @@ class cliente extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['cedula'];
+							$respuesta = $respuesta.$r['id_modelo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre_apellido'];
+							$respuesta = $respuesta.$r['descripcion_modelo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['telefono'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['direccion'];
+							$respuesta = $respuesta.$r['id_marca'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
@@ -207,12 +189,12 @@ class cliente extends datos{
 	}
 	
 	
-	private function existe($cedula){
+	private function existe($id_modelo){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from cliente where cedula='$cedula'");
+			$resultado = $co->query("Select * from modelo where id_modelo='$id_modelo'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -237,7 +219,7 @@ class cliente extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from cliente where cedula='$this->cedula'");
+			$resultado = $co->query("Select * from modelo where id_modelo='$this->id_modelo'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
