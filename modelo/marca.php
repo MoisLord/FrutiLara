@@ -1,6 +1,6 @@
 <?php
 //llamda al archivo que contiene la clase
-//datos, en ella esta guardada en la carpeta modelo
+//datos, en ella esta guardada en la carpeta id_marca
 //para enlazar a la base de datos
 require_once('modelo/datos.php');
 
@@ -19,33 +19,33 @@ class marca extends datos{
 	//misma clase, la forma de colcocarlo en privado es usando la palabra private
 
 	//Aqui coloque los inputs de la vista en private
-	private $modelo; //recordatorio que en php, las variables no tienen tipo predefinido
-	private $marca;
+	private $id_marca; //recordatorio que en php, las variables no tienen tipo predefinido
+	private $descripcion_marca;
 	
 	//Ok ya puesto los atributos, pero ahora como son privados no podemos acceder a ellos
 	//desde afuera por lo que debemos colocar metodos (funciones)
 	//que me permitan leer (get) y colocar (set) valores en ello
 	
-	function set_modelo($valor){
-		$this->modelo = $valor; //este es como se accede a los elementos dentro de una clase
+	function set_id_marca($valor){
+		$this->id_marca = $valor; //este es como se accede a los elementos dentro de una clase
 		//this singnifica (esto), es decir, esta clase luego se usa el simbolo ( -> )
 		// que indica que apunte a un elemento de this, osea esta clase
 		//luego el marca el elemento sin el simbolo ($)
 	}
-	//lo mismo que se hizo para modelo se hace para marca
+	//lo mismo que se hizo para id_marca se hace para marca
 	
-	function set_marca($valor){
-		$this->marca = $valor;
+	function set_descripcion_marca($valor){
+		$this->descripcion_marca = $valor;
 	}
 
 	//ahora el mismo procedimiento pero para leer, es decir (get)
 	
-	function get_modelo(){
-		return $this->modelo;
+	function get_id_marca(){
+		return $this->id_marca;
 	}
 	
-	function get_marca(){
-		return $this->marca;
+	function get_descripcion_marca(){
+		return $this->descripcion_marca;
 	}
 	
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
@@ -54,12 +54,12 @@ class marca extends datos{
 		//ya hecho la base de datos y la funcion conecta dentro de la clase
 		//datos, ahora hay que ejecutar las operaciones para realizar las consultas 
 		
-		//Lo primero que hay que hacer es consultar por el campo modelo
-		//en este caso la de modelo, para ello se creo la funcion existe
+		//Lo primero que hay que hacer es consultar por el campo id_marca
+		//en este caso la de id_marca, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
-		if(!$this->existe($this->modelo)){
-			//como modelo no existe, es decir, se puede incluir
+		if(!$this->existe($this->id_marca)){
+			//como id_marca no existe, es decir, se puede incluir
 			//los pasos ahora son
 			//1) Se llama a la función conecta 
 			$co = $this->conecta();
@@ -68,15 +68,15 @@ class marca extends datos{
 			$r = array();
 			try {
 					$p = $co->prepare("Insert into marca(
-						modelo,
-						marca
+						id_marca,
+						descripcion_marca
 						)
 						Values(
-						:modelo,
-						:marca
+						:id_marca,
+						:descripcion_marca
 						)");
-					$p->bindParam(':modelo',$this->modelo);		
-					$p->bindParam(':marca',$this->marca);
+					$p->bindParam(':id_marca',$this->id_marca);		
+					$p->bindParam(':descripcion_marca',$this->descripcion_marca);
 					
 					$p->execute();
 					
@@ -103,15 +103,15 @@ class marca extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->modelo)){
+		if($this->existe($this->id_marca)){
 			try {
 				$p = $co->prepare("Update marca set 
-						marca = :marca
+						descripcion_marca = :descripcion_marca
 						where
-						modelo = :modelo
+						id_marca = :id_marca
 						");
-					$p->bindParam(':modelo',$this->modelo);		
-					$p->bindParam(':marca',$this->marca);	
+					$p->bindParam(':id_marca',$this->id_marca);		
+					$p->bindParam(':descripcion_marca',$this->descripcion_marca);	
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -132,13 +132,13 @@ class marca extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->modelo)){
+		if($this->existe($this->id_marca)){
 			try {
 					$p = $co->prepare("delete from marca
 					    where
-						modelo = :modelo
+						id_marca = :id_marca
 						");
-					$p->bindParam(':modelo',$this->modelo);		
+					$p->bindParam(':id_marca',$this->id_marca);		
 					
 					
 					$p->execute();
@@ -171,10 +171,10 @@ class marca extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['modelo'];
+							$respuesta = $respuesta.$r['id_marca'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['marca'];
+							$respuesta = $respuesta.$r['descripcion_marca'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
@@ -195,12 +195,12 @@ class marca extends datos{
 	}
 	
 	
-	private function existe($modelo){
+	private function existe($id_marca){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from marca where modelo='$modelo'");
+			$resultado = $co->query("Select * from marca where id_marca='$id_marca'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -225,7 +225,7 @@ class marca extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from marca where modelo='$this->modelo'");
+			$resultado = $co->query("Select * from marca where id_marca='$this->id_marca'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    

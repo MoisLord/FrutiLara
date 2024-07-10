@@ -35,17 +35,17 @@ require_once("modelo/".$pagina.".php");
 			 echo  json_encode($o->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
-			 $o->set_modelo($_POST['modelo']); 
+			 $o->set_id_marca($_POST['id_marca']); 
 			 echo  json_encode($o->consultatr());  
 		  }
 
 		  elseif($accion=='eliminar'){
-			 $o->set_modelo($_POST['modelo']);
+			 $o->set_id_marca($_POST['id_marca']);
 			 echo  json_encode($o->eliminar());
 		  }
 		  else{		  
-			  $o->set_modelo($_POST['modelo']);
-			  $o->set_marca($_POST['marca']);
+			  $o->set_id_marca($_POST['id_marca']);
+			  $o->set_descripcion_marca($_POST['descripcion_marca']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }
@@ -57,7 +57,7 @@ require_once("modelo/".$pagina.".php");
 	  }
 	  
 	  $consulta = $o->consultar();
-	  
+
 	  require_once("vista/".$pagina.".php"); 
   }
   else{
