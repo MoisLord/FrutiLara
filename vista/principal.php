@@ -43,7 +43,7 @@
 </div>
 <div>
 <footer class="footer">
-  <ul class="shop-icon">
+  <ul class="social-icon">
     <li class="icon-elem">
       <a href="" class="icon">
         <i class="bi bi-shop"></i>
