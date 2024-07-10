@@ -11,44 +11,50 @@
 <hr/>
 <hr/>
 <hr/>
-PANTALLA DE PROVEEDORES
+GESTIÓN DE CLIENTES
 <hr class="border border-success border-3 opacity-65">
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
-   <h4 class="text-center text-success">REGISTRO DE PROVEEDORES</h4>
+   <h4 class="text-center text-success">Registro de clientes</h4>
+
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="rif">Rif</label>
-			   <input class="form-control" type="text" id="rif" name="rif" />
-			   <span id="srif"></span>
+			   <label for="cedula">Cedula</label>
+			   <input class="form-control" type="text" id="cedula"
+				name="cedula"/>
+			   <span id="scedula"></span>
 			</div>
-			</div>
-			<div class="row mb-3">
-			<div class="col-md">
-			   <label for="nombre_proveedor">Nombre del proveedor</label>
-			   <input class="form-control" type="text" id="Nombre" name="Nombre" />
-			   <span id="sNombre"></span>
-			</div>
-		</div>    
-	
-		<div class="row mb-4">
-			<div class="col-md">
-        		<label for="telefono">Telefono</label>
-				<input class="form-control" type="text" id="Telefono" name="Telefono" />
-				<span id="sTelefono"></span>
-    		</div>
 		</div>
-		<div class="row mb-4">
+		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="Direccion">Dirección</label>
-			   <input class="form-control" type="text" id="Direccion" name="Direccion" />
-			   <span id="sDireccion"></span>
+			   <label for="nombre_apellido">Nombre y Apellido</label>
+			   <input class="form-control" type="text" id="nombre_apellido"
+				name="nombre_apellido"/>
+			   <span id="snombre_apellido"></span>
 			</div>
-			
 		</div>
 		
+		<div class="row mb-3">
+			<div class="col-md">
+			   <label for="telefono">Teléfono</label>
+			   <input class="form-control" type="text" id="telefono" name="telefono" 
+			   />
+			   <span id="stelefono"></span>
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md">
+			   <label for="direccion">Dirección</label>
+			   <input class="form-control" type="text" id="direccion" name="direccion" 
+			   />
+			   <span id="sdireccion"></span>
+			</div>
+		</div>
+
+			
 		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
@@ -75,34 +81,34 @@ PANTALLA DE PROVEEDORES
 	</div>	
 	</form>
 
-
-
-
 	<div class="col-8 p-4">
 	<div class="container">
-	<h5 class="modal-title text-center text-success">PROVEEDORES REGISTRADOS</h5>
+	<h5 class="modal-title text-center text-success">CLIENTES REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
-		<table class="table table-striped table-hover" id="tablaproveedores">
+		<table class="table table-striped table-hover" id="tablaclientes">
 		<thead>
 		  <tr>
-			<th>Rif</th>
-			<th>Nombre del proveedor</th>
-			<th>Telefonon</th>	
-			<th>Direccion</th>
+			<th>Cédula</th>
+			<th>Nombre y Apellido</th>
+			<th>Télefono</th>
+			<th>Dirección</th>
 		  </tr>
 		</thead>
-		<tbody id="resultadoconsulta">
-		  
+		<tbody>
+		<?php
+			if(!empty($consulta)){
+				echo $consulta;
+			}
+		  ?>
 		  
 		</tbody>
 		</table>
-
+		
     </div>
-</div>
-
 </div> <!-- fin de container -->
-<script type="text/javascript" src="js/proveedor.js"></script>
+
+<script type="text/javascript" src="js/cliente.js"></script>
 
 </body>
 </html>

@@ -61,9 +61,6 @@ CATEGORIAS DE PRODUCTOS
 			<div class="col-md-3">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
-			<div class="col-md-3">	
-				<button type="button" class="btn btn-success" id="consultar" >VISUALIZAR</button>
-			</div>
 			
 			<div class="col-md-3">	
 		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
