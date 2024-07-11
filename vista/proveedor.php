@@ -42,9 +42,9 @@ PANTALLA DE PROVEEDORES
 		</div>
 		<div class="row mb-4">
 			<div class="col-md">
-			   <label for="Direccion">Dirección</label>
-			   <input class="form-control" type="text" id="Direccion" name="Direccion" />
-			   <span id="sDireccion">Solo letras  entre 3 y 30 caracteres</span>
+			   <label for="direccion">Dirección</label>
+			   <input class="form-control" type="text" id="direccion" name="direccion" />
+			   <span id="sdireccion">Solo letras  entre 3 y 30 caracteres</span>
 			</div>
 			
 		</div>
@@ -92,7 +92,7 @@ PANTALLA DE PROVEEDORES
 			<th>Direccion</th>
 		  </tr>
 		</thead>
-		<tbody id="resultadoconsulta">
+		<tbody>
 		<?php
 			if(!empty($consulta)){
 				echo $consulta;
