@@ -5,7 +5,7 @@ $(document).ready(function(){
         });
         
         $("#rif").on("keyup",function(){
-            validarkeyup(/^[JVG]{1}[-]{1}[0-9]{9,9}$/,$(this),
+            validarkeyup(/^[JVG]{1}[-]{1}[0-9]{6,9}$/,$(this),
 		$("#srif"),"El formato debe ser J-092348760 o G-00003454");
             if($("#rif").val().length > 7){
               var datos = new FormData();
@@ -27,7 +27,7 @@ $(document).ready(function(){
         });
         
         $("#Telefono").on("keyup",function(){
-            validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$(this),$("#sTelefono"),"El formato debe ser 0412-15478964");
+            validarkeyup(/^[0-9]{7,8}$/,$(this),$("#sTelefono"),"El formato debe ser 041215478964");
         });
         $("#Direccion").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
@@ -70,7 +70,7 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[JVG]{1}[-]{1}[0-9]{7,9}$/,$("#rif"),
+        if(validarkeyup(/^[JVG]{1}[-]{1}[0-9]{6,9}$/,$("#rif"),
             $("#srif"),"El formato debe ser J-092348760 o G-00003454")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "J-092348760 o G-00003454");	
@@ -130,7 +130,7 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[JVG]{1}[-]{1}[0-9]{7,9}$/,$("#rif"),
+        if(validarkeyup(/^[JVG]{1}[-]{1}[0-9]{6,9}$/,$("#rif"),
             $("#srif"),"El formato debe ser J-092348760 o G-00003454")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "J-092348760 o G-00003454");	
@@ -141,8 +141,8 @@ $(document).ready(function(){
             muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
-        else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$("#Telefono"),
-        $("#sTelefono"),"El formato debe ser 0412-15478964")==0){
+        else if(validarkeyup(/^[0-9]{7,8}$/,$("#Telefono"),
+        $("#sTelefono"),"El formato debe ser 041215478964")==0){
         muestraMensaje("Verifique el telefono");
         return false;
         }
