@@ -169,7 +169,7 @@ class proveedor extends datos{
 	function consultar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$r = array();
+		//$r = array();
 		try{
 			
 			$resultado = $co->query("select * from proveedores");
@@ -193,20 +193,18 @@ class proveedor extends datos{
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."</td>";
 				}
-				$r['resultado'] = 'consultar';
-				$r['mensaje'] =  $respuesta;
+				return $respuesta;
 			    
 			}
 			else{
-				$r['resultado'] = 'consultar';
-				$r['mensaje'] =  '';
+			return '';
 			}
 			
 		}catch(Exception $e){
-			$r['resultado'] = 'error';
-			$r['mensaje'] =  $e->getMessage();
+			
+			return $e->getMessage();
 		}
-		return $r;
+		
 	}
 	
 	

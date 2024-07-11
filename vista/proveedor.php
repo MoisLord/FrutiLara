@@ -97,7 +97,7 @@ PANTALLA DE PROVEEDORES
 			if(!empty($consulta)){
 				echo $consulta;
 			}
-		  ?>
+		?>
 		</tbody>
 		</table>
 
