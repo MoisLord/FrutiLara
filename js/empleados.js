@@ -74,7 +74,7 @@ $("#incluir").on("click",function(){
 		datos.append('direccion',$("#direccion").val());
 		datos.append('fechaNacimiento',$("#fechaNacimiento").val());
 		enviaAjax(datos);
-
+		setInterval("location.reload()",4000);
 	}
 });
 $("#modificar").on("click",function(){
@@ -108,7 +108,7 @@ $("#eliminar").on("click",function(){
 		datos.append('accion','eliminar');
 		datos.append('cedula',$("#cedula").val());
 		enviaAjax(datos);
-		
+		setInterval("location.reload()",4000);
 	}
 	
 });
