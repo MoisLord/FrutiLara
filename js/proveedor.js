@@ -235,15 +235,9 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-<<<<<<< HEAD
                            $("#Nombre").val(lee.mensaje[0][2]);
                            $("#Telefono").val(lee.mensaje[0][3]);
                            $("#direccion").val(lee.mensaje[0][4]);
-=======
-                           $("#Nombre").val(lee.mensaje[0][1]);
-                           $("#Telefono").val(lee.mensaje[0][2]);
-                           $("#direccion").val(lee.mensaje[0][3]);
->>>>>>> 468af1313ee3b2941361d1b4bf3f262bedbdc55e
                            
                         }
                         else if (lee.resultado == "incluir" || 
