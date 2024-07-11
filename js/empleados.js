@@ -74,6 +74,7 @@ $("#incluir").on("click",function(){
 		datos.append('direccion',$("#direccion").val());
 		datos.append('fechaNacimiento',$("#fechaNacimiento").val());
 		enviaAjax(datos);
+
 	}
 });
 $("#modificar").on("click",function(){
@@ -87,7 +88,9 @@ $("#modificar").on("click",function(){
 		datos.append('correo',$("#correo").val());
 		datos.append('direccion',$("#direccion").val());
 		datos.append('fechaNacimiento',$("#fechaNacimiento").val());
+		location.reload();
 		enviaAjax(datos);
+		
 		
 	}
 });
@@ -106,6 +109,7 @@ $("#eliminar").on("click",function(){
 		datos.append('accion','eliminar');
 		datos.append('cedula',$("#cedula").val());
 		enviaAjax(datos);
+		
 	}
 	
 });
@@ -192,7 +196,7 @@ function muestraMensaje(mensaje){
 			$("#mostrarmodal").modal("show");
 			setTimeout(function() {
 					$("#mostrarmodal").modal("hide");
-			},5000);
+			},3000);
 }
 
 

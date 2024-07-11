@@ -181,6 +181,7 @@ class empleados extends datos{
 					$p->execute();
 					$r['resultado'] = 'eliminar';
 			        $r['mensaje'] =  'Registro Eliminado';
+					
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -192,7 +193,6 @@ class empleados extends datos{
 		}
 		return $r;
 	}
-	
 	
 	function consultar(){
 		$co = $this->conecta();
