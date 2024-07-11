@@ -204,7 +204,7 @@ $(document).ready(function(){
         $("#rif").val($(linea).find("td:eq(0)").text());
         $("#Nombre").val($(linea).find("td:eq(1)").text());
         $("#Telefono").val($(linea).find("td:eq(2)").text());
-        $("#Direccion").val($(linea).find("td:eq(3)").text());
+        $("#direccion").val($(linea).find("td:eq(3)").text());
         
     }
     
@@ -235,9 +235,9 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#Nombre").val(lee.mensaje[0][2]);
-                           $("#Telefono").val(lee.mensaje[0][3]);
-                           $("#Direccion").val(lee.mensaje[0][4]);
+                           $("#Nombre").val(lee.mensaje[0][1]);
+                           $("#Telefono").val(lee.mensaje[0][2]);
+                           $("#direccion").val(lee.mensaje[0][3]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
@@ -277,7 +277,7 @@ $(document).ready(function(){
         $("#rif").val("");
         $("#Nombre").val("");
         $("#Telefono").val("");
-        $("#Direccion").val("");
+        $("#direccion").val("");
         
     }
     
