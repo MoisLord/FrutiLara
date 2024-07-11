@@ -28,7 +28,7 @@ class proveedor extends datos{
 	function set_Telefono($valor){
 		$this->Telefono = $valor;
 	}
-	function set_Direccion($valor){
+	function set_direccion($valor){
 		$this->direccion=$valor;
 	}
 	
@@ -42,7 +42,7 @@ class proveedor extends datos{
 	function get_Telefono(){
 		return $this->Telefono;
 	}
-	function get_Direccion(){
+	function get_direccion(){
 		return $this->direccion;
 	}
 	
