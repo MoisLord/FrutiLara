@@ -55,7 +55,7 @@ $(document).ready(function(){
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             enviaAjax(datos);
-            
+            setInterval("location.reload()",4000);
         }
     });
     $("#modificar").on("click",function(){
@@ -68,7 +68,7 @@ $(document).ready(function(){
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             enviaAjax(datos);
-            
+            setInterval("location.reload()",4000);
         }
     });
     
@@ -86,7 +86,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('codigo_categoria',$("#codigo_categoria").val());
             enviaAjax(datos);
-            
+            setInterval("location.reload()",4000);
         }
         
     });
@@ -202,17 +202,7 @@ $(document).ready(function(){
     }
     
     //funcion para pasar de la lista a el formulario
-    function coloca(pos,accion){
-	
-        linea=$(pos).closest('tr');
-    
-    
-        if(accion==0){
-            $("#proceso").text("MODIFICAR");
-        }
-        else{
-            $("#proceso").text("ELIMINAR");
-        }
+    function coloca(linea){
         $("#codigo_categoria").val($(linea).find("td:eq(0)").text());
         $("#descripcion_categoria").val($(linea).find("td:eq(1)").text());
         $("#unidadMedNormal").val($(linea).find("td:eq(2)").text());
@@ -243,9 +233,9 @@ $(document).ready(function(){
                            crearDT();
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#descripcion_categoria").val(lee.mensaje[0][2]);
-                           $("#unidadMedNormal").val(lee.mensaje[0][3]);
-                           $("#unidadMedAlt").val(lee.mensaje[0][4]);
+                           $("#descripcion_categoria").val(lee.mensaje[0][1]);
+                           $("#unidadMedNormal").val(lee.mensaje[0][2]);
+                           $("#unidadMedAlt").val(lee.mensaje[0][3]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
