@@ -55,6 +55,7 @@ $(document).ready(function(){
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             enviaAjax(datos);
+            
         }
     });
     $("#modificar").on("click",function(){
@@ -85,6 +86,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('codigo_categoria',$("#codigo_categoria").val());
             enviaAjax(datos);
+            
         }
         
     });

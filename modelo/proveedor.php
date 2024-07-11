@@ -12,7 +12,7 @@ class proveedor extends datos{
 	private $rif; 
 	private $Nombre;
 	private $Telefono;
-	private $Direccion;
+	private $direccion;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
@@ -28,7 +28,7 @@ class proveedor extends datos{
 	function set_Telefono($valor){
 		$this->Telefono = $valor;
 	}
-	function set_Direccion($valor){
+	function set_direccion($valor){
 		$this->direccion=$valor;
 	}
 	
@@ -42,7 +42,7 @@ class proveedor extends datos{
 	function get_Telefono(){
 		return $this->Telefono;
 	}
-	function get_Direccion(){
+	function get_direccion(){
 		return $this->direccion;
 	}
 	
