@@ -88,9 +88,8 @@ $("#modificar").on("click",function(){
 		datos.append('correo',$("#correo").val());
 		datos.append('direccion',$("#direccion").val());
 		datos.append('fechaNacimiento',$("#fechaNacimiento").val());
-		location.reload();
 		enviaAjax(datos);
-		
+		setInterval("location.reload()",4000);
 		
 	}
 });
