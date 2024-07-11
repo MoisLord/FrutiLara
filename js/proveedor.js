@@ -29,10 +29,10 @@ $(document).ready(function(){
         $("#Telefono").on("keyup",function(){
             validarkeyup(/^[0-9]{7,8}$/,$(this),$("#sTelefono"),"El formato debe ser 041215478964");
         });
-        $("#Direccion").on("keypress",function(e){
+        $("#direccion").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
-        $("#Direccion").on("keyup",function(){
+        $("#direccion").on("keyup",function(){
             validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
             $(this),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres");
         });
@@ -50,7 +50,7 @@ $(document).ready(function(){
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
             datos.append('Telefono',$("#Telefono").val());
-            datos.append('Direccion',$("#Direccion").val());
+            datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
         }
     });
@@ -62,7 +62,7 @@ $(document).ready(function(){
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
             datos.append('Telefono',$("#Telefono").val());
-            datos.append('Direccion',$("#Direccion").val());
+            datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
             
         }
@@ -147,7 +147,7 @@ $(document).ready(function(){
         return false;
         }
         else if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-        $("#Direccion"),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres")==0){
+        $("#direccion"),$("#sdireccion"),"Solo letras  entre 3 y 30 caracteres")==0){
         muestraMensaje("Direccion debe tener <br/>Solo letras  entre 3 y 30 caracteres");
         return false;
         }
@@ -235,9 +235,9 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#Nombre").val(lee.mensaje[0][1]);
-                           $("#Telefono").val(lee.mensaje[0][2]);
-                           $("#direccion").val(lee.mensaje[0][3]);
+                           $("#Nombre").val(lee.mensaje[0][2]);
+                           $("#Telefono").val(lee.mensaje[0][3]);
+                           $("#direccion").val(lee.mensaje[0][4]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
