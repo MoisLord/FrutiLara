@@ -35,7 +35,7 @@ $(document).ready(function(){
 	});
 
 	$("#correo").on("keypress",function(e){
-		validarkeypress(/^[A-Za-z@_.\b\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
+		validarkeypress(/^[A-Za-z0-9@_.\b\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
 	});
 	
 	$("#correo").on("keyup",function(){
