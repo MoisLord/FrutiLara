@@ -37,11 +37,12 @@ CATEGORIAS DE PRODUCTOS
         <div class="col-md-12">
 					   <label for="unidadMedNormal">Unidad de medida común</label>
 					   <select class="form-control" id="unidadMedNormal">
-							<option value="KILOGRAMO">Kilogramo</option>
-							<option value="BACHILLER">Bachiller</option>
-							<option value="TSU">TSU</option>
-							<option value="GRADO">Grado Superior</option>
-							<option value="POSTGRADO">Post Grado</option>
+					   		<option value=""></option>
+							<option value="KILOGRAMOS">Kilogramos</option>
+							<option value="MILIGRAMOS">Miligramos</option>
+							<option value="LITROS">Litros</option>
+							<option value="MILITROS">Militros</option>
+							<option value="UNIDADES">Unidades</option>
 					   </select>
 					</div>
 					</div>
@@ -49,11 +50,11 @@ CATEGORIAS DE PRODUCTOS
 					<div class="col-md-12">
 					   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
 					   <select class="form-control" id="unidadMedAlt">
-							<option value="PRIMARIA">Primaria</option>
-							<option value="BACHILLER">Bachiller</option>
-							<option value="TSU">TSU</option>
-							<option value="GRADO">Grado Superior</option>
-							<option value="POSTGRADO">Post Grado</option>
+					   		<option value=""></option>
+					   		<option value="N/A">No aplica</option>
+							<option value="CAJAS">Cajas</option>
+							<option value="CESTAS">Cestas</option>
+							<option value="SACOS">Sacos</option>
 					   </select>
 					</div>
 					</div>
