@@ -31,7 +31,7 @@ MARCAS DE PRODUCTOS
 			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="descripcion_marca">Descripción de la Marca</label>
-			   <input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca"/>
+			   <input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca" placeholder="El formato debe ser Numerico"/>
 			   <span id="smarca"></span>
 			</div>
 		</div>
