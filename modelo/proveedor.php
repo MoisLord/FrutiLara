@@ -126,7 +126,7 @@ class proveedor extends datos{
 						where
 						rif = :rif
 						");
-					$p->bindParam(':documento_legal',$this->document);
+					$p->bindParam(':documento_legal',$this->docu);
 					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
@@ -189,11 +189,11 @@ class proveedor extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
-					$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['documento_legal'];
-						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['rif'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['documento_legal'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['nombre'];
@@ -204,7 +204,7 @@ class proveedor extends datos{
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."</tr>";
+						$respuesta = $respuesta."</td>";
 				}
 				return $respuesta;
 			    
