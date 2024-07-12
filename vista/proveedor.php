@@ -22,11 +22,12 @@ PANTALLA DE PROVEEDORES
 		<div class="row mb-3">
 		<div class="col-md">
 			<larel>Documento legal</larel>
-			<select class="form-select" aria-label="Default select example">
+			<select class="form-select" name="rif" id="rif" aria-label="Default select example">
   				<option selected>Seleccione el documento legal</option>
-  				<option value="1">V</option>
-  				<option value="2">J</option>
-  				<option value="3">G</option>
+  				<option value="V">V</option>
+  				<option value="J">J</option>
+  				<option value="G">G</option>
+				
 			</select>
 			</div>
 			<div class="col-md">
@@ -44,16 +45,6 @@ PANTALLA DE PROVEEDORES
 		</div>    
 	
 		<div class="row mb-4">
-		<div class="col-md">
-			<larel>Numero de servicios</larel>
-			<select class="form-select" aria-label="Default select example">
-  					<option selected>Seleccione el servicio</option>
-  					<option value="1">0412</option>
-  					<option value="2">0414</option>
-  					<option value="3">0416</option>
-					  <option value="3">0424</option>
-			</select>
-			</div>
 			<div class="col-md">
         		<label for="telefono">Telefono</label>
 				<input class="form-control" type="text" id="Telefono" name="Telefono" />
@@ -63,8 +54,8 @@ PANTALLA DE PROVEEDORES
 		<div class="row mb-4">
 			<div class="col-md">
 			   <label for="Direccion">Dirección</label>
-			   <input class="form-control" type="text" id="Direccion" name="Direccion" />
-			   <span id="sDireccion"></span>
+			   <input class="form-control" type="text" id="direccion" name="direccion" />
+			   <span id="sdireccion"></span>
 			</div>
 			
 		</div>
