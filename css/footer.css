@@ -56,7 +56,11 @@
     color: #fff;
     font-size: 32px;
     display: inline-block;
-    
+    margin: 0 10px;
+    transition: 0.5s;
+  }
+  .icon:hover {
+    transform: translateY(-10px);
   }
 
   .menu {
