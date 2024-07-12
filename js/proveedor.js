@@ -52,6 +52,7 @@ $(document).ready(function(){
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
+            setInterval("location.reload()",4000);
         }
     });
     $("#modificar").on("click",function(){
@@ -64,7 +65,7 @@ $(document).ready(function(){
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
-            
+            setInterval("location.reload()",4000);
         }
     });
     
@@ -82,6 +83,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('rif',$("#rif").val());
             enviaAjax(datos);
+            setInterval("location.reload()",4000);
         }
         
     });
