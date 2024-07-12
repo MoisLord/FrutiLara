@@ -1,11 +1,11 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
         $("#rif").on("keypress",function(e){
-            validarkeypress(/^[JVG0-9-\b]*$/,e);
+            validarkeypress(/^[0-9-\b]*$/,e);
         });
         
         $("#rif").on("keyup",function(){
-            validarkeyup(/^[JVG][0-9]{6,9}$/,$(this),
+            validarkeyup(/^[0-9]{6,9}$/,$(this),
 		$("#srif"),"El formato debe ser 092348760 o 00003454");
             if($("#rif").val().length > 6){
               var datos = new FormData();
@@ -39,14 +39,13 @@ $(document).ready(function(){
         
     //FIN DE VALIDACION DE DATOS
     
-    
-    
     //CONTROL DE BOTONES
     
     $("#incluir").on("click",function(){
         if(validarenvio()){
             var datos = new FormData();
             datos.append('accion','incluir');
+            datos.append('documento',$("#documento").val());
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
             datos.append('Telefono',$("#Telefono").val());
@@ -60,6 +59,7 @@ $(document).ready(function(){
     
             var datos = new FormData();
             datos.append('accion','modificar');
+            datos.append('documento',$("#documento").val());
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
             datos.append('Telefono',$("#Telefono").val());
@@ -71,7 +71,7 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[JVG][0-9]{6,9}$/,$("#rif"),
+        if(validarkeyup(/^[0-9]{6,9}$/,$("#rif"),
             $("#srif"),"El formato debe ser J-092348760 o G-00003454")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "J-092348760 o G-00003454");	
@@ -132,7 +132,7 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[JVG][0-9]{6,9}$/,$("#rif"),
+        if(validarkeyup(/^[0-9]{6,9}$/,$("#rif"),
             $("#srif"),"El formato debe ser J092348760 o G00003454")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "J092348760");	
@@ -143,7 +143,7 @@ $(document).ready(function(){
             muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
-        else if(validarkeyup(/^[0-9]{7,8}$/,$("#Telefono"),
+        else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$("#Telefono"),
         $("#sTelefono"),"El formato debe ser 0412-15478964")==0){
         muestraMensaje("Verifique el telefono");
         return false;
@@ -203,10 +203,11 @@ $(document).ready(function(){
     
     //funcion para pasar de la lista a el formulario
     function coloca(linea){
-        $("#rif").val($(linea).find("td:eq(0)").text());
-        $("#Nombre").val($(linea).find("td:eq(1)").text());
-        $("#Telefono").val($(linea).find("td:eq(2)").text());
-        $("#direccion").val($(linea).find("td:eq(3)").text());
+        $("#documento").val($(linea).find("td:eq(0)").text());
+        $("#rif").val($(linea).find("td:eq(1)").text());
+        $("#Nombre").val($(linea).find("td:eq(2)").text());
+        $("#Telefono").val($(linea).find("td:eq(3)").text());
+        $("#direccion").val($(linea).find("td:eq(4)").text());
         
     }
     
@@ -237,6 +238,7 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
+                            $("#documento").val(lee.mensaje[0][1]);
                            $("#Nombre").val(lee.mensaje[0][2]);
                            $("#Telefono").val(lee.mensaje[0][3]);
                            $("#direccion").val(lee.mensaje[0][4]);
@@ -275,7 +277,7 @@ $(document).ready(function(){
     }
     
     function limpia(){
-        
+        $("#documento").val("");
         $("#rif").val("");
         $("#Nombre").val("");
         $("#Telefono").val("");

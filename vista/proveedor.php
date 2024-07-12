@@ -22,7 +22,7 @@ PANTALLA DE PROVEEDORES
 		<div class="row mb-3">
 		<div class="col-md">
 			<larel>Documento legal</larel>
-			<select class="form-select" name="rif" id="rif" aria-label="Default select example">
+			<select class="form-select" name="documento" id="documento" aria-label="Default select example">
   				<option selected>Seleccione el documento legal</option>
   				<option value="V">V</option>
   				<option value="J">J</option>
@@ -97,6 +97,7 @@ PANTALLA DE PROVEEDORES
 		<table class="table table-striped table-hover" id="tablaproveedores">
 		<thead>
 		  <tr>
+		    <th>documento legal</th>
 			<th>Rif</th>
 			<th>Nombre del proveedor</th>
 			<th>Telefonon</th>	
