@@ -46,7 +46,7 @@
 <footer class="footer">
   <ul class="social-icon">
     <li class="icon-elem">
-      <a href="" class="icon">
+      <a href="https://www.instagram.com/fruti_lara?igsh=MWh5MW9mb3JpOGlxYg==" class="icon">
         <ion-icon name="logo-instagram"></ion-icon>
       </a>
     </li>
