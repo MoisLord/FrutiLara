@@ -57,10 +57,10 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo_categoria"),
+        if(validarkeyup(/^[A-Za-z0-9]{7,8}$/,$("#codigo_categoria"),
             $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
-                            "12345678");	
+                            "12345678 o hoortzas o algo1234");	
             
         }
         else{	
@@ -121,7 +121,7 @@ $(document).ready(function(){
         if(validarkeyup(/^[A-Za-z0-9]{7,8}$/,$("#codigo_categoria"),
             $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
-                            "12345678");	
+                            "12345678 o hoortzas o algo1234");	
             return false;					
         }	
         else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#descripcion_categoria"), $("#sdescripcion_categoria"), "Solo letras, entre 3 a 20 dígitos") == 0) {

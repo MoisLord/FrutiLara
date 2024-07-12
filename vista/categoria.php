@@ -23,7 +23,7 @@ CATEGORIAS DE PRODUCTOS
 			<div class="col-md">
 			   <label for="codigo_categoria">Codigo de categoria</label>
 			   <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria"/>
-			   <span>El codigo debe ser numerico, alfabetico o alfanumerico</span>
+			   <span>El codigo debe ser numerico, alfabetico o alfanumerico, entre 7 y 8 digitos</span>
 			   </div>
 			   <span id="scodigo_categoria" class="alert alert-success"></span>
 			</div>
