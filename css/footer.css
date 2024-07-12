@@ -59,11 +59,14 @@
     height: 30;
     display: inline-block;
     margin: 0 10px;
+    opacity: 0.65;
     transition: 0.5s;
   }
 
   .icon:hover {
     transform: translateY(-10px);
+    opacity: 1;
+    color: #fff;
   }
 
   .menu {
