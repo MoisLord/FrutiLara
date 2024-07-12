@@ -22,15 +22,16 @@ CATEGORIAS DE PRODUCTOS
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="codigo_categoria">Codigo de categoria</label>
+			   <span id="scodigo_categoria" class="alert alert-danger"></span>
 			   <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria"/>
-			   <span id="scodigo_categoria"></span>
+			   <span class="alert alert-danger">Ejemplo:Hort29</span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="descripcion_categoria">Descripción de la categoria</label>
 			   <input class="form-control" type="text" id="descripcion_categoria" name="descripcion_categoria"/>
-			   <span id="sdescripcion_categoria"></span>
+			   <span id="sdescripcion_categoria" class="alert alert-danger"></span>
 			</div>
 		</div>
 		<div class="row mb-3">    

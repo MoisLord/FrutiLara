@@ -1,11 +1,11 @@
 $(document).ready(function(){
     //Finalización del sector para la validación de los datos	
         $("#codigo_categoria").on("keypress",function(e){
-            validarkeypress(/^[0-9-\b]*$/,e);
+            validarkeypress(/^[A-Za-z0-9-\b]*$/,e);
         });
         
         $("#codigo_categoria").on("keyup",function(){
-            validarkeyup(/^[0-9]{7,8}$/,$(this),
+            validarkeyup(/^[A-Za-z0-9]{7,8}$/,$(this),
             $("#scodigo_categoria"),"El Formato Debe Ser Numerico ");
             if($("#codigo_categoria").val().length > 7){
               var datos = new FormData();
@@ -118,7 +118,7 @@ $(document).ready(function(){
     
     //Comienzo del sector para la validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo_categoria"),
+        if(validarkeyup(/^[A-Za-z0-9]{7,8}$/,$("#codigo_categoria"),
             $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
                             "12345678");	
