@@ -21,7 +21,7 @@ MODELO DE PRODUCTOS
    <div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="id_modelo">Modelo o modelo de modelo</label>
+			   <label for="id_modelo">Codigo de modelo</label>
 			   <input class="form-control" type="text" id="id_modelo" name="id_modelo"/>
 			   <span id="sid_modelo"></span>
 			</div>
