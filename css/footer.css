@@ -61,7 +61,7 @@
     margin: 0 10px;
     transition: 0.5s;
   }
-  
+
   .icon:hover {
     transform: translateY(-10px);
   }
@@ -96,12 +96,6 @@
 
 svg {
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    position: relative;
-    margin: 10px 5px;
-    flex-wrap: wrap;
 }
 
 .text {
