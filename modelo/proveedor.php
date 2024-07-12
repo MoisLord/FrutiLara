@@ -9,6 +9,7 @@ class proveedor extends datos{
 	/*Dentro de la clases proveedor 
 	se declara atributos con modificadores de acceso de tipo private en la cual estarán  predefinido
 */
+	private $document;
 	private $rif; 
 	private $Nombre;
 	private $Telefono;
@@ -18,6 +19,9 @@ class proveedor extends datos{
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
 	/*Una vez declarado los atributos falta colocar los metodos getter(leer) y setter(colocar) ya que esos atributos private(No podemos acceder
 	esos atributos desde fuera)para acceder a ellas el metodo set tomara parametro de una varaiable en caso el getter retornara*/ 
+	function set_document($valor){
+		$this->document = $valor; 
+	}
 	function set_rif($valor){
 		$this->rif = $valor; 
 	}
@@ -32,7 +36,9 @@ class proveedor extends datos{
 		$this->direccion=$valor;
 	}
 	
-	
+	function get_document(){
+		return $this->document;
+	}
 	function get_rif(){
 		return $this->rif;
 	}
@@ -67,6 +73,7 @@ class proveedor extends datos{
 			try {
 				
 					$p = $co->prepare("insert into proveedores(
+					    documento_legal,
 						rif,
 						nombre,
 						telefono,
@@ -78,6 +85,7 @@ class proveedor extends datos{
 						:telefono,
 						:direccion
 						)");
+			        $p->bindParam(':documento_legal',$this->document);
 					$p->bindParam(':rif',$this->rif);		//Esta funcion bindparam() vinculara con una variable como una referencia
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
@@ -111,12 +119,14 @@ class proveedor extends datos{
 		if($this->existe($this->rif)){
 			try {
 				$p = $co->prepare("update proveedores set
+						documento_legal = :documento_legal,
 						nombre = :nombre,
 						telefono = :telefono,
 						direccion = :direccion
 						where
 						rif = :rif
 						");
+					$p->bindParam(':documento_legal',$this->document);
 					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
@@ -179,6 +189,9 @@ class proveedor extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['documento_legal'];
+						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
@@ -191,7 +204,7 @@ class proveedor extends datos{
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
 				}
 				return $respuesta;
 			    
