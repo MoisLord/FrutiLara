@@ -48,7 +48,7 @@ $(document).ready(function(){
             datos.append('id_marca',$("#id_marca").val());
             datos.append('descripcion_marca',$("#descripcion_marca").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            setInterval("location.reload()",1000);
             
         }
     });
