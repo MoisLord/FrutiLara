@@ -192,8 +192,11 @@ class proveedor extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['documento'];
+						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['documento']."-".$r['rif'];
+							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['nombre'];
