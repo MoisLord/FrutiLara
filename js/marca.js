@@ -21,7 +21,7 @@ $(document).ready(function(){
         });
         $("#descripcion_marca").on("keyup",function(){
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,40}$/,
-            $(this),$("#sdescripcion_marca"),"Solo letras  entre 3 y 40 caracteres");
+            $(this),$("#sdescripcion_marca"),"Solo letras entre 3 y 40 caracteres");
         });
         
         
@@ -38,6 +38,7 @@ $(document).ready(function(){
             datos.append('id_marca',$("#id_marca").val());
             datos.append('descripcion_marca',$("#descripcion_marca").val());
             enviaAjax(datos);
+            setInterval("location.reload()",4000);
         }
     });
     $("#modificar").on("click",function(){
@@ -67,6 +68,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('id_marca',$("#id_marca").val());
             enviaAjax(datos);
+            setInterval("location.reload()",4000);
         }
         
     });
@@ -75,6 +77,7 @@ $(document).ready(function(){
         var datos = new FormData();
         datos.append('accion','consultar');
         enviaAjax(datos);
+        setInterval("location.reload()",4000);
     });
     //FIN DE CONTROL DE BOTONES	
     

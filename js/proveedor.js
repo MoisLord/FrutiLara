@@ -238,7 +238,7 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                            $("#documento").val(lee.mensaje[0][1]);
+                            $("#document").val(lee.mensaje[0][1]);
                            $("#Nombre").val(lee.mensaje[0][2]);
                            $("#Telefono").val(lee.mensaje[0][3]);
                            $("#direccion").val(lee.mensaje[0][4]);
