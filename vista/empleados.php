@@ -24,7 +24,7 @@ GESTIÓN DE EMPLEADOS
 			   <label for="cedula">Cedula</label>
 			   <input class="form-control" type="text" id="cedula"
 				name="cedula"/>
-			   <span id="scedula"></span>
+			   <span id="scedula">El formato debe ser numérico</span>
 			</div>
 		</div>
 		<div class="row mb-3">
@@ -32,7 +32,7 @@ GESTIÓN DE EMPLEADOS
 			   <label for="nombre_apellido">Nombre y Apellido</label>
 			   <input class="form-control" type="text" id="nombre_apellido"
 				name="nombre_apellido"/>
-			   <span id="snombre_apellido"></span>
+			   <span id="snombre_apellido">Ingrese su nombre y apellido</span>
 			</div>
 		</div>
 		
@@ -41,7 +41,7 @@ GESTIÓN DE EMPLEADOS
 			   <label for="telefono">Teléfono</label>
 			   <input class="form-control" type="text" id="telefono" name="telefono" 
 			   />
-			   <span id="stelefono"></span>
+			   <span id="stelefono">El formato debe ser 04XX-XXXXXXX</span>
 			</div>
 		</div>
 		<div class="row mb-3">
@@ -49,7 +49,7 @@ GESTIÓN DE EMPLEADOS
 			   <label for="correo">Correo</label>
 			   <input class="form-control" type="text" id="correo" name="correo" 
 			   />
-			   <span id="scorreo"></span>
+			   <span id="scorreo">El formato debe ser nombrecorreo@servidor.com</span>
 			</div>
 		</div>
 
@@ -58,7 +58,7 @@ GESTIÓN DE EMPLEADOS
 			   <label for="direccion">Dirección</label>
 			   <input class="form-control" type="text" id="direccion" name="direccion" 
 			   />
-			   <span id="sdireccion"></span>
+			   <span id="sdireccion">El formato debe ser alfanumérico</span>
 			</div>
 		</div>
 

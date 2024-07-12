@@ -63,6 +63,8 @@ $("#incluir").on("click",function(){
 		datos.append('telefono',$("#telefono").val());
 		datos.append('direccion',$("#direccion").val());
 		enviaAjax(datos);
+
+		setInterval("location.reload()",4000);
 	}
 });
 $("#modificar").on("click",function(){
@@ -75,6 +77,8 @@ $("#modificar").on("click",function(){
 		datos.append('telefono',$("#telefono").val());
 		datos.append('direccion',$("#direccion").val());
 		enviaAjax(datos);
+
+		setInterval("location.reload()",4000);
 		
 	}
 });
@@ -93,6 +97,8 @@ $("#eliminar").on("click",function(){
 		datos.append('accion','eliminar');
 		datos.append('cedula',$("#cedula").val());
 		enviaAjax(datos);
+
+		setInterval("location.reload()",4000);
 	}
 	
 });
