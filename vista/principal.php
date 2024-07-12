@@ -44,6 +44,13 @@
 </div>
 <div>
 <footer class="footer">
+  <ul class="social-icon">
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+  </ul>
   <ul class="menu">
     <li class="menu-elem">
       <a href="" class="menu-icon"> MARCAS DE PRODUCTOS </a>
