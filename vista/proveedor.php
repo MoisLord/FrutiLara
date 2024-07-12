@@ -18,7 +18,17 @@ PANTALLA DE PROVEEDORES
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
    <h4 class="text-center text-success">REGISTRO DE PROVEEDORES</h4>
 	<div class="container">	
+		
 		<div class="row mb-3">
+		<div class="col-md">
+			<larel>Documento legal</larel>
+			<select class="form-select" aria-label="Default select example">
+  				<option selected>Seleccione el documento legal</option>
+  				<option value="1">V</option>
+  				<option value="2">J</option>
+  				<option value="3">G</option>
+			</select>
+			</div>
 			<div class="col-md">
 			   <label for="rif">Rif</label>
 			   <input class="form-control" type="text" id="rif" name="rif" />
@@ -34,6 +44,16 @@ PANTALLA DE PROVEEDORES
 		</div>    
 	
 		<div class="row mb-4">
+		<div class="col-md">
+			<larel>Numero de servicios</larel>
+			<select class="form-select" aria-label="Default select example">
+  					<option selected>Seleccione el servicio</option>
+  					<option value="1">0412</option>
+  					<option value="2">0414</option>
+  					<option value="3">0416</option>
+					  <option value="3">0424</option>
+			</select>
+			</div>
 			<div class="col-md">
         		<label for="telefono">Telefono</label>
 				<input class="form-control" type="text" id="Telefono" name="Telefono" />
