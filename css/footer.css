@@ -98,21 +98,17 @@ svg {
     color: #fff;
 }
 
-.text {
-    color: #fff;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
 .bi-shop {
   /* Añade un margen derecho para separar el icono del texto */
   margin-right: 10px;
 }
 
 .text {
-  /* Añade un margen izquierdo para separar el texto del icono */
-  margin-left: 10px;
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 20px;
 }
 /* Fin del Footer */
