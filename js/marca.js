@@ -1,12 +1,12 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
         $("#id_marca").on("keypress",function(e){
-            validarkeypress(/^[0-9-\b]*$/,e);
+            validarkeypress(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
         });
         
         $("#id_marca").on("keyup",function(){
-            validarkeyup(/^[0-9]{7,20}$/,$(this),
-            $("#sid_marca"),"El Formato Debe Ser Numerico ");
+            validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$(this),
+            $("#sid_marca"),"El Formato Debe Ser Alfanúmerico ");
             if($("#id_marca").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
@@ -17,10 +17,10 @@ $(document).ready(function(){
         
         
         $("#descripcion_marca").on("keypress",function(e){
-            validarkeypress(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
+            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         $("#descripcion_marca").on("keyup",function(){
-            validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{3,40}$/,
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,40}$/,
             $(this),$("#sdescripcion_marca"),"Solo letras  entre 3 y 40 caracteres");
         });
         

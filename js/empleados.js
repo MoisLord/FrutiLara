@@ -35,11 +35,11 @@ $(document).ready(function(){
 	});
 
 	$("#correo").on("keypress",function(e){
-		validarkeypress(/^[A-Za-z@_.\b\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
+		validarkeypress(/^[A-Za-z0-9@_.\b\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
 	});
 	
 	$("#correo").on("keyup",function(){
-		validarkeyup(/^[A-Za-z_\u00f1\u00d1\u00E0-\u00FC-]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
+		validarkeyup(/^[A-Za-z0-9_\u00f1\u00d1\u00E0-\u00FC-]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
 		$(this),$("#scorreo"),"El formato debe ser alguien@servidor.com");
 	});
 
@@ -173,7 +173,7 @@ function validarenvio(){
 		 muestraMensaje("error",4000,"Valida","Verifique el Telefono");
 	     return false;
 	}
-	else if(validarkeyup(/^[A-Za-z_\u00f1\u00d1\u00E0-\u00FC-]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
+	else if(validarkeyup(/^[A-Za-z0-9_\u00f1\u00d1\u00E0-\u00FC-]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
 		$("#correo"),$("#scorreo"),"El formato debe ser alguien@servidor.com")==0){
 		muestraMensaje("error",4000,"Valida","Verifique el Correo");
 		 return false;

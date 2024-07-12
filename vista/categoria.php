@@ -32,21 +32,31 @@ CATEGORIAS DE PRODUCTOS
 			   <input class="form-control" type="text" id="descripcion_categoria" name="descripcion_categoria"/>
 			   <span id="sdescripcion_categoria"></span>
 			</div>
-		</div>    
-        
-		<div class="row mb-4">
-			<div class="col-md">
-        		<label for="unidadMedNormal">Unidad de medida común</label>
-       			<input class="form-control" type="text" id="unidadMedNormal" name="unidadMedNormal"/>
-				<span id="sunidadMedNormal"></span>
-    		</div>
-			</div>
-			<div class="row mb-4">
-			<div class="col-md">
-			   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
-			   <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt"/>
-			   <span id="sunidadMedAlt"></span>
-			</div>
+		</div>
+		<div class="row mb-4">    
+        <div class="col-md-12">
+					   <label for="unidadMedNormal">Unidad de medida común</label>
+					   <select class="form-control" id="unidadMedNormal">
+							<option value="KILOGRAMO">Kilogramo</option>
+							<option value="BACHILLER">Bachiller</option>
+							<option value="TSU">TSU</option>
+							<option value="GRADO">Grado Superior</option>
+							<option value="POSTGRADO">Post Grado</option>
+					   </select>
+					</div>
+					</div>
+					<div class="row mb-4">
+					<div class="col-md-12">
+					   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
+					   <select class="form-control" id="unidadMedAlt">
+							<option value="PRIMARIA">Primaria</option>
+							<option value="BACHILLER">Bachiller</option>
+							<option value="TSU">TSU</option>
+							<option value="GRADO">Grado Superior</option>
+							<option value="POSTGRADO">Post Grado</option>
+					   </select>
+					</div>
+					</div>
 		</div> <!-- fin del contenedor de campos -->
 
 		<!-- linea divisora de campos y botones -->
