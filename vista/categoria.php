@@ -33,7 +33,7 @@ CATEGORIAS DE PRODUCTOS
 			   <span id="sdescripcion_categoria"></span>
 			</div>
 		</div>
-		<div class="row mb-4">    
+		<div class="row mb-3">    
         <div class="col-md-12">
 					   <label for="unidadMedNormal">Unidad de medida común</label>
 					   <select class="form-control" id="unidadMedNormal">
@@ -46,7 +46,7 @@ CATEGORIAS DE PRODUCTOS
 					   </select>
 					</div>
 					</div>
-					<div class="row mb-4">
+					<div class="row mb-3">
 					<div class="col-md-12">
 					   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
 					   <select class="form-control" id="unidadMedAlt">
@@ -85,11 +85,8 @@ CATEGORIAS DE PRODUCTOS
 				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 			</div>
 			</div><!-- fin de la sección de contenedor de los botones -->
-	</div> <!-- fin de la sección de contenedor  -->
+
 	</form>
-
-
-
 
 	<div class="col-8 p-4">
 	<div class="container">

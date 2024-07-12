@@ -21,23 +21,6 @@ $(document).ready(function(){
         $("#descripcion_categoria").on("keyup", function() {
             validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sdescripcion_categoria"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
         });
-
-        $("#unidadMedNormal").on("keypress", function(e) {
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
-        });
-        
-        $("#unidadMedNormal").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sunidadMedNormal"), "Debe colocar la unidad de medida más común con solo letras, entre 3 a 20 digitos");
-        });
-
-        $("#unidadMedAlt").on("keypress", function(e) {
-            validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
-        });
-        
-        $("#unidadMedAlt").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sunidadMedAlt"), "Debe colocar la unidad de medida alternativa con solo números, entre 3 a 20 digitos");
-        });
-
         
         
     //Finalización del sector para la validación de los datos
@@ -145,15 +128,6 @@ $(document).ready(function(){
             muestraMensaje("La descripción debe ser <br/>Solo letras, entre 3 a 20 dígitos");
             return false;
         }
-        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#unidadMedNormal"), $("#sunidadMedNormal"), "Solo letras, entre 3 a 20 dígitos") == 0) {
-            muestraMensaje("unidad Medida Normal debe ser <br/>Solo letras, entre 3 a 20 dígitos");
-            return false;
-        }
-        else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#unidadMedAlt"), $("#sunidadMedAlt"), "Solo letras, entre 3 a 20 dígitos") == 0) {
-            muestraMensaje("unidad de Medidida Alterna debe ser <br/>Solo letras, entre 3 a 20 dígitos");
-            return false;
-        }
-        
         return true;
     }//Finalización del sector para la validación de todos los campos antes del envio
     
