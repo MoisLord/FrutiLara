@@ -33,14 +33,14 @@ PANTALLA DE PROVEEDORES
 			<div class="col-md">
 			   <label for="rif">Rif</label>
 			   <input class="form-control" type="text" id="rif" name="rif" />
-			   <span id="srif"></span>
+			   <span id="srif">El formato debe ser 092348760 o 00003454</span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="nombre_proveedor">Nombre del proveedor</label>
 			   <input class="form-control" type="text" id="Nombre" name="Nombre" />
-			   <span id="sNombre"></span>
+			   <span id="sNombre">Solo letras  entre 3 y 30 caracteres</span>
 			</div>
 		</div>    
 	
@@ -48,14 +48,14 @@ PANTALLA DE PROVEEDORES
 			<div class="col-md">
         		<label for="telefono">Telefono</label>
 				<input class="form-control" type="text" id="Telefono" name="Telefono" />
-				<span id="sTelefono"></span>
+				<span id="sTelefono">El formato debe ser 0412-15478964</span>
     		</div>
 		</div>
 		<div class="row mb-4">
 			<div class="col-md">
 			   <label for="Direccion">Dirección</label>
 			   <input class="form-control" type="text" id="direccion" name="direccion" />
-			   <span id="sdireccion"></span>
+			   <span id="sdireccion">Solo letras  entre 3 y 30 caracteres</span>
 			</div>
 			
 		</div>
