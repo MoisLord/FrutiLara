@@ -39,6 +39,26 @@
     color: #23527c; /* texto azul oscuro al pasar el mouse */
   }
 
+  .social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 5px;
+    flex-wrap: wrap;
+  }
+
+  .icon-elem {
+    list-style: none;
+  }
+
+  .icon {
+    color: #fff;
+    font-size: 32px;
+    display: inline-block;
+    
+  }
+
   .menu {
     display: flex;
     justify-content: center;
