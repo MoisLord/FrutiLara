@@ -55,6 +55,8 @@
   .icon {
     color: #fff;
     font-size: 32px;
+    width: 30;
+    height: 30;
     display: inline-block;
     margin: 0 10px;
     transition: 0.5s;
