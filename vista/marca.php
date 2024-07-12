@@ -88,7 +88,7 @@ MARCAS DE PRODUCTOS
 				echo $consulta;
 			}
 		  ?>
-		  
+
 		</tbody>
 		</table>
 		
