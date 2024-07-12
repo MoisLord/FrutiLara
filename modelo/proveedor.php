@@ -73,19 +73,20 @@ class proveedor extends datos{
 			try {
 				
 					$p = $co->prepare("insert into proveedores(
-					    documento_legal,
+						documento,
 						rif,
 						nombre,
 						telefono,
 						direccion
 						)
 						values(
+						documento,
 						:rif,
 						:nombre,
 						:telefono,
 						:direccion
 						)");
-			        $p->bindParam(':documento_legal',$this->document);
+					$p->bindParam(':documento',$this->document);
 					$p->bindParam(':rif',$this->rif);		//Esta funcion bindparam() vinculara con una variable como una referencia
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
@@ -119,15 +120,16 @@ class proveedor extends datos{
 		if($this->existe($this->rif)){
 			try {
 				$p = $co->prepare("update proveedores set
-						documento_legal = :documento_legal,
+						documento= :documento,
 						nombre = :nombre,
 						telefono = :telefono,
 						direccion = :direccion
 						where
 						rif = :rif
 						");
-					$p->bindParam(':documento_legal',$this->document);
+					
 					$p->bindParam(':rif',$this->rif);		
+					$p->bindParam(':documento',$this->document);
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
@@ -190,10 +192,7 @@ class proveedor extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['rif'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['documento_legal'];
+							$respuesta = $respuesta.$r['documento'].$r['rif'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['nombre'];
