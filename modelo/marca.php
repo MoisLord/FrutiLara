@@ -11,8 +11,7 @@ require_once('modelo/datos.php');
 //caso el padre es la clase datos en (datos.php) como si fueran de el
 
 class marca extends datos{
-	//el primer paso dentro de la clase
-	//es declarar los atributos (variables) que describen la clase
+	//declaré los atributos (variables) que describen la clase
 	//para colocar los inputs del archivo (controles) de
 	//la vista como variables
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
