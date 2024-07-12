@@ -37,7 +37,7 @@ CATEGORIAS DE PRODUCTOS
         <div class="col-md-12">
 					   <label for="unidadMedNormal">Unidad de medida común</label>
 					   <select class="form-control" id="unidadMedNormal">
-					   		<option value=""></option>
+					   		<option selected>Seleccione una unidad de medida</option>
 							<option value="KILOGRAMOS">Kilogramos</option>
 							<option value="MILIGRAMOS">Miligramos</option>
 							<option value="LITROS">Litros</option>
@@ -50,7 +50,7 @@ CATEGORIAS DE PRODUCTOS
 					<div class="col-md-12">
 					   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
 					   <select class="form-control" id="unidadMedAlt">
-					   		<option value=""></option>
+					   		<option selected>Seleccione una unidad de medida</option>
 					   		<option value="N/A">No aplica</option>
 							<option value="CAJAS">Cajas</option>
 							<option value="CESTAS">Cestas</option>
