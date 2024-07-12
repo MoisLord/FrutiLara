@@ -6,7 +6,7 @@ $(document).ready(function(){
         
         $("#codigo_categoria").on("keyup",function(){
             validarkeyup(/^[A-Za-z0-9]{7,8}$/,$(this),
-            $("#scodigo_categoria"),"El Formato Debe Ser Numerico ");
+            $("#scodigo_categoria"),"Ejemplo:Hort290");
             if($("#codigo_categoria").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
@@ -19,7 +19,7 @@ $(document).ready(function(){
         });
         
         $("#descripcion_categoria").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sdescripcion_categoria"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sdescripcion_categoria"), "Ejemplo:Viveres");
         });
         
         
