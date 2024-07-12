@@ -96,16 +96,13 @@
 
 svg {
     color: #fff;
-}
-
-.bi-shop {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     margin: 10px 5px;
     flex-wrap: wrap;
-  }
+}
 
 .text {
     color: #fff;
