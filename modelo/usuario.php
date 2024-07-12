@@ -201,20 +201,17 @@ class usuario extends datos{
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
-				$r['resultado'] = 'consultar';
-				$r['mensaje'] =  $respuesta;
+				return $respuesta;
 			    
 			}
 			else{
-				$r['resultado'] = 'consultar';
-				$r['mensaje'] =  '';
+			return '';
 			}
 			
 		}catch(Exception $e){
-			$r['resultado'] = 'error';
-			$r['mensaje'] =  $e->getMessage();
+			
+			return $e->getMessage();
 		}
-		return $r;
 	}
 	
 	
