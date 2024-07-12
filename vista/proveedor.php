@@ -97,7 +97,7 @@ PANTALLA DE PROVEEDORES
 		<table class="table table-striped table-hover" id="tablaproveedores">
 		<thead>
 		  <tr>
-		    <th>documento legal</th>
+		  <th>documento legal</th>
 			<th>Rif</th>
 			<th>Nombre del proveedor</th>
 			<th>Telefonon</th>	

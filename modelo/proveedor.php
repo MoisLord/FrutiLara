@@ -126,7 +126,7 @@ class proveedor extends datos{
 						where
 						rif = :rif
 						");
-					$p->bindParam(':documento_legal',$this->docu);
+					$p->bindParam(':documento_legal',$this->document);
 					$p->bindParam(':rif',$this->rif);		
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
