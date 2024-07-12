@@ -1,13 +1,13 @@
 $(document).ready(function(){
     //VALIDACION DE DATOS	
         $("#rif").on("keypress",function(e){
-            validarkeypress(/^[JVG0-9-\b]*$/,e);
+            validarkeypress(/^[0-9-\b]*$/,e);
         });
         
         $("#rif").on("keyup",function(){
-            validarkeyup(/^[JVG]{1}[-]{1}[0-9]{6,9}$/,$(this),
-		$("#srif"),"El formato debe ser J-092348760 o G-00003454");
-            if($("#rif").val().length > 7){
+            validarkeyup(/^[0-9]{6,9}$/,$(this),
+		$("#srif"),"El formato debe ser 092348760 o 00003454");
+            if($("#rif").val().length > 6){
               var datos = new FormData();
                 datos.append('accion','consultatr');
                 datos.append('rif',$(this).val());
@@ -23,11 +23,11 @@ $(document).ready(function(){
             $(this),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres");
         });
         $("#Telefono").on("keypress",function(e){
-            validarkeypress(/^[0-9\b-]*$/,e);
+            validarkeypress(/^[0-9-\b-]*$/,e);
         });
         
         $("#Telefono").on("keyup",function(){
-            validarkeyup(/^[0-9]{7}$/,$(this),$("#sTelefono"),"El formato debe ser 041215478964");
+            validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$(this),$("#sTelefono"),"El formato debe ser 0412-15478964");
         });
         $("#direccion").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
@@ -39,19 +39,19 @@ $(document).ready(function(){
         
     //FIN DE VALIDACION DE DATOS
     
-    
-    
     //CONTROL DE BOTONES
     
     $("#incluir").on("click",function(){
         if(validarenvio()){
             var datos = new FormData();
             datos.append('accion','incluir');
+            datos.append('documento',$("#documento").val());
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
+            setInterval("location.reload()",4000);
         }
     });
     $("#modificar").on("click",function(){
@@ -59,18 +59,19 @@ $(document).ready(function(){
     
             var datos = new FormData();
             datos.append('accion','modificar');
+            datos.append('documento',$("#documento").val());
             datos.append('rif',$("#rif").val());
             datos.append('Nombre',$("#Nombre").val());
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
-            
+            setInterval("location.reload()",4000);
         }
     });
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[JVG]{1}[-]{1}[0-9]{6,9}$/,$("#rif"),
+        if(validarkeyup(/^[0-9]{6,9}$/,$("#rif"),
             $("#srif"),"El formato debe ser J-092348760 o G-00003454")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "J-092348760 o G-00003454");	
@@ -82,6 +83,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('rif',$("#rif").val());
             enviaAjax(datos);
+            setInterval("location.reload()",4000);
         }
         
     });
@@ -130,10 +132,10 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[JVG]{1}[-]{1}[0-9]{6,9}$/,$("#rif"),
-            $("#srif"),"El formato debe ser J-092348760 o G-00003454")==0){
+        if(validarkeyup(/^[0-9]{6,9}$/,$("#rif"),
+            $("#srif"),"El formato debe ser J092348760 o G00003454")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
-                            "J-092348760 o G-00003454");	
+                            "J092348760");	
             return false;					
         }
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
@@ -141,8 +143,8 @@ $(document).ready(function(){
             muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
-        else if(validarkeyup(/^[0-9]{7,8}$/,$("#Telefono"),
-        $("#sTelefono"),"El formato debe ser 041215478964")==0){
+        else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$("#Telefono"),
+        $("#sTelefono"),"El formato debe ser 0412-15478964")==0){
         muestraMensaje("Verifique el telefono");
         return false;
         }
@@ -201,10 +203,11 @@ $(document).ready(function(){
     
     //funcion para pasar de la lista a el formulario
     function coloca(linea){
-        $("#rif").val($(linea).find("td:eq(0)").text());
-        $("#Nombre").val($(linea).find("td:eq(1)").text());
-        $("#Telefono").val($(linea).find("td:eq(2)").text());
-        $("#direccion").val($(linea).find("td:eq(3)").text());
+        $("#documento").val($(linea).find("td:eq(0)").text());
+        $("#rif").val($(linea).find("td:eq(1)").text());
+        $("#Nombre").val($(linea).find("td:eq(2)").text());
+        $("#Telefono").val($(linea).find("td:eq(3)").text());
+        $("#direccion").val($(linea).find("td:eq(4)").text());
         
     }
     
@@ -273,7 +276,6 @@ $(document).ready(function(){
     }
     
     function limpia(){
-        
         $("#rif").val("");
         $("#Nombre").val("");
         $("#Telefono").val("");

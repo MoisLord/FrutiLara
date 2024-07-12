@@ -32,21 +32,32 @@ CATEGORIAS DE PRODUCTOS
 			   <input class="form-control" type="text" id="descripcion_categoria" name="descripcion_categoria"/>
 			   <span id="sdescripcion_categoria"></span>
 			</div>
-		</div>    
-        
-		<div class="row mb-4">
-			<div class="col-md">
-        		<label for="unidadMedNormal">Unidad de medida común</label>
-       			<input class="form-control" type="text" id="unidadMedNormal" name="unidadMedNormal"/>
-				<span id="sunidadMedNormal"></span>
-    		</div>
-			</div>
-			<div class="row mb-4">
-			<div class="col-md">
-			   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
-			   <input class="form-control" type="text" id="unidadMedAlt" name="unidadMedAlt"/>
-			   <span id="sunidadMedAlt"></span>
-			</div>
+		</div>
+		<div class="row mb-3">    
+        <div class="col-md-12">
+					   <label for="unidadMedNormal">Unidad de medida común</label>
+					   <select class="form-control" id="unidadMedNormal">
+					   		<option selected>Seleccione una unidad de medida</option>
+							<option value="KILOGRAMOS">Kilogramos</option>
+							<option value="MILIGRAMOS">Miligramos</option>
+							<option value="LITROS">Litros</option>
+							<option value="MILITROS">Militros</option>
+							<option value="UNIDADES">Unidades</option>
+					   </select>
+					</div>
+					</div>
+					<div class="row mb-3">
+					<div class="col-md-12">
+					   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
+					   <select class="form-control" id="unidadMedAlt">
+					   		<option selected>Seleccione una unidad de medida</option>
+					   		<option value="N/A">No aplica</option>
+							<option value="CAJAS">Cajas</option>
+							<option value="CESTAS">Cestas</option>
+							<option value="SACOS">Sacos</option>
+					   </select>
+					</div>
+					</div>
 		</div> <!-- fin del contenedor de campos -->
 
 		<!-- linea divisora de campos y botones -->
@@ -74,11 +85,8 @@ CATEGORIAS DE PRODUCTOS
 				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 			</div>
 			</div><!-- fin de la sección de contenedor de los botones -->
-	</div> <!-- fin de la sección de contenedor  -->
+
 	</form>
-
-
-
 
 	<div class="col-8 p-4">
 	<div class="container">

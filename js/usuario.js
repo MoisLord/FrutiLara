@@ -38,6 +38,7 @@ $(document).ready(function(){
             datos.append('tipo_usuario',$("#tipo_usuario").val());
             datos.append('clave',$("#clave").val());
             enviaAjax(datos);
+            setInterval("location.reload()",4000);
         }
     });
     $("#modificar").on("click",function(){
@@ -49,7 +50,7 @@ $(document).ready(function(){
             datos.append('tipo_usuario',$("#tipo_usuario").val());
             datos.append('clave',$("#clave").val());
             enviaAjax(datos);
-            
+            setInterval("location.reload()",4000);
         }
     });
     
@@ -67,6 +68,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('cedula',$("#cedula").val());
             enviaAjax(datos);
+            setInterval("location.reload()",4000);
         }
         
     });
@@ -174,21 +176,10 @@ $(document).ready(function(){
     }
     
     //funcion para pasar de la lista a el formulario
-    function coloca(pos,accion){
-	
-        linea=$(pos).closest('tr');
-    
-    
-        if(accion==0){
-            $("#proceso").text("MODIFICAR");
-        }
-        else{
-            $("#proceso").text("ELIMINAR");
-        }
+    function coloca(linea){
         $("#cedula").val($(linea).find("td:eq(0)").text());
         $("#tipo_usuario").val($(linea).find("td:eq(1)").text());
         $("#clave").val($(linea).find("td:eq(2)").text());
-        $("#unidadMedAlt").val($(linea).find("td:eq(3)").text());
         
     }
     
@@ -215,7 +206,7 @@ $(document).ready(function(){
                            crearDT();
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#tipo_usuario").val(lee.mensaje[0][2]);
+                           $("#tipo_usuario").val(lee.mensaje[0][1]);
                            $("#clave").val(lee.mensaje[0][3]);
                            
                         }

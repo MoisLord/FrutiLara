@@ -82,9 +82,13 @@ MARCAS DE PRODUCTOS
 			<th>Marcas</th>
 		  </tr>
 		</thead>
-		<tbody id="resultadoconsulta">
-		  
-		  
+		<tbody>
+		<?php
+			if(!empty($consulta)){
+				echo $consulta;
+			}
+		  ?>
+
 		</tbody>
 		</table>
 		

@@ -9,6 +9,7 @@ class proveedor extends datos{
 	/*Dentro de la clases proveedor 
 	se declara atributos con modificadores de acceso de tipo private en la cual estarán  predefinido
 */
+	private $document;
 	private $rif; 
 	private $Nombre;
 	private $Telefono;
@@ -18,6 +19,9 @@ class proveedor extends datos{
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
 	/*Una vez declarado los atributos falta colocar los metodos getter(leer) y setter(colocar) ya que esos atributos private(No podemos acceder
 	esos atributos desde fuera)para acceder a ellas el metodo set tomara parametro de una varaiable en caso el getter retornara*/ 
+	function set_document($valor){
+		$this->document = $valor; 
+	}
 	function set_rif($valor){
 		$this->rif = $valor; 
 	}
@@ -32,7 +36,9 @@ class proveedor extends datos{
 		$this->direccion=$valor;
 	}
 	
-	
+	function get_document(){
+		return $this->document;
+	}
 	function get_rif(){
 		return $this->rif;
 	}
@@ -68,17 +74,21 @@ class proveedor extends datos{
 				
 					$p = $co->prepare("insert into proveedores(
 						rif,
+						documento,
 						nombre,
 						telefono,
 						direccion
 						)
 						values(
 						:rif,
+						:documento,
 						:nombre,
 						:telefono,
 						:direccion
 						)");
-					$p->bindParam(':rif',$this->rif);		//Esta funcion bindparam() vinculara con una variable como una referencia
+					
+					$p->bindParam(':rif',$this->rif);	
+					$p->bindParam(':documento',$this->document);	//Esta funcion bindparam() vinculara con una variable como una referencia
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
@@ -112,12 +122,15 @@ class proveedor extends datos{
 			try {
 				$p = $co->prepare("update proveedores set
 						nombre = :nombre,
+						documento= :documento,
 						telefono = :telefono,
 						direccion = :direccion
 						where
 						rif = :rif
 						");
+					
 					$p->bindParam(':rif',$this->rif);		
+					$p->bindParam(':documento',$this->document);
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
 					$p->bindParam(':direccion',$this->direccion);	
@@ -179,6 +192,9 @@ class proveedor extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['documento'];
+						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";

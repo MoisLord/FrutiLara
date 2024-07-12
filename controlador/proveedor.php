@@ -47,6 +47,7 @@ require_once("modelo/".$pagina.".php");
 		  }
 		  else{		  
 			  $o->set_rif($_POST['rif']);
+			  $o->set_document($_POST['documento']);
 			  $o->set_Nombre($_POST['Nombre']);
 			  $o->set_Telefono($_POST['Telefono']);
 			  $o->set_direccion($_POST['direccion']);

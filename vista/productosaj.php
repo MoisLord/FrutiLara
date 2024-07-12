@@ -92,6 +92,7 @@ PRODUCTOS
 		<div class="col-md-12" id="datoscategoria">   
 		</div>
 	</div>
+	</div>
 		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
