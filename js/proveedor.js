@@ -27,7 +27,7 @@ $(document).ready(function(){
         });
         
         $("#Telefono").on("keyup",function(){
-            validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$(this),$("#sTelefono"),"El formato debe ser 0412-15478964");
+            validarkeyup(/^[0-9]{4}[0-9]{7}$/,$(this),$("#sTelefono"),"El formato debe ser 0412-15478964");
         });
         $("#direccion").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
@@ -143,7 +143,7 @@ $(document).ready(function(){
             muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
         }
-        else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$("#Telefono"),
+        else if(validarkeyup(/^[0-9]{4}[0-9]{7}$/,$("#Telefono"),
         $("#sTelefono"),"El formato debe ser 0412-15478964")==0){
         muestraMensaje("Verifique el telefono");
         return false;
@@ -238,6 +238,7 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
+                            $("#documento").val(lee.mensaje[0][1]);
                            $("#Nombre").val(lee.mensaje[0][2]);
                            $("#Telefono").val(lee.mensaje[0][3]);
                            $("#direccion").val(lee.mensaje[0][4]);
@@ -276,6 +277,7 @@ $(document).ready(function(){
     }
     
     function limpia(){
+        $("#documento").val("");
         $("#rif").val("");
         $("#Nombre").val("");
         $("#Telefono").val("");
