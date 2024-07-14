@@ -24,9 +24,9 @@ PANTALLA DE PROVEEDORES
 			<larel>tipos de documento</larel>
 			<select class="form-select" name="documento" id="documento" aria-label="Default select example">
   				<option selected>Seleccione el tipo de documento</option>
-  				<option value="Venezolano">Venezolano</option>
-  				<option value="Jurídico">Jurídico</option>
-  				<option value="Gubernamental">Gubernamental</option>
+  				<option value="V">V</option>
+  				<option value="J">J</option>
+  				<option value="G">G</option>
 				
 			</select>
 			</div>
