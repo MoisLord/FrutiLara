@@ -1,12 +1,12 @@
 $(document).ready(function(){
     //Finalización del sector para la validación de los datos	
         $("#codigo_categoria").on("keypress",function(e){
-            validarkeypress(/^[0-9-\b]*$/,e);
+            validarkeypress(/^[A-Za-z0-9-\b]*$/,e);
         });
         
         $("#codigo_categoria").on("keyup",function(){
-            validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#scodigo_categoria"),"El Formato Debe Ser Numerico ");
+            validarkeyup(/^[A-Za-z0-9]{7,8}$/,$(this),
+            $("#scodigo_categoria"),"Ejemplo:Hort290");
             if($("#codigo_categoria").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
@@ -19,7 +19,7 @@ $(document).ready(function(){
         });
         
         $("#descripcion_categoria").on("keyup", function() {
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sdescripcion_categoria"), "Debe colocar una categoria de producto con solo letras, entre 3 a 20 digitos");
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $(this), $("#sdescripcion_categoria"), "Ejemplo:Viveres");
         });
         
         
@@ -57,10 +57,10 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo_categoria"),
+        if(validarkeyup(/^[A-Za-z0-9]{7,8}$/,$("#codigo_categoria"),
             $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
-                            "12345678");	
+                            "12345678 o hoortzas o algo1234");	
             
         }
         else{	
@@ -118,10 +118,10 @@ $(document).ready(function(){
     
     //Comienzo del sector para la validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#codigo_categoria"),
+        if(validarkeyup(/^[A-Za-z0-9]{7,8}$/,$("#codigo_categoria"),
             $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
-                            "12345678");	
+                            "12345678 o hoortzas o algo1234");	
             return false;					
         }	
         else if (validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/, $("#descripcion_categoria"), $("#sdescripcion_categoria"), "Solo letras, entre 3 a 20 dígitos") == 0) {
