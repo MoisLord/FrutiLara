@@ -27,14 +27,14 @@ $(document).ready(function(){
         });
         
         $("#Telefono").on("keyup",function(){
-            validarkeyup(/^[0-9]{4}[0-9]{7}$/,$(this),$("#sTelefono"),"El formato debe ser 0412-15478964");
+            validarkeyup(/^[0-9]{4}[0-9]{7}$/,$(this),$("#sTelefono"),"El formato debe ser 041215478964");
         });
         $("#direccion").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         $("#direccion").on("keyup",function(){
             validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#sDireccion"),"Solo letras  entre 3 y 30 caracteres");
+            $(this),$("#sdireccion"),"Solo letras  entre 3 y 30 caracteres");
         });
         
     //FIN DE VALIDACION DE DATOS
