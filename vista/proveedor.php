@@ -24,9 +24,9 @@ PANTALLA DE PROVEEDORES
 			<larel>Documento legal</larel>
 			<select class="form-select" name="documento" id="documento" aria-label="Default select example">
   				<option selected>Seleccione el documento legal</option>
-  				<option value="V">V</option>
-  				<option value="J">J</option>
-  				<option value="G">G</option>
+  				<option value="Venezolano">Venezolano</option>
+  				<option value="Jurídico">Jurídico</option>
+  				<option value="Gubernamental">Gubernamental</option>
 				
 			</select>
 			</div>
