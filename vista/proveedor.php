@@ -21,9 +21,9 @@ PANTALLA DE PROVEEDORES
 		
 		<div class="row mb-3">
 		<div class="col-md">
-			<larel>Documento legal</larel>
+			<larel>tipos de documento</larel>
 			<select class="form-select" name="documento" id="documento" aria-label="Default select example">
-  				<option selected>Seleccione el documento legal</option>
+  				<option selected>Seleccione el tipo de documento</option>
   				<option value="V">V</option>
   				<option value="J">J</option>
   				<option value="G">G</option>
