@@ -51,7 +51,7 @@ $(document).ready(function(){
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            setInterval("location.reload()",1000);
         }
     });
     $("#modificar").on("click",function(){
@@ -65,16 +65,16 @@ $(document).ready(function(){
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            setInterval("location.reload()",1000);
         }
     });
     
     $("#eliminar").on("click",function(){
         
         if(validarkeyup(/^[0-9]{6,9}$/,$("#rif"),
-            $("#srif"),"El formato debe ser J-092348760 o G-00003454")==0){
+            $("#srif"),"El formato debe ser 092348760 o 00003454")==0){
             muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
-                            "J-092348760 o G-00003454");	
+                            "092348760 o 00003454");	
             
         }
         else{	
@@ -83,7 +83,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('rif',$("#rif").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            setInterval("location.reload()",1000);
         }
         
     });
@@ -98,36 +98,6 @@ $(document).ready(function(){
     });
     
     
-    //funcion para enlazar al DataTablet
-    function destruyeDT(){
-        //1 se destruye el datatablet
-        if ($.fn.DataTable.isDataTable("#tablaproveedores")) {
-                $("#tablaproveedores").DataTable().destroy();
-        }
-    }
-    function crearDT(){
-        //se crea nuevamente
-        if (!$.fn.DataTable.isDataTable("#tablaproveedores")) {
-                $("#tablaproveedores").DataTable({
-                  language: {
-                    lengthMenu: "Mostrar _MENU_ por página",
-                    zeroRecords: "No se encontraron personas",
-                    info: "Mostrando página _PAGE_ de _PAGES_",
-                    infoEmpty: "No hay personas registradas",
-                    infoFiltered: "(filtrado de _MAX_ registros totales)",
-                    search: "Buscar:",
-                    paginate: {
-                      first: "Primera",
-                      last: "Última",
-                      next: "Siguiente",
-                      previous: "Anterior",
-                    },
-                  },
-                  autoWidth: false,
-                  order: [[1, "asc"]],
-                });
-        }         
-    }
     
     
     //Validación de todos los campos antes del envio
