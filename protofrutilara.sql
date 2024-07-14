@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-07-2024 a las 18:25:49
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 12-07-2024 a las 23:53:46
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -176,17 +176,11 @@ CREATE TABLE `producto` (
 
 CREATE TABLE `proveedores` (
   `rif` varchar(50) NOT NULL,
+  `documento` varchar(5) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `telefono` varchar(50) NOT NULL,
   `direccion` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `proveedores`
---
-
-INSERT INTO `proveedores` (`rif`, `nombre`, `telefono`, `direccion`) VALUES
-('J-118983358', 'antonio carrero', '0414-5046237', 'oeste');
 
 -- --------------------------------------------------------
 
