@@ -23,7 +23,7 @@ MARCAS DE PRODUCTOS
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="id_marca">Modelo o modelo de marca</label>
+			   <label for="id_marca">Codigo de la marca</label>
 			   <input class="form-control" type="text" id="id_marca" name="id_marca"/>
 			   <span id="sid_marca">El Formato Debe Ser Alfanúmerico</span>
 			</div>
