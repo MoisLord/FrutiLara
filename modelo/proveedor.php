@@ -96,7 +96,7 @@ class proveedor extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Registro Inluido';
+			            $r['mensaje'] =  'Registro Incluido';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -182,7 +182,7 @@ class proveedor extends datos{
 	function consultar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		//$r = array();
+
 		try{
 			
 			$resultado = $co->query("select * from proveedores");
