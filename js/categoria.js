@@ -58,7 +58,7 @@ $(document).ready(function(){
     $("#eliminar").on("click",function(){
         
         if(validarkeyup(/^[A-Za-z0-9]{7,8}$/,$("#codigo_categoria"),
-            $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
+            $("#scodigo_categoria"),"El formato debe ser Alfanumerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
                             "12345678 o hoortzas o algo1234");	
             
@@ -119,7 +119,7 @@ $(document).ready(function(){
     //Comienzo del sector para la validación de todos los campos antes del envio
     function validarenvio(){
         if(validarkeyup(/^[A-Za-z0-9]{7,8}$/,$("#codigo_categoria"),
-            $("#scodigo_categoria"),"El formato debe ser Numerico")==0){
+            $("#scodigo_categoria"),"El formato debe ser Alfanumerico")==0){
             muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
                             "12345678 o hoortzas o algo1234");	
             return false;					
