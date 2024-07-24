@@ -14,53 +14,83 @@
 ?>	
 </div>
 
+<div class="container text-center h2 text-danger">
+Iniciar Sesion
+<hr/>
+</div>
+
+
+
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 
 <form method="post" action="" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
 <div class="container">
+    
+    <div class="row mt-3">
+		
+		<div class="col-md-6">
+		   <label for="cedula">Cedula</label>
+		   <input class="form-control" type="text" id="cedula" name="cedula" 
+		   />
+		   <span id="scedula"></span>
+		</div>
+		
+		<div class="col-md-6">
+		   <label for="clave">Clave</label>
+		   <input class="form-control" type="password" id="clave" name="clave" 
+		   />
+		   <span id="sclave"></span>
+		</div>
+		
+	</div>
+	
+	
+	
+	
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
 
-<div class="login-box">
-            <div class="header-img">
-                <img src="img/logo.png" alt="">
-            </div>
-            <div class="header-text text-center h2 text-danger">
-                <h1>Iniciar Sesión</h1>
-            </div>
-            <div class="input-group">
-				<div class="col-md-12">
-					<label for="cedula">Cedula</label><br></br>
-					<input class="form-control" type="text" id="cedula" name="cedula" 
-					/>
-					<span id="scedula">El formato debe ser númerico</span>
-				</div>
-            </div>
-            <div class="input-group">
-				<div class="col-md-12">
-					<label for="clave">Clave</label><br></br>
-					<input class="form-control" type="password" id="clave" name="clave" 
-					/>
-					<span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
-				</div>
-            </div>
-            <div class="forgot-pass">
-                <a href="#">Forgot password?</a>
-            </div>
-            <div class="input-group">
-				<div class="row justify-content-center mt-5">
-					<div class="col-md-6 d-flex justify-content-center">
-						<a href="?pagina=principal" class="btn btn-danger w-100 small-width">ENTRAR <i class="bx bx-log-in"></i></a>
-					</div>
-				</div>
-            </div>
-			
-        </div>
-
+	<div class="row justify-content-center mt-5">
+		<div class="col-md-3 d-flex justify-content-center">
+			   <a href="?pagina=principal" class="btn btn-danger w-100 small-width">ENTRAR</a>
+		</div>
+	</div>
 </div>
 </form>
+
 </div> <!-- fin de container -->
 
 <script type="text/javascript" src="js/login.js"></script>
 
+  <!--  <form action="principal.php" method="POST">
+        <h1>Iniciar Sesion</h1>
+        <hr>
+        <label>Cedula</label>
+        <input type="text" name="cedula" placeholder="Cedula del Usuario">
+
+        <label>Contraseña</label>
+        <input type="text" name="clave" placeholder="Contraseña del Usuario">
+        <hr>
+        <button type="submit">Iniciar Sesion</button>
+        <a href="registrarusuario.php">Crear Cuenta</a>
+    </form> -->
+
+   <!-- <div class="form-container">
+        <div class="signup-container slide-up">
+            <h2 class="form-title">Iniciar Sesion</h2>
+            <form action="vista/principal.php" method="post">
+                <div class="form-holder">
+                    <input type="text" class="input" placeholder="CEDULA">
+                    <input type="password" class="input" placeholder="CLAVE">
+                </div>
+                <button class="submit-btn">Entrar</button>
+            </form>
+        </div>
+
+    </div> -->
 </body>
 </html>
