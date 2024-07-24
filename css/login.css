@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
-*{
+* {
     font-family: 'Lato', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'PT Sans', sans-serif;
     box-sizing: border-box;
 }
-body{
+
+body {
     background: #DCE35B;
     background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
     background: linear-gradient(to right, #45B649, #DCE35B);
@@ -18,82 +18,159 @@ body{
     display: flex;
     font-family: 'Fira Sans', sans-serif;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-.login-box{
-    position: relative;
-    width: 370px;
-    height: 570px;
-    background: rgb(0, 0, 0,0.83);
-    color: #fff;
-    padding: 80px 30px 25px 30px;
+
+/*FORMULARIO NUEVO*/
+
+.form-container{
+    border: 2px solid black;
+    padding: 6rem;
+    border: none;
     border-radius: 20px;
+    width: 600px;
+    height: 550px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-.header-img{
+
+h1{
+    display: block;
+    border: 2px solid black;
+    width: 95%;
+    padding: 10%;
+    margin: 10%;
+    border-radius: 10px;
+
+}
+
+label{
+    color: aliceblue;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 300;
+}
+
+input{
+    display: block;
+    border: 2px solid black;
+    width: 95%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+
+button{
+    float: right;
+    background-color: green;
+    padding: 0.5rem;
+    color: white;
+    border: none;
+    width: 30%;
+    border-radius: 5px;
+    margin-right: 10px;
+
+}
+
+button:hover{
+    background-color: yellowgreen;
+    color: black;
+
+}
+
+a{
+    float: left;
+    margin-left: 10px;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: yellowgreen;
+}
+
+a:hover{
+    color: green;
+}
+/*FORMULARIO VIEJO
+.form-container {
+    background-color: #222;
+    background: url(../img/login.jpg) no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    opacity: 0.8;
+    height: 550px;
+    width: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-container::after {
+    content: '';
     position: absolute;
-    top: 0%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.signup-container {
+    z-index: 5;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 65%;
 }
-.header-img img{
-    width: 100px;
-}
-.header-text{
-    text-align: center;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.input-group{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-.input-field{
-    height: 40px;
-    background: transparent;
+
+.form-container .form-title {
     color: #fff;
+    text-align: center;
+    font-size: 40px;
+}
+
+.form-container .form-holder {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 50px;
+    transition: 0.3s ease;
+}
+
+.form-container .form-holder input {
     border: 0;
-    border-bottom: 1px solid #fff;
-    margin: 15px 0;
-    padding: 0 15px;
     outline: none;
-}
-.input-field:focus,.input-field:valid{
-    border-bottom: 2px solid #d1e710;
-}
-.input-group label{
-    position: absolute;
-    top: 23px;
-    left: 3px;
-    transition: .3s;
-}
-.input-field:focus ~ label,.input-field:valid ~ label{
-    top: 5px;
-    font-size: 12px;
-    color: #d1e710;
-}
-.forgot-pass{
-    text-align: right;
-    margin-bottom: 10px;
-}
-.forgot-pass a{
-    color: #e9f76a;
+    box-shadow: none;
+    display: block;
+    height: 45px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
     font-size: 12px;
 }
-.input-submit{
-    height: 40px;
-    border-radius: 30px;
+
+.form-container .form-holder input:last-child {
+    border-bottom: 0;
+}
+
+.form-container .form-holder input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.form-container .submit-btn {
+    background-color: #63b28b;
+    color: #fff;
     border: none;
-    background: #d1e710;
-    margin-top: 20px;
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+    padding: 15px 45px;
+    margin: 15px auto;
+    font-size: 13px;
+    font-weight: bold;
     cursor: pointer;
-    transition: .4s ease-out;
+    transition: 0.3s ease;
 }
-.input-submit:hover{
-    box-shadow: 0 1px 10px rgb(254, 201, 26,0.5);
+
+.form-container .submit-btn:hover {
+    background-color: #53cb94;
 }
+
+ */
