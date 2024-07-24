@@ -5,7 +5,8 @@
     font-family: 'PT Sans', sans-serif;
     box-sizing: border-box;
 }
-body{
+
+body {
     background: #DCE35B;
     background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
     background: linear-gradient(to right, #45B649, #DCE35B);
@@ -18,13 +19,15 @@ body{
     display: flex;
     font-family: 'Fira Sans', sans-serif;
 }
-.container{
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-.login-box{
+
+.login-box {
     position: relative;
     width: 370px;
     height: 570px;
@@ -33,27 +36,32 @@ body{
     padding: 80px 30px 25px 30px;
     border-radius: 20px;
 }
-.header-img{
+
+.header-img {
     position: absolute;
     top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.header-img img{
+
+.header-img img {
     width: 100px;
 }
-.header-text{
+
+.header-text {
     text-align: center;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 20px;
 }
-.input-group{
+
+.input-group {
     position: relative;
     display: flex;
     flex-direction: column;
 }
-.input-field{
+
+.input-field {
     height: 40px;
     background: transparent;
     color: #fff;
@@ -63,29 +71,35 @@ body{
     padding: 0 15px;
     outline: none;
 }
-.input-field:focus,.input-field:valid{
+
+.input-field:focus,.input-field:valid {
     border-bottom: 2px solid #d1e710;
 }
-.input-group label{
+
+.input-group label {
     position: absolute;
     top: 23px;
     left: 3px;
     transition: .3s;
 }
-.input-field:focus ~ label,.input-field:valid ~ label{
+
+.input-field:focus ~ label,.input-field:valid ~ label {
     top: 5px;
     font-size: 12px;
     color: #d1e710;
 }
-.forgot-pass{
+
+.forgot-pass {
     text-align: right;
     margin-bottom: 10px;
 }
-.forgot-pass a{
+
+.forgot-pass a {
     color: #e9f76a;
     font-size: 12px;
 }
-.input-submit{
+
+.input-submit {
     height: 40px;
     border-radius: 30px;
     border: none;
@@ -94,6 +108,7 @@ body{
     cursor: pointer;
     transition: .4s ease-out;
 }
-.input-submit:hover{
+
+.input-submit:hover {
     box-shadow: 0 1px 10px rgb(254, 201, 26,0.5);
 }
