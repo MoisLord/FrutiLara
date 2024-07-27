@@ -34,7 +34,11 @@
                     <a href="#">Olvidaste la Clave?</a>
                 </div>
                 <div class="input-group">
-                    <input type="submit" class="input-submit" value="ENTRAR">
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <a href="?pagina=principal" class="btn btn-danger w-100 small-width">ENTRAR <i class="bx bx-log-in"></i></a>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
