@@ -88,11 +88,11 @@ body{
     height: 40px;
     border-radius: 30px;
     border: none;
-    background: #d1e710;
+    background: #e73010;
     margin-top: 20px;
     cursor: pointer;
     transition: .4s ease-out;
 }
 .input-submit:hover{
-    box-shadow: 0 1px 10px rgb(254, 201, 26,0.5);
+    box-shadow: 0 1px 10px rgba(254, 117, 26, 0.884);
 }
