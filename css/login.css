@@ -84,7 +84,7 @@ body{
     color: #e9f76a;
     font-size: 12px;
 }
-.input-submit{
+a{
     height: 40px;
     border-radius: 30px;
     border: none;
@@ -93,6 +93,6 @@ body{
     cursor: pointer;
     transition: .4s ease-out;
 }
-.input-submit:hover{
+a:hover{
     box-shadow: 0 1px 10px rgba(254, 117, 26, 0.884);
 }
