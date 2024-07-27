@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 *{
-    font-family: 'Lato', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'PT Sans', sans-serif;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
 }
 body{
     background: #DCE35B;
@@ -15,7 +16,6 @@ body{
     flex-direction: column;
     min-height: 100vh;
     display: flex;
-    font-family: 'Fira Sans', sans-serif;
 }
 .container{
     display: flex;
