@@ -16,7 +16,7 @@
                 <img src="images/user-icon-yl-4.png" alt="">
             </div>
             <div class="header-text">
-                <p>Login</p>
+                <p>Iniciar Sesión</p>
             </div>
             <form method="post" action="" id="f">
                 <input type="text" name="accion" id="accion" style="display:none"/>
@@ -29,7 +29,7 @@
                     <label for="clave">Clave</label>
                 </div>
                 <div class="forgot-pass">
-                    <a href="#">Forgot password?</a>
+                    <a href="#">¿Olvidaste la clave?</a>
                 </div>
                 <div class="input-group">
                     <button class="input-submit">Login <i class="bx bx-log-in"></i></button>
