@@ -31,7 +31,7 @@
                     <span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
                 </div>
                 <div class="forgot-pass">
-                    <a href="#">Forgot password?</a>
+                    <a href="#">Olvidaste la Clave?</a>
                 </div>
                 <div class="input-group">
                     <div class="row justify-content-center mt-5">
