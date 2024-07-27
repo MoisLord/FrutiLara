@@ -24,9 +24,9 @@ PANTALLA DE PROVEEDORES
 			<larel>tipos de documento</larel>
 			<select class="form-select" name="documento" id="documento" aria-label="Default select example">
   				<option selected>Seleccione el tipo de documento</option>
-  				<option value="V">V</option>
-  				<option value="J">J</option>
-  				<option value="G">G</option>
+  				<option value="Venezolano">Venezolano</option>
+  				<option value="jurídico">jurídico</option>
+  				<option value="obernamental">Gobernamental</option>
 				
 			</select>
 			</div>
@@ -48,7 +48,7 @@ PANTALLA DE PROVEEDORES
 			<div class="col-md">
         		<label for="telefono">Telefono</label>
 				<input class="form-control" type="text" id="Telefono" name="Telefono" />
-				<span id="sTelefono">El formato debe ser 0412-15478964</span>
+				<span id="sTelefono">El formato debe ser 041215478964</span>
     		</div>
 		</div>
 		<div class="row mb-4">
