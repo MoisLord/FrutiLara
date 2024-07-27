@@ -1,56 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <title>Login | FrutiLara</title>
-    <?php require_once("comunes/encabezado.php"); ?>
-</head>
+<html>
+<?php require_once("comunes/encabezado.php"); ?>
 <body>
-    <div class="container">
-        <div class="login-box">
-            <div class="header-img">
-                <img src="img/logo.png" alt="">
-            </div>
-            <div class="header-text text-center h2 text-danger">
-                <h1>Iniciar Sesión</h1>
-            </div>
-            <form method="post" action="" id="f">
-                <input type="text" name="accion" id="accion" style="display:none"/>
-                <div class="input-group">
-                    <input type="text" class="input-field" id="cedula" name="cedula" required>
-                    <label for="cedula">Cedula</label>
-                    <span id="scedula">El formato debe ser númerico</span>
+	<!--Llamada al CSS del Login-->
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+<!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
+<?php require_once("comunes/modal.php"); ?>
+<!--Div oculta para colocar el mensaje a mostrar-->
+<div id="mensajes" style="display:none">
+<?php
+	if(!empty($mensaje)){
+		echo $mensaje;
+	}
+?>	
+</div>
+
+<div class="container text-center h2 text-danger">
+Iniciar Sesion
+<hr/>
+</div>
+
+
+
+<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
+
+<form method="post" action="" id="f">
+<input type="text" name="accion" id="accion" style="display:none"/>
+<div class="container">
+    
+    <div class="row mt-3">
+		
+		<div class="col-md-6">
+		   <label for="cedula">Cedula</label>
+		   <input class="form-control" type="text" id="cedula" name="cedula" 
+		   />
+		   <span id="scedula"></span>
+		</div>
+		
+		<div class="col-md-6">
+		   <label for="clave">Clave</label>
+		   <input class="form-control" type="password" id="clave" name="clave" 
+		   />
+		   <span id="sclave"></span>
+		</div>
+		
+	</div>
+	
+	
+	
+	
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
+
+	<div class="row justify-content-center mt-5">
+		<div class="col-md-3 d-flex justify-content-center">
+			   <a href="?pagina=principal" class="btn btn-danger w-100 small-width">ENTRAR</a>
+		</div>
+	</div>
+</div>
+</form>
+
+</div> <!-- fin de container -->
+
+<script type="text/javascript" src="js/login.js"></script>
+
+  <!--  <form action="principal.php" method="POST">
+        <h1>Iniciar Sesion</h1>
+        <hr>
+        <label>Cedula</label>
+        <input type="text" name="cedula" placeholder="Cedula del Usuario">
+
+        <label>Contraseña</label>
+        <input type="text" name="clave" placeholder="Contraseña del Usuario">
+        <hr>
+        <button type="submit">Iniciar Sesion</button>
+        <a href="registrarusuario.php">Crear Cuenta</a>
+    </form> -->
+
+   <!-- <div class="form-container">
+        <div class="signup-container slide-up">
+            <h2 class="form-title">Iniciar Sesion</h2>
+            <form action="vista/principal.php" method="post">
+                <div class="form-holder">
+                    <input type="text" class="input" placeholder="CEDULA">
+                    <input type="password" class="input" placeholder="CLAVE">
                 </div>
-                <div class="input-group">
-                    <input type="password" class="input-field" id="clave" name="clave" required>
-                    <label for="clave">Clave</label>
-                    <span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
-                </div>
-                <div class="forgot-pass">
-                    <a href="#">Olvidaste la Clave?</a>
-                </div>
-                <div class="input-group">
-                    <div class="row justify-content-center mt-5">
-                        <div class="col-md-6 d-flex justify-content-center">
-                            <a href="?pagina=principal" class="btn btn-danger w-100 small-width">ENTRAR <i class="bx bx-log-in"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <button class="submit-btn">Entrar</button>
             </form>
         </div>
-    </div>
-    <?php require_once("comunes/modal.php"); ?>
-    <div id="mensajes" style="display:none">
-        <?php
-            if(!empty($mensaje)){
-                echo $mensaje;
-            }
-        ?>
-    </div>
-    <script type="text/javascript" src="js/login.js"></script>
+
+    </div> -->
 </body>
 </html>
