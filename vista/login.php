@@ -32,7 +32,7 @@
                     <a href="#">¿Olvidaste la clave?</a>
                 </div>
                 <div class="input-group">
-                    <button class="input-submit">Login <i class="bx bx-log-in"></i></button>
+                    <button href="?pagina=principal" class="input-submit">Entrar <i class="bx bx-log-in"></i></button>
                 </div>
             </form>
         </div>
