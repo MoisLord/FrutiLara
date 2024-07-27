@@ -13,7 +13,7 @@
     <div class="container">
         <div class="login-box">
             <div class="header-img">
-                <img src="images/user-icon-yl-4.png" alt="">
+                <img src="img/logo.png" alt="">
             </div>
             <div class="header-text">
                 <p>Iniciar Sesión</p>
