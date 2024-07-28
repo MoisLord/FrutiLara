@@ -8,7 +8,9 @@
 }
 
 body {
-    background: aqua;
+    background: #DCE35B;
+    background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
+    background: linear-gradient(to right, #45B649, #DCE35B);
 }
 
 .container {
