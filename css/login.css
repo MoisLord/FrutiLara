@@ -23,8 +23,8 @@ body{
     flex-direction: column; /* Establece la dirección del contenido */
     justify-content: center; /* Centra el contenido verticalmente */
     align-items: center; /* Centra el contenido horizontalmente */
-    min-height: 100vh;
-    max-width: 100%;
+    min-height: 100vh; /* Establece un alto minimo del 100% de la pantalla */
+    max-width: 100vh;
     max-height: 100vh; /* Establece un alto máximo del 100% de la pantalla */
 }
 .login-box{
