@@ -22,6 +22,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    max-width: 100%;
 }
 .login-box{
     position: relative;
@@ -39,7 +40,8 @@ body{
     transform: translate(-50%, -50%);
 }
 .header-img img{
-    width: 100px;
+    max-width: 100%;
+    height: auto;
 }
 .header-text{
     text-align: center;
@@ -66,6 +68,7 @@ body{
     border-bottom: 2px solid #d1e710;
 }
 .input-group label{
+    max-width: 100%;
     position: absolute;
     top: 23px;
     left: 3px;
