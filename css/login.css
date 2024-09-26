@@ -45,8 +45,8 @@ body{
     transform: translate(-50%, -50%);
 }
 .header-img img{
-    max-width: 100px; /* Establece un ancho máximo de 100px */
-    max-height: 100px; /* Establece un alto máximo de 100px */
+    max-width: 130px; /* Establece un ancho máximo de 100px */
+    max-height: 130px; /* Establece un alto máximo de 100px */
     margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 .col-md-12{
