@@ -60,7 +60,7 @@ body{
 }
 .input-group{
     max-width: 300px; /* Establece un ancho máximo de 300px */
-  margin: 0 auto; /* Centra el grupo de inputs horizontalmente */
+    margin: 0 auto; /* Centra el grupo de inputs horizontalmente */
     position: relative;
     display: flex;
     flex-direction: column;
