@@ -28,7 +28,7 @@
                 <h1>Iniciar Sesión</h1>
             </div>
             <div class="input-group">
-				<div class="col-md-8">
+				<div class="col-md-12">
 					<label for="cedula">Cedula</label><br></br>
 					<input class="form-control" type="text" id="cedula" name="cedula" 
 					/>
@@ -36,7 +36,7 @@
 				</div>
             </div>
             <div class="input-group">
-				<div class="col-md-8">
+				<div class="col-md-12">
 					<label for="clave">Clave</label><br></br>
 					<input class="form-control" type="password" id="clave" name="clave" 
 					/>
