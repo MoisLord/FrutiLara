@@ -80,7 +80,7 @@ body{
 }
 .input-group label{
     font-size: 16px; /* Establece un tamaño de fuente adecuado */
-  margin-bottom: 10px; /* Agrega un espacio entre el label y el input */
+    margin-bottom: 10px; /* Agrega un espacio entre el label y el input */
     max-width: 100%;
     position: absolute;
     top: 23px;
