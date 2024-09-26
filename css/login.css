@@ -44,6 +44,9 @@ body{
     max-width: 100%;
     height: auto;
 }
+.col-md-12{
+    max-width: 100%;
+}
 .header-text{
     text-align: center;
     font-size: 24px;
