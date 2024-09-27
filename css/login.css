@@ -8,10 +8,14 @@ body{
     background: #DCE35B;
     background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
     background: linear-gradient(to right, #45B649, #DCE35B);
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vh;
     height: 100vh;
+    position: relative;
     flex-direction: column;
     min-height: 100vh;
     display: flex;
