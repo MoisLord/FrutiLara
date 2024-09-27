@@ -1,8 +1,13 @@
 <html>
 <?php require_once("comunes/encabezado.php"); ?>
-<body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, 
+	initial-scale=1.0, maximimum-scale=1.0, minimum-scale=1.0">
 	<!--Llamada al CSS del Login-->
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <!--Div oculta para colocar el mensaje a mostrar-->
