@@ -44,6 +44,11 @@ body{
     padding: 80px 30px 25px 30px;
     border-radius: 20px;
 }
+@media (max-width: 400px){
+    .login-box{
+        width: 90%; /* Establece el responsividad a telefonos o tablets */
+    }
+}
 .header-img{
     max-width: 100%;
     height: auto;
