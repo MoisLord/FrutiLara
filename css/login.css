@@ -16,10 +16,10 @@ body{
     min-height: 100vh;
     display: flex;
     font-family: 'Fira Sans', sans-serif;
+    overflow-y: hidden; /* Oculta el scroll vertical */
     
 }
 .container{
-    overflow-y: hidden; /* Oculta el scroll vertical */
     display: flex; /* Hace que el contenido se ajuste automáticamente */
     flex-direction: column; /* Establece la dirección del contenido */
     justify-content: center; /* Centra el contenido verticalmente */
