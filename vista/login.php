@@ -23,7 +23,6 @@
 
 <form method="post" action="" id="f">
 <input type="text" name="accion" id="accion" style="display:none"/>
-<div class="container">
 
 <div class="login-box">
             <div class="header-img">
@@ -61,7 +60,6 @@
 			
         </div>
 
-</div>
 </form>
 </div> <!-- fin de container -->
 
