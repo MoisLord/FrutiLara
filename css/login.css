@@ -107,7 +107,7 @@ body{
     font-size: 16px; /* Establece un tamaño de fuente adecuado */
   }
 .toggle-eye{
-    position: relative;
+    position: center;
     top: 27px;
     right: 27px;
     font-size: 22px;
