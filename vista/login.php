@@ -6,6 +6,7 @@
 	initial-scale=1.0, maximimum-scale=1.0, minimum-scale=1.0">
 	<!--Llamada al CSS del Login-->
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
@@ -42,8 +43,10 @@
             <div class="input-group">
 				<div class="col-md-12">
 					<label for="clave">Clave</label><br></br>
-					<input class="form-control" type="password" id="clave" name="clave" 
-					/>
+					<input class="form-control" type="password" id="clave" name="clave"/>
+					<div class="toggle-eye open">
+
+					</div>
 					<span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
 				</div>
             </div>
