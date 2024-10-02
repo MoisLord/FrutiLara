@@ -35,8 +35,8 @@
             <div class="input-group">
 				<div class="col-md-12">
 					<label for="cedula">Cedula</label><br></br>
-					<input class="form-control" type="text" id="cedula" name="cedula" 
-					/>
+					<input class="form-control" type="text" id="cedula" name="cedula"/>
+					<ion-icon name="id-card-outline" class="id-card"></ion-icon>
 					<span id="scedula">El formato debe ser númerico</span>
 				</div>
             </div>
@@ -50,6 +50,7 @@
 					<div class="toggle-eye close">
 						<ion-icon name="eye-off-outline"></ion-icon>
 					</div>
+					<ion-icon name="lock-closed-outline" class="password-lock"></ion-icon>
 					<span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
 				</div>
             </div>
