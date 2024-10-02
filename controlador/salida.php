@@ -24,8 +24,8 @@ require_once("modelo/".$pagina.".php");
 		  
 		$mensaje = $o-> incluir($_POST['cedula_cliente'],$_POST['codiigo_producto'],$_POST['cifra'],$_POST['fecha']);
 	  }
-	  $consultaproductos = $o->listadodeproductos();
-	  $consultaprecios = $o->listadodeprecios();
+	  $consultaproductos = $o->listadodeclientes();
+	  $consultaprecios = $o->listadodeproductos();
 	  require_once("vista/".$pagina.".php"); 
   }
   else{
