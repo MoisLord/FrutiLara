@@ -45,7 +45,10 @@
 					<label for="clave">Clave</label><br></br>
 					<input class="form-control" type="password" id="clave" name="clave"/>
 					<div class="toggle-eye open">
-
+						<ion-icon name="eye-outline"></ion-icon>
+					</div>
+					<div class="toggle-eye close">
+						<ion-icon name="eye-off-outline"></ion-icon>
 					</div>
 					<span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
 				</div>
