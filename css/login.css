@@ -51,6 +51,7 @@ body{
     }
     .login-box{
         width: 100%; /* Establece el responsividad a telefonos o tablets */
+        margin: 0;
     }
 }
 .header-img{
