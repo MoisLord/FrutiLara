@@ -33,7 +33,7 @@ body{
     max-height: 100vh; /* Establece un alto máximo del 100% de la pantalla */
 }
 .login-box{
-    position: center;
+    position: absolutes;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
