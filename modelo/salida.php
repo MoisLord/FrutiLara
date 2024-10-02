@@ -33,7 +33,7 @@ class salida_producto extends datos{
 		
 	}
 	
-	function listadodeproductos(){
+	function listadodeclientes(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
@@ -66,7 +66,7 @@ class salida_producto extends datos{
 		
 	}
 	
-	function listadodeprecios(){
+	function listadodeproductos(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
