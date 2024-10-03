@@ -50,10 +50,10 @@
 					<div class="toggle-eye close">
 						<ion-icon name="eye-off-outline"></ion-icon>
 					</div>
-					<ion-icon name="lock-closed-outline" class="password-lock"></ion-icon>
 					<span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
 				</div>
             </div>
+			<ion-icon name="lock-closed-outline" class="password-lock"></ion-icon>
             <div class="forgot-pass">
                 <a href="#">Olvidaste la clave?</a>
             </div>
