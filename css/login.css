@@ -128,9 +128,9 @@ body{
 .toggle-eye{
     color: rgb(0, 0, 0,0.83);
     position: absolute;
-    top: 27px;
+    top: 57px;
     right: 27px;
-    font-size: 22px;
+    font-size: 27px;
     z-index: 2; /* Le damos un z-index más alto al toggle-eye */
 }
 
@@ -149,7 +149,7 @@ body{
     position: absolute;
     top: 57px;
     transform: translateY(-50%);
-    left: 25px;
+    left: 35px;
 }
 
 .input-field:focus ~ label,.input-field:valid ~ label{
