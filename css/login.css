@@ -128,7 +128,7 @@ body{
 .toggle-eye{
     color: rgb(0, 0, 0,0.83);
     position: absolute;
-    top: 57px;
+    top: 60px;
     right: 27px;
     font-size: 22px;
     z-index: 2; /* Le damos un z-index más alto al toggle-eye */
@@ -142,7 +142,15 @@ body{
     transition: 0.2s all ease-out;
 }
 
-
+.password-lock{
+    color: rgb(0, 0, 0,0.83);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 57px;
+    transform: translateY(-50%);
+    left: 25px;
+}
 
 .input-field:focus ~ label,.input-field:valid ~ label{
     top: 5px;
