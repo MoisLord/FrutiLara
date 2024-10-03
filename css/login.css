@@ -128,7 +128,7 @@ body{
 .toggle-eye{
     color: rgb(0, 0, 0,0.83);
     position: absolute;
-    top: 57px;
+    top: 27px;
     right: 27px;
     font-size: 22px;
     z-index: 2; /* Le damos un z-index más alto al toggle-eye */
