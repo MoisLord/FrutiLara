@@ -4,6 +4,7 @@
     font-family: 'PT Sans', sans-serif;
     box-sizing: border-box;
 }
+
 body{
     background: #DCE35B;
     background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
@@ -23,6 +24,7 @@ body{
     overflow-y: hidden; /* Oculta el scroll vertical que genera el navegador */
     
 }
+
 .container{
     display: flex; /* Hace que el contenido se ajuste automáticamente */
     flex-direction: column; /* Establece la dirección del contenido */
@@ -32,6 +34,7 @@ body{
     max-width: 100vh;
     max-height: 100vh; /* Establece un alto máximo del 100% de la pantalla */
 }
+
 .login-box{
     position: absolute;
     top: 50%;
@@ -44,6 +47,7 @@ body{
     padding: 80px 30px 25px 30px;
     border-radius: 20px;
 }
+
 @media screen and (max-width: 60rem){
     .container{
         width: 100%;
@@ -53,6 +57,7 @@ body{
         width: 100%; /* Establece el responsividad a telefonos o tablets */
     }
 }
+
 .header-img{
     max-width: 100%;
     height: auto;
@@ -61,25 +66,30 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .header-img img{
     max-width: 130px; /* Establece un ancho máximo de 100px */
     max-height: 130px; /* Establece un alto máximo de 100px */
     margin: 0 auto; /* Centra la imagen horizontalmente */
 }
+
 .col-md-12{
     max-width: 100%;
 }
+
 .header-text{
     text-align: center;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 20px;
 }
+
 .input-group{
     position: relative;
     display: flex;
     flex-direction: column;
 }
+
 .input-field{
     height: 40px;
     background: transparent;
@@ -90,9 +100,11 @@ body{
     padding: 0 15px;
     outline: none;
 }
+
 .input-field:focus,.input-field:valid{
     border-bottom: 2px solid #d1e710;
 }
+
 .input-group label{
     font-size: 16px; /* Establece un tamaño de fuente adecuado */
     margin-bottom: 10px; /* Agrega un espacio entre el label y el input */
@@ -102,14 +114,17 @@ body{
     left: 3px;
     transition: .3s;
 }
+
 .input-group input {
     padding: 10px; /* Agrega un padding adecuado a los inputs */
     font-size: 16px; /* Establece un tamaño de fuente adecuado */
   }
+
 .form-control{
     width: 100%;
     z-index: 1;
 }
+
 .toggle-eye{
     color: rgb(0, 0, 0,0.83);
     position: absolute;
@@ -118,25 +133,40 @@ body{
     font-size: 27px;
     z-index: 2; /* Le damos un z-index más alto al toggle-eye */
 }
+
 .toggle-eye.close{
     transition: 0.4s all ease-in-out;
 }
+
 .toggle-eye.open{
     transition: 0.2s all ease-out;
 }
+
+.password-lock{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 57px;
+    transform: translateY(-50%);
+    left: 25px;
+}
+
 .input-field:focus ~ label,.input-field:valid ~ label{
     top: 5px;
     font-size: 12px;
     color: #d1e710;
 }
+
 .forgot-pass{
     text-align: right;
     margin-bottom: 10px;
 }
+
 .forgot-pass a{
     color: #e9f76a;
     font-size: 12px;
 }
+
 .input-submit{
     height: 40px;
     border-radius: 30px;
@@ -146,9 +176,11 @@ body{
     cursor: pointer;
     transition: .4s ease-out;
 }
+
 .input-submit:hover{
     box-shadow: 0 1px 10px rgb(254, 201, 26,0.5);
 }
+
 .btn {
     max-width: 200px; /* Establece un ancho máximo de 200px */
     padding: 10px 20px; /* Agrega un padding adecuado al botón */
