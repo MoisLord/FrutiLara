@@ -115,7 +115,7 @@ body{
     position: absolute;
     top: 60px;
     right: 27px;
-    font-size: 32px;
+    font-size: 27px;
     z-index: 2; /* Le damos un z-index más alto al toggle-eye */
 }
 .toggle-eye.close{
