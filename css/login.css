@@ -145,7 +145,7 @@ body{
 .password-lock{
     color: rgb(0, 0, 0,0.83);
     width: 20px;
-    height: 20px;
+    height: 10px;
     position: absolute;
     top: 57px;
     transform: translateY(-1%);
@@ -155,10 +155,10 @@ body{
 .id-card{
     color: rgb(0, 0, 0,0.83);
     width: 20px;
-    height: 20px;
+    height: 10px;
     position: absolute;
     top: 57px;
-    transform: translateY(-20%);
+    transform: translateY(-10%);
     left: 1;
 }
 
