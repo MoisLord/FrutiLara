@@ -155,10 +155,10 @@ body{
 .id-card{
     color: rgb(0, 0, 0,0.83);
     width: 20px;
-    height: 30px;
+    height: 20px;
     position: absolute;
     top: 57px;
-    transform: translateY(-30%);
+    transform: translateY(-20%);
     left: 1;
 }
 
