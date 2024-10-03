@@ -115,8 +115,8 @@ body{
 }
 .toggle-eye{
     position: absolute;
-    top: 37px;
-    right: 27px;
+    top: 47px;
+    right: 37px;
     font-size: 22px;
 }
 .toggle-eye.close{
