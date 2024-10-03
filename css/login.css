@@ -108,7 +108,6 @@ body{
   }
 .form-control{
     width: 100%;
-    z-index: 1;
     appearance: none;
     outline: none;
     cursor: pointer;
