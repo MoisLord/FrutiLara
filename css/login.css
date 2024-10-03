@@ -147,9 +147,9 @@ body{
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 27px;
+    top: 57px;
     transform: translateY(-50%);
-    left: 0px;
+    left: 1;
 }
 
 .input-field:focus ~ label,.input-field:valid ~ label{
