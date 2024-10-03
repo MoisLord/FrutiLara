@@ -75,6 +75,17 @@ body{
 
 .col-md-12{
     max-width: 100%;
+    position: absolute;
+    top: 50px;
+    transform: translateY(-50%);
+    left: 60px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    letter-spacing: 2px;
+    transition: all 0.5s;
+    -webkit-text-security: none;
 }
 
 .header-text{
