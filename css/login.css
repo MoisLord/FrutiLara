@@ -162,21 +162,6 @@ body{
     left: 1;
 }
 
-.password-input{
-    width: 200px;
-    position: absolute;
-    top: 50px;
-    transform: translateY(-50%);
-    left: 60px;
-    background: none;
-    border: none;
-    font-size: 18px;
-    outline: none;
-    letter-spacing: 2px;
-    transition: all 0.5s;
-    -webkit-text-security: none;
-}
-
 .input-field:focus ~ label,.input-field:valid ~ label{
     top: 5px;
     font-size: 12px;
