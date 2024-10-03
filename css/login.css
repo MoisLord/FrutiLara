@@ -143,13 +143,13 @@ body{
 }
 
 .password-lock{
-    color: rgb(0, 0, 0,0.83);
+    color: rgba(255, 3, 3, 0.83);
     width: 20px;
     height: 20px;
     position: absolute;
     top: 57px;
     transform: translateY(-50%);
-    left: 5px;
+    left: 0px;
 }
 
 .input-field:focus ~ label,.input-field:valid ~ label{
