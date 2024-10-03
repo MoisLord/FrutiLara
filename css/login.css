@@ -111,8 +111,7 @@ body{
     top: 27px;
     right: 27px;
     font-size: 22px;
-    justify-content: absolute;
-    align-items: absolute;
+    justify-content: space-around;
 }
 .toggle-eye.close{
     transition: 0.4s all ease-in-out;
