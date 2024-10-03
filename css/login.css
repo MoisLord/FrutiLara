@@ -106,7 +106,9 @@ body{
     padding: 10px; /* Agrega un padding adecuado a los inputs */
     font-size: 16px; /* Establece un tamaño de fuente adecuado */
   }
-
+  .form-control{
+    width: 100px;
+}
 .toggle-eye{
     position: absolute;
     top: 37px;
