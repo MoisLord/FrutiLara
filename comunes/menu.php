@@ -18,11 +18,11 @@
       <?php
 		if(!empty($tipo_usuario)){}
 		 ?>
-          <?php
-					  if($tipo_usuario=='Administrador'){}
-					?>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <?php
+					  if($tipo_usuario=='Administrador'){}
+					?>
         <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 14;" href="?pagina=marca">MARCAS DE PRODUCTOS</a>
           </li>
