@@ -33,10 +33,10 @@
                 <h1>Iniciar Sesión</h1>
             </div>
             <div class="input-group">
+			<ion-icon name="id-card-outline" class="id-card"></ion-icon>
 				<div class="col-md-12">
 					<label for="cedula">Cedula</label><br></br>
 					<input class="form-control" type="text" id="cedula" name="cedula"/>
-					<ion-icon name="id-card-outline" class="id-card"></ion-icon>
 					<span id="scedula">El formato debe ser númerico</span>
 				</div>
             </div>
