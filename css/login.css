@@ -150,25 +150,7 @@ body{
     transition: 0.2s all ease-out;
 }
 
-.password-lock{
-    color: #ffffff;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 65px;
-    transform: translateY(-20%);
-    right: 33.5vh;
-}
 
-.id-card{
-    color: #ffffff;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 65px;
-    transform: translateY(-20%);
-    right: 33.5vh;
-}
 
 .input-field:focus ~ label,.input-field:valid ~ label{
     top: 5px;
