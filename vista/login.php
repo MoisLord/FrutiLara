@@ -41,6 +41,7 @@
 				</div>
             </div>
             <div class="input-group">
+			<ion-icon name="lock-closed-outline" class="password-lock"></ion-icon>
 				<div class="col-md-12">
 					<label for="clave">Clave</label><br></br>
 					<input class="form-control" type="password" id="clave" name="clave"/>
@@ -50,7 +51,6 @@
 					<div class="toggle-eye close">
 						<ion-icon name="eye-off-outline"></ion-icon>
 					</div>
-					<ion-icon name="lock-closed-outline" class="password-lock"></ion-icon>
 					<span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
 				</div>
             </div>
