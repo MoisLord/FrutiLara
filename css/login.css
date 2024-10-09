@@ -42,7 +42,7 @@ body{
     transform: translate(-50%, -50%);
     max-width: 100%;
     height: 570px;
-    background: rgb(0, 0, 0,0.83);
+    background: #ffffff;
     color: #fff;
     padding: 80px 30px 25px 30px;
     border-radius: 20px;
@@ -126,7 +126,7 @@ body{
 }
 
 .toggle-eye{
-    color: rgb(0, 0, 0,0.83);
+    color: #ffffff;
     position: absolute;
     top: 60px;
     right: 27px;
@@ -143,23 +143,23 @@ body{
 }
 
 .password-lock{
-    color: rgb(0, 0, 0,0.83);
+    color: #ffffff;
     width: 20px;
     height: 20px;
     position: absolute;
     top: 65px;
     transform: translateY(-20%);
-    left: 1;
+    right: 33.5vh;
 }
 
 .id-card{
-    color: rgb(0, 0, 0,0.83);
+    color: #ffffff;
     width: 20px;
     height: 20px;
     position: absolute;
     top: 65px;
     transform: translateY(-20%);
-    left: 1;
+    right: 33.5vh;
 }
 
 .input-field:focus ~ label,.input-field:valid ~ label{
