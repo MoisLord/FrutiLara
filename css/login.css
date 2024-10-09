@@ -42,7 +42,7 @@ body{
     transform: translate(-50%, -50%);
     max-width: 100%;
     height: 570px;
-    background: #ffffff;
+    background: rgb(0, 0, 0,0.83);
     color: #fff;
     padding: 80px 30px 25px 30px;
     border-radius: 20px;
@@ -126,7 +126,7 @@ body{
 }
 
 .toggle-eye{
-    color: #ffffff;
+    color: rgb(0, 0, 0,0.83);
     position: absolute;
     top: 60px;
     right: 27px;
@@ -138,7 +138,15 @@ body{
     transition: 0.4s all ease-in-out;
 }
 
+.eye-closed{
+    transition: 0.4s all ease-in-out;
+}
+
 .toggle-eye.open{
+    transition: 0.2s all ease-out;
+}
+
+.eye-open{
     transition: 0.2s all ease-out;
 }
 
@@ -149,7 +157,7 @@ body{
     position: absolute;
     top: 65px;
     transform: translateY(-20%);
-    left: 33.5vh;
+    right: 33.5vh;
 }
 
 .id-card{
@@ -159,7 +167,7 @@ body{
     position: absolute;
     top: 65px;
     transform: translateY(-20%);
-    left: 33.5vh;
+    right: 33.5vh;
 }
 
 .input-field:focus ~ label,.input-field:valid ~ label{
