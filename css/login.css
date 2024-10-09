@@ -149,7 +149,7 @@ body{
     position: absolute;
     top: 65px;
     transform: translateY(-20%);
-    right: 33.5vh;
+    left: 33.5vh;
 }
 
 .id-card{
@@ -159,7 +159,7 @@ body{
     position: absolute;
     top: 65px;
     transform: translateY(-20%);
-    right: 33.5vh;
+    left: 33.5vh;
 }
 
 .input-field:focus ~ label,.input-field:valid ~ label{
