@@ -101,7 +101,7 @@ MODELO DE PRODUCTOS
 </div> <!-- fin de container -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
+    <div class="modal-header text-light bg-success">
         <h5 class="modal-title">Listado de Marca</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
@@ -116,7 +116,7 @@ MODELO DE PRODUCTOS
 		  </tr>
 		</thead>
 		<tbody id="listadoMarca">
-		 
+		
 		</tbody>
 		</table>
     </div>
