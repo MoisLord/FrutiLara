@@ -35,9 +35,9 @@ MODELO DE PRODUCTOS
 		</div>
 		<div class="row mb-4">
 		<div class="input-group mb-3">
-		<button type="button" class="btn btn-success" id="listadoMarca" name="listadoMarca">LISTADO DE MARCA</button>
-		<input class="form-control" type="text" id="id_marca" name="id_marca" />
-		<input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca"style="display:none"/>
+		<button type="button" class="btn btn-success" id="listadodeMarca" name="listadodeMarca">LISTADO DE MARCA</button>
+		<input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca" />
+		<input class="form-control" type="text" id="id_marca" name="id_marca"style="display:none"/>
 		</div>
 		</div>
 			
@@ -49,6 +49,7 @@ MODELO DE PRODUCTOS
 
 		<div class="row">
 		<div class="col">
+
 		<hr class="border border-success border-3 opacity-65">
 		</div>
 	</div>
@@ -115,7 +116,7 @@ MODELO DE PRODUCTOS
 			<th>Marca</th>
 		  </tr>
 		</thead>
-		<tbody id="listadomodelo">
+		<tbody id="listadoMarca">
 		 
 		</tbody>
 		</table>

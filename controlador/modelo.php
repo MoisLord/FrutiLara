@@ -15,11 +15,11 @@ require_once("modelo/".$pagina.".php");
   if(is_file("vista/".$pagina.".php")){
 	  
 	   //si existe creamos una intancia que es una variable local
-	   $o = new modelo();
+	   
 	   //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
 	  
 	  if(!empty($_POST)){
-			
+			$o = new modelo();
 		  // se recibio informacion de la vista 
 		  $accion = $_POST['accion'];
 		  
