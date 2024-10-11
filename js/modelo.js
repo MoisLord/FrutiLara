@@ -2,8 +2,26 @@
 $(document).ready(function(){
 //VALIDACION DE DATOS
 	carga_marca();
+
+
 $("#listadoMarca").on("click",function(){
 	$("#modalMarca").modal("show");
+});	
+
+
+
+$("#id_marca").on("keyup",function(){
+	var cedula = $(this).val();
+	var encontro = false;
+	$("#listadomodelo tr").each(function(){
+		if(cedula == $(this).find("td:eq(1)").text()){
+			colocamarca($(this));
+			encontro = true;
+		} 
+	});
+	if(!encontro){
+		$("#datosmarca").html("");
+	}
 });	
 	$("#id_modelo").on("keypress",function(e){
 		validarkeypress(/^[0-9-\b]*$/,e);
@@ -212,6 +230,13 @@ function coloca(linea){
 	$("#id_marca").val($(linea).find("td:eq(2)").text());
 	$("#direccion").val($(linea).find("td:eq(3)").text());
 	
+}
+function colocamarca(linea){
+	$("#id_marca").val($(linea).find("td:eq(1)").text());
+	$("#descripcion_marca").val($(linea).find("td:eq(0)").text());
+	$("#datosmarca").html($(linea).find("td:eq(2)").text()+
+	"  "+$(linea).find("td:eq(3)").text()+"  "+
+	$(linea).find("td:eq(4)").text());
 }
 
 //funcion que envia y recibe datos por AJAX

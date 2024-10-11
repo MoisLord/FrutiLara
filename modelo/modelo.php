@@ -198,7 +198,7 @@ class modelo extends datos{
 			$respuesta = '';
 			if($resultado){
 				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacliente(this);'>";
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocamarca(this);'>";
 						$respuesta = $respuesta."<td style='display:none'>";
 							$respuesta = $respuesta.$r['id_marca'];
 						$respuesta = $respuesta."</td>";
