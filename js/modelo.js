@@ -274,7 +274,10 @@ function enviaAjax(datos){
 					   muestraMensaje(lee.mensaje);
 					   limpia();
 					}
+					else if(lee.resultado=='listadoMarca'){
 					
+						$('#listadoMarca').html(lee.mensaje);
+					}
 					else if (lee.resultado == "error") {
 					   muestraMensaje(lee.mensaje);
 					}
