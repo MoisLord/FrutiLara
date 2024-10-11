@@ -1,6 +1,10 @@
 
 $(document).ready(function(){
-//VALIDACION DE DATOS	
+//VALIDACION DE DATOS
+	carga_marca();
+$("#listadoMarca").on("click",function(){
+	$("#modalMarca").modal("show");
+});	
 	$("#id_modelo").on("keypress",function(e){
 		validarkeypress(/^[0-9-\b]*$/,e);
 	});
@@ -29,7 +33,20 @@ $(document).ready(function(){
 	
 	
 //FIN DE VALIDACION DE DATOS
-
+function carga_marca(){
+	// para cargar la lista de clientes
+	// utilizaremos una peticion ajax
+	// por lo que usaremos un objeto llamado 
+	// FormData, que es similar al <form> de html
+	// es decir colocaremos en ese FormData, los
+	// elementos que se desean enviar al servidor
+	
+	var datos = new FormData();
+	//a ese datos le añadimos la informacion a enviar
+	datos.append('accion','listadoMarca'); //le digo que me muestre un listado de aulas
+	//ahora se envia el formdata por ajax
+	enviaAjax(datos);
+}
 
 
 //CONTROL DE BOTONES
@@ -227,7 +244,8 @@ function enviaAjax(datos){
 					 }
 					else if (lee.resultado == "incluir" || 
 					lee.resultado == "modificar" || 
-					lee.resultado == "eliminar") {
+					lee.resultado == "eliminar" || 
+					lee.resultado == "listadoMarca") {
 					   muestraMensaje(lee.mensaje);
 					   limpia();
 					}

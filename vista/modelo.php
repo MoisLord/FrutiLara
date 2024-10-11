@@ -46,7 +46,7 @@ MODELO DE PRODUCTOS
            
 			</div>
 		</div>
-		
+
 		<div class="row">
 		<div class="col">
 		<hr class="border border-success border-3 opacity-65">
@@ -98,8 +98,41 @@ MODELO DE PRODUCTOS
 		
     </div>
 </div> <!-- fin de container -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-info">
+        <h5 class="modal-title">Listado de Marca</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content">
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+		    <th style="display:none">Id</th>
+			<th>Registro de Marcas</th>
+			<th>Marca</th>
+		  </tr>
+		</thead>
+		<tbody id="listadomodelo">
+		 
+		</tbody>
+		</table>
+    </div>
+	<div class="modal-footer bg-light">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
 
-<script type="text/javascript" src="js/cliente.js"></script>
+
+
+
+
+
+
+<script type="text/javascript" src="js/modelo.js"></script>
 
 </body>
 </html>

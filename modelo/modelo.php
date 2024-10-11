@@ -187,6 +187,38 @@ class modelo extends datos{
 			return $e->getMessage();
 		}
 	}
+	function listadomarca(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array(); // en este arreglo
+			// se enviara la respuesta a la solicitud y el
+			// contenido de la respuesta
+		try{
+			$resultado = $co->query("Select * from marca");
+			$respuesta = '';
+			if($resultado){
+				foreach($resultado as $r){
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacliente(this);'>";
+						$respuesta = $respuesta."<td style='display:none'>";
+							$respuesta = $respuesta.$r['id_marca'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['descripcion_marca'];
+						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
+				}
+			}
+				$r['resultado'] = 'listadoMarca';
+			    $r['mensaje'] =  $respuesta;
+			    
+			
+			
+		}catch(Exception $e){
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
+		}
+			return $r;
+	}
 	
 	
 	private function existe($id_modelo){
