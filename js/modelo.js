@@ -230,7 +230,7 @@ function coloca(linea){
 }
 function colocamarca(linea){
 	$("#descripcion_marca").val($(linea).find("td:eq(1)").text());
-	$("#datosmarca").html($(linea).find("td:eq(2)").text());
+	
 }
 
 //funcion que envia y recibe datos por AJAX
