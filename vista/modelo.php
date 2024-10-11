@@ -42,11 +42,17 @@ MODELO DE PRODUCTOS
 		</div>
 			
 		<div class="row">
-			<div class="col-md-12">
-            <hr class="border border-success border-3 opacity-65">
+			<div class="col-md-12" id="datosmarca">
+           
 			</div>
 		</div>
-
+		
+		<div class="row">
+		<div class="col">
+		<hr class="border border-success border-3 opacity-65">
+		</div>
+	</div>
+		
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-3">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
