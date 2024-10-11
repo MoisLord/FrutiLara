@@ -19,7 +19,7 @@ require_once("modelo/".$pagina.".php");
 	   //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
 	   
 	  if(!empty($_POST)){
-		$o = new modelo();
+			$o = new modelo();
 		  // se recibio informacion de la vista 
 		  $accion = $_POST['accion'];
 		  
@@ -50,7 +50,7 @@ require_once("modelo/".$pagina.".php");
 				echo  json_encode($o->modificar());
 			  }
 		  }
-		  $consulta = $o->consultar();
+		   $consulta = $o->consultar();
 		  exit;
 	  }
 	  

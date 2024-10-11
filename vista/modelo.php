@@ -111,8 +111,7 @@ MODELO DE PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		    <th style="display:none">Id</th>
-			<th>Registro de Marcas</th>
+			<th>Codigos de Marcas</th>
 			<th>Marca</th>
 		  </tr>
 		</thead>
