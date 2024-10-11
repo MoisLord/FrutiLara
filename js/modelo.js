@@ -4,16 +4,16 @@ $(document).ready(function(){
 	carga_marca();
 
 
-$("#listadoMarca").on("click",function(){
+$("#listadodeMarca").on("click",function(){
 	$("#modalMarca").modal("show");
 });	
 
 
 
-$("#id_marca").on("keyup",function(){
+$("#descripcion_marca").on("keyup",function(){
 	var cedula = $(this).val();
 	var encontro = false;
-	$("#listadomodelo tr").each(function(){
+	$("#listadoMarca tr").each(function(){
 		if(cedula == $(this).find("td:eq(1)").text()){
 			colocamarca($(this));
 			encontro = true;
@@ -65,6 +65,7 @@ function carga_marca(){
 	//ahora se envia el formdata por ajax
 	enviaAjax(datos);
 }
+
 
 
 //CONTROL DE BOTONES
@@ -232,8 +233,8 @@ function coloca(linea){
 	
 }
 function colocamarca(linea){
-	$("#id_marca").val($(linea).find("td:eq(1)").text());
-	$("#descripcion_marca").val($(linea).find("td:eq(0)").text());
+	$("#descripcion_marca").val($(linea).find("td:eq(1)").text());
+	$("#id_marca").val($(linea).find("td:eq(0)").text());
 	$("#datosmarca").html($(linea).find("td:eq(2)").text()+
 	"  "+$(linea).find("td:eq(3)").text()+"  "+
 	$(linea).find("td:eq(4)").text());
@@ -269,11 +270,11 @@ function enviaAjax(datos){
 					 }
 					else if (lee.resultado == "incluir" || 
 					lee.resultado == "modificar" || 
-					lee.resultado == "eliminar" || 
-					lee.resultado == "listadoMarca") {
+					lee.resultado == "eliminar") {
 					   muestraMensaje(lee.mensaje);
 					   limpia();
 					}
+					
 					else if (lee.resultado == "error") {
 					   muestraMensaje(lee.mensaje);
 					}
