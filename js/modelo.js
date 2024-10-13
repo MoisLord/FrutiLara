@@ -124,7 +124,7 @@ $("#consultar").on("click",function(){
 //funcion para enlazar al DataTablet
 function destruyeDT(){
 	//1 se destruye el datatablet
-	if ($.fn.DataTable.isDataTable("#tablaclientes")) {
+	if ($.fn.DataTable.isDataTable("#tablamodelo")) {
             $("#tablaclientes").DataTable().destroy();
     }
 }

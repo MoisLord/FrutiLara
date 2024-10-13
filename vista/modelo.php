@@ -79,7 +79,7 @@ MODELO DE PRODUCTOS
 	<h5 class="modal-title text-center text-success">MODELOS REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
-		<table class="table table-striped table-hover" id="tablaclientes">
+		<table class="table table-striped table-hover" id="tablamodelo">
 		<thead>
 		  <tr>
 		  <th>Codigo de Modelos</th>
