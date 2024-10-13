@@ -126,12 +126,6 @@ MODELO DE PRODUCTOS
   </div>
 </div>
 
-
-
-
-
-
-
 <script type="text/javascript" src="js/modelo.js"></script>
 
 </body>
