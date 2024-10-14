@@ -61,16 +61,16 @@ class modelo extends datos{
 				
 					$p = $co->prepare("Insert into modelo(
 						id_modelo,
-						descripcion_modelo,
+						descripcion_Modelo,
 						id_marca
 						)
 						Values(
 						:id_modelo,
-						:descripcion_modelo,
+						:descripcion_Modelo	,
 						:id_marca
 						)");
 					$p->bindParam(':id_modelo',$this->id_modelo);		
-					$p->bindParam(':descripcion_modelo',$this->descripcion_modelo);
+					$p->bindParam(':descripcion_Modelo',$this->descripcion_modelo);
 					$p->bindParam(':id_marca',$this->id_marca);
 					
 					$p->execute();
@@ -98,13 +98,13 @@ class modelo extends datos{
 		if($this->existe($this->id_modelo)){
 			try {
 				$p = $co->prepare("Update modelo set 
-						descripcion_modelo = :descripcion_modelo,
+						descripcion_Modelo = :descripcion_Modelo,
 						id_marca = :id_marca
 						where
 						id_modelo = :id_modelo
 						");
 					$p->bindParam(':id_modelo',$this->id_modelo);		
-					$p->bindParam(':descripcion_modelo',$this->descripcion_modelo);
+					$p->bindParam(':descripcion_Modelo',$this->descripcion_modelo);
 					$p->bindParam(':id_marca',$this->id_marca);
 					
 					$p->execute();
