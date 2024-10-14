@@ -217,13 +217,13 @@ mensaje){
 function coloca(linea){
 	$("#id_modelo").val($(linea).find("td:eq(0)").text());
 	$("#descripcion_modelo").val($(linea).find("td:eq(1)").text());
-	$("#descripcion_marca").val($(linea).find("td:eq(2)").text());
+	$("#idMarca").val($(linea).find("td:eq(2)").text());
 	
 	
 }
 function colocamarca(linea){
-	$("#idMarca").val($(linea).find("td:eq(0)").text());
-	$("#descripcion_marca").val($(linea).find("td:eq(1)").text());
+	
+	$("#idMarca").val($(linea).find("td:eq()").text());
 	
 }
 
@@ -252,7 +252,7 @@ function enviaAjax(datos){
 					 else if (lee.resultado == "encontro") {
 						$("#id_modelo").val(lee.mensaje[0][0]);
 						$("#descripcion_modelo").val(lee.mensaje[0][1]);
-						$("#descripcion_marca").val(lee.mensaje[0][2]);
+						$("#idMarca").val(lee.mensaje[0][2]);
 						
 						
 					 }

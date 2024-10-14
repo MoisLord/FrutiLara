@@ -37,15 +37,9 @@ MODELO DE PRODUCTOS
 		<div class="input-group mb-3">
 		<button type="button" class="btn btn-success" id="listadodeMarca" name="listadodeMarca">LISTADO DE MARCA</button>
 		<input class="form-control" type="text" id="idMarca" name="idMarca" />
-		<input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca" style="display:none" />
+		
 		<span id="sid_marca"></span>
 		</div>
-		</div>
-			
-		<div class="row">
-			<div class="col-md-12" id="datosmarca">
-           
-			</div>
 		</div>
 
 		<div class="row">
