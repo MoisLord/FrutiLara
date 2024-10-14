@@ -39,11 +39,6 @@ $("#descripcion_marca").on("keyup",function(){
 	});
 	
 	
-	$("#descripcion_modelo").on("keypress",function(e){
-		validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
-	});
-	
-	
 	
 	
 	
@@ -159,11 +154,7 @@ function validarenvio(){
 		muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres");
 		return false;
 	}
-	else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,$("#descripcion_marca"),
-		 $("#sid_marca"),"Solo letras  entre 3 y 30 caracteres")==0){
-		 muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres","Verifique el marca");
-	     return false;
-	}
+	
 	
 	
 	return true;
