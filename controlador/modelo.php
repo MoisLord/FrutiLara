@@ -17,9 +17,9 @@ require_once("modelo/".$pagina.".php");
 	   //si existe creamos una intancia que es una variable local
 	   
 	   //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
-	   
+	   $o = new modelo();
 	  if(!empty($_POST)){
-		 $o = new modelo();
+		 
 		  // se recibio informacion de la vista 
 		  $accion = $_POST['accion'];
 		  
@@ -50,10 +50,10 @@ require_once("modelo/".$pagina.".php");
 				echo  json_encode($o->modificar());
 			  }
 		  }
-		   $consulta = $o->consultar();
+		   
 		  exit;
 	  }
-	  
+	  $consulta = $o->consultar();
 	 
 	  
 	  require_once("vista/".$pagina.".php"); 

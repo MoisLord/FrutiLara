@@ -43,10 +43,7 @@ $("#descripcion_marca").on("keyup",function(){
 		validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
 	});
 	
-	$("#descripcion_modelo").on("keyup",function(){
-		validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-		$(this),$("#sid_marca"),"Solo letras  entre 3 y 30 caracteres");
-	});
+	
 	
 	
 	
@@ -111,11 +108,7 @@ $("#eliminar").on("click",function(){
 	
 });
 
-$("#consultar").on("click",function(){
-	var datos = new FormData();
-	datos.append('accion','consultar');
-	enviaAjax(datos);
-});
+
 //FIN DE CONTROL DE BOTONES	
 
 });
@@ -130,7 +123,7 @@ function destruyeDT(){
 }
 function crearDT(){
 	//se crea nuevamente
-    if (!$.fn.DataTable.isDataTable("#tablaclientes")) {
+    if (!$.fn.DataTable.isDataTable("#tablamodelo")) {
             $("#tablaclientes").DataTable({
               language: {
                 lengthMenu: "Mostrar _MENU_ por página",
@@ -229,6 +222,7 @@ function coloca(linea){
 	
 }
 function colocamarca(linea){
+	$("#idMarca").val($(linea).find("td:eq(0)").text());
 	$("#descripcion_marca").val($(linea).find("td:eq(1)").text());
 	
 }

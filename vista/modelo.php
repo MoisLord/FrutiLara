@@ -36,7 +36,8 @@ MODELO DE PRODUCTOS
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		<button type="button" class="btn btn-success" id="listadodeMarca" name="listadodeMarca">LISTADO DE MARCA</button>
-		<input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca" />
+		<input class="form-control" type="text" id="idMarca" name="idMarca" />
+		<input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca" style="display:none" />
 		<span id="sid_marca"></span>
 		</div>
 		</div>

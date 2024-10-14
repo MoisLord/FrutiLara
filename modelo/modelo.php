@@ -169,7 +169,7 @@ class modelo extends datos{
 							$respuesta = $respuesta.$r['id_modelo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['descripcion_modelo'];
+							$respuesta = $respuesta.$r['descripcion_Modelo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['id_marca'];
