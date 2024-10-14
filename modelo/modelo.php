@@ -66,7 +66,7 @@ class modelo extends datos{
 						)
 						Values(
 						:id_modelo,
-						:descripcion_Modelo	,
+						:descripcion_Modelo,
 						:id_marca
 						)");
 					$p->bindParam(':id_modelo',$this->id_modelo);		

@@ -68,7 +68,7 @@ $("#incluir").on("click",function(){
 		datos.append('accion','incluir');
 		datos.append('id_modelo',$("#id_modelo").val());
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
-		datos.append('id_marca',$("#descripcion_marca").val());
+		datos.append('idMarca',$("#idMarca").val());
 		enviaAjax(datos);
 	}
 });
@@ -79,7 +79,7 @@ $("#modificar").on("click",function(){
 		datos.append('accion','modificar');
 		datos.append('id_modelo',$("#id_modelo").val());
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
-		datos.append('id_marca',$("#descripcion_marca").val());
+		datos.append('idMarca',$("#idMarca").val());
 		enviaAjax(datos);
 		
 	}
