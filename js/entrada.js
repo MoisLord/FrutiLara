@@ -1,33 +1,30 @@
 $(document).ready(function(){
-//para mostrar en modal mensajes del servidor	
-if($.trim($("#mensajes").text()) != ""){
-	muestraMensaje($("#mensajes").html());
-}
-//Fin de seccion de mostrar envio en modal mensaje//	
-	
+
 //boton para levantar modal de clientes
+
 $("#listadodeproveedores").on("click",function(){
 	$("#modalclientes").modal("show");
 });
 
 //boton para levantar modal de productos
+
 $("#listadodeproductos").on("click",function(){
 	$("#modalproductos").modal("show");
 });
 
 
 //evento keyup de input cedulacliente	
-$("#cedulacliente").on("keyup",function(){
+$("#nombreprove").on("keyup",function(){
 	var rif = $(this).val();
 	var encontro = false;
-	$("#listadodeproveedores tr").each(function(){
+	$("#listadoproveedor tr").each(function(){
 		if(rif == $(this).find("td:eq(1)").text()){
 			colocaproveedor($(this));
 			encontro = true;
 		} 
 	});
 	if(!encontro){
-		$("#datosdelcliente").html("");
+		$("#datosdelproveedor").html("");
 	}
 });	
 
@@ -42,13 +39,13 @@ $("#codigoproducto").on("keyup",function(){
 });	
 
 //evento click de boton facturar
-$("#facturar").on("click",function(){
+$("#registrar").on("click",function(){
 	if(existecliente()==true){
 		if(verificaproductos()){
 			$("#f").submit();
 		}
 		else{
-			muestraMensaje("Debe agregar algun producto a la venta !!!");
+			muestraMensaje("Debe agregar algun producto al inventario!!!");
 		}
 	}
 	else{
@@ -62,20 +59,18 @@ $("#facturar").on("click",function(){
 //function para saber si selecciono algun productos
 function verificaproductos(){
 	var existe = false;
-	if($("#detalledeventa tr").length > 0){
+	if($("#entrada tr").length > 0){
 		existe = true;
 	}
 	return existe;
 }
 //fin de verificar si selecciono procductos
-
-//function para buscar si existe el cliente 
 function existecliente(){
-	var rif = $("#cedulacliente").val();
+	var cedula = $("#nombreprove").val();
 	var existe = false;
-	$("#listadodeproveedores tr").each(function(){
+	$("#listadoproveedor tr").each(function(){
 		
-		if(rif == $(this).find("td:eq(1)").text()){
+		if(cedula == $(this).find("td:eq(1)").text()){
 			existe = true;
 		}
 	});
@@ -83,14 +78,12 @@ function existecliente(){
 	return existe;
 	
 }
-//fin de funcion existecliente
-
 //funcion para colocar los productos
 function colocaproducto(linea){
 	var id = $(linea).find("td:eq(0)").text();
 	var encontro = false;
 	
-	$("#detalledeventa tr").each(function(){
+	$("#entrada tr").each(function(){
 		if(id*1 == $(this).find("td:eq(1)").text()*1){
 			encontro = true
 			var t = $(this).find("td:eq(4)").children();
@@ -157,9 +150,9 @@ function eliminalineadetalle(boton){
 
 //funcion para colocar datos del proveedor en pantalla
 function colocaproveedor(linea){
-	$("#cedulacliente").val($(linea).find("td:eq(1)").text());
+	$("#nombreprove").val($(linea).find("td:eq(1)").text());
 	$("#idproveedor").val($(linea).find("td:eq(0)").text());
-	$("#datosdelcliente").html($(linea).find("td:eq(2)").text()+
+	$("#datosdelproveedor").html($(linea).find("td:eq(2)").text()+
 	"  "+$(linea).find("td:eq(3)").text()+"  "+
 	$(linea).find("td:eq(4)").text());
 }
@@ -212,5 +205,85 @@ mensaje){
 
 function redondearDecimales(numero, decimales) {
 	return Number(Math.round(numero +'e'+ decimales) +'e-'+ decimales).toFixed(decimales);
+	
+}
+function enviaAjax(datos){
+	
+	$.ajax({
+		async: true,
+            url: '', //la pagina a donde se envia por estar en mvc, se omite la ruta ya que siempre estaremos en la misma pagina
+            type: 'POST',//tipo de envio 
+            contentType: false,
+            data: datos,
+            processData: false,
+            cache: false,
+            beforeSend: function(){
+				//pasa antes de enviar pueden colocar un loader
+				$("#loader").show();
+				
+			},
+			timeout:10000, //tiempo maximo de espera por la respuesta del servidor
+            success: function(respuesta) {//si resulto exitosa la transmision
+				
+            	try{
+				// se usa try catch porque los datos que se
+				// reciben vienen en formato json
+				// por lo que se deben convertir en un arreglo 
+				// asociativo para usarlos en javascript
+				// si el json no esta bien formado, este paso genera un
+				// error
+				var lee = JSON.parse(respuesta);	
+				console.log(lee.resultado);
+				if(lee.resultado=='listadoproveedor'){
+					
+					//si el servidor retorno como
+					// resultado listadoclientes significa
+					// que se obtuvieron datos del json
+					// y se colocan esos resultados en la vista
+					$('#listadoproveedor').html(lee.mensaje);
+				}
+				else if(lee.resultado=='listadoproductos'){
+					
+					$('#listadoproductos').html(lee.mensaje);
+				}
+				else if(lee.resultado=='registrar'){
+					
+					muestraMensaje(lee.mensaje);
+				}
+				else if(lee.resultado=='error'){
+					muestraMensaje(lee.mensaje);
+				}
+				
+			}
+			catch(e){
+				alert("Error en JSON "+e.name+" !!!");
+			}
+			  //cuanto termina el proceso ocultan el loader
+			  
+			},
+			error: function(request, status, err){
+				// si ocurrio un error en la trasmicion 
+				// o recepcion via ajax entra aca
+				// y se muestran los mensaje del error
+				
+				if (status == "timeout") {
+					//pasa cuando superan los 10000 10 segundos de timeout
+					muestraMensaje("Servidor ocupado, intente de nuevo");
+				} else {
+					//cuando ocurreo otro error con ajax
+				    muestraMensaje("ERROR: <br/>" + request + status + err);
+				}
+			},
+			complete: function(){
+				//Ocurre luego del succes
+				// esta es la parte final del proceso de
+				// trasmision recepcion y la puede usar para
+				// ocultar un loader
+				
+			}
+			
+		});
+
+
 	
 }
