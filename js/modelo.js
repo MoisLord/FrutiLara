@@ -115,13 +115,13 @@ $("#eliminar").on("click",function(){
 function destruyeDT(){
 	//1 se destruye el datatablet
 	if ($.fn.DataTable.isDataTable("#tablamodelo")) {
-            $("#tablaclientes").DataTable().destroy();
+            $("#tablamodelo").DataTable().destroy();
     }
 }
 function crearDT(){
 	//se crea nuevamente
     if (!$.fn.DataTable.isDataTable("#tablamodelo")) {
-            $("#tablaclientes").DataTable({
+            $("#tablamodelo").DataTable({
               language: {
                 lengthMenu: "Mostrar _MENU_ por página",
                 zeroRecords: "No se encontraron personas",
