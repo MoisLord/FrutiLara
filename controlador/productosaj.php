@@ -40,7 +40,7 @@ require_once("modelo/".$pagina.".php");
 			echo json_encode($respuesta);
 		 }
 		 elseif($accion=='listadoCategoria'){
-			$respuesta = $o->listadoCategoria();
+			$respuesta = $o->listadocategoria();
 			echo json_encode($respuesta);
 		 }
 		  else{		  

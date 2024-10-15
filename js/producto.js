@@ -21,7 +21,7 @@
 
       carga_categoria();
       $("#listadodeCategoria").on("click",function(){
-        $("#modalMarca").modal("show");
+        $("#modalCategoria").modal("show");
       });	
       
       $("#id_categoria").on("keyup",function(){

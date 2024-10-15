@@ -72,10 +72,6 @@ PRODUCTOS
 		</div>
 		</div>
 
-	<div class="row">
-		<div class="col-md-12" id="datosmarca">   
-		</div>
-	</div>
 		
 		<div class="row mb-4">
 		<div class="input-group mb-3">
@@ -84,10 +80,6 @@ PRODUCTOS
 		</div>
 		</div>
 
-	<div class="row">
-		<div class="col-md-12" id="datoscategoria">   
-		</div>
-	</div>
 	</div>
 		<div class="row">
 			<div class="col-md-12">
@@ -168,7 +160,7 @@ PRODUCTOS
 <!--fin de seccion modal-->
 
 <!-- seccion del modal productos -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalCategorias">
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalCategoria">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
         <h5 class="modal-title">LISTADO DE CATEGORIAS</h5>
