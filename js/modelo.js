@@ -29,7 +29,7 @@ $("#descripcion_marca").on("keyup",function(){
 	
 	$("#id_modelo").on("keyup",function(){
 		validarkeyup(/^[0-9]{7,8}$/,$(this),
-		$("#sid_modelo"),"El formato debe ser 9999999 ");
+		$("#sid_modelo"),"El formato debe ser numerico ");
 		if($("#id_modelo").val().length > 7){
 		  var datos = new FormData();
 		    datos.append('accion','consultatr');
@@ -70,6 +70,7 @@ $("#incluir").on("click",function(){
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
 		datos.append('idMarca',$("#idMarca").val());
 		enviaAjax(datos);
+		setInterval("location.reload()",3000);
 	}
 });
 $("#modificar").on("click",function(){
@@ -81,7 +82,7 @@ $("#modificar").on("click",function(){
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
 		datos.append('idMarca',$("#idMarca").val());
 		enviaAjax(datos);
-		
+		setInterval("location.reload()",3000);
 	}
 });
 
@@ -89,7 +90,7 @@ $("#eliminar").on("click",function(){
 	
 	if(validarkeyup(/^[0-9]{7,8}$/,$("#id_modelo"),
 		$("#sid_modelo"),"El formato debe ser 9999999")==0){
-	    muestraMensaje("La id_modelo debe coincidir con el formato <br/>"+ 
+	    muestraMensaje("La id del modelo debe coincidir con el formato <br/>"+ 
 						"99999999");	
 		
 	}
@@ -99,6 +100,7 @@ $("#eliminar").on("click",function(){
 		datos.append('accion','eliminar');
 		datos.append('id_modelo',$("#id_modelo").val());
 		enviaAjax(datos);
+		setInterval("location.reload()",3000);
 	}
 	
 });
@@ -145,13 +147,13 @@ function crearDT(){
 function validarenvio(){
 	if(validarkeyup(/^[0-9]{7,8}$/,$("#id_modelo"),
 		$("#sid_modelo"),"El formato debe ser 9999999")==0){
-	    muestraMensaje("La id_modelo debe coincidir con el formato <br/>"+ 
+	    muestraMensaje("La id del modelo debe coincidir con el formato <br/>"+ 
 						"99999999");	
 		return false;					
 	}	
 	else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
 		$("#descripcion_modelo"),$("#sdescripcion_modelo"),"Solo letras  entre 3 y 30 caracteres")==0){
-		muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres");
+		muestraMensaje("Descripción del modelo <br/>Solo letras  entre 3 y 30 caracteres");
 		return false;
 	}
 	
@@ -287,7 +289,7 @@ function limpia(){
 	
 	$("#id_modelo").val("");
 	$("#descripcion_modelo").val("");
-	$("#descripcion_marca").val("");
+	$("#idMarca").val("");
 	
 	
 }

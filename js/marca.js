@@ -56,7 +56,7 @@ $(document).ready(function(){
     
     $("#eliminar").on("click",function(){
         
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#id_marca"),
+        if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
             $("#sid_marca"),"El formato debe ser Numerico")==0){
             muestraMensaje("El id_marca debe coincidir con el formato <br/>"+ 
                             "99999999");	
@@ -118,7 +118,7 @@ $(document).ready(function(){
     
     //Validación de todos los campos antes del envio
     function validarenvio(){
-        if(validarkeyup(/^[0-9]{7,8}$/,$("#id_marca"),
+        if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
             $("#sid_marca"),"El formato debe ser Numerico")==0){
             muestraMensaje("El id_marca debe coincidir con el formato <br/>"+ 
                             "99999999");	
