@@ -6,31 +6,47 @@ require_once('modelo/datos.php');
 
 class entrada extends datos{
     
-	function facturar($codigo,$cantidad,$cifra){
+	function Registrar($rif,$codigo,$cantidad){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array();
 		try{
 		   $fecha = date('Y-m-d');
-		   $guarda = $co->query("insert into ingreso_producto(codigo_ingreso, cantidad, cifra, fecha_entrega) 
-		   values (':codigo_ingreso',':cantidad',':cifra',':fecha_entrega')");
+		   $guarda = $co->query("insert into entrada(rif_proveedores,
+		   codigo_producto,fecha) 
+		   values ('$rif','$codigo','$fecha')");
 		   $lid = $co->lastInsertId(); //retorna el valor del campo
 		   //autoincremental
 		   
 		   //una vez que se tiene lleno el maestro de factura, se pasa a 
 		   //llenar el detalle de la venta
 		   
-		   //como los datos codigo_producto, cantidad y cifra son 
+		   //como los datos id_producto, cantidad y precio son 
 		   //arreglos, los recorreresmo utilizando un for
 		   //para ello primero buscamos el tamaño del arreglos
 		   //y luego ubicamos cada posicion
-		  
-		   $console.log(mensaje);
-		   return "Ingreso procesado, numero de recepción: $lid";
+		   
+		   $tamano = count($codigo);
+		   
+		   for($i=0;$i<$tamano;$i++){
+			   $gd = $co->query("insert into `detalle_entrada`
+			   (id_entrada,codigo_producto,Cantidad_producto)
+			   values(
+			   '$lid',
+		       '$codigo[$i]',
+			   '$cantidad[$i]'
+			   )");
+		   }
+		   $r['resultado'] = 'Registrar';
+		   $r['mensaje'] =  "inventario procesada, numero de inventario: $lid";
+		   
+		   
 		}	
 		catch(Exception $e){
-			return $e->getMessage();
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
 		}
-		
+		return $r;
 	}
 	
 	
@@ -86,9 +102,6 @@ class entrada extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaproducto(this);'>";
-					$respuesta = $respuesta."<td style='display:none'>";
-							$respuesta = $respuesta.$r['codigo_producto'];
-						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo'];
 						$respuesta = $respuesta."</td>";
@@ -96,7 +109,7 @@ class entrada extends datos{
 							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['tipo'];
+							$respuesta = $respuesta.$r['cantidad_total'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['minimo'];
@@ -105,7 +118,10 @@ class entrada extends datos{
 							$respuesta = $respuesta.$r['maximo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['porcentaje'];
+							$respuesta = $respuesta.$r['id_modelo'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['id_categoria '];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}

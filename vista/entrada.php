@@ -43,7 +43,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	<h6>Rif del Proveedor</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
-		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
+		   <input class="form-control" type="text" id="nombreprove" name="nombreprove" />
 		   <input class="form-control" type="text" id="idproveedor" name="idproveedor" style="display:none"/>
 		</div>
 	</div>
@@ -51,7 +51,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	
 	<!-- FILA DE DATOS DEL PROVEEDOR -->
 	<div class="row">
-		<div class="col-md-12" id="datosdelcliente">
+		<div class="col-md-12" id="datosdelproveedor">
 		   
 		</div>
 	</div>
@@ -86,13 +86,14 @@ NOTAS DE ENTRADA DE PRODUCTOS
 				    <th>X</th>
 					<th style="display:none">Id</th>
 					<th>Codigo</th>
-					<th>Descripción</th>
-					<th>CANT</th>
-					<th>%</th>
-					<th>SUB TOT</th>
+					<th>Nombre Del producto</th>
+					<th>Cantidad</th>
+					<th>Minimo</th>
+					<th>Modelo</th>
+					<th>Categoria</th>
 				  </tr>
 				</thead>
-				<tbody id="detalledeventa">
+				<tbody id="entrada">
 
 				</tbody>
 			</table>
@@ -105,7 +106,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 
 
 <!-- seccion del modal proveedores -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalproveedor">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
         <h5 class="modal-title">Listado de proveedores</h5>
@@ -124,12 +125,8 @@ NOTAS DE ENTRADA DE PRODUCTOS
 			<th>Direccion</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeproveedores">
-		  <?php
-			if(!empty($consultaproveedores)){
-				echo $consultaproveedores;
-			}
-		  ?>
+		<tbody id="listadoproveedor">
+		  
 		</tbody>
 		</table>
     </div>
@@ -159,15 +156,12 @@ NOTAS DE ENTRADA DE PRODUCTOS
 			<th>Tipo</th>
 			<th>Max</th>
 			<th>Min</th>
-			<th>%</th>
+			<th>Modelo</th>
+			<th>Categoria</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeproductos">
-		  <?php
-			if(!empty($consultaproductos)){
-				echo $consultaproductos;
-			}
-		  ?>
+		<tbody id="listadoproductos">
+		 
 		</tbody>
 		</table>
     </div>
