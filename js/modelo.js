@@ -10,11 +10,11 @@ $("#listadodeMarca").on("click",function(){
 
 
 
-$("#descripcion_marca").on("keyup",function(){
-	var cedula = $(this).val();
+$("#id_marca").on("keyup",function(){
+	var codigo = $(this).val();
 	var encontro = false;
 	$("#listadoMarca tr").each(function(){
-		if(cedula == $(this).find("td:eq(1)").text()){
+		if(codigo == $(this).find("td:eq(1)").text()){
 			colocamarca($(this));
 			encontro = true;
 		} 

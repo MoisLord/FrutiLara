@@ -200,11 +200,12 @@ class modelo extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocamarca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['id_marca'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['descripcion_marca'];
 						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['id_marca'];
+						$respuesta = $respuesta."</td>";
+						
 					$respuesta = $respuesta."</tr>";
 				}
 			}
