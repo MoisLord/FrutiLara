@@ -46,8 +46,8 @@ PRODUCTOS
 		<div class="row mb-4">
 			<div class="col-md">
         		<label for="">Existencia Total</label>
-       			<input class="form-control" type="text" id="" name=""/>
-				<span id=""></span>
+       			<input class="form-control" type="text" id="cantidad_total" name="cantidad_total"/>
+				<span id="cantidad_total"></span>
     		</div>
 		</div>    
 
@@ -67,9 +67,8 @@ PRODUCTOS
 		
 		<div class="row mb-4">
 		<div class="input-group mb-3">
-		<button type="button" class="btn btn-success" id="listadoMarca" name="listadoMarca">LISTADO DE MARCA</button>
-		<input class="form-control" type="text" id="modelo" name="modelo" />
-		<input class="form-control" type="text" id="marcas" name="marcas"style="display:none"/>
+		<button type="button" class="btn btn-success" id="listadodeMarca" name="listadodeMarca">LISTADO DE MARCA</button>
+		<input class="form-control" type="text" id="idMarca" name="idMarca"/>
 		</div>
 		</div>
 
@@ -80,11 +79,8 @@ PRODUCTOS
 		
 		<div class="row mb-4">
 		<div class="input-group mb-3">
-
-		  <button type="button" class="btn btn-success" id="listadoCategoria" name="listadoCategoria">LISTADO DE CATEGORIAS</button>
-		  
-		  <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria" />
-		  <input class="form-control" type="text" id="idcategoria" name="idcategoria" style="display:none"/>
+		  <button type="button" class="btn btn-success" id="listadodeCategoria" name="listadodeCategoria">LISTADO DE CATEGORIAS</button>
+		  <input class="form-control" type="text" id="idCategoria" name="idCategoria" />
 		</div>
 		</div>
 
@@ -129,6 +125,7 @@ PRODUCTOS
 		  <tr>
 			<th>Codigo Productos</th>
 			<th>Nombre Productos</th>
+			<th>Existencia total</th>
 			<th>Minimo</th>	
 			<th>Maximo</th>
 			<th>Marca</th>
@@ -154,16 +151,12 @@ PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-			<th>Registro de Marcas</th>
-			<th>Marca</th>
+		  	<th>Marca</th>
+			<th>Codigo de Marcas</th>
+			
 		  </tr>
 		</thead>
 		<tbody id="listadoMarca">
-		  <?php
-			if(!empty($consultaMarca)){
-				echo $consultaMarca;
-			}
-		  ?>
 		</tbody>
 		</table>
     </div>
@@ -188,17 +181,12 @@ PRODUCTOS
 		<thead>
 		  <tr>
 			<th>Codigo de categoria</th>
-			<th>tipo de Producto</th>
+			<th>Tipo de Producto</th>
 			<th>Unidad de medida común</th>	
 			<th>Unidad de Medida Alternativa</th>
 		  </tr>
 		</thead>
 		<tbody id="listadoCategoria">
-		  <?php
-			if(!empty($consultaCategoria)){
-				echo $consultaCategoria;
-			}
-		  ?>
 		</tbody>
 		</table>
     </div>

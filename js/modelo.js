@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 //VALIDACION DE DATOS
 	carga_marca();

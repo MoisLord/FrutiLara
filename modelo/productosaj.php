@@ -79,76 +79,7 @@ class productosaj extends datos{
 		return $this->id_categoria;
 	}
 
-	function listadoMarca(){
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		try{
-			
-			$resultado = $co->query("Select * from marca");
-			
-			if($resultado){
-				
-				$respuesta = '';
-				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaMarca(this);'>";
-					$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['id_marca'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['descripcion_marca'];
-						$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."</tr>";
-				}
-				return $respuesta;
-			    
-			}
-			else{
-				return '';
-			}
-			
-		}catch(Exception $e){
-			return $e->getMessage();
-		}
-		
-	}
-	function listadoCategoria(){
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		try{
-			
-			$resultado = $co->query("Select * from categoria");
-			
-			if($resultado){
-				
-				$respuesta = '';
-				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacategorias(this);'>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['codigo_categoria'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['descripcion_categoria'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['unidadMedNormal'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['unidadMedAlt'];
-						$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."</tr>";
-				}
-				return $respuesta;
-			    
-			}
-			else{
-				return '';
-			}
-			
-		}catch(Exception $e){
-			return $e->getMessage();
-		}
-		
-	}
+	
 	
 
 	// metodos para incluir, consultar y eliminar
@@ -320,22 +251,90 @@ class productosaj extends datos{
 				$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
-				$r['resultado'] = 'consultar';
-				$r['mensaje'] =  $respuesta;
+				return $respuesta;
 			    
 			}
 			else{
-				$r['resultado'] = 'consultar';
-				$r['mensaje'] =  '';
+				return '';
 			}
+			
+		}catch(Exception $e){
+			return $e->getMessage();
+		}
+	}
+
+
+	function listadomarca(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		try{
+			
+			$resultado = $co->query("Select * from marca");
+			
+			if($resultado){
+				
+				$respuesta = '';
+				foreach($resultado as $r){
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocamarca(this);'>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['id_marca'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['descripcion_marca'];
+						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
+				}
+			}
+				$r['resultado'] = 'listadoMarca';
+			    $r['mensaje'] =  $respuesta;
+			    
+			
 			
 		}catch(Exception $e){
 			$r['resultado'] = 'error';
 			$r['mensaje'] =  $e->getMessage();
 		}
-		return $r;
+			return $r;
 	}
-	
+
+	function listadocategoria(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		try{
+			
+			$resultado = $co->query("Select * from categoria");
+			
+			if($resultado){
+				
+				$respuesta = '';
+				foreach($resultado as $r){
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacategorias(this);'>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['codigo_categoria'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['descripcion_categoria'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['unidadMedNormal'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['unidadMedAlt'];
+						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
+				}
+			}
+				$r['resultado'] = 'listadoCategoria';
+			    $r['mensaje'] =  $respuesta;
+			    
+			
+			
+		}catch(Exception $e){
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
+		}
+			return $r;
+	}
 	
 	private function existe($codigo){
 		$co = $this->conecta();

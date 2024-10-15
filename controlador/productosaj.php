@@ -35,14 +35,22 @@ require_once("modelo/".$pagina.".php");
 			 $o->set_codigo($_POST['codigo']);
 			 echo  json_encode($o->eliminar());
 		  }
+		  elseif($accion=='listadoMarca'){
+			$respuesta = $o->listadomarca();
+			echo json_encode($respuesta);
+		 }
+		 elseif($accion=='listadoCategoria'){
+			$respuesta = $o->listadoCategoria();
+			echo json_encode($respuesta);
+		 }
 		  else{		  
 			  $o->set_codigo($_POST['codigo']);
 			  $o->set_nombre($_POST['nombre']);
 			  $o->set_cantidad_total($_POST['cantidad_total']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
-              $o->set_id_marca($_POST['id_marca']);
-			  $o->set_id_categoria($_POST['id_categoria']);
+              $o->set_id_marca($_POST['idMarca']);
+			  $o->set_id_categoria($_POST['idCategoria']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }
@@ -53,8 +61,9 @@ require_once("modelo/".$pagina.".php");
 		 
 		  exit;
 	  }
-	  $consultaMarca = $o->listadoMarca();
-	  $consultaCategoria = $o->listadoCategoria();
+	  $consulta = $o->consultar();
+
+
 	  require_once("vista/".$pagina.".php"); 
   }
   else{
