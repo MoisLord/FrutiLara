@@ -19,11 +19,11 @@
 			
 		  $o = new Comprajax(); 	
 		  $accion = $_POST['accion'];
-		  if($accion=='listadodeproveedores'){
+		  if($accion=='listadoproveedores'){
 			  $respuesta = $o->listadodeproveedores();
 			  echo json_encode($respuesta);
 		  }
-		  elseif($accion=='listadodeproductos'){
+		  elseif($accion=='listadoproductos'){
 			  $respuesta = $o->listadodeproductos();
 			  echo json_encode($respuesta);
 		  }

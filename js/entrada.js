@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
 //boton para levantar modal de clientes
-
+carga_proveedor();
+carga_productos();
 $("#listadodeproveedores").on("click",function(){
 	$("#modalclientes").modal("show");
 });
@@ -55,7 +56,29 @@ $("#registrar").on("click",function(){
 	
 	
 });
-
+function carga_proveedor(){
+	// para cargar la lista de clientes
+	// utilizaremos una peticion ajax
+	// por lo que usaremos un objeto llamado 
+	// FormData, que es similar al <form> de html
+	// es decir colocaremos en ese FormData, los
+	// elementos que se desean enviar al servidor
+	
+	var datos = new FormData();
+	//a ese datos le añadimos la informacion a enviar
+	datos.append('accion','listadoproveedor'); //le digo que me muestre un listado de aulas
+	//ahora se envia el formdata por ajax
+	enviaAjax(datos);
+}
+function carga_productos(){
+	
+	
+	var datos = new FormData();
+	
+	datos.append('accion','listadoproductos'); //le digo que me muestre un listado de aulas
+	
+	enviaAjax(datos);
+}
 //function para saber si selecciono algun productos
 function verificaproductos(){
 	var existe = false;
