@@ -4,7 +4,7 @@ $(document).ready(function(){
 carga_proveedor();
 carga_productos();
 $("#listadodeproveedores").on("click",function(){
-	$("#modalclientes").modal("show");
+	$("#modalproveedor").modal("show");
 });
 
 //boton para levantar modal de productos
