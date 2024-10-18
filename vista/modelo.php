@@ -79,7 +79,7 @@ MODELO DE PRODUCTOS
 		  <tr>
 		  <th>Codigo de Modelos</th>
 		  <th>Modelos</th>
-		  <th>Marca</th>
+		  <th>idMarca</th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -106,8 +106,9 @@ MODELO DE PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		  	<th>Marca</th>
+		  	<th>ID</th>
 			<th>Codigos de Marcas</th>
+			<th>Marca</th>
 			
 		  </tr>
 		</thead>

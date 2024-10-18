@@ -22,7 +22,6 @@ body{
     display: flex;
     font-family: 'Fira Sans', sans-serif;
     overflow-y: hidden; /* Oculta el scroll vertical que genera el navegador */
-    
 }
 
 .container{

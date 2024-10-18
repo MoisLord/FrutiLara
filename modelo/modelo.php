@@ -60,16 +60,16 @@ class modelo extends datos{
 			try {
 				
 					$p = $co->prepare("Insert into modelo(
-						id_modelo,
+						codigo_modelo,
 						descripcion_Modelo,
 						id_marca
 						)
 						Values(
-						:id_modelo,
+						:codigo_modelo,
 						:descripcion_Modelo,
 						:id_marca
 						)");
-					$p->bindParam(':id_modelo',$this->id_modelo);		
+					$p->bindParam(':codigo_modelo',$this->id_modelo);		
 					$p->bindParam(':descripcion_Modelo',$this->descripcion_modelo);
 					$p->bindParam(':id_marca',$this->id_marca);
 					
@@ -101,9 +101,9 @@ class modelo extends datos{
 						descripcion_Modelo = :descripcion_Modelo,
 						id_marca = :id_marca
 						where
-						id_modelo = :id_modelo
+						codigo_modelo = :codigo_modelo
 						");
-					$p->bindParam(':id_modelo',$this->id_modelo);		
+					$p->bindParam(':codigo_modelo',$this->id_modelo);		
 					$p->bindParam(':descripcion_Modelo',$this->descripcion_modelo);
 					$p->bindParam(':id_marca',$this->id_marca);
 					
@@ -131,9 +131,9 @@ class modelo extends datos{
 			try {
 					$p = $co->prepare("delete from modelo 
 					    where
-						id_modelo = :id_modelo
+						codigo_modelo = :codigo_modelo
 						");
-					$p->bindParam(':id_modelo',$this->id_modelo);		
+					$p->bindParam(':codigo_modelo',$this->id_modelo);		
 					
 					
 					$p->execute();
@@ -166,7 +166,7 @@ class modelo extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['id_modelo'];
+							$respuesta = $respuesta.$r['codigo_modelo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['descripcion_Modelo'];
@@ -200,12 +200,14 @@ class modelo extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocamarca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['descripcion_marca'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['id_marca'];
 						$respuesta = $respuesta."</td>";
-						
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['codigo_marca'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['descripcion_marca'];
+						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
 			}
@@ -227,7 +229,7 @@ class modelo extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from modelo where id_modelo='$id_modelo'");
+			$resultado = $co->query("Select * from modelo where codigo_modelo='$id_modelo'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -252,7 +254,7 @@ class modelo extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from modelo where id_modelo='$this->id_modelo'");
+			$resultado = $co->query("Select * from modelo where codigo_modelo='$this->id_modelo'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
