@@ -118,8 +118,9 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		    <th style="display:none">Id</th>
+		   
 			<th>Rif</th>
+			<th>Documento</th>
 			<th>Empresa</th>
 			<th>Telefono</th>
 			<th>Direccion</th>
@@ -150,12 +151,11 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		    <th style="display:none">Id</th>
 			<th>Codigo</th>
 			<th>Nombre</th>
-			<th>Tipo</th>
-			<th>Max</th>
+			<th>Cantidad</th>
 			<th>Min</th>
+			<th>Max</th>
 			<th>Modelo</th>
 			<th>Categoria</th>
 		  </tr>
