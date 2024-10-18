@@ -67,14 +67,14 @@ class marca extends datos{
 			$r = array();
 			try {
 					$p = $co->prepare("Insert into marca(
-						id_marca,
+						codigo_marca,
 						descripcion_marca
 						)
 						Values(
-						:id_marca,
+						:codigo_marca,
 						:descripcion_marca
 						)");
-					$p->bindParam(':id_marca',$this->id_marca);		
+					$p->bindParam(':codigo_marca',$this->id_marca);		
 					$p->bindParam(':descripcion_marca',$this->descripcion_marca);
 					
 					$p->execute();
@@ -107,9 +107,9 @@ class marca extends datos{
 				$p = $co->prepare("Update marca set 
 						descripcion_marca = :descripcion_marca
 						where
-						id_marca = :id_marca
+						codigo_marca = :codigo_marca
 						");
-					$p->bindParam(':id_marca',$this->id_marca);		
+					$p->bindParam(':codigo_marca',$this->id_marca);		
 					$p->bindParam(':descripcion_marca',$this->descripcion_marca);	
 					$p->execute();
 					
@@ -135,9 +135,9 @@ class marca extends datos{
 			try {
 					$p = $co->prepare("delete from marca
 					    where
-						id_marca = :id_marca
+						codigo_marca = :codigo_marca
 						");
-					$p->bindParam(':id_marca',$this->id_marca);		
+					$p->bindParam(':codigo_marca',$this->id_marca);		
 					
 					
 					$p->execute();
@@ -170,7 +170,7 @@ class marca extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['id_marca'];
+							$respuesta = $respuesta.$r['codigo_marca'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['descripcion_marca'];
@@ -195,7 +195,7 @@ class marca extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from marca where id_marca='$id_marca'");
+			$resultado = $co->query("Select * from marca where codigo_marca='$id_marca'");
 			
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -220,7 +220,7 @@ class marca extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from marca where id_marca='$this->id_marca'");
+			$resultado = $co->query("Select * from marca where codigo_marca='$this->id_marca'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    
