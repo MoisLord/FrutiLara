@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2024 a las 15:53:21
+-- Tiempo de generación: 18-10-2024 a las 16:14:52
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -157,7 +157,7 @@ CREATE TABLE `producto` (
   `cantidad_total` varchar(50) NOT NULL,
   `minimo` varchar(50) NOT NULL,
   `maximo` varchar(50) NOT NULL,
-  `id_modelo` varchar(50) NOT NULL,
+  `id_modelo` int(50) NOT NULL,
   `id_categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -271,9 +271,8 @@ ALTER TABLE `modelo`
 --
 ALTER TABLE `producto`
   ADD UNIQUE KEY `codigo` (`codigo`) USING BTREE,
-  ADD KEY `id_marca` (`id_modelo`) USING BTREE,
   ADD KEY `id_categoria` (`id_categoria`) USING BTREE,
-  ADD KEY `id_modelo` (`id_modelo`);
+  ADD KEY `id_modelo` (`id_modelo`) USING BTREE;
 
 --
 -- Indices de la tabla `proveedores`
@@ -363,7 +362,8 @@ ALTER TABLE `modelo`
 -- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`codigo_categoria`);
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`codigo_categoria`),
+  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_modelo`) REFERENCES `modelo` (`id_modelo`);
 
 --
 -- Filtros para la tabla `salida`
