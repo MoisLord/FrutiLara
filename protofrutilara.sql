@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2024 a las 16:14:52
+-- Tiempo de generación: 19-10-2024 a las 13:09:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -39,8 +39,7 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`codigo_categoria`, `descripcion_categoria`, `unidadMedNormal`, `unidadMedAlt`) VALUES
-('0023467', 'viveres', 'kgr', 'sdf'),
-('12345678', 'viveres', 'kilos', 'caja');
+('05654678', 'viveres', 'KILOGRAMOS', 'SACOS');
 
 -- --------------------------------------------------------
 
@@ -132,6 +131,13 @@ CREATE TABLE `marca` (
   `descripcion_marca` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`id_marca`, `codigo_marca`, `descripcion_marca`) VALUES
+(4, '0541112', 'Polar');
+
 -- --------------------------------------------------------
 
 --
@@ -144,6 +150,13 @@ CREATE TABLE `modelo` (
   `descripcion_Modelo` varchar(50) NOT NULL,
   `id_marca` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `modelo`
+--
+
+INSERT INTO `modelo` (`id_modelo`, `codigo_modelo`, `descripcion_Modelo`, `id_marca`) VALUES
+(2, '2412412', 'narajan', 4);
 
 -- --------------------------------------------------------
 
@@ -161,6 +174,14 @@ CREATE TABLE `producto` (
   `id_categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`codigo`, `nombre`, `cantidad_total`, `minimo`, `maximo`, `id_modelo`, `id_categoria`) VALUES
+('0468799', 'manzana', '60', '2', '60', 2, '05654678'),
+('054464546', 'cocacola', '50', '5', '40', 2, '05654678');
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +195,13 @@ CREATE TABLE `proveedores` (
   `telefono` varchar(50) NOT NULL,
   `direccion` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`rif`, `documento`, `nombre`, `telefono`, `direccion`) VALUES
+('455464', 'Venezolano', 'polar', '04120483397', 'calle12312');
 
 -- --------------------------------------------------------
 
@@ -308,13 +336,13 @@ ALTER TABLE `entrada`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo`
 --
 ALTER TABLE `modelo`
-  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `salida`
