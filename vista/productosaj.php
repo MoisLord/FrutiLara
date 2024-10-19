@@ -72,6 +72,10 @@ PRODUCTOS
 		</div>
 		</div>
 
+	<div class="row">
+		<div class="col-md-12" id="datosmarca">   
+		</div>
+	</div>
 		
 		<div class="row mb-4">
 		<div class="input-group mb-3">
@@ -80,6 +84,10 @@ PRODUCTOS
 		</div>
 		</div>
 
+	<div class="row">
+		<div class="col-md-12" id="datoscategoria">   
+		</div>
+	</div>
 	</div>
 		<div class="row">
 			<div class="col-md-12">
@@ -131,6 +139,8 @@ PRODUCTOS
 		</table>
 		
     </div>
+	</div>
+	<!-- seccion del modal marca -->
 	<div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
   	<div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
@@ -143,12 +153,12 @@ PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		  	<th>Marca</th>
 			<th>Codigo de Marcas</th>
-			
+			<th>Marca</th>
 		  </tr>
 		</thead>
 		<tbody id="listadoMarca">
+		 
 		</tbody>
 		</table>
     </div>
@@ -159,7 +169,7 @@ PRODUCTOS
 </div>
 <!--fin de seccion modal-->
 
-<!-- seccion del modal productos -->
+<!-- seccion del modal categoria -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalCategoria">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
@@ -173,12 +183,13 @@ PRODUCTOS
 		<thead>
 		  <tr>
 			<th>Codigo de categoria</th>
-			<th>Tipo de Producto</th>
+			<th>Descripción de la categoria</th>
 			<th>Unidad de medida común</th>	
 			<th>Unidad de Medida Alternativa</th>
 		  </tr>
 		</thead>
 		<tbody id="listadoCategoria">
+		 
 		</tbody>
 		</table>
     </div>
@@ -187,9 +198,8 @@ PRODUCTOS
     </div>
   </div>
 </div>
-</div>
 
-</div>
+
 
 <script type="text/javascript" src="js/producto.js"></script>
 
