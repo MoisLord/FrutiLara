@@ -360,6 +360,10 @@ return false;
                 
                   $('#listadoMarca').html(lee.mensaje);
                 }
+                else if(lee.resultado=='listadoCategoria'){
+                
+                  $('#listadoCategoria').html(lee.mensaje);
+                }
                 else if (lee.resultado == "error") {
                    muestraMensaje(lee.mensaje);
                 }
