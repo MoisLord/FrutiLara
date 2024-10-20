@@ -20,8 +20,8 @@ $(document).ready(function(){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         $("#descripcion_marca").on("keyup",function(){
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,40}$/,
-            $(this),$("#sdescripcion_marca"),"Solo letras entre 3 y 40 caracteres");
+            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{2,40}$/,
+            $(this),$("#sdescripcion_marca"),"Solo letras entre 2 y 40 caracteres");
         });
         
         
@@ -124,9 +124,9 @@ $(document).ready(function(){
                             "99999999");	
             return false;					
         }	
-        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $("#descripcion_marca"),$("#sdescripcion_marca"),"Solo letras  entre 3 y 30 caracteres")==0){
-            muestraMensaje("descripcion_marca <br/>Solo letras  entre 3 y 30 caracteres");
+        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{2,30}$/,
+            $("#descripcion_marca"),$("#sdescripcion_marca"),"Solo letras  entre 2 y 30 caracteres")==0){
+            muestraMensaje("descripcion_marca <br/>Solo letras  entre 2 y 30 caracteres");
             return false;
         }
         

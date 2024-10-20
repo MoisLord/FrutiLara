@@ -49,7 +49,7 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_cantidad_total($_POST['cantidad_total']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
-              $o->set_id_marca($_POST['idMarca']);
+              $o->set_id_marca($_POST['id_marca']);
 			  $o->set_id_categoria($_POST['idCategoria']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());

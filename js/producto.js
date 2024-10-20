@@ -1,6 +1,7 @@
     $(document).ready(function(){
       //VALIDACION DE DATOS
-        carga_marca();
+      
+      carga_marca();
       $("#listadodeMarca").on("click",function(){
         $("#modalMarca").modal("show");
       });	
@@ -18,7 +19,8 @@
           $("#datosmarca").html("");
         }
       });	
-
+	
+        
       carga_categoria();
       $("#listadodeCategoria").on("click",function(){
         $("#modalCategoria").modal("show");
@@ -34,10 +36,10 @@
           } 
         });
         if(!encontro){
-          $("#datosmarca").html("");
+          $("#datoscategoria").html("");
         }
-      });	
-      
+      });
+
       $("#codigo").on("keypress", function(e) {
         validarkeypress(/^[0-9]+$/, e);
     });
@@ -87,21 +89,6 @@
         
         
       //FIN DE VALIDACION DE DATOS
-      function carga_marca(){
-        // para cargar la lista de clientes
-        // utilizaremos una peticion ajax
-        // por lo que usaremos un objeto llamado 
-        // FormData, que es similar al <form> de html
-        // es decir colocaremos en ese FormData, los
-        // elementos que se desean enviar al servidor
-        
-        var datos = new FormData();
-        //a ese datos le añadimos la informacion a enviar
-        datos.append('accion','listadoMarca'); //le digo que me muestre un listado de aulas
-        //ahora se envia el formdata por ajax
-        enviaAjax(datos);
-      }
-      
       function carga_categoria(){
         // para cargar la lista de clientes
         // utilizaremos una peticion ajax
@@ -117,6 +104,23 @@
         enviaAjax(datos);
       }
       
+      function carga_marca(){
+        // para cargar la lista de clientes
+        // utilizaremos una peticion ajax
+        // por lo que usaremos un objeto llamado 
+        // FormData, que es similar al <form> de html
+        // es decir colocaremos en ese FormData, los
+        // elementos que se desean enviar al servidor
+        
+        var datos = new FormData();
+        //a ese datos le añadimos la informacion a enviar
+        datos.append('accion','listadoMarca'); //le digo que me muestre un listado de aulas
+        //ahora se envia el formdata por ajax
+        enviaAjax(datos);
+      }
+      
+      
+      
       
       //CONTROL DE BOTONES
       
@@ -129,7 +133,7 @@
           datos.append('cantidad_total',$("#cantidad_total").val());
           datos.append('minimo',$("#minimo").val());
           datos.append('maximo',$("#maximo").val());
-          datos.append('idMarca',$("#idMarca").val());
+          datos.append('id_marca',$("#id_marca").val());
           datos.append('idCategoria',$("#idCategoria").val());
           enviaAjax(datos);
           setInterval("location.reload()",3000);
@@ -145,7 +149,7 @@
           datos.append('cantidad_total',$("#cantidad_total").val());
           datos.append('minimo',$("#minimo").val());
           datos.append('maximo',$("#maximo").val());
-          datos.append('idMarca',$("#idMarca").val());
+          datos.append('id_marca',$("#id_marca").val());
           datos.append('idCategoria',$("#idCategoria").val());
           enviaAjax(datos);
           setInterval("location.reload()",3000);
@@ -294,14 +298,9 @@ return false;
         $("#cantidad_total").val($(linea).find("td:eq(2)").text());
         $("#minimo").val($(linea).find("td:eq(3)").text());
         $("#maximo").val($(linea).find("td:eq(4)").text());
-        $("#idMarca").val($(linea).find("td:eq(5)").text());
+        $("#id_marca").val($(linea).find("td:eq(5)").text());
         $("#idCategoria").val($(linea).find("td:eq(6)").text());
         
-        
-      }
-      function colocamarca(linea){
-        
-        $("#idMarca").val($(linea).find("td:eq()").text());
         
       }
 
@@ -310,6 +309,14 @@ return false;
         $("#idCategoria").val($(linea).find("td:eq()").text());
         
       }
+
+      function colocamarca(linea){
+        
+        $("#id_marca").val($(linea).find("td:eq()").text());
+        
+      }
+
+      
       
       //funcion que envia y recibe datos por AJAX
       function enviaAjax(datos){
@@ -338,7 +345,7 @@ return false;
                    $("#cantidad_total").val(lee.mensaje[0][3]);
                    $("#minimo").val(lee.mensaje[0][4]);
                    $("#maximo").val(lee.mensaje[0][5]);
-                   $("#idMarca").val(lee.mensaje[0][6]);
+                   $("#id_marca").val(lee.mensaje[0][6]);
                    $("#idCategoria").val(lee.mensaje[0][7]);
                   
                   
@@ -386,7 +393,7 @@ return false;
         $("#cantidad_total").val("");
         $("#minimo").val("");
         $("#maximo").val("");
-        $("#idMarca").val("");
+        $("#id_marca").val("");
         $("#idCategoria").val("");
         
         

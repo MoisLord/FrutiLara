@@ -68,7 +68,7 @@ PRODUCTOS
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		<button type="button" class="btn btn-success" id="listadodeMarca" name="listadodeMarca">LISTADO DE MARCA</button>
-		<input class="form-control" type="text" id="idMarca" name="idMarca"/>
+		<input class="form-control" type="text" id="id_marca" name="id_marca"/>
 		</div>
 		</div>
 
@@ -140,34 +140,7 @@ PRODUCTOS
 		
     </div>
 	</div>
-	<!-- seccion del modal marca -->
-	<div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
-  	<div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">LISTADO DE MARCA</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
-		<table class="table table-striped table-hover">
-		<thead>
-		  <tr>
-			<th>Codigo de Marcas</th>
-			<th>Marca</th>
-		  </tr>
-		</thead>
-		<tbody id="listadoMarca">
-		 
-		</tbody>
-		</table>
-    </div>
-	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
-  </div>
-</div>
-<!--fin de seccion modal-->
+	
 
 <!-- seccion del modal categoria -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalCategoria">
@@ -198,6 +171,35 @@ PRODUCTOS
     </div>
   </div>
 </div>
+
+<!-- seccion del modal marca -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
+  	<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">LISTADO DE MARCA</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content">
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+			<th>Codigo de Marcas</th>
+			<th>Marca</th>
+		  </tr>
+		</thead>
+		<tbody id="listadoMarca">
+		 
+		</tbody>
+		</table>
+    </div>
+	<div class="modal-footer bg-light">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+<!--fin de seccion modal-->
 
 
 
