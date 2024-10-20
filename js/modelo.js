@@ -1,3 +1,4 @@
+let valor;
 $(document).ready(function(){
 //VALIDACION DE DATOS
 	carga_marca();
@@ -51,6 +52,11 @@ function carga_marca(){
 	// elementos que se desean enviar al servidor
 	
 	var datos = new FormData();
+	// let datos1 = {
+	// 	codigo_modelo: "",
+	// 	modelo: "",
+	// 	id_marca: ""
+	// }
 	//a ese datos le añadimos la informacion a enviar
 	datos.append('accion','listadoMarca'); //le digo que me muestre un listado de aulas
 	//ahora se envia el formdata por ajax
@@ -67,7 +73,7 @@ $("#incluir").on("click",function(){
 		datos.append('accion','incluir');
 		datos.append('id_modelo',$("#id_modelo").val());
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
-		datos.append('idMarca',$("#idMarca").val());
+		datos.append('idMarca', valor);
 		enviaAjax(datos);
 		setInterval("location.reload()",3000);
 	}
@@ -79,7 +85,7 @@ $("#modificar").on("click",function(){
 		datos.append('accion','modificar');
 		datos.append('id_modelo',$("#id_modelo").val());
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
-		datos.append('idMarca',$("#idMarca").val());
+		datos.append('idMarca', valor);
 		enviaAjax(datos);
 		setInterval("location.reload()",3000);
 	}
@@ -207,15 +213,31 @@ mensaje){
 
 //funcion para pasar de la lista a el formulario
 function coloca(linea){
+	valor = $(linea).find("td:eq(2)").text()
+	// console.log(valor)
 	$("#id_modelo").val($(linea).find("td:eq(0)").text());
 	$("#descripcion_modelo").val($(linea).find("td:eq(1)").text());
-	$("#idMarca").val($(linea).find("td:eq(2)").text());
+	$("#idMarca").val($(linea).find("td:eq(3)").text());
 	
 	
 }
+
 function colocamarca(linea){
-	
-	$("#idMarca").val($(linea).find("td:eq()").text());
+	valor = $(linea).find("td:eq(0)").text();
+	console.log(valor);
+
+	$("#idMarca").val($(linea).find("td:eq(2)").text());
+
+	// let content = linea;
+    // let url = "src/tables/loadAccount.php"
+    // let formaData = new FormData()
+    // fetch(url, {
+    //         method: "POST",
+    //         body: formaData
+    //     }).then(response => response.json())
+    //     .then(data => {
+    //         content.innerHTML = data.data
+    //     }).catch(err => console.log(err))
 	
 }
 

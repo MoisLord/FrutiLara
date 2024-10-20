@@ -79,7 +79,7 @@ MODELO DE PRODUCTOS
 		  <tr>
 		  <th>Codigo de Modelos</th>
 		  <th>Modelos</th>
-		  <th>idMarca</th>
+		  <th>Marca</th>
 		  </tr>
 		</thead>
 		<tbody>
