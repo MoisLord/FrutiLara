@@ -106,7 +106,6 @@ MODELO DE PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		  	<th>ID</th>
 			<th>Codigos de Marcas</th>
 			<th>Marca</th>
 			
