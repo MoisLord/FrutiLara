@@ -67,13 +67,13 @@ PRODUCTOS
 		
 		<div class="row mb-4">
 		<div class="input-group mb-3">
-		<button type="button" class="btn btn-success" id="listadodeMarca" name="listadodeMarca">LISTADO DE MARCA</button>
-		<input class="form-control" type="text" id="id_marca" name="id_marca"/>
+		<button type="button" class="btn btn-success" id="listadodeModelo" name="listadodeModelo">LISTADO DE MODELO</button>
+		<input class="form-control" type="text" id="id_modelo" name="id_modelo"/>
 		</div>
 		</div>
 
 	<div class="row">
-		<div class="col-md-12" id="datosmarca">   
+		<div class="col-md-12" id="datosmodelo">   
 		</div>
 	</div>
 		
@@ -128,7 +128,7 @@ PRODUCTOS
 			<th>Existencia total</th>
 			<th>Minimo</th>	
 			<th>Maximo</th>
-			<th>Marca</th>
+			<th>Modelo</th>
 			<th>Categoria</th>
 		  </tr>
 		</thead>
@@ -172,11 +172,11 @@ PRODUCTOS
   </div>
 </div>
 
-<!-- seccion del modal marca -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
+<!-- seccion del modal Modelo -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalModelo">
   	<div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">LISTADO DE MARCA</h5>
+        <h5 class="modal-title">LISTADO DE MODELO</h5>
         <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -185,11 +185,12 @@ PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-			<th>Codigo de Marcas</th>
+			<th>Codigo de Modelo</th>
+			<th>Modelo</th>
 			<th>Marca</th>
 		  </tr>
 		</thead>
-		<tbody id="listadoMarca">
+		<tbody id="listadoModelo">
 		 
 		</tbody>
 		</table>

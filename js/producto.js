@@ -1,22 +1,22 @@
     $(document).ready(function(){
       //VALIDACION DE DATOS
       
-      carga_marca();
-      $("#listadodeMarca").on("click",function(){
-        $("#modalMarca").modal("show");
+      carga_modelo();
+      $("#listadodeModelo").on("click",function(){
+        $("#modalModelo").modal("show");
       });	
       
-      $("#id_marca").on("keyup",function(){
+      $("#id_modelo").on("keyup",function(){
         var marcador = $(this).val();
         var encontro = false;
-        $("#listadoMarca tr").each(function(){
+        $("#listadoModelo tr").each(function(){
           if(marcador == $(this).find("td:eq(1)").text()){
-            colocamarca($(this));
+            colocamodelo($(this));
             encontro = true;
           } 
         });
         if(!encontro){
-          $("#datosmarca").html("");
+          $("#datosmodelo").html("");
         }
       });	
 	
@@ -104,7 +104,7 @@
         enviaAjax(datos);
       }
       
-      function carga_marca(){
+      function carga_modelo(){
         // para cargar la lista de clientes
         // utilizaremos una peticion ajax
         // por lo que usaremos un objeto llamado 
@@ -114,7 +114,7 @@
         
         var datos = new FormData();
         //a ese datos le añadimos la informacion a enviar
-        datos.append('accion','listadoMarca'); //le digo que me muestre un listado de aulas
+        datos.append('accion','listadoModelo'); //le digo que me muestre un listado de aulas
         //ahora se envia el formdata por ajax
         enviaAjax(datos);
       }
@@ -133,7 +133,7 @@
           datos.append('cantidad_total',$("#cantidad_total").val());
           datos.append('minimo',$("#minimo").val());
           datos.append('maximo',$("#maximo").val());
-          datos.append('id_marca',$("#id_marca").val());
+          datos.append('id_modelo',$("#id_modelo").val());
           datos.append('idCategoria',$("#idCategoria").val());
           enviaAjax(datos);
           setInterval("location.reload()",3000);
@@ -149,7 +149,7 @@
           datos.append('cantidad_total',$("#cantidad_total").val());
           datos.append('minimo',$("#minimo").val());
           datos.append('maximo',$("#maximo").val());
-          datos.append('id_marca',$("#id_marca").val());
+          datos.append('id_modelo',$("#id_modelo").val());
           datos.append('idCategoria',$("#idCategoria").val());
           enviaAjax(datos);
           setInterval("location.reload()",3000);
@@ -298,7 +298,7 @@ return false;
         $("#cantidad_total").val($(linea).find("td:eq(2)").text());
         $("#minimo").val($(linea).find("td:eq(3)").text());
         $("#maximo").val($(linea).find("td:eq(4)").text());
-        $("#id_marca").val($(linea).find("td:eq(5)").text());
+        $("#id_modelo").val($(linea).find("td:eq(5)").text());
         $("#idCategoria").val($(linea).find("td:eq(6)").text());
         
         
@@ -306,13 +306,13 @@ return false;
 
       function colocacategoria(linea){
         
-        $("#idCategoria").val($(linea).find("td:eq()").text());
+        $("#idCategoria").val($(linea).find("td:eq(1)").text());
         
       }
 
-      function colocamarca(linea){
+      function colocamodelo(linea){
         
-        $("#id_marca").val($(linea).find("td:eq()").text());
+        $("#id_modelo").val($(linea).find("td:eq(1)").text());
         
       }
 
@@ -345,7 +345,7 @@ return false;
                    $("#cantidad_total").val(lee.mensaje[0][3]);
                    $("#minimo").val(lee.mensaje[0][4]);
                    $("#maximo").val(lee.mensaje[0][5]);
-                   $("#id_marca").val(lee.mensaje[0][6]);
+                   $("#id_modelo").val(lee.mensaje[0][6]);
                    $("#idCategoria").val(lee.mensaje[0][7]);
                   
                   
@@ -356,9 +356,9 @@ return false;
                    muestraMensaje(lee.mensaje);
                    limpia();
                 }
-                else if(lee.resultado=='listadoMarca'){
+                else if(lee.resultado=='listadoModelo'){
                 
-                  $('#listadoMarca').html(lee.mensaje);
+                  $('#listadoModelo').html(lee.mensaje);
                 }
                 else if(lee.resultado=='listadoCategoria'){
                 
@@ -397,7 +397,7 @@ return false;
         $("#cantidad_total").val("");
         $("#minimo").val("");
         $("#maximo").val("");
-        $("#id_marca").val("");
+        $("#id_modelo").val("");
         $("#idCategoria").val("");
         
         

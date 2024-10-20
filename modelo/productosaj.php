@@ -14,7 +14,7 @@ class productosaj extends datos{
 	private $cantidad_total;
 	private $minimo;
     private $maximo;
-    private $id_marca;
+    private $id_modelo;
 	private $id_categoria;
 	
 // se colocan metodo (Que serian funciones) seria get o set
@@ -41,8 +41,8 @@ class productosaj extends datos{
 		$this->maximo = $valor;
 	}
 
-    function set_id_marca($valor){
-		$this->id_marca = $valor;
+    function set_id_modelo($valor){
+		$this->id_modelo = $valor;
 	}
 	
 	function set_id_categoria($valor){
@@ -71,8 +71,8 @@ class productosaj extends datos{
 		return $this->maximo;
 	}
 
-    function get_id_marca(){
-		return $this->id_marca;
+    function get_id_modelo(){
+		return $this->id_modelo;
 	}
 
 	function get_id_categoria(){
@@ -104,7 +104,7 @@ class productosaj extends datos{
 					cantidad_total,
 					minimo,
 					maximo,
-					id_marca,
+					id_modelo,
 					id_categoria
 					)
 					Values(
@@ -113,7 +113,7 @@ class productosaj extends datos{
 					:cantidad_total,
 					:minimo,
 					:maximo,
-					:id_marca,
+					:id_modelo,
 					:id_categoria
 					)");
 
@@ -122,7 +122,7 @@ class productosaj extends datos{
 					$p->bindParam(':cantidad_total',$this->cantidad_total);
 					$p->bindParam(':minimo',$this->minimo);
 					$p->bindParam(':maximo',$this->maximo);
-					$p->bindParam(':id_marca',$this->id_marca);
+					$p->bindParam(':id_modelo',$this->id_modelo);
 					$p->bindParam(':id_categoria',$this->id_categoria);
 					
 					$p->execute();
@@ -154,7 +154,7 @@ class productosaj extends datos{
 				catidad_total = :catidad_total,
 				minimo = :minimo,
 				maximo = :maximo,
-				id_marca = :id_marca,
+				id_modelo = :id_modelo,
 				id_categoria = :id_categoria
 				where
 				codigo = :codigo
@@ -165,7 +165,7 @@ class productosaj extends datos{
 					$p->bindParam(':cantidad_total',$this->cantidad_total);
 					$p->bindParam(':minimo',$this->minimo);
                     $p->bindParam(':maximo',$this->maximo);
-					$p->bindParam(':id_marca',$this->id_marca);
+					$p->bindParam(':id_modelo',$this->id_modelo);
 					$p->bindParam(':id_categoria',$this->id_categoria);
 					
 					$p->execute();
@@ -244,7 +244,7 @@ class productosaj extends datos{
 							$respuesta = $respuesta.$r['maximo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-						$respuesta = $respuesta.$r['id_marca'];
+						$respuesta = $respuesta.$r['id_modelo'];
 					$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."<td>";
 					$respuesta = $respuesta.$r['id_categoria'];
@@ -264,28 +264,31 @@ class productosaj extends datos{
 	}
 
 
-	function listadomarca(){
+	function listadomodelo(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 			
-			$resultado = $co->query("Select * from marca");
+			$resultado = $co->query("Select * from modelo");
 			
 			if($resultado){
 				
 				$respuesta = '';
 				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocamarca(this);'>";
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocamodelo(this);'>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['id_marca'];
+							$respuesta = $respuesta.$r['id_modelo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['descripcion_marca'];
+							$respuesta = $respuesta.$r['descripcion_modelo'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['id_marca'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
 			}
-				$r['resultado'] = 'listadoMarca';
+				$r['resultado'] = 'listadoModelo';
 			    $r['mensaje'] =  $respuesta;
 			    
 			

@@ -35,8 +35,8 @@ require_once("modelo/".$pagina.".php");
 			 $o->set_codigo($_POST['codigo']);
 			 echo  json_encode($o->eliminar());
 		  }
-		  elseif($accion=='listadoMarca'){
-			$respuesta = $o->listadomarca();
+		  elseif($accion=='listadoModelo'){
+			$respuesta = $o->listadomodelo();
 			echo json_encode($respuesta);
 		 }
 		 elseif($accion=='listadoCategoria'){
@@ -49,7 +49,7 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_cantidad_total($_POST['cantidad_total']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
-              $o->set_id_marca($_POST['id_marca']);
+              $o->set_id_modelo($_POST['id_modelo']);
 			  $o->set_id_categoria($_POST['idCategoria']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
