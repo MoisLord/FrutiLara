@@ -73,7 +73,7 @@ $("#incluir").on("click",function(){
 		datos.append('accion','incluir');
 		datos.append('id_modelo',$("#id_modelo").val());
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
-		datos.append('idMarca', valor);
+		datos.append('id_marca', valor);
 		enviaAjax(datos);
 		setInterval("location.reload()",3000);
 	}
@@ -85,7 +85,7 @@ $("#modificar").on("click",function(){
 		datos.append('accion','modificar');
 		datos.append('id_modelo',$("#id_modelo").val());
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
-		datos.append('idMarca', valor);
+		datos.append('id_marca', valor);
 		enviaAjax(datos);
 		setInterval("location.reload()",3000);
 	}
@@ -217,7 +217,7 @@ function coloca(linea){
 	// console.log(valor)
 	$("#id_modelo").val($(linea).find("td:eq(0)").text());
 	$("#descripcion_modelo").val($(linea).find("td:eq(1)").text());
-	$("#idMarca").val($(linea).find("td:eq(3)").text());
+	$("#id_marca").val($(linea).find("td:eq(3)").text());
 	
 	
 }
@@ -226,7 +226,7 @@ function colocamarca(linea){
 	valor = $(linea).find("td:eq(0)").text();
 	console.log(valor);
 
-	$("#idMarca").val($(linea).find("td:eq(2)").text());
+	$("#id_marca").val($(linea).find("td:eq(2)").text());
 
 	// let content = linea;
     // let url = "src/tables/loadAccount.php"
@@ -266,7 +266,7 @@ function enviaAjax(datos){
 					 else if (lee.resultado == "encontro") {
 						$("#id_modelo").val(lee.mensaje[0][1]);
 						$("#descripcion_modelo").val(lee.mensaje[0][2]);
-						$("#idMarca").val(lee.mensaje[0][3]);
+						$("#id_marca").val(lee.mensaje[0][3]);
 						
 						
 					 }
@@ -310,7 +310,7 @@ function limpia(){
 	
 	$("#id_modelo").val("");
 	$("#descripcion_modelo").val("");
-	$("#idMarca").val("");
+	$("#id_marca").val("");
 	
 	
 }
