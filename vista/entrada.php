@@ -43,8 +43,10 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	<h6>Rif del Proveedor</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
-		   <input class="form-control" type="text" id="nombreprove" name="nombreprove" />
-		   <input class="form-control" type="text" id="idproveedor" name="idproveedor" style="display:none"/>
+		<input class="form-control" type="text" id="idproveedor" name="idproveedor"/>	 
+		   <input class="form-control" type="text" id="nombreprove" name="nombreprove" style="display:none" />
+		     
+		   
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR PROVEEDOR -->
@@ -83,14 +85,11 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		   <table class="table table-striped table-hover">
 				<thead>
 				  <tr>
-				    <th>X</th>
-					<th style="display:none">Id</th>
+				  <th>X</th>
 					<th>Codigo</th>
-					<th>Nombre Del producto</th>
+					<th>Nombre</th>
+					<th>Existencia</th>
 					<th>Cantidad</th>
-					<th>Minimo</th>
-					<th>Modelo</th>
-					<th>Categoria</th>
 				  </tr>
 				</thead>
 				<tbody id="entrada">
@@ -154,10 +153,6 @@ NOTAS DE ENTRADA DE PRODUCTOS
 			<th>Codigo</th>
 			<th>Nombre</th>
 			<th>Cantidad</th>
-			<th>Min</th>
-			<th>Max</th>
-			<th>Modelo</th>
-			<th>Categoria</th>
 		  </tr>
 		</thead>
 		<tbody id="listadoproductos">
