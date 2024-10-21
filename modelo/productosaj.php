@@ -221,7 +221,7 @@ class productosaj extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from producto");
+			$resultado = $co->query("SELECT codigo, nombre, cantidad_total, minimo, maximo, producto.id_modelo modelo.descripcion_modelo, producto.id_categoria categoria.descripcion_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria");
 			
 			if($resultado){
 				
@@ -276,8 +276,11 @@ class productosaj extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocamodelo(this);'>";
-						$respuesta = $respuesta."<td>";
+						$respuesta = $respuesta."<td style='display:none;'>";
 							$respuesta = $respuesta.$r['id_modelo'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['codigo_modelo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['descripcion_modelo'];

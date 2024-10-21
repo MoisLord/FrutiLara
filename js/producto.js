@@ -1,3 +1,5 @@
+    let valor1;
+    let valor2;
     $(document).ready(function(){
       //VALIDACION DE DATOS
       
@@ -293,6 +295,8 @@ return false;
       
       //funcion para pasar de la lista a el formulario
       function coloca(linea){
+        valor1 = $(linea).find("td:eq(2)").text()
+        valor2 = $(linea).find("td:eq(2)").text()
         $("#codigo").val($(linea).find("td:eq(0)").text());
         $("#nombre").val($(linea).find("td:eq(1)").text());
         $("#cantidad_total").val($(linea).find("td:eq(2)").text());
@@ -305,15 +309,17 @@ return false;
       }
 
       function colocacategoria(linea){
-        
-        $("#idCategoria").val($(linea).find("td:eq(1)").text());
-        
+        valor2 = $(linea).find("td:eq(0)").text();
+        console.log(valor2);
+      
+        $("#id_categoria").val($(linea).find("td:eq(2)").text());
       }
 
       function colocamodelo(linea){
-        
-        $("#id_modelo").val($(linea).find("td:eq(1)").text());
-        
+        valor1 = $(linea).find("td:eq(0)").text();
+	console.log(valor1);
+
+	$("#id_modelo").val($(linea).find("td:eq(2)").text());
       }
 
       
