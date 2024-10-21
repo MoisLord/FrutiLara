@@ -85,14 +85,11 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		   <table class="table table-striped table-hover">
 				<thead>
 				  <tr>
-				    <th>X</th>
-					<th style="display:none">Id</th>
+				  <th>X</th>
 					<th>Codigo</th>
-					<th>Nombre Del producto</th>
+					<th>Nombre</th>
+					<th>Existencia</th>
 					<th>Cantidad</th>
-					<th>Minimo</th>
-					<th>Modelo</th>
-					<th>Categoria</th>
 				  </tr>
 				</thead>
 				<tbody id="entrada">
@@ -156,10 +153,6 @@ NOTAS DE ENTRADA DE PRODUCTOS
 			<th>Codigo</th>
 			<th>Nombre</th>
 			<th>Cantidad</th>
-			<th>Min</th>
-			<th>Max</th>
-			<th>Modelo</th>
-			<th>Categoria</th>
 		  </tr>
 		</thead>
 		<tbody id="listadoproductos">
