@@ -151,7 +151,7 @@ $(document).ready(function(){
 						$(linea).find("td:eq(2)").text()+
 			   `</td>
 			   <td>
-				  <input type="text" value="0" name="cant[]""/>
+				  <input type="text" value="1" name="cant[]""/>
 			   </td>
 			   </tr>`;
 			$("#entrada").append(l);

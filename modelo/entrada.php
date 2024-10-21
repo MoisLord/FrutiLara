@@ -34,7 +34,7 @@ class entrada extends datos{
 			   values(
 			   '$lid',
 		       '$id_producto[$i]',
-			   '$cantidad[$i]',
+			   '$cantidad[$i]'
 			   )");
 		   }
 		   $r['resultado'] = 'registrar';
