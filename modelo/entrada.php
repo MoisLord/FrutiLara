@@ -61,7 +61,7 @@ class entrada extends datos{
 			$respuesta = '';
 			if($resultado){
 				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacliente(this);'>";
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaproveedor(this);'>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['rif'];
 						$respuesta = $respuesta."</td>";

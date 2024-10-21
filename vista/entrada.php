@@ -43,8 +43,10 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	<h6>Rif del Proveedor</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
-		   <input class="form-control" type="text" id="nombreprove" name="nombreprove" />
-		   <input class="form-control" type="text" id="idproveedor" name="idproveedor" style="display:none"/>
+		<input class="form-control" type="text" id="idproveedor" name="idproveedor"/>	 
+		   <input class="form-control" type="text" id="nombreprove" name="nombreprove" style="display:none" />
+		     
+		   
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR PROVEEDOR -->
