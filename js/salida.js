@@ -46,7 +46,7 @@ $(document).ready(function(){
 	
 	//evento click de boton facturar
 	$("#registrar").on("click",function(){
-		if(existeproveedor()==true){
+		if(existeclientes()==true){
 			if(verificaproductos()){
 				$('#accion').val('registrar');
 				var datos = new FormData($('#f')[0]);
@@ -58,7 +58,7 @@ $(document).ready(function(){
 			}
 		}
 		else{
-			muestraMensaje("Debe ingresar un proveedor registrado !!!");
+			muestraMensaje("Debe ingresar un cliente registrado !!!");
 		}
 	});
 		
@@ -100,7 +100,7 @@ $(document).ready(function(){
 	//fin de verificar si selecciono procductos
 	
 	//function para buscar si existe el cliente 
-	function existeproveedor(){
+	function existeclientes(){
 		var cedula = $("#cedulacliente").val();
 		var existe = false;
 		$("#listadoclientes tr").each(function(){
@@ -151,7 +151,7 @@ $(document).ready(function(){
 				  <input type="text" value="1" name="cant[]""/>
 			   </td>
 			   </tr>`;
-			$("#entrada").append(l);
+			$("#salida").append(l);
 		}
 	}
 	//fin de funcion colocar productos
