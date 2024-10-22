@@ -51,7 +51,7 @@ class salida extends datos{
 	}
 	
 	
-	function listadoproveedor(){
+	function listadocliente(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array(); // en este arreglo

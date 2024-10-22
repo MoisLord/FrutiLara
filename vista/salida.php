@@ -156,7 +156,7 @@ Pantalla Ventas
 </div>
 <!--fin de seccion modal-->
 
-<script type="text/javascript" src="js/ventasajax.js"></script>
+<script type="text/javascript" src="js/salida.js"></script>
 
 </body>
 </html>

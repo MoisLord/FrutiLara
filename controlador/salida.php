@@ -15,17 +15,25 @@ if (!is_file("modelo/".$pagina.".php")){
 require_once("modelo/".$pagina.".php");  
   if(is_file("vista/".$pagina.".php")){
 	  
-	  
-	  
-	  
-	  $o = new salida_producto();
-	  
 	  if(!empty($_POST)){
 		  
-		$mensaje = $o-> incluir($_POST['cedula_cliente'],$_POST['codiigo_producto'],$_POST['cifra'],$_POST['fecha']);
+		$o = new entrada(); 	
+		$accion = $_POST['accion'];
+		if($accion=='listadoclientes'){
+			$respuesta = $o->listadocliente();
+			echo json_encode($respuesta);
+		}
+		elseif($accion=='listadoproductos'){
+			$respuesta = $o->listadoproductos();
+			echo json_encode($respuesta);
+		}
+		elseif($accion=='registrar'){
+		    $respuesta = $o->registrar($_POST['idproveedor'],$_POST['idp'],$_POST['cant']);
+			echo json_encode($respuesta);
+	    }
+		exit; 
 	  }
-	  $consultaproductos = $o->listadodeclientes();
-	  $consultaprecios = $o->listadodeproductos();
+	 
 	  require_once("vista/".$pagina.".php"); 
   }
   else{
