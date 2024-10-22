@@ -2,13 +2,7 @@
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
 <!--Div oculta para colocar el mensaje a mostrar-->
-<div id="mensajes" style="display:none">
-<?php
-	if(!empty($mensaje)){
-		echo $mensaje;
-	}
-?>	
-</div>
+
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>

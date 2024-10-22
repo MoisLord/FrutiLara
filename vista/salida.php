@@ -2,7 +2,6 @@
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
-<?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <div class="container text-center h2 text-primary">
 Pantalla de Salida
