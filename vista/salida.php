@@ -1,17 +1,11 @@
 <html> 
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
-<div id="mensajes" style="display:none">
-<?php
-	if(!empty($mensaje)){
-		echo $mensaje;
-	}
-?>	
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
 <div class="container text-center h2 text-primary">
-Pantalla Ventas
+Pantalla de Salida
 <hr/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
