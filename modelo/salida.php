@@ -13,7 +13,7 @@ class salida extends datos{
 		$r = array();
 		try{
 		   $fecha = date('Y-m-d');
-		   $guarda = $co->query("insert into salida(cedula_empleado,cedula_cliente,
+		   $guarda = $co->query("insert into salida(cedula_cliente,
 		   fecha) 
 		   values ('$id_cliente','$fecha')");
 		   $lid = $co->lastInsertId(); //retorna el valor del campo
