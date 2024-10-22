@@ -7,15 +7,15 @@ require_once('modelo/datos.php');
 
 class salida extends datos{
     
-	function registrar($id_proveedor,$id_producto,$cantidad){
+	function registrar($id_cliente,$id_producto,$cantidad){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
 		try{
 		   $fecha = date('Y-m-d');
-		   $guarda = $co->query("insert into entrada(rif_proveedores,
+		   $guarda = $co->query("insert into salida(cedula_cliente,
 		   fecha) 
-		   values ('$id_proveedor','$fecha')");
+		   values ('$id_cliente','$fecha')");
 		   $lid = $co->lastInsertId(); //retorna el valor del campo
 		   //autoincremental
 		   
@@ -30,8 +30,8 @@ class salida extends datos{
 		   $tamano = count($id_producto);
 		   
 		   for($i=0;$i<$tamano;$i++){
-			   $gd = $co->query("insert into `detalle_entrada`
-			   (id_entrada,codigo_producto,Cantidad_producto)
+			   $gd = $co->query("insert into `detalle_salida`
+			   (id_salida,codigo_producto,Cantidad_producto)
 			   values(
 			   '$lid',
 		       '$id_producto[$i]',

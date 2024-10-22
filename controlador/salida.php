@@ -28,7 +28,7 @@ require_once("modelo/".$pagina.".php");
 			echo json_encode($respuesta);
 		}
 		elseif($accion=='registrar'){
-		    $respuesta = $o->registrar($_POST['idproveedor'],$_POST['idp'],$_POST['cant']);
+		    $respuesta = $o->registrar($_POST['idcliente'],$_POST['idp'],$_POST['cant']);
 			echo json_encode($respuesta);
 	    }
 		exit; 
