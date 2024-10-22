@@ -1,25 +1,18 @@
 <html> 
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
-<!--Div oculta para colocar el mensaje a mostrar-->
 <div id="mensajes" style="display:none">
 <?php
 	if(!empty($mensaje)){
 		echo $mensaje;
 	}
 ?>	
-</div>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
-<?php require_once("comunes/menu.php"); ?>
+<?php require_once('comunes/menu.php'); ?>
+<div class="container text-center h2 text-primary">
+Pantalla Ventas
 <hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<div class="container text-center h2 text-success">
-NOTAS DE SALIDA DE PRODUCTOS
-<hr class="border border-success border-3 opacity-65"/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
@@ -27,35 +20,33 @@ NOTAS DE SALIDA DE PRODUCTOS
 <div class="container">
     <!-- FILA DE BOTONES -->
 	<div class="row">
-		<div class="col-md-8">
-			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
-			   <button type="button" class="btn btn-success" id="listadodeareas" name="listadodeareas">LISTADO DE CLIENTES</button>
-			   <button type="button" class="btn btn-success" id="listadodeequipo" name="listadodeequipo">LISTADO DE PRODUCTOS</button>
+		<div class="col-md-4">
+			   <button type="button" class="btn btn-primary" id="registrar" name="registrar">Registrar</button>
 		</div>
 	</div>
-    <!-- FIN DE FILA BOTONES -->
+	<!-- FIN DE FILA BOTONES -->
 	<div class="row">
 		<div class="col">
-			<hr class="border border-success border-3 opacity-65"/>
+			<hr/>
 		</div>
 	</div>
-    <!-- FILA DE INPUT Y BUSCAR Productos -->
-	<h6>Cedula del Cliente</h6>
+	<!-- FILA DE INPUT Y BUSCAR CLIENTE -->
 	<div class="row">
 		<div class="col-md-8 input-group">
-		   <input class="form-control" type="text" id="cedula_cliente" name="cedula_cliente"/>
-		   <input class="form-control" type="text" id="codigo_producto" name="codigo_producto" style="display:none"/>
+		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
+		   <input class="form-control" type="text" id="idcliente" name="idcliente" style="display:none"/>
+		   <button type="button" class="btn btn-primary" id="listadodeclientes" name="listadodeclientes">LISTADO DE CLIENTES</button>
 		</div>
 	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR Productos -->
+	<!-- FIN DE FILA INPUT Y BUSCAR CLIENTE -->
 	
-	<!-- FILA DE DATOS DEL AREA -->
+	<!-- FILA DE DATOS DEL CLIENTE -->
 	<div class="row">
-		<div class="col-md-12" id="datosdelarea">
+		<div class="col-md-12" id="datosdelcliente">
 		   
 		</div>
 	</div>
-	<!-- FIN DE FILA DATOS DEL AREA -->
+	<!-- FIN DE FILA DATOS DEL CLIENTE -->
 		
 	<div class="row">
 		<div class="col">
@@ -63,53 +54,52 @@ NOTAS DE SALIDA DE PRODUCTOS
 		</div>
 	</div>
 
-    <!-- FILA DE INPUT Y BUSQUEDA DE EQUIPO -->
-	<h6>Codigo del Producto</h6>
+    <!-- FILA DE BUSQUEDA DE PRODUCTOS -->
 	<div class="row">
 		<div class="col-md-8 input-group">
-		   <input class="form-control" type="text" id="codigo_producto" name="codigo_producto" />
-		   <input class="form-control" type="text" id="cifra" name="cifra" style="display:none"/>
-		   <input class="form-control" type="text" id="fecha" name="fecha" style="display:none"/>
+		   <input class="form-control" type="text" id="codigoproducto" name="codigoproducto" />
+		   <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
+		   <button type="button" class="btn btn-primary" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
-	<!-- FIN DE FILA DE INPUT Y BUSQUEDA DE EQUIPO -->
+	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
 	<div class="row">
 		<div class="col">
-			<hr class="border border-success border-3 opacity-65"/>
+			<hr/>
 		</div>
 	</div>
-
-	<!-- FILA DE REGISTRAR -->
+	<!-- FILA DE DETALLES DE LA VENTA -->
 	<div class="row">
 		<div class="col-md-12">
 		   <table class="table table-striped table-hover">
 				<thead>
 				  <tr>
+				    <th>X</th>
 					<th style="display:none">Id</th>
-					<th>Cedula de los Clientes</th>
-					<th>Codigo de los Productos</th>
-					<th>Cifra</th>
-					<th>Fecha</th>
+					<th>Codigo</th>
+					<th>Nombre</th>
+					<th>CANT</th>
+					<th>PVP</th>
+					<th>SUB TOT</th>
 				  </tr>
 				</thead>
-				<tbody id="detallederegistrar">
+				<tbody id="salida">
 
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<!-- FIN DE FILA DE REGISTRAR -->
+	<!-- FIN DE FILA DETALLES DE LA VENTA -->
 </div>
 </form>
 </div> <!-- fin de container -->
-</input>
 
 
-<!-- seccion del modal areas -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalareas">
+<!-- seccion del modal clientes -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de Clientes</h5>
+    <div class="modal-header text-light bg-info">
+        <h5 class="modal-title">Listado de clientes</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -118,32 +108,29 @@ NOTAS DE SALIDA DE PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		    <th style="display:none">Id</th>
-			<th>Cedula del cliente</th>
-			<th>Codigo del Producto</th>
+		  	<th>Cédula</th>
+			<th>Nombre y Apellido</th>
+			<th>Télefono</th>
+			<th>Dirección</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeareas">
-		  <?php
-			if(!empty($consultaareas)){
-				echo $consultaareas;
-			}
-		  ?>
+		<tbody id="listadoclientes">
+		 
 		</tbody>
 		</table>
     </div>
 	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
   </div>
 </div>
 <!--fin de seccion modal-->
 
-<!-- seccion del modal equipo -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalequipo">
+<!-- seccion del modal productos -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalproductos">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de Productos</h5>
+    <div class="modal-header text-light bg-info">
+        <h5 class="modal-title">Listado de productos</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -152,30 +139,24 @@ NOTAS DE SALIDA DE PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		    <th style="display:none">Id</th>
-			<th>Cedula del Cliente</th>
-			<th>Codigo del Producto</th>
-			<th>cifra</th>
-			<th>Fecha</th>
+		  	<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Cantidad</th>
 		  </tr>
 		</thead>
-		<tbody id="listadodeequipo">
-		  <?php
-			if(!empty($consultaequipo)){
-				echo $consultaequipo;
-			}
-		  ?>
+		<tbody id="listadoproductos">
+		 
 		</tbody>
 		</table>
     </div>
 	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
   </div>
 </div>
 <!--fin de seccion modal-->
 
-<script type="text/javascript" src="js/salida.js"></script>
+<script type="text/javascript" src="js/ventasajax.js"></script>
 
 </body>
 </html>
