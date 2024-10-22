@@ -1,11 +1,19 @@
 <html> 
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
+<!--Div oculta para colocar el mensaje a mostrar-->
+
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
+<?php require_once("comunes/modal.php"); ?>
 <?php require_once('comunes/menu.php'); ?>
-<div class="container text-center h2 text-primary">
-Pantalla de Salida
 <hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<div class="container text-center h2 text-success">
+NOTAS DE SALIDA DE PRODUCTOS
+<hr class="border border-success border-3 opacity-65"/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
@@ -13,33 +21,37 @@ Pantalla de Salida
 <div class="container">
     <!-- FILA DE BOTONES -->
 	<div class="row">
-		<div class="col-md-4">
-			   <button type="button" class="btn btn-primary" id="registrar" name="registrar">Registrar</button>
+		<div class="col-md-8">
+			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
+			   <button type="button" class="btn btn-success" id="listadodeclientes" name="listadodeclientes">LISTADO DE CLIENTES</button>
+			   <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA BOTONES -->
 	<div class="row">
 		<div class="col">
-			<hr/>
+			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
-	<!-- FILA DE INPUT Y BUSCAR CLIENTE -->
+	<!-- FILA DE INPUT Y BUSCAR PROVEEDOR -->
+	<h6>cedula del Cliente</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
-		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" />
-		   <input class="form-control" type="text" id="idcliente" name="idcliente" style="display:none"/>
-		   <button type="button" class="btn btn-primary" id="listadodeclientes" name="listadodeclientes">LISTADO DE CLIENTES</button>
+		<input class="form-control" type="text" id="idcliente" name="idcliente"/>	 
+		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" style="display:none" />
+		     
+		   
 		</div>
 	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR CLIENTE -->
+	<!-- FIN DE FILA INPUT Y BUSCAR PROVEEDOR -->
 	
-	<!-- FILA DE DATOS DEL CLIENTE -->
+	<!-- FILA DE DATOS DEL PROVEEDOR -->
 	<div class="row">
 		<div class="col-md-12" id="datosdelcliente">
 		   
 		</div>
 	</div>
-	<!-- FIN DE FILA DATOS DEL CLIENTE -->
+	<!-- FIN DE FILA DATOS DEL PROVEEDOR -->
 		
 	<div class="row">
 		<div class="col">
@@ -48,32 +60,30 @@ Pantalla de Salida
 	</div>
 
     <!-- FILA DE BUSQUEDA DE PRODUCTOS -->
+	<h6>Codigo del Producto</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
 		   <input class="form-control" type="text" id="codigoproducto" name="codigoproducto" />
 		   <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
-		   <button type="button" class="btn btn-primary" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
 		</div>
 	</div>
 	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
 	<div class="row">
 		<div class="col">
-			<hr/>
+			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
-	<!-- FILA DE DETALLES DE LA VENTA -->
+	<!-- FILA DE DETALLES DE SALIDA -->
 	<div class="row">
 		<div class="col-md-12">
 		   <table class="table table-striped table-hover">
 				<thead>
 				  <tr>
-				    <th>X</th>
-					<th style="display:none">Id</th>
+				  <th>X</th>
 					<th>Codigo</th>
 					<th>Nombre</th>
-					<th>CANT</th>
-					<th>PVP</th>
-					<th>SUB TOT</th>
+					<th>Existencia</th>
+					<th>Cantidad</th>
 				  </tr>
 				</thead>
 				<tbody id="salida">
@@ -82,7 +92,7 @@ Pantalla de Salida
 			</table>
 		</div>
 	</div>
-	<!-- FIN DE FILA DETALLES DE LA VENTA -->
+	<!-- FIN DE FILA DETALLES DE SALIDA -->
 </div>
 </form>
 </div> <!-- fin de container -->
@@ -91,9 +101,9 @@ Pantalla de Salida
 <!-- seccion del modal clientes -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
-        <h5 class="modal-title">Listado de clientes</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">Listado de cliente</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -101,6 +111,7 @@ Pantalla de Salida
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
+		   
 		  	<th>Cédula</th>
 			<th>Nombre y Apellido</th>
 			<th>Télefono</th>
@@ -108,7 +119,7 @@ Pantalla de Salida
 		  </tr>
 		</thead>
 		<tbody id="listadoclientes">
-		 
+		  
 		</tbody>
 		</table>
     </div>
@@ -122,9 +133,9 @@ Pantalla de Salida
 <!-- seccion del modal productos -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalproductos">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-info">
+    <div class="modal-header text-light bg-success">
         <h5 class="modal-title">Listado de productos</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -132,7 +143,7 @@ Pantalla de Salida
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		  	<th>Codigo</th>
+			<th>Codigo</th>
 			<th>Nombre</th>
 			<th>Cantidad</th>
 		  </tr>

@@ -4,7 +4,7 @@ $(document).ready(function(){
 	// debo sacar de la base de datos los elementos que se mostraran
 	
 	// Cargar la lista de clientes
-    carga_cliente();
+     carga_cliente();
 	//carga la lista de productos
 		carga_productos();
 		
@@ -103,7 +103,7 @@ $(document).ready(function(){
 	function existeproveedor(){
 		var cedula = $("#cedulacliente").val();
 		var existe = false;
-		$("#listadoproveedor tr").each(function(){
+		$("#listadoclientes tr").each(function(){
 			
 			if(cedula == $(this).find("td:eq(1)").text()){
 				existe = true;

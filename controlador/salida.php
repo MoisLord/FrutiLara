@@ -17,7 +17,7 @@ require_once("modelo/".$pagina.".php");
 	  
 	  if(!empty($_POST)){
 		  
-		$o = new entrada(); 	
+		$o = new salida(); 	
 		$accion = $_POST['accion'];
 		if($accion=='listadoclientes'){
 			$respuesta = $o->listadocliente();
