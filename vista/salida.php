@@ -34,7 +34,7 @@ NOTAS DE SALIDA DE PRODUCTOS
 		</div>
 	</div>
 	<!-- FILA DE INPUT Y BUSCAR PROVEEDOR -->
-	<h6>cedula del Cliente</h6>
+	<h6>Cedula del Cliente</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
 		<input class="form-control" type="text" id="idcliente" name="idcliente"/>	 
