@@ -9,7 +9,7 @@
 //pagina sera cargada, se le asigna un valor por defecto
 //en este caso login para cuando se carga por primera vez
  
-$pagina = "login"; 
+$pagina = "principal"; 
 
 
 //condicional que lee la solicitud
@@ -18,7 +18,7 @@ $pagina = "login";
    $pagina = $_GET['pagina'];  //cambia el valor de $pagina por el obtenido por GET
  }
 
-  //BLOQUE NUEVO PARA VERIFICAR EL ESTADO DE EL OBJETO $_SESSION
+ //BLOQUE NUEVO PARA VERIFICAR EL ESTADO DE EL OBJETO $_SESSION
 $nivel = ""; //VARIABLE QUE VA A CONTENER EL VALOR DE LA SESSION
 //SE LLAMA UNA CLASE QUE LLAVE VERIFICA
 if(is_file("modelo/verifica.php")){
