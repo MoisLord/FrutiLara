@@ -16,8 +16,15 @@
         <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-        <li class="nav-item">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <?php
+		   //verificamos que exista la variable nivel
+		   //que es la que contiene el valor de la sesion
+		   if(!empty($nivel)){
+					  if($nivel=='ADMINISTRADOR'){
+					?>
+				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 14;" href="?pagina=marca">MARCAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
@@ -51,7 +58,44 @@
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 14;" href="?pagina=usuario">USUARIOS</a>
           </li>
         </ul>
+					<?php
+					  }
+		 ?>
+          <?php
+					  if($nivel=='EMPLEADO'){
+					?>
+					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                INVENTARIO
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" style="font-weight: 600; font-size: 14;" href="?pagina=salida">Notas de Salida</a>
+                <?php
+           }
+					?>
+              </div>
+            </li>
+          </ul>
+					<?php
+					  }
+					?>
+        </div>
       </div>
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <?php
+		        
+            if(!empty($nivel) and $nivel!=""){
+         ?>
+      <a href="?pagina=salir" class="btn btn-outline-success my-2 my-sm-0">salir</a>
+      <?php	
+				}
+				else{
+		 ?>
+      <a href="?pagina=login" class="btn btn-outline-success my-2 my-sm-0">entrar</a>
+      <?php 		 
+				}
+		 ?>
     </div>
   </div>
 </nav>
