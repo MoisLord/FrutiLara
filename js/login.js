@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
     //Seccion para mostrar lo enviado en el modal mensaje//
@@ -65,7 +64,7 @@ $(document).ready(function(){
         }	
         else if(validarkeyup(/^[A-Za-z0-9]{7,15}$/,
             $("#clave"),$("#sclave"),"Solo letras y numeros entre 7 y 15 caracteres")==0){
-            muestraMensaje("Clave <br/>Solo letras y numeros entre 7 y 15 caracteres");
+            muestraMensaje("Nombres <br/>Solo letras y numeros entre 7 y 15 caracteres");
             return false;
         }
         
@@ -116,3 +115,27 @@ $(document).ready(function(){
             return 0;
         }
     }
+
+// Inicio de revelar clave
+// Seleccionamos los elementos de los iconos de los Ojos
+const eyeOpen = document.getElementById('eye-open');
+const eyeClosed = document.getElementById('eye-closed');
+const claveInput = document.getElementById('clave');
+
+// Agregamos un evento de clic a los iconos
+eyeOpen.addEventListener('click', () => {
+  // Cambiamos el icono a cerrado
+  eyeOpen.style.display = 'none';
+  eyeClosed.style.display = 'block';
+  // Cambiamos el tipo de input a password
+  claveInput.type = 'password';
+});
+
+eyeClosed.addEventListener('click', () => {
+  // Cambiamos el icono a abierto
+  eyeOpen.style.display = 'block';
+  eyeClosed.style.display = 'none';
+  // Cambiamos el tipo de input a text
+  claveInput.type = 'text';
+});
+// Fin de revelar clave
