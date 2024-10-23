@@ -22,6 +22,7 @@ body{
     display: flex;
     font-family: 'Fira Sans', sans-serif;
     overflow-y: hidden; /* Oculta el scroll vertical que genera el navegador */
+    
 }
 
 .container{
@@ -82,6 +83,11 @@ body{
     font-weight: 500;
     margin-bottom: 20px;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 
 .input-group{
     position: relative;
@@ -201,6 +207,7 @@ body{
 
 .btn {
     max-width: 200px; /* Establece un ancho máximo de 200px */
+    max-height: 200px;
     padding: 10px 20px; /* Agrega un padding adecuado al botón */
     font-size: 16px; /* Establece un tamaño de fuente adecuado */
   }
