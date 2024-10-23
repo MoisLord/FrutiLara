@@ -37,7 +37,7 @@
 				<div class="col-md-12">
 					<label for="cedula">Cedula</label><br></br>
 					<input class="form-control" type="text" id="cedula" name="cedula"/>
-					<span id="scedula">El formato debe ser númerico</span>
+					<span>El formato debe ser númerico</span>
 				</div>
             </div>
             <div class="input-group">
@@ -51,7 +51,7 @@
 					<div class="toggle-eye close" id="eye-closed">
 						<ion-icon name="eye-off-outline"></ion-icon>
 					</div>
-					<span id="sclave">Solo letras y numeros entre 7 y 15 caracteres</span>
+					<span>Solo letras y numeros entre 7 y 15 caracteres</span>
 				</div>
             </div>
             <div class="forgot-pass">
@@ -60,12 +60,12 @@
             <div class="input-group">
 				<div class="row justify-content-center mt-5">
 					<div class="col-md-6 d-flex justify-content-center">
-						<a href="?pagina=principal" class="btn btn-danger w-100 small-width">ENTRAR <i class="bx bx-log-in"></i>
-						    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bx bx-log-in" viewBox="0 0 16 16">
-							    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
-							    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-						    </svg>
-					    </a>
+					<button type="submit" class="btn btn-danger w-100 small-width" id="entrar" onclick="location.href='principal.php?pagina=principal'">Iniciar Sesión<i class="bx bx-log-in"></i>
+					    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bx bx-log-in" viewBox="0 0 16 16">
+						   <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+						   <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+						</svg>
+					</button>
 					</div>
 				</div>
             </div>
