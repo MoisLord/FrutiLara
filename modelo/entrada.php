@@ -6,7 +6,7 @@ require_once('modelo/datos.php');
 
 class entrada extends datos{
     
-	function registrar($id_proveedor,$id_producto,$cantidad){
+	function registrar($id_proveedor,$id_producto,$cantidad,$umatoria){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -30,11 +30,12 @@ class entrada extends datos{
 		   
 		   for($i=0;$i<$tamano;$i++){
 			   $gd = $co->query("insert into `detalle_entrada`
-			   (id_entrada,codigo_producto,Cantidad_producto)
+			   (id_entrada,codigo_producto,Cantidad_producto,cantidad_sumatoria)
 			   values(
 			   '$lid',
 		       '$id_producto[$i]',
 			   '$cantidad[$i]'
+			   '$umatoria[$i]'
 			   )");
 		   }
 		   $r['resultado'] = 'registrar';
