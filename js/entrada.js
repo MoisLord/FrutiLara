@@ -127,7 +127,8 @@ $(document).ready(function(){
 			if(id*1 == $(this).find("td:eq(1)").text()*1){
 				encontro = true
 				var t = $(this).find("td:eq(4)").children();
-				
+				t.val(t.val()*1+1);
+				modificasubtotal(t);
 			} 
 		});
 		
@@ -147,12 +148,24 @@ $(document).ready(function(){
 			   <td>`+
 						$(linea).find("td:eq(1)").text()+
 			   `</td>
+			    
 			   <td>`+
 						$(linea).find("td:eq(2)").text()+
 			   `</td>
 			   <td>
-				  <input type="text" value="1" name="cant[]""/>
+				  <input type="text" value="1" name="cant[]" onkeyup="modificasubtotal(this)"/>
 			   </td>
+			   <td>`+
+					redondearDecimales($(linea).find("td:eq(2)").text()*1,0)+
+		   `</td>
+			   <td>
+		       <input type="text" name="pvp[]" style="display:none"
+			   value="`+
+					$(linea).find("td:eq(3)").text()+
+			   `"/>`+
+					$(linea).find("td:eq(3)").text()+
+		   `</td>
+		  
 			   </tr>`;
 			$("#entrada").append(l);
 		}
@@ -161,7 +174,12 @@ $(document).ready(function(){
 	
 	
 	//funcion para modificar subtotal
-	
+	function modificasubtotal(textocantidad){
+		var linea = $(textocantidad).closest('tr');
+		var valor = $(textocantidad).val()*1;
+		var pvp = $(linea).find("td:eq(5)").text()*1;
+		$(linea).find("td:eq(6)").text(redondearDecimales((valor+pvp),0));
+	}
 	//fin de funcion modifica subtotal
 	
 	
@@ -226,7 +244,10 @@ $(document).ready(function(){
 			return 0;
 		}
 	}
-	
+	function redondearDecimales(numero, decimales) {
+		return Number(Math.round(numero +'e'+ decimales) +'e-'+ decimales).toFixed(decimales);
+		
+	}
 	
 	function enviaAjax(datos){
 		

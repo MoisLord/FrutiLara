@@ -82,8 +82,10 @@ NOTAS DE ENTRADA DE PRODUCTOS
 				  <th>X</th>
 					<th>Codigo</th>
 					<th>Nombre</th>
-					<th>Existencia</th>
+					<th>Total del producto</th>
 					<th>Cantidad</th>
+					<th>Referencia del producto</th>
+					<th>Sumatoria</th>
 				  </tr>
 				</thead>
 				<tbody id="entrada">
