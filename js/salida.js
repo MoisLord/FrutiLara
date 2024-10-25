@@ -124,41 +124,56 @@ $(document).ready(function(){
 			if(id*1 == $(this).find("td:eq(1)").text()*1){
 				encontro = true
 				var t = $(this).find("td:eq(4)").children();
-				
+				t.val(t.val()*1+1);
+				modificaproducto(t);
 			} 
 		});
 		
 		if(!encontro){
 			var l = `
-			  <tr>
-			   <td>
-			   <button type="button" class="btn btn-Danger" onclick="eliminalineadetalle(this)">X</button>
-			   </td>
-			   <td >
-				   <input type="text" name="idp[]" style="display:none"
-				   value="`+
-						$(linea).find("td:eq(0)").text()+
-				   `"/>`+	
-						$(linea).find("td:eq(0)").text()+
-			   `</td>
-			   <td>`+
-						$(linea).find("td:eq(1)").text()+
-			   `</td>
-			   <td>`+
-						$(linea).find("td:eq(2)").text()+
-			   `</td>
-			   <td>
-				  <input type="text" value="1" name="cant[]""/>
-			   </td>
-			   </tr>`;
-			$("#salida").append(l);
+		  <tr>
+		   <td>
+		   <button type="button" class="btn btn-success" onclick="eliminalineadetalle(this)">X</button>
+		   </td>
+		   <td>
+			   <input type="text" name="idp[]" style="display:none"
+			   value="`+
+					$(linea).find("td:eq(0)").text()+
+			   `"/>`+	
+					$(linea).find("td:eq(0)").text()+
+		   `</td>
+		   <td>`+
+					$(linea).find("td:eq(1)").text()+
+		   `</td>
+		    <td>
+		      <input type="text" value="1" name="cant[]" onkeyup="modificasubtotal(this)"/>
+		   </td>
+		   <td>`+
+					$(linea).find("td:eq(2)").text()+
+		   `</td>
+		  
+		    <td>`+
+			   redondearDecimales($(linea).find("td:eq(5)").text()*1,0)+
+		   `</td>
+		     <td>
+			  <input type="text" name="resta[]" style="display:none"/>
+		   </td>
+		   </tr>`;
+			$("#entrada").append(l);
 		}
 	}
 	//fin de funcion colocar productos
 	
 	
 	//funcion para modificar subtotal
-	
+	function modificaproducto(textocantidad){
+		var linea = $(textocantidad).closest('tr');
+		var valor = $(textocantidad).val()*1;
+		var producto = $(linea).find("td:eq(4)").text()*1;
+		$(linea).find("td:eq(5)").text(redondearDecimales((valor+producto),0));
+		
+		$(linea).find("input[name='resta[]']").val(redondearDecimales((valor+producto),0))
+	}
 	//fin de funcion modifica subtotal
 	
 	
@@ -224,7 +239,10 @@ $(document).ready(function(){
 		}
 	}
 	
-	
+	function redondearDecimales(numero, decimales) {
+		return Number(Math.round(numero +'e'+ decimales) +'e-'+ decimales).toFixed(decimales);
+		
+	}
 	function enviaAjax(datos){
 		
 		$.ajax({

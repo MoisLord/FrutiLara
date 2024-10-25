@@ -7,7 +7,7 @@ require_once('modelo/datos.php');
 
 class salida extends datos{
     
-	function registrar($id_cliente,$id_producto,$cantidad){
+	function registrar($id_cliente,$id_producto,$cantidad,$resta){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -35,7 +35,8 @@ class salida extends datos{
 			   values(
 			   '$lid',
 		       '$id_producto[$i]',
-			   '$cantidad[$i]'
+			   '$cantidad[$i]',
+			   '$resta[$i]'
 			   )");
 		   }
 		   $r['resultado'] = 'registrar';
