@@ -243,11 +243,17 @@ class productosaj extends datos{
                         $respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['maximo'];
 						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
+						$respuesta = $respuesta."<td style='dispay:none;'>";
 						$respuesta = $respuesta.$r['id_modelo'];
 					$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."<td>";
+						$respuesta = $respuesta.$r['descripcion_modelo'];
+					$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."<td style='dispay:none;'>";
 					$respuesta = $respuesta.$r['id_categoria'];
+				$respuesta = $respuesta."</td>";
+				$respuesta = $respuesta."<td>";
+					$respuesta = $respuesta.$r['descripcion_categoria'];
 				$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
@@ -315,6 +321,9 @@ class productosaj extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocacategoria(this);'>";
+						$respuesta = $respuesta."<td style='display:none;'>";
+							$respuesta = $respuesta.$r['id_categoria'];
+						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo_categoria'];
 						$respuesta = $respuesta."</td>";
