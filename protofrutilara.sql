@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2024 a las 17:04:26
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 25-10-2024 a las 16:44:56
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,6 +55,13 @@ CREATE TABLE `cliente` (
   `clientecol` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`cedula`, `nombre_apellido`, `telefono`, `direccion`, `clientecol`) VALUES
+('30405571', 'moises', '04120483397', 'calle 12', '');
+
 -- --------------------------------------------------------
 
 --
@@ -64,8 +71,16 @@ CREATE TABLE `cliente` (
 CREATE TABLE `detalle_entrada` (
   `id_entrada` int(11) NOT NULL,
   `codigo_producto` varchar(45) NOT NULL,
-  `Cantidad_producto` varchar(45) NOT NULL
+  `Cantidad_producto` varchar(45) NOT NULL,
+  `cantidad_sumatoria` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_entrada`
+--
+
+INSERT INTO `detalle_entrada` (`id_entrada`, `codigo_producto`, `Cantidad_producto`, `cantidad_sumatoria`) VALUES
+(1, '12345678', '10', 70);
 
 -- --------------------------------------------------------
 
@@ -76,7 +91,8 @@ CREATE TABLE `detalle_entrada` (
 CREATE TABLE `detalle_salida` (
   `codigo_producto` varchar(45) NOT NULL,
   `id_salida` int(11) NOT NULL,
-  `Cantidad_producto` varchar(45) NOT NULL
+  `Cantidad_producto` varchar(45) NOT NULL,
+  `cantidad_restada` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -105,6 +121,13 @@ CREATE TABLE `entrada` (
   `rif_proveedores` varchar(45) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `entrada`
+--
+
+INSERT INTO `entrada` (`id_entrada`, `rif_proveedores`, `fecha`) VALUES
+(1, '12345678', '2024-10-25');
 
 -- --------------------------------------------------------
 
@@ -161,6 +184,14 @@ CREATE TABLE `producto` (
   `maximo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`codigo`, `id_modelo`, `id_categoria`, `nombre`, `cantidad_total`, `minimo`, `maximo`) VALUES
+('12345678', 1, 'Vive100', 'manzana', '60', '5', '50'),
+('1546878', 1, 'Vive100', 'pera', '70', '10', '30');
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +205,13 @@ CREATE TABLE `proveedores` (
   `telefono` varchar(45) NOT NULL,
   `direccion` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`rif`, `documento`, `nombre`, `telefono`, `direccion`) VALUES
+('12345678', 'Venezolano', 'polar', '04123456787', 'calle 123');
 
 -- --------------------------------------------------------
 
@@ -200,6 +238,14 @@ CREATE TABLE `usuario` (
   `cedula` varchar(45) NOT NULL,
   `clave` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuarios`, `tipo_usuario`, `cedula`, `clave`) VALUES
+(1, 'EMPLEADO', '30405571', '12345678'),
+(2, 'ADMINISTRADOR', '12345678', '12345678');
 
 --
 -- Índices para tablas volcadas
@@ -293,7 +339,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -317,7 +363,7 @@ ALTER TABLE `salida`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

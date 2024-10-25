@@ -31,7 +31,7 @@ class salida extends datos{
 		   
 		   for($i=0;$i<$tamano;$i++){
 			   $gd = $co->query("insert into `detalle_salida`
-			   (id_salida,codigo_producto,Cantidad_producto)
+			   (id_salida,codigo_producto,Cantidad_producto,cantidad_restada)
 			   values(
 			   '$lid',
 		       '$id_producto[$i]',
