@@ -69,16 +69,16 @@ class modelo extends datos
 
 				$p = $co->prepare("Insert into modelo(
 						codigo_modelo,
-						descripcion_Modelo,
+						descripcion_modelo,
 						id_marca
 						)
 						Values(
 						:codigo_modelo,
-						:descripcion_Modelo,
+						:descripcion_modelo,
 						:id_marca
 						)");
 				$p->bindParam(':codigo_modelo', $this->id_modelo);
-				$p->bindParam(':descripcion_Modelo', $this->descripcion_modelo);
+				$p->bindParam(':descripcion_modelo', $this->descripcion_modelo);
 				$p->bindParam(':id_marca', $this->id_marca);
 
 				$p->execute();
@@ -105,13 +105,13 @@ class modelo extends datos
 		if ($this->existe($this->id_modelo)) {
 			try {
 				$p = $co->prepare("Update modelo set 
-						descripcion_Modelo = :descripcion_Modelo,
+						descripcion_modelo = :descripcion_modelo,
 						id_marca = :id_marca
 						where
 						codigo_modelo = :codigo_modelo
 						");
 				$p->bindParam(':codigo_modelo', $this->id_modelo);
-				$p->bindParam(':descripcion_Modelo', $this->descripcion_modelo);
+				$p->bindParam(':descripcion_modelo', $this->descripcion_modelo);
 				$p->bindParam(':id_marca', $this->id_marca);
 
 				$p->execute();
@@ -165,7 +165,7 @@ class modelo extends datos
 		$r = array();
 		try {
 
-			$resultado = $co->query("SELECT codigo_modelo, descripcion_Modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca");
+			$resultado = $co->query("SELECT codigo_modelo, descripcion_modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca");
 
 			if ($resultado) {
 
@@ -176,7 +176,7 @@ class modelo extends datos
 					$respuesta = $respuesta . $r['codigo_modelo'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['descripcion_Modelo'];
+					$respuesta = $respuesta . $r['descripcion_modelo'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td style='display:none;'>";
 					$respuesta = $respuesta . $r['id_marca'];
