@@ -125,7 +125,7 @@ $(document).ready(function(){
 				encontro = true
 				var t = $(this).find("td:eq(4)").children();
 				t.val(t.val()*1+1);
-				modificaproducto(t);
+				modificasubtotal(t);
 			} 
 		});
 		
@@ -151,6 +151,7 @@ $(document).ready(function(){
 		   <td>`+
 					$(linea).find("td:eq(2)").text()+
 		   `</td>
+		  
 		    <td>`+
 			   redondearDecimales($(linea).find("td:eq(5)").text()*1,0)+
 		   `</td>
@@ -165,13 +166,13 @@ $(document).ready(function(){
 	
 	
 	//funcion para modificar subtotal
-	function modificaproducto(textocantidad){
+	function modificasubtotal(textocantidad){
 		var linea = $(textocantidad).closest('tr');
 		var valor = $(textocantidad).val()*1;
-		var producto = $(linea).find("td:eq(4)").text()*1;
-		$(linea).find("td:eq(5)").text(redondearDecimales((valor+producto),0));
+		var pvp = $(linea).find("td:eq(4)").text()*1;
+		$(linea).find("td:eq(5)").text(redondearDecimales((valor+pvp),0));
 		
-		$(linea).find("input[name='resta[]']").val(redondearDecimales((valor+producto),0))
+		$(linea).find("input[name='resta[]']").val(redondearDecimales((valor+pvp),0))
 	}
 	//fin de funcion modifica subtotal
 	
