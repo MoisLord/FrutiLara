@@ -151,7 +151,6 @@ $(document).ready(function(){
 		   <td>`+
 					$(linea).find("td:eq(2)").text()+
 		   `</td>
-		  
 		    <td>`+
 			   redondearDecimales($(linea).find("td:eq(5)").text()*1,0)+
 		   `</td>

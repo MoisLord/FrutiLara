@@ -80,10 +80,11 @@ NOTAS DE SALIDA DE PRODUCTOS
 				<thead>
 				  <tr>
 				  <th>X</th>
-					<th>Codigo</th>
+				  <th>Codigo</th>
 					<th>Nombre</th>
-					<th>Existencia</th>
 					<th>Cantidad</th>
+					<th>Total del producto</th>
+					<th>Diferencia total</th>
 				  </tr>
 				</thead>
 				<tbody id="salida">
