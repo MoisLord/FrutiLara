@@ -148,24 +148,20 @@ $(document).ready(function(){
 			   <td>`+
 						$(linea).find("td:eq(1)").text()+
 			   `</td>
-			    
 			   <td>`+
 						$(linea).find("td:eq(2)").text()+
 			   `</td>
 			   <td>
 				  <input type="text" value="1" name="cant[]" onkeyup="modificasubtotal(this)"/>
 			   </td>
-			   <td>`+
-					redondearDecimales($(linea).find("td:eq(2)").text()*1,0)+
-		   `</td>
 			   <td>
 		       <input type="text" name="pvp[]" style="display:none"
-			   value="`+
-					$(linea).find("td:eq(3)").text()+
+			   value="`
+			   redondearDecimales($(linea).find("td:eq(3)").text()*1,0)+
 			   `"/>`+
-					$(linea).find("td:eq(3)").text()+
+			   redondearDecimales($(linea).find("td:eq(3)").text()*1,0)+
 		   `</td>
-		  
+
 			   </tr>`;
 			$("#entrada").append(l);
 		}
@@ -177,8 +173,8 @@ $(document).ready(function(){
 	function modificasubtotal(textocantidad){
 		var linea = $(textocantidad).closest('tr');
 		var valor = $(textocantidad).val()*1;
-		var pvp = $(linea).find("td:eq(5)").text()*1;
-		$(linea).find("td:eq(6)").text(redondearDecimales((valor+pvp),0));
+		var pvp = $(linea).find("td:eq(3)").text()*1;
+		$(linea).find("td:eq(5)").text(redondearDecimales((valor+pvp),0));
 	}
 	//fin de funcion modifica subtotal
 	
