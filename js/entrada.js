@@ -151,17 +151,17 @@ $(document).ready(function(){
 			   <td>`+
 						$(linea).find("td:eq(2)").text()+
 			   `</td>
+
 			   <td>
 				  <input type="text" value="1" name="cant[]" onkeyup="modificasubtotal(this)"/>
 			   </td>
 			   <td>
 		       <input type="text" name="pvp[]" style="display:none"
-			   value="`
+			   value="`+
 			   redondearDecimales($(linea).find("td:eq(3)").text()*1,0)+
 			   `"/>`+
 			   redondearDecimales($(linea).find("td:eq(3)").text()*1,0)+
 		   `</td>
-
 			   </tr>`;
 			$("#entrada").append(l);
 		}
