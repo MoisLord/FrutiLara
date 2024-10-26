@@ -25,37 +25,37 @@
 					?>
 				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 9;" href="?pagina=marca">MARCAS DE PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=marca">MARCAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 9;" href="?pagina=modelo">MODELO DE PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=modelo">MODELO DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 9;" href="?pagina=categoria">CATEGORIAS DE PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=categoria">CATEGORIAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 9;" href="?pagina=productosaj">PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=productosaj">PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 9;" href="?pagina=proveedor">PROVEEDORES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=proveedor">PROVEEDORES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 9;" href="?pagina=empleados">EMPLEADOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=empleados">EMPLEADOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 9;" href="?pagina=cliente">CLIENTES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=cliente">CLIENTES</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
                 INVENTARIO
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 9;" href="?pagina=entrada">Notas de Entrada</a>
-                <a class="dropdown-item" style="font-weight: 600; font-size: 9;" href="?pagina=salida">Notas de Salida</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=entrada">Notas de Entrada</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=salida">Notas de Salida</a>
               </div>
             </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 9;" href="?pagina=usuario">USUARIOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=usuario">USUARIOS</a>
           </li>
         </ul>
 					<?php
@@ -70,7 +70,7 @@
                 INVENTARIO
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 9;" href="?pagina=salida">Notas de Salida</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=salida">Notas de Salida</a>
                 <?php
            }
 					?>
