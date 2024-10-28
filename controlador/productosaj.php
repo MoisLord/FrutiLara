@@ -43,14 +43,14 @@ require_once("modelo/".$pagina.".php");
 			$respuesta = $o->listadocategoria();
 			echo json_encode($respuesta);
 		 }
-		  else{		  
+		  else{			  
 			  $o->set_codigo($_POST['codigo']);
 			  $o->set_nombre($_POST['nombre']);
 			  $o->set_cantidad_total($_POST['cantidad_total']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
               $o->set_id_modelo($_POST['id_modelo']);
-			  $o->set_id_categoria($_POST['idCategoria']);
+			  $o->set_id_categoria($_POST['id_categoria']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }

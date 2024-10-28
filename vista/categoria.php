@@ -21,6 +21,7 @@ CATEGORIAS DE PRODUCTOS
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
+			<input class="form-control" style="display: none;" type="text" id="id_categoria" name="id_categoria"/>
 			   <label for="codigo_categoria">Codigo de categoria</label>
 			   <input class="form-control" type="text" id="codigo_categoria" name="codigo_categoria"/>
 			   <span>El codigo debe ser numerico, alfabetico o alfanumerico, entre 7 y 8 digitos</span>
@@ -98,6 +99,7 @@ CATEGORIAS DE PRODUCTOS
 		<table class="table table-striped table-hover" id="tablacategoria">
 		<thead>
 		  <tr>
+		  <th style="display: none;">ID de categoria</th>
 			<th>Codigo de categoria</th>
 			<th>Descripción de la categoria</th>
 			<th>Unidad de medida común</th>	

@@ -177,10 +177,10 @@ $(document).ready(function(){
     
     //funcion para pasar de la lista a el formulario
     function coloca(linea){
-        $("#codigo_categoria").val($(linea).find("td:eq(0)").text());
-        $("#descripcion_categoria").val($(linea).find("td:eq(1)").text());
-        $("#unidadMedNormal").val($(linea).find("td:eq(2)").text());
-        $("#unidadMedAlt").val($(linea).find("td:eq(3)").text());
+        $("#codigo_categoria").val($(linea).find("td:eq(1)").text());
+        $("#descripcion_categoria").val($(linea).find("td:eq(2)").text());
+        $("#unidadMedNormal").val($(linea).find("td:eq(3)").text());
+        $("#unidadMedAlt").val($(linea).find("td:eq(4)").text());
         
     }
     

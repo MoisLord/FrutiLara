@@ -136,7 +136,7 @@
           datos.append('minimo',$("#minimo").val());
           datos.append('maximo',$("#maximo").val());
           datos.append('id_modelo',$("#id_modelo").val());
-          datos.append('idCategoria',$("#idCategoria").val());
+          datos.append('id_categoria',$("#id_categoria").val());
           enviaAjax(datos);
           setInterval("location.reload()",3000);
         }
@@ -152,7 +152,7 @@
           datos.append('minimo',$("#minimo").val());
           datos.append('maximo',$("#maximo").val());
           datos.append('id_modelo',$("#id_modelo").val());
-          datos.append('idCategoria',$("#idCategoria").val());
+          datos.append('id_categoria',$("#id_categoria").val());
           enviaAjax(datos);
           setInterval("location.reload()",3000);
         }
@@ -303,7 +303,7 @@ return false;
         $("#minimo").val($(linea).find("td:eq(3)").text());
         $("#maximo").val($(linea).find("td:eq(4)").text());
         $("#id_modelo").val($(linea).find("td:eq(5)").text());
-        $("#idCategoria").val($(linea).find("td:eq(6)").text());
+        $("#id_categoria").val($(linea).find("td:eq(7)").text());
         
         
       }
@@ -352,7 +352,7 @@ return false;
                    $("#minimo").val(lee.mensaje[0][4]);
                    $("#maximo").val(lee.mensaje[0][5]);
                    $("#id_modelo").val(lee.mensaje[0][6]);
-                   $("#idCategoria").val(lee.mensaje[0][7]);
+                   $("#id_categoria").val(lee.mensaje[0][7]);
                   
                   
                  }
@@ -404,7 +404,7 @@ return false;
         $("#minimo").val("");
         $("#maximo").val("");
         $("#id_modelo").val("");
-        $("#idCategoria").val("");
+        $("#id_categoria").val("");
         
         
       }

@@ -80,7 +80,7 @@ PRODUCTOS
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		  <button type="button" class="btn btn-success" id="listadodeCategoria" name="listadodeCategoria">LISTADO DE CATEGORIAS</button>
-		  <input class="form-control" type="text" id="idCategoria" name="idCategoria" />
+		  <input class="form-control" type="text" id="id_categoria" name="id_categoria" />
 		</div>
 		</div>
 

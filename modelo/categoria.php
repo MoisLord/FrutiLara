@@ -7,6 +7,7 @@ require_once('modelo/datos.php');
 class categoria extends datos{
 	
 	//Se declaran los atributos (variables) que describen la clase
+	
 	private $codigo_categoria; 
 	private $descripcion_categoria;
 	private $unidadMedNormal;
@@ -16,6 +17,7 @@ class categoria extends datos{
 	//Se añaden los metodos (funciones) que me permitan leer (get) y colocar (set)
 	//Comienzo del sector de metodos de set
 	
+
 	function set_codigo_categoria($valor){
 		$this->codigo_categoria = $valor; 
 	}
@@ -34,6 +36,7 @@ class categoria extends datos{
 	//Final del sector de metodos de set
 
 	//Comienzo del sector de metodos de get
+	
 	function get_codigo_categoria(){
 		return $this->codigo_categoria;
 	}
@@ -179,6 +182,9 @@ class categoria extends datos{
 				$respuesta = '';
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
+						$respuesta = $respuesta."<td style='display:none;'>";
+							$respuesta = $respuesta.$r['id_categoria'];
+						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo_categoria'];
 						$respuesta = $respuesta."</td>";
