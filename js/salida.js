@@ -171,7 +171,7 @@ $(document).ready(function(){
 		var valor = $(textocantidad).val()*1;
 		var pvp = $(linea).find("td:eq(4)").text()*1;
 		$(linea).find("td:eq(5)").text(redondearDecimales((valor-pvp),0));
-		sdf
+		
 		$(linea).find("input[name='resta[]']").val(redondearDecimales((valor-pvp),0))
 	}
 	//fin de funcion modifica subtotal
