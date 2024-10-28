@@ -58,7 +58,7 @@ $(document).ready(function(){
         
         if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
             $("#sid_marca"),"El formato debe ser Numerico")==0){
-            muestraMensaje("El id_marca debe coincidir con el formato <br/>"+ 
+            muestraMensaje("El codigo de la marca debe coincidir con el formato <br/>"+ 
                             "99999999");	
             
         }
@@ -120,7 +120,7 @@ $(document).ready(function(){
     function validarenvio(){
         if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
             $("#sid_marca"),"El formato debe ser Numerico")==0){
-            muestraMensaje("El id_marca debe coincidir con el formato <br/>"+ 
+            muestraMensaje("El codigo de la marca debe coincidir con el formato <br/>"+ 
                             "99999999");	
             return false;					
         }	
