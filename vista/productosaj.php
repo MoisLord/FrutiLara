@@ -128,7 +128,9 @@ PRODUCTOS
 			<th>Existencia total</th>
 			<th>Minimo</th>	
 			<th>Maximo</th>
+			<th style="display: none;">ID Modelo</th>
 			<th>Modelo</th>
+			<th style="display: none;">ID Categoria</th>
 			<th>Categoria</th>
 		  </tr>
 		</thead>
