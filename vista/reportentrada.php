@@ -48,7 +48,7 @@ PANTALLA DE REPORTE DE ENTRADA
 
 	<div class="row">
 		<div class="col">
-			   <button type="submit" class="btn btn-success" id="generar" name="generar">GENERAR PDF</button>
+			   <button type="submit" class="btn btn-success" id="generar" name="generar">GENERAR REPORTE</button>
 		</div>
 		
 	</div>
