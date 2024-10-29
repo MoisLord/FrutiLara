@@ -14,7 +14,7 @@ else{
 //llamda al archivo que contiene la clase
 //rusuarios, en ella estara el codigo que me premitira
 //generar el reporte haciando uso de la libreria DOMPDF
-require_once('modelo/reportentrada.php');
+require_once('modelo/reportesalida.php');
 }
   
   if(is_file("vista/".$pagina.".php")){
