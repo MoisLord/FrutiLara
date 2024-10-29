@@ -1,63 +1,152 @@
-<html>
-<?php require_once('comunes/encabezado.php'); ?>
-<body>
-<!--linea para enlazar con el modal-->
-<?php require_once('comunes/menu.php'); ?>
-<?php require_once("comunes/modal.php"); ?>
-<div class="container text-center h2 text-success">
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-PANTALLA DE REPORTE DE ENTRADA
-<hr class="border border-success border-3 opacity-65">
+<?php
+require_once('dompdf/vendor/autoload.php'); //archivo para cargar las funciones de la 
+		//libreria DOMPDF
+		// lo siguiente es hacer rerencia al espacio de trabajo
+use Dompdf\Dompdf; //Declaracion del espacio de trabajo
 
-<div class="container">
-<hr/>
-</div>
-<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
+//llamda al archivo que contiene la clase
+//datos, en ella posteriormente se colcora el codigo
+//para enlazar a su base de datos
+require_once('modelo/datos.php');
 
-<form method="post" action="" id="f" target="_blank">
-<div class="container">
-    <div class="row">
-		<div class="col">
-		   <label for="Codigo">Codigo de producto</label>
-		   <input class="form-control" type="text" id="cedula" name="Codigo" />
-		   <span id="scedula"></span>
-		</div>
-		<div class="col">
-		   <label for="Cantidad">Cantidad de producto</label>
-		   <input class="form-control" type="text" id="usuario" name="Cantidad" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col">
-		   <label for="Sumatoria">Sumatoria</label>
-		   <input class="form-control" type="text" id="usuario" name="Sumatoria" />
-		   <span id="susuario"></span>
-		</div>
-	</div>
+//declaracion de la clase usuarios que hereda de la clase datos
+//la herencia se declara con la palabra extends y no es mas 
+//que decirle a esta clase que puede usar los mismos metodos
+//que estan en la clase de dodne hereda (La padre) como sir fueran de el
 
-    
-	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col">
-			   <button type="submit" class="btn btn-success" id="generar" name="generar">GENERAR REPORTE</button>
-		</div>
-		
-	</div>
-</div>
-</form>
+class reportesalida extends datos{
+	//el primer paso dentro de la clase
+	//sera declarar los atributos (variables) que describen la clase
+	//para nostros no es mas que colcoar los inputs (controles) de
+	//la vista como variables aca
+	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
+	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-</div> <!-- fin de container -->
+	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
+	private $cantidad;
+	private $resta;
+	
+	
+	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
+	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
+	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
+	
+	function set_codigo($valor){
+		$this->codigo = $valor; //fijencen como se accede a los elementos dentro de una clase
+		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
+		//a un elemento de this, es decir esta clase
+		//luego el nombre del elemento sin el $
+	}
+	//lo mismo que se hizo para cedula se hace para usuario y clave
+	
+	function set_cantidad($valor){
+		$this->cantidad = $valor;
+	}
+	function set_Sumatoria($valor){
+		$this->resta = $valor;
+	}
+	
+	//el siguiente metodo enlza con la la base de datos
+	//crea el html a partir de la consulta y envia los datos a la
+	//libreria DOMPDF
+	function generarPDF(){
+		
+		//El primer paso es generar una consulta SQl tal cual como lo hemos hecho en las 
+		//clases anteriores, en este caso la consulta sera sobre la tabla usuarios
+		//y tendra como parametros para filtro la cedula y el usuario
+		
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		try{
+			
+			
+			$resultado = $co->prepare("Select * from detalle_salida where codigo_producto like :codigo_producto and 
+										Cantidad_producto like :Cantidad_producto and cantidad_restada like :cantidad_restada");
+			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
+			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');
+			$resultado->bindValue(':cantidad_restada','%'.$this->resta.'%');
 
+			$resultado->execute();
+			
+			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
+			
+			//aqui es donde comienza el cambio, debido a que se va a armar una variable en memoria
+			//con el contenido html que se enviara a la libreria dompdf
+			$html = "<html><head></head><body>";
+			$html = $html."<div style='display:table;width:100%;border:solid'>";
+			$html = $html."<div style='display:table-row;width:100%;border:solid'>";
+			$html = $html."<div style='display:table-cell;width:100%;border:solid'>";
+			$html = $html."<table style='width:100%'>";
+			$html = $html."<thead>";
+			$html = $html."<tr>";
+			$html = $html."<th>Codigo del producto</th>";
+			$html = $html."<th>Cantidad del producto</th>";
+			$html = $html."<th>Diferencia del producto</th>";
+			
+			$html = $html."</tr>";
+			$html = $html."</thead>";
+			$html = $html."<tbody>";
+			if($fila){
+				
+				foreach($fila as $f){
+					$html = $html."<tr>";
+					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['cantidad_restada']."</td>";
+					
+							 
+					$html = $html."</tr>";
+				}
 
+				//return json_encode($fila);
+				
+			}
+			else{
+				
+				//return '';
+			}
+			$html = $html."</tbody>";
+			$html = $html."</table>";
+		    $html = $html."</div></div></div>";
+			$html = $html."</body></html>";
+			
+			
+		}catch(Exception $e){
+			//return $e->getMessage();
+		}
+		
+		
+		
 
-</body>
-</html>
+        
+		echo"$html";
+		
+		exit;
+ 
+		// Instanciamos un objeto de la clase DOMPDF.
+		$pdf = new DOMPDF();
+		 
+		// Definimos el tamaño y orientación del papel que queremos.
+		$pdf->set_paper("A4", "portrait");
+		 
+		// Cargamos el contenido HTML.
+		$pdf->load_html(utf8_decode($html));
+		 
+		// Renderizamos el documento PDF.
+		$pdf->render();
+		 
+		// Enviamos el fichero PDF al navegador.
+		$pdf->stream('ReporteUsuarios.pdf', array("Attachment" => false));
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}
+?>

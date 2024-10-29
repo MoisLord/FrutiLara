@@ -1,63 +1,43 @@
-<html>
-<?php require_once('comunes/encabezado.php'); ?>
-<body>
-<!--linea para enlazar con el modal-->
-<?php require_once('comunes/menu.php'); ?>
-<?php require_once("comunes/modal.php"); ?>
-<div class="container text-center h2 text-success">
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-PANTALLA DE REPORTE DE SALIDA
-<hr class="border border-success border-3 opacity-65">
-
-<div class="container">
-<hr/>
-</div>
-<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-
-<form method="post" action="" id="f" target="_blank">
-<div class="container">
-    <div class="row">
-		<div class="col">
-		   <label for="Codigo">Codigo de producto</label>
-		   <input class="form-control" type="text" id="cedula" name="Codigo" />
-		   <span id="scedula"></span>
-		</div>
-		<div class="col">
-		   <label for="Cantidad">Cantidad de producto</label>
-		   <input class="form-control" type="text" id="usuario" name="Cantidad" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col">
-		   <label for="Sumatoria">Sumatoria</label>
-		   <input class="form-control" type="text" id="usuario" name="Sumatoria" />
-		   <span id="susuario"></span>
-		</div>
-	</div>
-
-    
-	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col">
-			   <button type="submit" class="btn btn-success" id="generar" name="generar">GENERAR REPORTE</button>
-		</div>
-		
-	</div>
-</div>
-</form>
-	
-</div> <!-- fin de container -->
+<?php
+  
 
 
 
-</body>
-</html>
+//lo primero que se debe hacer es verificar al igual que en la vista es que exista el archivo
+if (!is_file("modelo/".$pagina.".php")){
+	//alli pregunte que si no es archivo se niega con !
+	//si no existe envio mensaje y me salgo
+	echo "Falta definir la clase ".$pagina;
+	exit;
+}
+else{
+//llamda al archivo que contiene la clase
+//rusuarios, en ella estara el codigo que me premitira
+//generar el reporte haciando uso de la libreria DOMPDF
+require_once('modelo/reportentrada.php');
+}
+  
+  if(is_file("vista/".$pagina.".php")){
+	  
+	  //bien si estamos aca es porque existe la vista y la clase
+	  //por lo que lo primero que debemos hace es realizar una instancia de la clase
+	  //instanciar es crear una variable local, que contiene los metodos de la clase
+	  //para poderlos usar
+	  
+	  $o = new reportesalida(); //ahora nuestro objeto se llama $o y es una copia en memoria de la
+	  //clase rusuarios
+	  
+	  if(isset($_POST['generar'])){
+		  $o = new reportesalida();
+		  $o->set_codigo($_POST['Codigo']);
+		  $o->set_cantidad($_POST['Cantidad']);
+		  $o->set_Sumatoria($_POST['Sumatoria']);
+		  $o->generarPDF();
+	  }
+	  
+	  require_once("vista/".$pagina.".php"); 
+  }
+  else{
+	  echo "pagina en construccion";
+  }
+?>

@@ -11,7 +11,7 @@
 <hr/>
 <hr/>
 <hr/>
-PANTALLA DE REPORTE DE ENTRADA
+PANTALLA DE REPORTE DE SALIDA
 <hr class="border border-success border-3 opacity-65">
 
 <div class="container">
@@ -33,7 +33,7 @@ PANTALLA DE REPORTE DE ENTRADA
 		   <span id="susuario"></span>
 		</div>
 		<div class="col">
-		   <label for="Sumatoria">Sumatoria</label>
+		   <label for="Sumatoria">Diferencia</label>
 		   <input class="form-control" type="text" id="usuario" name="Sumatoria" />
 		   <span id="susuario"></span>
 		</div>
