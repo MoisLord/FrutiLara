@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2024 a las 14:06:07
+-- Tiempo de generación: 29-10-2024 a las 17:11:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -72,7 +72,7 @@ CREATE TABLE `detalle_entrada` (
   `id_entrada` int(11) NOT NULL,
   `codigo_producto` varchar(45) NOT NULL,
   `Cantidad_producto` varchar(45) NOT NULL,
-  `cantidad_sumatoria` float NOT NULL
+  `cantidad_sumatoria` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -80,7 +80,11 @@ CREATE TABLE `detalle_entrada` (
 --
 
 INSERT INTO `detalle_entrada` (`id_entrada`, `codigo_producto`, `Cantidad_producto`, `cantidad_sumatoria`) VALUES
-(1, '12345678', '10', 70);
+(1, '12345678', '10', 70),
+(2, '1546878', '10000', 10070),
+(3, '1546878', '100', 170),
+(3, '12345678', '12', 72),
+(4, '12345678', '5', 65);
 
 -- --------------------------------------------------------
 
@@ -137,7 +141,10 @@ CREATE TABLE `entrada` (
 --
 
 INSERT INTO `entrada` (`id_entrada`, `rif_proveedores`, `fecha`) VALUES
-(1, '12345678', '2024-10-25');
+(1, '12345678', '2024-10-25'),
+(2, '12345678', '2024-10-29'),
+(3, '12345678', '2024-10-29'),
+(4, '12345678', '2024-10-29');
 
 -- --------------------------------------------------------
 
@@ -300,8 +307,7 @@ ALTER TABLE `detalle_salida`
 -- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`id_empleados`),
-  ADD UNIQUE KEY `id_empleados` (`id_empleados`);
+  ADD PRIMARY KEY (`id_empleados`);
 
 --
 -- Indices de la tabla `entrada`
@@ -365,7 +371,7 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
