@@ -80,7 +80,7 @@
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=cliente">CLIENTES</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=reporte">Reportes</a>
+           <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reportesalida">Reporte de Salida</a>
           </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
