@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-10-2024 a las 16:44:56
+-- Tiempo de generación: 29-10-2024 a las 14:06:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -95,6 +95,15 @@ CREATE TABLE `detalle_salida` (
   `cantidad_restada` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Volcado de datos para la tabla `detalle_salida`
+--
+
+INSERT INTO `detalle_salida` (`codigo_producto`, `id_salida`, `Cantidad_producto`, `cantidad_restada`) VALUES
+('12345678', 1, '10', 70),
+('1546878', 2, '10', -60),
+('12345678', 3, '10', 50);
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +111,7 @@ CREATE TABLE `detalle_salida` (
 --
 
 CREATE TABLE `empleados` (
+  `id_empleados` int(11) NOT NULL,
   `cedula` varchar(45) NOT NULL,
   `nombre_apellido` varchar(45) NOT NULL,
   `telefono` varchar(45) NOT NULL,
@@ -221,10 +231,19 @@ INSERT INTO `proveedores` (`rif`, `documento`, `nombre`, `telefono`, `direccion`
 
 CREATE TABLE `salida` (
   `id_salida` int(11) NOT NULL,
-  `cedula_empleado` varchar(45) NOT NULL,
+  `cedula_empleado` int(50) NOT NULL,
   `cedula_cliente` varchar(45) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `salida`
+--
+
+INSERT INTO `salida` (`id_salida`, `cedula_empleado`, `cedula_cliente`, `fecha`) VALUES
+(1, 0, '30405571', '2024-10-29'),
+(2, 0, '30405571', '2024-10-29'),
+(3, 0, '30405571', '2024-10-29');
 
 -- --------------------------------------------------------
 
@@ -281,7 +300,8 @@ ALTER TABLE `detalle_salida`
 -- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`cedula`);
+  ADD PRIMARY KEY (`id_empleados`),
+  ADD UNIQUE KEY `id_empleados` (`id_empleados`);
 
 --
 -- Indices de la tabla `entrada`
@@ -322,8 +342,8 @@ ALTER TABLE `proveedores`
 --
 ALTER TABLE `salida`
   ADD PRIMARY KEY (`id_salida`),
-  ADD KEY `fk_salida_cliente1_idx` (`cedula_empleado`),
-  ADD KEY `fk_salida_empleados1_idx` (`cedula_cliente`);
+  ADD KEY `cedula_cliente` (`cedula_cliente`),
+  ADD KEY `cedula_empleado` (`cedula_empleado`);
 
 --
 -- Indices de la tabla `usuario`
@@ -334,6 +354,12 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  MODIFY `id_empleados` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `entrada`
@@ -357,7 +383,7 @@ ALTER TABLE `modelo`
 -- AUTO_INCREMENT de la tabla `salida`
 --
 ALTER TABLE `salida`
-  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -384,6 +410,12 @@ ALTER TABLE `detalle_salida`
   ADD CONSTRAINT `fk_producto_has_salida_salida1` FOREIGN KEY (`id_salida`) REFERENCES `salida` (`id_salida`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Filtros para la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`id_empleados`) REFERENCES `salida` (`cedula_empleado`);
+
+--
 -- Filtros para la tabla `entrada`
 --
 ALTER TABLE `entrada`
@@ -406,8 +438,7 @@ ALTER TABLE `producto`
 -- Filtros para la tabla `salida`
 --
 ALTER TABLE `salida`
-  ADD CONSTRAINT `fk_salida_cliente1` FOREIGN KEY (`cedula_empleado`) REFERENCES `cliente` (`cedula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_salida_empleados1` FOREIGN KEY (`cedula_cliente`) REFERENCES `empleados` (`cedula`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `salida_ibfk_1` FOREIGN KEY (`cedula_cliente`) REFERENCES `cliente` (`cedula`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
