@@ -46,23 +46,6 @@
         visibility: visible;
     }
 }
-
-.btn btn-outline-success my-2 my-sm-0{
-    position: fixed;
-    right: 20px;
-    bottom: 20px; /* Ajusta según la distancia desde el fondo de la pantalla */
-    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
-}
-
-.btn btn-outline-success my-2 my-sm-0{
-    margin-bottom: 30px; /* Espaciado entre los botones */
-}
-
-  @media (max-width: 768px) {
-    .btn btn-outline-success my-2 my-sm-0 {
-        bottom: 20px; /* Ajusta para pantallas pequeñas si es necesario */
-    }
-  }
 /* fIN DE MENU */
 
 /* Inicio de Principal */
