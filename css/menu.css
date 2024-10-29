@@ -50,7 +50,7 @@
 .btn btn-outline-success my-2 my-sm-0{
     position: fixed;
     right: 20px;
-    top: 70px; /* Ajusta según la altura de tu navbar */
+    bottom: 20px; /* Ajusta según la distancia desde el fondo de la pantalla */
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
 }
 
@@ -60,7 +60,7 @@
 
   @media (max-width: 768px) {
     .btn btn-outline-success my-2 my-sm-0 {
-      top: 60px; /* Ajusta para pantallas pequeñas si es necesario */
+        bottom: 20px; /* Ajusta para pantallas pequeñas si es necesario */
     }
   }
 /* fIN DE MENU */
