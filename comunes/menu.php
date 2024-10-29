@@ -100,6 +100,7 @@
         </div>
       </div>
       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <div class="float-right buttons-container">
       <?php
 		        
             if(!empty($nivel) and $nivel!=""){
@@ -113,6 +114,7 @@
       <?php 		 
 				}
 		 ?>
+      </div>
     </div>
   </div>
 </nav>
