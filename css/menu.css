@@ -49,13 +49,13 @@
 
 .buttons-container {
     position: fixed;
-    right: 200px;
+    right: 20px;
     top: 70px; /* Ajusta según la altura de tu navbar */
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
   }
 
   .buttons-container .btn {
-    margin-bottom: 10px; /* Espaciado entre los botones */
+    margin-bottom: 30px; /* Espaciado entre los botones */
   }
 
   @media (max-width: 768px) {
