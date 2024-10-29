@@ -122,7 +122,7 @@ $(document).ready(function(){
 		
 		$("#salida tr").each(function(){
 			if(id*1 == $(this).find("td:eq(1)").text()*1){
-				encontro = true
+				encontro = true;
 				var t = $(this).find("td:eq(4)").children();
 				t.val(t.val()*1+1);
 				modificasubtotal(t);
