@@ -45,6 +45,7 @@
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=cliente">CLIENTES</a>
           </li>
+          
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
                 INVENTARIO
@@ -54,12 +55,19 @@
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=salida">Notas de Salida</a>
               </div>
             </li>
+            
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=usuario">USUARIOS</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=reporte">REPORTES</a>
-          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                 REPORTES
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reportentrada">Reporte de Entrada</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reportesalida">Reporte de Salida</a>
+              </div>
+            </li>
         </ul>
 					<?php
 					  }
