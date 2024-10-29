@@ -8,7 +8,7 @@
 
 
     <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end bg-success" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
@@ -16,7 +16,7 @@
         <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
       <?php
 		   //verificamos que exista la variable nivel
 		   //que es la que contiene el valor de la sesion
@@ -113,6 +113,7 @@
       <?php 		 
 				}
 		 ?>
+           <div class="collapse navbar-collapse" id="navbarNavDropdown">
     </div>
   </div>
 </nav>
