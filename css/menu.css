@@ -51,7 +51,7 @@
     position: fixed;
     right: 20px;
     bottom: 20px; /* Ajusta según la distancia desde el fondo de la pantalla */
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
 }
 
 .btn btn-outline-success my-2 my-sm-0{
