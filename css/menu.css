@@ -46,6 +46,10 @@
         visibility: visible;
     }
 }
+
+.margin-top {
+    margin-top: 20px; /* Ajusta el valor según lo que necesites */
+}
 /* fIN DE MENU */
 
 /* Inicio de Principal */
