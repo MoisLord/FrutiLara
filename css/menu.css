@@ -48,9 +48,9 @@
 }
 
 .btn btn-outline-success my-2 my-sm-0{
-    position: fixed;
+    position: absolute;
     right: 20px;
-    top: 30px; /* Ajusta según la altura de tu navbar */
+    top: 70px; /* Ajusta según la altura de tu navbar */
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
 }
 
