@@ -14,7 +14,7 @@ else{
 //llamda al archivo que contiene la clase
 //rusuarios, en ella estara el codigo que me premitira
 //generar el reporte haciando uso de la libreria DOMPDF
-require_once('modelo/rusuarios.php');
+require_once('modelo/reportentrada.php');
 }
   
   if(is_file("vista/".$pagina.".php")){
@@ -24,13 +24,14 @@ require_once('modelo/rusuarios.php');
 	  //instanciar es crear una variable local, que contiene los metodos de la clase
 	  //para poderlos usar
 	  
-	  $o = new rusuarios(); //ahora nuestro objeto se llama $o y es una copia en memoria de la
+	  $o = new reportentrada(); //ahora nuestro objeto se llama $o y es una copia en memoria de la
 	  //clase rusuarios
 	  
 	  if(isset($_POST['generar'])){
-		  $o = new rusuarios();
-		  $o->set_cedula($_POST['cedula']);
-		  $o->set_usuario($_POST['usuario']);
+		  $o = new reportentrada();
+		  $o->set_codigo($_POST['Codigo']);
+		  $o->set_cantidad($_POST['Cantidad']);
+		  $o->set_Sumatoria($_POST['Sumatoria']);
 		  $o->generarPDF();
 	  }
 	  

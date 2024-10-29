@@ -14,7 +14,7 @@ require_once('modelo/datos.php');
 //que decirle a esta clase que puede usar los mismos metodos
 //que estan en la clase de dodne hereda (La padre) como sir fueran de el
 
-class reporte extends datos{
+class reportentrada extends datos{
 	//el primer paso dentro de la clase
 	//sera declarar los atributos (variables) que describen la clase
 	//para nostros no es mas que colcoar los inputs (controles) de
@@ -22,24 +22,28 @@ class reporte extends datos{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $cedula; //recuerden que en php, las variables no tienen tipo predefinido
-	private $usuario;
+	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
+	private $cantidad;
+	private $Sumatoria;
 	
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
 	
-	function set_cedula($valor){
-		$this->cedula = $valor; //fijencen como se accede a los elementos dentro de una clase
+	function set_codigo($valor){
+		$this->codigo = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 		//a un elemento de this, es decir esta clase
 		//luego el nombre del elemento sin el $
 	}
 	//lo mismo que se hizo para cedula se hace para usuario y clave
 	
-	function set_usuario($valor){
-		$this->usuario = $valor;
+	function set_cantidad($valor){
+		$this->cantidad = $valor;
+	}
+	function set_Sumatoria($valor){
+		$this->Sumatoria = $valor;
 	}
 	
 	//el siguiente metodo enlza con la la base de datos
@@ -56,10 +60,11 @@ class reporte extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("Select * from usuarios where cedula like :cedula and 
-										usuario like :usuario");
-			$resultado->bindValue(':cedula','%'.$this->cedula.'%');
-			$resultado->bindValue(':usuario','%'.$this->usuario.'%');
+			$resultado = $co->prepare("Select * from detalle_entrada where codigo_producto like :codigo_producto and 
+										Cantidad_producto like :Cantidad_producto and cantidad_sumatoria like :cantidad_sumatoria");
+			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
+			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');
+			$resultado->bindValue(':cantidad_sumatoria','%'.$this->Sumatoria.'%');
 
 			$resultado->execute();
 			
@@ -74,8 +79,9 @@ class reporte extends datos{
 			$html = $html."<table style='width:100%'>";
 			$html = $html."<thead>";
 			$html = $html."<tr>";
-			$html = $html."<th>Cedula</th>";
-			$html = $html."<th>Usuario</th>";
+			$html = $html."<th>Codigo del producto</th>";
+			$html = $html."<th>Cantidad del producto</th>";
+			$html = $html."<th>Sumatoria del producto</th>";
 			
 			$html = $html."</tr>";
 			$html = $html."</thead>";
@@ -84,8 +90,9 @@ class reporte extends datos{
 				
 				foreach($fila as $f){
 					$html = $html."<tr>";
-					$html = $html."<td style='text-align:center'>".$f['cedula']."</td>";
-					$html = $html."<td style='text-align:center'>".$f['usuario']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['cantidad_sumatoria']."</td>";
 					
 							 
 					$html = $html."</tr>";
