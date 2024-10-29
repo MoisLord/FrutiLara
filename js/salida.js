@@ -159,7 +159,7 @@ $(document).ready(function(){
 			  <input type="text" name="resta[]" style="display:none"/>
 		   </td>
 		   </tr>`;
-			$("#entrada").append(l);
+			$("#salida").append(l);
 		}
 	}
 	//fin de funcion colocar productos
