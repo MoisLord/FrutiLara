@@ -49,7 +49,7 @@
 
 .buttons-container {
     position: fixed;
-    right: 20px;
+    right: 200px;
     top: 70px; /* Ajusta según la altura de tu navbar */
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
   }
