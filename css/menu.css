@@ -46,6 +46,23 @@
         visibility: visible;
     }
 }
+
+.buttons-container {
+    position: fixed;
+    right: 20px;
+    top: 70px; /* Ajusta según la altura de tu navbar */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  }
+
+  .buttons-container .btn {
+    margin-bottom: 10px; /* Espaciado entre los botones */
+  }
+
+  @media (max-width: 768px) {
+    .buttons-container {
+      top: 60px; /* Ajusta para pantallas pequeñas si es necesario */
+    }
+  }
 /* fIN DE MENU */
 
 /* Inicio de Principal */
