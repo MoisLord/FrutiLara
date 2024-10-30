@@ -24,16 +24,16 @@ require_once("modelo/".$pagina.".php");
 		  $accion = $_POST['accion'];
 		  
 		  if($accion=='consultar'){
-			 echo  json_encode($o->consultar());  
+			 echo json_encode($o->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
 			 $o->set_codigo($_POST['codigo']); 
-			 echo  json_encode($o->consultatr());  
+			 echo json_encode($o->consultatr());  
 		  }
 
 		  elseif($accion=='eliminar'){
 			 $o->set_codigo($_POST['codigo']);
-			 echo  json_encode($o->eliminar());
+			 echo json_encode($o->eliminar());
 		  }
 		  elseif($accion=='listadoModelo'){
 			$respuesta = $o->listadomodelo();
@@ -52,10 +52,10 @@ require_once("modelo/".$pagina.".php");
               $o->set_id_modelo($_POST['id_modelo']);
 			  $o->set_id_categoria($_POST['id_categoria']);
 			  if($accion=='incluir'){
-				echo  json_encode($o->incluir());
+				echo json_encode($o->incluir());
 			  }
 			  elseif($accion=='modificar'){
-				echo  json_encode($o->modificar());
+				echo json_encode($o->modificar());
 			  }
 		  }
 		 
