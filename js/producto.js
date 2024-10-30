@@ -297,13 +297,13 @@ return true;
   //funcion para pasar de la lista a el formulario
   function coloca(linea){
     valorModelo = $(linea).find("td:eq(5)").text()
-    valorCategoria = $(linea).find("td:eq(7)").text()
+    valorCategoria = $(linea).find("td:eq(6)").text()
     $("#codigo").val($(linea).find("td:eq(0)").text());
     $("#nombre").val($(linea).find("td:eq(1)").text());
     $("#cantidad_total").val($(linea).find("td:eq(2)").text());
     $("#minimo").val($(linea).find("td:eq(3)").text());
     $("#maximo").val($(linea).find("td:eq(4)").text());
-    $("#id_modelo").val($(linea).find("td:eq(6)").text());
+    $("#id_modelo").val($(linea).find("td:eq(7)").text());
     $("#id_categoria").val($(linea).find("td:eq(8)").text());
     
     
@@ -313,14 +313,14 @@ return true;
     valorCategoria = $(linea).find("td:eq(0)").text();
     console.log(valorCategoria);
   
-    $("#id_categoria").val($(linea).find("td:eq(2)").text());
+    $("#id_categoria").val($(linea).find("td:eq(5)").text());
   }
 
   function colocamodelo(linea){
     valorModelo = $(linea).find("td:eq(0)").text();
 console.log(valorModelo);
 
-$("#id_modelo").val($(linea).find("td:eq(2)").text());
+$("#id_modelo").val($(linea).find("td:eq(6)").text());
   }
 
   
