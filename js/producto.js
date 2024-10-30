@@ -152,8 +152,8 @@ $("#maximo").on("keyup", function() {
       datos.append('cantidad_total',$("#cantidad_total").val());
       datos.append('minimo',$("#minimo").val());
       datos.append('maximo',$("#maximo").val());
-      datos.append('id_modelo',$("#id_modelo").val());
-      datos.append('id_categoria',$("#id_categoria").val());
+      datos.append('id_modelo',valorModelo);
+      datos.append('id_categoria',valorCategoria);
       enviaAjax(datos);
       setInterval("location.reload()",3000);
     }
@@ -296,15 +296,15 @@ return true;
   
   //funcion para pasar de la lista a el formulario
   function coloca(linea){
-    valorModelo = $(linea).find("td:eq(2)").text()
-    valorCategoria = $(linea).find("td:eq(2)").text()
+    valorModelo = $(linea).find("td:eq(5)").text()
+    valorCategoria = $(linea).find("td:eq(7)").text()
     $("#codigo").val($(linea).find("td:eq(0)").text());
     $("#nombre").val($(linea).find("td:eq(1)").text());
     $("#cantidad_total").val($(linea).find("td:eq(2)").text());
     $("#minimo").val($(linea).find("td:eq(3)").text());
     $("#maximo").val($(linea).find("td:eq(4)").text());
-    $("#id_modelo").val($(linea).find("td:eq(5)").text());
-    $("#id_categoria").val($(linea).find("td:eq(7)").text());
+    $("#id_modelo").val($(linea).find("td:eq(6)").text());
+    $("#id_categoria").val($(linea).find("td:eq(8)").text());
     
     
   }
