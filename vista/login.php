@@ -1,4 +1,5 @@
 <html>
+<title>INICIO SESION</title>
 <?php require_once("comunes/encabezado.php"); ?>
 <head>
 	<meta charset="UTF-8">

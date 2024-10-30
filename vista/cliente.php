@@ -1,4 +1,5 @@
 <html> 
+<title>CLIENTES</title>
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->

@@ -1,4 +1,5 @@
 <html> 
+<title>CATEGORIAS</title>
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
 <!--Llamar al archivo modal.php, y menu.php-->

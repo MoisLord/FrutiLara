@@ -1,4 +1,5 @@
 <html>
+<title>PRODUCTOS</title>
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
 <div id="mensajes" style="display:none">
