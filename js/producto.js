@@ -313,14 +313,14 @@ return true;
     valorCategoria = $(linea).find("td:eq(0)").text();
     console.log(valorCategoria);
   
-    $("#id_categoria").val($(linea).find("td:eq(5)").text());
+    $("#id_categoria").val($(linea).find("td:eq(2)").text());
   }
 
   function colocamodelo(linea){
     valorModelo = $(linea).find("td:eq(0)").text();
 console.log(valorModelo);
 
-$("#id_modelo").val($(linea).find("td:eq(6)").text());
+$("#id_modelo").val($(linea).find("td:eq(2)").text());
   }
 
   
