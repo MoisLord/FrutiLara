@@ -59,7 +59,7 @@ CREATE TABLE `detalle_entrada` (
   `id_entrada` int(11) NOT NULL,
   `codigo_producto` varchar(45) NOT NULL,
   `Cantidad_producto` varchar(45) NOT NULL,
-  `catidad_sumatoria` float NOT NULL
+  `cantidad_sumatoria` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
