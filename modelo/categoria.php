@@ -183,8 +183,6 @@ class categoria extends datos{
 				foreach($resultado as $r){
 					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
 						$respuesta = $respuesta."<td style='display:none;'>";
-							$respuesta = $respuesta.$r['id_categoria'];
-						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo_categoria'];
 						$respuesta = $respuesta."</td>";
