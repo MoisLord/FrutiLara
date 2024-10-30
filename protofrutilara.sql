@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2024 a las 02:20:39
+-- Tiempo de generación: 30-10-2024 a las 03:54:25
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -165,7 +165,7 @@ CREATE TABLE `proveedores` (
 
 CREATE TABLE `salida` (
   `id_salida` int(11) NOT NULL,
-  `cedula_empleado` varchar(50) NOT NULL,
+  `cedula_empleado` varchar(50) DEFAULT NULL,
   `cedula_cliente` varchar(45) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -182,6 +182,13 @@ CREATE TABLE `usuario` (
   `cedula` varchar(45) NOT NULL,
   `clave` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuarios`, `tipo_usuario`, `cedula`, `clave`) VALUES
+(1, 'ADMINISTRADOR', '12345678', '12345678');
 
 --
 -- Índices para tablas volcadas
@@ -305,7 +312,7 @@ ALTER TABLE `salida`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -348,8 +355,8 @@ ALTER TABLE `producto`
 -- Filtros para la tabla `salida`
 --
 ALTER TABLE `salida`
-  ADD CONSTRAINT `fk_salida_cliente1` FOREIGN KEY (`cedula_empleado`) REFERENCES `cliente` (`cedula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_salida_empleados1` FOREIGN KEY (`cedula_cliente`) REFERENCES `empleados` (`cedula`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `salida_ibfk_1` FOREIGN KEY (`cedula_cliente`) REFERENCES `cliente` (`cedula`),
+  ADD CONSTRAINT `salida_ibfk_2` FOREIGN KEY (`cedula_empleado`) REFERENCES `empleados` (`cedula`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
