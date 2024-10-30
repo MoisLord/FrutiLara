@@ -1,4 +1,5 @@
 <html> 
+<title>N ENTRADAS</title>
 <?php require_once("comunes/encabezado.php"); ?>
 <body>
 <!--Div oculta para colocar el mensaje a mostrar-->

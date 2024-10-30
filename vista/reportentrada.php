@@ -1,4 +1,5 @@
 <html>
+<title>R ENTRADAS</title>
 <?php require_once('comunes/encabezado.php'); ?>
 <body>
 <!--linea para enlazar con el modal-->
