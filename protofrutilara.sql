@@ -258,8 +258,8 @@ ALTER TABLE `proveedores`
 --
 ALTER TABLE `salida`
   ADD PRIMARY KEY (`id_salida`),
-  ADD KEY `fk_salida_cliente1_idx` (`cedula_empleado`),
-  ADD KEY `fk_salida_empleados1_idx` (`cedula_cliente`);
+  ADD KEY `fk_salida_cliente1_idx` (`cedula_cliente`),
+  ADD KEY `fk_salida_empleados1_idx` (`cedula_empleado`);
 
 --
 -- Indices de la tabla `usuario`
