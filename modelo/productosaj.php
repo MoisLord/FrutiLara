@@ -149,16 +149,15 @@ class productosaj extends datos{
 		if($this->existe($this->codigo)){
 			try {
 				$p = $co->prepare("Update producto set 
-				codigo = :codigo,
 				nombre = :nombre,
-				catidad_total = :catidad_total,
+				cantidad_total = :cantidad_total,
 				minimo = :minimo,
 				maximo = :maximo,
 				id_modelo = :id_modelo,
 				id_categoria = :id_categoria
 				where
 				codigo = :codigo
-						");
+				");
 
 					$p->bindParam(':codigo',$this->codigo);		
 					$p->bindParam(':nombre',$this->nombre);
@@ -221,7 +220,7 @@ class productosaj extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("SELECT codigo, nombre, cantidad_total, minimo, maximo, producto.id_modelo, producto.id_categoria, modelo.descripcion_modelo, categoria.descripcion_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria");
+			$resultado = $co->query("SELECT codigo, nombre, cantidad_total, minimo, maximo, modelo.descripcion_modelo, producto.id_modelo, categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria");
 			
 			if($resultado){
 				
@@ -246,15 +245,16 @@ class productosaj extends datos{
 						$respuesta = $respuesta."<td style='display:none;'>";
 						$respuesta = $respuesta.$r['id_modelo'];
 					$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."<td style='display:none;'>";
-					$respuesta = $respuesta.$r['id_categoria'];
-				$respuesta = $respuesta."</td>";
-				$respuesta = $respuesta."<td>";
+					$respuesta = $respuesta."<td>";
 						$respuesta = $respuesta.$r['descripcion_modelo'];
+					$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."<td style='display:none;'>";
+						$respuesta = $respuesta.$r['id_categoria'];
 					$respuesta = $respuesta."</td>";
 				$respuesta = $respuesta."<td>";
 					$respuesta = $respuesta.$r['descripcion_categoria'];
 				$respuesta = $respuesta."</td>";
+
 					$respuesta = $respuesta."</tr>";
 				}
 				return $respuesta;
