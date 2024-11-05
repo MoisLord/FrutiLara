@@ -87,6 +87,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 					<th>Cantidad</th>
 					<th>Total del producto</th>
 					<th>Sumatoria total</th>
+					
 				  </tr>
 				</thead>
 				<tbody id="entrada">
