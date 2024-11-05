@@ -38,6 +38,7 @@ class entrada extends datos{
 			   '$umatoria[$i]'
 			   )");
 		   }
+		  $sql = $co->query("UPDATE producto JOIN detalle_entrada ON producto.codigo = detalle_entrada.codigo_producto SET producto.cantidad_total = producto.cantidad_total + detalle_entrada.cantidad_sumatoria WHERE detalle_entrada.id_entrada = '$lid'")
 		   $r['resultado'] = 'registrar';
 		   $r['mensaje'] =  "Inventario procesada, numero de inventario: $lid";
 		   
