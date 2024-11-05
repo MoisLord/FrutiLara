@@ -39,6 +39,7 @@ class salida extends datos{
 			   '$resta[$i]'
 			   )");
 		   }
+		   $sql = $co->query("UPDATE producto JOIN detalle_salida ON producto.codigo = detalle_salida.codigo_producto SET producto.cantidad_total = producto.cantidad_total - detalle_salida.cantidad_restada WHERE detalle_salida.id_salida = '$lid'");
 		   $r['resultado'] = 'registrar';
 		   $r['mensaje'] =  "Inventario procesada, numero de inventario: $lid";
 		   
