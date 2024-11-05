@@ -26,6 +26,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
 			   <button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
 			   <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
+			   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 		</div>
 	</div>
 	<!-- FIN DE FILA BOTONES -->
@@ -77,7 +78,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	<!-- FILA DE DETALLES DE SALIDA -->
 	<div class="row">
 		<div class="col-md-12">
-		   <table class="table table-striped table-hover">
+		   <table  class="table table-striped table-hover py-4">
 				<thead>
 				  <tr>
 				  <th>X</th>
@@ -98,6 +99,61 @@ NOTAS DE ENTRADA DE PRODUCTOS
 </div>
 </form>
 </div> <!-- fin de container -->
+
+<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
+   <form  method="post" id="f" autocomplete="off">
+
+	<div class="container">	
+		
+			<input class="form-control" type="text" id="rif" name="rif" style="display:none"/>
+			<input class="form-control" type="text" id="rif" name="rif" style="display:none"/>
+			<input class="form-control" type="text" id="Nombre" name="Nombre"style="display:none" />
+			<input class="form-control" type="text" id="Telefono" name="Telefono" style="display:none"/>
+			<input class="form-control" type="text" id="direccion" name="direccion" style="display:none"/>
+			  <div class="col-md-2">	
+				   <button style="display:none"type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
+			</div>
+		
+			
+	</div>	
+	
+	</form>
+	
+
+	
+</div>
+<div  class="container">
+<hr style="display:none"class="border border-success border-3 opacity-65">
+	    <!--se agrega un id para poder enlazar con el datatablet--> 
+		<table style="display:none"class="table table-striped table-hover py-4" id="tablaproveedores">
+		<thead>
+		  <tr>
+		 	<th>Documento Legal</th>
+			<th>Rif</th>
+			<th>Nombre del proveedor</th>
+			<th>Telefonon</th>	
+			<th>Direccion</th>
+		  </tr>
+		</thead>
+		<tbody id="resultadoconsulta">
+		
+		  
+		</tbody>
+		</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- seccion del modal proveedores -->
