@@ -161,12 +161,12 @@ $(document).ready(function(){
 		     <td>
 			  <input type="text" name="sumatoria[]" style="display:none"/>
 		   </td>
+		  
 		   </tr>`;
 			$("#entrada").append(l);
 		}
 	}
 	//fin de funcion colocar productos
-	
 	
 	//funcion para modificar subtotal
 	function modificasubtotal(textocantidad){
