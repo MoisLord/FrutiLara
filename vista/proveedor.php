@@ -27,7 +27,7 @@ PANTALLA DE PROVEEDORES
   				<option selected>Seleccione el tipo de documento</option>
   				<option value="Venezolano">Venezolano</option>
   				<option value="jurídico">jurídico</option>
-  				<option value="obernamental">Gobernamental</option>
+  				<option value="Gobernamental">Gobernamental</option>
 				
 			</select>
 			</div>
