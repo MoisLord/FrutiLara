@@ -102,17 +102,6 @@ NOTAS DE ENTRADA DE PRODUCTOS
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <!-- seccion del modal proveedores -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalproveedor">
   <div class="modal-dialog modal-lg" role="document">
