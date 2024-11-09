@@ -1,5 +1,12 @@
 
+function consultar() {
+    var datos = new FormData();
+    datos.append('accion','consultar');
+    enviaAjax(datos);
+}
+
 $(document).ready(function(){
+	consultar();
 //VALIDACION DE DATOS	
 	$("#cedula").on("keypress",function(e){
 		validarkeypress(/^[0-9-\b]*$/,e);
@@ -31,7 +38,7 @@ $(document).ready(function(){
 	});
 	
 	$("#telefono").on("keyup",function(){
-	    validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$(this),$("#stelefono"),"El formato debe ser 9999-9999999");
+	    validarkeyup(/^[0-9]{11,15}$/,$(this),$("#stelefono"),"El formato debe ser 01012510101");
 	});
 
 	$("#correo").on("keypress", function(e) {
@@ -39,7 +46,7 @@ $(document).ready(function(){
 	  });
 	  
 	  $("#correo").on("keyup", function() {
-		validarkeyup(/^[A-Za-z0-9_\u00f1\u00d1\u00E0-\u00FC\s]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
+		validarkeyup(/^[A-Za-z0-9_\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
 		$(this),$("#scorreo"),"El formato debe ser alguien@servidor.com");
 	  });
 
@@ -74,7 +81,7 @@ $("#incluir").on("click",function(){
 		datos.append('direccion',$("#direccion").val());
 		datos.append('fechaNacimiento',$("#fechaNacimiento").val());
 		enviaAjax(datos);
-		setInterval("location.reload()",4000);
+		
 	}
 });
 $("#modificar").on("click",function(){
@@ -89,7 +96,7 @@ $("#modificar").on("click",function(){
 		datos.append('direccion',$("#direccion").val());
 		datos.append('fechaNacimiento',$("#fechaNacimiento").val());
 		enviaAjax(datos);
-		setInterval("location.reload()",4000);
+		
 		
 	}
 });
@@ -108,7 +115,7 @@ $("#eliminar").on("click",function(){
 		datos.append('accion','eliminar');
 		datos.append('cedula',$("#cedula").val());
 		enviaAjax(datos);
-		setInterval("location.reload()",4000);
+			
 	}
 	
 });
@@ -123,36 +130,36 @@ $("#consultar").on("click",function(){
 });
 
 
-//funcion para enlazar al DataTablet
-function destruyeDT(){
-	//1 se destruye el datatablet
-	if ($.fn.DataTable.isDataTable("#tablaempleados")) {
-            $("#tablaempleados").DataTable().destroy();
-    }
-}
-function crearDT(){
-	//se crea nuevamente
-    if (!$.fn.DataTable.isDataTable("#tablaempleados")) {
-            $("#tablaempleados").DataTable({
-              language: {
-                lengthMenu: "Mostrar _MENU_ por página",
-                zeroRecords: "No se encontraron personas",
-                info: "Mostrando página _PAGE_ de _PAGES_",
-                infoEmpty: "No hay personas registradas",
-                infoFiltered: "(filtrado de _MAX_ registros totales)",
-                search: "Buscar:",
-                paginate: {
-                  first: "Primera",
-                  last: "Última",
-                  next: "Siguiente",
-                  previous: "Anterior",
-                },
-              },
-              autoWidth: false,
-              order: [[1, "asc"]],
-            });
-    }         
-}
+// //funcion para enlazar al DataTablet
+// function destruyeDT(){
+// 	//1 se destruye el datatablet
+// 	if ($.fn.DataTable.isDataTable("#tablaempleados")) {
+//             $("#tablaempleados").DataTable().destroy();
+//     }
+// }
+// function crearDT(){
+// 	//se crea nuevamente
+//     if (!$.fn.DataTable.isDataTable("#tablaempleados")) {
+//             $("#tablaempleados").DataTable({
+//               language: {
+//                 lengthMenu: "Mostrar _MENU_ por página",
+//                 zeroRecords: "No se encontraron personas",
+//                 info: "Mostrando página _PAGE_ de _PAGES_",
+//                 infoEmpty: "No hay personas registradas",
+//                 infoFiltered: "(filtrado de _MAX_ registros totales)",
+//                 search: "Buscar:",
+//                 paginate: {
+//                   first: "Primera",
+//                   last: "Última",
+//                   next: "Siguiente",
+//                   previous: "Anterior",
+//                 },
+//               },
+//               autoWidth: false,
+//               order: [[1, "asc"]],
+//             });
+//     }         
+// }
 
 
 //Validación de todos los campos antes del envio
@@ -168,12 +175,12 @@ function validarenvio(){
 		muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres");
 		return false;
 	}
-	else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$("#telefono"),
+	else if(validarkeyup(/^[0-9]{11,15}$/,$("#telefono"),
 		 $("#stelefono"),"El formato debe ser 9999-9999999")==0){
 		 muestraMensaje("error",4000,"Valida","Verifique el Telefono");
 	     return false;
 	}
-	else if(validarkeyup(/^[A-Za-z0-9_\u00f1\u00d1\u00E0-\u00FC\s]{3,15}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
+	else if(validarkeyup(/^[A-Za-z0-9_\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}[@]{1}[A-Za-z0-9]{3,8}[.]{1}[A-Za-z]{2,3}$/,
 		$("#correo"),$("#scorreo"),"El formato debe ser alguien@servidor.com")==0){
 		muestraMensaje("error",4000,"Valida","Verifique el Correo");
 		 return false;
@@ -260,9 +267,7 @@ function enviaAjax(datos){
 				try {
 					var lee = JSON.parse(respuesta);
 					if (lee.resultado == "consultar") {
-						destruyeDT();
 						$("#resultadoconsulta").html(lee.mensaje);
-						crearDT();
 					 }
 					 else if (lee.resultado == "encontro") {
 						$("#nombre_apellido").val(lee.mensaje[0][1]);
@@ -277,6 +282,7 @@ function enviaAjax(datos){
 					lee.resultado == "eliminar") {
 					   muestraMensaje(lee.mensaje);
 					   limpia();
+					   consultar();
 					}
 					else if (lee.resultado == "error") {
 					   muestraMensaje(lee.mensaje);

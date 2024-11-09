@@ -50,10 +50,7 @@ require_once("modelo/".$pagina.".php");
 			  }
 		  }
 		  exit;
-	  }
-	  
-	  
-	  $consulta = $o->consultar();
+	  }	
 	  
 	  require_once("vista/".$pagina.".php"); 
   }

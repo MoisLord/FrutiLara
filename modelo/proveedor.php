@@ -96,7 +96,7 @@ class proveedor extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Proveedor ha sido registrado';
+			            $r['mensaje'] =  'El Proveedor ha sido registrado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -137,7 +137,7 @@ class proveedor extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
-			            $r['mensaje'] =  'Registro Modificado';
+			            $r['mensaje'] =  'El proveedor ha sido Modificado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -165,7 +165,7 @@ class proveedor extends datos{
 					
 					$p->execute();
 					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'Registro Eliminado';
+			        $r['mensaje'] =  'El proveedor ha sido Eliminado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();

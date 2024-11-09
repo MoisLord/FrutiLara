@@ -197,7 +197,7 @@ class empleados extends datos{
 	function consultar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		//$r = array();
+		$r = array();
 		try{
 			
 			$resultado = $co->query("Select * from empleados");
@@ -225,9 +225,14 @@ class empleados extends datos{
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['fechaNacimiento'];
 						$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."</tr>";
-				}
-				return $respuesta;
+					$respuesta = $respuesta."</td>";
+
+					$r['resultado'] = 'consultar';
+					$r['mensaje'] =  $respuesta;
+					
+			}
+			
+			return $r;
 			    
 			}
 			else{
