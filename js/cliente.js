@@ -1,6 +1,12 @@
+function consultar() {
+    var datos = new FormData();
+    datos.append('accion','consultar');
+    enviaAjax(datos);
+}
 
 $(document).ready(function(){
-//VALIDACION DE DATOS	
+	consultar();
+	//VALIDACION DE DATOS	
 	$("#cedula").on("keypress",function(e){
 		validarkeypress(/^[0-9-\b]*$/,e);
 	});
@@ -64,7 +70,6 @@ $("#incluir").on("click",function(){
 		datos.append('direccion',$("#direccion").val());
 		enviaAjax(datos);
 
-		setInterval("location.reload()",4000);
 	}
 });
 $("#modificar").on("click",function(){
@@ -77,8 +82,6 @@ $("#modificar").on("click",function(){
 		datos.append('telefono',$("#telefono").val());
 		datos.append('direccion',$("#direccion").val());
 		enviaAjax(datos);
-
-		setInterval("location.reload()",4000);
 		
 	}
 });
@@ -97,8 +100,6 @@ $("#eliminar").on("click",function(){
 		datos.append('accion','eliminar');
 		datos.append('cedula',$("#cedula").val());
 		enviaAjax(datos);
-
-		setInterval("location.reload()",4000);
 	}
 	
 });
@@ -113,36 +114,36 @@ $("#consultar").on("click",function(){
 });
 
 
-//funcion para enlazar al DataTablet
-function destruyeDT(){
-	//1 se destruye el datatablet
-	if ($.fn.DataTable.isDataTable("#tablaclientes")) {
-            $("#tablaclientes").DataTable().destroy();
-    }
-}
-function crearDT(){
-	//se crea nuevamente
-    if (!$.fn.DataTable.isDataTable("#tablaclientes")) {
-            $("#tablaclientes").DataTable({
-              language: {
-                lengthMenu: "Mostrar _MENU_ por página",
-                zeroRecords: "No se encontraron personas",
-                info: "Mostrando página _PAGE_ de _PAGES_",
-                infoEmpty: "No hay personas registradas",
-                infoFiltered: "(filtrado de _MAX_ registros totales)",
-                search: "Buscar:",
-                paginate: {
-                  first: "Primera",
-                  last: "Última",
-                  next: "Siguiente",
-                  previous: "Anterior",
-                },
-              },
-              autoWidth: false,
-              order: [[1, "asc"]],
-            });
-    }         
-}
+// //funcion para enlazar al DataTablet
+// function destruyeDT(){
+// 	//1 se destruye el datatablet
+// 	if ($.fn.DataTable.isDataTable("#tablaclientes")) {
+//             $("#tablaclientes").DataTable().destroy();
+//     }
+// }
+// function crearDT(){
+// 	//se crea nuevamente
+//     if (!$.fn.DataTable.isDataTable("#tablaclientes")) {
+//             $("#tablaclientes").DataTable({
+//               language: {
+//                 lengthMenu: "Mostrar _MENU_ por página",
+//                 zeroRecords: "No se encontraron personas",
+//                 info: "Mostrando página _PAGE_ de _PAGES_",
+//                 infoEmpty: "No hay personas registradas",
+//                 infoFiltered: "(filtrado de _MAX_ registros totales)",
+//                 search: "Buscar:",
+//                 paginate: {
+//                   first: "Primera",
+//                   last: "Última",
+//                   next: "Siguiente",
+//                   previous: "Anterior",
+//                 },
+//               },
+//               autoWidth: false,
+//               order: [[1, "asc"]],
+//             });
+//     }         
+// }
 
 
 //Validación de todos los campos antes del envio
@@ -243,9 +244,7 @@ function enviaAjax(datos){
 				try {
 					var lee = JSON.parse(respuesta);
 					if (lee.resultado == "consultar") {
-						destruyeDT();
 						$("#resultadoconsulta").html(lee.mensaje);
-						crearDT();
 					 }
 					 else if (lee.resultado == "encontro") {
 						$("#nombre_apellido").val(lee.mensaje[0][1]);
@@ -258,6 +257,7 @@ function enviaAjax(datos){
 					lee.resultado == "eliminar") {
 					   muestraMensaje(lee.mensaje);
 					   limpia();
+					   consultar();
 					}
 					else if (lee.resultado == "error") {
 					   muestraMensaje(lee.mensaje);

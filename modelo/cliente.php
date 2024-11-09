@@ -193,8 +193,13 @@ class cliente extends datos{
 							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
-				}
-				return $respuesta;
+				
+					$r['resultado'] = 'consultar';
+					$r['mensaje'] =  $respuesta;
+					
+			}
+			
+			return $r;
 			    
 			}
 			else{
