@@ -96,6 +96,7 @@ CATEGORIAS DE PRODUCTOS
 	<div class="container">
 	<h5 class="modal-title text-center text-success">CATEGORIAS REGISTRADAS</h5>
 	<hr class="border border-success border-3 opacity-65">
+	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
 	    <!--se coloca un id para enlazar con el datatablet y la configuración de esta en el archivo categoria.js--> 
 		<table class="table table-striped table-hover" id="tablacategoria">
 		<thead>
