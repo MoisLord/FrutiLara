@@ -19,7 +19,7 @@ $(document).ready(function(){
             validarkeypress(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         $("#Nombre").on("keyup",function(){
-            validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+            validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
             $(this),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres");
         });
         $("#Telefono").on("keypress",function(e){
@@ -108,7 +108,7 @@ $(document).ready(function(){
                             "J092348760");	
             return false;					
         }
-        else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+        else if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
             $("#Nombre"),$("#sNombre"),"Solo letras  entre 3 y 30 caracteres")==0){
             muestraMensaje("Nombre <br/>Solo letras  entre 3 y 30 caracteres");
             return false;
