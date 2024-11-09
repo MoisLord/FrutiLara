@@ -225,7 +225,7 @@ class empleados extends datos{
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['fechaNacimiento'];
 						$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
 
 					$r['resultado'] = 'consultar';
 					$r['mensaje'] =  $respuesta;

@@ -208,7 +208,7 @@ class proveedor extends datos{
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."</tr>";
 
 						$r['resultado'] = 'consultar';
 						$r['mensaje'] =  $respuesta;
