@@ -6,7 +6,7 @@ $(document).ready(function(){
 	});
 	
 	$("#cedula").on("keyup",function(){
-		validarkeyup(/^[0-9]{7,8}$/,$(this),
+		validarkeyup(/^[0-9]{5,8}$/,$(this),
 		$("#scedula"),"El formato debe ser 9999999 ");
 		if($("#cedula").val().length > 7){
 		  var datos = new FormData();
@@ -85,7 +85,7 @@ $("#modificar").on("click",function(){
 
 $("#eliminar").on("click",function(){
 	
-	if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
+	if(validarkeyup(/^[0-9]{5,8}$/,$("#cedula"),
 		$("#scedula"),"El formato debe ser 9999999")==0){
 	    muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
 						"99999999");	
@@ -147,7 +147,7 @@ function crearDT(){
 
 //Validación de todos los campos antes del envio
 function validarenvio(){
-	if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
+	if(validarkeyup(/^[0-9]{5,8}$/,$("#cedula"),
 		$("#scedula"),"El formato debe ser 9999999")==0){
 	    muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
 						"99999999");	
