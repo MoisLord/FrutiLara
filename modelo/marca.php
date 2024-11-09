@@ -80,7 +80,7 @@ class marca extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Marca Inluida';
+			            $r['mensaje'] =  'Marca ha sido registrado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();

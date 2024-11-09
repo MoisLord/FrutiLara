@@ -96,7 +96,7 @@ class proveedor extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Registro Incluido';
+			            $r['mensaje'] =  'Proveedor ha sido registrado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -182,6 +182,7 @@ class proveedor extends datos{
 	function consultar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array();
 
 		try{
 			
@@ -208,8 +209,13 @@ class proveedor extends datos{
 							$respuesta = $respuesta.$r['direccion'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."</td>";
+
+						$r['resultado'] = 'consultar';
+						$r['mensaje'] =  $respuesta;
+						
 				}
-				return $respuesta;
+				
+				return $r;
 			    
 			}
 			else{

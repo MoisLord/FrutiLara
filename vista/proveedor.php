@@ -106,11 +106,7 @@ PANTALLA DE PROVEEDORES
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
-		<?php
-			if(!empty($consulta)){
-				echo $consulta;
-			}
-		  ?>
+
 		  
 		</tbody>
 		</table>

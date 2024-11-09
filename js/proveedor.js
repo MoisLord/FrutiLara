@@ -1,4 +1,11 @@
+function consultar() {
+    var datos = new FormData();
+    datos.append('accion','consultar');
+    enviaAjax(datos);
+}
+
 $(document).ready(function(){
+    consultar();
     //VALIDACION DE DATOS	
         $("#rif").on("keypress",function(e){
             validarkeypress(/^[0-9-\b]*$/,e);
@@ -51,7 +58,6 @@ $(document).ready(function(){
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
-            setInterval("location.reload()",1000);
         }
     });
     $("#modificar").on("click",function(){
@@ -65,7 +71,6 @@ $(document).ready(function(){
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
             enviaAjax(datos);
-            setInterval("location.reload()",1000);
         }
     });
     
@@ -83,7 +88,6 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('rif',$("#rif").val());
             enviaAjax(datos);
-            setInterval("location.reload()",1000);
         }
         
     });
@@ -135,7 +139,7 @@ $(document).ready(function(){
                 $("#mostrarmodal").modal("show");
                 setTimeout(function() {
                         $("#mostrarmodal").modal("hide");
-                },5000);
+                },2000);
     }
     
     
@@ -198,14 +202,8 @@ $(document).ready(function(){
                 console.log(respuesta);
                     try {
                         var lee = JSON.parse(respuesta);
-                        if (lee.resultado == "obtienefecha") {
-                        
-                        }
-                        else if (lee.resultado == "consultar") {
-                           destruyeDT();
+                        if (lee.resultado == "consultar") {
                            $("#resultadoconsulta").html(lee.mensaje);
-                           crearDT();
-                           $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
                             $("#documento").val(lee.mensaje[0][1]);
@@ -219,6 +217,8 @@ $(document).ready(function(){
                         lee.resultado == "eliminar") {
                            muestraMensaje(lee.mensaje);
                            limpia();
+                           consultar();
+                           
                         }
                         else if (lee.resultado == "error") {
                            muestraMensaje(lee.mensaje);

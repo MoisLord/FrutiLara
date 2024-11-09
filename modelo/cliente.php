@@ -89,7 +89,7 @@ class cliente extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Registro Inluido';
+			            $r['mensaje'] =  'Cliente ha sido registrado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();

@@ -128,7 +128,7 @@ class productosaj extends datos{
 					$p->execute();
 
 					$r['resultado'] = 'incluir';
-					$r['mensaje'] =  'Producto Inluido';
+					$r['mensaje'] =  'Producto Incluido';
 		} catch(Exception $e) {
 			$r['resultado'] = 'error';
 			$r['mensaje'] =  $e->getMessage();

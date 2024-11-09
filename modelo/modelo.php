@@ -84,7 +84,7 @@ class modelo extends datos
 				$p->execute();
 
 				$r['resultado'] = 'incluir';
-				$r['mensaje'] =  'Registro Inluido';
+				$r['mensaje'] =  'Registro Incluido';
 			} catch (Exception $e) {
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();

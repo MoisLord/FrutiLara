@@ -112,7 +112,7 @@ class empleados extends datos{
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Registro Inluido';
+			            $r['mensaje'] =  'Empleado ha sido registrado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
