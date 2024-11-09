@@ -57,9 +57,9 @@ $(document).ready(function(){
     $("#eliminar").on("click",function(){
         
         if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
-            $("#sid_marca"),"El formato debe ser Numerico")==0){
+            $("#sid_marca"),"El formato debe ser alfanumerico")==0){
             muestraMensaje("El codigo de la marca debe coincidir con el formato <br/>"+ 
-                            "99999999");	
+                            "99999999 o 123algo");	
             
         }
         else{	
@@ -119,9 +119,9 @@ $(document).ready(function(){
     //Validación de todos los campos antes del envio
     function validarenvio(){
         if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
-            $("#sid_marca"),"El formato debe ser Numerico")==0){
+            $("#sid_marca"),"El formato debe ser alfanumerico")==0){
             muestraMensaje("El codigo de la marca debe coincidir con el formato <br/>"+ 
-                            "99999999");	
+                            "99999999 o algo123");	
             return false;					
         }	
         else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{2,30}$/,
