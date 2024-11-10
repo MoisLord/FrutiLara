@@ -85,12 +85,7 @@ USUARIOS DEL SISTEMA
 			<th>Contraseña</th>	
 		  </tr>
 		</thead>
-		<tbody>
-		<?php
-			if(!empty($consulta)){
-				echo $consulta;
-			}
-		  ?>
+		<tbody id="resultadoconsulta">
 		  
 		</tbody>
 		</table>

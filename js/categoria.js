@@ -45,7 +45,7 @@ $(document).ready(function(){
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            
         }
     });
     $("#modificar").on("click",function(){
@@ -58,7 +58,7 @@ $(document).ready(function(){
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            
         }
     });
     
@@ -76,7 +76,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('codigo_categoria',$("#codigo_categoria").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            
         }
         
     });
@@ -146,7 +146,7 @@ $(document).ready(function(){
                 $("#mostrarmodal").modal("show");
                 setTimeout(function() {
                         $("#mostrarmodal").modal("hide");
-                },5000);
+                },2000);
     }
     
     

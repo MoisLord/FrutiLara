@@ -1,4 +1,11 @@
+function consultar() {
+    var datos = new FormData();
+    datos.append('accion','consultar');
+    enviaAjax(datos);
+}
+
 $(document).ready(function(){
+    consultar();
     //VALIDACION DE DATOS	
         $("#cedula").on("keypress",function(e){
             validarkeypress(/^[0-9-\b]*$/,e);
@@ -38,7 +45,7 @@ $(document).ready(function(){
             datos.append('tipo_usuario',$("#tipo_usuario").val());
             datos.append('clave',$("#clave").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            
         }
     });
     $("#modificar").on("click",function(){
@@ -50,7 +57,7 @@ $(document).ready(function(){
             datos.append('tipo_usuario',$("#tipo_usuario").val());
             datos.append('clave',$("#clave").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            
         }
     });
     
@@ -68,7 +75,7 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('cedula',$("#cedula").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            
         }
         
     });
@@ -139,7 +146,7 @@ $(document).ready(function(){
                 $("#mostrarmodal").modal("show");
                 setTimeout(function() {
                         $("#mostrarmodal").modal("hide");
-                },5000);
+                },2000);
     }
     
     
@@ -215,6 +222,7 @@ $(document).ready(function(){
                         lee.resultado == "eliminar") {
                            muestraMensaje(lee.mensaje);
                            limpia();
+                           consultar();
                         }
                         else if (lee.resultado == "error") {
                            muestraMensaje(lee.mensaje);
