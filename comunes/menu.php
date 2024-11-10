@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
 
-    <img src="img/logo.png" alt="" style="width:50px;">
+    <img src="img/logo.png" alt="" style="width:40px;">
     <a class="navbar-brand text-white" style="font-weight: 600;" href=".">FRUTILARA</a>
 
 
