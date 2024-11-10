@@ -263,7 +263,7 @@ class proveedor extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("select * from proveedores where rif='$this->rif'");
+			$resultado = $co->query("Select * from proveedores where rif='$this->rif'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 			    

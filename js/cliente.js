@@ -37,7 +37,7 @@ $(document).ready(function(){
 	});
 	
 	$("#telefono").on("keyup",function(){
-	    validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7}$/,$(this),$("#stelefono"),"El formato debe ser 9999-9999999");
+	    validarkeyup(/^[0-9]{11,15}$/,$(this),$("#stelefono"),"El formato debe ser 9999-9999999");
 	});
 
 	$("#direccion").on("keypress",function(e){
@@ -159,7 +159,7 @@ function validarenvio(){
 		muestraMensaje("Nombre y apellido <br/>Solo letras  entre 3 y 30 caracteres");
 		return false;
 	}
-	else if(validarkeyup(/^[0-9]{4}[-]{1}[0-9]{7,8}$/,$("#telefono"),
+	else if(validarkeyup(/^[0-9]{11,15}$/,$("#telefono"),
 		 $("#stelefono"),"El formato debe ser 9999-9999999")==0){
 		 muestraMensaje("error",4000,"Valida","Verifique el Telefono");
 	     return false;
