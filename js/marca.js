@@ -1,4 +1,11 @@
+function consultar() {
+    var datos = new FormData();
+    datos.append('accion','consultar');
+    enviaAjax(datos);
+}
+
 $(document).ready(function(){
+    consultar();
     //VALIDACION DE DATOS	
         $("#id_marca").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
@@ -6,7 +13,7 @@ $(document).ready(function(){
         
         $("#id_marca").on("keyup",function(){
             validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$(this),
-            $("#sid_marca"),"El Formato Debe Ser Alfanúmerico ");
+            $("#sid_marca"),"El Formato Debe Ser Alfanúmerico con 7 a 20 digitos");
             if($("#id_marca").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
@@ -49,7 +56,7 @@ $(document).ready(function(){
             datos.append('id_marca',$("#id_marca").val());
             datos.append('descripcion_marca',$("#descripcion_marca").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            
             
         }
     });
@@ -57,7 +64,7 @@ $(document).ready(function(){
     $("#eliminar").on("click",function(){
         
         if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
-            $("#sid_marca"),"El formato debe ser alfanumerico")==0){
+            $("#sid_marca"),"El formato debe ser alfanumerico con 7 a 8 digitos")==0){
             muestraMensaje("El codigo de la marca debe coincidir con el formato <br/>"+ 
                             "99999999 o 123algo");	
             
@@ -68,17 +75,17 @@ $(document).ready(function(){
             datos.append('accion','eliminar');
             datos.append('id_marca',$("#id_marca").val());
             enviaAjax(datos);
-            setInterval("location.reload()",4000);
+            
         }
         
     });
     
-    $("#consultar").on("click",function(){
-        var datos = new FormData();
-        datos.append('accion','consultar');
-        enviaAjax(datos);
-        setInterval("location.reload()",4000);
-    });
+    // $("#consultar").on("click",function(){
+    //     var datos = new FormData();
+    //     datos.append('accion','consultar');
+    //     enviaAjax(datos);
+        
+    // });
     //FIN DE CONTROL DE BOTONES	
     
     });
@@ -119,7 +126,7 @@ $(document).ready(function(){
     //Validación de todos los campos antes del envio
     function validarenvio(){
         if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
-            $("#sid_marca"),"El formato debe ser alfanumerico")==0){
+            $("#sid_marca"),"El formato debe ser alfanumerico con 7 a 8 digitos")==0){
             muestraMensaje("El codigo de la marca debe coincidir con el formato <br/>"+ 
                             "99999999 o algo123");	
             return false;					
@@ -141,7 +148,7 @@ $(document).ready(function(){
                 $("#mostrarmodal").modal("show");
                 setTimeout(function() {
                         $("#mostrarmodal").modal("hide");
-                },5000);
+                },2000);
     }
     
     
@@ -219,6 +226,7 @@ $(document).ready(function(){
                         lee.resultado == "eliminar") {
                            muestraMensaje(lee.mensaje);
                            limpia();
+                           consultar();
                         }
                         else if (lee.resultado == "error") {
                            muestraMensaje(lee.mensaje);

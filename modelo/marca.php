@@ -176,8 +176,13 @@ class marca extends datos{
 							$respuesta = $respuesta.$r['descripcion_marca'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
-				}
-				return $respuesta;
+				
+					$r['resultado'] = 'consultar';
+					$r['mensaje'] =  $respuesta;
+					
+			}
+			
+			return $r;
 			    
 			}
 			else{

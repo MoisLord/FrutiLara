@@ -13,7 +13,7 @@ $(document).ready(function(){
         
         $("#cedula").on("keyup",function(){
             validarkeyup(/^[0-9]{7,8}$/,$(this),
-            $("#scedula"),"El Formato Debe Ser Numerico ");
+            $("#scedula"),"El Formato Debe Ser Numerico con 7 a 8 digitos");
             if($("#cedula").val().length > 7){
               var datos = new FormData();
                 datos.append('accion','consultatr');
@@ -64,7 +64,7 @@ $(document).ready(function(){
     $("#eliminar").on("click",function(){
         
         if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-            $("#scedula"),"El formato debe ser Numerico")==0){
+            $("#scedula"),"El formato debe ser Numerico con 7 a 8 digitos")==0){
             muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
                             "00000000");	
             
@@ -125,7 +125,7 @@ $(document).ready(function(){
     //Validación de todos los campos antes del envio
     function validarenvio(){
         if(validarkeyup(/^[0-9]{7,8}$/,$("#cedula"),
-            $("#scedula"),"El formato debe ser Numerico")==0){
+            $("#scedula"),"El formato debe ser Numerico con 7 a 8 digitos")==0){
             muestraMensaje("La cedula  debe coincidir con el formato <br/>"+ 
                             "00000000");	
             return false;					
