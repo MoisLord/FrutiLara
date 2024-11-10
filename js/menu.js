@@ -1,0 +1,19 @@
+// Metodo de que genere una ventana para acceder al PDF del Manual
+
+// Espera a que el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtén el elemento con ID 'manual'
+    const manualLink = document.getElementById('manual');
+
+    // Agrega un evento click al enlace
+    manualLink.addEventListener('click', function(event) {
+        // Prevenir el comportamiento por defecto del enlace
+        event.preventDefault();
+
+        // URL del PDF que deseas abrir
+        const pdfUrl = 'documento/manual.pdf'; // Asegúrate de que esta ruta sea correcta
+
+        // Abre el PDF en una nueva ventana
+        window.open(pdfUrl, '_blank');
+    });
+});
