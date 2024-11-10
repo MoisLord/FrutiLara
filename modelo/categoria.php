@@ -198,8 +198,13 @@ class categoria extends datos{
 							$respuesta = $respuesta.$r['unidadMedAlt'];
 						$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
-				}
-				return $respuesta;
+					
+					$r['resultado'] = 'consultar';
+					$r['mensaje'] =  $respuesta;
+					
+			}
+			
+			return $r;
 			    
 			}
 			else{

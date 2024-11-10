@@ -1,4 +1,11 @@
+function consultar() {
+    var datos = new FormData();
+    datos.append('accion','consultar');
+    enviaAjax(datos);
+}
+
 $(document).ready(function(){
+    consultar();
     //Finalización del sector para la validación de los datos	
         $("#codigo_categoria").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9-\b]*$/,e);
@@ -84,36 +91,36 @@ $(document).ready(function(){
     });
     
     
-    //funcion para enlazar al DataTablet
-    function destruyeDT(){
-        //se destruye el datatablet
-        if ($.fn.DataTable.isDataTable("#tablacategoria")) {
-                $("#tablacategoria").DataTable().destroy();
-        }
-    }
-    function crearDT(){
-        //se crea nuevamente
-        if (!$.fn.DataTable.isDataTable("#tablacategoria")) {
-                $("#tablacategoria").DataTable({
-                  language: {
-                    lengthMenu: "Mostrar _MENU_ por página",
-                    zeroRecords: "No se encontraron categorias",
-                    info: "Mostrando página _PAGE_ de _PAGES_",
-                    infoEmpty: "No hay categorias registradas",
-                    infoFiltered: "(filtrado de _MAX_ registros totales)",
-                    search: "Buscar:",
-                    paginate: {
-                      first: "Primera",
-                      last: "Última",
-                      next: "Siguiente",
-                      previous: "Anterior",
-                    },
-                  },
-                  autoWidth: false,
-                  order: [[1, "asc"]],
-                });
-        }         
-    }
+    // //funcion para enlazar al DataTablet
+    // function destruyeDT(){
+    //     //se destruye el datatablet
+    //     if ($.fn.DataTable.isDataTable("#tablacategoria")) {
+    //             $("#tablacategoria").DataTable().destroy();
+    //     }
+    // }
+    // function crearDT(){
+    //     //se crea nuevamente
+    //     if (!$.fn.DataTable.isDataTable("#tablacategoria")) {
+    //             $("#tablacategoria").DataTable({
+    //               language: {
+    //                 lengthMenu: "Mostrar _MENU_ por página",
+    //                 zeroRecords: "No se encontraron categorias",
+    //                 info: "Mostrando página _PAGE_ de _PAGES_",
+    //                 infoEmpty: "No hay categorias registradas",
+    //                 infoFiltered: "(filtrado de _MAX_ registros totales)",
+    //                 search: "Buscar:",
+    //                 paginate: {
+    //                   first: "Primera",
+    //                   last: "Última",
+    //                   next: "Siguiente",
+    //                   previous: "Anterior",
+    //                 },
+    //               },
+    //               autoWidth: false,
+    //               order: [[1, "asc"]],
+    //             });
+    //     }         
+    // }
     
     
     //Comienzo del sector para la validación de todos los campos antes del envio
@@ -202,9 +209,7 @@ $(document).ready(function(){
                     try {
                         var lee = JSON.parse(respuesta);
                         if (lee.resultado == "consultar") {
-                           destruyeDT();
                            $("#resultadoconsulta").html(lee.mensaje);
-                           crearDT();
                         }
                         else if (lee.resultado == "encontro") {
                            $("#descripcion_categoria").val(lee.mensaje[0][1]);
@@ -217,6 +222,7 @@ $(document).ready(function(){
                         lee.resultado == "eliminar") {
                            muestraMensaje(lee.mensaje);
                            limpia();
+                           consultar();
                         }
                         else if (lee.resultado == "error") {
                            muestraMensaje(lee.mensaje);

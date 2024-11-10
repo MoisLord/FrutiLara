@@ -108,12 +108,7 @@ CATEGORIAS DE PRODUCTOS
 			<th>Unidad de Medida Alternativa</th>
 		  </tr>
 		</thead>
-		<tbody>
-		<?php
-			if(!empty($consulta)){
-				echo $consulta;
-			}
-		  ?>
+		<tbody id="resultadoconsulta">
 		</tbody>
 		</table>
 		

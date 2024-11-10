@@ -252,8 +252,6 @@ class empleados extends datos{
 		try{
 			
 			$resultado = $co->query("Select * from empleados where cedula='$cedula'");
-			
-			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if($fila){
 
