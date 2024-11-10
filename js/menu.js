@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
         // URL del PDF que deseas abrir
-        const pdfUrl = 'documento/manual.pdf'; // Asegúrate de que esta ruta sea correcta
+        const pdfUrl = 'documento/Manual de Uso del Sistema Para Frutilara.pdf'; // Asegúrate de que esta ruta sea correcta
 
         // Abre el PDF en una nueva ventana
         window.open(pdfUrl, '_blank');
