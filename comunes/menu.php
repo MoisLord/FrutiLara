@@ -80,9 +80,6 @@
 					?>
 					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a id="manual" class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;">MANUAL DEL SISTEMA</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=cliente">CLIENTES</a>
           </li>
             <li class="nav-item dropdown">
@@ -96,6 +93,9 @@
 					?>
               </div>
             </li>
+              <li class="nav-item">
+                 <a id="manual" class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;">MANUAL DEL SISTEMA</a>
+              </li>
           </ul>
 					<?php
 					  }
