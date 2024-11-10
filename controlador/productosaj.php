@@ -58,10 +58,9 @@ require_once("modelo/".$pagina.".php");
 				echo json_encode($o->modificar());
 			  }
 		  }
-		  $consulta = $o->consultar();
 		  exit;
 	  }
-	  $consulta = $o->consultar();
+
 
 
 	  require_once("vista/".$pagina.".php"); 

@@ -1,5 +1,12 @@
+function consultar() {
+    var datos = new FormData();
+    datos.append('accion','consultar');
+    enviaAjax(datos);
+}
+
 let valor;
 $(document).ready(function(){
+	consultar();
 //VALIDACION DE DATOS
 	carga_marca();
 
@@ -75,7 +82,7 @@ $("#incluir").on("click",function(){
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
 		datos.append('id_marca', valor);
 		enviaAjax(datos);
-		setInterval("location.reload()",3000);
+		
 	}
 });
 $("#modificar").on("click",function(){
@@ -87,7 +94,7 @@ $("#modificar").on("click",function(){
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
 		datos.append('id_marca', valor);
 		enviaAjax(datos);
-		setInterval("location.reload()",3000);
+		
 	}
 });
 
@@ -105,7 +112,7 @@ $("#eliminar").on("click",function(){
 		datos.append('accion','eliminar');
 		datos.append('id_modelo',$("#id_modelo").val());
 		enviaAjax(datos);
-		setInterval("location.reload()",3000);
+		
 	}
 	
 });
@@ -275,6 +282,7 @@ function enviaAjax(datos){
 					lee.resultado == "eliminar") {
 					   muestraMensaje(lee.mensaje);
 					   limpia();
+					   consultar();
 					}
 					else if(lee.resultado=='listadoMarca'){
 					

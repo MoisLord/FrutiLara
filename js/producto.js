@@ -1,6 +1,13 @@
+function consultar() {
+  var datos = new FormData();
+  datos.append('accion','consultar');
+  enviaAjax(datos);
+}
+
 let valorModelo;
     let valorCategoria;
     $(document).ready(function(){
+      consultar();
       //VALIDACION DE DATOS
       
       carga_modelo();
@@ -350,12 +357,12 @@ return false;
                   
                  }
                  else if (lee.resultado == "encontro") {
-                   $("#nombre").val(lee.mensaje[0][2]);
-                   $("#cantidad_total").val(lee.mensaje[0][3]);
-                   $("#minimo").val(lee.mensaje[0][4]);
-                   $("#maximo").val(lee.mensaje[0][5]);
-                   $("#id_modelo").val(lee.mensaje[0][6]);
-                   $("#id_categoria").val(lee.mensaje[0][7]);
+                   $("#nombre").val(lee.mensaje[0][3]);
+                   $("#cantidad_total").val(lee.mensaje[0][4]);
+                   $("#minimo").val(lee.mensaje[0][5]);
+                   $("#maximo").val(lee.mensaje[0][6]);
+                   $("#id_modelo").val(lee.mensaje[0][1]);
+                   $("#id_categoria").val(lee.mensaje[0][2]);
                   
                   
                  }
@@ -364,6 +371,7 @@ return false;
                 lee.resultado == "eliminar") {
                    muestraMensaje(lee.mensaje);
                    limpia();
+                   consultar();
                 }
                 else if(lee.resultado=='listadoModelo'){
                 
