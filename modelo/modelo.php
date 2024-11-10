@@ -84,7 +84,7 @@ class modelo extends datos
 				$p->execute();
 
 				$r['resultado'] = 'incluir';
-				$r['mensaje'] =  'Registro Incluido';
+				$r['mensaje'] =  'El modelo ha sido Incluido';
 			} catch (Exception $e) {
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
@@ -117,7 +117,7 @@ class modelo extends datos
 				$p->execute();
 
 				$r['resultado'] = 'modificar';
-				$r['mensaje'] =  'Registro Modificado';
+				$r['mensaje'] =  'El modelo ha sido Modificado';
 			} catch (Exception $e) {
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
@@ -145,7 +145,7 @@ class modelo extends datos
 
 				$p->execute();
 				$r['resultado'] = 'eliminar';
-				$r['mensaje'] =  'Registro Eliminado';
+				$r['mensaje'] =  'El modelo ha sido Eliminado';
 			} catch (Exception $e) {
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
@@ -192,7 +192,7 @@ class modelo extends datos
 			}
 			
 			return $r;
-			
+
 			} else {
 				return '';
 			}
