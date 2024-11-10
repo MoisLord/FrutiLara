@@ -93,6 +93,9 @@
 					?>
               </div>
             </li>
+            <li class="nav-item">
+               <a id="manual" class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;">MANUAL DEL SISTEMA</a>
+            </li>
           </ul>
 					<?php
 					  }
