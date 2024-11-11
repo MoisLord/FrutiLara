@@ -32,6 +32,7 @@ require_once('modelo/reportentrada.php');
 		  $o->set_codigo($_POST['Codigo']);
 		  $o->set_nombre($_POST['Cantidad']);
 		  $o->set_categoria($_POST['categoria']);
+		  $o->set_cate($_POST['cate']);
 		  $o->generarPDF();
 	  }
 	  

@@ -38,6 +38,11 @@ PANTALLA DE REPORTE DE ENTRADA
 		   <input class="form-control" type="text" id="usuario" name="categoria" />
 		   <span id="susuario"></span>
 		</div>
+		<div class="col" style="display:none">
+		   <label for="Sumatoria">Categoria</label>
+		   <input class="form-control" type="text" id="usuario" name="cate" />
+		   <span id="susuario"></span>
+		</div>
 	</div>
 
     

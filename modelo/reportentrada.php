@@ -25,6 +25,7 @@ class reportentrada extends datos{
 	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
 	private $nombre;
 	private $categoria;
+	private $cate;
 	
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
@@ -45,6 +46,9 @@ class reportentrada extends datos{
 	function set_categoria($valor){
 		$this->categoria = $valor;
 	}
+	function set_cate($valor){
+		$this->cate = $valor;
+	}
 	
 	//el siguiente metodo enlza con la la base de datos
 	//crea el html a partir de la consulta y envia los datos a la
@@ -60,12 +64,13 @@ class reportentrada extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto, detalle_entrada.Cantidad_producto, producto.nombre from detalle_entrada JOIN producto ON detalle_entrada.codigo_producto=producto.codigo where codigo_producto like :codigo_producto and 
-										Cantidad_producto like :Cantidad_producto and nombre like :nombre");
+			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto, detalle_entrada.Cantidad_producto, producto.nombre, categoria.descripcion_categoria from detalle_entrada INNER JOIN producto ON detalle_entrada.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria 
+										where codigo_producto like :codigo_producto and 
+										Cantidad_producto like :Cantidad_producto and nombre like :nombre and descripcion_categoria like :descripcion_categoria");
 			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
 			$resultado->bindValue(':Cantidad_producto','%'.$this->nombre.'%');
 			$resultado->bindValue(':nombre','%'.$this->categoria.'%');
-
+			$resultado->bindValue(':descripcion_categoria','%'.$this->cate.'%');
 			$resultado->execute();
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
