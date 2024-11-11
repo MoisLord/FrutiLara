@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2024 a las 03:54:25
+-- Tiempo de generación: 11-11-2024 a las 12:27:51
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -90,6 +90,13 @@ CREATE TABLE `empleados` (
   `fechaNacimiento` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`cedula`, `nombre_apellido`, `telefono`, `correo`, `direccion`, `fechaNacimiento`) VALUES
+('1371284', 'Moises Contreras', '0412-0483397', 'carlos@gmail.com', 'pueblo nuevo calle 12', '2024-11-21');
+
 -- --------------------------------------------------------
 
 --
@@ -138,7 +145,6 @@ CREATE TABLE `producto` (
   `id_modelo` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
-  `cantidad_total` varchar(45) NOT NULL,
   `minimo` varchar(45) NOT NULL,
   `maximo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -188,7 +194,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuarios`, `tipo_usuario`, `cedula`, `clave`) VALUES
-(1, 'ADMINISTRADOR', '12345678', '12345678');
+(1, 'ADMINISTRADOR', '12345678', '12345678'),
+(2, 'ADMINISTRADOR', '30553759', '12345678'),
+(4, 'EMPLEADO', '87654321', '87654321');
 
 --
 -- Índices para tablas volcadas
@@ -282,13 +290,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -306,13 +314,13 @@ ALTER TABLE `modelo`
 -- AUTO_INCREMENT de la tabla `salida`
 --
 ALTER TABLE `salida`
-  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
