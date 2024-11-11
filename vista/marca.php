@@ -72,6 +72,7 @@ MARCAS DE PRODUCTOS
 	<div class="container">
 	<h5 class="modal-title text-center text-success">MARCAS REGISTRADAS</h5>
 	<hr class="border border-success border-3 opacity-65">
+	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablamarca">
 		<thead>

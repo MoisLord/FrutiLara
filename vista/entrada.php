@@ -127,6 +127,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</table>
     </div>
 	<div class="modal-footer bg-light">
+	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
   </div>
