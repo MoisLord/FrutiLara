@@ -85,8 +85,8 @@ NOTAS DE ENTRADA DE PRODUCTOS
 					<th>Codigo</th>
 					<th>Nombre</th>
 					<th>Cantidad</th>
-					<th>Total del producto</th>
-					<th>Sumatoria total</th>
+					<th>minimo</th>
+					<th>maximo</th>
 					
 				  </tr>
 				</thead>
@@ -150,7 +150,8 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		  <tr>
 			<th>Codigo</th>
 			<th>Nombre</th>
-			<th>Cantidad</th>
+			<th>Minimo</th>
+			<th>Maximo</th>
 		  </tr>
 		</thead>
 		<tbody id="listadoproductos">

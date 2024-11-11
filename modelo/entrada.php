@@ -6,7 +6,7 @@ require_once('modelo/datos.php');
 
 class entrada extends datos{
     
-	function registrar($id_proveedor,$id_producto,$cantidad,$umatoria){
+	function registrar($id_proveedor,$id_producto,$cantidad){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -30,15 +30,13 @@ class entrada extends datos{
 		   
 		   for($i=0;$i<$tamano;$i++){
 			   $gd = $co->query("insert into `detalle_entrada`
-			   (id_entrada,codigo_producto,Cantidad_producto,cantidad_sumatoria)
+			   (id_entrada,codigo_producto,Cantidad_producto)
 			   values(
 			   '$lid',
 		       '$id_producto[$i]',
-			   '$cantidad[$i]',
-			   '$umatoria[$i]'
+			   '$cantidad[$i]'
 			   )");
 		   }
-		  $sql = $co->query("UPDATE producto JOIN detalle_entrada ON producto.codigo = detalle_entrada.codigo_producto SET producto.cantidad_total = detalle_entrada.cantidad_sumatoria WHERE detalle_entrada.id_entrada = '$lid'");
 		   $r['resultado'] = 'registrar';
 		   $r['mensaje'] =  "Inventario procesada, numero de inventario: $lid";
 		   
@@ -114,8 +112,11 @@ class entrada extends datos{
 							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['cantidad_total'];
+							$respuesta = $respuesta.$r['minimo'];
 						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+						$respuesta = $respuesta.$r['maximo'];
+					$respuesta = $respuesta."</td>";
 					$respuesta = $respuesta."</tr>";
 				}
 				
