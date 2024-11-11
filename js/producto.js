@@ -71,13 +71,6 @@ let valorModelo;
       validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
       $(this),$("#snombre"),"Solo letras minimo 3 caracteres");
     });
-    
-    $("#cantidad_total").on("keypress", function(e) {
-      validarkeypress(/^[a-zA-Z0-9\s]+$/, e);
-    });
-    $("#cantidad_total").on("keyup", function() {
-      validarkeyup(/^[a-zA-Z0-9\s]{2,50}$/, $(this), $("#scantidad_total"), "Debe tener mínimo 2 caracteres");
-    });
         
     $("#minimo").on("keypress", function(e) {
       validarkeypress(/^[a-zA-Z0-9\s]+$/, e);
@@ -139,7 +132,6 @@ let valorModelo;
           datos.append('accion','incluir');
           datos.append('codigo',$("#codigo").val());
           datos.append('nombre',$("#nombre").val());
-          datos.append('cantidad_total',$("#cantidad_total").val());
           datos.append('minimo',$("#minimo").val());
           datos.append('maximo',$("#maximo").val());
           datos.append('id_modelo',valorModelo);
@@ -156,7 +148,6 @@ let valorModelo;
           datos.append('accion','modificar');
           datos.append('codigo',$("#codigo").val());
           datos.append('nombre',$("#nombre").val());
-          datos.append('cantidad_total',$("#cantidad_total").val());
           datos.append('minimo',$("#minimo").val());
           datos.append('maximo',$("#maximo").val());
           datos.append('id_modelo',valorModelo);
@@ -179,7 +170,7 @@ let valorModelo;
           datos.append('accion','eliminar');
           datos.append('codigo',$("#codigo").val());
           enviaAjax(datos);
-          setInterval("location.reload()",3000);
+          //setInterval("location.reload()",3000);
         }
         
       });
@@ -232,12 +223,6 @@ function validarenvio(){
   else if(validarkeyup(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
   $("#nombre"),$("#snombre"),"Solo letras minimo 3 caracteres")==0){
   muestraMensaje("Nombre del Producto <br/>Solo letras minimo 3 caracteres");
-  return false;
-}
-
-else if (validarkeyup(/^[a-zA-Z0-9\s]{2,50}$/, $("#cantidad_total"), $("#scantidad_total"), 
-"Debe tener mínimo 2 caracteres") == 0) {
-  muestraMensaje("Debe tener mínimo 2 caracteres");
   return false;
 }
 
@@ -304,15 +289,14 @@ return false;
       
       //funcion para pasar de la lista a el formulario
       function coloca(linea){
-        valorModelo = $(linea).find("td:eq(5)").text()
-        valorCategoria = $(linea).find("td:eq(7)").text()
+        valorModelo = $(linea).find("td:eq(4)").text()
+        valorCategoria = $(linea).find("td:eq(6)").text()
         $("#codigo").val($(linea).find("td:eq(0)").text());
         $("#nombre").val($(linea).find("td:eq(1)").text());
-        $("#cantidad_total").val($(linea).find("td:eq(2)").text());
-        $("#minimo").val($(linea).find("td:eq(3)").text());
-        $("#maximo").val($(linea).find("td:eq(4)").text());
-        $("#id_modelo").val($(linea).find("td:eq(6)").text());
-        $("#id_categoria").val($(linea).find("td:eq(8)").text());
+        $("#minimo").val($(linea).find("td:eq(2)").text());
+        $("#maximo").val($(linea).find("td:eq(3)").text());
+        $("#id_modelo").val($(linea).find("td:eq(5)").text());
+        $("#id_categoria").val($(linea).find("td:eq(7)").text());
         
         console.log(valorModelo);
         console.log(valorCategoria);        
@@ -358,9 +342,8 @@ return false;
                  }
                  else if (lee.resultado == "encontro") {
                    $("#nombre").val(lee.mensaje[0][3]);
-                   $("#cantidad_total").val(lee.mensaje[0][4]);
-                   $("#minimo").val(lee.mensaje[0][5]);
-                   $("#maximo").val(lee.mensaje[0][6]);
+                   $("#minimo").val(lee.mensaje[0][4]);
+                   $("#maximo").val(lee.mensaje[0][5]);
                    $("#id_modelo").val(lee.mensaje[0][1]);
                    $("#id_categoria").val(lee.mensaje[0][2]);
                   
@@ -411,7 +394,6 @@ return false;
         
         $("#codigo").val("");
         $("#nombre").val("");
-        $("#cantidad_total").val("");
         $("#minimo").val("");
         $("#maximo").val("");
         $("#id_modelo").val("");

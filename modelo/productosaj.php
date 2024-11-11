@@ -11,7 +11,6 @@ class productosaj extends datos{
 
 	private $codigo; // las variables no tienen tipo predefinido
 	private $nombre;
-	private $cantidad_total;
 	private $minimo;
     private $maximo;
     private $id_modelo;
@@ -30,9 +29,7 @@ class productosaj extends datos{
 		$this->nombre = $valor;
 	}
 	
-	function set_cantidad_total($valor){
-		$this->cantidad_total = $valor;
-	}
+	
 	function set_minimo($valor){
 		$this->minimo = $valor;
 	}
@@ -57,10 +54,6 @@ class productosaj extends datos{
 	
 	function get_nombre(){
 		return $this->nombre;
-	}
-	
-	function get_cantidad_total(){
-		return $this->cantidad_total;
 	}
 
 	function get_minimo(){
@@ -101,7 +94,6 @@ class productosaj extends datos{
 				$p = $co->prepare("Insert into producto(
 					codigo,
 					nombre,
-					cantidad_total,
 					minimo,
 					maximo,
 					id_modelo,
@@ -110,7 +102,6 @@ class productosaj extends datos{
 					Values(
 					:codigo,
 					:nombre,
-					:cantidad_total,
 					:minimo,
 					:maximo,
 					:id_modelo,
@@ -119,7 +110,6 @@ class productosaj extends datos{
 
 					$p->bindParam(':codigo',$this->codigo);		
 					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':cantidad_total',$this->cantidad_total);
 					$p->bindParam(':minimo',$this->minimo);
 					$p->bindParam(':maximo',$this->maximo);
 					$p->bindParam(':id_modelo',$this->id_modelo);
@@ -150,7 +140,6 @@ class productosaj extends datos{
 			try {
 				$p = $co->prepare("Update producto set 
 				nombre = :nombre,
-				cantidad_total = :cantidad_total,
 				minimo = :minimo,
 				maximo = :maximo,
 				id_modelo = :id_modelo,
@@ -161,7 +150,6 @@ class productosaj extends datos{
 
 					$p->bindParam(':codigo',$this->codigo);		
 					$p->bindParam(':nombre',$this->nombre);
-					$p->bindParam(':cantidad_total',$this->cantidad_total);
 					$p->bindParam(':minimo',$this->minimo);
                     $p->bindParam(':maximo',$this->maximo);
 					$p->bindParam(':id_modelo',$this->id_modelo);
@@ -220,7 +208,7 @@ class productosaj extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("SELECT codigo, nombre, cantidad_total, minimo, maximo, modelo.descripcion_modelo, producto.id_modelo, categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria");
+			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto.id_modelo, categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria");
 			
 			if($resultado){
 				
@@ -232,9 +220,6 @@ class productosaj extends datos{
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['nombre'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['cantidad_total'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['minimo'];

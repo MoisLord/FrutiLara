@@ -46,7 +46,6 @@ require_once("modelo/".$pagina.".php");
 		  else{			  
 			  $o->set_codigo($_POST['codigo']);
 			  $o->set_nombre($_POST['nombre']);
-			  $o->set_cantidad_total($_POST['cantidad_total']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
               $o->set_id_modelo($_POST['id_modelo']);

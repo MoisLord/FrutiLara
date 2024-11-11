@@ -46,14 +46,6 @@ PRODUCTOS
 		<div class="row mb-3">
 		<div class="row mb-4">
 			<div class="col-md">
-        		<label for="">Existencia Total</label>
-       			<input class="form-control" type="text" id="cantidad_total" name="cantidad_total"/>
-				<span id="cantidad_total"></span>
-    		</div>
-		</div>    
-
-		<div class="row mb-4">
-			<div class="col-md">
         		<label for="minimo">Minima Existencia</label>
        			<input class="form-control" type="text" id="minimo" name="minimo"/>
 				<span id="sminimo"></span>
