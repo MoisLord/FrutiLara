@@ -60,11 +60,12 @@ class reportentrada extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("SELECT * FROM detalle_entrada where codigo_producto like :codigo_producto and 
-										Cantidad_producto like :Cantidad_producto and cantidad_sumatoria like :cantidad_sumatoria");
-			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
-			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');
-			$resultado->bindValue(':cantidad_sumatoria','%'.$this->Sumatoria.'%');
+			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto detalle_entrada.Cantidad_producto producto.id_categoria  
+			from detalle_entrada JOIN producto ON detalle_entrada.id_entrada=producto.codigo where detalle_entrada.codigo_producto like :detalle_entrada.codigo_producto and 
+										detalle_entrada.Cantidad_producto like :detalle_entrada.Cantidad_producto and producto.id_categoria like :producto.id_categoria");
+			$resultado->bindValue(':detalle_entrada.codigo_producto','%'.$this->codigo.'%');
+			$resultado->bindValue(':detalle_entrada.Cantidad_producto','%'.$this->nombre.'%');
+			$resultado->bindValue(':producto.id_categoria','%'.$this->categoria.'%');
 
 			$resultado->execute();
 			
@@ -92,7 +93,7 @@ class reportentrada extends datos{
 					$html = $html."<tr>";
 					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
-					$html = $html."<td style='text-align:center'>".$f['cantidad_sumatoria']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['id_categoria']."</td>";
 					
 							 
 					$html = $html."</tr>";

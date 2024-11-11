@@ -31,7 +31,7 @@ require_once('modelo/reportentrada.php');
 		  $o = new reportentrada();
 		  $o->set_codigo($_POST['Codigo']);
 		  $o->set_nombre($_POST['Cantidad']);
-		  $o->set_categoria($_POST['Sumatoria']);
+		  $o->set_categoria($_POST['categoria']);
 		  $o->generarPDF();
 	  }
 	  
