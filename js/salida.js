@@ -146,7 +146,7 @@ $(document).ready(function(){
 					$(linea).find("td:eq(1)").text()+
 		   `</td>
 		    <td>
-		      <input type="text" value="1" name="cant[]" onkeyup="modificasubtotal(this)"/>
+		      <input type="text" value="0" name="cant[]" onkeyup="modificasubtotal(this)"/>
 		   </td>
 		   <td>`+
 					$(linea).find("td:eq(2)").text()+
@@ -180,9 +180,10 @@ $(document).ready(function(){
 			alert("La cantidad no puede ser menor que cero");
 			$(textocantidad).val(0); // Restablece el valor 
 			resultado = 0; // Asegura que el resultado no sea negativo
+			
 		}
-		$(linea).find("td:eq(7)").text(redondearDecimales((pvp-valor),0));
-		$(linea).find("input[name='resta[]']").val(redondearDecimales((pvp-valor),0));
+		$(linea).find("td:eq(7)").text(redondearDecimales((resultado),0));
+		$(linea).find("input[name='resta[]']").val(redondearDecimales((resultado),0));
 	}
 	//fin de funcion modifica subtotal
 	
