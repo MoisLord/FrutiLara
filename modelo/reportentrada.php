@@ -60,12 +60,11 @@ class reportentrada extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto detalle_entrada.Cantidad_producto producto.id_categoria  
-			from detalle_entrada JOIN producto ON detalle_entrada.id_entrada=producto.codigo where detalle_entrada.codigo_producto like :detalle_entrada.codigo_producto and 
-										detalle_entrada.Cantidad_producto like :detalle_entrada.Cantidad_producto and producto.id_categoria like :producto.id_categoria");
-			$resultado->bindValue(':detalle_entrada.codigo_producto','%'.$this->codigo.'%');
-			$resultado->bindValue(':detalle_entrada.Cantidad_producto','%'.$this->nombre.'%');
-			$resultado->bindValue(':producto.id_categoria','%'.$this->categoria.'%');
+			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto, detalle_entrada.Cantidad_producto, producto.nombre from detalle_entrada JOIN producto ON detalle_entrada.codigo_producto=producto.codigo where codigo_producto like :codigo_producto and 
+										Cantidad_producto like :Cantidad_producto and nombre like :nombre");
+			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
+			$resultado->bindValue(':Cantidad_producto','%'.$this->nombre.'%');
+			$resultado->bindValue(':nombre','%'.$this->categoria.'%');
 
 			$resultado->execute();
 			
@@ -81,8 +80,9 @@ class reportentrada extends datos{
 			$html = $html."<thead>";
 			$html = $html."<tr>";
 			$html = $html."<th>Codigo del producto</th>";
+			$html = $html."<th>nombre del producto</th>";
 			$html = $html."<th>Cantidad del producto</th>";
-			$html = $html."<th>Sumatoria del producto</th>";
+			
 			
 			$html = $html."</tr>";
 			$html = $html."</thead>";
@@ -92,8 +92,9 @@ class reportentrada extends datos{
 				foreach($fila as $f){
 					$html = $html."<tr>";
 					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
-					$html = $html."<td style='text-align:center'>".$f['id_categoria']."</td>";
+					
 					
 							 
 					$html = $html."</tr>";
