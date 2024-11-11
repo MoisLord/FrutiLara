@@ -25,7 +25,8 @@ class reportesalida extends datos{
 	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
 	private $cantidad;
 	private $resta;
-	
+	private $nombre;
+	private $categoria;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
@@ -45,6 +46,12 @@ class reportesalida extends datos{
 	function set_Sumatoria($valor){
 		$this->resta = $valor;
 	}
+	function set_categoria($valor){
+		$this->categoria = $valor;
+	}
+	function set_nombre($valor){
+		$this->nombre = $valor;
+	}
 	
 	//el siguiente metodo enlza con la la base de datos
 	//crea el html a partir de la consulta y envia los datos a la
@@ -60,12 +67,14 @@ class reportesalida extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("Select * from detalle_salida where codigo_producto like :codigo_producto and 
-										Cantidad_producto like :Cantidad_producto and cantidad_restada like :cantidad_restada");
+			$resultado = $co->prepare("SELECT detalle_salida.codigo_producto, detalle_salida.Cantidad_producto, detalle_salida.cantidad_restada, producto.nombre, categoria.descripcion_categoria FROM detalle_salida 
+			INNER JOIN producto ON detalle_salida.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria where codigo_producto like :codigo_producto and 
+										Cantidad_producto like :Cantidad_producto and cantidad_restada like :cantidad_restada AND nombre LIKE :nombre AND descripcion_categoria like :descripcion_categoria");
 			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
 			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');
 			$resultado->bindValue(':cantidad_restada','%'.$this->resta.'%');
-
+			$resultado->bindValue(':nombre','%'.$this->nombre.'%');
+			$resultado->bindValue(':descripcion_categoria','%'.$this->categoria.'%');
 			$resultado->execute();
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -82,7 +91,8 @@ class reportesalida extends datos{
 			$html = $html."<th>Codigo del producto</th>";
 			$html = $html."<th>Cantidad del producto</th>";
 			$html = $html."<th>Diferencia del producto</th>";
-			
+			$html = $html."<th>nombre del codigo</th>";
+			$html = $html."<th>categoria del producto</th>";
 			$html = $html."</tr>";
 			$html = $html."</thead>";
 			$html = $html."<tbody>";
@@ -93,6 +103,8 @@ class reportesalida extends datos{
 					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['cantidad_restada']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['descripcion_categoria']."</td>";
 					
 							 
 					$html = $html."</tr>";

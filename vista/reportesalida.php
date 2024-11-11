@@ -25,12 +25,22 @@ PANTALLA DE REPORTE DE SALIDA
 		   <input class="form-control" type="text" id="cedula" name="Codigo" />
 		   <span id="scedula"></span>
 		</div>
-		<div class="col">
+		<div class="col" >
+		   <label for="Sumatoria">nombre del producto</label>
+		   <input class="form-control" type="text" id="usuario" name="nombre" />
+		   <span id="susuario"></span>
+		</div>
+		<div class="col" >
+		   <label for="Cantidad">Categoria del producto</label>
+		   <input class="form-control" type="text" id="usuario" name="Categoria" />
+		   <span id="susuario"></span>
+		</div>
+		<div class="col" style="display:none">
 		   <label for="Cantidad">Cantidad de producto</label>
 		   <input class="form-control" type="text" id="usuario" name="Cantidad" />
 		   <span id="susuario"></span>
 		</div>
-		<div class="col">
+		<div class="col" style="display:none">
 		   <label for="Sumatoria">Diferencia</label>
 		   <input class="form-control" type="text" id="usuario" name="Sumatoria" />
 		   <span id="susuario"></span>
