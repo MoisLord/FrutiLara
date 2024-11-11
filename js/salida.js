@@ -175,6 +175,12 @@ $(document).ready(function(){
 		var linea = $(textocantidad).closest('tr');
 		var valor = $(textocantidad).val()*1;
 		var pvp = $(linea).find("td:eq(6)").text()*1;
+		var resultado= pvp -valor;
+		if(resultado<0){
+			alert("La cantidad no puede ser menor que cero");
+			$(textocantidad).val(0); // Restablece el valor 
+			resultado = 0; // Asegura que el resultado no sea negativo
+		}
 		$(linea).find("td:eq(7)").text(redondearDecimales((pvp-valor),0));
 		$(linea).find("input[name='resta[]']").val(redondearDecimales((pvp-valor),0));
 	}
