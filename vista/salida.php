@@ -84,7 +84,9 @@ NOTAS DE SALIDA DE PRODUCTOS
 				  <th>Codigo</th>
 					<th>Nombre</th>
 					<th>Cantidad</th>
-					<th>Total del producto</th>
+					<th>Minimo</th>
+					<th>Maximo</th>
+					<th>Cantidad del producto</th>
 					<th>Diferencia total</th>
 				  </tr>
 				</thead>
@@ -147,7 +149,9 @@ NOTAS DE SALIDA DE PRODUCTOS
 		  <tr>
 			<th>Codigo</th>
 			<th>Nombre</th>
-			<th>Cantidad</th>
+			<th>Minimo</th>
+			<th>Maximo</th>
+			<th>Cantidad del producto</th>
 		  </tr>
 		</thead>
 		<tbody id="listadoproductos">

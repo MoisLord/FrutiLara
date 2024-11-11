@@ -151,9 +151,14 @@ $(document).ready(function(){
 		   <td>`+
 					$(linea).find("td:eq(2)").text()+
 		   `</td>
-		  
+		   <td>`+
+					$(linea).find("td:eq(3)").text()+
+		   `</td>
+		   <td>`+
+					$(linea).find("td:eq(4)").text()+
+		   `</td>
 		    <td>`+
-			   redondearDecimales($(linea).find("td:eq(5)").text()*1,0)+
+			   redondearDecimales($(linea).find("td:eq(7)").text()*1,0)+
 		   `</td>
 		     <td>
 			  <input type="text" name="resta[]" style="display:none"/>
@@ -169,8 +174,8 @@ $(document).ready(function(){
 	function modificasubtotal(textocantidad){
 		var linea = $(textocantidad).closest('tr');
 		var valor = $(textocantidad).val()*1;
-		var pvp = $(linea).find("td:eq(4)").text()*1;
-		$(linea).find("td:eq(5)").text(redondearDecimales((pvp-valor),0));
+		var pvp = $(linea).find("td:eq(6)").text()*1;
+		$(linea).find("td:eq(7)").text(redondearDecimales((pvp-valor),0));
 		$(linea).find("input[name='resta[]']").val(redondearDecimales((pvp-valor),0));
 	}
 	//fin de funcion modifica subtotal

@@ -39,7 +39,6 @@ class salida extends datos{
 			   '$resta[$i]'
 			   )");
 		   }
-		   $sql = $co->query("UPDATE producto JOIN detalle_salida ON producto.codigo = detalle_salida.codigo_producto SET producto.cantidad_total = detalle_salida.cantidad_restada WHERE detalle_salida.id_salida = '$lid'");
 		   $r['resultado'] = 'registrar';
 		   $r['mensaje'] =  "Inventario procesada, numero de inventario: $lid";
 		   
@@ -98,8 +97,9 @@ class salida extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from producto");
-			
+			$resultado = $co->query("SELECT producto.codigo,producto.nombre,producto.minimo,producto.maximo,detalle_entrada.Cantidad_producto from producto JOIN detalle_entrada ON
+			producto.codigo = detalle_entrada.codigo_producto");
+			//SELECT p.codigo, p.nombre, p.minimo, p.maximo, d.cantidad, d.fecha_entrada FROM producto p JOIN detalle_entrada d ON p.id_producto = d.id_producto
 			if($resultado){
 				
 				$respuesta = '';
@@ -112,8 +112,15 @@ class salida extends datos{
 							$respuesta = $respuesta.$r['nombre'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['cantidad_total'];
+							$respuesta = $respuesta.$r['minimo'];
 						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['maximo'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['Cantidad_producto'];
+						$respuesta = $respuesta."</td>";
+						
 					$respuesta = $respuesta."</tr>";
 				}
 				
