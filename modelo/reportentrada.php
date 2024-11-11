@@ -82,18 +82,19 @@ class reportentrada extends datos{
 			
 			//aqui es donde comienza el cambio, debido a que se va a armar una variable en memoria
 			//con el contenido html que se enviara a la libreria dompdf
-			$html = "<html><head></head><body>";
-			$html = $html."<div style='display:table;width:100%;border:solid'>";
-			$html = $html."<div style='display:table-row;width:100%;border:solid'>";
-			$html = $html."<div style='display:table-cell;width:100%;border:solid'>";
-			$html = $html."<table style='width:100%'>";
+			$html = "<html><head><link rel='stylesheet' href='css/bootstrap.min.css'></head><body>";
+			$html = $html."<div class='container-fluid'>";
+			$html = $html."<h1 class='modal-title text-center text-success'>DETALLE DE ENTRADAS REGISTRADOS</h1>";
+			$html = $html."<hr class='border border-success border-3 opacity-65'>";
+			$html = $html."<div class='table-responsive'>";
+			$html = $html."<table class='table table-striped table-bordered border-success table-hover'>";
 			$html = $html."<thead>";
 			$html = $html."<tr>";
-			$html = $html."<th>Codigo del producto</th>";
-			$html = $html."<th>nombre del producto</th>";
-			$html = $html."<th>Cantidad del producto</th>";
-			$html = $html."<th>Categoria del producto</th>";
-			$html = $html."<th>modelo del producto</th>";
+			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Codigo del producto</th>";
+			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>nombre del producto</th>";
+			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cantidad del producto</th>";
+			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Categoria del producto</th>";
+			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>modelo del producto</th>";
 			$html = $html."</tr>";
 			$html = $html."</thead>";
 			$html = $html."<tbody>";
