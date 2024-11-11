@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2024 a las 12:27:51
+-- Tiempo de generación: 11-11-2024 a las 15:28:41
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,6 +35,14 @@ CREATE TABLE `categoria` (
   `unidadMedAlt` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id_categoria`, `codigo_categoria`, `descripcion_categoria`, `unidadMedNormal`, `unidadMedAlt`) VALUES
+(5, '3123132', 'viveres', 'KILOGRAMOS', 'CESTAS'),
+(6, '5166555', 'viveres', 'UNIDADES', 'CAJAS');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +57,13 @@ CREATE TABLE `cliente` (
   `clientecol` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`cedula`, `nombre_apellido`, `telefono`, `direccion`, `clientecol`) VALUES
+('30405571', 'moises contreras', '04120483397', 'mi casa', '');
+
 -- --------------------------------------------------------
 
 --
@@ -58,8 +73,7 @@ CREATE TABLE `cliente` (
 CREATE TABLE `detalle_entrada` (
   `id_entrada` int(11) NOT NULL,
   `codigo_producto` varchar(45) NOT NULL,
-  `Cantidad_producto` varchar(45) NOT NULL,
-  `cantidad_sumatoria` float NOT NULL
+  `Cantidad_producto` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -121,6 +135,14 @@ CREATE TABLE `marca` (
   `descripcion_marca` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`id_marca`, `codigo_marca`, `descripcion_marca`) VALUES
+(1, '0548884', 'pepsi'),
+(2, '5616161', 'cocacola');
+
 -- --------------------------------------------------------
 
 --
@@ -133,6 +155,14 @@ CREATE TABLE `modelo` (
   `codigo_modelo` varchar(45) NOT NULL,
   `descripcion_modelo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `modelo`
+--
+
+INSERT INTO `modelo` (`id_modelo`, `id_marca`, `codigo_modelo`, `descripcion_modelo`) VALUES
+(1, 1, '1165666', 'banderia'),
+(2, 2, '1223365', 'importada polar');
 
 -- --------------------------------------------------------
 
@@ -149,6 +179,14 @@ CREATE TABLE `producto` (
   `maximo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`codigo`, `id_modelo`, `id_categoria`, `nombre`, `minimo`, `maximo`) VALUES
+('115556', 2, 6, 'cocacola', '15', '60'),
+('2132323', 1, 5, 'arroz', '15', '3000');
+
 -- --------------------------------------------------------
 
 --
@@ -163,6 +201,13 @@ CREATE TABLE `proveedores` (
   `direccion` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`rif`, `documento`, `nombre`, `telefono`, `direccion`) VALUES
+('123456', 'Venezolano', 'polar', '04120483397', 'calle1 231');
+
 -- --------------------------------------------------------
 
 --
@@ -175,6 +220,13 @@ CREATE TABLE `salida` (
   `cedula_cliente` varchar(45) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `salida`
+--
+
+INSERT INTO `salida` (`id_salida`, `cedula_empleado`, `cedula_cliente`, `fecha`) VALUES
+(10, NULL, '30405571', '2024-11-11');
 
 -- --------------------------------------------------------
 
@@ -290,31 +342,31 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo`
 --
 ALTER TABLE `modelo`
-  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `salida`
 --
 ALTER TABLE `salida`
-  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
