@@ -87,7 +87,7 @@ class reportentrada extends datos{
 			$html = $html."<th>Codigo del producto</th>";
 			$html = $html."<th>nombre del producto</th>";
 			$html = $html."<th>Cantidad del producto</th>";
-			
+			$html = $html."<th>Categoria del producto</th>";
 			
 			$html = $html."</tr>";
 			$html = $html."</thead>";
@@ -99,7 +99,7 @@ class reportentrada extends datos{
 					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
-					
+					$html = $html."<td style='text-align:center'>".$f['descripcion_categoria']."</td>";
 					
 							 
 					$html = $html."</tr>";
