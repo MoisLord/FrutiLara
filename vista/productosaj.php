@@ -118,7 +118,6 @@ PRODUCTOS
 		  <tr>
 			<th>Codigo Productos</th>
 			<th>Nombre Productos</th>
-			<th>Existencia total</th>
 			<th>Minimo</th>	
 			<th>Maximo</th>
 			<th>Modelo</th>
