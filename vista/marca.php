@@ -8,12 +8,9 @@
 
 <!--Aqui coloque el Contenedor del Texto del Modulo Marca-->
 <div class="container text-center h2 text-success">
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
+<br/>
+<br/>
+<br/>
 MARCAS DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65">
 </div>
