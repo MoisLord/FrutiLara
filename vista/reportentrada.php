@@ -6,12 +6,9 @@
 <?php require_once('comunes/menu.php'); ?>
 <?php require_once("comunes/modal.php"); ?>
 <div class="container text-center h2 text-success">
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
+<br/>
+<br/>
+<br/>
 PANTALLA DE REPORTE DE ENTRADA
 <hr class="border border-success border-3 opacity-65">
 
