@@ -26,6 +26,7 @@ class reportentrada extends datos{
 	private $nombre;
 	private $categoria;
 	private $cate;
+	private $modelo;
 	
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
@@ -49,6 +50,9 @@ class reportentrada extends datos{
 	function set_cate($valor){
 		$this->cate = $valor;
 	}
+	function set_modelo($valor){
+		$this->modelo = $valor;
+	}
 	
 	//el siguiente metodo enlza con la la base de datos
 	//crea el html a partir de la consulta y envia los datos a la
@@ -64,13 +68,14 @@ class reportentrada extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto, detalle_entrada.Cantidad_producto, producto.nombre, categoria.descripcion_categoria from detalle_entrada INNER JOIN producto ON detalle_entrada.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria 
-										where codigo_producto like :codigo_producto and 
-										Cantidad_producto like :Cantidad_producto and nombre like :nombre and descripcion_categoria like :descripcion_categoria");
+			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto, detalle_entrada.Cantidad_producto, producto.nombre, categoria.descripcion_categoria, modelo.descripcion_modelo from detalle_entrada INNER JOIN producto ON detalle_entrada.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria 
+										INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo where codigo_producto like :codigo_producto and 
+										Cantidad_producto like :Cantidad_producto and nombre like :nombre and descripcion_categoria like :descripcion_categoria and descripcion_modelo like :descripcion_modelo");
 			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
 			$resultado->bindValue(':Cantidad_producto','%'.$this->nombre.'%');
 			$resultado->bindValue(':nombre','%'.$this->categoria.'%');
 			$resultado->bindValue(':descripcion_categoria','%'.$this->cate.'%');
+			$resultado->bindValue(':descripcion_modelo','%'.$this->modelo.'%');
 			$resultado->execute();
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -88,7 +93,7 @@ class reportentrada extends datos{
 			$html = $html."<th>nombre del producto</th>";
 			$html = $html."<th>Cantidad del producto</th>";
 			$html = $html."<th>Categoria del producto</th>";
-			
+			$html = $html."<th>modelo del producto</th>";
 			$html = $html."</tr>";
 			$html = $html."</thead>";
 			$html = $html."<tbody>";
@@ -100,7 +105,7 @@ class reportentrada extends datos{
 					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_categoria']."</td>";
-					
+					$html = $html."<td style='text-align:center'>".$f['descripcion_modelo']."</td>";
 							 
 					$html = $html."</tr>";
 				}
