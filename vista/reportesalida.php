@@ -20,7 +20,7 @@ PANTALLA DE REPORTE DE SALIDA
 <form method="post" action="" id="f" target="_blank">
 <div class="container">
     <div class="row">
-		<div class="col">
+		<div class="col-m2">
 		   <label for="Codigo">Codigo de producto</label>
 		   <input class="form-control" type="text" id="cedula" name="Codigo" />
 		   <span id="scedula"></span>
@@ -33,6 +33,11 @@ PANTALLA DE REPORTE DE SALIDA
 		<div class="col" >
 		   <label for="Cantidad">Categoria del producto</label>
 		   <input class="form-control" type="text" id="usuario" name="Categoria" />
+		   <span id="susuario"></span>
+		</div>
+		<div class="col" >
+		   <label for="Cantidad">modelo del producto</label>
+		   <input class="form-control" type="text" id="usuario" name="modelo" />
 		   <span id="susuario"></span>
 		</div>
 		<div class="col" style="display:none">

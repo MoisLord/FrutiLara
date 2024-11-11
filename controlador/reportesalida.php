@@ -34,6 +34,7 @@ require_once('modelo/reportesalida.php');
 		  $o->set_Sumatoria($_POST['Sumatoria']);
 		  $o->set_nombre($_POST['nombre']);
 		  $o->set_categoria($_POST['Categoria']);
+		  $o->set_modelo($_POST['modelo']);
 		  $o->generarPDF();
 	  }
 	  
