@@ -30,8 +30,8 @@ require_once('modelo/reportentrada.php');
 	  if(isset($_POST['generar'])){
 		  $o = new reportentrada();
 		  $o->set_codigo($_POST['Codigo']);
-		  $o->set_cantidad($_POST['Cantidad']);
-		  $o->set_Sumatoria($_POST['Sumatoria']);
+		  $o->set_nombre($_POST['Cantidad']);
+		  $o->set_categoria($_POST['Sumatoria']);
 		  $o->generarPDF();
 	  }
 	  

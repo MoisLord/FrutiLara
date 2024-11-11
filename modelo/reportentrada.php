@@ -23,8 +23,8 @@ class reportentrada extends datos{
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
 	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
-	private $cantidad;
-	private $Sumatoria;
+	private $nombre;
+	private $categoria;
 	
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
@@ -39,11 +39,11 @@ class reportentrada extends datos{
 	}
 	//lo mismo que se hizo para cedula se hace para usuario y clave
 	
-	function set_cantidad($valor){
-		$this->cantidad = $valor;
+	function set_nombre($valor){
+		$this->nombre = $valor;
 	}
-	function set_Sumatoria($valor){
-		$this->Sumatoria = $valor;
+	function set_categoria($valor){
+		$this->categoria = $valor;
 	}
 	
 	//el siguiente metodo enlza con la la base de datos
@@ -60,7 +60,7 @@ class reportentrada extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("Select * from detalle_entrada where codigo_producto like :codigo_producto and 
+			$resultado = $co->prepare("SELECT * FROM detalle_entrada where codigo_producto like :codigo_producto and 
 										Cantidad_producto like :Cantidad_producto and cantidad_sumatoria like :cantidad_sumatoria");
 			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
 			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');

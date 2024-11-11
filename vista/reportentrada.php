@@ -24,17 +24,17 @@ PANTALLA DE REPORTE DE ENTRADA
 <div class="container">
     <div class="row">
 		<div class="col">
-		   <label for="Codigo">Codigo de producto</label>
+		   <label for="Codigo">Codigo del producto</label>
 		   <input class="form-control" type="text" id="cedula" name="Codigo" />
 		   <span id="scedula"></span>
 		</div>
 		<div class="col">
-		   <label for="Cantidad">Cantidad de producto</label>
+		   <label for="Cantidad">Nombre del producto</label>
 		   <input class="form-control" type="text" id="usuario" name="Cantidad" />
 		   <span id="susuario"></span>
 		</div>
 		<div class="col">
-		   <label for="Sumatoria">Sumatoria</label>
+		   <label for="Sumatoria">Categoria</label>
 		   <input class="form-control" type="text" id="usuario" name="Sumatoria" />
 		   <span id="susuario"></span>
 		</div>
