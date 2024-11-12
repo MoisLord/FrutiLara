@@ -146,7 +146,7 @@ $(document).ready(function(){
 					$(linea).find("td:eq(1)").text()+
 		   `</td>
 		    <td>
-		      <input type="text" value="0" name="cant[]" onkeyup="modificasubtotal(this)"/>
+		      <input type="text" value="0" name="cant[]" onkeyup="modificasubtotal(this)"  maxlength="10"/>
 		   </td>
 		   <td>`+
 					$(linea).find("td:eq(2)").text()+

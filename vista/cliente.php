@@ -21,7 +21,7 @@ GESTIÓN DE CLIENTES
 			<div class="col-md">
 			   <label for="cedula">Cedula</label>
 			   <input class="form-control" type="text" id="cedula"
-				name="cedula"/>
+				name="cedula" maxlength="9"/>
 			   <span id="scedula">El formato debe ser 9999999</span>
 			</div>
 		</div>
@@ -29,7 +29,7 @@ GESTIÓN DE CLIENTES
 			<div class="col-md">
 			   <label for="nombre_apellido">Nombre y Apellido</label>
 			   <input class="form-control" type="text" id="nombre_apellido"
-				name="nombre_apellido"/>
+				name="nombre_apellido" maxlength="30"/>
 			   <span id="snombre_apellido">Solo letras  entre 3 y 30 caracteres</span>
 			</div>
 		</div>
@@ -38,7 +38,7 @@ GESTIÓN DE CLIENTES
 			<div class="col-md">
 			   <label for="telefono">Teléfono</label>
 			   <input class="form-control" type="text" id="telefono" name="telefono" 
-			   />
+			   maxlength="11"/>
 			   <span id="stelefono">El formato debe ser 04241234567</span>
 			</div>
 		</div>
@@ -46,7 +46,7 @@ GESTIÓN DE CLIENTES
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="direccion">Dirección</label>
-			   <input class="form-control" type="text" id="direccion" name="direccion" 
+			   <input class="form-control" type="text" id="direccion" name="direccion" maxlength="35" 
 			   />
 			   <span id="sdireccion">Solo letras y/o numeros entre 6 y 35 caracteres</span>
 			</div>

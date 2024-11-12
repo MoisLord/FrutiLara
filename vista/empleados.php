@@ -20,8 +20,7 @@ GESTIÓN DE EMPLEADOS
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="cedula">Cedula</label>
-			   <input class="form-control" type="text" id="cedula"
-				name="cedula"/>
+			   <input class="form-control" type="text" id="cedula" name="cedula"maxlength="7"/>
 			   <span id="scedula">El formato debe ser numérico con un minimo de 7 digitos</span>
 			</div>
 		</div>
@@ -29,15 +28,15 @@ GESTIÓN DE EMPLEADOS
 			<div class="col-md">
 			   <label for="nombre_apellido">Nombre y Apellido</label>
 			   <input class="form-control" type="text" id="nombre_apellido"
-				name="nombre_apellido"/>
-			   <span id="snombre_apellido">Ingrese su nombre y apellido</span>
+				name="nombre_apellido" maxlength="30"/>
+			   <span id="snombre_apellido">Solo letras  entre 3 y 30 caracteres</span>
 			</div>
 		</div>
 		
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="telefono">Teléfono</label>
-			   <input class="form-control" type="text" id="telefono" name="telefono" 
+			   <input class="form-control" type="text" id="telefono" name="telefono" maxlength="11"
 			   />
 			   <span id="stelefono">El formato debe ser 04XXXXXXXXX</span>
 			</div>
@@ -56,7 +55,7 @@ GESTIÓN DE EMPLEADOS
 			   <label for="direccion">Dirección</label>
 			   <input class="form-control" type="text" id="direccion" name="direccion" 
 			   />
-			   <span id="sdireccion">El formato debe ser alfanumérico con un minimo de 6 digitos</span>
+			   <span id="sdireccion">Solo letras y/o numeros entre 6 y 35 caracteres</span>
 			</div>
 		</div>
 
