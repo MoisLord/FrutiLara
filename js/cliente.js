@@ -37,7 +37,7 @@ $(document).ready(function(){
 	});
 	
 	$("#telefono").on("keyup",function(){
-	    validarkeyup(/^[0-9]{11,15}$/,$(this),$("#stelefono"),"El formato debe ser 9999-9999999");
+	    validarkeyup(/^[0-9]{11,15}$/,$(this),$("#stelefono"),"El formato debe ser 0424-1234567");
 	});
 
 	$("#direccion").on("keypress",function(e){
