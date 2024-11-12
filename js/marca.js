@@ -208,10 +208,7 @@ $(document).ready(function(){
                 console.log(respuesta);
                     try {
                         var lee = JSON.parse(respuesta);
-                        if (lee.resultado == "obtienefecha") {
-                        
-                        }
-                        else if (lee.resultado == "consultar") {
+                        if(lee.resultado == "consultar"){
                            destruyeDT();
                            $("#resultadoconsulta").html(lee.mensaje);
                            crearDT();

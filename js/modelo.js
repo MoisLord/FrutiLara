@@ -127,33 +127,32 @@ $("#eliminar").on("click",function(){
 function destruyeDT(){
 	//1 se destruye el datatablet
 	if ($.fn.DataTable.isDataTable("#tablamodelo")) {
-            $("#tablamodelo").DataTable().destroy();
-    }
+			$("#tablamodelo").DataTable().destroy();
+	}
 }
 function crearDT(){
 	//se crea nuevamente
-    if (!$.fn.DataTable.isDataTable("#tablamodelo")) {
-            $("#tablamodelo").DataTable({
-              language: {
-                lengthMenu: "Mostrar _MENU_ por página",
-                zeroRecords: "No se encontraron personas",
-                info: "Mostrando página _PAGE_ de _PAGES_",
-                infoEmpty: "No hay personas registradas",
-                infoFiltered: "(filtrado de _MAX_ registros totales)",
-                search: "Buscar:",
-                paginate: {
-                  first: "Primera",
-                  last: "Última",
-                  next: "Siguiente",
-                  previous: "Anterior",
-                },
-              },
-              autoWidth: false,
-              order: [[1, "asc"]],
-            });
-    }         
+	if (!$.fn.DataTable.isDataTable("#tablamodelo")) {
+			$("#tablamodelo").DataTable({
+			  language: {
+				lengthMenu: "Mostrar _MENU_ por página",
+				zeroRecords: "No se encontraron marcas",
+				info: "Mostrando página _PAGE_ de _PAGES_",
+				infoEmpty: "No hay marcas registradas",
+				infoFiltered: "(filtrado de _MAX_ registros totales)",
+				search: "Buscar:",
+				paginate: {
+				  first: "Primera",
+				  last: "Última",
+				  next: "Siguiente",
+				  previous: "Anterior",
+				},
+			  },
+			  autoWidth: false,
+			  order: [[1, "asc"]],
+			});
+	}         
 }
-
 
 //Validación de todos los campos antes del envio
 function validarenvio(){
@@ -182,7 +181,7 @@ function muestraMensaje(mensaje){
 			$("#mostrarmodal").modal("show");
 			setTimeout(function() {
 					$("#mostrarmodal").modal("hide");
-			},5000);
+			},2000);
 }
 
 
@@ -268,8 +267,10 @@ function enviaAjax(datos){
 					if (lee.resultado == "consultar") {
 						
 						$("#resultadoconsulta").html(lee.mensaje);
+					
 						
 					 }
+					 
 					 else if (lee.resultado == "encontro") {
 						$("#id_modelo").val(lee.mensaje[0][1]);
 						$("#descripcion_modelo").val(lee.mensaje[0][2]);
