@@ -20,37 +20,46 @@ PANTALLA DE REPORTE DE SALIDA
 <form method="post" action="" id="f" target="_blank">
 <div class="container">
     <div class="row">
-		<div class="col-m2">
-		   <label for="Codigo">Codigo de producto</label>
-		   <input class="form-control" type="text" id="cedula" name="Codigo" />
-		   <span id="scedula"></span>
-		</div>
-		<div class="col" >
-		   <label for="Sumatoria">nombre del producto</label>
-		   <input class="form-control" type="text" id="usuario" name="nombre" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col" >
-		   <label for="Cantidad">Categoria del producto</label>
-		   <input class="form-control" type="text" id="usuario" name="Categoria" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col" >
-		   <label for="Cantidad">modelo del producto</label>
-		   <input class="form-control" type="text" id="usuario" name="modelo" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col" style="display:none">
-		   <label for="Cantidad">Cantidad de producto</label>
-		   <input class="form-control" type="text" id="usuario" name="Cantidad" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col" style="display:none">
-		   <label for="Sumatoria">Diferencia</label>
-		   <input class="form-control" type="text" id="usuario" name="Sumatoria" />
-		   <span id="susuario"></span>
-		</div>
-	</div>
+        <!-- Primera columna -->
+        <div class="col-md-6 mb-3">
+            <label for="Codigo">CODIGO DEL PRODUCTO</label>
+            <input class="form-control" type="text" id="cedula" name="Codigo" />
+            <span id="scedula"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Cantidad">NOMBRE DEL PRODUCTO</label>
+            <input class="form-control" type="text" id="usuario" name="nombre" />
+            <span id="susuario"></span>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Segunda columna -->
+        <div class="col-md-6 mb-3">
+            <label for="Sumatoria">CATEGORIA DEL PRODUCTO</label>
+            <input class="form-control" type="text" id="usuario" name="Categoria" />
+            <span id="susuario"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Cantidad">MODELO DEL PRODUCTO</label>
+            <input class="form-control" type="text" id="usuario" name="modelo" />
+            <span id="susuario"></span>
+        </div>
+    </div>
+    <div class="row" style="display:none">
+        <!-- Elementos ocultos -->
+        <div class="col-md-6 mb-3">
+            <label for="Cantidad">CANTIDAD DEL PRODUCTO</label>
+            <input class="form-control" type="text" id="usuario" name="Cantidad" />
+            <span id="susuario"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Sumatoria">DIFERENCIA DEL PRODUCTO</label>
+            <input class="form-control" type="text" id="usuario" name="diferencia" />
+            <span id="susuario"></span>
+        </div>
+    </div>
+</div>
+
 
     
 	<div class="row">

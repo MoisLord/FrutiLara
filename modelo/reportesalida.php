@@ -22,12 +22,14 @@ class reportesalida extends datos{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 	
-	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
-	private $cantidad;
-	private $resta;
-	private $nombre;
+	private $codigo; 
+	private $nombre;//recuerden que en php, las variables no tienen tipo predefinido
 	private $categoria;
 	private $modelo;
+	private $cantidad;
+	private $resta;
+	
+	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
@@ -39,12 +41,8 @@ class reportesalida extends datos{
 		//luego el nombre del elemento sin el $
 	}
 	//lo mismo que se hizo para cedula se hace para usuario y clave
-	
-	function set_cantidad($valor){
-		$this->cantidad = $valor;
-	}
-	function set_Sumatoria($valor){
-		$this->resta = $valor;
+	function set_nombre($valor){
+		$this->nombre = $valor;
 	}
 	function set_categoria($valor){
 		$this->categoria = $valor;
@@ -52,9 +50,14 @@ class reportesalida extends datos{
 	function set_modelo($valor){
 		$this->modelo = $valor;
 	}
-	function set_nombre($valor){
-		$this->nombre = $valor;
+	function set_cantidad($valor){
+		$this->cantidad = $valor;
 	}
+	function set_resta($valor){
+		$this->resta = $valor;
+	}
+	
+	
 	
 	//el siguiente metodo enlza con la la base de datos
 	//crea el html a partir de la consulta y envia los datos a la
@@ -94,12 +97,14 @@ class reportesalida extends datos{
 			$html = $html."<thead>";
 			$html = $html."<tr>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Codigo del producto</th>";
-			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cantidad del producto</th>";
-			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Diferencia del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>nombre del producto</th>";
-			
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Categoria del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>modelo del producto</th>";
+			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cantidad del producto</th>";
+			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Diferencia del producto</th>";
+			
+			
+			
 			$html = $html."</tr>";
 			$html = $html."</thead>";
 			$html = $html."<tbody>";
@@ -108,11 +113,12 @@ class reportesalida extends datos{
 				foreach($fila as $f){
 					$html = $html."<tr>";
 					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
-					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
-					$html = $html."<td style='text-align:center'>".$f['cantidad_restada']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_categoria']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_modelo']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['cantidad_restada']."</td>";
+					
+					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
 							 
 					$html = $html."</tr>";
 				}
