@@ -131,35 +131,35 @@ $("#consultar").on("click",function(){
 
 
 // //funcion para enlazar al DataTablet
-// function destruyeDT(){
-// 	//1 se destruye el datatablet
-// 	if ($.fn.DataTable.isDataTable("#tablaempleados")) {
-//             $("#tablaempleados").DataTable().destroy();
-//     }
-// }
-// function crearDT(){
-// 	//se crea nuevamente
-//     if (!$.fn.DataTable.isDataTable("#tablaempleados")) {
-//             $("#tablaempleados").DataTable({
-//               language: {
-//                 lengthMenu: "Mostrar _MENU_ por página",
-//                 zeroRecords: "No se encontraron personas",
-//                 info: "Mostrando página _PAGE_ de _PAGES_",
-//                 infoEmpty: "No hay personas registradas",
-//                 infoFiltered: "(filtrado de _MAX_ registros totales)",
-//                 search: "Buscar:",
-//                 paginate: {
-//                   first: "Primera",
-//                   last: "Última",
-//                   next: "Siguiente",
-//                   previous: "Anterior",
-//                 },
-//               },
-//               autoWidth: false,
-//               order: [[1, "asc"]],
-//             });
-//     }         
-// }
+ function destruyeDT(){
+ 	//1 se destruye el datatablet
+ 	if ($.fn.DataTable.isDataTable("#tablaempleados")) {
+             $("#tablaempleados").DataTable().destroy();
+    }
+ }
+ function crearDT(){
+ 	//se crea nuevamente
+     if (!$.fn.DataTable.isDataTable("#tablaempleados")) {
+             $("#tablaempleados").DataTable({
+               language: {
+                lengthMenu: "Mostrar _MENU_ por página",
+               zeroRecords: "No se encontraron personas",
+                info: "Mostrando página _PAGE_ de _PAGES_",
+               infoEmpty: "No hay personas registradas",
+                 infoFiltered: "(filtrado de _MAX_ registros totales)",
+                 search: "Buscar:",
+                 paginate: {
+                   first: "Primera",
+                   last: "Última",
+                   next: "Siguiente",
+                   previous: "Anterior",
+                 },
+               },
+               autoWidth: false,
+               order: [[1, "asc"]],
+             });
+     }         
+ }
 
 
 //Validación de todos los campos antes del envio
@@ -267,7 +267,11 @@ function enviaAjax(datos){
 				try {
 					var lee = JSON.parse(respuesta);
 					if (lee.resultado == "consultar") {
+						destruyeDT();
 						$("#resultadoconsulta").html(lee.mensaje);
+						crearDT();
+                        $("#modal1").modal("show");
+
 					 }
 					 else if (lee.resultado == "encontro") {
 						$("#nombre_apellido").val(lee.mensaje[0][1]);

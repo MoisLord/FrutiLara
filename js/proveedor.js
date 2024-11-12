@@ -100,7 +100,35 @@ $(document).ready(function(){
     //FIN DE CONTROL DE BOTONES	
     
     });
-    
+    function destruyeDT(){
+        //1 se destruye el datatablet
+        if ($.fn.DataTable.isDataTable("#tablaproveedores")) {
+                $("#tablaproveedores").DataTable().destroy();
+        }
+    }
+    function crearDT(){
+        //se crea nuevamente
+        if (!$.fn.DataTable.isDataTable("#tablaproveedores")) {
+                $("#tablaproveedores").DataTable({
+                  language: {
+                    lengthMenu: "Mostrar _MENU_ por página",
+                    zeroRecords: "No se encontraron marcas",
+                    info: "Mostrando página _PAGE_ de _PAGES_",
+                    infoEmpty: "No hay marcas registradas",
+                    infoFiltered: "(filtrado de _MAX_ registros totales)",
+                    search: "Buscar:",
+                    paginate: {
+                      first: "Primera",
+                      last: "Última",
+                      next: "Siguiente",
+                      previous: "Anterior",
+                    },
+                  },
+                  autoWidth: false,
+                  order: [[1, "asc"]],
+                });
+        }         
+    }
     
     
     
@@ -203,7 +231,10 @@ $(document).ready(function(){
                     try {
                         var lee = JSON.parse(respuesta);
                         if (lee.resultado == "consultar") {
+                            destruyeDT();
                            $("#resultadoconsulta").html(lee.mensaje);
+                           crearDT();
+                           $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
                             $("#documento").val(lee.mensaje[0][1]);
