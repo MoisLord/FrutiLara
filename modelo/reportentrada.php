@@ -82,7 +82,11 @@ class reportentrada extends datos{
 			
 			//aqui es donde comienza el cambio, debido a que se va a armar una variable en memoria
 			//con el contenido html que se enviara a la libreria dompdf
-			$html = "<html><head><link rel='stylesheet' href='css/bootstrap.min.css'></head><body>";
+			$html = "<html><head>
+			<link rel='stylesheet' type='text/css' href='datatables/datatables.css'/> 
+			<link rel='stylesheet' href='css/bootstrap.min.css'>
+			<script type='text/javascript' src='datatables/datatables.min.js'></script></head><body>
+			";
 			$html = $html."<div class='container-fluid'>";
 			$html = $html."<h1 class='modal-title text-center text-success'>DETALLE DE ENTRADAS REGISTRADOS</h1>";
 			$html = $html."<hr class='border border-success border-3 opacity-65'>";
