@@ -30,14 +30,14 @@ PRODUCTOS
 			<div class="col-md">
 			   <label for="codigo">Codigo del Producto</label>
 			   <input class="form-control" type="text" id="codigo" name="codigo"/>
-			   <span id="scodigo"></span>
+			   <span id="scodigo">El código debe tener mínimo 2 dígitos</span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="nombre">Nombre del Producto</label>
 			   <input class="form-control" type="text" id="nombre" name="nombre"/>
-			   <span id="snombre"></span>
+			   <span id="snombre">Solo letras minimo 3 caracteres</span>
 			</div>
 		</div>    
 		<div class="row mb-3">
@@ -45,13 +45,13 @@ PRODUCTOS
 			<div class="col-md">
         		<label for="minimo">Minima Existencia</label>
        			<input class="form-control" type="text" id="minimo" name="minimo"/>
-				<span id="sminimo"></span>
+				<span id="sminimo">Debe tener mínimo 2 caracteres</span>
     		</div>
 
 			<div class="col-md">
 			   <label for="maximo">Maxima Existencia</label>
 			   <input class="form-control" type="text" id="maximo" name="maximo"/>
-			   <span id="smaximo"></span>
+			   <span id="smaximo">Debe tener mínimo 2 caracteres</span>
 			</div>
 		</div>
 		
