@@ -168,8 +168,8 @@ $(document).ready(function(){
 		}
 	}
 	//fin de funcion colocar productos
-	
-	
+	document.getElementById("cerrarModal").addEventListener("click", function() { 
+		$('#cantidadModal').modal('hide'); });
 	//funcion para modificar subtotal
 	function modificasubtotal(textocantidad){
 		var linea = $(textocantidad).closest('tr');
@@ -177,7 +177,7 @@ $(document).ready(function(){
 		var pvp = $(linea).find("td:eq(6)").text()*1;
 		var resultado= pvp -valor;
 		if(resultado<0){
-			alert("La cantidad no puede ser menor que cero");
+			$('#cantidadModal').modal('show');
 			$(textocantidad).val(0); // Restablece el valor 
 			resultado = 0; // Asegura que el resultado no sea negativo
 			
