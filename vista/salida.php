@@ -181,7 +181,7 @@ NOTAS DE SALIDA DE PRODUCTOS
         La cantidad no puede ser menor que cero!!.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cerrarModal">Cerrar</button>
       </div>
     </div>
   </div>

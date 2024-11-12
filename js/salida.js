@@ -214,7 +214,7 @@ $(document).ready(function(){
 				$("#mostrarmodal").modal("show");
 				setTimeout(function() {
 						$("#mostrarmodal").modal("hide");
-				},5000);
+				},2000);
 	}
 	
 	
