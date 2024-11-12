@@ -114,6 +114,8 @@ PRODUCTOS
 		<table class="table table-striped table-hover" id="tablaproducto">
 		<thead>
 		  <tr>
+		  	<th style="Display:none">Codigo Productos</th>
+		  	<th style="Display:none">Codigo Productos</th> <!-- filas para que funcione el datatable -->
 			<th>Codigo Productos</th>
 			<th>Nombre Productos</th>
 			<th>Minimo</th>	

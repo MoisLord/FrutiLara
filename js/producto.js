@@ -336,9 +336,10 @@ return false;
               try {
                 var lee = JSON.parse(respuesta);
                 if (lee.resultado == "consultar") {
-                  
+                  destruyeDT();
                   $("#resultadoconsulta").html(lee.mensaje);
-                  
+                  crearDT();
+                  $("#modal1").modal("show");
                  }
                  else if (lee.resultado == "encontro") {
                    $("#nombre").val(lee.mensaje[0][3]);
