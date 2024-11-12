@@ -72,9 +72,9 @@ class reportentrada extends datos{
 										INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo where codigo_producto like :codigo_producto and 
 										Cantidad_producto like :Cantidad_producto and nombre like :nombre and descripcion_categoria like :descripcion_categoria and descripcion_modelo like :descripcion_modelo");
 			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
-			$resultado->bindValue(':Cantidad_producto','%'.$this->nombre.'%');
-			$resultado->bindValue(':nombre','%'.$this->categoria.'%');
-			$resultado->bindValue(':descripcion_categoria','%'.$this->cate.'%');
+			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');
+			$resultado->bindValue(':nombre','%'.$this->nombre.'%');
+			$resultado->bindValue(':descripcion_categoria','%'.$this->categoria.'%');
 			$resultado->bindValue(':descripcion_modelo','%'.$this->modelo.'%');
 			$resultado->execute();
 			
