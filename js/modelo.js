@@ -45,7 +45,13 @@ $("#id_marca").on("keyup",function(){
 		}
 	});
 	
-	
+	$("#descripcion_modelo").on("keypress",function(e){
+		validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
+	});
+	$("#descripcion_modelo").on("keyup",function(){
+		validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+		$(this),$("#smodelo"),"Solo Alfanumericos entre 3 y 30 caracteres");
+	});
 	
 	
 	
@@ -136,9 +142,9 @@ function crearDT(){
 			$("#tablamodelo").DataTable({
 			  language: {
 				lengthMenu: "Mostrar _MENU_ por página",
-				zeroRecords: "No se encontraron marcas",
+				zeroRecords: "No se encontraron modelos",
 				info: "Mostrando página _PAGE_ de _PAGES_",
-				infoEmpty: "No hay marcas registradas",
+				infoEmpty: "No hay modelos registradas",
 				infoFiltered: "(filtrado de _MAX_ registros totales)",
 				search: "Buscar:",
 				paginate: {

@@ -112,9 +112,9 @@ $(document).ready(function(){
                 $("#tablaproveedores").DataTable({
                   language: {
                     lengthMenu: "Mostrar _MENU_ por página",
-                    zeroRecords: "No se encontraron marcas",
+                    zeroRecords: "No se encontraron proveedores",
                     info: "Mostrando página _PAGE_ de _PAGES_",
-                    infoEmpty: "No hay marcas registradas",
+                    infoEmpty: "No hay proveedores registradas",
                     infoFiltered: "(filtrado de _MAX_ registros totales)",
                     search: "Buscar:",
                     paginate: {

@@ -21,21 +21,21 @@ MODELO DE PRODUCTOS
 			<div class="col-md">
 			   <label for="id_modelo">Codigo de modelo</label>
 			   <input class="form-control" type="text" id="id_modelo" name="id_modelo"/>
-			   <span id="sid_modelo"></span>
+			   <span id="sid_modelo">El formato debe ser numerico entre 7 y 8 digitos</span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="descripcion_modelo">Descripción del Modelo</label>
 			   <input class="form-control" type="text" id="descripcion_modelo" name="descripcion_modelo"/>
-			   <span id="smodelo"></span>
+			   <span id="smodelo">Solo letras y/o números entre 3 y 30 caracteres</span>
 			</div>
 		</div>
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		<button type="button" class="btn btn-success" id="listadodeMarca" name="listadodeMarca">LISTADO DE MARCA</button>
 		<input class="form-control" type="text" id="id_marca" name="id_marca" />
-		
+		<span>*Ayuda: Presione el boton "LISTADO DE MARCA" para seleccionar la marca*</span>
 		<span id="sid_marca"></span>
 		</div>
 		</div>
