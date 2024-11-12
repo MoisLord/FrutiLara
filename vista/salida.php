@@ -10,6 +10,9 @@
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
+
 <div class="container text-center h2 text-success">
 NOTAS DE SALIDA DE PRODUCTOS
 <hr class="border border-success border-3 opacity-65"/>
