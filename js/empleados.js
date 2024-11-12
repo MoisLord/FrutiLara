@@ -143,9 +143,9 @@ $("#consultar").on("click",function(){
              $("#tablaempleados").DataTable({
                language: {
                 lengthMenu: "Mostrar _MENU_ por página",
-               zeroRecords: "No se encontraron personas",
+               zeroRecords: "No se encontraron empleados",
                 info: "Mostrando página _PAGE_ de _PAGES_",
-               infoEmpty: "No hay personas registradas",
+               infoEmpty: "No hay empleados registradas",
                  infoFiltered: "(filtrado de _MAX_ registros totales)",
                  search: "Buscar:",
                  paginate: {
