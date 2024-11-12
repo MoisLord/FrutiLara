@@ -25,7 +25,7 @@ class reportentrada extends datos{
 	private $codigo; //recuerden que en php, las variables no tienen tipo predefinido
 	private $nombre;
 	private $categoria;
-	private $cate;
+	private $cantidad;
 	private $modelo;
 	
 	
@@ -47,8 +47,8 @@ class reportentrada extends datos{
 	function set_categoria($valor){
 		$this->categoria = $valor;
 	}
-	function set_cate($valor){
-		$this->cate = $valor;
+	function set_cantidad($valor){
+		$this->cantidad = $valor;
 	}
 	function set_modelo($valor){
 		$this->modelo = $valor;
@@ -92,9 +92,9 @@ class reportentrada extends datos{
 			$html = $html."<tr>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Codigo del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>nombre del producto</th>";
-			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cantidad del producto</th>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Categoria del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>modelo del producto</th>";
+			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cantidad del producto</th>";
 			$html = $html."</tr>";
 			$html = $html."</thead>";
 			$html = $html."<tbody>";
@@ -104,10 +104,9 @@ class reportentrada extends datos{
 					$html = $html."<tr>";
 					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
-					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_categoria']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_modelo']."</td>";
-							 
+					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
 					$html = $html."</tr>";
 				}
 
