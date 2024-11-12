@@ -29,14 +29,14 @@ PRODUCTOS
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="codigo">Codigo del Producto</label>
-			   <input class="form-control" type="text" id="codigo" name="codigo"/>
+			   <input class="form-control" type="text" id="codigo" name="codigo"maxlength="50"/>
 			   <span id="scodigo">El código debe tener mínimo 2 dígitos</span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="nombre">Nombre del Producto</label>
-			   <input class="form-control" type="text" id="nombre" name="nombre"/>
+			   <input class="form-control" type="text" id="nombre" name="nombre"maxlength="30"/>
 			   <span id="snombre">Solo letras minimo 3 caracteres</span>
 			</div>
 		</div>    
@@ -44,13 +44,13 @@ PRODUCTOS
 		<div class="row mb-4">
 			<div class="col-md">
         		<label for="minimo">Minima Existencia</label>
-       			<input class="form-control" type="text" id="minimo" name="minimo"/>
+       			<input class="form-control" type="text" id="minimo" name="minimo"maxlength="10"/>
 				<span id="sminimo">Debe tener mínimo 2 caracteres</span>
     		</div>
 
 			<div class="col-md">
 			   <label for="maximo">Maxima Existencia</label>
-			   <input class="form-control" type="text" id="maximo" name="maximo"/>
+			   <input class="form-control" type="text" id="maximo" name="maximo"maxlength="10"/>
 			   <span id="smaximo">Debe tener mínimo 2 caracteres</span>
 			</div>
 		</div>
@@ -58,7 +58,7 @@ PRODUCTOS
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		<button type="button" class="btn btn-success" id="listadodeModelo" name="listadodeModelo">LISTADO DE MODELO</button>
-		<input class="form-control" type="text" id="id_modelo" name="id_modelo"/>
+		<input class="form-control" type="text" id="id_modelo" name="id_modelo" disabled/>
 		<span>*Ayuda: Presione el boton "LISTADO DE MODELO" para seleccionar el modelo*</span>
 		</div>
 		</div>
@@ -71,7 +71,7 @@ PRODUCTOS
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		  <button type="button" class="btn btn-success" id="listadodeCategoria" name="listadodeCategoria">LISTADO DE CATEGORIAS</button>
-		  <input class="form-control" type="text" id="id_categoria" name="id_categoria" />
+		  <input class="form-control" type="text" id="id_categoria" name="id_categoria" disabled/>
 		  <span>*Ayuda: Presione el boton "LISTADO DE CATEGORIAS" para seleccionar la categoria*</span>
 		</div>
 		</div>

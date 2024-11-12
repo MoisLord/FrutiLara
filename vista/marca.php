@@ -22,14 +22,14 @@ MARCAS DE PRODUCTOS
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="id_marca">Codigo de la marca</label>
-			   <input class="form-control" type="text" id="id_marca" name="id_marca"/>
+			   <input class="form-control" type="text" id="id_marca" name="id_marca"maxlength="20"/>
 			   <span id="sid_marca">El Formato Debe Ser Alfanúmerico</span>
 			</div>
 			</div>
 			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="descripcion_marca">Descripción de la Marca</label>
-			   <input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca"/>
+			   <input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca"maxlength="40"/>
 			   <span id="smarca">Solo letras entre 3 y 40 caracteres</span>
 			</div>
 		</div>

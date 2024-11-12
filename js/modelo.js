@@ -31,12 +31,12 @@ $("#id_marca").on("keyup",function(){
 	}
 });	
 	$("#id_modelo").on("keypress",function(e){
-		validarkeypress(/^[0-9-\b]*$/,e);
+		validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
 	});
 	
 	$("#id_modelo").on("keyup",function(){
-		validarkeyup(/^[0-9]{7,8}$/,$(this),
-		$("#sid_modelo"),"El formato debe ser numerico entre 7 y 8 digitos ");
+		validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+		$("#sid_modelo"),"debe ser Alfanumerico");
 		if($("#id_modelo").val().length > 7){
 		  var datos = new FormData();
 		    datos.append('accion','consultatr');
@@ -162,10 +162,10 @@ function crearDT(){
 
 //Validación de todos los campos antes del envio
 function validarenvio(){
-	if(validarkeyup(/^[0-9]{7,8}$/,$("#id_modelo"),
+	if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,$("#id_modelo"),
 		$("#sid_modelo"),"El formato debe ser 9999999 o 12345678")==0){
 	    muestraMensaje("La id del modelo debe coincidir con el formato <br/>"+ 
-						"99999999 o 12345678");	
+						"A959999 o B12345678");	
 		return false;					
 	}	
 	else if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
