@@ -265,9 +265,10 @@ function enviaAjax(datos){
 				try {
 					var lee = JSON.parse(respuesta);
 					if (lee.resultado == "consultar") {
-						
+						destruyeDT();
 						$("#resultadoconsulta").html(lee.mensaje);
-					
+						crearDT();
+						$("#modal1").modal("show");
 						
 					 }
 					 
