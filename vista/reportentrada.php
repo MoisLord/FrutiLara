@@ -18,34 +18,42 @@ PANTALLA DE REPORTE DE ENTRADA
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 
 <form method="post" action="" id="f" target="_blank">
-<div class="container">
-    <div class="row">
-		<div class="col">
-		   <label for="Codigo">CODIGO DEL PRODUCTO</label>
-		   <input class="form-control" type="text" id="cedula" name="Codigo" />
-		   <span id="scedula"></span>
-		</div>
-		<div class="col">
-		   <label for="Cantidad">NOMBRE DEL PRODUCTO</label>
-		   <input class="form-control" type="text" id="usuario" name="nombre" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col">
-		   <label for="Sumatoria">CATEGORIA DEL PRODUCTO</label>
-		   <input class="form-control" type="text" id="usuario" name="categoria" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col-md2">
-		   <label for="Sumatoria">MODELO DEL PRODUCTO</label>
-		   <input class="form-control" type="text" id="usuario" name="modelo" />
-		   <span id="susuario"></span>
-		</div>
-		<div class="col" style="display:none">
-		   <label for="Sumatoria">CANTIDAD DEL PRODUCTO</label>
-		   <input class="form-control" type="text" id="usuario" name="cantidad" />
-		   <span id="susuario"></span>
-		</div>
-	</div>
+<div class="container"> 
+	<div class="row"> 
+		<!-- Primera columna --> 
+		 <div class="col-md-6"> 
+			<div class="mb-3"> 
+				<label for="Codigo">CODIGO DEL PRODUCTO</label> 
+				<input class="form-control" type="text" id="cedula" name="Codigo" /> 
+				<span id="scedula"></span> 
+			</div> 
+			<div class="mb-3"> 
+						<label for="Sumatoria">CATEGORIA DEL PRODUCTO</label> 
+						<input class="form-control" type="text" id="usuario" name="categoria" /> 
+						<span id="susuario"></span>
+					 </div>
+		</div> 
+				<!-- Segunda columna -->
+				  <div class="col-md-6"> 
+				  <div class="mb-3"> 
+				<label for="Cantidad">NOMBRE DEL PRODUCTO</label> 
+				<input class="form-control" type="text" id="usuario" name="nombre" /> 
+				<span id="susuario"></span> 
+			</div> 
+					
+					  <div class="mb-3"> 
+						<label for="Sumatoria">MODELO DEL PRODUCTO</label>
+						 <input class="form-control" type="text" id="usuario" name="modelo" />
+						  <span id="susuario"></span> </div> </div> 
+						  <!-- Oculto, si es necesario --> 
+						   <div class="col-12" style="display:none">
+							 <div class="mb-3">
+								 <label for="Sumatoria">CANTIDAD DEL PRODUCTO</label> 
+								 <input class="form-control" type="text" id="usuario" name="cantidad" /> 
+								 <span id="susuario"></span>
+								 </div>
+								 </div>
+								 </div>
 
     
 	<div class="row">
