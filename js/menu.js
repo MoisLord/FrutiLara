@@ -16,13 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Abre el PDF en una nueva ventana
         window.open(pdfUrl, '_blank');
     });
-
-    // Esperar a que el DOM esté completamente cargado
-    document.addEventListener("DOMContentLoaded", function() {
-    // Seleccionar el elemento por su ID
-    var manualLink = document.getElementById("manual");
     
     // Agregar el estilo cursor: pointer
     manualLink.style.cursor = "pointer";
-});
 });
