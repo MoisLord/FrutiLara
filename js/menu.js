@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function() {
         window.open(pdfUrl, '_blank');
     });
     
-    // Agregar el estilo cursor: pointer
     document.addEventListener("DOMContentLoaded", function() {
     // Obtén el elemento con ID 'manual'
     const manualLink = document.getElementById('manual');
+    // Agregar el estilo cursor: pointer
     manualLink.style.cursor = "pointer";
     });
 });
