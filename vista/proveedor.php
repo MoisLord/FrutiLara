@@ -38,7 +38,7 @@ PANTALLA DE PROVEEDORES
 			<div class="col-md">
 			   <label for="nombre_proveedor">Nombre del proveedor</label>
 			   <input class="form-control" type="text" id="Nombre" name="Nombre" />
-			   <span id="sNombre">Solo Alfanumericos entre 3 y 30 caracteres</span>
+			   <span id="sNombre">Solo letras y/o numeros entre 3 y 30 caracteres</span>
 			</div>
 		</div>    
 	
@@ -53,7 +53,7 @@ PANTALLA DE PROVEEDORES
 			<div class="col-md">
 			   <label for="Direccion">Dirección</label>
 			   <input class="form-control" type="text" id="direccion" name="direccion" />
-			   <span id="sdireccion">Solo letras  entre 3 y 30 caracteres</span>
+			   <span id="sdireccion">Solo letras y numeros entre 3 y 30 caracteres</span>
 			</div>
 			
 		</div>
