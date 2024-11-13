@@ -44,7 +44,7 @@ class salida extends datos{
 		   //SET detalle_entrada.cantidad_total = detalle_entrada.cantidad_total - detalle_salida.cantidad_restada 
 		   //WHERE detalle_salida.id_salida = '$lid'
 		   $r['resultado'] = 'registrar';
-		   $r['mensaje'] =  "Inventario procesada, numero de inventario: $lid";
+		   $r['mensaje'] =  "Salida de Inventario procesada, numero de salida: $lid";
 		   
 		   
 		}	
