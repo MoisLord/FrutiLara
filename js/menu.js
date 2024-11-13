@@ -16,11 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
         // Abre el PDF en una nueva ventana
         window.open(pdfUrl, '_blank');
     });
-    
-    document.addEventListener("DOMContentLoaded", function() {
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     // Obtén el elemento con ID 'manual'
     const manualLink = document.getElementById('manual');
-    // Agregar el estilo cursor: pointer
-    manualLink.style.cursor = "pointer";
-    });
+    
+    // Verificar si el elemento existe antes de aplicar estilos
+    if (manualLink) {
+        manualLink.style.cursor = "pointer";
+    } else {
+        console.warn("El elemento con ID 'manual' no se encontró.");
+    }
 });
