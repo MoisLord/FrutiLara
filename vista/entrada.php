@@ -65,7 +65,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	<h6>Codigo del Producto</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
-		   <input class="form-control" type="text" id="codigoproducto" name="codigoproducto" />
+		   <input class="form-control" type="text" id="codigoproducto" name="codigoproducto"/>
 		   <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
 		</div>
 	</div>

@@ -146,7 +146,7 @@ $(document).ready(function(){
 					$(linea).find("td:eq(1)").text()+
 		   `</td>
 		    <td>
-		      <input type="text" value="1" name="cant[]"/>
+		      <input type="text"  name="cant[]"  maxlength="10"/>
 		   </td>
 		    <td>`+
 					$(linea).find("td:eq(2)").text()+

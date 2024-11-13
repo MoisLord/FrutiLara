@@ -176,7 +176,7 @@ function validarenvio(){
 		return false;
 	}
 	else if(validarkeyup(/^[0-9]{11,15}$/,$("#telefono"),
-		 $("#stelefono"),"El formato debe ser 9999-9999999")==0){
+		 $("#stelefono"),"El formato debe ser 99999999999")==0){
 		 muestraMensaje("error",4000,"Valida","Verifique el Telefono");
 	     return false;
 	}
