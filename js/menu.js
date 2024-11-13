@@ -18,5 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
     // Agregar el estilo cursor: pointer
+    document.addEventListener("DOMContentLoaded", function() {
+    // Obtén el elemento con ID 'manual'
+    const manualLink = document.getElementById('manual');
     manualLink.style.cursor = "pointer";
+    });
 });
