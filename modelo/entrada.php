@@ -39,7 +39,7 @@ class entrada extends datos{
 		   }
 		  
 		   $r['resultado'] = 'registrar';
-		   $r['mensaje'] =  "Inventario procesada, numero de inventario: $lid";
+		   $r['mensaje'] =  "Entrada de Inventario procesada, numero de entrada: $lid";
 		   
 		   
 		}	

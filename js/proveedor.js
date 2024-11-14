@@ -27,7 +27,7 @@ $(document).ready(function(){
         });
         $("#Nombre").on("keyup",function(){
             validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#sNombre"),"Solo Alfanumericos entre 3 y 30 caracteres");
+            $(this),$("#sNombre"),"Solo letras y/o numeros entre 3 y 30 caracteres");
         });
         $("#Telefono").on("keypress",function(e){
             validarkeypress(/^[0-9-\b-]*$/,e);
@@ -41,7 +41,7 @@ $(document).ready(function(){
         });
         $("#direccion").on("keyup",function(){
             validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#sdireccion"),"Solo letras  entre 3 y 30 caracteres");
+            $(this),$("#sdireccion"),"Solo letras y numeros entre 3 y 30 caracteres");
         });
         
     //FIN DE VALIDACION DE DATOS

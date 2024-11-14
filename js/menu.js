@@ -17,3 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
         window.open(pdfUrl, '_blank');
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Obtén el elemento con ID 'manual'
+    const manualLink = document.getElementById('manual');
+    
+    // Verificar si el elemento existe antes de aplicar estilos
+    if (manualLink) {
+        manualLink.style.cursor = "pointer";
+    } else {
+        console.warn("El elemento con ID 'manual' no se encontró.");
+    }
+});
