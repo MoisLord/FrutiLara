@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2024 a las 15:28:41
+-- Tiempo de generación: 14-11-2024 a las 20:08:38
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -184,7 +184,7 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`codigo`, `id_modelo`, `id_categoria`, `nombre`, `minimo`, `maximo`) VALUES
-('115556', 2, 6, 'cocacola', '15', '60'),
+('115556', 2, 6, 'cocacolas', '15', '60'),
 ('2132323', 1, 5, 'arroz', '15', '3000');
 
 -- --------------------------------------------------------
@@ -220,13 +220,6 @@ CREATE TABLE `salida` (
   `cedula_cliente` varchar(45) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `salida`
---
-
-INSERT INTO `salida` (`id_salida`, `cedula_empleado`, `cedula_cliente`, `fecha`) VALUES
-(10, NULL, '30405571', '2024-11-11');
 
 -- --------------------------------------------------------
 
@@ -348,7 +341,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -366,7 +359,7 @@ ALTER TABLE `modelo`
 -- AUTO_INCREMENT de la tabla `salida`
 --
 ALTER TABLE `salida`
-  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
