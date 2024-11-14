@@ -148,7 +148,7 @@ $(document).ready(function(){
 					$(linea).find("td:eq(1)").text()+
 		   `</td>
 		    <td>
-		      <input type="text"  name="cant[]"  onkeyup="modificasubtotal(this)" maxlength="10"/>
+		      <input type="text"  name="cant[]"   maxlength="10"/>
 		   </td>
 		    <td>`+
 					$(linea).find("td:eq(2)").text()+
@@ -171,15 +171,16 @@ $(document).ready(function(){
 		var valor = $(textocantidad).val()*1;
 		//var minimo = $(linea).find("td:eq(3)").text()*1;
 		//var maximo = $(linea).find("td:eq(4)").text()*1;
-		 if(valor< minimo || valor > maximo){
+		 /*if(valor< minimo || valor > maximo){
 			$('#cantidadModal').modal('show'); $(textocantidad).val(minimo);
 			$(linea).find("td:eq(7)").text(redondearDecimales(0, 0));
 			return;
-		} // Restablece el valor al mínimo si está fuera de rango return; // Sale de la función }
-		var resultado= valor;
+		}*/ // Restablece el valor al mínimo si está fuera de rango return; // Sale de la función }
+
+		var resultado= valor+valor;
 		
 			$(linea).find("td:eq(7)").text(redondearDecimales((resultado),0));
-	}*/
+	//}
 	//fin de funcion modifica subtotal
 	
 	

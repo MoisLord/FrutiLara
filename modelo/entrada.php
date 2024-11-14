@@ -29,15 +29,15 @@ class entrada extends datos{
 		   $tamano = count($id_producto);
 		   
 		   for($i=0;$i<$tamano;$i++){
-			   $gd = $co->query("insert into `detalle_entrada`
-			   (id_entrada,codigo_producto,Cantidad_producto)
-			   values(
-			   '$lid',
-		       '$id_producto[$i]',
-			   '$cantidad[$i]'
-			   )");
+			   $resultado = $co->query("SELECT COUNT(*) AS count FROM detalle_entrada WHERE codigo_producto = '$id_producto[$i]'"); 
+			   $row = $resultado->fetch(PDO::FETCH_ASSOC); 
+			   $exists = $row['count'];
+			   if ($exists > 0) { 
+				$co->query("UPDATE detalle_entrada SET Cantidad_producto = Cantidad_producto + '$cantidad[$i]' WHERE codigo_producto = '$id_producto[$i]'");
+			 } else { 
+				$co->query("INSERT INTO detalle_entrada (id_entrada, codigo_producto, Cantidad_producto) VALUES ('$lid', '$id_producto[$i]', '$cantidad[$i]')");
+			 }
 		   }
-		  
 		   $r['resultado'] = 'registrar';
 		   $r['mensaje'] =  "Entrada de Inventario procesada, numero de entrada: $lid";
 		   
@@ -99,7 +99,7 @@ class entrada extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("SELECT * from producto");
+			$resultado = $co->query("SELECT * from producto ");
 			
 			if($resultado){
 				
@@ -118,6 +118,7 @@ class entrada extends datos{
 						$respuesta = $respuesta."<td>";
 						$respuesta = $respuesta.$r['maximo'];
 					$respuesta = $respuesta."</td>";
+					
 					
 					$respuesta = $respuesta."</tr>";
 				}

@@ -103,6 +103,7 @@ class salida extends datos{
 			
 			$resultado = $co->query("SELECT producto.codigo,producto.nombre,producto.minimo,producto.maximo,detalle_entrada.Cantidad_producto from producto JOIN detalle_entrada ON
 			producto.codigo = detalle_entrada.codigo_producto");
+			//$resultado = $co->query("SELECT * FROM producto");
 			//SELECT p.codigo, p.nombre, p.minimo, p.maximo, d.cantidad, d.fecha_entrada FROM producto p JOIN detalle_entrada d ON p.id_producto = d.id_producto
 			if($resultado){
 				
