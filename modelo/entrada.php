@@ -37,6 +37,7 @@ class entrada extends datos{
 			   '$cantidad[$i]'
 			   )");
 		   }
+		  
 		   $r['resultado'] = 'registrar';
 		   $r['mensaje'] =  "Inventario procesada, numero de inventario: $lid";
 		   
@@ -98,7 +99,7 @@ class entrada extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from producto");
+			$resultado = $co->query("SELECT * from producto");
 			
 			if($resultado){
 				
@@ -117,6 +118,7 @@ class entrada extends datos{
 						$respuesta = $respuesta."<td>";
 						$respuesta = $respuesta.$r['maximo'];
 					$respuesta = $respuesta."</td>";
+					
 					$respuesta = $respuesta."</tr>";
 				}
 				

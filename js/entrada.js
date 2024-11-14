@@ -126,6 +126,8 @@ $(document).ready(function(){
 		$("#entrada tr").each(function(){
 			if(id*1 == $(this).find("td:eq(1)").text()*1){
 				encontro = true;
+				t.val(t.val()*1+1);
+				modificasubtotal(t);
 			} 
 		});
 		
@@ -146,23 +148,38 @@ $(document).ready(function(){
 					$(linea).find("td:eq(1)").text()+
 		   `</td>
 		    <td>
-		      <input type="text"  name="cant[]"  maxlength="10"/>
+		      <input type="text"  name="cant[]"  onkeyup="modificasubtotal(this)" maxlength="10"/>
 		   </td>
 		    <td>`+
 					$(linea).find("td:eq(2)").text()+
 		   `</td>
-		     <td>`+
+		   <td>`+
 					$(linea).find("td:eq(3)").text()+
 		   `</td>
-		   
+		  
 		   </tr>`;
 			$("#entrada").append(l);
 		}
 	}
 	//fin de funcion colocar productos
-	
+	/*document.getElementById("cerrarModal").addEventListener("click", function() { 
+		$('#cantidadModal').modal('hide'); });*/
 	//funcion para modificar subtotal
-	
+	/*function modificasubtotal(textocantidad){
+		var linea = $(textocantidad).closest('tr');
+		
+		var valor = $(textocantidad).val()*1;
+		//var minimo = $(linea).find("td:eq(3)").text()*1;
+		//var maximo = $(linea).find("td:eq(4)").text()*1;
+		 if(valor< minimo || valor > maximo){
+			$('#cantidadModal').modal('show'); $(textocantidad).val(minimo);
+			$(linea).find("td:eq(7)").text(redondearDecimales(0, 0));
+			return;
+		} // Restablece el valor al mínimo si está fuera de rango return; // Sale de la función }
+		var resultado= valor;
+		
+			$(linea).find("td:eq(7)").text(redondearDecimales((resultado),0));
+	}*/
 	//fin de funcion modifica subtotal
 	
 	
