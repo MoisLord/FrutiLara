@@ -22,7 +22,7 @@ MODELO DE PRODUCTOS
 			<div class="col-md">
 			   <label for="id_modelo">Codigo de modelo</label>
 			   <input class="form-control" type="text" id="id_modelo" name="id_modelo"maxlength="20"/>
-			   <span id="sid_modelo">El formato debe ser Alfanumerico</span>
+			   <span id="sid_modelo">El formato debe ser de letras y/o números entre 3 y 20 caracteres</span>
 			</div>
 			</div>
 			<div class="row mb-3">
@@ -77,7 +77,7 @@ MODELO DE PRODUCTOS
 		<table class="table table-striped table-hover" id="tablamodelo">
 		<thead>
 		  <tr>
-		  <th style="display:none">id Modelo</th>
+		  <th style="display: none;"></th>	
 		  <th>Codigo de Modelos</th>
 		  <th>Modelos</th>
 		  <th>Marca</th>

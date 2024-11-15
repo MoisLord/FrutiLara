@@ -137,7 +137,7 @@ let valorModelo;
           datos.append('id_modelo',valorModelo);
           datos.append('id_categoria',valorCategoria);
           datos.append('estado_registro',1);
-          console.log(datos)
+          // console.log(datos)
           enviaAjax(datos);
           
         }
@@ -154,7 +154,7 @@ let valorModelo;
           datos.append('id_modelo',valorModelo);
           datos.append('id_categoria',valorCategoria);
           datos.append('estado_registro',1);
-          console.log(datos)
+          // console.log(datos)
           enviaAjax(datos);
           
         }
@@ -298,20 +298,20 @@ return false;
         $("#id_modelo").val($(linea).find("td:eq(5)").text());
         $("#id_categoria").val($(linea).find("td:eq(7)").text());
         
-        console.log(valorModelo);
-        console.log(valorCategoria);        
+        // console.log(valorModelo);
+        // console.log(valorCategoria);        
       }
 
       function colocacategoria(linea){
         valorCategoria = $(linea).find("td:eq(0)").text();
-        console.log(valorCategoria);
+        // console.log(valorCategoria);
       
         $("#id_categoria").val($(linea).find("td:eq(2)").text());
       }
 
       function colocamodelo(linea){
         valorModelo = $(linea).find("td:eq(0)").text();
-	console.log(valorModelo);
+	// console.log(valorModelo);
 
 	$("#id_modelo").val($(linea).find("td:eq(2)").text());
       }

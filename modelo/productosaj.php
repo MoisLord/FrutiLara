@@ -309,24 +309,24 @@ class productosaj extends datos
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try {
 
-			$resultado = $co->query("Select * from modelo");
+			$resultado = $co->query("SELECT codigo_modelo, descripcion_modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca WHERE modelo.estado_registro = 1");
 
 			if ($resultado) {
 
 				$respuesta = '';
 				foreach ($resultado as $r) {
-					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='colocamodelo(this);'>";
-					$respuesta = $respuesta . "<td style='display:none;'>";
-					$respuesta = $respuesta . $r['id_modelo'];
-					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
 					$respuesta = $respuesta . "<td>";
 					$respuesta = $respuesta . $r['codigo_modelo'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td>";
 					$respuesta = $respuesta . $r['descripcion_modelo'];
 					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . "<td style='display:none;'>";
 					$respuesta = $respuesta . $r['id_marca'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['descripcion_marca'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "</tr>";
 				}
@@ -346,7 +346,7 @@ class productosaj extends datos
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try {
 
-			$resultado = $co->query("Select * from categoria");
+			$resultado = $co->query("SELECT * from categoria WHERE categoria.estado_registro = 1 ");
 
 			if ($resultado) {
 

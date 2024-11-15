@@ -35,8 +35,8 @@ $("#id_marca").on("keyup",function(){
 	});
 	
 	$("#id_modelo").on("keyup",function(){
-		validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-		$("#sid_modelo"),"debe ser Alfanumerico");
+		validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/,
+		$("#sid_modelo"),"El codigo del modelo debe ser de letras y/o números");
 		if($("#id_modelo").val().length > 7){
 		  var datos = new FormData();
 		    datos.append('accion','consultatr');
@@ -50,7 +50,7 @@ $("#id_marca").on("keyup",function(){
 	});
 	$("#descripcion_modelo").on("keyup",function(){
 		validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-		$(this),$("#smodelo"),"Solo Alfanumericos entre 3 y 30 caracteres");
+		$(this),$("#smodelo"),"La descripción puede ser de letras y/o numeros entre 3 y 30 caracteres");
 	});
 	
 	
@@ -110,8 +110,8 @@ $("#eliminar").on("click",function(){
 	
 	if(validarkeyup(/^[0-9]{7,8}$/,$("#id_modelo"),
 		$("#sid_modelo"),"El formato debe ser 9999999 o 12345678")==0){
-	    muestraMensaje("La id del modelo debe coincidir con el formato <br/>"+ 
-						"99999999 o 12345678");	
+	    muestraMensaje("El codigo del modelo debe coincidir con el formato <br/>"+ 
+						"99999999 o aT3oQ678");	
 		
 	}
 	else{	
@@ -164,9 +164,9 @@ function crearDT(){
 
 //Validación de todos los campos antes del envio
 function validarenvio(){
-	if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,$("#id_modelo"),
+	if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/,$("#id_modelo"),
 		$("#sid_modelo"),"El formato debe ser 9999999 o 12345678")==0){
-	    muestraMensaje("La id del modelo debe coincidir con el formato <br/>"+ 
+	    muestraMensaje("El codigo del modelo debe coincidir con el formato <br/>"+ 
 						"A959999 o B12345678");	
 		return false;					
 	}	
@@ -238,7 +238,7 @@ function coloca(linea){
 
 function colocamarca(linea){
 	valor = $(linea).find("td:eq(0)").text();
-	console.log(valor);
+	// console.log(valor);
 
 	$("#id_marca").val($(linea).find("td:eq(2)").text());
 
