@@ -108,7 +108,7 @@ $("#modificar").on("click",function(){
 
 $("#eliminar").on("click",function(){
 	
-	if(validarkeyup(/^[0-9]{7,8}$/,$("#id_modelo"),
+	if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/,$("#id_modelo"),
 		$("#sid_modelo"),"El formato debe ser 9999999 o 12345678")==0){
 	    muestraMensaje("El codigo del modelo debe coincidir con el formato <br/>"+ 
 						"99999999 o aT3oQ678");	
