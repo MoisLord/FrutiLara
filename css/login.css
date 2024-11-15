@@ -163,9 +163,6 @@ body{
     position: absolute;
     top: 50%; /* Centra verticalmente */
     transform: translateY(-50%); /* Ajusta para centrar correctamente */
-    min-height: 100vh; /* Establece un alto minimo del 100% de la pantalla */
-    max-width: 100vh;
-    max-height: 100vh; /* Establece un alto máximo del 100% de la pantalla */
 }
 
 /* Posicionamiento específico para el icono del candado */
@@ -184,6 +181,9 @@ body{
         width: 15px; /* Reduce el tamaño en pantallas pequeñas */
         height: 15px; /* Reduce el tamaño en pantallas pequeñas */
         margin: 0;
+        min-height: 100vh; /* Establece un alto minimo del 100% de la pantalla */
+        max-width: 100vh;
+        max-height: 100vh; /* Establece un alto máximo del 100% de la pantalla */
     }
 }
 
@@ -192,6 +192,9 @@ body{
         width: 12px; /* Reduce aún más el tamaño en pantallas muy pequeñas */
         height: 12px; /* Reduce aún más el tamaño en pantallas muy pequeñas */
         margin: 0;
+        min-height: 100vh; /* Establece un alto minimo del 100% de la pantalla */
+        max-width: 100vh;
+        max-height: 100vh; /* Establece un alto máximo del 100% de la pantalla */
     }
 }
 
