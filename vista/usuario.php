@@ -27,7 +27,8 @@ USUARIOS DEL SISTEMA
 			</div>
 			<div class="mb-3">
         <label for="tipo_usuario">Tipos de usuario</label>
-        <select class="form-select" aria-label="Default select example" id="tipo_usuario"> 
+        <select class="form-select" aria-label="Default select example" id="tipo_usuario">
+			<option value="SUPERUSUARIO">Super Usuario</option> 
             <option value="ADMINISTRADOR">Administrador</option> 
             <option value="EMPLEADO">Empleado</option> 
         </select> 
