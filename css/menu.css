@@ -1,6 +1,6 @@
 .navbar-toggler {
     border: none;
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* Puedes cambiar a em o rem */
 }
 
 .navbar-toggler:focus {
@@ -8,70 +8,66 @@
     outline: none;
 }
 
-.navbar{
-    background-image: linear-gradient(to right,#7DDA58,#FFDE59,#FE9900,#E4080A,#BFD641);
-    height: 80px;
-    margin: 20px;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
+.navbar {
+    background-image: linear-gradient(to right, #7DDA58, #FFDE59, #FE9900, #E4080A, #BFD641);
+    height: 10vh; /* Cambiado a vh para ser responsivo */
+    margin: 2%;
+    border-radius: 1rem; /* Cambiado a rem */
+    padding: 1rem; /* Cambiado a rem */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: space-between; /* Espaciado entre elementos */
+    align-items: center; /* Centrar verticalmente */
 }
 
 .nav-link {
     color: #ffffff;
     font-weight: 600;
     position: relative;
+    font-size: 1rem; /* Cambiado a rem */
 }
 
 .nav-link:hover, .nav-link.active {
     color: #fcfcfcda;
 }
 
-@media (min-width: 991px){
-    .nav-link::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background-color: #7DDA58;
-        visibility: hidden;
-        transition: 0.3s ease-in-out;
-    }
-    
-    .nav-link:hover::before, .nav-link.active::before {
-        width: 100%;
-        visibility: visible;
-    }
+.navbar .nav-link {
+    flex: 1; /* Cada enlace ocupa espacio igual */
+    text-align: center; /* Centrar texto */
 }
 /* fIN DE MENU */
 
 /* Inicio de Principal */
-.font-weight-bolder {
-    color: #ff9900;
-}
 .carousel-inner {
-  height: 100vh;
+    height: 100vh; /* Mantener como vh */
 }
 
 .carousel-item {
-  height: 100vh;
+    height: 100vh; /* Mantener como vh */
 }
 
 .carousel-item img {
-  object-fit: cover;
-  width: 100%;
-  height: 100vh;
+    object-fit: cover;
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: auto; /* Cambiado a auto para mantener la proporción */
 }
 
 .mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Mantener como vh */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Texto más grande en pantallas pequeñas */
+body {
+    font-size: 1rem; /* Base */
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.875rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
+    }
 }
 /* fIN DE PRINCIPAL */
