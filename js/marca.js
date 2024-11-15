@@ -56,7 +56,7 @@ $(document).ready(function(){
             datos.append('accion','modificar');
             datos.append('id_marca',$("#id_marca").val());
             datos.append('descripcion_marca',$("#descripcion_marca").val());
-            datos.append('estado_registro',1);
+            
             enviaAjax(datos);
             
             
@@ -82,12 +82,7 @@ $(document).ready(function(){
         
     });
     
-    // $("#consultar").on("click",function(){
-    //     var datos = new FormData();
-    //     datos.append('accion','consultar');
-    //     enviaAjax(datos);
-        
-    // });
+    
     //FIN DE CONTROL DE BOTONES	
     
     });

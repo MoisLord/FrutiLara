@@ -89,7 +89,34 @@ MARCAS DE PRODUCTOS
 		
     </div>
 </div>
-
+</div> <!-- fin de container -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">Listado de Marca</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content">
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+			<th>Codigos de Marcas</th>
+			<th>Marca</th>
+			
+		  </tr>
+		</thead>
+		<tbody id="consultaMarca">
+		
+		</tbody>
+		</table>
+    </div>
+	<div class="modal-footer bg-light">
+		<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript" src="js/marca.js"></script>
