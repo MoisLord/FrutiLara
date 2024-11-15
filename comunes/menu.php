@@ -18,8 +18,24 @@
       <div class="offcanvas-body">
 
       <?php
-		   //verificamos que exista la variable nivel
-		   //que es la que contiene el valor de la sesion
+   //verificamos que exista la variable nivel
+   //que es la que contiene el valor de la sesion
+   //aqui se coloca la vista del super usuario
+   if(!empty($nivel)){
+			  if($nivel=='SUPERUSUARIO'){
+			?>
+		<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <li class="nav-item">
+        <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=usuario">USUARIOS</a>
+      </li>
+    </ul>
+			<?php
+			  }
+      }
+ ?>
+
+      <?php
+       //aqui se coloca la vista del administrador
 		   if(!empty($nivel)){
 					  if($nivel=='ADMINISTRADOR'){
 					?>
@@ -76,6 +92,7 @@
 					  }
 		 ?>
           <?php
+          //aqui se coloca la vista del empleado
 					  if($nivel=='EMPLEADO'){
 					?>
 					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
