@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2024 a las 20:08:38
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Servidor: 127.0.0.1:3366
+-- Tiempo de generación: 14-11-2024 a las 22:30:54
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `protofrutilara`
 --
+CREATE DATABASE IF NOT EXISTS `protofrutilara` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `protofrutilara`;
 
 -- --------------------------------------------------------
 
@@ -53,16 +55,15 @@ CREATE TABLE `cliente` (
   `cedula` varchar(45) NOT NULL,
   `nombre_apellido` varchar(45) NOT NULL,
   `telefono` varchar(45) NOT NULL,
-  `direccion` varchar(45) NOT NULL,
-  `clientecol` varchar(45) NOT NULL
+  `direccion` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`cedula`, `nombre_apellido`, `telefono`, `direccion`, `clientecol`) VALUES
-('30405571', 'moises contreras', '04120483397', 'mi casa', '');
+INSERT INTO `cliente` (`cedula`, `nombre_apellido`, `telefono`, `direccion`) VALUES
+('30405571', 'moises contreras', '04120483397', 'mi casa');
 
 -- --------------------------------------------------------
 
@@ -75,6 +76,13 @@ CREATE TABLE `detalle_entrada` (
   `codigo_producto` varchar(45) NOT NULL,
   `Cantidad_producto` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_entrada`
+--
+
+INSERT INTO `detalle_entrada` (`id_entrada`, `codigo_producto`, `Cantidad_producto`) VALUES
+(1, '213313348', '80');
 
 -- --------------------------------------------------------
 
@@ -123,6 +131,13 @@ CREATE TABLE `entrada` (
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `entrada`
+--
+
+INSERT INTO `entrada` (`id_entrada`, `rif_proveedores`, `fecha`) VALUES
+(1, '123456', '2024-11-14');
+
 -- --------------------------------------------------------
 
 --
@@ -162,7 +177,8 @@ CREATE TABLE `modelo` (
 
 INSERT INTO `modelo` (`id_modelo`, `id_marca`, `codigo_modelo`, `descripcion_modelo`) VALUES
 (1, 1, '1165666', 'banderia'),
-(2, 2, '1223365', 'importada polar');
+(2, 2, '1223365', 'importada polar'),
+(3, 1, '1223311', 'Zulia');
 
 -- --------------------------------------------------------
 
@@ -176,16 +192,19 @@ CREATE TABLE `producto` (
   `id_categoria` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `minimo` varchar(45) NOT NULL,
-  `maximo` varchar(45) NOT NULL
+  `maximo` varchar(45) NOT NULL,
+  `estado_registro` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`codigo`, `id_modelo`, `id_categoria`, `nombre`, `minimo`, `maximo`) VALUES
-('115556', 2, 6, 'cocacolas', '15', '60'),
-('2132323', 1, 5, 'arroz', '15', '3000');
+INSERT INTO `producto` (`codigo`, `id_modelo`, `id_categoria`, `nombre`, `minimo`, `maximo`, `estado_registro`) VALUES
+('115556', 2, 6, 'cocacola', '15', '60', 1),
+('2132323', 1, 5, 'arroz', '15', '3000', 1),
+('213313348', 1, 5, 'dfjskahjk', '15', '3000', 0),
+('2133133485', 1, 5, 'dfjskahjkgd', '15', '3000', 0);
 
 -- --------------------------------------------------------
 
@@ -220,6 +239,13 @@ CREATE TABLE `salida` (
   `cedula_cliente` varchar(45) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `salida`
+--
+
+INSERT INTO `salida` (`id_salida`, `cedula_empleado`, `cedula_cliente`, `fecha`) VALUES
+(10, NULL, '30405571', '2024-11-11');
 
 -- --------------------------------------------------------
 
@@ -341,7 +367,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -353,13 +379,13 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de la tabla `modelo`
 --
 ALTER TABLE `modelo`
-  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `salida`
 --
 ALTER TABLE `salida`
-  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
