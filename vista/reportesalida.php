@@ -1,6 +1,7 @@
 <html>
 <title>R SALIDAS</title>
 <?php require_once('comunes/encabezado.php'); ?>
+<?php require_once("./modelo/session.php"); ?>
 <body>
 <!--linea para enlazar con el modal-->
 <?php require_once('comunes/menu.php'); ?>

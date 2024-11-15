@@ -4,7 +4,6 @@
 //productosaj, en ella estara el codigo que me permitirá
 //guardar, consultar y modificar dentro de mi base de datos
 
-
 //verificar que exista el archivo
 if (!is_file("modelo/".$pagina.".php")){
 	//busca el archivo si no existe manda el siguiente mensaje
@@ -43,13 +42,14 @@ require_once("modelo/".$pagina.".php");
 			$respuesta = $o->listadocategoria();
 			echo json_encode($respuesta);
 		 }
-		  else{			  
+		  else{
 			  $o->set_codigo($_POST['codigo']);
 			  $o->set_nombre($_POST['nombre']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
               $o->set_id_modelo($_POST['id_modelo']);
 			  $o->set_id_categoria($_POST['id_categoria']);
+			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
 				echo json_encode($o->incluir());
 			  }
@@ -59,8 +59,6 @@ require_once("modelo/".$pagina.".php");
 		  }
 		  exit;
 	  }
-
-
 
 	  require_once("vista/".$pagina.".php"); 
   }

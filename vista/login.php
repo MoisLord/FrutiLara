@@ -1,6 +1,7 @@
 <html>
 <title>INICIO SESION</title>
 <?php require_once("comunes/encabezado.php"); ?>
+<?php require_once("./modelo/sessionlogin.php"); ?>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, 

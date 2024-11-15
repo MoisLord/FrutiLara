@@ -1,6 +1,7 @@
 <html> 
 <title>PROVEEDOR</title>
 <?php require_once("comunes/encabezado.php"); ?>
+<?php require_once("./modelo/session.php"); ?>
 <body>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>

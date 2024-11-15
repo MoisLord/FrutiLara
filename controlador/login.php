@@ -10,12 +10,13 @@
 		  $o = new login();
 		  
 		  if($_POST['accion']=='entrar'){
+			session_start();
 			$o->set_cedula($_POST['cedula']);
 		    $o->set_clave($_POST['clave']);  
 			$m = $o->existe();
 			if($m['resultado']=='existe'){
-			  session_destroy(); //elimina cualquier version anterio de sesion	
-			  session_start(); //inicia el entorno de sesion
+			//   session_destroy(); //elimina cualquier version anterio de sesion	
+			//   session_start(); //inicia el entorno de sesion
 			  //asigna una clave nivel con el valor obtenido de la base de datos
 			  $_SESSION['nivel'] = $m['mensaje'];
 			  

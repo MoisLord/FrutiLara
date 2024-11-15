@@ -136,6 +136,7 @@ let valorModelo;
           datos.append('maximo',$("#maximo").val());
           datos.append('id_modelo',valorModelo);
           datos.append('id_categoria',valorCategoria);
+          datos.append('estado_registro',1);
           console.log(datos)
           enviaAjax(datos);
           // setInterval("location.reload()",3000);
@@ -152,6 +153,7 @@ let valorModelo;
           datos.append('maximo',$("#maximo").val());
           datos.append('id_modelo',valorModelo);
           datos.append('id_categoria',valorCategoria);
+          datos.append('estado_registro',1);
           console.log(datos)
           enviaAjax(datos);
           // setInterval("location.reload()",3000);
@@ -175,11 +177,9 @@ let valorModelo;
         
       });
       
-      
       //FIN DE CONTROL DE BOTONES	
       
       });
-      
       
       //funcion para enlazar al DataTablet
       function destruyeDT(){

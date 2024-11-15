@@ -1,6 +1,7 @@
 <html>
 <title>PRODUCTOS</title>
 <?php require_once("comunes/encabezado.php"); ?>
+<?php require_once("./modelo/session.php"); ?>
 <body>
 <div id="mensajes" style="display:none">
 <?php

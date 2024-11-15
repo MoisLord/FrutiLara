@@ -1,6 +1,7 @@
 <html> 
 <title>N ENTRADAS</title>
 <?php require_once("comunes/encabezado.php"); ?>
+<?php require_once("./modelo/session.php"); ?>
 <body>
 <!--Div oculta para colocar el mensaje a mostrar-->
 
@@ -88,6 +89,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 					<th>minimo</th>
 					<th>maximo</th>
 					
+					
 				  </tr>
 				</thead>
 				<tbody id="entrada">
@@ -153,6 +155,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
 			<th>Nombre</th>
 			<th>Minimo</th>
 			<th>Maximo</th>
+			
 		  </tr>
 		</thead>
 		<tbody id="listadoproductos">
@@ -161,11 +164,30 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</table>
     </div>
 	<div class="modal-footer bg-light">
+	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
   </div>
 </div>
 <!--fin de seccion modal-->
+<div class="modal fade" id="cantidadModal" tabindex="-1" role="dialog" aria-labelledby="cantidadModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-light bg-success">
+        <h5 class="modal-title" id="cantidadModalLabel">Aviso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        La cantidad Se esta pasando de los limites del stocks!!!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cerrarModal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript" src="js/entrada.js"></script>
 

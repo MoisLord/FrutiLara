@@ -1,6 +1,7 @@
 <html> 
 <title>EMPLEADOS</title>
 <?php require_once("comunes/encabezado.php"); ?>
+<?php require_once("./modelo/session.php"); ?>
 <body>
 <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
 <?php require_once("comunes/modal.php"); ?>
@@ -20,7 +21,7 @@ GESTIÓN DE EMPLEADOS
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="cedula">Cedula</label>
-			   <input class="form-control" type="text" id="cedula" name="cedula"maxlength="7"/>
+			   <input class="form-control" type="text" id="cedula" name="cedula"maxlength="8"/>
 			   <span id="scedula">El formato debe ser numérico con un minimo de 7 digitos</span>
 			</div>
 		</div>

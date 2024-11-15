@@ -1,6 +1,7 @@
 <html> 
 <title>N SALIDAS</title>
 <?php require_once("comunes/encabezado.php"); ?>
+<?php require_once("./modelo/session.php"); ?>
 <body>
 <!--Div oculta para colocar el mensaje a mostrar-->
 

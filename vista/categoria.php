@@ -1,6 +1,7 @@
 <html> 
 <title>CATEGORIAS</title>
 <?php require_once("comunes/encabezado.php"); ?>
+<?php require_once("./modelo/session.php"); ?>
 <body>
 <!--Llamar al archivo modal.php, y menu.php-->
 <?php require_once("comunes/modal.php"); ?>
