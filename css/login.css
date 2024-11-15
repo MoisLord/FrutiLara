@@ -167,12 +167,12 @@ body{
 
 /* Posicionamiento específico para el icono del candado */
 .password-lock {
-    right: 30vh; /* Ajusta según el espacio que necesites */
+    right: 50vh; /* Ajusta según el espacio que necesites */
 }
 
 /* Posicionamiento específico para el icono de la tarjeta de identificación */
 .id-card {
-    right: 30vh; /* Ajusta según el espacio que necesites */
+    right: 50vh; /* Ajusta según el espacio que necesites */
 }
 
 /* Media Queries para pantallas más pequeñas */
