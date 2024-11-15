@@ -281,7 +281,6 @@ function enviaAjax(datos){
 					 }
 					 
 					 else if (lee.resultado == "encontro") {
-						$("#id_modelo").val(lee.mensaje[0][1]);
 						$("#descripcion_modelo").val(lee.mensaje[0][2]);
 						$("#id_marca").val(lee.mensaje[0][3]);
 						

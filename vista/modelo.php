@@ -77,6 +77,7 @@ MODELO DE PRODUCTOS
 		<table class="table table-striped table-hover" id="tablamodelo">
 		<thead>
 		  <tr>
+		  <th style="display:none">id Modelo</th>
 		  <th>Codigo de Modelos</th>
 		  <th>Modelos</th>
 		  <th>Marca</th>
