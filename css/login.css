@@ -155,24 +155,39 @@ body{
     transition: 0.2s all ease-out;
 }
 
-.password-lock{
+/* Estilos generales para los íconos */
+.password-lock, .id-card {
     color: #ffffff;
-    width: 20px;
-    height: 20px;
+    width: 20px; /* Puedes cambiar esto a una unidad relativa como 'em' o '%' si lo deseas */
+    height: 20px; /* Lo mismo aquí */
     position: absolute;
-    top: 65px;
-    transform: translateY(-20%);
-    right: 33.5vh;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajusta para centrar correctamente */
 }
 
-.id-card{
-    color: #ffffff;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 65px;
-    transform: translateY(-20%);
-    right: 33.5vh;
+/* Posicionamiento específico para el icono del candado */
+.password-lock {
+    left: 10px; /* Ajusta según el espacio que necesites */
+}
+
+/* Posicionamiento específico para el icono de la tarjeta de identificación */
+.id-card {
+    left: 10px; /* Ajusta según el espacio que necesites */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .password-lock, .id-card {
+        width: 15px; /* Reduce el tamaño en pantallas pequeñas */
+        height: 15px; /* Reduce el tamaño en pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .password-lock, .id-card {
+        width: 12px; /* Reduce aún más el tamaño en pantallas muy pequeñas */
+        height: 12px; /* Reduce aún más el tamaño en pantallas muy pequeñas */
+    }
 }
 
 .input-field:focus ~ label,.input-field:valid ~ label{
