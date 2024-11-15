@@ -256,7 +256,7 @@ class productosaj extends datos
 		$r = array();
 		try {
 
-			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto.id_modelo, categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE estado_registro = 1");
+			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto.id_modelo, categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 1");
 
 			if ($resultado) {
 
