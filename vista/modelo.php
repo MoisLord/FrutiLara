@@ -89,6 +89,7 @@ MODELO DE PRODUCTOS
 		</table>
 		
     </div>
+	</div>
 </div> <!-- fin de container -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
   <div class="modal-dialog modal-lg" role="document">
