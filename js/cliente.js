@@ -68,6 +68,7 @@ $("#incluir").on("click",function(){
 		datos.append('nombre_apellido',$("#nombre_apellido").val());
 		datos.append('telefono',$("#telefono").val());
 		datos.append('direccion',$("#direccion").val());
+		datos.append('estado_registro',1);
 		enviaAjax(datos);
 
 	}
@@ -81,6 +82,7 @@ $("#modificar").on("click",function(){
 		datos.append('nombre_apellido',$("#nombre_apellido").val());
 		datos.append('telefono',$("#telefono").val());
 		datos.append('direccion',$("#direccion").val());
+		datos.append('estado_registro',1);
 		enviaAjax(datos);
 		
 	}

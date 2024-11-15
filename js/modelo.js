@@ -87,6 +87,7 @@ $("#incluir").on("click",function(){
 		datos.append('id_modelo',$("#id_modelo").val());
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
 		datos.append('id_marca', valor);
+		datos.append('estado_registro',1);
 		enviaAjax(datos);
 		
 	}
@@ -99,6 +100,7 @@ $("#modificar").on("click",function(){
 		datos.append('id_modelo',$("#id_modelo").val());
 		datos.append('descripcion_modelo',$("#descripcion_modelo").val());
 		datos.append('id_marca', valor);
+		datos.append('estado_registro',1);
 		enviaAjax(datos);
 		
 	}

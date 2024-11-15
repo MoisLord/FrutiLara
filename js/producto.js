@@ -139,7 +139,7 @@ let valorModelo;
           datos.append('estado_registro',1);
           console.log(datos)
           enviaAjax(datos);
-          // setInterval("location.reload()",3000);
+          
         }
       });
       $("#modificar").on("click",function(){
@@ -156,7 +156,7 @@ let valorModelo;
           datos.append('estado_registro',1);
           console.log(datos)
           enviaAjax(datos);
-          // setInterval("location.reload()",3000);
+          
         }
       });
       
@@ -172,7 +172,7 @@ let valorModelo;
           datos.append('accion','eliminar');
           datos.append('codigo',$("#codigo").val());
           enviaAjax(datos);
-          //setInterval("location.reload()",3000);
+          
         }
         
       });

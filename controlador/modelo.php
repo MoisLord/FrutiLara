@@ -43,6 +43,7 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_id_modelo($_POST['id_modelo']);
 			  $o->set_descripcion_modelo($_POST['descripcion_modelo']);
 			  $o->set_id_marca($_POST['id_marca']);
+			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }

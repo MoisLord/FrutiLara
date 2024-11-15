@@ -44,6 +44,7 @@ $(document).ready(function(){
             datos.append('descripcion_categoria',$("#descripcion_categoria").val());
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
+            datos.append('estado_registro',1);
             enviaAjax(datos);
             
         }
@@ -57,6 +58,7 @@ $(document).ready(function(){
             datos.append('descripcion_categoria',$("#descripcion_categoria").val());
             datos.append('unidadMedNormal',$("#unidadMedNormal").val());
             datos.append('unidadMedAlt',$("#unidadMedAlt").val());
+            datos.append('estado_registro',1);
             enviaAjax(datos);
             
         }

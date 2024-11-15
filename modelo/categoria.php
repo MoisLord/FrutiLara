@@ -12,6 +12,7 @@ class categoria extends datos{
 	private $descripcion_categoria;
 	private $unidadMedNormal;
     private $unidadMedAlt;
+	private $estado_registro;
 	
 	
 	//Se añaden los metodos (funciones) que me permitan leer (get) y colocar (set)
@@ -33,6 +34,11 @@ class categoria extends datos{
     function set_unidadMedAlt($valor){
 		$this->unidadMedAlt = $valor;
 	}
+
+	function set_estado_registro($valor)
+	{
+		$this->estado_registro = $valor;
+	}
 	//Final del sector de metodos de set
 
 	//Comienzo del sector de metodos de get
@@ -51,6 +57,11 @@ class categoria extends datos{
 
     function get_unidadMedAlt(){
 		return $this->unidadMedAlt;
+	}
+
+	function get_estado_registro()
+	{
+		return $this->estado_registro;
 	}
 	//Final del sector de metodos de get
 	
@@ -74,18 +85,21 @@ class categoria extends datos{
 						codigo_categoria,
 						descripcion_categoria,
 						unidadMedNormal,
-                        unidadMedAlt
+                        unidadMedAlt,
+						estado_registro
 						)
 						Values(
 						:codigo_categoria,
 						:descripcion_categoria,
 						:unidadMedNormal,
-                        :unidadMedAlt
+                        :unidadMedAlt,
+						:estado_registro
 						)");
 					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
 					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);	
 					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
                     $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
+					$p->bindParam(':estado_registro',$this->estado_registro);
 					
 					$p->execute();
 					
@@ -114,7 +128,8 @@ class categoria extends datos{
 				$p = $co->prepare("Update categoria set 
 						descripcion_categoria = :descripcion_categoria,
 						unidadMedNormal = :unidadMedNormal,
-                        unidadMedAlt = :unidadMedAlt
+                        unidadMedAlt = :unidadMedAlt,
+						estado_registro = :estado_registro
 						where
 						codigo_categoria = :codigo_categoria
 						");
@@ -122,6 +137,7 @@ class categoria extends datos{
 					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);
 					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
                     $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
+					$p->bindParam(':estado_registro',$this->estado_registro);
 					
 					$p->execute();
 					
@@ -144,26 +160,48 @@ class categoria extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->codigo_categoria)){
+		// if($this->existe($this->codigo_categoria)){
+		// 	try {
+		// 			$p = $co->prepare("delete from categoria
+		// 			    where
+		// 				codigo_categoria = :codigo_categoria
+		// 				");
+		// 			$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
+					
+					
+		// 			$p->execute();
+		// 			$r['resultado'] = 'eliminar';
+		// 	        $r['mensaje'] =  'La Categoria ha sido Borrada';
+		// 	} catch(Exception $e) {
+		// 		$r['resultado'] = 'error';
+		// 	    $r['mensaje'] =  $e->getMessage();
+		// 	}
+		// }
+		// else{
+		// 	$r['resultado'] = 'eliminar';
+		// 	$r['mensaje'] =  'No existe la Categoria';
+		// }
+		// return $r;
+		if ($this->existe($this->codigo_categoria)) {
 			try {
-					$p = $co->prepare("delete from categoria
-					    where
-						codigo_categoria = :codigo_categoria
-						");
-					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
-					
-					
-					$p->execute();
-					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'La Categoria ha sido Borrada';
-			} catch(Exception $e) {
+				$p = $co->prepare("Update categoria set 
+				estado_registro = 0
+				where
+				codigo_categoria = :codigo_categoria
+				");
+
+				$p->bindParam(':codigo_categoria', $this->codigo_categoria);
+				$p->execute();
+
+				$r['resultado'] = 'eliminar';
+				$r['mensaje'] =  'Categoria eliminada';
+			} catch (Exception $e) {
 				$r['resultado'] = 'error';
-			    $r['mensaje'] =  $e->getMessage();
+				$r['mensaje'] =  $e->getMessage();
 			}
-		}
-		else{
+		} else {
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe la Categoria';
+			$r['mensaje'] =  'No existe el Codigo de la Categoria';
 		}
 		return $r;
 	}
@@ -175,7 +213,7 @@ class categoria extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from categoria");
+			$resultado = $co->query("SELECT * from categoria WHERE estado_registro = 1");
 			
 			if($resultado){
 				

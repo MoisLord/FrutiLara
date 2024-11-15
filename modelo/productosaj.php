@@ -167,7 +167,8 @@ class productosaj extends datos
 				minimo = :minimo,
 				maximo = :maximo,
 				id_modelo = :id_modelo,
-				id_categoria = :id_categoria
+				id_categoria = :id_categoria,
+				estado_registro = :estado_registro
 				where
 				codigo = :codigo
 				");
@@ -178,6 +179,7 @@ class productosaj extends datos
 				$p->bindParam(':maximo', $this->maximo);
 				$p->bindParam(':id_modelo', $this->id_modelo);
 				$p->bindParam(':id_categoria', $this->id_categoria);
+				$p->bindParam(':estado_registro', $this->estado_registro);
 
 				$p->execute();
 
@@ -189,7 +191,7 @@ class productosaj extends datos
 			}
 		} else {
 			$r['resultado'] = 'modificar';
-			$r['mensaje'] =  'No existe el Producto';
+			$r['mensaje'] =  'No existe el Codigo del Producto';
 		}
 		return $r;
 	}
@@ -240,8 +242,8 @@ class productosaj extends datos
 				$r['mensaje'] =  $e->getMessage();
 			}
 		} else {
-			$r['resultado'] = 'modificar';
-			$r['mensaje'] =  'No existe el Producto';
+			$r['resultado'] = 'eliminar';
+			$r['mensaje'] =  'No existe el Codigo del Producto';
 		}
 		return $r;
 	}

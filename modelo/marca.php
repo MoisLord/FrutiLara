@@ -20,6 +20,7 @@ class marca extends datos{
 	//Aqui coloque los inputs de la vista en private
 	private $id_marca; //recordatorio que en php, las variables no tienen tipo predefinido
 	private $descripcion_marca;
+	private $estado_registro;
 	
 	//Ok ya puesto los atributos, pero ahora como son privados no podemos acceder a ellos
 	//desde afuera por lo que debemos colocar metodos (funciones)
@@ -37,6 +38,11 @@ class marca extends datos{
 		$this->descripcion_marca = $valor;
 	}
 
+	function set_estado_registro($valor)
+	{
+		$this->estado_registro = $valor;
+	}
+
 	//ahora el mismo procedimiento pero para leer, es decir (get)
 	
 	function get_id_marca(){
@@ -45,6 +51,11 @@ class marca extends datos{
 	
 	function get_descripcion_marca(){
 		return $this->descripcion_marca;
+	}
+
+	function get_estado_registro()
+	{
+		return $this->estado_registro;
 	}
 	
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
@@ -68,14 +79,17 @@ class marca extends datos{
 			try {
 					$p = $co->prepare("Insert into marca(
 						codigo_marca,
-						descripcion_marca
+						descripcion_marca,
+						estado_registro
 						)
 						Values(
 						:codigo_marca,
-						:descripcion_marca
+						:descripcion_marca,
+						:estado_registro
 						)");
 					$p->bindParam(':codigo_marca',$this->id_marca);		
 					$p->bindParam(':descripcion_marca',$this->descripcion_marca);
+					$p->bindParam(':estado_registro', $this->estado_registro);
 					
 					$p->execute();
 					
@@ -105,12 +119,14 @@ class marca extends datos{
 		if($this->existe($this->id_marca)){
 			try {
 				$p = $co->prepare("Update marca set 
-						descripcion_marca = :descripcion_marca
+						descripcion_marca = :descripcion_marca,
+						estado_registro = :estado_registro
 						where
 						codigo_marca = :codigo_marca
 						");
 					$p->bindParam(':codigo_marca',$this->id_marca);		
 					$p->bindParam(':descripcion_marca',$this->descripcion_marca);	
+					$p->bindParam(':estado_registro', $this->estado_registro);
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -131,26 +147,48 @@ class marca extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->id_marca)){
+		// if($this->existe($this->id_marca)){
+		// 	try {
+		// 			$p = $co->prepare("delete from marca
+		// 			    where
+		// 				codigo_marca = :codigo_marca
+		// 				");
+		// 			$p->bindParam(':codigo_marca',$this->id_marca);		
+					
+					
+		// 			$p->execute();
+		// 			$r['resultado'] = 'eliminar';
+		// 	        $r['mensaje'] =  'Marca Eliminada';
+		// 	} catch(Exception $e) {
+		// 		$r['resultado'] = 'error';
+		// 	    $r['mensaje'] =  $e->getMessage();
+		// 	}
+		// }
+		// else{
+		// 	$r['resultado'] = 'eliminar';
+		// 	$r['mensaje'] =  'No existe la marca';
+		// }
+		// return $r;
+		if ($this->existe($this->id_marca)) {
 			try {
-					$p = $co->prepare("delete from marca
-					    where
-						codigo_marca = :codigo_marca
-						");
-					$p->bindParam(':codigo_marca',$this->id_marca);		
-					
-					
-					$p->execute();
-					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'Marca Eliminada';
-			} catch(Exception $e) {
+				$p = $co->prepare("Update marca set 
+				estado_registro = 0
+				where
+				codigo_marca = :codigo_marca
+				");
+
+				$p->bindParam(':codigo_marca', $this->id_marca);
+				$p->execute();
+
+				$r['resultado'] = 'eliminar';
+				$r['mensaje'] =  'Marca eliminada';
+			} catch (Exception $e) {
 				$r['resultado'] = 'error';
-			    $r['mensaje'] =  $e->getMessage();
+				$r['mensaje'] =  $e->getMessage();
 			}
-		}
-		else{
+		} else {
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe la marca';
+			$r['mensaje'] =  'No existe el Codigo de la Marca';
 		}
 		return $r;
 	}
@@ -162,7 +200,7 @@ class marca extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from marca");
+			$resultado = $co->query("SELECT * from marca WHERE estado_registro = 1");
 			
 			if($resultado){
 				
@@ -185,6 +223,7 @@ class marca extends datos{
 			return $r;
 			    
 			}
+			
 			else{
 				return '';
 			}

@@ -14,6 +14,7 @@ class cliente extends datos{
 	private $nombre_apellido;
 	private $telefono;
 	private $direccion;
+	private $estado_registro;
 	
 	// se colocan metodo (Que serian funciones) seria get o set
 	
@@ -36,6 +37,11 @@ class cliente extends datos{
 		$this->direccion = $valor;
 	}
 
+	function set_estado_registro($valor)
+	{
+		$this->estado_registro = $valor;
+	}
+
 	//ahora la misma cosa pero para get
 	function get_cedula(){
 		return $this->cedula;
@@ -52,6 +58,11 @@ class cliente extends datos{
 
 	function get_direccion(){
 		return $this->direccion;
+	}
+
+	function get_estado_registro()
+	{
+		return $this->estado_registro;
 	}
 
 	// metodos para incluir, consultar y eliminar
@@ -73,23 +84,26 @@ class cliente extends datos{
 						cedula,
 						nombre_apellido,
 						telefono,
-						direccion
+						direccion,
+						estado_registro
 						)
 						Values(
 						:cedula,
 						:nombre_apellido,
 						:telefono,
-						:direccion
+						:direccion,
+						:estado_registro
 						)");
 					$p->bindParam(':cedula',$this->cedula);		
 					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
 					$p->bindParam(':telefono',$this->telefono);
 					$p->bindParam(':direccion',$this->direccion);
+					$p->bindParam(':estado_registro',$this->estado_registro);
 					
 					$p->execute();
 					
 						$r['resultado'] = 'incluir';
-			            $r['mensaje'] =  'Cliente ha sido registrado';
+			            $r['mensaje'] =  'Cliente registrado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -113,7 +127,8 @@ class cliente extends datos{
 				$p = $co->prepare("Update cliente set 
 						nombre_apellido = :nombre_apellido,
 						telefono = :telefono,
-						direccion = :direccion
+						direccion = :direccion,
+						estado_registro = :estado_registro
 						where
 						cedula = :cedula
 						");
@@ -121,11 +136,12 @@ class cliente extends datos{
 					$p->bindParam(':nombre_apellido',$this->nombre_apellido);
 					$p->bindParam(':telefono',$this->telefono);
 					$p->bindParam(':direccion',$this->direccion);
+					$p->bindParam(':estado_registro',$this->estado_registro);
 					
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
-			            $r['mensaje'] =  'Registro Modificado';
+			            $r['mensaje'] =  'Cliente Modificado';
 			} catch(Exception $e) {
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
@@ -133,7 +149,7 @@ class cliente extends datos{
 		}
 		else{
 			$r['resultado'] = 'modificar';
-			    $r['mensaje'] =  'No existe la cedula';
+			    $r['mensaje'] =  'No existe la cedula del cliente';
 		}
 		return $r;
 	}
@@ -142,26 +158,48 @@ class cliente extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->cedula)){
+		// if($this->existe($this->cedula)){
+		// 	try {
+		// 			$p = $co->prepare("delete from cliente 
+		// 			    where
+		// 				cedula = :cedula
+		// 				");
+		// 			$p->bindParam(':cedula',$this->cedula);		
+					
+					
+		// 			$p->execute();
+		// 			$r['resultado'] = 'eliminar';
+		// 	        $r['mensaje'] =  'Registro Eliminado';
+		// 	} catch(Exception $e) {
+		// 		$r['resultado'] = 'error';
+		// 	    $r['mensaje'] =  $e->getMessage();
+		// 	}
+		// }
+		// else{
+		// 	$r['resultado'] = 'eliminar';
+		// 	$r['mensaje'] =  'No existe la cedula';
+		// }
+		// return $r;
+		if ($this->existe($this->cedula)) {
 			try {
-					$p = $co->prepare("delete from cliente 
-					    where
-						cedula = :cedula
-						");
-					$p->bindParam(':cedula',$this->cedula);		
-					
-					
-					$p->execute();
-					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'Registro Eliminado';
-			} catch(Exception $e) {
+				$p = $co->prepare("Update cliente set 
+				estado_registro = 0
+				where
+				cedula = :cedula
+				");
+
+				$p->bindParam(':cedula', $this->cedula);
+				$p->execute();
+
+				$r['resultado'] = 'eliminar';
+				$r['mensaje'] =  'Cliente eliminado';
+			} catch (Exception $e) {
 				$r['resultado'] = 'error';
-			    $r['mensaje'] =  $e->getMessage();
+				$r['mensaje'] =  $e->getMessage();
 			}
-		}
-		else{
+		} else {
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe la cedula';
+			$r['mensaje'] =  'No existe la cedula del Cliente';
 		}
 		return $r;
 	}
@@ -173,7 +211,7 @@ class cliente extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("Select * from cliente");
+			$resultado = $co->query("SELECT * from cliente WHERE estado_registro = 1");
 			
 			if($resultado){
 				

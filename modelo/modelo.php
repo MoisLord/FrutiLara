@@ -14,6 +14,7 @@ class modelo extends datos
 	private $id_modelo; // las variables no tienen tipo predefinido
 	private $descripcion_modelo;
 	private $id_marca;
+	private $estado_registro;
 	// se colocan metodo (Que serian funciones) seria get o set
 
 	function set_id_modelo($valor)
@@ -34,6 +35,11 @@ class modelo extends datos
 		$this->id_marca = $valor;
 	}
 
+	function set_estado_registro($valor)
+	{
+		$this->estado_registro = $valor;
+	}
+
 
 	//ahora la misma cosa pero para get
 	function get_id_modelo()
@@ -49,6 +55,11 @@ class modelo extends datos
 	function get_id_marca()
 	{
 		return $this->id_marca;
+	}
+
+	function get_estado_registro()
+	{
+		return $this->estado_registro;
 	}
 
 	// metodos para incluir, consultar y eliminar
@@ -70,16 +81,19 @@ class modelo extends datos
 				$p = $co->prepare("Insert into modelo(
 						codigo_modelo,
 						descripcion_modelo,
-						id_marca
+						id_marca,
+						estado_registro
 						)
 						Values(
 						:codigo_modelo,
 						:descripcion_modelo,
-						:id_marca
+						:id_marca,
+						:estado_registro
 						)");
 				$p->bindParam(':codigo_modelo', $this->id_modelo);
 				$p->bindParam(':descripcion_modelo', $this->descripcion_modelo);
 				$p->bindParam(':id_marca', $this->id_marca);
+				$p->bindParam(':estado_registro', $this->estado_registro);
 
 				$p->execute();
 
@@ -106,13 +120,15 @@ class modelo extends datos
 			try {
 				$p = $co->prepare("Update modelo set 
 						descripcion_modelo = :descripcion_modelo,
-						id_marca = :id_marca
+						id_marca = :id_marca,
+						estado_registro = :estado_registro
 						where
 						codigo_modelo = :codigo_modelo
 						");
 				$p->bindParam(':codigo_modelo', $this->id_modelo);
 				$p->bindParam(':descripcion_modelo', $this->descripcion_modelo);
 				$p->bindParam(':id_marca', $this->id_marca);
+				$p->bindParam(':estado_registro', $this->estado_registro);
 
 				$p->execute();
 
@@ -134,25 +150,47 @@ class modelo extends datos
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
+		// if ($this->existe($this->id_modelo)) {
+		// 	try {
+		// 		$p = $co->prepare("delete from modelo 
+		// 			    where
+		// 				codigo_modelo = :codigo_modelo
+		// 				");
+		// 		$p->bindParam(':codigo_modelo', $this->id_modelo);
+
+
+		// 		$p->execute();
+		// 		$r['resultado'] = 'eliminar';
+		// 		$r['mensaje'] =  'El modelo ha sido Eliminado';
+		// 	} catch (Exception $e) {
+		// 		$r['resultado'] = 'error';
+		// 		$r['mensaje'] =  $e->getMessage();
+		// 	}
+		// } else {
+		// 	$r['resultado'] = 'eliminar';
+		// 	$r['mensaje'] =  'No existe la id_modelo';
+		// }
+		// return $r;
 		if ($this->existe($this->id_modelo)) {
 			try {
-				$p = $co->prepare("delete from modelo 
-					    where
-						codigo_modelo = :codigo_modelo
-						");
+				$p = $co->prepare("Update modelo set 
+				estado_registro = 0
+				where
+				codigo_modelo = :codigo_modelo
+				");
+
 				$p->bindParam(':codigo_modelo', $this->id_modelo);
-
-
 				$p->execute();
+
 				$r['resultado'] = 'eliminar';
-				$r['mensaje'] =  'El modelo ha sido Eliminado';
+				$r['mensaje'] =  'Modelo eliminado';
 			} catch (Exception $e) {
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
 			}
 		} else {
 			$r['resultado'] = 'eliminar';
-			$r['mensaje'] =  'No existe la id_modelo';
+			$r['mensaje'] =  'No existe el Codigo del Modelo';
 		}
 		return $r;
 	}
@@ -165,7 +203,7 @@ class modelo extends datos
 		$r = array();
 		try {
 
-			$resultado = $co->query("SELECT codigo_modelo, descripcion_modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca");
+			$resultado = $co->query("SELECT codigo_modelo, descripcion_modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca WHERE modelo.estado_registro = 1");
 
 			if ($resultado) {
 

@@ -57,6 +57,7 @@ $(document).ready(function(){
             datos.append('Nombre',$("#Nombre").val());
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
+            datos.append('estado_registro',1);
             enviaAjax(datos);
         }
     });
@@ -70,6 +71,7 @@ $(document).ready(function(){
             datos.append('Nombre',$("#Nombre").val());
             datos.append('Telefono',$("#Telefono").val());
             datos.append('direccion',$("#direccion").val());
+            datos.append('estado_registro',1);
             enviaAjax(datos);
         }
     });

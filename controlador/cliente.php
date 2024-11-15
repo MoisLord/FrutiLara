@@ -40,6 +40,7 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_nombre_apellido($_POST['nombre_apellido']);
 			  $o->set_telefono($_POST['telefono']);
 			  $o->set_direccion($_POST['direccion']);
+			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }

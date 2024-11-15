@@ -14,6 +14,7 @@ class proveedor extends datos{
 	private $Nombre;
 	private $Telefono;
 	private $direccion;
+	private $estado_registro;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 	//valores en ello, esto es  muy mal llamado geters y seters por si alguien se los pregunta
@@ -35,6 +36,10 @@ class proveedor extends datos{
 	function set_direccion($valor){
 		$this->direccion=$valor;
 	}
+	function set_estado_registro($valor)
+	{
+		$this->estado_registro = $valor;
+	}
 	
 	function get_document(){
 		return $this->document;
@@ -52,6 +57,10 @@ class proveedor extends datos{
 		return $this->direccion;
 	}
 	
+	function get_estado_registro()
+	{
+		return $this->estado_registro;
+	}
 	
 	
 	
@@ -78,6 +87,7 @@ class proveedor extends datos{
 						nombre,
 						telefono,
 						direccion
+						estado_registro
 						)
 						values(
 						:rif,
@@ -85,13 +95,15 @@ class proveedor extends datos{
 						:nombre,
 						:telefono,
 						:direccion
+						:estado_registro
 						)");
 					
 					$p->bindParam(':rif',$this->rif);	
 					$p->bindParam(':documento',$this->document);	//Esta funcion bindparam() vinculara con una variable como una referencia
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
-					$p->bindParam(':direccion',$this->direccion);	
+					$p->bindParam(':direccion',$this->direccion);
+					$p->bindParam(':estado_registro', $this->estado_registro);	
 					
 					$p->execute();
 					
@@ -124,7 +136,8 @@ class proveedor extends datos{
 						nombre = :nombre,
 						documento= :documento,
 						telefono = :telefono,
-						direccion = :direccion
+						direccion = :direccion,
+						estado_registro = :estado_registro
 						where
 						rif = :rif
 						");
@@ -133,7 +146,8 @@ class proveedor extends datos{
 					$p->bindParam(':documento',$this->document);
 					$p->bindParam(':nombre',$this->Nombre);
 					$p->bindParam(':telefono',$this->Telefono);	
-					$p->bindParam(':direccion',$this->direccion);	
+					$p->bindParam(':direccion',$this->direccion);
+					$p->bindParam(':estado_registro', $this->estado_registro);	
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -154,28 +168,51 @@ class proveedor extends datos{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		if($this->existe($this->rif)){
+		// if($this->existe($this->rif)){
+		// 	try {
+		// 			$p = $co->prepare("delete from proveedores 
+		// 			    where
+		// 				rif = :rif
+		// 				");
+		// 			$p->bindParam(':rif',$this->rif);		
+					
+					
+		// 			$p->execute();
+		// 			$r['resultado'] = 'eliminar';
+		// 	        $r['mensaje'] =  'El proveedor ha sido Eliminado';
+		// 	} catch(Exception $e) {
+		// 		$r['resultado'] = 'error';
+		// 	    $r['mensaje'] =  $e->getMessage();
+		// 	}
+		// }
+		// else{
+		// 	$r['resultado'] = 'eliminar';
+		// 	$r['mensaje'] =  'No existe el rif';
+		// }
+		// return $r;
+		if ($this->existe($this->rif)) {
 			try {
-					$p = $co->prepare("delete from proveedores 
-					    where
-						rif = :rif
-						");
-					$p->bindParam(':rif',$this->rif);		
-					
-					
-					$p->execute();
-					$r['resultado'] = 'eliminar';
-			        $r['mensaje'] =  'El proveedor ha sido Eliminado';
-			} catch(Exception $e) {
+				$p = $co->prepare("Update proveedores set 
+				estado_registro = 0
+				where
+				rif = :rif
+				");
+
+				$p->bindParam(':rif', $this->rif);
+				$p->execute();
+
+				$r['resultado'] = 'eliminar';
+				$r['mensaje'] =  'El proveedor ha sido Eliminado';
+			} catch (Exception $e) {
 				$r['resultado'] = 'error';
-			    $r['mensaje'] =  $e->getMessage();
+				$r['mensaje'] =  $e->getMessage();
 			}
-		}
-		else{
+		} else {
 			$r['resultado'] = 'eliminar';
 			$r['mensaje'] =  'No existe el rif';
 		}
 		return $r;
+
 	}
 	
 	
@@ -186,7 +223,7 @@ class proveedor extends datos{
 
 		try{
 			
-			$resultado = $co->query("select * from proveedores");
+			$resultado = $co->query("SELECT * from proveedores WHERE estado_registro = 1");
 			
 			if($resultado){
 				

@@ -44,8 +44,9 @@ $(document).ready(function(){
             datos.append('accion','incluir');
             datos.append('id_marca',$("#id_marca").val());
             datos.append('descripcion_marca',$("#descripcion_marca").val());
+            datos.append('estado_registro',1);
             enviaAjax(datos);
-            setInterval("location.reload()",3000);
+            
         }
     });
     $("#modificar").on("click",function(){
@@ -55,6 +56,7 @@ $(document).ready(function(){
             datos.append('accion','modificar');
             datos.append('id_marca',$("#id_marca").val());
             datos.append('descripcion_marca',$("#descripcion_marca").val());
+            datos.append('estado_registro',1);
             enviaAjax(datos);
             
             

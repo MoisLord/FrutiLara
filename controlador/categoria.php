@@ -37,6 +37,7 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_descripcion_categoria($_POST['descripcion_categoria']);
 			  $o->set_unidadMedNormal($_POST['unidadMedNormal']);
               $o->set_unidadMedAlt($_POST['unidadMedAlt']);
+			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
 			  }
