@@ -279,6 +279,13 @@ $(document).ready(function(){
                 }
     
                 // Aquí puedes agregar lógica para llenar el formulario con los datos del usuario seleccionado
+                const cedula = filaSeleccionada.cells[0].innerText; // Cédula está en la primera celda
+                const clave = filaSeleccionada.cells[2].innerText; // Contraseña está en la tercera celda
+                
+                // Asignar los valores a los campos del formulario
+                document.getElementById("cedula").value = cedula; // Llenar el campo de cédula
+                document.getElementById("tipo_usuario").value = tipoUsuario; // Llenar el campo de tipo de usuario
+                document.getElementById("clave").value = clave; // Llenar el campo de contraseña
             }
         });
     });
