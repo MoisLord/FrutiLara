@@ -270,22 +270,54 @@ $(document).ready(function(){
                 const tipoUsuario = filaSeleccionada.cells[1].innerText; // Suponiendo que la segunda celda tiene el tipo de usuario
                 
                 // Si el tipo de usuario es "SUPERUSUARIO", deshabilitar los botones
-                if (tipoUsuario === "Super Usuario") {
+                if (tipoUsuario === "SUPERUSUARIO") {
                     btnModificar.disabled = true;
                     btnEliminar.disabled = true;
                 } else {
                     btnModificar.disabled = false;
                     btnEliminar.disabled = false;
                 }
-    
-                // Aquí puedes agregar lógica para llenar el formulario con los datos del usuario seleccionado
-                const cedula = filaSeleccionada.cells[0].innerText; // Cédula está en la primera celda
-                const clave = filaSeleccionada.cells[2].innerText; // Contraseña está en la tercera celda
+
+                $("#modificar").on("click", function() {
+                    const cedula = $("#cedula").val();
+                    const tipoUsuario = $("#tipo_usuario").val(); // Obtén el tipo de usuario actual
                 
-                // Asignar los valores a los campos del formulario
-                document.getElementById("cedula").value = cedula; // Llenar el campo de cédula
-                document.getElementById("tipo_usuario").value = tipoUsuario; // Llenar el campo de tipo de usuario
-                document.getElementById("clave").value = clave; // Llenar el campo de contraseña
+                    // Verifica si el tipo de usuario es "Super Usuario"
+                    if (tipoUsuario === "SUPERUSUARIO") {
+                        muestraMensaje("No se puede modificar un Super Usuario.");
+                        return; // Salir de la función sin hacer nada
+                    }
+                
+                    if (validarenvio()) {
+                        var datos = new FormData();
+                        datos.append('accion', 'modificar');
+                        datos.append('cedula', cedula);
+                        datos.append('tipo_usuario', $("#tipo_usuario").val());
+                        datos.append('clave', $("#clave").val());
+                        enviaAjax(datos);
+                    }
+                });
+                
+                $("#eliminar").on("click", function() {
+                    const cedula = $("#cedula").val();
+                    const tipoUsuario = $("#tipo_usuario").val(); // Obtén el tipo de usuario actual
+                
+                    // Verifica si el tipo de usuario es "Super Usuario"
+                    if (tipoUsuario === "SUPERUSUARIO") {
+                        muestraMensaje("No se puede eliminar un Super Usuario.");
+                        return; // Salir de la función sin hacer nada
+                    }
+                
+                    if (validarkeyup(/^[0-9]{7,8}$/, $("#cedula"), $("#scedula"), "El formato debe ser Numerico con 7 a 8 digitos") == 0) {
+                        muestraMensaje("La cedula debe coincidir con el formato <br/>" + "00000000");
+                    } else {
+                        var datos = new FormData();
+                        datos.append('accion', 'eliminar');
+                        datos.append('cedula', cedula);
+                        enviaAjax(datos);
+                    }
+                });
+    
             }
         });
     });
