@@ -257,3 +257,28 @@ $(document).ready(function(){
         $("#clave").val("");
         
     }
+
+    // Aquí se hizo que el Super Usuario sea permanente
+    document.addEventListener('DOMContentLoaded', function() {
+        const tablaUsuario = document.getElementById('tablausuario');
+        const btnModificar = document.getElementById('modificar');
+        const btnEliminar = document.getElementById('eliminar');
+    
+        tablaUsuario.addEventListener('click', function(event) {
+            const filaSeleccionada = event.target.closest('tr');
+            if (filaSeleccionada) {
+                const tipoUsuario = filaSeleccionada.cells[1].innerText; // Suponiendo que la segunda celda tiene el tipo de usuario
+                
+                // Si el tipo de usuario es "SUPERUSUARIO", deshabilitar los botones
+                if (tipoUsuario === "Super Usuario") {
+                    btnModificar.disabled = true;
+                    btnEliminar.disabled = true;
+                } else {
+                    btnModificar.disabled = false;
+                    btnEliminar.disabled = false;
+                }
+    
+                // Aquí puedes agregar lógica para llenar el formulario con los datos del usuario seleccionado
+            }
+        });
+    });
