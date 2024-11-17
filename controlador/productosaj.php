@@ -42,6 +42,15 @@ require_once("modelo/".$pagina.".php");
 			$respuesta = $o->listadocategoria();
 			echo json_encode($respuesta);
 		 }
+		 elseif($accion=='consultaDelete'){
+			$respuesta = $o->consultadelete();
+			echo json_encode($respuesta);
+		 }
+
+		 elseif($accion=='restaurar'){
+			$o->set_codigo($_POST['codigo']);
+			 echo  json_encode($o->restaurar());
+		 }
 		  else{
 			  $o->set_codigo($_POST['codigo']);
 			  $o->set_nombre($_POST['nombre']);

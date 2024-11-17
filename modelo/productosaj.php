@@ -248,6 +248,33 @@ class productosaj extends datos
 		return $r;
 	}
 
+	function restaurar(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array();
+		if ($this->existe($this->codigo)) {
+			try {
+				$p = $co->prepare("Update producto set 
+				estado_registro = 1
+				where
+				codigo = :codigo
+				");
+
+				$p->bindParam(':codigo', $this->codigo);
+				$p->execute();
+
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'Producto restaurado';
+			} catch (Exception $e) {
+				$r['resultado'] = 'error';
+				$r['mensaje'] =  $e->getMessage();
+			}
+		} else {
+			$r['resultado'] = 'restaurar';
+			$r['mensaje'] =  'No existe el Codigo del Producto';
+		}
+		return $r;
+	}
 
 	function consultar()
 	{
@@ -302,6 +329,56 @@ class productosaj extends datos
 		}
 	}
 
+	function consultadelete()
+	{
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array(); // en este arreglo
+		// se enviara la respuesta a la solicitud y el
+		// contenido de la respuesta
+		try {
+			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto.id_modelo, categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 0");
+
+			if ($resultado) {
+
+				$respuesta = '';
+				foreach ($resultado as $r) {
+					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['codigo'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['nombre'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['minimo'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['maximo'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td style='display:none;'>";
+					$respuesta = $respuesta . $r['id_modelo'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['descripcion_modelo'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td style='display:none;'>";
+					$respuesta = $respuesta . $r['id_categoria'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['descripcion_categoria'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "</tr>";
+				}
+			}
+			$r['resultado'] = 'consultaDelete';
+			$r['mensaje'] =  $respuesta;
+		} catch (Exception $e) {
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
+		}
+		return $r;
+	}
 
 	function listadomodelo()
 	{

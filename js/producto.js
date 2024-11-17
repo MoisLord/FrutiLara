@@ -10,6 +10,7 @@ let valorModelo;
       consultar();
       carga_modelo();
       carga_categoria();
+      
 
       $("#id_modelo").on("keyup",function(){
         var marcador = $(this).val();
@@ -39,6 +40,20 @@ let valorModelo;
         }
       });
 
+      carga_producto();
+      $("#codigo").on("keyup",function(){
+        var codigo = $(this).val();
+        var encontro = false;
+        $("#consultaDelete tr").each(function(){
+            if(codigo == $(this).find("td:eq(1)").text()){
+                coloca($(this));
+                encontro = true;
+            } 
+        });
+        if(!encontro){
+            $("#datosproducto").html("");
+        }
+    });	
       //VALIDACION DE DATOS  
      
       $("#codigo").on("keypress", function(e) {
@@ -113,7 +128,20 @@ let valorModelo;
         enviaAjax(datos);
       }
       
-      
+      function carga_producto(){
+        // para cargar la lista de clientes
+        // utilizaremos una peticion ajax
+        // por lo que usaremos un objeto llamado 
+        // FormData, que es similar al <form> de html
+        // es decir colocaremos en ese FormData, los
+        // elementos que se desean enviar al servidor
+        
+        var datos = new FormData();
+        //a ese datos le añadimos la informacion a enviar
+        datos.append('accion','consultaDelete'); //le digo que me muestre un listado de aulas
+        //ahora se envia el formdata por ajax
+        enviaAjax(datos);
+      }
       
       
       //CONTROL DE BOTONES
@@ -194,6 +222,9 @@ let valorModelo;
         $("#modalCategoria").modal("show");
       });	
       
+      $("#consultadeDelete").on("click",function(){
+        $("#modalProductos").modal("show");
+      });	
 
       //FIN DE CONTROL DE BOTONES	
       
@@ -369,8 +400,9 @@ return false;
                   
                  }
                 else if (lee.resultado == "incluir" || 
-                lee.resultado == "modificar" || 
-                lee.resultado == "eliminar") {
+                  lee.resultado == "modificar" || 
+                  lee.resultado == "eliminar" ||
+                  lee.resultado == "restaurar"){
                    muestraMensaje(lee.mensaje);
                    limpia();
                    consultar();
@@ -382,6 +414,10 @@ return false;
                 else if(lee.resultado=='listadoCategoria'){
                 
                   $('#listadoCategoria').html(lee.mensaje);
+                }
+                else if(lee.resultado=='consultaDelete'){
+                
+                  $('#consultaDelete').html(lee.mensaje);
                 }
                 else if (lee.resultado == "error") {
                    muestraMensaje(lee.mensaje);
