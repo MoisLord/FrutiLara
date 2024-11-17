@@ -32,6 +32,15 @@ require_once("modelo/".$pagina.".php");
 			 $o->set_codigo_categoria($_POST['codigo_categoria']);
 			 echo  json_encode($o->eliminar());
 		  }
+		  elseif($accion=='consultaDelete'){
+			$respuesta = $o->consultadelete();
+			echo json_encode($respuesta);
+		 }
+
+		 elseif($accion=='restaurar'){
+			$o->set_codigo_categoria($_POST['codigo_categoria']);
+			 echo  json_encode($o->restaurar());
+		 }
 		  else{		  
 			  $o->set_codigo_categoria($_POST['codigo_categoria']);
 			  $o->set_descripcion_categoria($_POST['descripcion_categoria']);

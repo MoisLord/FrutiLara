@@ -39,6 +39,15 @@ require_once("modelo/".$pagina.".php");
 			$respuesta = $o->listadomarca();
 			echo json_encode($respuesta);
 		 }
+		 elseif($accion=='consultaDelete'){
+			$respuesta = $o->consultadelete();
+			echo json_encode($respuesta);
+		 }
+
+		 elseif($accion=='restaurar'){
+			$o->set_id_modelo($_POST['id_modelo']);
+			 echo  json_encode($o->restaurar());
+		 }
 		  else{		  
 			  $o->set_id_modelo($_POST['id_modelo']);
 			  $o->set_descripcion_modelo($_POST['descripcion_modelo']);

@@ -7,29 +7,44 @@ function consultar() {
 let valor;
 $(document).ready(function(){
 	consultar();
-//VALIDACION DE DATOS
 	carga_marca();
+	
+
+	$("#id_marca").on("keyup",function(){
+		var codigo = $(this).val();
+		var encontro = false;
+		$("#listadoMarca tr").each(function(){
+			if(codigo == $(this).find("td:eq(1)").text()){
+				colocamarca($(this));
+				encontro = true;
+			} 
+		});
+		if(!encontro){
+			$("#datosmarca").html("");
+		}
+	});	
+	
+	carga_modelo();
+
+    $("#id_modelo").on("keyup",function(){
+        var codigo = $(this).val();
+        var encontro = false;
+        $("#consultaDelete tr").each(function(){
+            if(codigo == $(this).find("td:eq(1)").text()){
+                coloca($(this));
+                encontro = true;
+            } 
+        });
+        if(!encontro){
+            $("#datosmodelo").html("");
+        }
+    });	
 
 
-$("#listadodeMarca").on("click",function(){
-	$("#modalMarca").modal("show");
-});	
+
+//VALIDACION DE DATOS
 
 
-
-$("#id_marca").on("keyup",function(){
-	var codigo = $(this).val();
-	var encontro = false;
-	$("#listadoMarca tr").each(function(){
-		if(codigo == $(this).find("td:eq(1)").text()){
-			colocamarca($(this));
-			encontro = true;
-		} 
-	});
-	if(!encontro){
-		$("#datosmarca").html("");
-	}
-});	
 	$("#id_modelo").on("keypress",function(e){
 		validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
 	});
@@ -60,18 +75,21 @@ function carga_marca(){
 	
 	
 	var datos = new FormData();
-	// let datos1 = {
-	// 	codigo_modelo: "",
-	// 	modelo: "",
-	// 	id_marca: ""
-	// }
 	//a ese datos le añadimos la informacion a enviar
 	datos.append('accion','listadoMarca'); //le digo que me muestre un listado de aulas
 	//ahora se envia el formdata por ajax
 	enviaAjax(datos);
 }
 
-
+function carga_modelo(){
+	
+	
+	var datos = new FormData();
+	//a ese datos le añadimos la informacion a enviar
+	datos.append('accion','consultaDelete'); //le digo que me muestre un listado de aulas
+	//ahora se envia el formdata por ajax
+	enviaAjax(datos);
+}
 
 //CONTROL DE BOTONES
 
@@ -120,6 +138,32 @@ $("#eliminar").on("click",function(){
 	
 });
 
+$("#restaurar").on("click",function(){
+        
+	if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/,$("#id_modelo"),
+		$("#sid_modelo"),"El formato debe ser 9999999 o 12345678")==0){
+	    muestraMensaje("El codigo del modelo debe coincidir con el formato <br/>"+ 
+						"99999999 o aT3oQ678");	
+		
+	}
+	else{	
+	    
+		var datos = new FormData();
+		datos.append('accion','restaurar');
+		datos.append('id_modelo',$("#id_modelo").val());
+		enviaAjax(datos);
+		
+	}
+	
+});
+
+$("#listadodeMarca").on("click",function(){
+	$("#modalMarca").modal("show");
+});	
+
+$("#consultadeDelete").on("click",function(){
+	$("#modalModelo").modal("show");
+});	
 
 //FIN DE CONTROL DE BOTONES	
 
@@ -283,7 +327,8 @@ function enviaAjax(datos){
 					 }
 					else if (lee.resultado == "incluir" || 
 					lee.resultado == "modificar" || 
-					lee.resultado == "eliminar") {
+					lee.resultado == "eliminar" ||
+					lee.resultado == "restaurar") {
 					   muestraMensaje(lee.mensaje);
 					   limpia();
 					   consultar();
@@ -291,6 +336,10 @@ function enviaAjax(datos){
 					else if(lee.resultado=='listadoMarca'){
 					
 						$('#listadoMarca').html(lee.mensaje);
+					}
+					else if(lee.resultado=='consultaDelete'){
+					
+						$('#consultaDelete').html(lee.mensaje);
 					}
 					else if (lee.resultado == "error") {
 					   muestraMensaje(lee.mensaje);

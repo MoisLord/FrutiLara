@@ -195,6 +195,34 @@ class modelo extends datos
 		return $r;
 	}
 
+	function restaurar(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array();
+		if ($this->existe($this->id_modelo)) {
+			try {
+				$p = $co->prepare("Update modelo set 
+				estado_registro = 1
+				where
+				codigo_modelo = :codigo_modelo
+				");
+
+				$p->bindParam(':codigo_modelo', $this->id_modelo);
+				$p->execute();
+
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'Modelo restaurado';
+			} catch (Exception $e) {
+				$r['resultado'] = 'error';
+				$r['mensaje'] =  $e->getMessage();
+			}
+		} else {
+			$r['resultado'] = 'restaurar';
+			$r['mensaje'] =  'No existe el Codigo del Modelo';
+		}
+		return $r;
+	}
+
 
 	function consultar()
 	{
@@ -237,6 +265,45 @@ class modelo extends datos
 		} catch (Exception $e) {
 			return $e->getMessage();
 		}
+	}
+
+	function consultadelete()
+	{
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array(); // en este arreglo
+		// se enviara la respuesta a la solicitud y el
+		// contenido de la respuesta
+		try {
+			$resultado = $co->query("SELECT codigo_modelo, descripcion_modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca WHERE modelo.estado_registro = 0");
+
+			if ($resultado) {
+
+				$respuesta = '';
+				foreach ($resultado as $r) {
+					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['codigo_modelo'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['descripcion_modelo'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td style='display:none;'>";
+					$respuesta = $respuesta . $r['id_marca'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['descripcion_marca'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "</tr>";
+				}
+			}
+			$r['resultado'] = 'consultaDelete';
+			$r['mensaje'] =  $respuesta;
+		} catch (Exception $e) {
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
+		}
+		return $r;
 	}
 
 	function listadomarca()
