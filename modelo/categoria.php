@@ -205,6 +205,34 @@ class categoria extends datos{
 		}
 		return $r;
 	}
+	
+	function restaurar(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array();
+		if ($this->existe($this->codigo_categoria)) {
+			try {
+				$p = $co->prepare("Update categoria set 
+				estado_registro = 1
+				where
+				codigo_categoria = :codigo_categoria
+				");
+
+				$p->bindParam(':codigo_categoria', $this->codigo_categoria);
+				$p->execute();
+
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'Categoria restaurada';
+			} catch (Exception $e) {
+				$r['resultado'] = 'error';
+				$r['mensaje'] =  $e->getMessage();
+			}
+		} else {
+			$r['resultado'] = 'restaurar';
+			$r['mensaje'] =  'No existe el Codigo de la Categoria';
+		}
+		return $r;
+	}
 	//Finalización del sector del metodo "eliminar"
 	//Comienzo del sector del metodo "consultar"
 	function consultar(){
@@ -254,6 +282,48 @@ class categoria extends datos{
 		}
 	}
 	//Finalización del sector del metodo "consultar"
+	function consultadelete()
+	{
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array(); // en este arreglo
+		// se enviara la respuesta a la solicitud y el
+		// contenido de la respuesta
+		try {
+			$resultado = $co->query("SELECT * from categoria WHERE estado_registro = 0");
+			
+			if($resultado){
+				
+				$respuesta = '';
+				foreach($resultado as $r){
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
+						$respuesta = $respuesta."<td style='display:none;'>";
+							$respuesta = $respuesta.$r['id_categoria'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['codigo_categoria'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['descripcion_categoria'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['unidadMedNormal'];
+						$respuesta = $respuesta."</td>";
+                        $respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['unidadMedAlt'];
+						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
+				}
+			}
+			$r['resultado'] = 'consultaDelete';
+			$r['mensaje'] =  $respuesta;
+		} catch (Exception $e) {
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
+		}
+		return $r;
+	}
+	
 	//Creación del sector del metodo "existe"
 	private function existe($codigo_categoria){
 		$co = $this->conecta();

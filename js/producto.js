@@ -8,13 +8,9 @@ let valorModelo;
     let valorCategoria;
     $(document).ready(function(){
       consultar();
-      //VALIDACION DE DATOS
-      
       carga_modelo();
-      $("#listadodeModelo").on("click",function(){
-        $("#modalModelo").modal("show");
-      });	
-      
+      carga_categoria();
+
       $("#id_modelo").on("keyup",function(){
         var marcador = $(this).val();
         var encontro = false;
@@ -28,13 +24,7 @@ let valorModelo;
           $("#datosmodelo").html("");
         }
       });	
-	
-        
-      carga_categoria();
-      $("#listadodeCategoria").on("click",function(){
-        $("#modalCategoria").modal("show");
-      });	
-      
+
       $("#id_categoria").on("keyup",function(){
         var categorizador = $(this).val();
         var encontro = false;
@@ -49,6 +39,8 @@ let valorModelo;
         }
       });
 
+      //VALIDACION DE DATOS  
+     
       $("#codigo").on("keypress", function(e) {
         validarkeypress(/^[0-9]+$/, e);
     });
@@ -176,7 +168,33 @@ let valorModelo;
         }
         
       });
+
+      $("#restaurar").on("click",function(){
+        
+        if (validarkeyup(/^[0-9]{1,50}$/, $("#codigo"), $("#scodigo"), "El Código debe ser Numerico") == 0) {
+          muestraMensaje("El Código debe ser Numerico");
+          
+        }
+        else{	
+            
+          var datos = new FormData();
+          datos.append('accion','restaurar');
+          datos.append('codigo',$("#codigo").val());
+          enviaAjax(datos);
+          
+        }
+        
+      });
+
+      $("#listadodeModelo").on("click",function(){
+        $("#modalModelo").modal("show");
+      });	
       
+      $("#listadodeCategoria").on("click",function(){
+        $("#modalCategoria").modal("show");
+      });	
+      
+
       //FIN DE CONTROL DE BOTONES	
       
       });

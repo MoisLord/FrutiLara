@@ -6,6 +6,21 @@ function consultar() {
 
 $(document).ready(function(){
     consultar();
+    carga_categoria()
+
+    $("#codigo_categoria").on("keyup",function(){
+        var codigo = $(this).val();
+        var encontro = false;
+        $("#consultaDelete tr").each(function(){
+            if(codigo == $(this).find("td:eq(1)").text()){
+                coloca($(this));
+                encontro = true;
+            } 
+        });
+        if(!encontro){
+            $("#datoscategoria").html("");
+        }
+    });	
     //Finalización del sector para la validación de los datos	
         $("#codigo_categoria").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9-\b]*$/,e);
@@ -32,7 +47,15 @@ $(document).ready(function(){
         
     //Finalización del sector para la validación de los datos
     
-    
+    function carga_categoria(){
+
+        
+        var datos = new FormData();
+        //a ese datos le añadimos la informacion a enviar
+        datos.append('accion','consultaDelete'); //le digo que me muestre un listado de aulas
+        //ahora se envia el formdata por ajax
+        enviaAjax(datos);
+      }
     
     //Comienzo del sector para el control de botones
     
@@ -82,12 +105,30 @@ $(document).ready(function(){
         }
         
     });
-    
-    $("#consultar").on("click",function(){
-        var datos = new FormData();
-        datos.append('accion','consultar');
-        enviaAjax(datos);
+
+    $("#restaurar").on("click",function(){
+        
+        if(validarkeyup(/^[A-Za-z0-9]{7,8}$/,$("#codigo_categoria"),
+            $("#scodigo_categoria"),"El formato debe ser Alfanumerico")==0){
+            muestraMensaje("El codigo de la categoria debe coincidir con el formato <br/>"+ 
+                            "12345678 o hoortzas o algo1234");	
+            
+        }
+        else{	
+            
+            var datos = new FormData();
+            datos.append('accion','restaurar');
+            datos.append('codigo_categoria',$("#codigo_categoria").val());
+            enviaAjax(datos);
+            
+        }
+        
     });
+    
+
+    $("#consultadeDelete").on("click",function(){
+        $("#modalCategoria").modal("show");
+    });	
     //Finalización del sector para el control de botones	
     
     });
@@ -223,11 +264,16 @@ $(document).ready(function(){
                            
                         }
                         else if (lee.resultado == "incluir" || 
-                        lee.resultado == "modificar" || 
-                        lee.resultado == "eliminar") {
+                            lee.resultado == "eliminar" ||
+                            lee.resultado == "restaurar" ||
+                            lee.resultado == "consultadeDelete") {
                            muestraMensaje(lee.mensaje);
                            limpia();
                            consultar();
+                        }
+                        else if(lee.resultado=='consultaDelete'){
+					
+                            $('#consultaDelete').html(lee.mensaje);
                         }
                         else if (lee.resultado == "error") {
                            muestraMensaje(lee.mensaje);

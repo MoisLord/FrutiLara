@@ -72,7 +72,7 @@ CATEGORIAS DE PRODUCTOS
 
 		<!-- Incio de la sección de contenedor de los botones -->
 		<div class="row mt-3 justify-content-left">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
 			
@@ -84,12 +84,18 @@ CATEGORIAS DE PRODUCTOS
 			</div>
 			</div>
 			<div class="row mt-3 justify-content-left">
-			<div class="col-md-2">	
+			<div class="col-md-3">	
 				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 			</div>
-			</div><!-- fin de la sección de contenedor de los botones -->
-
-	</form>
+			<div class="col-md-4">	
+				   <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
+			</div>
+			<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
+			</div>
+			</div>
+	
+	</form><!-- fin de la sección de contenedor de los botones -->
 
 	<div class="col-8 p-4">
 	<div class="container">
@@ -113,8 +119,37 @@ CATEGORIAS DE PRODUCTOS
 		
     </div>
 </div>
-
 </div> <!-- fin de container -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalCategoria">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">CATEGORIAS ELIMINADAS</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content">
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+		  <th style="display: none;">ID de categoria</th>
+			<th>Codigo de categoria</th>
+			<th>Descripción de la categoria</th>
+			<th>Unidad de medida común</th>	
+			<th>Unidad de Medida Alternativa</th>
+		  </tr>
+		</thead>
+		<tbody id="consultaDelete">
+		 
+		</tbody>
+		</table>
+    </div>
+	<div class="modal-footer bg-light">
+	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
 <script type="text/javascript" src="js/categoria.js"></script>
 
 </body>

@@ -71,10 +71,7 @@ MARCAS DE PRODUCTOS
 	</div>	
 	</form>
 	<!--Fin de los botones del CRUD-->
-
-
-
-
+	
 	<div class="col-8 p-4">
 	<div class="container">
 	<h5 class="modal-title text-center text-success">MARCAS REGISTRADAS</h5>
