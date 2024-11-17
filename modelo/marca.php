@@ -193,6 +193,33 @@ class marca extends datos{
 		return $r;
 	}
 	
+	function restaurar(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array();
+		if ($this->existe($this->id_marca)) {
+			try {
+				$p = $co->prepare("Update marca set 
+				estado_registro = 1
+				where
+				codigo_marca = :codigo_marca
+				");
+
+				$p->bindParam(':codigo_marca', $this->id_marca);
+				$p->execute();
+
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'Marca Restaurada';
+			} catch (Exception $e) {
+				$r['resultado'] = 'error';
+				$r['mensaje'] =  $e->getMessage();
+			}
+		} else {
+			$r['resultado'] = 'restaurar';
+			$r['mensaje'] =  'No existe el Codigo de la Marca';
+		}
+		return $r;
+	}
 	
 	function consultar(){
 		$co = $this->conecta();
@@ -233,6 +260,36 @@ class marca extends datos{
 		}
 	}
 	
+	function consultadelete()
+	{
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array(); // en este arreglo
+		// se enviara la respuesta a la solicitud y el
+		// contenido de la respuesta
+		try {
+			$resultado = $co->query("SELECT * from marca WHERE marca.estado_registro = 0");
+			$respuesta = '';
+			if ($resultado) {
+				foreach ($resultado as $r) {
+					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['codigo_marca'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['descripcion_marca'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "</tr>";
+				}
+			}
+			$r['resultado'] = 'consultaDelete';
+			$r['mensaje'] =  $respuesta;
+		} catch (Exception $e) {
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
+		}
+		return $r;
+	}
 	
 	private function existe($id_marca){
 		$co = $this->conecta();

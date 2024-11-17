@@ -80,11 +80,11 @@ $(document).ready(function(){
         
     });
     
-    $("#consultar").on("click",function(){
-        var datos = new FormData();
-        datos.append('accion','consultar');
-        enviaAjax(datos);
-    });
+    // $("#consultar").on("click",function(){
+    //     var datos = new FormData();
+    //     datos.append('accion','consultar');
+    //     enviaAjax(datos);
+    // });
     //FIN DE CONTROL DE BOTONES	
     
     });

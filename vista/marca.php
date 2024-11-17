@@ -58,8 +58,14 @@ MARCAS DE PRODUCTOS
 			</div>
 			</div>
 			<div class="row mt-3 justify-content-left">
-			<div class="col-md-2">	
+			<div class="col-md-3">	
 				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
+			</div>
+			<div class="col-md-4">	
+				   <button type="button" class="btn btn-success" id="consultadeDelete" >Consultas eliminadas</button>
+			</div>
+			<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
 			</div>
 			</div>
 	</div>	
@@ -93,7 +99,7 @@ MARCAS DE PRODUCTOS
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de Marca</h5>
+        <h5 class="modal-title">MARCAS ELIMINADAS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -102,12 +108,11 @@ MARCAS DE PRODUCTOS
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-			<th>Codigos de Marcas</th>
+			<th>Codigo de Marcas</th>
 			<th>Marca</th>
-			
 		  </tr>
 		</thead>
-		<tbody id="consultaMarca">
+		<tbody id="consultaDelete">
 		
 		</tbody>
 		</table>

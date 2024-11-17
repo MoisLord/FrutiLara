@@ -43,6 +43,16 @@ require_once("modelo/".$pagina.".php");
 			 $o->set_id_marca($_POST['id_marca']);
 			 echo  json_encode($o->eliminar());
 		  }
+		  
+		  elseif($accion=='consultaDelete'){
+			$respuesta = $o->consultadelete();
+			echo json_encode($respuesta);
+		 }
+
+		 elseif($accion=='restaurar'){
+			$o->set_id_marca($_POST['id_marca']);
+			 echo  json_encode($o->restaurar());
+		 }
 		  else{		  
 			  $o->set_id_marca($_POST['id_marca']);
 			  $o->set_descripcion_marca($_POST['descripcion_marca']);

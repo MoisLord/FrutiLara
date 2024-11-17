@@ -6,6 +6,22 @@ function consultar() {
 
 $(document).ready(function(){
     consultar();
+
+    carga_marca();
+
+    $("#id_marca").on("keyup",function(){
+        var codigo = $(this).val();
+        var encontro = false;
+        $("#consultaDelete tr").each(function(){
+            if(codigo == $(this).find("td:eq(1)").text()){
+                coloca($(this));
+                encontro = true;
+            } 
+        });
+        if(!encontro){
+            $("#datosmarca").html("");
+        }
+    });	
     //VALIDACION DE DATOS	
         $("#id_marca").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]*$/,e);
@@ -33,7 +49,20 @@ $(document).ready(function(){
         
         
     //FIN DE VALIDACION DE DATOS
-    
+    function carga_marca(){
+	
+	
+        var datos = new FormData();
+        // let datos1 = {
+        // 	codigo_modelo: "",
+        // 	modelo: "",
+        // 	id_marca: ""
+        // }
+        //a ese datos le añadimos la informacion a enviar
+        datos.append('accion','consultaDelete'); //le digo que me muestre un listado de aulas
+        //ahora se envia el formdata por ajax
+        enviaAjax(datos);
+    }
     
     
     //CONTROL DE BOTONES
@@ -56,7 +85,7 @@ $(document).ready(function(){
             datos.append('accion','modificar');
             datos.append('id_marca',$("#id_marca").val());
             datos.append('descripcion_marca',$("#descripcion_marca").val());
-            
+            datos.append('estado_registro',1);
             enviaAjax(datos);
             
             
@@ -81,12 +110,48 @@ $(document).ready(function(){
         }
         
     });
-    
-    
-    //FIN DE CONTROL DE BOTONES	
-    
+
+    $("#restaurar").on("click",function(){
+        
+        if(validarkeyup(/^[A-Za-z0-9,#\b\s\u00f1\u00d1\u00E0-\u00FC-]{7,20}$/,$("#id_marca"),
+            $("#sid_marca"),"El formato debe ser alfanumerico con 7 a 8 digitos")==0){
+            muestraMensaje("El codigo de la marca debe coincidir con el formato <br/>"+ 
+                            "99999999 o 123algo");	
+            
+        }
+        else{	
+            
+            var datos = new FormData();
+            datos.append('accion','restaurar');
+            datos.append('id_marca',$("#id_marca").val());
+            enviaAjax(datos);
+            
+        }
+        
     });
     
+    $("#consultadeDelete").on("click",function(){
+        $("#modalMarca").modal("show");
+    });	
+    
+    
+    });
+
+    //FIN DE CONTROL DE BOTONES	
+
+    // function pone(pos,accion){
+	
+    //     linea=$(pos).closest('tr');
+    
+    
+    //     if(accion==0){
+    //         $("#accion").text("RESTAURAR");
+    //     }
+    //     $("#id_marca").val($(linea).find("td:eq(1)").text());
+    //     $("#descripcion_marca").val($(linea).find("td:eq(2)").text());
+        
+    //     $("#modal1").modal("show");
+    // }
     
     //funcion para enlazar al DataTablet
     function destruyeDT(){
@@ -208,8 +273,10 @@ $(document).ready(function(){
                         if(lee.resultado == "consultar"){
                            destruyeDT();
                            $("#resultadoconsulta").html(lee.mensaje);
+                           
                            crearDT();
                            $("#modal1").modal("show");
+                           
                         }
                         else if (lee.resultado == "encontro") {
                            $("#descripcion_marca").val(lee.mensaje[0][2]);
@@ -221,6 +288,11 @@ $(document).ready(function(){
                            muestraMensaje(lee.mensaje);
                            limpia();
                            consultar();
+                           
+                        }
+                        else if(lee.resultado=='consultaDelete'){
+					
+                            $('#consultaDelete').html(lee.mensaje);
                         }
                         else if (lee.resultado == "error") {
                            muestraMensaje(lee.mensaje);

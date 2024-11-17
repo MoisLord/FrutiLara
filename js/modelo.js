@@ -57,12 +57,7 @@ $("#id_marca").on("keyup",function(){
 	
 //FIN DE VALIDACION DE DATOS
 function carga_marca(){
-	// para cargar la lista de clientes
-	// utilizaremos una peticion ajax
-	// por lo que usaremos un objeto llamado 
-	// FormData, que es similar al <form> de html
-	// es decir colocaremos en ese FormData, los
-	// elementos que se desean enviar al servidor
+	
 	
 	var datos = new FormData();
 	// let datos1 = {
