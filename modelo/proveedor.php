@@ -26,7 +26,7 @@ class proveedor extends datos{
 	function set_rif($valor){
 		$this->rif = $valor; 
 	}
-	
+	sda
 	function set_Nombre($valor){
 		$this->Nombre = $valor;
 	}
