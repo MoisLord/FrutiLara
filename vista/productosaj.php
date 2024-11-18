@@ -59,7 +59,7 @@ PRODUCTOS
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		<button type="button" class="btn btn-success" id="listadodeModelo" name="listadodeModelo">LISTADO DE MODELO</button>
-		<input class="form-control" type="text" id="id_modelo" name="id_modelo"/>
+		<input class="form-control" type="text" id="id_modelo" name="id_modelo"disabled/>
 		<span>*Ayuda: Presione el boton "LISTADO DE MODELO" para seleccionar el modelo*</span>
 		</div>
 		</div>
@@ -72,7 +72,7 @@ PRODUCTOS
 		<div class="row mb-4">
 		<div class="input-group mb-3">
 		  <button type="button" class="btn btn-success" id="listadodeCategoria" name="listadodeCategoria">LISTADO DE CATEGORIAS</button>
-		  <input class="form-control" type="text" id="id_categoria" name="id_categoria"/>
+		  <input class="form-control" type="text" id="id_categoria" name="id_categoria" disabled/>
 		  <span>*Ayuda: Presione el boton "LISTADO DE CATEGORIAS" para seleccionar la categoria*</span>
 		</div>
 		</div>
