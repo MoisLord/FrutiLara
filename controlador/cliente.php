@@ -35,6 +35,17 @@ require_once("modelo/".$pagina.".php");
 			 $o->set_cedula($_POST['cedula']);
 			 echo  json_encode($o->eliminar());
 		  }
+
+		  elseif($accion=='consultaDelete'){
+			$respuesta = $o->consultadelete();
+			echo json_encode($respuesta);
+		 }
+
+		 elseif($accion=='restaurar'){
+			$o->set_codigo_categoria($_POST['codigo_categoria']);
+			 echo  json_encode($o->restaurar());
+		 }
+		 
 		  else{		  
 			  $o->set_cedula($_POST['cedula']);
 			  $o->set_nombre_apellido($_POST['nombre_apellido']);

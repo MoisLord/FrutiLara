@@ -66,7 +66,7 @@ PANTALLA DE PROVEEDORES
 		</div>
 
 		<div class="row mt-3 justify-content-left">
-			<div class="col-md-3">
+		<div class="col-md-4">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
 			
@@ -78,11 +78,17 @@ PANTALLA DE PROVEEDORES
 			</div>
 			</div>
 			<div class="row mt-3 justify-content-left">
-			<div class="col-md-2">	
+			<div class="col-md-3">	
 				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 			</div>
+			<div class="col-md-4">	
+				   <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
 			</div>
-	</div>	
+			<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
+			</div>
+			</div>
+	</div>		
 	</form>
 
 
@@ -114,6 +120,39 @@ PANTALLA DE PROVEEDORES
 </div>
 
 </div> <!-- fin de container -->
+
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalProveedor">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">Listado de proveedores</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content">
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+		   
+		  	<th>Documento Legal</th>
+			<th>Rif</th>
+			<th>Nombre del proveedor</th>
+			<th>Telefonon</th>	
+			<th>Direccion</th>
+		  </tr>
+		</thead>
+		<tbody id="consultaDelete">
+		  
+		</tbody>
+		</table>
+    </div>
+	<div class="modal-footer bg-light">
+	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript" src="js/proveedor.js"></script>
 
 </body>

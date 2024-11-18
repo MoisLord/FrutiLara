@@ -264,6 +264,7 @@ $(document).ready(function(){
                            
                         }
                         else if (lee.resultado == "incluir" || 
+                            lee.resultado == "modificar" ||
                             lee.resultado == "eliminar" ||
                             lee.resultado == "restaurar" ||
                             lee.resultado == "consultadeDelete") {

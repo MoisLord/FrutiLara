@@ -43,6 +43,16 @@ require_once("modelo/".$pagina.".php");
 			 $o->set_rif($_POST['rif']);
 			 echo  json_encode($o->eliminar());
 		  }
+
+		  elseif($accion=='consultaDelete'){
+			$respuesta = $o->consultadelete();
+			echo json_encode($respuesta);
+		 }
+
+		 elseif($accion=='restaurar'){
+			$o->set_rif($_POST['rif']);
+			 echo  json_encode($o->restaurar());
+		 }
 		  else{		  
 			  $o->set_rif($_POST['rif']);
 			  $o->set_document($_POST['documento']);

@@ -86,7 +86,7 @@ class proveedor extends datos{
 						documento,
 						nombre,
 						telefono,
-						direccion
+						direccion,
 						estado_registro
 						)
 						values(
@@ -94,7 +94,7 @@ class proveedor extends datos{
 						:documento,
 						:nombre,
 						:telefono,
-						:direccion
+						:direccion,
 						:estado_registro
 						)");
 					
@@ -215,6 +215,34 @@ class proveedor extends datos{
 
 	}
 	
+	function restaurar(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array();
+		if ($this->existe($this->rif)) {
+			try {
+				$p = $co->prepare("Update proveedores set 
+				estado_registro = 1
+				where
+				rif = :rif
+				");
+
+				$p->bindParam(':rif', $this->rif);
+				$p->execute();
+
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'El proveedor ha sido Restaurado';
+			} catch (Exception $e) {
+				$r['resultado'] = 'error';
+				$r['mensaje'] =  $e->getMessage();
+			}
+		} else {
+			$r['resultado'] = 'restaurar';
+			$r['mensaje'] =  'No existe el rif';
+		}
+		return $r;
+
+	}
 	
 	function consultar(){
 		$co = $this->conecta();
@@ -266,6 +294,47 @@ class proveedor extends datos{
 		
 	}
 	
+	function consultadelete()
+	{
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array(); // en este arreglo
+		// se enviara la respuesta a la solicitud y el
+		// contenido de la respuesta
+		try {
+			$resultado = $co->query("SELECT * from proveedores WHERE estado_registro = 0");
+			
+			if($resultado){
+				
+				$respuesta = '';
+				foreach($resultado as $r){
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['documento'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['rif'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['nombre'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['telefono'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['direccion'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."</tr>";
+				}
+			}
+			$r['resultado'] = 'consultaDelete';
+			$r['mensaje'] =  $respuesta;
+		} catch (Exception $e) {
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
+		}
+		return $r;
+	}
 	
 	private function existe($rif){
 		/*Esta funcion hara que la variable rif verifique que exista */

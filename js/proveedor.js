@@ -6,6 +6,21 @@ function consultar() {
 
 $(document).ready(function(){
     consultar();
+    carga_proveedor()
+    $("#rif").on("keyup",function(){
+        var codigo = $(this).val();
+        var encontro = false;
+        $("#consultaDelete tr").each(function(){
+            if(codigo == $(this).find("td:eq(1)").text()){
+                coloca($(this));
+                encontro = true;
+            } 
+        });
+        if(!encontro){
+            $("#datosproveedor").html("");
+        }
+    });	
+
     //VALIDACION DE DATOS	
         $("#rif").on("keypress",function(e){
             validarkeypress(/^[0-9-\b]*$/,e);
@@ -46,6 +61,20 @@ $(document).ready(function(){
         
     //FIN DE VALIDACION DE DATOS
     
+    function carga_proveedor(){
+        // para cargar la lista de clientes
+        // utilizaremos una peticion ajax
+        // por lo que usaremos un objeto llamado 
+        // FormData, que es similar al <form> de html
+        // es decir colocaremos en ese FormData, los
+        // elementos que se desean enviar al servidor
+        
+        var datos = new FormData();
+        //a ese datos le añadimos la informacion a enviar
+        datos.append('accion','consultaDelete'); //le digo que me muestre un listado de aulas
+        //ahora se envia el formdata por ajax
+        enviaAjax(datos);
+      }
     //CONTROL DE BOTONES
     
     $("#incluir").on("click",function(){
@@ -93,12 +122,35 @@ $(document).ready(function(){
         }
         
     });
-    
-    $("#consultar").on("click",function(){
-        var datos = new FormData();
-        datos.append('accion','consultar');
-        enviaAjax(datos);
+
+    $("#restaurar").on("click",function(){
+        
+        if(validarkeyup(/^[0-9]{6,9}$/,$("#rif"),
+            $("#srif"),"El formato debe ser 092348760 o 00003454")==0){
+            muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
+                            "092348760 o 00003454");	
+            
+        }
+        else{	
+            
+            var datos = new FormData();
+            datos.append('accion','restaurar');
+            datos.append('rif',$("#rif").val());
+            enviaAjax(datos);
+        }
+        
     });
+    
+    
+    // $("#consultar").on("click",function(){
+    //     var datos = new FormData();
+    //     datos.append('accion','consultar');
+    //     enviaAjax(datos);
+    // });
+
+    $("#consultadeDelete").on("click",function(){
+        $("#modalProveedor").modal("show");
+      });
     //FIN DE CONTROL DE BOTONES	
     
     });
@@ -247,12 +299,17 @@ $(document).ready(function(){
                         }
                         else if (lee.resultado == "incluir" || 
                         lee.resultado == "modificar" || 
-                        lee.resultado == "eliminar") {
+                        lee.resultado == "eliminar" ||
+                        lee.resultado == "restaurar") {
                            muestraMensaje(lee.mensaje);
                            limpia();
                            consultar();
                            
                         }
+                        else if(lee.resultado=='consultaDelete'){
+                
+                            $('#consultaDelete').html(lee.mensaje);
+                          }
                         else if (lee.resultado == "error") {
                            muestraMensaje(lee.mensaje);
                         }
