@@ -163,6 +163,9 @@ $("#listadodeMarca").on("click",function(){
 
 $("#consultadeDelete").on("click",function(){
 	$("#modalModelo").modal("show");
+	var datos = new FormData();
+    datos.append('accion','consultaDelete');
+    enviaAjax(datos);
 });	
 
 //FIN DE CONTROL DE BOTONES	

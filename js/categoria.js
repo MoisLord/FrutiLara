@@ -128,6 +128,9 @@ $(document).ready(function(){
 
     $("#consultadeDelete").on("click",function(){
         $("#modalCategoria").modal("show");
+        var datos = new FormData();
+        datos.append('accion','consultaDelete');
+        enviaAjax(datos);
     });	
     //Finalización del sector para el control de botones	
     

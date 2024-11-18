@@ -150,6 +150,9 @@ $(document).ready(function(){
 
     $("#consultadeDelete").on("click",function(){
         $("#modalProveedor").modal("show");
+        var datos = new FormData();
+        datos.append('accion','consultaDelete');
+        enviaAjax(datos);
       });
     //FIN DE CONTROL DE BOTONES	
     
