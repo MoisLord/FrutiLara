@@ -273,7 +273,6 @@ $(document).ready(function(){
                         if(lee.resultado == "consultar"){
                            destruyeDT();
                            $("#resultadoconsulta").html(lee.mensaje);
-                           
                            crearDT();
                            $("#modal1").modal("show");
                            
