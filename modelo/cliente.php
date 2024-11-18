@@ -204,6 +204,33 @@ class cliente extends datos{
 		return $r;
 	}
 	
+	function restaurar(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array();
+		if ($this->existe($this->cedula)) {
+			try {
+				$p = $co->prepare("Update cliente set 
+				estado_registro = 1
+				where
+				cedula = :cedula
+				");
+
+				$p->bindParam(':cedula', $this->cedula);
+				$p->execute();
+
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'Cliente restaurado';
+			} catch (Exception $e) {
+				$r['resultado'] = 'error';
+				$r['mensaje'] =  $e->getMessage();
+			}
+		} else {
+			$r['resultado'] = 'restaurar';
+			$r['mensaje'] =  'No existe la cedula del Cliente';
+		}
+		return $r;
+	}
 	
 	function consultar(){
 		$co = $this->conecta();
@@ -249,6 +276,44 @@ class cliente extends datos{
 		}
 	}
 	
+	function consultadelete()
+	{
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$r = array(); // en este arreglo
+		// se enviara la respuesta a la solicitud y el
+		// contenido de la respuesta
+		try {
+			$resultado = $co->query("SELECT * from cliente WHERE estado_registro = 0");
+			
+			if($resultado){
+				
+				$respuesta = '';
+				foreach($resultado as $r){
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['cedula'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['nombre_apellido'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['telefono'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['direccion'];
+						$respuesta = $respuesta."</td>";
+					$respuesta = $respuesta."</tr>";
+				}
+			}
+			$r['resultado'] = 'consultaDelete';
+			$r['mensaje'] =  $respuesta;
+		} catch (Exception $e) {
+			$r['resultado'] = 'error';
+			$r['mensaje'] =  $e->getMessage();
+		}
+		return $r;
+	}
 	
 	private function existe($cedula){
 		$co = $this->conecta();

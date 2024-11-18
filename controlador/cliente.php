@@ -42,7 +42,7 @@ require_once("modelo/".$pagina.".php");
 		 }
 
 		 elseif($accion=='restaurar'){
-			$o->set_codigo_categoria($_POST['codigo_categoria']);
+			$o->set_cedula($_POST['cedula']);
 			 echo  json_encode($o->restaurar());
 		 }
 		 

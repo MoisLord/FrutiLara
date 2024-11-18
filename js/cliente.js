@@ -6,6 +6,21 @@ function consultar() {
 
 $(document).ready(function(){
 	consultar();
+	carga_cliente()
+
+    $("#cedula").on("keyup",function(){
+        var codigo = $(this).val();
+        var encontro = false;
+        $("#consultaDelete tr").each(function(){
+            if(codigo == $(this).find("td:eq(1)").text()){
+                coloca($(this));
+                encontro = true;
+            } 
+        });
+        if(!encontro){
+            $("#datoscategoria").html("");
+        }
+    });
 	//VALIDACION DE DATOS	
 	$("#cedula").on("keypress",function(e){
 		validarkeypress(/^[0-9-\b]*$/,e);
@@ -55,7 +70,15 @@ $(document).ready(function(){
 	
 	
 //FIN DE VALIDACION DE DATOS
+function carga_cliente(){
 
+        
+	var datos = new FormData();
+	//a ese datos le añadimos la informacion a enviar
+	datos.append('accion','consultaDelete'); //le digo que me muestre un listado de aulas
+	//ahora se envia el formdata por ajax
+	enviaAjax(datos);
+  }
 
 
 //CONTROL DE BOTONES
@@ -106,11 +129,33 @@ $("#eliminar").on("click",function(){
 	
 });
 
-$("#consultar").on("click",function(){
-	var datos = new FormData();
-	datos.append('accion','consultar');
-	enviaAjax(datos);
+$("#restaurar").on("click",function(){
+	
+	if(validarkeyup(/^[0-9]{5,8}$/,$("#cedula"),
+		$("#scedula"),"El formato debe ser 9999999")==0){
+	    muestraMensaje("La cedula debe coincidir con el formato <br/>"+ 
+						"99999999");	
+		
+	}
+	else{	
+	    
+		var datos = new FormData();
+		datos.append('accion','restaurar');
+		datos.append('cedula',$("#cedula").val());
+		enviaAjax(datos);
+	}
+	
 });
+
+// $("#consultar").on("click",function(){
+// 	var datos = new FormData();
+// 	datos.append('accion','consultar');
+// 	enviaAjax(datos);
+// });
+
+$("#consultadeDelete").on("click",function(){
+	$("#modalCliente").modal("show");
+});	
 //FIN DE CONTROL DE BOTONES	
 
 });
@@ -258,11 +303,16 @@ function enviaAjax(datos){
 						
 					 }
 					else if (lee.resultado == "incluir" || 
-					lee.resultado == "modificar" || 
-					lee.resultado == "eliminar") {
+						lee.resultado == "eliminar" ||
+						lee.resultado == "restaurar" ||
+						lee.resultado == "consultadeDelete") {
 					   muestraMensaje(lee.mensaje);
 					   limpia();
 					   consultar();
+					}
+					else if(lee.resultado=='consultaDelete'){
+					
+						$('#consultaDelete').html(lee.mensaje);
 					}
 					else if (lee.resultado == "error") {
 					   muestraMensaje(lee.mensaje);
