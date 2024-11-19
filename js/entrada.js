@@ -163,24 +163,26 @@ $(document).ready(function(){
 	}
 	//fin de funcion colocar productos
 	/*document.getElementById("cerrarModal").addEventListener("click", function() { 
-		$('#cantidadModal').modal('hide'); });*/
+		$('#cantidadModal').modal('hide'); });
 	//funcion para modificar subtotal
-	/*function modificasubtotal(textocantidad){
+	function modificasubtotal(textocantidad){
 		var linea = $(textocantidad).closest('tr');
 		
 		var valor = $(textocantidad).val()*1;
-		//var minimo = $(linea).find("td:eq(3)").text()*1;
-		//var maximo = $(linea).find("td:eq(4)").text()*1;
-		 /*if(valor< minimo || valor > maximo){
+		var minimo = $(linea).find("td:eq(3)").text()*1;
+		var maximo = $(linea).find("td:eq(4)").text()*1;
+		 if(valor< minimo || valor > maximo){
 			$('#cantidadModal').modal('show'); $(textocantidad).val(minimo);
-			$(linea).find("td:eq(7)").text(redondearDecimales(0, 0));
+			$(textocantidad).val(minimo);
+			$(linea).find("td:eq(5)").text(redondearDecimales(0, 0));
 			return;
-		}*/ // Restablece el valor al mínimo si está fuera de rango return; // Sale de la función }
+		} // Restablece el valor al mínimo si está fuera de rango return; // Sale de la función }
 
-		var resultado= valor+valor;
 		
-			$(linea).find("td:eq(7)").text(redondearDecimales((resultado),0));
-	//}
+		
+		var resultado = valor + $(linea).find("td:eq(4)").text() * 1; // Suponiendo que la columna 4 tiene el precio o valor unitario
+		 $(linea).find("td:eq(5)").text(redondearDecimales(resultado, 0));
+	}*/
 	//fin de funcion modifica subtotal
 	
 	
