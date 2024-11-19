@@ -198,7 +198,7 @@ class marca extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
 		if ($this->existe($this->id_marca)) {
-			$resultado = $co->query("SELECT estado_registro FROM marca WHERE codigo_marca = " . $this->id_marca . "");
+			$resultado = $co->query("SELECT estado_registro FROM marca WHERE codigo_marca = ".$this->id_marca ."");
 
 			$respuesta = 0;
 			foreach ($resultado as $r) {
