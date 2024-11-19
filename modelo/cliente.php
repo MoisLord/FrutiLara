@@ -209,6 +209,17 @@ class cliente extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
 		if ($this->existe($this->cedula)) {
+			$resultado = $co->query("SELECT estado_registro FROM cliente WHERE cedula = " . $this->cedula . "");
+
+			$respuesta = 0;
+			foreach ($resultado as $r) {
+				$respuesta = $r['estado_registro'];
+			}
+
+			if($respuesta) {
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'El cliente no esta eliminado';
+			} else {
 			try {
 				$p = $co->prepare("Update cliente set 
 				estado_registro = 1
@@ -225,6 +236,7 @@ class cliente extends datos{
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
 			}
+		}
 		} else {
 			$r['resultado'] = 'restaurar';
 			$r['mensaje'] =  'No existe la cedula del Cliente';

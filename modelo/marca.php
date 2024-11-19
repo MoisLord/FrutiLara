@@ -198,6 +198,17 @@ class marca extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
 		if ($this->existe($this->id_marca)) {
+			$resultado = $co->query("SELECT estado_registro FROM marca WHERE codigo_marca = " . $this->id_marca . "");
+
+			$respuesta = 0;
+			foreach ($resultado as $r) {
+				$respuesta = $r['estado_registro'];
+			}
+
+			if($respuesta) {
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'La marca no esta eliminada';
+			} else {
 			try {
 				$p = $co->prepare("Update marca set 
 				estado_registro = 1
@@ -214,10 +225,12 @@ class marca extends datos{
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
 			}
+		}
 		} else {
 			$r['resultado'] = 'restaurar';
 			$r['mensaje'] =  'No existe el Codigo de la Marca';
 		}
+		
 		return $r;
 	}
 	

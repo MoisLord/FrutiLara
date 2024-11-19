@@ -220,6 +220,17 @@ class proveedor extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
 		if ($this->existe($this->rif)) {
+			$resultado = $co->query("SELECT estado_registro FROM proveedores WHERE rif = " . $this->rif . "");
+
+			$respuesta = 0;
+			foreach ($resultado as $r) {
+				$respuesta = $r['estado_registro'];
+			}
+
+			if($respuesta) {
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'El proveedor no esta eliminado';
+			} else {
 			try {
 				$p = $co->prepare("Update proveedores set 
 				estado_registro = 1
@@ -236,6 +247,7 @@ class proveedor extends datos{
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
 			}
+		}
 		} else {
 			$r['resultado'] = 'restaurar';
 			$r['mensaje'] =  'No existe el rif';

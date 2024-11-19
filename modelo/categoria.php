@@ -211,6 +211,17 @@ class categoria extends datos{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
 		if ($this->existe($this->codigo_categoria)) {
+			$resultado = $co->query("SELECT estado_registro FROM categoria WHERE codigo_categoria = " . $this->codigo_categoria . "");
+
+			$respuesta = 0;
+			foreach ($resultado as $r) {
+				$respuesta = $r['estado_registro'];
+			}
+
+			if($respuesta) {
+				$r['resultado'] = 'restaurar';
+				$r['mensaje'] =  'La categoria no esta eliminada';
+			} else {
 			try {
 				$p = $co->prepare("Update categoria set 
 				estado_registro = 1
@@ -227,6 +238,7 @@ class categoria extends datos{
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
 			}
+		}
 		} else {
 			$r['resultado'] = 'restaurar';
 			$r['mensaje'] =  'No existe el Codigo de la Categoria';
