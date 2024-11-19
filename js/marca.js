@@ -3,10 +3,8 @@ function consultar() {
     datos.append('accion','consultar');
     enviaAjax(datos);
 }
-
 $(document).ready(function(){
     consultar();
-
     carga_marca();
 
     $("#id_marca").on("keyup",function(){
@@ -292,7 +290,6 @@ $(document).ready(function(){
                            muestraMensaje(lee.mensaje);
                            limpia();
                            consultar();
-                           
                         }
                         else if(lee.resultado=='consultaDelete'){
 					
