@@ -6,7 +6,7 @@ function consultar() {
 
 $(document).ready(function(){
 	consultar();
-	carga_cliente()
+	carga_cliente();
 
     $("#cedula").on("keyup",function(){
         var codigo = $(this).val();
