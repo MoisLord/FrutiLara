@@ -6,7 +6,7 @@ function consultar() {
 
 $(document).ready(function(){
     consultar();
-    carga_proveedor()
+    carga_proveedor();
     $("#rif").on("keyup",function(){
         var codigo = $(this).val();
         var encontro = false;
