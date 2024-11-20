@@ -98,7 +98,7 @@ class modelo extends datos
 				$p->execute();
 
 				$r['resultado'] = 'incluir';
-				$r['mensaje'] =  'El modelo ha sido Incluido';
+				$r['mensaje'] =  'El modelo ha sido registrado';
 			} catch (Exception $e) {
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
