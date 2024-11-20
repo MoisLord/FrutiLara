@@ -170,7 +170,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
   </div>
 </div>
 <!--fin de seccion modal-->
-<div class="modal fade" id="cantidadModal" tabindex="-1" role="dialog" aria-labelledby="cantidadModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="cantidadModal" tabindex="-1" role="dialog" aria-labelledby="cantidadModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-light bg-success">
@@ -187,7 +187,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 <script type="text/javascript" src="js/entrada.js"></script>
 
