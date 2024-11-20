@@ -119,9 +119,8 @@ class reportesalida extends datos{
 					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_categoria']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_modelo']."</td>";
-					$html = $html."<td style='text-align:center'>".$f['cantidad_restada']."</td>";
-					
 					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['cantidad_restada']."</td>";
 							 
 					$html = $html."</tr>";
 				}

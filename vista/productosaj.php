@@ -30,7 +30,7 @@ PRODUCTOS
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="codigo">Codigo del Producto</label>
-			   <input class="form-control" type="text" id="codigo" name="codigo"maxlength="50"/>
+			   <input class="form-control" type="text" id="codigo" name="codigo"maxlength="15"/>
 			   <span id="scodigo">El código debe tener mínimo 2 dígitos</span>
 			</div>
 			</div>

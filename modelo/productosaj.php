@@ -143,7 +143,7 @@ class productosaj extends datos
 				$p->execute();
 
 				$r['resultado'] = 'incluir';
-				$r['mensaje'] =  'Producto Incluido';
+				$r['mensaje'] =  'El producto ha sido registrado';
 			} catch (Exception $e) {
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
