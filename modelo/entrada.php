@@ -58,7 +58,7 @@ class entrada extends datos{
 			// se enviara la respuesta a la solicitud y el
 			// contenido de la respuesta
 		try{
-			$resultado = $co->query("Select * from proveedores");
+			$resultado = $co->query("SELECT * from proveedores WHERE proveedores.estado_registro = 1");
 			$respuesta = '';
 			if($resultado){
 				foreach($resultado as $r){
@@ -99,7 +99,7 @@ class entrada extends datos{
 		$r = array();
 		try{
 			
-			$resultado = $co->query("SELECT * from producto ");
+			$resultado = $co->query("SELECT * from producto WHERE producto.estado_registro = 1");
 			
 			if($resultado){
 				
