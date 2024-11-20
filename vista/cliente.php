@@ -47,7 +47,7 @@ GESTIÓN DE CLIENTES
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="direccion">Dirección</label>
-			   <input class="form-control" type="text" id="direccion" name="direccion" maxlength="35" 
+			   <input class="form-control" type="text" id="direccion" name="direccion" maxlength="45" 
 			   />
 			   <span id="sdireccion">Solo letras y/o numeros entre 6 y 35 caracteres</span>
 			</div>
