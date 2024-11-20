@@ -50,7 +50,7 @@ $(document).ready(function(){
 	});
 	
 	$("#id_modelo").on("keyup",function(){
-		validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/,
+		validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,20}$/,$(this),
 		$("#sid_modelo"),"El codigo del modelo debe ser de letras y/o números");
 		if($("#id_modelo").val().length > 7){
 		  var datos = new FormData();
