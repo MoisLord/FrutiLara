@@ -55,8 +55,8 @@ $(document).ready(function(){
             validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
         $("#direccion").on("keyup",function(){
-            validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-            $(this),$("#sdireccion"),"Solo letras y numeros entre 3 y 30 caracteres");
+            validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,45}$/,
+            $(this),$("#sdireccion"),"Solo letras y numeros entre 3 y 45 caracteres");
         });
         
     //FIN DE VALIDACION DE DATOS
@@ -198,8 +198,8 @@ $(document).ready(function(){
             return false;					
         }
         else if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC,.:]{3,45}$/,
-            $("#Nombre"),$("#sNombre"),"Solo letras y/o entre 3 y 30 caracteres")==0){
-            muestraMensaje("Nombre <br/>Solo letras y/o números entre 3 y 30 caracteres");
+            $("#Nombre"),$("#sNombre"),"Solo letras y/o entre 3 y 45 caracteres")==0){
+            muestraMensaje("Nombre <br/>Solo letras y/o números entre 3 y 45 caracteres");
             return false;
         }
         else if(validarkeyup(/^[0-9]{11,15}$/,$("#Telefono"),
@@ -207,9 +207,9 @@ $(document).ready(function(){
         muestraMensaje("Verifique el telefono");
         return false;
         }
-        else if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
+        else if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC,.:]{3,45}$/,
         $("#direccion"),$("#sdireccion"),"Solo letras  entre 3 y 30 caracteres")==0){
-        muestraMensaje("Direccion debe tener <br/>Solo letras  entre 3 y 30 caracteres");
+        muestraMensaje("Direccion debe tener <br/>Solo letras  entre 3 y 45 caracteres");
         return false;
         }
         
