@@ -261,9 +261,9 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#descripcion_categoria").val(lee.mensaje[0][1]);
-                           $("#unidadMedNormal").val(lee.mensaje[0][2]);
-                           $("#unidadMedAlt").val(lee.mensaje[0][3]);
+                           $("#descripcion_categoria").val(lee.mensaje[0][2]);
+                           $("#unidadMedNormal").val(lee.mensaje[0][3]);
+                           $("#unidadMedAlt").val(lee.mensaje[0][4]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
