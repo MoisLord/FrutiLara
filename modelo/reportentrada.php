@@ -54,7 +54,7 @@ class reportentrada extends datos{
 		$this->modelo = $valor;
 	}
 	function set_proveedor($valor){
-		$this->$proveedor =$valor;
+		$this->proveedor =$valor;
 	}
 	//el siguiente metodo enlza con la la base de datos
 	//crea el html a partir de la consulta y envia los datos a la
