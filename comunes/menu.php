@@ -82,6 +82,7 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reportentrada">Reporte de Entrada</a>
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reportesalida">Reporte de Salida</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reporteinventario">Reporte de inventario</a>
               </div>
             </li>
             <li class="nav-item">
