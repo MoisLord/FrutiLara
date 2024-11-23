@@ -28,7 +28,7 @@ class reportesalida extends datos{
 	private $modelo;
 	private $cantidad;
 	private $resta;
-	
+	private $cliente;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
@@ -56,7 +56,9 @@ class reportesalida extends datos{
 	function set_resta($valor){
 		$this->resta = $valor;
 	}
-	
+	function set_cliente($valor){
+		$this->cliente=$valor;
+	}
 	
 	
 	//el siguiente metodo enlza con la la base de datos
@@ -73,15 +75,16 @@ class reportesalida extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("SELECT detalle_salida.codigo_producto, detalle_salida.Cantidad_producto, detalle_salida.cantidad_restada, producto.nombre, categoria.descripcion_categoria, modelo.descripcion_modelo FROM detalle_salida 
-			INNER JOIN producto ON detalle_salida.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo where codigo_producto like :codigo_producto and 
-										Cantidad_producto like :Cantidad_producto and cantidad_restada like :cantidad_restada AND nombre LIKE :nombre AND descripcion_categoria like :descripcion_categoria and descripcion_modelo like :descripcion_modelo");
+			$resultado = $co->prepare("SELECT detalle_salida.codigo_producto, detalle_salida.Cantidad_producto, detalle_salida.cantidad_restada, producto.nombre, categoria.descripcion_categoria, modelo.descripcion_modelo, salida.cedula_cliente FROM detalle_salida 
+			INNER JOIN producto ON detalle_salida.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN salida ON salida.id_salida = detalle_salida.id_salida where codigo_producto like :codigo_producto and 
+										Cantidad_producto like :Cantidad_producto and cantidad_restada like :cantidad_restada AND nombre LIKE :nombre AND descripcion_categoria like :descripcion_categoria and descripcion_modelo like :descripcion_modelo AND cedula_cliente LIKE :cedula_cliente");
 			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
 			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');
 			$resultado->bindValue(':cantidad_restada','%'.$this->resta.'%');
 			$resultado->bindValue(':nombre','%'.$this->nombre.'%');
 			$resultado->bindValue(':descripcion_categoria','%'.$this->categoria.'%');
 			$resultado->bindValue(':descripcion_modelo','%'.$this->modelo.'%');
+			$resultado->bindValue(':cedula_cliente','%'.$this->cliente.'%');
 			$resultado->execute();
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -101,6 +104,7 @@ class reportesalida extends datos{
 			$html = $html."<tr>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Codigo del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>nombre del producto</th>";
+			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cedula del cliente</th>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Categoria del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>modelo del producto</th>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cantidad del producto</th>";
@@ -117,6 +121,7 @@ class reportesalida extends datos{
 					$html = $html."<tr>";
 					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['cedula_cliente']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_categoria']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_modelo']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";

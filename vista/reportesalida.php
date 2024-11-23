@@ -58,6 +58,11 @@ PANTALLA DE REPORTE DE SALIDA
             <input class="form-control" type="text" id="usuario" name="diferencia" />
             <span id="susuario"></span>
         </div>
+        <div class="col-md-6 mb-3">
+            <label for="Sumatoria">Cliente</label>
+            <input class="form-control" type="text" id="usuario" name="cliente" />
+            <span id="susuario"></span>
+        </div>
     </div>
 </div>
 

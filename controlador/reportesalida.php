@@ -35,7 +35,7 @@ require_once('modelo/reportesalida.php');
 		  $o->set_modelo($_POST['modelo']);
 		  $o->set_cantidad($_POST['Cantidad']);
 		  $o->set_resta($_POST['diferencia']);
-		  
+		  $o->set_cliente($_POST['cliente']);
 		  
 		  $o->generarPDF();
 	  }
