@@ -27,7 +27,7 @@ class reportentrada extends datos{
 	private $categoria;
 	private $cantidad;
 	private $modelo;
-	
+	private $proveedor;
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
@@ -53,7 +53,9 @@ class reportentrada extends datos{
 	function set_modelo($valor){
 		$this->modelo = $valor;
 	}
-	
+	function set_proveedor($valor){
+		$this->$proveedor =$valor;
+	}
 	//el siguiente metodo enlza con la la base de datos
 	//crea el html a partir de la consulta y envia los datos a la
 	//libreria DOMPDF
@@ -68,14 +70,15 @@ class reportentrada extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto, detalle_entrada.Cantidad_producto, producto.nombre, categoria.descripcion_categoria, modelo.descripcion_modelo from detalle_entrada INNER JOIN producto ON detalle_entrada.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria 
-										INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo where codigo_producto like :codigo_producto and 
-										Cantidad_producto like :Cantidad_producto and nombre like :nombre and descripcion_categoria like :descripcion_categoria and descripcion_modelo like :descripcion_modelo");
+			$resultado = $co->prepare("SELECT detalle_entrada.codigo_producto, detalle_entrada.Cantidad_producto, producto.nombre, categoria.descripcion_categoria, modelo.descripcion_modelo, entrada.rif_proveedores from detalle_entrada INNER JOIN producto ON detalle_entrada.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria 
+										INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN entrada ON entrada.id_entrada = detalle_entrada.id_entrada  where codigo_producto like :codigo_producto and 
+										Cantidad_producto like :Cantidad_producto and nombre like :nombre and descripcion_categoria like :descripcion_categoria and descripcion_modelo like :descripcion_modelo and rif_proveedores LIKE :rif_proveedores");
 			$resultado->bindValue(':codigo_producto','%'.$this->codigo.'%');
 			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');
 			$resultado->bindValue(':nombre','%'.$this->nombre.'%');
 			$resultado->bindValue(':descripcion_categoria','%'.$this->categoria.'%');
 			$resultado->bindValue(':descripcion_modelo','%'.$this->modelo.'%');
+			$resultado->bindValue(':rif_proveedores','%'.$this->proveedor.'%');
 			$resultado->execute();
 			
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -96,6 +99,7 @@ class reportentrada extends datos{
 			$html = $html."<tr>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Codigo del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>nombre del producto</th>";
+			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>Rif del proveedor</th>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Categoria del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>modelo del producto</th>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cantidad del producto</th>";
@@ -108,6 +112,7 @@ class reportentrada extends datos{
 					$html = $html."<tr>";
 					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['rif_proveedores']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_categoria']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['descripcion_modelo']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['Cantidad_producto']."</td>";

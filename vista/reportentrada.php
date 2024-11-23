@@ -52,6 +52,10 @@ PANTALLA DE REPORTE DE ENTRADA
 								 <label for="Sumatoria">CANTIDAD DEL PRODUCTO</label> 
 								 <input class="form-control" type="text" id="usuario" name="cantidad" /> 
 								 <span id="susuario"></span>
+								 <label for="Sumatoria">proveedor</label> 
+								 <input class="form-control" type="text" id="usuario" name="proveedor" /> 
+								 <span id="susuario"></span>
+								 
 								 </div>
 								 </div>
 								 </div>
