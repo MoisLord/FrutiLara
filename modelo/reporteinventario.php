@@ -74,8 +74,8 @@ class reporteinventario extends datos{
 		try{
 			
 			
-			$resultado = $co->prepare("SELECT detalle_entrada.Cantidad_producto, producto.codigo , producto.nombre,producto.minimo, producto.maximo, categoria.descripcion_categoria, modelo.descripcion_modelo,  from detalle_entrada INNER JOIN producto ON detalle_entrada.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria 
-										INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN entrada ON entrada.id_entrada = detalle_entrada.id_entrada  where  
+			$resultado = $co->prepare("SELECT detalle_entrada.Cantidad_producto, producto.codigo, producto.nombre, producto.minimo, producto.maximo, categoria.descripcion_categoria, modelo.descripcion_modelo  from detalle_entrada INNER JOIN producto ON detalle_entrada.codigo_producto=producto.codigo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria 
+										INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo where  
 										Cantidad_producto like :Cantidad_producto and codigo LIKE :codigo and nombre like :nombre and minimo LIKE :minimo AND maximo like :maximo AND descripcion_categoria like :descripcion_categoria and descripcion_modelo like :descripcion_modelo");
 			$resultado->bindValue(':Cantidad_producto','%'.$this->cantidad.'%');
             $resultado->bindValue(':codigo','%'.$this->codigo.'%');
@@ -96,7 +96,7 @@ class reporteinventario extends datos{
 			<script type='text/javascript' src='datatables/datatables.min.js'></script></head><body>
 			";
 			$html = $html."<div class='container-fluid'>";
-			$html = $html."<h1 class='modal-title text-center text-success'>DETALLE DE ENTRADAS REGISTRADOS</h1>";
+			$html = $html."<h1 class='modal-title text-center text-success'>PRODUCTOS REGISTRADOS</h1>";
 			$html = $html."<hr class='border border-success border-3 opacity-65'>";
 			$html = $html."<div class='table-responsive'>";
 			$html = $html."<table class='table table-striped table-bordered border-success table-hover'>";
@@ -104,6 +104,8 @@ class reporteinventario extends datos{
 			$html = $html."<tr>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Codigo del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>nombre del producto</th>";
+            $html = $html."<th class='text-bg-success p-3'style='text-align:center'>Minimo del producto</th>";
+            $html = $html."<th class='text-bg-success p-3'style='text-align:center'>Maximo del producto</th>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Categoria del producto</th>";
 			$html = $html."<th class='text-bg-success p-3'style='text-align:center'>modelo del producto</th>";
 			$html = $html."<th  class='text-bg-success p-3'style='text-align:center'>Cantidad del producto</th>";
@@ -114,7 +116,7 @@ class reporteinventario extends datos{
 				
 				foreach($fila as $f){
 					$html = $html."<tr>";
-					$html = $html."<td style='text-align:center'>".$f['codigo_producto']."</td>";
+					$html = $html."<td style='text-align:center'>".$f['codigo']."</td>";
                     $html = $html."<td style='text-align:center'>".$f['nombre']."</td>";
 					$html = $html."<td style='text-align:center'>".$f['minimo']."</td>";
                     $html = $html."<td style='text-align:center'>".$f['maximo']."</td>";

@@ -35,7 +35,7 @@ require_once('modelo/reporteinventario.php');
 		  $o->set_modelo($_POST['modelo']);
 		  $o->set_cantidad($_POST['cantidad']);
 		  $o->set_minimo($_POST['minimo']);
-          $o->set_set_maximo($_POST['maximo']);
+          $o->set_maximo($_POST['maximo']);
 		  $o->generarPDF();
 	  }
 	  
