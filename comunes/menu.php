@@ -114,6 +114,14 @@
 					?>
               </div>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                REPORTES
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reporteinventario">Reporte de Inventario</a>
+              </div>
+            </li>
           </ul>
 					<?php
 					  }
