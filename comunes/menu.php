@@ -109,10 +109,7 @@
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=salida">Notas de Salida</a>
-                <?php
-           }
-					?>
-              </div>
+                </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
@@ -123,6 +120,10 @@
               </div>
             </li>
           </ul>
+                <?php
+           }
+					?>
+              
 					<?php
 					  }
 					?>
