@@ -44,7 +44,7 @@ require_once("modelo/verifica.php");
     require_once("controlador/".$pagina.".php");
  }
  else{
-    echo "PAGINA EN CONSTRUCCIÓN";
+    echo "PAGINA EN CONSTRUCCIÓN"; 
  }
  
 ?> 
