@@ -54,6 +54,9 @@
 					<span>Solo letras y numeros entre 7 y 15 caracteres</span>
 				</div>
             </div>
+			<div class="forgot-pass">
+                <a href="#">¿Eres Nuevo? Registrate</a>
+            </div>
             <div class="forgot-pass">
                 <a href="#">Olvidaste la clave?</a>
             </div>
