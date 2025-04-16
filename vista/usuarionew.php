@@ -41,6 +41,7 @@
 					<span>El formato debe ser númerico</span>
 				</div>
             </div>
+            <input class="form-control" type="text" id="clave" name="tipos" value="SUPERUSUARIO" style="display: none;"/>
             <div class="input-group">
 				<div class="col-md-12">
 					<label for="clave">Clave</label><br></br>
