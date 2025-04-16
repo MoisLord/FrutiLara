@@ -29,8 +29,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="444px" height="626px">
                         <defs>
                             <linearGradient id="PSgrad_1" x1="0%" x2="81.915%" y1="57.358%" y2="0%">
-                                <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="1"></stop>
-                                <stop offset="100%" stop-color="rgb(0,54,207)" stop-opacity="0"></stop>
+                                <stop offset="0%" stop-color="rgb(22, 163, 46)" stop-opacity="1"></stop>
+                                <stop offset="100%" stop-color="rgb(36, 209, 20)" stop-opacity="0"></stop>
                             </linearGradient>
     
                         </defs>

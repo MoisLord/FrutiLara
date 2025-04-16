@@ -2,9 +2,12 @@ body{
     margin-top:20px;
     background:#eee;
 }
+.container {
+    margin-top: 120px; /* Incrementa el valor según lo necesario */
+}
 .gradient-brand-color {
-    background-image: -webkit-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
-    background-image: -ms-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
+    background-image: -webkit-linear-gradient(0deg, #7DDA58 0%, #FFDE59 20%,#FE9900 40%,#E4080A 60%,#BFD641 100%);
+    
     color: #fff;
 }
 .contact-info__wrapper {
