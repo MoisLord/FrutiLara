@@ -152,7 +152,7 @@ PANTALLA DE PROVEEDORES
     </div>
   </div>
 </div>
-
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/proveedor.js"></script>
 
 </body>

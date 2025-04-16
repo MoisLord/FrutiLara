@@ -150,6 +150,7 @@ CATEGORIAS DE PRODUCTOS
     </div>
   </div>
 </div>
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/categoria.js"></script>
 
 </body>

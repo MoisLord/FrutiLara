@@ -157,7 +157,7 @@ MODELO DE PRODUCTOS
 </div>
 
 
-
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/modelo.js"></script>
 
 </body>

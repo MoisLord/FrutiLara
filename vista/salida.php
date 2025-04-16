@@ -189,7 +189,7 @@ NOTAS DE SALIDA DE PRODUCTOS
 </div>
 
 <!--fin de seccion modal-->
-
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/salida.js"></script>
 
 </body>

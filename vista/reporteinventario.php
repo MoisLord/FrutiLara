@@ -80,7 +80,7 @@ PANTALLA DE REPORTE DE INVENTARIO
 	
 </div> <!-- fin de container -->
 
-
+<?php require_once("comunes/body.php"); ?>
 
 </body>
 </html>

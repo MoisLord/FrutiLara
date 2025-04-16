@@ -237,7 +237,7 @@ PRODUCTOS
 <!--fin de seccion modal-->
 
 
-
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/producto.js"></script>
 
 </body>

@@ -95,6 +95,7 @@
 </footer>
 </div>
 </header>
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/principal.js"></script>
 </body>
 </html>

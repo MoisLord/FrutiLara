@@ -102,6 +102,7 @@ USUARIOS DEL SISTEMA
         </button>
     </div> 	-->
 </div> <!-- fin de container -->
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/usuario.js"></script>
 
 </body>

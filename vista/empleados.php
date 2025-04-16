@@ -117,7 +117,7 @@ GESTIÓN DE EMPLEADOS
 		
     </div>
 </div> <!-- fin de container -->
-
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/empleados.js"></script>
 
 </body>

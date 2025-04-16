@@ -78,7 +78,7 @@ PANTALLA DE REPORTE DE ENTRADA
 	
 </div> <!-- fin de container -->
 
-
+<?php require_once("comunes/body.php"); ?>
 
 </body>
 </html>

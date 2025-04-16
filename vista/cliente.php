@@ -136,6 +136,7 @@ GESTIÓN DE CLIENTES
     </div>
   </div>
 </div>
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/cliente.js"></script>
 
 </body>

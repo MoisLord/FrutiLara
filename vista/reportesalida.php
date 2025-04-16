@@ -85,7 +85,7 @@ PANTALLA DE REPORTE DE SALIDA
 	
 </div> <!-- fin de container -->
 
-
+<?php require_once("comunes/body.php"); ?>
 
 </body>
 </html>

@@ -74,7 +74,7 @@
 
 </form>
 </div> <!-- fin de container -->
-
+<?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/login.js"></script>
 
 </body>
