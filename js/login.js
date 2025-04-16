@@ -118,24 +118,3 @@ $(document).ready(function(){
 
 // Inicio de revelar clave
 // Seleccionamos los elementos de los iconos de los Ojos
-const eyeOpen = document.getElementById('eye-open');
-const eyeClosed = document.getElementById('eye-closed');
-const claveInput = document.getElementById('clave');
-
-// Agregamos un evento de clic a los iconos
-eyeOpen.addEventListener('click', () => {
-  // Cambiamos el icono a cerrado
-  eyeOpen.style.display = 'none';
-  eyeClosed.style.display = 'block';
-  // Cambiamos el tipo de input a password
-  claveInput.type = 'password';
-});
-
-eyeClosed.addEventListener('click', () => {
-  // Cambiamos el icono a abierto
-  eyeOpen.style.display = 'block';
-  eyeClosed.style.display = 'none';
-  // Cambiamos el tipo de input a text
-  claveInput.type = 'text';
-});
-// Fin de revelar clave
