@@ -43,43 +43,26 @@
             <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
                 <form action="#" class="contact-form form-validate" novalidate="novalidate">
                     <div class="row">
-                        <div class="col-sm-6 mb-3">
+                        <div class="col-12 mb-3">
                             <div class="form-group">
-                                <label class="required-field" for="firstName">First Name</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Wendy">
+                                <label class="required-field" for="firstName">Cedula</label>
+                                <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Introduce su Cedula">
                             </div>
                         </div>
     
-                        <div class="col-sm-6 mb-3">
+                       
+                            <input type="tel" class="form-control" id="clave" name="usuario" style="display: none;" value="SUPERUSUARIO">
+                            
+                        <div class="col-12 mb-3">
                             <div class="form-group">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Appleseed">
+                                <label for="phone">Contraseña</label>
+                                <input type="tel" class="form-control" id="clave" name="clave" placeholder="Introduce su contraseña">
                             </div>
                         </div>
     
-                        <div class="col-sm-6 mb-3">
-                            <div class="form-group">
-                                <label class="required-field" for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="wendy.apple@seed.com">
-                            </div>
-                        </div>
     
-                        <div class="col-sm-6 mb-3">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="(021)-454-545">
-                            </div>
-                        </div>
-    
-                        <div class="col-sm-12 mb-3">
-                            <div class="form-group">
-                                <label class="required-field" for="message">How can we help?</label>
-                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Hi there, I would like to....."></textarea>
-                            </div>
-                        </div>
-    
-                        <div class="col-sm-12 mb-3">
-                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                        <div class="col-12 mb-3">
+                            <button type="submit" name="submit" class="btn btn-success">Registrar</button>
                         </div>
     
                     </div>
