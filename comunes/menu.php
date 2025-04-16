@@ -16,11 +16,12 @@
         <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-
+      
       <?php
    //verificamos que exista la variable nivel
    //que es la que contiene el valor de la sesion
    //aqui se coloca la vista del super usuario
+   
    if(!empty($nivel)){
 			  if($nivel=='SUPERUSUARIO'){
 			?>

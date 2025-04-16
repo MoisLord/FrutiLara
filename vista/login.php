@@ -55,9 +55,8 @@
 				</div>
             </div>
 			<div class="forgot-pass">
-                <a href="#">¿Eres Nuevo? Registrate</a>
+                <a href="?pagina=usuario">¿Eres Nuevo? Registrate</a>
             </div>
-            
             <div class="input-group">
 				<div class="row justify-content-center mt-5">
 					<div class="col-md-6 d-flex justify-content-center">
