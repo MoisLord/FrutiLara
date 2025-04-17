@@ -1,5 +1,5 @@
 <html>
-<title>INICIO SESION</title>
+<title>Registro de Usuario</title>
 <?php require_once("comunes/encabezado.php"); ?>
 <?php require_once("./modelo/sessionlogin.php"); ?>
 <head>
