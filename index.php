@@ -15,7 +15,8 @@ $pagina = "principal";
 //condicional que lee la solicitud
 //de cambio de pagina  
  if (!empty($_GET['pagina'])){ //si no esta vacia la variable $pagina que viene por get
-   $pagina = $_GET['pagina'];  //cambia el valor de $pagina por el obtenido por GET
+    //cambia el valor de $pagina por el obtenido por GET
+   $pagina = htmlspecialchars($_GET['pagina'], ENT_QUOTES, 'UTF-8');
  }
 
  //BLOQUE NUEVO PARA VERIFICAR EL ESTADO DE EL OBJETO $_SESSION

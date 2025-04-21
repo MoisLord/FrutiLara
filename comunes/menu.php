@@ -27,7 +27,7 @@
 			?>
 		<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
       <li class="nav-item">
-        <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=usuario">USUARIOS</a>
+        <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
       </li>
     </ul>
 			<?php
@@ -42,25 +42,25 @@
 					?>
 				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=marca">MARCAS DE PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=modelo">MODELO DE PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="/FrutiLara/modelo">MODELO DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=categoria">CATEGORIAS DE PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="categoria">CATEGORIAS DE PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=productosaj">PRODUCTOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="productosaj">PRODUCTOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=proveedor">PROVEEDORES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="proveedor">PROVEEDORES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=empleados">EMPLEADOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="empleados">EMPLEADOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=cliente">CLIENTES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="cliente">CLIENTES</a>
           </li>
           
           <li class="nav-item dropdown">
@@ -68,22 +68,22 @@
                 INVENTARIO
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=entrada">Notas de Entrada</a>
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=salida">Notas de Salida</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="entrada">Notas de Entrada</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">Notas de Salida</a>
               </div>
             </li>
             
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=usuario">USUARIOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
           </li>
          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
                  REPORTES
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reportentrada">Reporte de Entrada</a>
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reportesalida">Reporte de Salida</a>
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reporteinventario">Reporte de inventario</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportesalida">Reporte de Salida</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte de inventario</a>
               </div>
             </li>
             <li class="nav-item">
@@ -102,14 +102,14 @@
             <a id="manual" class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;">MANUAL DEL SISTEMA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="?pagina=cliente">CLIENTES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="cliente">CLIENTES</a>
           </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
                 INVENTARIO
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=salida">Notas de Salida</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">Notas de Salida</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -117,7 +117,7 @@
                 REPORTES
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="?pagina=reporteinventario">Reporte de Inventario</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte de Inventario</a>
               </div>
             </li>
           </ul>
@@ -135,12 +135,12 @@
 		        
             if(!empty($nivel) and $nivel!=""){
          ?>
-      <a href="?pagina=salir" class="btn btn-outline-success my-2 my-sm-0">salir</a>
+      <a href="salir" class="btn btn-outline-success my-2 my-sm-0">salir</a>
       <?php	
 				}
 				else{
 		 ?>
-      <a href="?pagina=login" class="btn btn-outline-success my-2 my-sm-0">entrar</a>
+      <a href="login" class="btn btn-outline-success my-2 my-sm-0">entrar</a>
       <?php 		 
 				}
 		 ?>

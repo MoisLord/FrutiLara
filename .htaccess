@@ -1,3 +1,24 @@
 RewriteEngine On 
 Options All -Indexes
-RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?vista=$1
+
+RewriteRule ^principal$ principal.php?pagina=principal
+RewriteRule ^usuario$ index.php?pagina=usuario 
+RewriteRule ^marca$ index.php?pagina=marca 
+RewriteRule ^modelo$ index.php?pagina=modelo 
+RewriteRule ^categoria$ index.php?pagina=categoria 
+RewriteRule ^productosaj$ index.php?pagina=productosaj 
+RewriteRule ^proveedor$ index.php?pagina=proveedor 
+RewriteRule ^empleados$ index.php?pagina=empleados 
+RewriteRule ^cliente$ index.php?pagina=cliente 
+RewriteRule ^entrada$ index.php?pagina=entrada 
+RewriteRule ^salida$ index.php?pagina=salida 
+RewriteRule ^reportentrada$ index.php?pagina=reportentrada 
+RewriteRule ^reportesalida$ index.php?pagina=reportesalida 
+RewriteRule ^reporteinventario$ index.php?pagina=reporteinventario 
+RewriteRule ^login$ index.php?pagina=login 
+RewriteRule ^salir$ index.php?pagina=salir
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?pagina=$1
