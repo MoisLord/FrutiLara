@@ -41,26 +41,19 @@
 					  if($nivel=='ADMINISTRADOR'){
 					?>
 				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="/FrutiLara/modelo">MODELO DE PRODUCTOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="categoria">CATEGORIAS DE PRODUCTOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="productosaj">PRODUCTOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="proveedor">PROVEEDORES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="empleados">EMPLEADOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="cliente">CLIENTES</a>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+               REGISTRO DEL SISTEMA
+              </a>
+              <div class="dropdown-menu">
+            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
+            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="/FrutiLara/modelo">MODELO DE PRODUCTOS</a>
+            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="categoria">CATEGORIAS DE PRODUCTOS</a>
+            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="productosaj">PRODUCTOS</a>
+            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="proveedor">PROVEEDORES</a>
+            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="empleados">EMPLEADOS</a>
+            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="cliente">CLIENTES</a>
+            </div>
           </li>
           
           <li class="nav-item dropdown">
