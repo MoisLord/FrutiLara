@@ -129,11 +129,17 @@
             if(!empty($nivel) and $nivel!=""){
          ?>
       <a href="salir" class="btn btn-outline-success my-2 my-sm-0">salir</a>
+            </div>
       <?php	
 				}
 				else{
 		 ?>
-      <a href="login" class="btn btn-outline-success my-2 my-sm-0">entrar</a>
+    
+        
+            <a href="login" class="btn btn-outline-success my-2 my-sm-0">Entrar</a>
+        
+    </div>
+    
       <?php 		 
 				}
 		 ?>
