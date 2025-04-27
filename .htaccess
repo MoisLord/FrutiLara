@@ -17,7 +17,7 @@ RewriteRule ^reportesalida$ index.php?pagina=reportesalida
 RewriteRule ^reporteinventario$ index.php?pagina=reporteinventario 
 RewriteRule ^login$ index.php?pagina=login 
 RewriteRule ^salir$ index.php?pagina=salir
-
+RewriteRule ^Nuevo$ index.php?pagina=usuarionew
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
