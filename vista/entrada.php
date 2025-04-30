@@ -107,6 +107,13 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR PRECIO DE PRODUCTO -->
+
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
+
 	<!-- FILA DE INPUT Y BUSCAR TASA DE PRECIO -->
 	<h6>Tasa de Precio</h6>
 	<div class="row">
@@ -118,6 +125,13 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR TASA DE PRECIO -->
+
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
+	
 	<!-- METODO DE PAGO -->
 	<div class="mb-3">
         <label for="tipo_usuario">Metodo de Pago</label>
