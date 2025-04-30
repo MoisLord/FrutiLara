@@ -118,6 +118,16 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR TASA DE PRECIO -->
+	<!-- METODO DE PAGO -->
+	<div class="mb-3">
+        <label for="tipo_usuario">Tipos de usuario</label>
+        <select class="form-select" aria-label="Default select example" id="tipo_usuario">
+			<option value="SUPERUSUARIO">Super Usuario</option> 
+            <option value="ADMINISTRADOR">Administrador</option> 
+            <option value="EMPLEADO">Empleado</option> 
+        </select> 
+    </div>
+	<!-- FIN DE METODO DE PAGO -->
 	<div class="row">
 		<div class="col">
 			<hr class="border border-success border-3 opacity-65"/>
