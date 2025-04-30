@@ -40,8 +40,8 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	<h6>Rif del Proveedor</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
-		<input class="form-control" type="text" id="idproveedor" name="idproveedor"/>	 
-		   <input class="form-control" type="text" id="nombreprove" name="nombreprove" style="display:none" />
+		<input class="form-control" type="text" id="codigoproducto" name="codigoproducto"/>	 
+		   <input class="form-control" type="text" id="idcantproducto" name="idcantproducto" style="display:none" />
 		     
 		   
 		</div>
@@ -71,6 +71,17 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</div>
 	</div>
 	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
+	 <!-- FILA DE INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
+	<h6>cantidad de producto entrante</h6>
+	<div class="row">
+		<div class="col-md-8 input-group">
+		<input class="form-control" type="text" id="codigoproducto" name="codigoproducto"/>	 
+		   <input class="form-control" type="text" id="idcantproducto" name="idcantproducto" style="display:none" />
+		     
+		   
+		</div>
+	</div>
+	<!-- FILA DE INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
 	<div class="row">
 		<div class="col">
 			<hr class="border border-success border-3 opacity-65"/>
