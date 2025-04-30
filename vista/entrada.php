@@ -71,6 +71,172 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</div>
 	</div>
 	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
+
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
+
+	<!-- FILA DE INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
+	<h6>Cantidad de Producto</h6>
+	<div class="row">
+		<div class="col-md-8 input-group">
+		<input class="form-control" type="text" id="idcantidad" name="idcantidad"/>	 
+		   <input class="form-control" type="text" id="cantproducto" name="cantproducto" style="display:none" />
+		     
+		   
+		</div>
+	</div>
+	<!-- FIN DE FILA INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
+
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
+
+	<!-- FILA DE INPUT Y BUSCAR PRECIO DE PRODUCTO -->
+	<h6>Precio de Producto</h6>
+	<div class="row">
+		<div class="col-md-8 input-group">
+		<input class="form-control" type="number" id="precioproducto" name="precioproducto"/>	 
+		   <input class="form-control" type="number" id="idprecio" name="idprecio" style="display:none" />
+		     
+		   
+		</div>
+	</div>
+	<!-- FIN DE FILA INPUT Y BUSCAR PRECIO DE PRODUCTO -->
+
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
+
+	<!-- FILA DE INPUT Y BUSCAR TASA DE PRECIO -->
+	<h6>Tasa de Precio</h6>
+	<div class="row">
+		<div class="col-md-8 input-group">
+		<input class="form-control" type="text" id="idtasa" name="idtasa"/>	 
+		   <input class="form-control" type="text" id="tasaprecio" name="tasaprecio" style="display:none" />
+		     
+		   
+		</div>
+	</div>
+	<!-- FIN DE FILA INPUT Y BUSCAR TASA DE PRECIO -->
+
+    <div class="row">
+        <div class="col">
+            <hr/>
+        </div>
+    </div>
+                
+    <!-- METODO DE PAGO -->
+    <div class="mb-3">
+        <label for="tipo_usuario">Metodo de Pago</label>
+        <select class="form-select" aria-label="Default select example" id="metodo_pago">
+            <option value="PAGOMOVIL">Pagomóvil</option> 
+            <option value="PUNTO">Punto</option> 
+            <option value="EFECTIVO">Efectivo</option> 
+        </select> 
+    </div>
+    <!-- FIN DE METODO DE PAGO -->
+     
+                <div class="row">
+                    <div class="col">
+                        <hr class="border border-success border-3 opacity-65"/>
+                    </div>
+                </div>
+                <!-- FILA DE DETALLES DE SALIDA -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <table  class="table table-striped table-hover py-4">
+                            <thead>
+                                <tr>
+                                <th>X</th>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th>minimo</th>
+                                <th>maximo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="entrada">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- FIN DE FILA DETALLES DE SALIDA -->
+            </div>
+        </form>
+
+        <!-- seccion del modal proveedores -->
+        <div class="modal fade" tabindex="-1" role="dialog"  id="modalproveedor">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-header text-light bg-success">
+                    <h5 class="modal-title">Listado de proveedores</h5>
+                    <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Rif</th>
+                                <th>Documento</th>
+                                <th>Empresa</th>
+                                <th>Telefono</th>
+                                <th>Direccion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listadoproveedor">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer bg-light">
+                    <span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+        <!--fin de seccion modal-->
+
+        <!-- seccion del modal productos -->
+        <div class="modal fade" tabindex="-1" role="dialog"  id="modalproductos">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-header text-light bg-success">
+                    <h5 class="modal-title">Listado de productos</h5>
+                    <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Minimo</th>
+                                <th>Maximo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listadoproductos">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="
+	<!-- METODO DE PAGO -->
+	<div class="mb-3">
+        <label for="tipo_usuario">Metodo de Pago</label>
+        <select class="form-select" aria-label="Default select example" id="metodo_pago">
+			<option value="PAGOMOVIL">Pagomóvil</option> 
+            <option value="PUNTO">Punto</option> 
+            <option value="EFECTIVO">Efectivo</option> 
+        </select> 
+    </div>
+	<!-- FIN DE METODO DE PAGO -->
 	<div class="row">
 		<div class="col">
 			<hr class="border border-success border-3 opacity-65"/>

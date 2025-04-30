@@ -52,6 +52,7 @@
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="productosaj">PRODUCTOS</a>
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="proveedor">PROVEEDORES</a>
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="empleados">EMPLEADOS</a>
+            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="servicios">SERVICIOS</a>
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="cliente">CLIENTES</a>
             </div>
           </li>
