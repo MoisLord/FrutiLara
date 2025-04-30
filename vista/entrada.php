@@ -100,8 +100,8 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	<h6>Precio de Producto</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
-		<input class="form-control" type="text" id="precioproducto" name="precioproducto"/>	 
-		   <input class="form-control" type="text" id="idprecio" name="idprecio" style="display:none" />
+		<input class="form-control" type="number" id="precioproducto" name="precioproducto"/>	 
+		   <input class="form-control" type="number" id="idprecio" name="idprecio" style="display:none" />
 		     
 		   
 		</div>
