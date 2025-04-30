@@ -126,145 +126,23 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR TASA DE PRECIO -->
 
-	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
-	</div>
-	```php
-<?php require_once("comunes/encabezado.php"); ?>
-<?php require_once("./modelo/session.php"); ?>
-<body>
-    <!--Div oculta para colocar el mensaje a mostrar-->
-
-    <!--Llamada a archivo modal.php, dentro de el hay una sección modal-->
-    <?php require_once("comunes/modal.php"); ?>
-    <?php require_once('comunes/menu.php'); ?>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <div class="container text-center h2 text-success">
-        NOTAS DE ENTRADA DE PRODUCTOS
-        <hr class="border border-success border-3 opacity-65"/>
+    <div class="row">
+        <div class="col">
+            <hr/>
+        </div>
     </div>
-    <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-        <form method="post" action="" id="f">
-            <input type="text" name="accion" id="accion" style="display:none"/>
-            <div class="container">
-                <!-- FILA DE BOTONES -->
-                <div class="row">
-                    <div class="col-md-8">
-                        <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
-                        <button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
-                        <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
-                        <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
-                    </div>
-                </div>
-                <!-- FIN DE FILA BOTONES -->
-                <div class="row">
-                    <div class="col">
-                        <hr class="border border-success border-3 opacity-65"/>
-                    </div>
-                </div>
-                <!-- FILA DE INPUT Y BUSCAR PROVEEDOR -->
-                <h6>Rif del Proveedor</h6>
-                <div class="row">
-                    <div class="col-md-8 input-group">
-                        <input class="form-control" type="text" id="idproveedor" name="idproveedor"/>	 
-                        <input class="form-control" type="text" id="nombreprove" name="nombreprove" style="display:none" />
-                    </div>
-                </div>
-                <!-- FIN DE FILA INPUT Y BUSCAR PROVEEDOR -->
-
-                <!-- FILA DE DATOS DEL PROVEEDOR -->
-                <div class="row">
-                    <div class="col-md-12" id="datosdelproveedor">
-                    </div>
-                </div>
-                <!-- FIN DE FILA DATOS DEL PROVEEDOR -->
                 
-                <div class="row">
-                    <div class="col">
-                        <hr/>
-                    </div>
-                </div>
-
-                <!-- FILA DE BUSQUEDA DE PRODUCTOS -->
-                <h6>Codigo del Producto</h6>
-                <div class="row">
-                    <div class="col-md-8 input-group">
-                        <input class="form-control" type="text" id="codigoproducto" name="codigoproducto"/>
-                        <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
-                    </div>
-                </div>
-                <!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
-
-                <div class="row">
-                    <div class="col">
-                        <hr/>
-                    </div>
-                </div>
-
-                <!-- FILA DE INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
-                <h6>Cantidad de Producto</h6>
-                <div class="row">
-                    <div class="col-md-8 input-group">
-                        <input class="form-control" type="text" id="idcantidad" name="idcantidad"/>	 
-                        <input class="form-control" type="text" id="cantproducto" name="cantproducto" style="display:none" />
-                    </div>
-                </div>
-                <!-- FIN DE FILA INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
-
-                <div class="row">
-                    <div class="col">
-                        <hr/>
-                    </div>
-                </div>
-
-                <!-- FILA DE INPUT Y BUSCAR PRECIO DE PRODUCTO -->
-                <h6>Precio de Producto</h6>
-                <div class="row">
-                    <div class="col-md-8 input-group">
-                        <input class="form-control" type="number" id="precioproducto" name="precioproducto"/>	 
-                        <input class="form-control" type="number" id="idprecio" name="idprecio" style="display:none" />
-                    </div>
-                </div>
-                <!-- FIN DE FILA INPUT Y BUSCAR PRECIO DE PRODUCTO -->
-
-                <div class="row">
-                    <div class="col">
-                        <hr/>
-                    </div>
-                </div>
-
-                <!-- FILA DE INPUT Y BUSCAR TASA DE PRECIO -->
-                <h6>Tasa de Precio</h6>
-                <div class="row">
-                    <div class="col-md-8 input-group">
-                        <input class="form-control" type="text" id="idtasa" name="idtasa"/>	 
-                        <input class="form-control" type="text" id="tasaprecio" name="tasaprecio" style="display:none" />
-                    </div>
-                </div>
-                <!-- FIN DE FILA INPUT Y BUSCAR TASA DE PRECIO -->
-
-                <div class="row">
-                    <div class="col">
-                        <hr/>
-                    </div>
-                </div>
-                
-                <!-- METODO DE PAGO -->
-                <div class="mb-3">
-                    <label for="tipo_usuario">Metodo de Pago</label>
-                    <select class="form-select" aria-label="Default select example" id="metodo_pago">
-                        <option value="PAGOMOVIL">Pagomóvil</option> 
-                        <option value="PUNTO">Punto</option> 
-                        <option value="EFECTIVO">Efectivo</option> 
-                    </select> 
-                </div>
-                <!-- FIN DE METODO DE PAGO -->
+    <!-- METODO DE PAGO -->
+    <div class="mb-3">
+        <label for="tipo_usuario">Metodo de Pago</label>
+        <select class="form-select" aria-label="Default select example" id="metodo_pago">
+            <option value="PAGOMOVIL">Pagomóvil</option> 
+            <option value="PUNTO">Punto</option> 
+            <option value="EFECTIVO">Efectivo</option> 
+        </select> 
+    </div>
+    <!-- FIN DE METODO DE PAGO -->
+     
                 <div class="row">
                     <div class="col">
                         <hr class="border border-success border-3 opacity-65"/>
