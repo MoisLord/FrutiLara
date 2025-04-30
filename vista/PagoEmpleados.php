@@ -1,5 +1,5 @@
 <html> 
-<title>N SALIDAS</title>
+<title>PAGO EMPLEADO</title>
 <?php require_once("comunes/encabezado.php"); ?>
 <?php require_once("./modelo/session.php"); ?>
 <body>
@@ -15,7 +15,7 @@
 <br/>
 
 <div class="container text-center h2 text-success">
-NOTAS DE SALIDA DE PRODUCTOS
+PAGO DEL EMPLEADO
 <hr class="border border-success border-3 opacity-65"/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->

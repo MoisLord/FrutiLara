@@ -47,7 +47,6 @@
               </a>
               <div class="dropdown-menu">
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
-            <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="/FrutiLara/modelo">MODELO DE PRODUCTOS</a>
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="categoria">CATEGORIAS DE PRODUCTOS</a>
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="productosaj">PRODUCTOS</a>
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="proveedor">PROVEEDORES</a>
@@ -67,7 +66,7 @@
               </div>
             </li>
             <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">Pago de Empleados</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">PAGO DEL EMPLEADO</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
