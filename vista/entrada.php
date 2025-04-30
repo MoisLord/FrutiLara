@@ -71,8 +71,15 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</div>
 	</div>
 	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
+
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
+
 	<!-- FILA DE INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
-	<h6>Precio de Producto</h6>
+	<h6>Cantidad de Producto</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
 		<input class="form-control" type="text" id="idcantidad" name="idcantidad"/>	 
@@ -81,7 +88,15 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		   
 		</div>
 	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR PRECIO DE PRODUCTO -->
+	<!-- FIN DE FILA INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
+
+	<div class="row">
+		<div class="col">
+			<hr/>
+		</div>
+	</div>
+
+	<!-- FILA DE INPUT Y BUSCAR PRECIO DE PRODUCTO -->
 	<h6>Precio de Producto</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
@@ -92,6 +107,17 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</div>
 	</div>
 	<!-- FIN DE FILA INPUT Y BUSCAR PRECIO DE PRODUCTO -->
+	<!-- FILA DE INPUT Y BUSCAR TASA DE PRECIO -->
+	<h6>Tasa de Precio</h6>
+	<div class="row">
+		<div class="col-md-8 input-group">
+		<input class="form-control" type="text" id="idtasa" name="idtasa"/>	 
+		   <input class="form-control" type="text" id="tasaprecio" name="tasaprecio" style="display:none" />
+		     
+		   
+		</div>
+	</div>
+	<!-- FIN DE FILA INPUT Y BUSCAR TASA DE PRECIO -->
 	<div class="row">
 		<div class="col">
 			<hr class="border border-success border-3 opacity-65"/>
