@@ -120,11 +120,11 @@ NOTAS DE ENTRADA DE PRODUCTOS
 	<!-- FIN DE FILA INPUT Y BUSCAR TASA DE PRECIO -->
 	<!-- METODO DE PAGO -->
 	<div class="mb-3">
-        <label for="tipo_usuario">Tipos de usuario</label>
-        <select class="form-select" aria-label="Default select example" id="tipo_usuario">
-			<option value="SUPERUSUARIO">Super Usuario</option> 
-            <option value="ADMINISTRADOR">Administrador</option> 
-            <option value="EMPLEADO">Empleado</option> 
+        <label for="tipo_usuario">Metodo de Pago</label>
+        <select class="form-select" aria-label="Default select example" id="metodo_pago">
+			<option value="PAGOMOVIL">Pagomóvil</option> 
+            <option value="PUNTO">Punto</option> 
+            <option value="EFECTIVO">Efectivo</option> 
         </select> 
     </div>
 	<!-- FIN DE METODO DE PAGO -->
