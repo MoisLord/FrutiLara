@@ -66,7 +66,9 @@
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">Notas de Salida</a>
               </div>
             </li>
-            
+            <li class="nav-item">
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">Pago de Empleados</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
           </li>
