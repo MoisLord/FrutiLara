@@ -32,26 +32,26 @@ require_once("modelo/".$pagina.".php");
 		  $accion = $_POST['accion'];
 		  
 		  if($accion=='consultar'){
-			 echo  json_encode($o->consultar());  
+			 echo  json_encode($o->set_consultar());  
 		  }
 		  elseif($accion=='consultatr'){
 			 $o->set_rif($_POST['rif']); 
-			 echo  json_encode($o->consultatr());  
+			 echo  json_encode($o->set_consultatr());  
 		  }
 		  
 		  elseif($accion=='eliminar'){
 			 $o->set_rif($_POST['rif']);
-			 echo  json_encode($o->eliminar());
+			 echo  json_encode($o->set_eliminar());
 		  }
 
 		  elseif($accion=='consultaDelete'){
-			$respuesta = $o->consultadelete();
+			$respuesta = $o->set_consultadelete();
 			echo json_encode($respuesta);
 		 }
 
 		 elseif($accion=='restaurar'){
 			$o->set_rif($_POST['rif']);
-			 echo  json_encode($o->restaurar());
+			 echo  json_encode($o->set_restaurar());
 		 }
 		  else{		  
 			  $o->set_rif($_POST['rif']);
@@ -61,10 +61,10 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_direccion($_POST['direccion']);
 			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
-				echo  json_encode($o->incluir());
+				echo  json_encode($o->set_incluir());
 			  }
 			  elseif($accion=='modificar'){
-				echo  json_encode($o->modificar());
+				echo  json_encode($o->set_modificar());
 			  }
 		  }
 		  exit;
