@@ -284,7 +284,7 @@ $(document).ready(function(){
                 beforeSend: function () {},
                 timeout: 10000, //tiempo maximo de espera por la respuesta del servidor
                 success: function(respuesta) {//si resulto exitosa la transmision
-                console.log(respuesta);
+                //console.log(respuesta);
                     try {
                         var lee = JSON.parse(respuesta);
                         if (lee.resultado == "consultar") {
@@ -294,7 +294,7 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                            $("#documento").val(lee.mensaje[0][1]);
+                        $("#documento").val(lee.mensaje[0][1]);
                            $("#Nombre").val(lee.mensaje[0][2]);
                            $("#Telefono").val(lee.mensaje[0][3]);
                            $("#direccion").val(lee.mensaje[0][4]);
