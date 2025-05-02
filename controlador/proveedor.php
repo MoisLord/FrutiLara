@@ -13,67 +13,61 @@ if (!is_file("modelo/".$pagina.".php")){
 	exit;
 }  
 require_once("modelo/".$pagina.".php");  
-  if(is_file("vista/".$pagina.".php")){
-	  
-	  //bien si estamos aca es porque existe la //vista y la clase
-	  //por lo que lo primero que debemos hace es //realizar una instancia de la clase
-	  //instanciar es crear una variable local, //que contiene los metodos de la clase
-	  //para poderlos usar
-	  
-	  
-	  $o = new proveedor(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
-	  //clase personasht
-	  
-	  if(!empty($_POST)){
-		  
-		  //como ya sabemos si estamos aca es //porque se recibio alguna informacion
-		  //de la vista, por lo que lo primero que //debemos hacer ahora que tenemos una 
-		  //clase es guardar esos valores en ella //con los metodos set
-		  $accion = $_POST['accion'];
-		  
-		  if($accion=='consultar'){
-			 echo  json_encode($o->set_consultar());  
-		  }
-		  elseif($accion=='consultatr'){
-			 $o->set_rif($_POST['rif']); 
-			 echo  json_encode($o->set_consultatr());  
-		  }
-		  
-		  elseif($accion=='eliminar'){
-			 $o->set_rif($_POST['rif']);
-			 echo  json_encode($o->set_eliminar());
-		  }
+$o = new proveedor(); // Instancia de la clase
 
-		  elseif($accion=='consultaDelete'){
-			$respuesta = $o->set_consultadelete();
-			echo json_encode($respuesta);
-		 }
+if (!empty($_POST)) {
+    $accion = $_POST['accion'];
 
-		 elseif($accion=='restaurar'){
-			$o->set_rif($_POST['rif']);
-			 echo  json_encode($o->set_restaurar());
-		 }
-		  else{		  
-			  $o->set_rif($_POST['rif']);
-			  $o->set_document($_POST['documento']);
-			  $o->set_Nombre($_POST['Nombre']);
-			  $o->set_Telefono($_POST['Telefono']);
-			  $o->set_direccion($_POST['direccion']);
-			  $o->set_estado_registro($_POST['estado_registro']);
-			  if($accion=='incluir'){
-				echo  json_encode($o->set_incluir());
-			  }
-			  elseif($accion=='modificar'){
-				echo  json_encode($o->set_modificar());
-			  }
-		  }
-		  exit;
-	  }
-	  
-	  
-	  require_once("vista/".$pagina.".php"); 
-  }
-  else{
-	  echo "pagina en construccion";
-  }
+    // Sanitizamos todos los valores de $_POST antes de usarlos
+    foreach ($_POST as $key => $value) {
+        $_POST[$key] = htmlspecialchars(strip_tags(trim($value)));
+    }
+
+    // Usamos switch para organizar mejor las acciones
+    switch ($accion) {
+        case 'consultar':
+            echo json_encode($o->set_consultar());
+            break;
+
+        case 'consultatr':
+            $o->set_rif($_POST['rif']);
+            echo json_encode($o->set_consultatr());
+            break;
+
+        case 'eliminar':
+            $o->set_rif($_POST['rif']);
+            echo json_encode($o->set_eliminar());
+            break;
+
+        case 'consultaDelete':
+            echo json_encode($o->set_consultadelete());
+            break;
+
+        case 'restaurar':
+            $o->set_rif($_POST['rif']);
+            echo json_encode($o->set_restaurar());
+            break;
+
+        case 'incluir':
+        case 'modificar':
+            // Asignación de datos con sanitización previa
+            $o->set_rif($_POST['rif']);
+            $o->set_document($_POST['documento']);
+            $o->set_Nombre($_POST['Nombre']);
+            $o->set_Telefono($_POST['Telefono']);
+            $o->set_direccion($_POST['direccion']);
+            $o->set_estado_registro($_POST['estado_registro']);
+            echo json_encode($accion == 'incluir' ? $o->set_incluir() : $o->set_modificar());
+            break;
+
+        default:
+            echo json_encode(["resultado" => "error", "mensaje" => "Acción no válida"]);
+            break;
+    }
+    exit;
+}
+
+// Si no hay POST, cargamos la vista
+require_once("vista/".$pagina.".php");
+
 ?>
