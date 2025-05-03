@@ -61,10 +61,30 @@ class proveedor extends datos{
 	{
 		return $this->estado_registro;
 	}
+	function set_incluir() {
+		return $this->incluir(); // Retorna el resultado de incluir()
+	}
 	
+	function set_modificar() {
+		return $this->modificar(); // Retorna el resultado de modificar()
+	}
+	function set_eliminar() {
+		return $this->eliminar(); // Retorna el resultado de eliminar()
+	}
+	function set_restaurar(){
+		return $this->restaurar(); // Retorna el resultado de restaurar()
+	}
+	function set_consultadelete(){
+		return $this->consultadelete(); // Retorna el resultado de consultadelete()
+	}
+	function set_consultatr(){
+		return $this->consultatr(); // Retorna el resultado de consultr()
+	}
+	function set_consultar(){
+		return $this->consultar(); // Retorna el resultado de consultar()
+	}
 	
-	
-	function incluir(){
+	private function incluir(){
 		
 		
 		//Lo primero que debemos hacer es consultar por el campo clave
@@ -76,9 +96,7 @@ class proveedor extends datos{
 			//los pasos a seguir son
 			//1 Se llama a la funcion conecta 
 			$co = $this->conecta();
-			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//2 Se ejecuta el sql
-			$r = array();
+            $resultado = array();
 			try {
 				
 					$p = $co->prepare("insert into proveedores(
@@ -97,13 +115,19 @@ class proveedor extends datos{
 						:direccion,
 						:estado_registro
 						)");
-					
-					$p->bindParam(':rif',$this->rif);	
-					$p->bindParam(':documento',$this->document);	//Esta funcion bindparam() vinculara con una variable como una referencia
-					$p->bindParam(':nombre',$this->Nombre);
-					$p->bindParam(':telefono',$this->Telefono);	
-					$p->bindParam(':direccion',$this->direccion);
-					$p->bindParam(':estado_registro', $this->estado_registro);	
+						$rif = htmlspecialchars($this->rif);
+						$documento = htmlspecialchars($this->document);
+						$nombre = htmlspecialchars($this->Nombre);
+						$telefono = htmlspecialchars($this->Telefono);
+						$direccion = htmlspecialchars($this->direccion);
+						$estado_registro = htmlspecialchars($this->estado_registro);
+
+					$p->bindParam(':rif',$rif);	
+					$p->bindParam(':documento',$documento);	//Esta funcion bindparam() vinculara con una variable como una referencia
+					$p->bindParam(':nombre',$nombre);
+					$p->bindParam(':telefono',$telefono);	
+					$p->bindParam(':direccion',$direccion);
+					$p->bindParam(':estado_registro', $estado_registro);	
 					
 					$p->execute();
 					
@@ -113,6 +137,7 @@ class proveedor extends datos{
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
 			}
+			$this->cerrarConexion();
 		}
 		else{
 			$r['resultado'] = 'incluir';
@@ -126,7 +151,7 @@ class proveedor extends datos{
 		
 	}
 	
-	function modificar(){
+	private function modificar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -141,13 +166,18 @@ class proveedor extends datos{
 						where
 						rif = :rif
 						");
-					
-					$p->bindParam(':rif',$this->rif);		
-					$p->bindParam(':documento',$this->document);
-					$p->bindParam(':nombre',$this->Nombre);
-					$p->bindParam(':telefono',$this->Telefono);	
-					$p->bindParam(':direccion',$this->direccion);
-					$p->bindParam(':estado_registro', $this->estado_registro);	
+						$rif = htmlspecialchars($this->rif);
+						$documento = htmlspecialchars($this->document);
+						$nombre = htmlspecialchars($this->Nombre);
+						$telefono = htmlspecialchars($this->Telefono);
+						$direccion = htmlspecialchars($this->direccion);
+						$estado_registro = htmlspecialchars($this->estado_registro);
+					$p->bindParam(':rif',$rif);		
+					$p->bindParam(':documento',$documento);
+					$p->bindParam(':nombre',$nombre);
+					$p->bindParam(':telefono',$telefono);	
+					$p->bindParam(':direccion',$direccion);
+					$p->bindParam(':estado_registro', $estado_registro);	
 					$p->execute();
 					
 						$r['resultado'] = 'modificar';
@@ -156,6 +186,7 @@ class proveedor extends datos{
 				$r['resultado'] = 'error';
 			    $r['mensaje'] =  $e->getMessage();
 			}
+			$this->cerrarConexion();
 		}
 		else{
 			$r['resultado'] = 'modificar';
@@ -164,7 +195,7 @@ class proveedor extends datos{
 		return $r;
 	}
 	
-	function eliminar(){
+	private function eliminar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -197,8 +228,8 @@ class proveedor extends datos{
 				where
 				rif = :rif
 				");
-
-				$p->bindParam(':rif', $this->rif);
+				$rif = htmlspecialchars($this->rif);
+				$p->bindParam(':rif', $rif);
 				$p->execute();
 
 				$r['resultado'] = 'eliminar';
@@ -207,6 +238,7 @@ class proveedor extends datos{
 				$r['resultado'] = 'error';
 				$r['mensaje'] =  $e->getMessage();
 			}
+			$this->cerrarConexion();
 		} else {
 			$r['resultado'] = 'eliminar';
 			$r['mensaje'] =  'No existe el rif';
@@ -215,195 +247,185 @@ class proveedor extends datos{
 
 	}
 	
-	function restaurar(){
+	private function restaurar() {
 		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$r = array();
+		$resultado = array();
+	
 		if ($this->existe($this->rif)) {
-			$resultado = $co->query("SELECT estado_registro FROM proveedores WHERE rif = " . $this->rif . "");
-
-			$respuesta = 0;
-			foreach ($resultado as $r) {
-				$respuesta = $r['estado_registro'];
-			}
-
-			if($respuesta) {
-				$r['resultado'] = 'restaurar';
-				$r['mensaje'] =  'El proveedor no esta eliminado';
-			} else {
 			try {
-				$p = $co->prepare("Update proveedores set 
-				estado_registro = 1
-				where
-				rif = :rif
-				");
-
-				$p->bindParam(':rif', $this->rif);
+				// Consulta segura utilizando prepared statements
+				$p = $co->prepare("SELECT estado_registro FROM proveedores WHERE rif = :rif");
+				$rif = htmlspecialchars($this->rif);
+				$p->bindParam(':rif', $rif, PDO::PARAM_STR);
 				$p->execute();
-
-				$r['resultado'] = 'restaurar';
-				$r['mensaje'] =  'El proveedor ha sido Restaurado';
+				$respuesta = $p->fetchColumn(); // Obtener el estado directamente
+	
+				if ($respuesta == 1) {
+					$resultado['resultado'] = 'restaurar';
+					$resultado['mensaje'] = 'El proveedor no está eliminado';
+				} else {
+					$p = $co->prepare("UPDATE proveedores SET estado_registro = 1 WHERE rif = :rif");
+					$p->bindParam(':rif', $rif, PDO::PARAM_STR);
+					$p->execute();
+	
+					$resultado['resultado'] = 'restaurar';
+					$resultado['mensaje'] = 'El proveedor ha sido restaurado';
+				}
+	
 			} catch (Exception $e) {
-				$r['resultado'] = 'error';
-				$r['mensaje'] =  $e->getMessage();
+				$resultado['resultado'] = 'error';
+				$resultado['mensaje'] = $e->getMessage();
 			}
-		}
+	
+			// Cerramos la conexión manualmente
+			$this->cerrarConexion();
+	
 		} else {
-			$r['resultado'] = 'restaurar';
-			$r['mensaje'] =  'No existe el rif';
+			$resultado['resultado'] = 'error';
+			$resultado['mensaje'] = 'No existe el rif';
 		}
-		return $r;
-
+	
+		return $resultado;
 	}
 	
-	function consultar(){
+	private function consultar() {
 		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$r = array();
-
-		try{
-			
-			$resultado = $co->query("SELECT * from proveedores WHERE estado_registro = 1");
-			
-			if($resultado){
-				
-				$respuesta = '';
-				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
-					$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['documento'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['rif'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['telefono'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['direccion'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."</tr>";
-
-						$r['resultado'] = 'consultar';
-						$r['mensaje'] =  $respuesta;
-						
-				}
-				
-				return $r;
-			    
-			}
-			else{
-			return '';
-			}
-			
-		}catch(Exception $e){
-			
-			return $e->getMessage();
-		}
-		
-	}
+		$resultado = array();
 	
-	function consultadelete()
-	{
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$r = array(); // en este arreglo
-		// se enviara la respuesta a la solicitud y el
-		// contenido de la respuesta
 		try {
-			$resultado = $co->query("SELECT * from proveedores WHERE estado_registro = 0");
-			
-			if($resultado){
-				
+			// Consulta con prepared statement para evitar SQL Injection
+			$p = $co->prepare("SELECT documento, rif, nombre, telefono, direccion FROM proveedores WHERE estado_registro = 1");
+			$p->execute();
+			$proveedores = $p->fetchAll(PDO::FETCH_ASSOC);
+	
+			if ($proveedores) {
 				$respuesta = '';
-				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='coloca(this);'>";
-					$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['documento'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['rif'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['nombre'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['telefono'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['direccion'];
-						$respuesta = $respuesta."</td>";
-						$respuesta = $respuesta."</tr>";
+				foreach ($proveedores as $r) {
+					$respuesta .= "<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta .= "<td>{$r['documento']}</td>";
+					$respuesta .= "<td>{$r['rif']}</td>";
+					$respuesta .= "<td>{$r['nombre']}</td>";
+					$respuesta .= "<td>{$r['telefono']}</td>";
+					$respuesta .= "<td>{$r['direccion']}</td>";
+					$respuesta .= "</tr>";
 				}
+	
+				$resultado['resultado'] = 'consultar';
+				$resultado['mensaje'] = $respuesta;
+			} else {
+				$resultado['resultado'] = 'error';
+				$resultado['mensaje'] = 'No hay proveedores activos';
 			}
-			$r['resultado'] = 'consultaDelete';
-			$r['mensaje'] =  $respuesta;
+	
 		} catch (Exception $e) {
-			$r['resultado'] = 'error';
-			$r['mensaje'] =  $e->getMessage();
+			$resultado['resultado'] = 'error';
+			$resultado['mensaje'] = $e->getMessage();
 		}
-		return $r;
+	
+		// Cerrar la conexión para liberar recursos
+		$this->cerrarConexion();
+	
+		return $resultado;
 	}
 	
-	private function existe($rif){
-		/*Esta funcion hara que la variable rif verifique que exista */
-		$co = $this->conecta();// esta linea conectara la base de datos mediante de un llamado desde clase datos
-		
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// esta linea (objeto de datos php)verificara los error en la base de datos
-		try{
-			//Entramos un un try catch en la cual es perfecto para manejar excepciones 
-			// dentro del try se hace select de tabla proveedores donde rif
-			$resultado = $co->query("select * from proveedores where rif='$rif'");
-			
-			//en esta parte se da una verificacion de los datos proporcionados 
-			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
-			if($fila){
-					// si esa fila hay datos retornara true
-				return true;
-			    
-			}
-			else{
-				// si no hay retornara false
-				return false;;
-			}
-			
-		}catch(Exception $e){//
-			return false;
-		}
-	}
 	
-	function consultatr(){
+	private function consultadelete(){
 		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$r = array();
-		try{
-			
-			$resultado = $co->query("Select * from proveedores where rif='$this->rif'");
-			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
-			if($fila){
-			    
-				$r['resultado'] = 'encontro';
-			    $r['mensaje'] =  $fila;
-				
-			    
+		$resultado = array();
+	
+		try {
+			// Consulta segura utilizando prepared statements
+			$p = $co->prepare("SELECT documento, rif, nombre, telefono, direccion FROM proveedores WHERE estado_registro = 0");
+			$p->execute();
+			$proveedores = $p->fetchAll(PDO::FETCH_ASSOC);
+	
+			if ($proveedores) {
+				$respuesta = '';
+				foreach ($proveedores as $r) {
+					$respuesta .= "<tr style='cursor:pointer' onclick='coloca(this);'>";
+					$respuesta .= "<td>{$r['documento']}</td>";
+					$respuesta .= "<td>{$r['rif']}</td>";
+					$respuesta .= "<td>{$r['nombre']}</td>";
+					$respuesta .= "<td>{$r['telefono']}</td>";
+					$respuesta .= "<td>{$r['direccion']}</td>";
+					$respuesta .= "</tr>";
+				}
+	
+				$resultado['resultado'] = 'consultaDelete';
+				$resultado['mensaje'] = $respuesta;
 			}
-			else{
-				
-				$r['resultado'] = 'noencontro';
-				$r['mensaje'] =  '';
-				
-			}
-			
-		}catch(Exception $e){
-			$r['resultado'] = 'error';
-			$r['mensaje'] =  $e->getMessage();
+	
+		} catch (Exception $e) {
+			$resultado['resultado'] = 'error';
+			$resultado['mensaje'] = $e->getMessage();
 		}
-		return $r;
-		
-	}	
+	
+		// Cerrar la conexión para liberar recursos
+		$this->cerrarConexion();
+	
+		return $resultado;
+	}
+	
+	
+	private function existe($rif) {
+		$co = $this->conecta();
+	
+		try {
+			// Sanitizamos el rif antes de usarlo en la consulta
+			$rif = htmlspecialchars($rif);
+			
+			// Consulta preparada para evitar inyección SQL
+			$p = $co->prepare("SELECT COUNT(*) FROM proveedores WHERE rif = :rif");
+			$p->bindParam(':rif', $rif, PDO::PARAM_STR);
+			$p->execute();
+			
+			// Si hay al menos un registro, retorna true
+			$existe = $p->fetchColumn() > 0;
+	
+		} catch (Exception $e) {
+			$existe = false;
+		}
+	
+		// Cerramos la conexión manualmente
+		$this->cerrarConexion();
+	
+		return $existe;
+	}
+	
+	
+	private function consultatr() {
+		$co = $this->conecta();
+		$resultado = array();
+	
+		try {
+			// Sanitizamos el rif antes de usarlo en la consulta
+			$rif = htmlspecialchars($this->rif);
+			
+			// Consulta preparada para mayor seguridad
+			$p = $co->prepare("SELECT * FROM proveedores WHERE rif = :rif");
+			$p->bindParam(':rif', $rif, PDO::PARAM_STR);
+			$p->execute();
+			
+			$fila = $p->fetchAll(PDO::FETCH_ASSOC); // Obtiene los datos en formato asociativo
+			
+			if ($fila) {
+				$resultado['resultado'] = 'encontro';
+				$resultado['mensaje'] = $fila; // Retorna el array de datos
+			} else {
+				$resultado['resultado'] = 'noencontro';
+				$resultado['mensaje'] = 'No se encontró el proveedor';
+			}
+	
+		} catch (Exception $e) {
+			$resultado['resultado'] = 'error';
+			$resultado['mensaje'] = $e->getMessage();
+		}
+	
+		// Cerramos la conexión manualmente
+		$this->cerrarConexion();
+	
+		return $resultado;
+	}
 	
 }
 ?>
