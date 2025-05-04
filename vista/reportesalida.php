@@ -10,7 +10,7 @@
 <br/>
 <br/>
 <br/>
-PANTALLA DE Prefacturación
+PANTALLA DE REPORTE DE PREFACTURACIÓN
 <hr class="border border-success border-3 opacity-65">
 
 <div class="container">
