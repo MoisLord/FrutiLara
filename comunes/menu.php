@@ -81,7 +81,7 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportesalida">Reporte de Prefacturación</a>
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte de inventario</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte General</a>
               </div>
             </li>
             <li class="nav-item">
@@ -115,7 +115,7 @@
                 REPORTES
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte de Inventario</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte General</a>
               </div>
             </li>
           </ul>
