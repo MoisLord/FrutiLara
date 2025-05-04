@@ -107,7 +107,7 @@
                 INVENTARIO
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">Notas de Salida</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">Prefacturación</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
