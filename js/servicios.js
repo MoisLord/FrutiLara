@@ -6,18 +6,18 @@ function consultar() {
 
 $(document).ready(function(){
     consultar();
-    carga_servicios();
+    carga_proveedor();
     $("#codigo_servicio").on("keyup",function(){
         var codigo = $(this).val();
         var encontro = false;
         $("#consultaDelete tr").each(function(){
-            if(codigo == $(this).find("td:eq(0)").text()){
+            if(codigo == $(this).find("td:eq(1)").text()){
                 coloca($(this));
                 encontro = true;
             } 
         });
         if(!encontro){
-            $("#datosservicios").html("");
+            $("#datosproveedor").html("");
         }
     });	
 
@@ -36,8 +36,7 @@ $(document).ready(function(){
                 enviaAjax(datos,'consultatr');	
             }
         });
-        
-        
+       
         $("#descripcion_servicio").on("keypress",function(e){
             validarkeypress(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC]*$/,e);
         });
@@ -48,7 +47,7 @@ $(document).ready(function(){
         
     //FIN DE VALIDACION DE DATOS
     
-    function carga_servicios(){
+    function carga_proveedor(){
         // para cargar la lista de clientes
         // utilizaremos una peticion ajax
         // por lo que usaremos un objeto llamado 
@@ -90,7 +89,7 @@ $(document).ready(function(){
         
         if(validarkeyup(/^[0-9]{6,9}$/,$("#codigo_servicio"),
             $("#scodigo_servicio"),"El formato debe ser 092348760 o 00003454")==0){
-            muestraMensaje("El codigo debe coincidir con el formato <br/>"+ 
+            muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "092348760 o 00003454");	
             
         }
@@ -108,7 +107,7 @@ $(document).ready(function(){
         
         if(validarkeyup(/^[0-9]{6,9}$/,$("#codigo_servicio"),
             $("#scodigo_servicio"),"El formato debe ser 092348760 o 00003454")==0){
-            muestraMensaje("El servicio debe coincidir con el formato <br/>"+ 
+            muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "092348760 o 00003454");	
             
         }
@@ -130,7 +129,7 @@ $(document).ready(function(){
     // });
 
     $("#consultadeDelete").on("click",function(){
-        $("#modalservicios").modal("show");
+        $("#modalProveedor").modal("show");
         var datos = new FormData();
         datos.append('accion','consultaDelete');
         enviaAjax(datos);
@@ -140,19 +139,19 @@ $(document).ready(function(){
     });
     function destruyeDT(){
         //1 se destruye el datatablet
-        if ($.fn.DataTable.isDataTable("#tablaservicios")) {
-                $("#tablaservicios").DataTable().destroy();
+        if ($.fn.DataTable.isDataTable("#tablaproveedores")) {
+                $("#tablaproveedores").DataTable().destroy();
         }
     }
     function crearDT(){
         //se crea nuevamente
-        if (!$.fn.DataTable.isDataTable("#tablaservicios")) {
-                $("#tablaservicios").DataTable({
+        if (!$.fn.DataTable.isDataTable("#tablaproveedores")) {
+                $("#tablaproveedores").DataTable({
                   language: {
                     lengthMenu: "Mostrar _MENU_ por página",
-                    zeroRecords: "No se encontraron servicios",
+                    zeroRecords: "No se encontraron proveedores",
                     info: "Mostrando página _PAGE_ de _PAGES_",
-                    infoEmpty: "No hay servicios registrados",
+                    infoEmpty: "No hay srevicios registrados",
                     infoFiltered: "(filtrado de _MAX_ registros totales)",
                     search: "Buscar:",
                     paginate: {
@@ -174,13 +173,13 @@ $(document).ready(function(){
     function validarenvio(){
         if(validarkeyup(/^[0-9]{6,9}$/,$("#codigo_servicio"),
             $("#scodigo_servicio"),"El formato debe ser J092348760 o G00003454")==0){
-            muestraMensaje("El codigo debe coincidir con el formato <br/>"+ 
+            muestraMensaje("El rif debe coincidir con el formato <br/>"+ 
                             "J092348760");	
             return false;					
         }
         else if(validarkeyup(/^[A-Za-z0-9\b\s\u00f1\u00d1\u00E0-\u00FC,.:]{3,45}$/,
         $("#descripcion_servicio"),$("#sdescripcion_servicio"),"Solo letras  entre 3 y 30 caracteres")==0){
-        muestraMensaje("Descripcion debe tener <br/>Solo letras  entre 3 y 45 caracteres");
+        muestraMensaje("Direccion debe tener <br/>Solo letras  entre 3 y 45 caracteres");
         return false;
         }
         
@@ -262,7 +261,7 @@ $(document).ready(function(){
                            $("#modal1").modal("show");
                         }
                         else if (lee.resultado == "encontro") {
-                           $("#descripcion_servicio").val(lee.mensaje[0][4]);
+                           $("#descripcion_servicio").val(lee.mensaje[0][1]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
@@ -309,4 +308,3 @@ $(document).ready(function(){
         $("#descripcion_servicio").val("");
         
     }
-    

@@ -74,7 +74,7 @@ class servicios extends datos{
 			//los pasos a seguir son
 			//1 Se llama a la funcion conecta 
 			$co = $this->conecta();
-            $r = array();
+            $resultado = array();
 			try {
 				
 					$p = $co->prepare("insert into servicios(
@@ -123,12 +123,13 @@ class servicios extends datos{
 		$r = array();
 		if($this->existe($this->codigo_servicio)){
 			try {
-				$p = $co->prepare("update servicios set
+				$p = $co->prepare("UPDATE servicios SET
 						descripcion_servicio = :descripcion_servicio,
 						estado_registro = :estado_registro
-						where
+						
+						WHERE(
 						codigo_servicio = :codigo_servicio
-						");
+						)");
 						$codigo_servicio = htmlspecialchars($this->codigo_servicio);
 						$descripcion_servicio = htmlspecialchars($this->descripcion_servicio);
 						$estado_registro = htmlspecialchars($this->estado_registro);
@@ -180,9 +181,9 @@ class servicios extends datos{
 		// return $r;
 		if ($this->existe($this->codigo_servicio)) {
 			try {
-				$p = $co->prepare("Update servicios set 
+				$p = $co->prepare("UPDATE servicios SET
 				estado_registro = 0
-				where
+				WHERE
 				codigo_servicio = :codigo_servicio
 				");
 				$codigo_servicio = htmlspecialchars($this->codigo_servicio);
@@ -327,7 +328,7 @@ class servicios extends datos{
 			$codigo_servicio = htmlspecialchars($codigo_servicio);
 			
 			// Consulta preparada para evitar inyección SQL
-			$p = $co->prepare("SELECT COUNT(*) FROM proveedores WHERE codigo_servicio = :codigo_servicio");
+			$p = $co->prepare("SELECT COUNT(*) FROM servicios WHERE codigo_servicio = :codigo_servicio");
 			$p->bindParam(':codigo_servicio', $codigo_servicio, PDO::PARAM_STR);
 			$p->execute();
 			
