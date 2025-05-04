@@ -80,7 +80,7 @@
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportesalida">Reporte de Salida</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportesalida">Reporte de Prefacturación</a>
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte de inventario</a>
               </div>
             </li>
