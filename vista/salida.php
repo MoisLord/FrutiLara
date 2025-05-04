@@ -15,7 +15,7 @@
 <br/>
 
 <div class="container text-center h2 text-success">
-NOTAS DE SALIDA DE PRODUCTOS
+Prefacturación
 <hr class="border border-success border-3 opacity-65"/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
