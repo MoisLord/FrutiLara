@@ -10,7 +10,7 @@
 <br/>
 <br/>
 <br/>
-PANTALLA DE REPORTE DE INVENTARIO
+PANTALLA DE REPORTE GENERAL
 <hr class="border border-success border-3 opacity-65">
 
 <div class="container">
