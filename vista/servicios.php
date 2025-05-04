@@ -15,36 +15,26 @@ GESTIÓN DE SERVICIOS
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
-   <h4 class="text-center text-success">Registro de Servicios</h4>
+   <h4 class="text-center text-success">Registro de servicios</h4>
 
 	<div class="container">	
 		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="codigo_servicio">Codigo del servicio</label>
-			   <input class="form-control" type="text" id="codigo_servicio" name="codigo_servicio"/>
-			   <span id="scodigo_servicio">El formato incorrecto</span>
+			   <label for="codigo_servicio">Codigo</label>
+			   <input class="form-control" type="text" id="codigo_servicio"
+				name="codigo_servicio" />
+			   <span id="scodigo_servicio">El formato debe ser 9999999</span>
 			</div>
 		</div>
 		<div class="row mb-3">
 			<div class="col-md">
-			   <label for="descripcion_servicio">Descripcion</label>
+			   <label for="descripcion_servicio">Descripciòn</label>
 			   <input class="form-control" type="text" id="descripcion_servicio"
 				name="descripcion_servicio" maxlength="30"/>
 			   <span id="sdescripcion_servicio">Solo letras  entre 3 y 30 caracteres</span>
 			</div>
 		</div>
 		
-	
-
-		<div class="row mb-3">
-			<div class="col-md">
-			   <label for="estado_servicio">Estado</label>
-			   <input class="form-control" type="text" id="estado_servicio" name="estado_servicio" 
-			   />
-			   <span id="sestado_servicio">Solo letras y/o numeros entre 6 y 35 caracteres</span>
-			</div>
-		</div>
-
 		<div class="row">
 			<div class="col-md-12">
             <hr class="border border-success border-3 opacity-65">
@@ -52,9 +42,10 @@ GESTIÓN DE SERVICIOS
 		</div>
 
 		<div class="row mt-3 justify-content-left">
-			<div class="col-md-3">
+		<div class="col-md-4">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
+			
 			<div class="col-md-3">	
 		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
@@ -63,11 +54,17 @@ GESTIÓN DE SERVICIOS
 			</div>
 			</div>
 			<div class="row mt-3 justify-content-left">
-			<div class="col-md-2">	
+			<div class="col-md-3">	
 				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 			</div>
+			<div class="col-md-4">	
+				   <button type="button" class="btn btn-success" id="consultadeDelete">CONSULTAS ELIMINADAS</button>
 			</div>
-	</div>	
+			<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
+			</div>
+			</div>
+	</div>
 	</form>
 
 	<div class="col-8 p-4">
@@ -80,18 +77,42 @@ GESTIÓN DE SERVICIOS
 		<thead>
 		  <tr>
 			<th>Codigo</th>
-			<th>Descripcion</th>
-			<th>Estado</th>	
-			
+			<th>Descripciòn</th>
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
-		  
 		</tbody>
 		</table>
 		
     </div>
 </div> <!-- fin de container -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalservicio">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header text-light bg-success">
+        <h5 class="modal-title">CATEGORIAS ELIMINADAS</h5>
+        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content">
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+		  	<th>Codigo</th>
+			<th>Descripcion</th>
+		  </tr>
+		</thead>
+		<tbody id="consultaDelete">
+		 
+		</tbody>
+		</table>
+    </div>
+	<div class="modal-footer bg-light">
+	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
 <?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/servicios.js"></script>
 

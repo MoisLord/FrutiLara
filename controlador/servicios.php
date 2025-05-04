@@ -1,57 +1,70 @@
 <?php
   
 //llamada al archivo que contiene la clase
-//empleados, en ella estara el codigo que me permitirá
-//guardar, consultar y modificar dentro de mi base de datos
+//usuarios, en ella estara el codigo que me //permitirá
+//guardar, consultar y modificar dentro de mi base //de datos
 
 
-//verificar que exista el archivo
+//lo primero que se debe hacer es verificar al //igual que en la vista que exista el archivo
 if (!is_file("modelo/".$pagina.".php")){
-	//busca el archivo si no existe manda el siguiente mensaje
+	//alli pregunte que si no es archivo se niega //con !
+	//si no existe envio mensaje y me salgo
 	echo "Falta definir la clase ".$pagina;
 	exit;
 }  
 require_once("modelo/".$pagina.".php");  
-  if(is_file("vista/".$pagina.".php")){
-	  
-	   //si existe creamos una intancia que es una variable local
-	  
-	  $servicios = new servicios(); //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
-	  
-	  if(!empty($_POST)){
-		  
-		  // se recibio informacion de la vista 
-		   $accion = $_POST['accion'];
-		  
-		  if($accion=='consultar'){
-			 echo  json_encode($o->consultar());  
-		  }
-		  elseif($accion=='consultatr'){
-			 $o->set_codigo_servicio($_POST['codigo_servicio']); 
-			 echo  json_encode($o->consultatr());  
-		  }
+$o = new servicios(); // Instancia de la clase
 
-		  elseif($accion=='eliminar'){
-			 $o->set_codigo_servicio($_POST['codigo_servicio']);
-			 echo  json_encode($o->eliminar());
-		  }
-		  else{		  
-			  $servicios->set_codigo_servicio($_POST['codigo_servicio']);
-			  $servicios->set_descripcion_servicio($_POST['descripcion_servicio']);
-			  $servicios->set_estado_servicio($_POST['estado_servicio']);
-			  if($accion=='incluir'){
-				echo  json_encode($o->incluir());
-			  }
-			  elseif($accion=='modificar'){
-				echo  json_encode($o->modificar());
-			  }
-		  }
-		  exit;
-	  }	
-	  
-	  require_once("vista/".$pagina.".php"); 
-  }
-  else{
-	  echo "pagina en construccion";
-  }
+if (!empty($_POST)) {
+    $accion = $_POST['accion'];
+
+    // Sanitizamos todos los valores de $_POST antes de usarlos
+    foreach ($_POST as $key => $value) {
+        $_POST[$key] = htmlspecialchars(strip_tags(trim($value)));
+    }
+
+    // Usamos switch para organizar mejor las acciones
+    switch ($accion) {
+        case 'consultar':
+            echo json_encode($o->set_consultar());
+            break;
+
+        case 'consultatr':
+            $o->set_codigo_servicio($_POST['codigo_servicio']);
+            echo json_encode($o->set_consultatr());
+            break;
+
+        case 'eliminar':
+            $o->set_codigo_servicio($_POST['codigo_servicio']);
+            echo json_encode($o->set_eliminar());
+            break;
+
+        case 'consultaDelete':
+            echo json_encode($o->set_consultadelete());
+            break;
+
+        case 'restaurar':
+            $o->set_codigo_servicio($_POST['codigo_servicio']);
+            echo json_encode($o->set_restaurar());
+            break;
+
+        case 'incluir':
+        case 'modificar':
+            // Asignación de datos con sanitización previa
+            $o->set_codigo_servicio($_POST['codigo_servicio']);
+            $o->set_descripcion_servicio($_POST['descripcion_servicio']);
+            $o->set_estado_registro($_POST['estado_registro']);
+            echo json_encode($accion == 'incluir' ? $o->set_incluir() : $o->set_modificar());
+            break;
+
+        default:
+            echo json_encode(["resultado" => "error", "mensaje" => "Acción no válida"]);
+            break;
+    }
+    exit;
+}
+
+// Si no hay POST, cargamos la vista
+require_once("vista/".$pagina.".php");
+
 ?>
