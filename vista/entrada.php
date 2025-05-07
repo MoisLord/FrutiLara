@@ -177,60 +177,8 @@ NOTAS DE ENTRADA DE PRODUCTOS
                         </tbody>
                     </table>
                 </div>
-	<!-- FILA DE DETALLES DE SALIDA -->
-	<div class="row">
-		<div class="col-md-12">
-		   <table  class="table table-striped table-hover py-4">
-				<thead>
-				  <tr>
-				  <th>X</th>
-					<th>Codigo</th>
-					<th>Nombre</th>
-					<th>Cantidad</th>
-					<th>minimo</th>
-					<th>maximo</th>
-					
-					
-				  </tr>
-				</thead>
-				<tbody id="entrada">
-
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<!-- FIN DE FILA DETALLES DE SALIDA -->
-</div>
-</form>
-
-
-
-<!-- seccion del modal proveedores -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalproveedor">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de proveedores</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
-		<table class="table table-striped table-hover">
-		<thead>
-		  <tr>
-		   
-			<th>Rif</th>
-			<th>Documento</th>
-			<th>Empresa</th>
-			<th>Telefono</th>
-			<th>Direccion</th>
-		  </tr>
-		</thead>
-		<tbody id="listadoproveedor">
-		  
-		</tbody>
-		</table>
-    </div>
+              </div>
+            </div>
 	<div class="modal-footer bg-light">
 	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
