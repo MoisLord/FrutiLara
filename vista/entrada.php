@@ -177,22 +177,6 @@ NOTAS DE ENTRADA DE PRODUCTOS
                         </tbody>
                     </table>
                 </div>
-                <div class="
-	<!-- METODO DE PAGO -->
-	<div class="mb-3">
-        <label for="tipo_usuario">Metodo de Pago</label>
-        <select class="form-select" aria-label="Default select example" id="metodo_pago">
-			<option value="PAGOMOVIL">Pagomóvil</option> 
-            <option value="PUNTO">Punto</option> 
-            <option value="EFECTIVO">Efectivo</option> 
-        </select> 
-    </div>
-	<!-- FIN DE METODO DE PAGO -->
-	<div class="row">
-		<div class="col">
-			<hr class="border border-success border-3 opacity-65"/>
-		</div>
-	</div>
 	<!-- FILA DE DETALLES DE SALIDA -->
 	<div class="row">
 		<div class="col-md-12">
