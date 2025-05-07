@@ -121,6 +121,16 @@ class entrada extends datos{
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['Cantidad_producto'];
 						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['precio_producto'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['tasa_precio'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['metodo_pago'];
+						$respuesta = $respuesta."</td>";
+					
 					
 					
 					$respuesta = $respuesta."</tr>";
