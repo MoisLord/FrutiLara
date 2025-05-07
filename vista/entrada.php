@@ -109,7 +109,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
                                 <th>Cantidad del Producto</th>
                                 <th>Precio del Producto</th>
                                 <th>Tasa de Precio</th>
-                                <th>metodo_pago</th>
+                                <th>metodo del pago</th>
                                 </tr>
                             </thead>
                             <tbody id="entrada">
@@ -173,7 +173,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
                                 <th>Cantidad del Producto</th>
                                 <th>Precio del Producto</th>
                                 <th>Tasa de Precio</th>
-                                <th>metodo_pago</th>
+                                <th>metodo del pago</th>
                             </tr>
                         </thead>
                         <tbody id="listadoproductos">
