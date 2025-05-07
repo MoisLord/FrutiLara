@@ -175,13 +175,29 @@ NOTAS DE ENTRADA DE PRODUCTOS
                         </thead>
                         <tbody id="listadoproductos">
                         </tbody>
-                    </table>
-                </div>
-              </div>
-            </div>
+                      </table>
+                    </div>
 	<div class="modal-footer bg-light">
-	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="cantidadModal" tabindex="-1" role="dialog" aria-labelledby="cantidadModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-light bg-success">
+        <h5 class="modal-title" id="cantidadModalLabel">Aviso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        La cantidad no puede ser menor que cero!!.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cerrarModal">Cerrar</button>
+      </div>
     </div>
   </div>
 </div>
