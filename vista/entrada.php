@@ -107,7 +107,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
                                 <th>minimo</th>
                                 <th>maximo</th>
                                 <th>Cantidad del Producto</th>
-                                <th>Precio de Producto</th>
+                                <th>Precio del Producto</th>
                                 <th>Tasa de Precio</th>
                                 </tr>
                             </thead>
