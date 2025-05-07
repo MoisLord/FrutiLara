@@ -78,60 +78,6 @@ NOTAS DE ENTRADA DE PRODUCTOS
 		</div>
 	</div>
 
-	<!-- FILA DE INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
-	<h6>Cantidad de Producto</h6>
-	<div class="row">
-		<div class="col-md-8 input-group">
-		<input class="form-control" type="text" id="idcantidad" name="idcantidad"/>	 
-		   <input class="form-control" type="text" id="cantproducto" name="cantproducto" style="display:none" />
-		     
-		   
-		</div>
-	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR CANTIDAD DE PRODUCTO ENTRANTE -->
-
-	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
-	</div>
-
-	<!-- FILA DE INPUT Y BUSCAR PRECIO DE PRODUCTO -->
-	<h6>Precio de Producto</h6>
-	<div class="row">
-		<div class="col-md-8 input-group">
-		<input class="form-control" type="number" id="precioproducto" name="precioproducto"/>	 
-		   <input class="form-control" type="number" id="idprecio" name="idprecio" style="display:none" />
-		     
-		   
-		</div>
-	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR PRECIO DE PRODUCTO -->
-
-	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
-	</div>
-
-	<!-- FILA DE INPUT Y BUSCAR TASA DE PRECIO -->
-	<h6>Tasa de Precio</h6>
-	<div class="row">
-		<div class="col-md-8 input-group">
-		<input class="form-control" type="text" id="idtasa" name="idtasa"/>	 
-		   <input class="form-control" type="text" id="tasaprecio" name="tasaprecio" style="display:none" />
-		     
-		   
-		</div>
-	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR TASA DE PRECIO -->
-
-    <div class="row">
-        <div class="col">
-            <hr/>
-        </div>
-    </div>
-                
     <!-- METODO DE PAGO -->
     <div class="mb-3">
         <label for="tipo_usuario">Metodo de Pago</label>
@@ -160,6 +106,9 @@ NOTAS DE ENTRADA DE PRODUCTOS
                                 <th>Cantidad</th>
                                 <th>minimo</th>
                                 <th>maximo</th>
+                                <th>Cantidad del Producto</th>
+                                <th>Precio de Producto</th>
+                                <th>Tasa de Precio</th>
                                 </tr>
                             </thead>
                             <tbody id="entrada">
@@ -220,6 +169,8 @@ NOTAS DE ENTRADA DE PRODUCTOS
                                 <th>Nombre</th>
                                 <th>Minimo</th>
                                 <th>Maximo</th>
+                                <th>Cantidad del Producto</th>
+                                <th>Tasa de Precio</th>
                             </tr>
                         </thead>
                         <tbody id="listadoproductos">
