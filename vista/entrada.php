@@ -187,56 +187,6 @@ NOTAS DE ENTRADA DE PRODUCTOS
 </div>
 <!--fin de seccion modal-->
 
-<!-- seccion del modal productos -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalproductos">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de productos</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
-		<table class="table table-striped table-hover">
-		<thead>
-		  <tr>
-			<th>Codigo</th>
-			<th>Nombre</th>
-			<th>Minimo</th>
-			<th>Maximo</th>
-			
-		  </tr>
-		</thead>
-		<tbody id="listadoproductos">
-		 
-		</tbody>
-		</table>
-    </div>
-	<div class="modal-footer bg-light">
-	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
-  </div>
-</div>
-<!--fin de seccion modal-->
-<!--<div class="modal fade" id="cantidadModal" tabindex="-1" role="dialog" aria-labelledby="cantidadModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-light bg-success">
-        <h5 class="modal-title" id="cantidadModalLabel">Aviso</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        La cantidad Se esta pasando de los limites del stocks!!!
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cerrarModal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>-->
 <?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/entrada.js"></script>
 
