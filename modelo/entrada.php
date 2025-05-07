@@ -116,8 +116,11 @@ class entrada extends datos{
 							$respuesta = $respuesta.$r['minimo'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-						$respuesta = $respuesta.$r['maximo'];
-					$respuesta = $respuesta."</td>";
+						    $respuesta = $respuesta.$r['maximo'];
+						$respuesta = $respuesta."</td>";
+						$respuesta = $respuesta."<td>";
+							$respuesta = $respuesta.$r['Cantidad_producto'];
+						$respuesta = $respuesta."</td>";
 					
 					
 					$respuesta = $respuesta."</tr>";
