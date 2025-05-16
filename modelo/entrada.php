@@ -51,7 +51,7 @@ class entrada extends datos{
 	}
 	
 	
-	private function listadoproveedor(){
+	function listadoproveedor(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array(); // en este arreglo
@@ -93,7 +93,7 @@ class entrada extends datos{
 			return $r;
 	}
 	
-	private function listadoproductos(){
+	function listadoproductos(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
