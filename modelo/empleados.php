@@ -73,7 +73,7 @@ class empleados extends datos{
 	
 	// metodos para incluir, consultar y eliminar
 	
-	function incluir(){
+	private function incluir(){
 		// se consulta en este caso cedula, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 		
@@ -127,7 +127,7 @@ class empleados extends datos{
 		
 	}
 	
-	function modificar(){
+	private function modificar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -165,7 +165,7 @@ class empleados extends datos{
 		return $r;
 	}
 	
-	function eliminar(){
+	private function eliminar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
