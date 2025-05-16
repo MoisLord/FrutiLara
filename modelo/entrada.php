@@ -6,7 +6,7 @@ require_once('modelo/datos.php');
 
 class entrada extends datos{
     
-	function registrar($id_proveedor,$id_producto,$cantidad){
+	private function registrar($id_proveedor,$id_producto,$cantidad){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -51,7 +51,7 @@ class entrada extends datos{
 	}
 	
 	
-	function listadoproveedor(){
+	private function listadoproveedor(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array(); // en este arreglo
@@ -93,7 +93,7 @@ class entrada extends datos{
 			return $r;
 	}
 	
-	function listadoproductos(){
+	private function listadoproductos(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
