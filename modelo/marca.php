@@ -234,7 +234,7 @@ class marca extends datos{
 		return $r;
 	}
 	
-	private function consultar(){
+	function consultar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -273,7 +273,7 @@ class marca extends datos{
 		}
 	}
 	
-	private function consultadelete()
+	function consultadelete()
 	{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -328,7 +328,7 @@ class marca extends datos{
 		}
 	}
 	
-	private function consultatr(){
+	function consultatr(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
