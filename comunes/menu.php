@@ -72,6 +72,9 @@
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoservicio">PAGOS DE SERVICIOS</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="consolidacion">Consolidacion Bancaria</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
           </li>
          <li class="nav-item dropdown">
