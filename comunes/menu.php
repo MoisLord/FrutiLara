@@ -79,7 +79,15 @@
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">PAGO DEL EMPLEADO</a>
           </li>
 	<li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoservicio">PAGOS DE SERVICIOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoservicio">
+              <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+              <animated-icons
+              src="https://animatedicons.co/get-icon?name=Service&style=minimalistic&token=eae508df-c40e-4683-9677-0cbcc6d9a55a"
+              trigger="click"
+              attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#E6E9EC","group-2":"#000000","background":"#000000"}}'
+              height="50"
+              width="50"
+              ></animated-icons>PAGOS DE SERVICIOS</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="consolidacion">CONSOLIDACIÓN BANCARIA</a>
