@@ -79,7 +79,7 @@
           </li>
          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-                 <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+                 <script src="iconos/Register.js"></script>
                  <animated-icons
                  src="https://animatedicons.co/get-icon?name=reports&style=minimalistic&token=ff77881b-18e9-4ba6-b464-bfa18f63dab8"
                  trigger="click"
