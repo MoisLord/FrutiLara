@@ -76,26 +76,10 @@
               </div>
             </li>
             <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">
-              <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
-              <animated-icons
-              src="https://animatedicons.co/get-icon?name=Staff&style=minimalistic&token=ae89d06d-f628-4b1b-a043-ad9291637752"
-              trigger="click"
-              attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#E6E9EC","group-2":"#000000","background":"#000000"}}'
-              height="50"
-              width="50"
-              ></animated-icons>PAGO DEL EMPLEADO</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">PAGO DEL EMPLEADO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoservicio">
-              <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
-              <animated-icons
-              src="https://animatedicons.co/get-icon?name=Service&style=minimalistic&token=eae508df-c40e-4683-9677-0cbcc6d9a55a"
-              trigger="click"
-              attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#E6E9EC","group-2":"#000000","background":"#000000"}}'
-              height="50"
-              width="50"
-              ></animated-icons>PAGOS DE SERVICIOS</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoservicio">PAGOS DE SERVICIOS</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="consolidacion">CONSOLIDACIÓN BANCARIA</a>
@@ -112,7 +96,7 @@
                  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":0.5,"defaultColours":{"group-1":"#080808FF","group-2":"#000000FF","background":"#FFFFFF"}}'
                  height="50"
                  width="50"
-></animated-icons>REPORTES
+                 >REPORTES</animated-icons>
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
