@@ -43,7 +43,9 @@
 				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-              <?php require_once("iconos/Register.json"); ?>
+              <script
+                src="iconos/Register.json">
+              </script>
               <animated-icons
               src="iconos/Register.json"
               trigger="click"
