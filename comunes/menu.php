@@ -43,17 +43,7 @@
 				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-              <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
-              <animated-icons
-              src="https://animatedicons.co/get-icon?name=Register&style=minimalistic&token=be93a354-eb41-497f-bb52-cdf419e7d920"
-              trigger="click"
-              attributes='{"variationThumbColour":"#A4A7A9","variationName":"Gray Tone","variationNumber":3,"numberOfGroups":1,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#000000","background":"#FFFFFFFF"}}'
-              height="50"
-              width="50"
-              display="flex"
-              justify-conten= "center"
-              align-item="center"
-              ></animated-icons>REGISTRO DEL SISTEMA
+              REGISTRO DEL SISTEMA
           </a>
               <div class="dropdown-menu">
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
