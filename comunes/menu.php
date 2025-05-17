@@ -51,6 +51,7 @@
               height="50"
               width="50"
               justify-conten= "center"
+              align-item="center"
               ></animated-icons>REGISTRO DEL SISTEMA
           </a>
               <div class="dropdown-menu">
