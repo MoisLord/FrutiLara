@@ -86,9 +86,9 @@
           </li>
          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-                 <script src="iconos/reportsjson"></script>
+                 <script src="iconos/reports.json"></script>
                  <animated-icons
-                 src="iconos/reportsjson"
+                 src="iconos/reports.json"
                  trigger="click"
                  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":0.5,"defaultColours":{"group-1":"#080808FF","group-2":"#000000FF","background":"#FFFFFF"}}'
                  height="50"
