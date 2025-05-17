@@ -50,6 +50,7 @@
               attributes='{"variationThumbColour":"#A4A7A9","variationName":"Gray Tone","variationNumber":3,"numberOfGroups":1,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#000000","background":"#FFFFFFFF"}}'
               height="50"
               width="50"
+              display="flex"
               justify-conten= "center"
               align-item="center"
               ></animated-icons>REGISTRO DEL SISTEMA
