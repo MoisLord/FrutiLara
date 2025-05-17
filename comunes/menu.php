@@ -96,7 +96,7 @@
                  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":0.5,"defaultColours":{"group-1":"#080808FF","group-2":"#000000FF","background":"#FFFFFF"}}'
                  height="50"
                  width="50"
-                 >REPORTES</animated-icons>
+                 ></animated-icons>REPORTES
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
