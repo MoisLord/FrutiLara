@@ -48,8 +48,8 @@
                src="https://animatedicons.co/get-icon?name=Register&style=minimalistic&token=be93a354-eb41-497f-bb52-cdf419e7d920"
                trigger="click"
                attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#E6E9EC","group-2":"#000000","background":"#000000"}}'
-               height="90"
-               width="90"
+               height="50"
+               width="50"
                ></animated-icons>REGISTRO DEL SISTEMA
               </a>
               <div class="dropdown-menu">
