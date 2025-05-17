@@ -109,10 +109,10 @@
                  <animated-icons
                  src="https://animatedicons.co/get-icon?name=reports&style=minimalistic&token=ff77881b-18e9-4ba6-b464-bfa18f63dab8"
                  trigger="click"
-                 attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":0.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#E6E9EC","group-2":"#000000","background":"#FFFFFFFF"}}'
+                 attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":0.5,"defaultColours":{"group-1":"#080808FF","group-2":"#000000FF","background":"#FFFFFF"}}'
                  height="50"
                  width="50"
-                 ></animated-icons>REPORTES
+></animated-icons>REPORTES
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
