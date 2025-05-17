@@ -88,7 +88,7 @@
               <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
                  <script src="iconos/reports.json"></script>
                  <animated-icons
-                 src="iconos/reports.json"
+                 src="https://animatedicons.co/get-icon?name=reports&style=minimalistic&token=ff77881b-18e9-4ba6-b464-bfa18f63dab8"
                  trigger="click"
                  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":0.5,"defaultColours":{"group-1":"#080808FF","group-2":"#000000FF","background":"#FFFFFF"}}'
                  height="50"
