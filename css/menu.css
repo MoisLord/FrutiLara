@@ -53,12 +53,6 @@
     color: #ff9900;
 }
 
-.carouselExample img{
-    width: 100%;
-    height: 150vh;
-    object-fit: cover;
-}
-
 /* Ajusta el alto del carousel y sus hijos al 100% de la ventana */
 .carousel,
 .carousel-inner,
@@ -74,9 +68,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none; /* Opcional: para que no bloquee clics */
 }
 
 /* Texto más grande en pantallas pequeñas */
@@ -87,6 +82,15 @@ body {
 @media (max-width: 600px) {
     body {
         font-size: 0.875rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
+    }
+}
+
+.carousel-caption {
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+@media (max-width: 600px) {
+    .carousel-caption {
+        font-size: 0.875rem;
     }
 }
 /* fIN DE la pagina PRINCIPAL */
