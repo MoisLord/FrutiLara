@@ -80,7 +80,7 @@
 
 /* Texto más grande en pantallas pequeñas */
 body {
-    font-size: clamp(1.5rem, 2.5vw, 3rem); /* Base */
+    font-size: clamp(1.5rem, 2.5vw, 3rem); /* Base tamaño de la fuente que varia de forma fluida */
 }
 
 @media (max-width: 600px) {
