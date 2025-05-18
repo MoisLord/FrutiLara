@@ -47,7 +47,7 @@
   <div class="footer-inner">
     <nav>
       <ul class="text">
-        <li>Registro del Sistema Inventario</li>
+        <li>Registro del Sistema</li>
         <li>Inventario</li>
         <li>Pago del Empleado</a></li>
         <li>Pago de Servicios</a></li>
