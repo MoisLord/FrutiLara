@@ -46,7 +46,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <nav>
-      <ul calss="mapa">
+      <ul class="mapa">
         <li>Registro del Sistema Inventario</li>
         <li>Inventario</li>
         <li>Pago del Empleado</a></li>
