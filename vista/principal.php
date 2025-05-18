@@ -44,7 +44,20 @@
 </div>
 <div>
 <footer class="footer">
-  <p class="text"> Registro del Sistema Inventario Pago del Empleado Pago de Servicios Conciliación Bancaria Usuarios Reportes Manual del Sistema</p>
+  <div class="footer-inner">
+    <nav>
+      <ul>
+        <li>Registro del Sistema Inventario</li>
+        <li>Inventario</li>
+        <li><a href="pagoEmpleados">Pago del Empleado</a></li>
+        <li><a href="pagoservicio">Pago de Servicios</a></li>
+        <li><a href="conciliacion">Conciliación Bancaria</a></li>
+        <li><a href="usuario">Usuarios</a></li>
+        <li>Reportes</li>
+        <li><a id="manual">Manual del Sistema</a></li>
+      </ul>
+    </nav>
+  </div>
   <ul class="social-icon">
     <li class="icon-elem">
       <a href="https://www.instagram.com/fruti_lara?igsh=MWh5MW9mb3JpOGlxYg==" class="icon">
