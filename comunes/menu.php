@@ -61,8 +61,9 @@
           </li>
           
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-                INVENTARIO
+              <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                <img src="iconos/inventario.svg" alt="inventario" style="width:40px; height:40px; margin-bottom:3px;">
+                <span>INVENTARIO</span>
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="entrada">Notas de Entrada</a>
@@ -70,20 +71,33 @@
               </div>
             </li>
             <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">PAGO DEL EMPLEADO</a>
+            <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">
+              <img src="iconos/empleados.svg" alt="empleados" style="width:40px; height:40px; margin-bottom:3px;">
+              <span>PAGO DEL EMPLEADO</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="pagoservicio">PAGOS DE SERVICIOS</a>
+            <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="pagoservicio">
+              <img src="iconos/servicios.svg" alt="servicios" style="width:40px; height:40px; margin-bottom:3px;">
+              <span>PAGOS DE SERVICIOS</span>}
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="conciliacion">CONCILIACIÓN BANCARIA</a>
+            <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="conciliacion">
+              <img src="iconos/conciliacion.svg" alt="conciliacion" style="width:40px; height:40px; margin-bottom:3px;">
+              <span>CONCILIACIÓN BANCARIA</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
+            <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="usuario">
+              <img src="iconos/usuarios.svg" alt="usuarios" style="width:40px; height:40px; margin-bottom:3px;">
+              <span>USUARIOS</span>
+            </a>
           </li>
          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-                REPORTES
+              <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                <img src="iconos/reportes.svg" alt="reportes" style="width:40px; height:40px; margin-bottom:3px;">
+                <span>REPORTES</span>
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
@@ -92,7 +106,10 @@
               </div>
             </li>
             <li class="nav-item">
-               <a id="manual" class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;">MANUAL DEL SISTEMA</a>
+               <a id="manual" class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;">
+                 <img src="iconos/manual.svg" alt="manual" style="width:40px; height:40px; margin-bottom:3px;">
+                   <span>MANUAL DEL SISTEMA</span>
+               </a>
             </li>
         </ul>
 					<?php
