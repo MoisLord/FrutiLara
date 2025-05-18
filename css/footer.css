@@ -97,9 +97,7 @@
     color: #fff;
 }
 
-svg {
-    color: #fff;
-}
+.footer svg { color: #fff; }
 
 .text {
     color: #fff;
