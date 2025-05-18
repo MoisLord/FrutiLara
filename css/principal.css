@@ -12,6 +12,7 @@
     height: 100vh;
     min-height: 100vh;
     object-fit: cover;
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
 .mask {
@@ -37,10 +38,6 @@ body {
 
 .carousel-caption {
     font-size: clamp(1.5rem, 2.5vw, 3rem);
-    width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    object-fit: cover;
 }
 @media (max-width: 600px) {
     .carousel-caption {
