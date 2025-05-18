@@ -37,10 +37,14 @@ body {
 
 .carousel-caption {
     font-size: clamp(1.5rem, 2.5vw, 3rem);
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    object-fit: cover;
 }
 @media (max-width: 600px) {
     .carousel-caption {
-        font-size: 0.8755rem;
+        font-size: 0.875rem;
     }
 }
 /* fIN DE la pagina PRINCIPAL */
