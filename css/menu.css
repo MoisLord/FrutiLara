@@ -52,6 +52,13 @@
 .font-weight-bolder {
     color: #ff9900;
 }
+
+.carousel slide img{
+    width: 100%;
+    height: 150vh;
+    object-fit: cover;
+}
+
 .carousel-inner {
   height: 150vh;
   font-size: clamp(1.5rem, 2.5vw, 3rem);
