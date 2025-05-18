@@ -1,14 +1,11 @@
 /* Inicio de  la pagina Principal */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
 
 body {
     width: 100vw;
     height: 100vh;
+    min-height: 100vh;
+    object-fit: cover;
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
 
