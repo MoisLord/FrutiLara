@@ -1,11 +1,19 @@
 /* Inicio de  la pagina Principal */
-.font-weight-bolder {
-    color: #ff9900;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-.d-block,w-100,h-100{
+body {
     width: 100vw;
     height: 100vh;
+}
+
+
+.font-weight-bolder {
+    color: #ff9900;
 }
 
 /* Ajusta el alto del carousel y sus hijos al 100% de la ventana */
