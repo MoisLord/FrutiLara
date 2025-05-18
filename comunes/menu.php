@@ -72,7 +72,7 @@
             </li>
             <li class="nav-item">
             <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">
-              <img src="iconos/empleados.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
+              <img src="iconos/empleado.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
               <span>PAGO DEL EMPLEADO</span>
             </a>
           </li>
