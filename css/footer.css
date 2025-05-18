@@ -97,7 +97,10 @@
     color: #fff;
 }
 
-.footer svg { color: #fff; }
+.icon-svg { 
+  color: #fff; 
+  list-style: none;
+}
 
 .text {
     color: #fff;
