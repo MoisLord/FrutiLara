@@ -1,5 +1,5 @@
 <html>
-<title>R SALIDAS</title>
+<title>R PREFACTURACIÓN</title>
 <?php require_once('comunes/encabezado.php'); ?>
 <?php require_once("./modelo/session.php"); ?>
 <body>
