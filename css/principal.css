@@ -8,6 +8,7 @@ body {
     font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
+/* Color del Texto de Bienvenido a FrutiLara */
 .font-weight-bolder {
     color: #ff9900;
 }
