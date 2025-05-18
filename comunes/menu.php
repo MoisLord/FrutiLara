@@ -46,16 +46,8 @@
 				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-              <script
-                src="iconos/Register.json">
-              </script>
-              <animated-icons
-              src="iconos/Register.json"
-              trigger="click"
-              attributes='{"variationThumbColour":"#FFFFFF","variationName":"Normal","variationNumber":1,"numberOfGroups":1,"backgroundIsGroup":false,"strokeWidth":0.72,"defaultColours":{"group-1":"#000000","background":"#FFFFFF"}}'
-              height="50"
-              width="50"
-              ></animated-icons>REGISTRO DEL SISTEMA
+              <img src="iconos/registro.svg" alt="registro" style="width:20px; height:20px; margin-right:5px;">
+              REGISTRO DEL SISTEMA
           </a>
               <div class="dropdown-menu">
             <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
