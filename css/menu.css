@@ -48,22 +48,25 @@
 }
 /* fIN DE MENU */
 
-/* Inicio de Principal */
+/* Inicio de  la pagina Principal */
 .font-weight-bolder {
     color: #ff9900;
 }
 .carousel-inner {
   height: 100vh;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
 .carousel-item {
   height: 100vh;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
 .carousel-item img {
   object-fit: cover;
   width: 100%;
   height: 100vh;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
 .mask {
@@ -77,7 +80,7 @@
 
 /* Texto más grande en pantallas pequeñas */
 body {
-    font-size: 1rem; /* Base */
+    font-size: clamp(1.5rem, 2.5vw, 3rem); /* Base */
 }
 
 @media (max-width: 600px) {
@@ -85,4 +88,4 @@ body {
         font-size: 0.875rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
     }
 }
-/* fIN DE PRINCIPAL */
+/* fIN DE la pagina PRINCIPAL */
