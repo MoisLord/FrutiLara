@@ -92,7 +92,7 @@ body {
 
 @media (max-width: 600px) {
     body {
-        font-size: 0.875rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
+        font-size: clamp(1.5rem, 2.5vw, 3rem); /* Ajustar el tamaño del texto en pantallas pequeñas */
     }
 }
 /* fIN DE la pagina PRINCIPAL */
