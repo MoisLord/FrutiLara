@@ -59,21 +59,15 @@
     object-fit: cover;
 }
 
-.carousel-inner {
-  height: 150vh;
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
-}
-
-.carousel-item {
-  height: 150vh;
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
-}
-
+/* Ajusta el alto del carousel y sus hijos al 100% de la ventana */
+.carousel,
+.carousel-inner,
+.carousel-item,
 .carousel-item img {
-  object-fit: cover;
-  width: 100%;
-  height: 150vh;
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    object-fit: cover;
 }
 
 .mask {
@@ -92,7 +86,7 @@ body {
 
 @media (max-width: 600px) {
     body {
-        font-size: clamp(1.5rem, 2.5vw, 3rem); /* Ajustar el tamaño del texto en pantallas pequeñas */
+        font-size: 0.875rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
     }
 }
 /* fIN DE la pagina PRINCIPAL */
