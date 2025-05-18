@@ -24,14 +24,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
 /* Color del texto */
+  .mapa {
     color: #fff;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
     margin-left: 10px;
     font-size: 20px;
-  }
+}
 
   footer ul {
     list-style: none; /* quita los puntos de la lista */
