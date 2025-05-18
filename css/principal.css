@@ -1,16 +1,15 @@
 /* Inicio de  la pagina Principal */
 
 body {
-    width: 90vw;
+    width: 100vw;
     height: 100vh;
     min-height: 100vh;
     object-fit: cover;
     font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
-
 .font-weight-bolder {
-    color: #278f49;
+    color: #ff9900;
 }
 
 /* Ajusta el alto del carousel y sus hijos al 100% de la ventana */
