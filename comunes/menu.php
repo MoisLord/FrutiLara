@@ -105,7 +105,7 @@
             </li>
             <li class="nav-item">
                <a id="manual" class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" 
-               href="vista/manual.php" target="_blank">
+               href="/FrutiLara/vista/manual.php" target="_blank">
                  <img src="iconos/manual.svg" alt="manual" style="width:30px; height:30px; margin-bottom:3px;">
                    <span>MANUAL DEL SISTEMA</span>
                </a>
