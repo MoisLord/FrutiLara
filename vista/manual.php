@@ -10,7 +10,7 @@
 <body>
     <iframe
         id="pdf-viewer"
-        src="../pdfjs/web/viewer.html?file=../../documento/Manual%20de%20Uso%20del%20Sistema%20Para%20Frutilara.pdf"
+        src="../pdfjs/web/viewer.html?file=../../documento/Manual_Frutilara.pdf"
         allowfullscreen>
     </iframe>
 </body>
