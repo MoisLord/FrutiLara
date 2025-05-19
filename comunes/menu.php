@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css/menu.css">
+
 <div class= "col-12">
 <nav class="navbar navbar-expand-lg bg-success bg-gradient fixed-top">
 <nav class="navbar navbar-expand-lg fixed-top">
@@ -104,8 +105,8 @@
               </div>
             </li>
             <li class="nav-item">
-               <a id="manual" class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" 
-               href="/FrutiLara/vista/manual.php" target="_blank">
+               <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
+               href="vista/manual.php" target="_blank">
                  <img src="iconos/manual.svg" alt="manual" style="width:30px; height:30px; margin-bottom:3px;">
                    <span>MANUAL DEL SISTEMA</span>
                </a>
