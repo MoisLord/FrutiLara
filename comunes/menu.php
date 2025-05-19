@@ -140,7 +140,6 @@
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">
-                  <img src="iconos/prefacturacion.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
                   <span>Prefacturación</span>
                 </a>
                 </div>
@@ -152,7 +151,6 @@
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">
-                  <img src="iconos/general.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
                   <span>Reporte General</span>
                 </a>
               </div>
