@@ -1,4 +1,3 @@
-<?php require_once("pdfjs/web/viewer.html"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +10,7 @@
 <body>
     <iframe
         id="pdf-viewer"
-        src="pdfjs/web/viewer.html?file=documento/Manual de Uso del Sistema Para Frutilara.pdf"
+        src="../pdfjs/web/viewer.html?file=../../documento/Manual%20de%20Uso%20del%20Sistema%20Para%20Frutilara.pdf"
         allowfullscreen>
     </iframe>
 </body>
