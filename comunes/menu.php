@@ -121,25 +121,40 @@
 					?>
 					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a id="manual" class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;">MANUAL DEL SISTEMA</a>
+            <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
+               href="vista/manual.php" target="_blank">
+                 <img src="iconos/manual.svg" alt="manual" style="width:30px; height:30px; margin-bottom:3px;">
+                   <span>MANUAL DEL SISTEMA</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="cliente">CLIENTES</a>
+            <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="cliente">
+              <img src="iconos/clientes.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
+              <span>CLIENTES</span>
+            </a>
           </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-                INVENTARIO
+                <img src="iconos/inventario2.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
+                <span>INVENTARIO</span>
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">Prefacturación</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">
+                  <img src="iconos/prefacturacion.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
+                  <span>Prefacturación</span>
+                </a>
                 </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
-                REPORTES
+                <img src="iconos/reportes2.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
+                <span>REPORTES</span>
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte General</a>
+                <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">
+                  <img src="iconos/reportes2.svg" alt="empleados" style="width:30px; height:30px; margin-bottom:3px;">
+                  <span>Reporte General</span>
+                </a>
               </div>
             </li>
           </ul>
