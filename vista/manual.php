@@ -11,7 +11,7 @@
 <body>
     <iframe
         id="pdf-viewer"
-        src="../pdfjs/web/viewer.html?file=documento/Manual de Uso del Sistema Para Frutilara.pdf"
+        src="pdfjs/web/viewer.html?file=documento/Manual de Uso del Sistema Para Frutilara.pdf"
         allowfullscreen>
     </iframe>
 </body>
