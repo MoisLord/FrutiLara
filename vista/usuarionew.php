@@ -53,7 +53,7 @@
 			<div class="input-group">
 				<div class="col-md-12">
 					<label for="clave">Correo Electronico</label><br></br>
-					<input class="form-control" type="password" id="clave" name="clave"/>
+					<input class="form-control" type="email" id="clave" name="clave"/>
 					<span>Solo letras y numeros entre 7 y 15 caracteres</span>
 				</div>
 			</div>
