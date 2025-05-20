@@ -38,9 +38,7 @@ $(document).ready(function(){
 				
 				enviaAjax(datos);
 			}
-			else{
-				muestraMensaje("Debe agregar algun producto al inventario !!!");
-			}
+			
 		}
 		else{
 			muestraMensaje("Debe ingresar un servicio registrado !!!");
@@ -113,13 +111,10 @@ $(document).ready(function(){
 	
 	//funcion para colocar datos del servicio en pantalla
 	function colocaservicio(linea){
-    $("#idservicios").val($(linea).find("td:eq(1)").text());
-    $("#costo").val($(linea).find("td:eq(0)").text());
-    $("#pago").html($(linea).find("td:eq(2)").text()); 
-    $("#fpago").html($(linea).find("td:eq(3)").text()+
-    "  "+$(linea).find("td:eq(4)").text()+"  "+
-    $(linea).find("td:eq(5)").text());
-}
+		$("#idservicios").val($(linea).find("td:eq(1)").text()+
+		"  "+$(linea).find("td:eq(0)").text()+"  "+
+		$(linea).find("td:eq(2)").text());
+	}
 	
 	//fin de colocar datos del servicio
 	
@@ -205,10 +200,6 @@ $(document).ready(function(){
 						// que se obtuvieron datos del json
 						// y se colocan esos resultados en la vista
 						$('#listadoservicios').html(lee.mensaje);
-					}
-					else if(lee.resultado=='listadoproductos'){
-						
-						$('#listadoproductos').html(lee.mensaje);
 					}
 					else if(lee.resultado=='registrar'){
 						
