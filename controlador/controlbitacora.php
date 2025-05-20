@@ -25,6 +25,14 @@ class ControlBitacora extends ControladorBase {
             exit('Acceso denegado.');
         }
 
+        // Validación CSRF
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'] ?? '')) {
+                http_response_code(400);
+                exit('Token CSRF inválido.');
+            }
+        }
+
         // Lógica de registro
         $ok = $this->model->registrar($usuario_id, $accion);
         if ($ok) {
