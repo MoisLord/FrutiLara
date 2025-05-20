@@ -28,6 +28,9 @@
 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 <input type="text" name="accion" id="accion" style="display:none"/>
 
+	<!-- Google reCAPTCHA -->
+	<div class="g-recaptcha" data-sitekey="6LfsI0ErAAAAABjuBJ8BRQ934y0MFhnnFko4LY7P"></div>
+
 <div class="login-box">
 			<div class="header-img">
 				<img src="img/logo.png" alt="">

@@ -6,29 +6,6 @@
   require_once("modelo/".$pagina.".php"); 
   if(is_file("vista/".$pagina.".php")){ 
 	  if(!empty($_POST)){
-		  // Validación Google reCAPTCHA
-		  $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
-		  $secret = '6LfsI0ErAAAAAIqU8Uzpr7ubzRccjwU0ifm3Yd9O'; // <-- Reemplaza por tu clave secreta de reCAPTCHA
-		  $curl = curl_init();
-		  curl_setopt_array($curl, [
-			  CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
-			  CURLOPT_RETURNTRANSFER => true,
-			  CURLOPT_POST => true,
-			  CURLOPT_POSTFIELDS => http_build_query([
-				  'secret' => $secret,
-				  'response' => $recaptchaResponse,
-				  'remoteip' => $_SERVER['REMOTE_ADDR']
-			  ]),
-		  ]);
-		  $response = curl_exec($curl);
-		  curl_close($curl);
-		  $respData = json_decode($response, true);
-		  if (empty($respData['success'])) {
-			  $mensaje = 'Captcha inválido, inténtalo de nuevo.';
-			  require_once("vista/".$pagina.".php");
-			  exit;
-		  }
-
 		  $o = new login();
 		  if($_POST['accion']=='entrar'){
 			session_start();
