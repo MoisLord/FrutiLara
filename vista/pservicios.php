@@ -27,7 +27,7 @@ PAGO SERVICIOS
 	<div class="row">
 		<div class="col-md-8">
 			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
-			   <button type="button" class="btn btn-success" id="listadodeclientes" name="listadodeclientes">LISTADO DE EMPLEADOS</button>
+			   <button type="button" class="btn btn-success" id="listadodeservicios" name="listadodeservicios">LISTADO DE SERVICIOS</button>
 			   
 			   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 		</div>
@@ -107,7 +107,7 @@ PAGO SERVICIOS
 					<th>Fecha del pago</th>
 				  </tr>
 				</thead>
-				<tbody id="salida">
+				<tbody id="pservicios">
 
 				</tbody>
 			</table>
@@ -119,11 +119,11 @@ PAGO SERVICIOS
 </div> <!-- fin de container -->
 
 
-<!-- seccion del modal clientes -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
+<!-- seccion del modal servicios -->
+<div class="modal fade" tabindex="-1" role="dialog"  id="modalservicios">
   <div class="modal-dialog modal-lg" role="document">
 	<div class="modal-header text-light bg-success">
-		<h5 class="modal-title">Listado de cliente</h5>
+		<h5 class="modal-title">Listado de Servicios</h5>
 		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
 		  <span aria-hidden="true">&times;</span>
 		</button>
@@ -133,13 +133,11 @@ PAGO SERVICIOS
 		<thead>
 		  <tr>
 		   
-			<th>Cédula</th>
-			<th>Nombre y Apellido</th>
-			<th>Télefono</th>
-			<th>Dirección</th>
+			<th>Código Servicios</th>
+			<th>Descripción Servicios</th>
 		  </tr>
 		</thead>
-		<tbody id="listadoclientes">
+		<tbody id="listadoservicios">
 		  
 		</tbody>
 		</table>
@@ -176,7 +174,7 @@ PAGO SERVICIOS
 
 <!--fin de seccion modal-->
 <?php require_once("comunes/body.php"); ?>
-<script type="text/javascript" src="js/salida.js"></script>
+<script type="text/javascript" src="js/pservicios.js"></script>
 
 </body>
 </html>
