@@ -25,8 +25,11 @@
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 
 <form method="post" action="" id="f">
-<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-<input type="text" name="accion" id="accion" style="display:none"/>
+	<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+	<input type="text" name="accion" id="accion" style="display:none"/>
+
+	<!-- Google reCAPTCHA -->
+	<div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
 
 <div class="login-box">
 			<div class="header-img">
@@ -70,6 +73,8 @@
 </form>
 </div> <!-- fin de container -->
 <?php require_once("comunes/body.php"); ?>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script type="text/javascript" src="js/login.js"></script>
 
 </body>
