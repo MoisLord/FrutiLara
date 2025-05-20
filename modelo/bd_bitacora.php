@@ -14,6 +14,6 @@ class bd_bitacora {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
-        $this->pdo = new PDO($dsn, $this->user, $this->pass, $opt);
+        $this->pdo = new PDO($dsn, $this->usuario, $this->contrasena, $opt);
     }
 }
