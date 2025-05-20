@@ -21,6 +21,9 @@ class ControlUsuarios extends ControladorBase {
         // Validaciones...
         $id = $this->model->crear($data);
         if ($id) {
+            // Renovar token CSRF tras éxito
+            unset($_SESSION['csrf_token']);
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
             $this->log($_SESSION['usuario_id'], "Creó usuario con ID {$id}");
             header('Location: /usuarios?msg=ok');
         }
@@ -35,6 +38,9 @@ class ControlUsuarios extends ControladorBase {
             }
         }
         $this->model->eliminar($id);
+        // Renovar token CSRF tras éxito
+        unset($_SESSION['csrf_token']);
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         $this->log($_SESSION['usuario_id'], "Eliminó usuario con ID {$id}");
         header('Location: /usuarios?msg=deleted');
     }

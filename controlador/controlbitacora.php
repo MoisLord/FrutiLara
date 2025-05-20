@@ -36,6 +36,9 @@ class ControlBitacora extends ControladorBase {
         // Lógica de registro
         $ok = $this->model->registrar($usuario_id, $accion);
         if ($ok) {
+            // Renovar token CSRF tras éxito
+            unset($_SESSION['csrf_token']);
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
             header('Location: /bitacora?msg=registrado');
             exit;
         }

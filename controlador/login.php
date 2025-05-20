@@ -12,11 +12,14 @@
 		  if($_POST['accion']=='entrar'){
 			session_start();
 			$o->set_cedula($_POST['cedula']);
-		    $o->set_clave($_POST['clave']);  
+			$o->set_clave($_POST['clave']);  
 			$m = $o->existe();
 			if($m['resultado']=='existe'){
-			//   session_destroy(); //elimina cualquier version anterio de sesion	
-			//   session_start(); //inicia el entorno de sesion
+			  // Renovar token CSRF tras login exitoso
+			  unset($_SESSION['csrf_token']);
+			  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+			  //   session_destroy(); //elimina cualquier version anterio de sesion  
+			  //   session_start(); //inicia el entorno de sesion
 			  //asigna una clave nivel con el valor obtenido de la base de datos
 			  $_SESSION['nivel'] = $m['mensaje'];
 			  
@@ -43,6 +46,6 @@
 	  echo "Falta la vista";
   }
   if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+	$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 ?>
