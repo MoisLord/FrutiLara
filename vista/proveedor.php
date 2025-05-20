@@ -15,6 +15,7 @@ PANTALLA DE PROVEEDORES
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
+   <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
    <h4 class="text-center text-success">REGISTRO DE PROVEEDORES</h4>
 	<div class="container">	
 		
@@ -22,10 +23,10 @@ PANTALLA DE PROVEEDORES
 		<div class="col-md">
 			<larel>tipos de documento</larel>
 			<select class="form-select" name="documento" id="documento" aria-label="Default select example">
-  				<option selected>Seleccione el tipo de documento</option>
-  				<option value="Venezolano">Venezolano</option>
-  				<option value="jurídico">jurídico</option>
-  				<option value="Gobernamental">Gobernamental</option>
+				<option selected>Seleccione el tipo de documento</option>
+				<option value="Venezolano">Venezolano</option>
+				<option value="jurídico">jurídico</option>
+				<option value="Gobernamental">Gobernamental</option>
 				
 			</select>
 			</div>
@@ -45,10 +46,10 @@ PANTALLA DE PROVEEDORES
 	
 		<div class="row mb-4">
 			<div class="col-md">
-        		<label for="telefono">Telefono</label>
+				<label for="telefono">Telefono</label>
 				<input class="form-control" type="text" id="Telefono" name="Telefono" />
 				<span id="sTelefono">El formato debe ser 041215478964</span>
-    		</div>
+			</div>
 		</div>
 		<div class="row mb-4">
 			<div class="col-md">
@@ -61,7 +62,7 @@ PANTALLA DE PROVEEDORES
 		
 		<div class="row">
 			<div class="col-md-12">
-            <hr class="border border-success border-3 opacity-65">
+			<hr class="border border-success border-3 opacity-65">
 			</div>
 		</div>
 
@@ -71,7 +72,7 @@ PANTALLA DE PROVEEDORES
 			</div>
 			
 			<div class="col-md-3">	
-		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+				<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
 			<div class="col-md-2">	
 				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
@@ -99,11 +100,11 @@ PANTALLA DE PROVEEDORES
 	<h5 class="modal-title text-center text-success">PROVEEDORES REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
-	    <!--se agrega un id para poder enlazar con el datatablet--> 
+		<!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablaproveedores">
 		<thead>
 		  <tr>
-		 	<th>Documento Legal</th>
+			<th>Documento Legal</th>
 			<th>Rif</th>
 			<th>Nombre del proveedor</th>
 			<th>Telefonon</th>	
@@ -116,25 +117,25 @@ PANTALLA DE PROVEEDORES
 		</tbody>
 		</table>
 
-    </div>
+	</div>
 </div>
 
 </div> <!-- fin de container -->
 
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalProveedor">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de proveedores</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
+	<div class="modal-header text-light bg-success">
+		<h5 class="modal-title">Listado de proveedores</h5>
+		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-content">
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
 		   
-		  	<th>Documento Legal</th>
+			<th>Documento Legal</th>
 			<th>Rif</th>
 			<th>Nombre del proveedor</th>
 			<th>Telefonon</th>	
@@ -145,11 +146,11 @@ PANTALLA DE PROVEEDORES
 		  
 		</tbody>
 		</table>
-    </div>
+	</div>
 	<div class="modal-footer bg-light">
 	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	</div>
   </div>
 </div>
 <?php require_once("comunes/body.php"); ?>

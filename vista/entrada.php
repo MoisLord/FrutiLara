@@ -19,64 +19,65 @@ NOTAS DE ENTRADA DE PRODUCTOS
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
+<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 <input type="text" name="accion" id="accion" style="display:none"/>
 <div class="container">
     <!-- FILA DE BOTONES -->
-	<div class="row">
-		<div class="col-md-8">
-			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
-			   <button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
-			   <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
-			   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
-		</div>
-	</div>
-	<!-- FIN DE FILA BOTONES -->
-	<div class="row">
-		<div class="col">
-			<hr class="border border-success border-3 opacity-65"/>
-		</div>
-	</div>
-	<!-- FILA DE INPUT Y BUSCAR PROVEEDOR -->
-	<h6>Rif del Proveedor</h6>
-	<div class="row">
-		<div class="col-md-8 input-group">
-		<input class="form-control" type="text" id="idproveedor" name="idproveedor"/>	 
-		   <input class="form-control" type="text" id="nombreprove" name="nombreprove" style="display:none" />
-		     
-		   
-		</div>
-	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR PROVEEDOR -->
-	
-	<!-- FILA DE DATOS DEL PROVEEDOR -->
-	<div class="row">
-		<div class="col-md-12" id="datosdelproveedor">
-		   
-		</div>
-	</div>
-	<!-- FIN DE FILA DATOS DEL PROVEEDOR -->
-		
-	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-md-8">
+               <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
+               <button type="button" class="btn btn-success" id="listadodeproveedores" name="listadodeproveedores">LISTADO DE PROVEEDORES</button>
+               <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
+               <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
+        </div>
+    </div>
+    <!-- FIN DE FILA BOTONES -->
+    <div class="row">
+        <div class="col">
+            <hr class="border border-success border-3 opacity-65"/>
+        </div>
+    </div>
+    <!-- FILA DE INPUT Y BUSCAR PROVEEDOR -->
+    <h6>Rif del Proveedor</h6>
+    <div class="row">
+        <div class="col-md-8 input-group">
+        <input class="form-control" type="text" id="idproveedor" name="idproveedor"/>	 
+           <input class="form-control" type="text" id="nombreprove" name="nombreprove" style="display:none" />
+             
+           
+        </div>
+    </div>
+    <!-- FIN DE FILA INPUT Y BUSCAR PROVEEDOR -->
+    
+    <!-- FILA DE DATOS DEL PROVEEDOR -->
+    <div class="row">
+        <div class="col-md-12" id="datosdelproveedor">
+           
+        </div>
+    </div>
+    <!-- FIN DE FILA DATOS DEL PROVEEDOR -->
+        
+    <div class="row">
+        <div class="col">
+            <hr/>
+        </div>
+    </div>
 
     <!-- FILA DE BUSQUEDA DE PRODUCTOS -->
-	<h6>Codigo del Producto</h6>
-	<div class="row">
-		<div class="col-md-8 input-group">
-		   <input class="form-control" type="text" id="codigoproducto" name="codigoproducto"/>
-		   <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
-		</div>
-	</div>
-	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
+    <h6>Codigo del Producto</h6>
+    <div class="row">
+        <div class="col-md-8 input-group">
+           <input class="form-control" type="text" id="codigoproducto" name="codigoproducto"/>
+           <input class="form-control" type="text" id="idproducto" name="idproducto" style="display:none"/>
+        </div>
+    </div>
+    <!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
 
-	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col">
+            <hr/>
+        </div>
+    </div>
 
     <!-- METODO DE PAGO -->
     <div class="mb-3">
@@ -180,7 +181,7 @@ NOTAS DE ENTRADA DE PRODUCTOS
                         </tbody>
                       </table>
                     </div>
-	<div class="modal-footer bg-light">
+    <div class="modal-footer bg-light">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
   </div>

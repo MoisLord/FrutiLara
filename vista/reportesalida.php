@@ -19,6 +19,7 @@ PANTALLA DE REPORTE DE PREFACTURACIÓN
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 
 <form method="post" action="" id="f" target="_blank">
+<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 <div class="container">
     <div class="row">
         <!-- Primera columna -->
@@ -68,21 +69,21 @@ PANTALLA DE REPORTE DE PREFACTURACIÓN
 
 
     
-	<div class="row">
-		<div class="col">
-			<hr/>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col">
+            <hr/>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col">
-			   <button type="submit" class="btn btn-success" id="generar" name="generar">GENERAR REPORTE</button>
-		</div>
-		
-	</div>
+    <div class="row">
+        <div class="col">
+               <button type="submit" class="btn btn-success" id="generar" name="generar">GENERAR REPORTE</button>
+        </div>
+        
+    </div>
 </div>
 </form>
-	
+    
 </div> <!-- fin de container -->
 
 <?php require_once("comunes/body.php"); ?>

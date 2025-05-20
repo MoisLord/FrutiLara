@@ -15,6 +15,7 @@ GESTIÓN DE EMPLEADOS
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
+   <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
    <h4 class="text-center text-success">Registro de Empleados</h4>
 
 	<div class="container">	
@@ -70,7 +71,7 @@ GESTIÓN DE EMPLEADOS
 			
 		<div class="row">
 			<div class="col-md-12">
-            <hr class="border border-success border-3 opacity-65">
+			<hr class="border border-success border-3 opacity-65">
 			</div>
 		</div>
 
@@ -79,7 +80,7 @@ GESTIÓN DE EMPLEADOS
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
 			<div class="col-md-3">	
-		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+				<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
 			<div class="col-md-2">	
 				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
@@ -98,7 +99,7 @@ GESTIÓN DE EMPLEADOS
 	<h5 class="modal-title text-center text-success">EMPLEADOS REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
-	    <!--se agrega un id para poder enlazar con el datatablet--> 
+		<!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablaempleados">
 		<thead>
 		  <tr>
@@ -115,7 +116,7 @@ GESTIÓN DE EMPLEADOS
 		</tbody>
 		</table>
 		
-    </div>
+	</div>
 </div> <!-- fin de container -->
 <?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/empleados.js"></script>

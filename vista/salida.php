@@ -20,9 +20,10 @@ Prefacturación
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
+<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 <input type="text" name="accion" id="accion" style="display:none"/>
 <div class="container">
-    <!-- FILA DE BOTONES -->
+	<!-- FILA DE BOTONES -->
 	<div class="row">
 		<div class="col-md-8">
 			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
@@ -43,7 +44,7 @@ Prefacturación
 		<div class="col-md-8 input-group">
 		<input class="form-control" type="text" id="idcliente" name="idcliente"/>	 
 		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" style="display:none" />
-		     
+			 
 		   
 		</div>
 	</div>
@@ -63,7 +64,7 @@ Prefacturación
 		</div>
 	</div>
 
-    <!-- FILA DE BUSQUEDA DE PRODUCTOS -->
+	<!-- FILA DE BUSQUEDA DE PRODUCTOS -->
 	<h6>Codigo del Producto</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
@@ -108,18 +109,18 @@ Prefacturación
 <!-- seccion del modal clientes -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalclientes">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de cliente</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
+	<div class="modal-header text-light bg-success">
+		<h5 class="modal-title">Listado de cliente</h5>
+		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-content">
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
 		   
-		  	<th>Cédula</th>
+			<th>Cédula</th>
 			<th>Nombre y Apellido</th>
 			<th>Télefono</th>
 			<th>Dirección</th>
@@ -129,11 +130,11 @@ Prefacturación
 		  
 		</tbody>
 		</table>
-    </div>
+	</div>
 	<div class="modal-footer bg-light">
 	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	</div>
   </div>
 </div>
 <!--fin de seccion modal-->
@@ -141,13 +142,13 @@ Prefacturación
 <!-- seccion del modal productos -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalproductos">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de productos</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
+	<div class="modal-header text-light bg-success">
+		<h5 class="modal-title">Listado de productos</h5>
+		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-content">
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
@@ -162,29 +163,29 @@ Prefacturación
 		 
 		</tbody>
 		</table>
-    </div>
+	</div>
 	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	</div>
   </div>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="cantidadModal" tabindex="-1" role="dialog" aria-labelledby="cantidadModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-light bg-success">
-        <h5 class="modal-title" id="cantidadModalLabel">Aviso</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        La cantidad no puede ser menor que cero!!.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cerrarModal">Cerrar</button>
-      </div>
-    </div>
+	<div class="modal-content">
+	  <div class="modal-header text-light bg-success">
+		<h5 class="modal-title" id="cantidadModalLabel">Aviso</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	  </div>
+	  <div class="modal-body">
+		La cantidad no puede ser menor que cero!!.
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-secondary" data-dismiss="modal"id="cerrarModal">Cerrar</button>
+	  </div>
+	</div>
   </div>
 </div>
 

@@ -19,6 +19,7 @@ PANTALLA DE REPORTE GENERAL
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 
 <form method="post" action="" id="f" target="_blank">
+<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 <div class="container"> 
 	<div class="row"> 
 		<!-- Primera columna --> 
@@ -52,17 +53,17 @@ PANTALLA DE REPORTE GENERAL
 								 <label for="Sumatoria">CANTIDAD DEL PRODUCTO</label> 
 								 <input class="form-control" type="text" id="usuario" name="cantidad" /> 
 								 <span id="susuario"></span>
-                                 <label for="Sumatoria">minimo</label> 
+								 <label for="Sumatoria">minimo</label> 
 								 <input class="form-control" type="text" id="usuario" name="minimo" /> 
 								 <span id="susuario"></span>
-                                 <label for="Sumatoria">maximo</label> 
+								 <label for="Sumatoria">maximo</label> 
 								 <input class="form-control" type="text" id="usuario" name="maximo" /> 
 								 <span id="susuario"></span>
 								 </div>
 								 </div>
 								 </div>
 
-    
+	
 	<div class="row">
 		<div class="col">
 			<hr/>

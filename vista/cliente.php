@@ -15,6 +15,7 @@ GESTIÓN DE CLIENTES
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
+   <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
    <h4 class="text-center text-success">Registro de clientes</h4>
 
 	<div class="container">	
@@ -56,7 +57,7 @@ GESTIÓN DE CLIENTES
 			
 		<div class="row">
 			<div class="col-md-12">
-            <hr class="border border-success border-3 opacity-65">
+			<hr class="border border-success border-3 opacity-65">
 			</div>
 		</div>
 
@@ -66,7 +67,7 @@ GESTIÓN DE CLIENTES
 			</div>
 			
 			<div class="col-md-3">	
-		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+				<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
 			<div class="col-md-2">	
 				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
@@ -91,7 +92,7 @@ GESTIÓN DE CLIENTES
 	<h5 class="modal-title text-center text-success">CLIENTES REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
-	    <!--se agrega un id para poder enlazar con el datatablet--> 
+		<!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablaclientes">
 		<thead>
 		  <tr>
@@ -105,21 +106,21 @@ GESTIÓN DE CLIENTES
 		</tbody>
 		</table>
 		
-    </div>
+	</div>
 </div> <!-- fin de container -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalCliente">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">CATEGORIAS ELIMINADAS</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
+	<div class="modal-header text-light bg-success">
+		<h5 class="modal-title">CATEGORIAS ELIMINADAS</h5>
+		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-content">
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
-		  	<th>Cédula</th>
+			<th>Cédula</th>
 			<th>Nombre y Apellido</th>
 			<th>Télefono</th>
 			<th>Dirección</th>
@@ -129,11 +130,11 @@ GESTIÓN DE CLIENTES
 		 
 		</tbody>
 		</table>
-    </div>
+	</div>
 	<div class="modal-footer bg-light">
 	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	</div>
   </div>
 </div>
 <?php require_once("comunes/body.php"); ?>

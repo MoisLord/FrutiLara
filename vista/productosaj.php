@@ -24,6 +24,7 @@ PRODUCTOS
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
+   <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
    <h4 class="text-center text-success">Registro de Productos</h4>
 	
 	<div class="container">	
@@ -44,10 +45,10 @@ PRODUCTOS
 		<div class="row mb-3">
 		<div class="row mb-4">
 			<div class="col-md">
-        		<label for="minimo">Minima Existencia</label>
-       			<input class="form-control" type="text" id="minimo" name="minimo"maxlength="10"/>
+				<label for="minimo">Minima Existencia</label>
+				<input class="form-control" type="text" id="minimo" name="minimo"maxlength="10"/>
 				<span id="sminimo">Debe tener mínimo 2 caracteres</span>
-    		</div>
+			</div>
 
 			<div class="col-md">
 			   <label for="maximo">Maxima Existencia</label>
@@ -84,7 +85,7 @@ PRODUCTOS
 	</div>
 		<div class="row">
 			<div class="col-md-12">
-            <hr class="border border-success border-3 opacity-65">
+			<hr class="border border-success border-3 opacity-65">
 			</div>
 		</div>
 
@@ -94,7 +95,7 @@ PRODUCTOS
 			</div>
 			
 			<div class="col-md-3">	
-		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+				<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 			</div>
 			<div class="col-md-2">	
 				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
@@ -119,12 +120,12 @@ PRODUCTOS
 	<h5 class="modal-title text-center text-success">PRODUCTOS REGISTRADOS</h5>
 	<hr class="border border-success border-3 opacity-65">
 	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
-	    <!--se agrega un id para poder enlazar con el datatablet--> 
+		<!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablaproducto">
 		<thead>
 		  <tr>
-		  	<th style="Display:none">Codigo Productos</th>
-		  	<th style="Display:none">Codigo Productos</th> <!-- filas para que funcione el datatable -->
+			<th style="Display:none">Codigo Productos</th>
+			<th style="Display:none">Codigo Productos</th> <!-- filas para que funcione el datatable -->
 			<th>Codigo Productos</th>
 			<th>Nombre Productos</th>
 			<th>Minimo</th>	
@@ -138,23 +139,23 @@ PRODUCTOS
 		</tbody>
 		</table>
 		
-    </div>
+	</div>
 	</div>
 	
 	<div class="modal fade" tabindex="-1" role="dialog"  id="modalProductos">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">Listado de productos</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
+	<div class="modal-header text-light bg-success">
+		<h5 class="modal-title">Listado de productos</h5>
+		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-content">
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
 			<th style="Display:none">Codigo Productos</th>
-		  	<th style="Display:none">Codigo Productos</th> <!-- filas para que funcione el datatable -->
+			<th style="Display:none">Codigo Productos</th> <!-- filas para que funcione el datatable -->
 			<th>Codigo Productos</th>
 			<th>Nombre Productos</th>
 			<th>Minimo</th>	
@@ -167,23 +168,23 @@ PRODUCTOS
 		 
 		</tbody>
 		</table>
-    </div>
+	</div>
 	<div class="modal-footer bg-light">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	</div>
   </div>
 </div>
 
 <!-- seccion del modal categoria -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalCategoria">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">LISTADO DE CATEGORIAS</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
+	<div class="modal-header text-light bg-success">
+		<h5 class="modal-title">LISTADO DE CATEGORIAS</h5>
+		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-content">
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
@@ -197,24 +198,24 @@ PRODUCTOS
 		 
 		</tbody>
 		</table>
-    </div>
+	</div>
 	<div class="modal-footer bg-light">
 	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	</div>
   </div>
 </div>
 
 <!-- seccion del modal Modelo -->
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalModelo">
-  	<div class="modal-dialog modal-lg" role="document">
-    <div class="modal-header text-light bg-success">
-        <h5 class="modal-title">LISTADO DE MODELO</h5>
-        <button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-content">
+	<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-header text-light bg-success">
+		<h5 class="modal-title">LISTADO DE MODELO</h5>
+		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-content">
 		<table class="table table-striped table-hover">
 		<thead>
 		  <tr>
@@ -227,11 +228,11 @@ PRODUCTOS
 		 
 		</tbody>
 		</table>
-    </div>
+	</div>
 	<div class="modal-footer bg-light">
 	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    </div>
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	</div>
   </div>
 </div>
 <!--fin de seccion modal-->

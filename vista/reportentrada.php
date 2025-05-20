@@ -19,6 +19,7 @@ PANTALLA DE REPORTE DE ENTRADA
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 
 <form method="post" action="" id="f" target="_blank">
+<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 <div class="container"> 
 	<div class="row"> 
 		<!-- Primera columna --> 
@@ -60,7 +61,7 @@ PANTALLA DE REPORTE DE ENTRADA
 								 </div>
 								 </div>
 
-    
+	
 	<div class="row">
 		<div class="col">
 			<hr/>
