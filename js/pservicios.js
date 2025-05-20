@@ -15,11 +15,11 @@ $(document).ready(function(){
 	
 	//evento keyup de input idservicios	
 	$("#idservicios").on("keyup",function(){
-		var cedula = $(this).val();
+		var servicio = $(this).val();
 		var encontro = false;
 		$("#listadoservicios tr").each(function(){
-			if(cedula == $(this).find("td:eq(1)").text()){
-				colocaservicios($(this));
+			if(servicio == $(this).find("td:eq(1)").text()){
+				colocaservicio($(this));
 				encontro = true;
 			} 
 		});
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	
 	//evento click de boton facturar
 	$("#registrar").on("click",function(){
-		if(existeservicios()==true){
+		if(existeservicio()==true){
 			if(verificaproductos()){
 				$('#accion').val('registrar');
 				var datos = new FormData($('#f')[0]);
@@ -68,7 +68,7 @@ $(document).ready(function(){
 
 	
 	//function para buscar si existe el servicio 
-	function existeservicios(){
+	function existeservicio(){
 		var servicio = $("#idservicios").val();
 		var existe = false;
 		$("#listadoservicios tr").each(function(){
@@ -112,7 +112,7 @@ $(document).ready(function(){
 	
 	
 	//funcion para colocar datos del servicio en pantalla
-	function colocaservicios(linea){
+	function colocaservicio(linea){
     $("#idservicios").val($(linea).find("td:eq(1)").text());
     $("#costo").val($(linea).find("td:eq(0)").text());
     $("#pago").html($(linea).find("td:eq(2)").text()); 

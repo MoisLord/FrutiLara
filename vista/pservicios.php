@@ -27,7 +27,7 @@ PAGO SERVICIOS
 	<div class="row">
 		<div class="col-md-8">
 			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
-			   <button type="button" class="btn btn-success" id="listadodeservicios" name="listadodeservicios">LISTADO DE SERVICIOS</button>
+			   <button type="button" class="btn btn-success" id="listadoservicios" name="listadoservicios">LISTADO DE SERVICIOS</button>
 			   
 			   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
 		</div>
