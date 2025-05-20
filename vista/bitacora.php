@@ -18,6 +18,7 @@
         <td><?=htmlspecialchars($e['cedula'])?></td>
         <td><?=htmlspecialchars($e['clave'])?></td>
       </tr>
+      <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
     <?php endforeach; ?>
   </tbody>
 </table>
