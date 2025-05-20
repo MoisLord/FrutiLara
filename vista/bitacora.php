@@ -1,5 +1,8 @@
 <?php
 // controller ya habrá hecho: $entries = (new BitacoraController)->listar();
+if (!isset($entries) || !is_array($entries)) {
+    $entries = [];
+}
 ?>
 <table>
   <thead>
