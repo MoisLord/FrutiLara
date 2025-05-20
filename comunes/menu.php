@@ -111,6 +111,13 @@
                    <span>MANUAL DEL SISTEMA</span>
                </a>
             </li>
+            <li class="nav-item">
+               <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
+               href="vista/bitacora.php" target="_blank">
+                 <img src="iconos/.svg" alt="bitacora" style="width:30px; height:30px; margin-bottom:3px;">
+                   <span>BITACORA</span>
+               </a>
+            </li>
         </ul>
 					<?php
 					  }
