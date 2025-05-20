@@ -47,3 +47,5 @@ class ControlBitacora extends ControladorBase {
         return $this->model->listar();
     }
 }
+// Control de acceso: sólo administrador y super‑usuario pueden ver todo
+$this->verificarRol(['ADMINISTRADOR', 'SUPERUSUARIO']);
