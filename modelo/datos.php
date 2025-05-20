@@ -4,7 +4,7 @@ class datos{
     private $bd = "protofrutilara";
     private $usuario = "root";
     private $contrasena = "";
-    private $pdo; // Declarar la propiedad $pdo
+    private $pdo; // Declaracion de la propiedad $pdo
     
     
     
