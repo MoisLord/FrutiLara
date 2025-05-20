@@ -273,6 +273,18 @@ class usuario extends datos{
 		return $r;
 		
 	}
+
+public function crear($data) {
+	$co = $this->conecta();
+	$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$stmt = $co->prepare("INSERT INTO usuario (tipo_usuario, cedula, clave) VALUES (:tipo_usuario, :cedula, :clave)");
+	$stmt->execute([
+		':tipo_usuario' => $data['tipo_usuario'],
+		':cedula' => $data['cedula'],
+		':clave' => password_hash($data['clave'], PASSWORD_DEFAULT)
+	]);
+	return $co->lastInsertId();
+}
 		
 }
 ?>
