@@ -11,6 +11,13 @@ class ControlUsuarios extends ControladorBase {
     }
 
     public function crear($data) {
+        // Validación CSRF
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'] ?? '')) {
+                http_response_code(400);
+                exit('Token CSRF inválido.');
+            }
+        }
         // Validaciones...
         $id = $this->model->crear($data);
         if ($id) {
@@ -20,11 +27,18 @@ class ControlUsuarios extends ControladorBase {
     }
 
     public function eliminar($id) {
+        // Validación CSRF
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'] ?? '')) {
+                http_response_code(400);
+                exit('Token CSRF inválido.');
+            }
+        }
         $this->model->eliminar($id);
         $this->log($_SESSION['usuario_id'], "Eliminó usuario con ID {$id}");
         header('Location: /usuarios?msg=deleted');
     }
     // ...
 }
-// Control de acceso: sólo administrador y super‑usuario pueden ver todo
+
 $this->verificarRol(['ADMINISTRADOR', 'SUPERUSUARIO']);
