@@ -1,9 +1,10 @@
 <?php
 class datos{
-	private $ip = "localhost";
+    private $ip = "localhost";
     private $bd = "protofrutilara";
     private $usuario = "root";
     private $contrasena = "";
+    private $pdo; // Declarar la propiedad $pdo
     
     
     
