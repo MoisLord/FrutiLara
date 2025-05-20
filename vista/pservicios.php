@@ -1,5 +1,5 @@
 <html> 
-<title>PAGO EMPLEADO</title>
+<title>PAGO SERVICIOS</title>
 <?php require_once("comunes/encabezado.php"); ?>
 <?php require_once("./modelo/session.php"); ?>
 <body>
@@ -15,7 +15,7 @@
 <br/>
 
 <div class="container text-center h2 text-success">
-PAGO DEL EMPLEADO
+PAGO SERVICIOS
 <hr class="border border-success border-3 opacity-65"/>
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
@@ -38,25 +38,50 @@ PAGO DEL EMPLEADO
 			<hr class="border border-success border-3 opacity-65"/>
 		</div>
 	</div>
-	<!-- FILA DE INPUT Y BUSCAR PROVEEDOR -->
-	<h6>Cedula del empleado</h6>
+	<!-- FILA DE INPUT Y BUSCAR SERVICIO -->
+	<h6>Servicio</h6>
 	<div class="row">
 		<div class="col-md-8 input-group">
-		<input class="form-control" type="text" id="idcliente" name="idcliente"/>	 
-		   <input class="form-control" type="text" id="cedulacliente" name="cedulacliente" style="display:none" />
+		<input class="form-control" type="text" id="idservicios" name="idservicios"/>	 
+		   <input class="form-control" type="text" id="idservicios" name="idservicios" style="display:none" />
 			 
 		   
 		</div>
 	</div>
-	<!-- FIN DE FILA INPUT Y BUSCAR PROVEEDOR -->
-	
-	<!-- FILA DE DATOS DEL PROVEEDOR -->
+	<!-- FIN DE FILA INPUT Y BUSCAR SERVICIO -->
+
+	<h6>Costo</h6>
 	<div class="row">
-		<div class="col-md-12" id="datosdelcliente">
+		<div class="col-md-8 input-group">
+		<input class="form-control" type="text" id="costo" name="costo"/>	 
+		   <input class="form-control" type="text" id="costo" name="costo" style="display:none" />
+			 
 		   
 		</div>
 	</div>
-	<!-- FIN DE FILA DATOS DEL PROVEEDOR -->
+
+	<div class="mb-3">
+        <label for="pago"><h6>Metodo de Pago</h6></label>
+        <select class="form-select" aria-label="Default select example" id="pago">
+            <option value="PAGOMOVIL">Pagomóvil</option> 
+            <option value="EFECTIVO">Efectivo</option> 
+        </select> 
+    </div>
+
+	<h6>Fecha de Pago Servicio</h6>
+	<div class="row">
+    <div class="col-md-8 input-group">
+        <input class="form-control" type="date" id="fservicio" name="fservicio"/>
+        </div>
+	</div>
+
+	<!-- FILA DE DATOS DEL SERVICIO -->
+	<div class="row">
+		<div class="col-md-12" id="datosdelservicio">
+		   
+		</div>
+	</div>
+	<!-- FIN DE FILA DATOS DEL SERVICIO -->
 		
 	<div class="row">
 		<div class="col">
@@ -64,9 +89,6 @@ PAGO DEL EMPLEADO
 		</div>
 	</div>
 
-	<!-- FILA DE BUSQUEDA DE PRODUCTOS -->
-	
-	<!-- FIN DE FILA BUSQUEDA DE PRODUCTOS -->
 	<div class="row">
 		<div class="col">
 			<hr class="border border-success border-3 opacity-65"/>
@@ -79,12 +101,10 @@ PAGO DEL EMPLEADO
 				<thead>
 				  <tr>
 				  <th>X</th>
-				  <th>Cedula</th>
-					<th>Nombre</th>
-					<th>Pago Realizado</th>
+				  <th>Servicio</th>
+					<th>Costo</th>
+					<th>M Pago</th>
 					<th>Fecha del pago</th>
-					<th>Estado del pago</th>
-					
 				  </tr>
 				</thead>
 				<tbody id="salida">
