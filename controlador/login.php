@@ -8,7 +8,7 @@
 	  if(!empty($_POST)){
 		  // Validación Google reCAPTCHA
 		  $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
-		  $secret = 'TU_SECRET_KEY'; // <-- Reemplaza por tu clave secreta de reCAPTCHA
+		  $secret = '6LfsI0ErAAAAAIqU8Uzpr7ubzRccjwU0ifm3Yd9O'; // <-- Reemplaza por tu clave secreta de reCAPTCHA
 		  $curl = curl_init();
 		  curl_setopt_array($curl, [
 			  CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
