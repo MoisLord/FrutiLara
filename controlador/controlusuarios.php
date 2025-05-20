@@ -26,3 +26,5 @@ class ControlUsuarios extends ControladorBase {
     }
     // ...
 }
+// Control de acceso: sólo administrador y super‑usuario pueden ver todo
+$this->verificarRol(['ADMINISTRADOR', 'SUPERUSUARIO']);
