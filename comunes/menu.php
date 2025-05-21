@@ -25,24 +25,24 @@
    //aqui se coloca la vista del super usuario
    
    if(!empty($nivel)){
-			  if($nivel=='SUPERUSUARIO'){
-			?>
-		<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        if($nivel=='SUPERUSUARIO'){
+      ?>
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
       <li class="nav-item">
         <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
       </li>
     </ul>
-			<?php
-			  }
+      <?php
+        }
       }
  ?>
 
       <?php
        //aqui se coloca la vista del administrador
-		   if(!empty($nivel)){
-					  if($nivel=='ADMINISTRADOR'){
-					?>
-				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+       if(!empty($nivel)){
+            if($nivel=='ADMINISTRADOR'){
+          ?>
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
               <img src="iconos/registro.svg" alt="registro" style="width:25px; height:25px; margin-bottom:3px;">
@@ -119,14 +119,14 @@
                </a>
             </li>
         </ul>
-					<?php
-					  }
-		 ?>
+          <?php
+            }
+     ?>
           <?php
           //aqui se coloca la vista del empleado
-					  if($nivel=='EMPLEADO'){
-					?>
-					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            if($nivel=='EMPLEADO'){
+          ?>
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
             <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;"
                href="vista/manual.php" target="_blank">
@@ -165,24 +165,24 @@
           </ul>
                 <?php
            }
-					?>
+          ?>
               
-					<?php
-					  }
-					?>
+          <?php
+            }
+          ?>
         </div>
       </div>
       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
       <?php
-		        
+            
             if(!empty($nivel) and $nivel!=""){
          ?>
-      <a href="salir" class="btn btn-outline-success my-2 my-sm-0">salir</a>
+      <a href="/FrutiLara/controlador/logout.php" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
             </div>
       <?php	
-				}
-				else{
-		 ?>
+        }
+        else{
+     ?>
     
         
             <a href="login" class="btn btn-outline-success my-2 my-sm-0">Entrar</a>
@@ -190,8 +190,8 @@
     </div>
     
       <?php 		 
-				}
-		 ?>
+        }
+     ?>
            <div class="collapse navbar-collapse" id="navbarNavDropdown">
     </div>
   </div>
