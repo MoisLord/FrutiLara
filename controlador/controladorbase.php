@@ -11,7 +11,8 @@ class ControladorBase {
     }
 
     protected function log($usuario_id, $accion) {
-        $this->bitacora->registrar($usuario_id, $accion);
+        // Agrega el tercer argumento requerido por registrar, por ejemplo una descripción vacía o relevante
+        $this->bitacora->registrar($usuario_id, $accion, '');
     }
     // Método para verificar roles permitidos
     protected function verificarRol(array $rolesPermitidos) {
