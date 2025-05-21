@@ -13,13 +13,13 @@ $(document).ready(function(){
 	
 	
 	
-	//evento keyup de input idservicios	
-	$("#idservicios").on("keyup",function(){
-		var servicio = $(this).val();
+	//evento keyup de input codigoservicios	
+	$("#codigoservicios").on("keyup",function(){
+		var codigo = $(this).val();
 		var encontro = false;
 		$("#listadoservicios tr").each(function(){
-			if(servicio == $(this).find("td:eq(1)").text()){
-				colocaservicio($(this));
+			if(codigo == $(this).find("td:eq(1)").text()){
+				colocaservicioss($(this));
 				encontro = true;
 			} 
 		});
@@ -67,11 +67,11 @@ $(document).ready(function(){
 	
 	//function para buscar si existe el servicio 
 	function existeservicio(){
-		var servicio = $("#idservicios").val();
+		var codigo = $("#codigoservicios").val();
 		var existe = false;
 		$("#listadoservicios tr").each(function(){
 			
-			if(servicio == $(this).find("td:eq(1)").text()){
+			if(codigo == $(this).find("td:eq(1)").text()){
 				existe = true;
 			}
 		});
@@ -81,7 +81,60 @@ $(document).ready(function(){
 	}
 	//fin de funcion existeservicio
 	
-	
+/*	//funcion para colocar los productos
+	function colocaservicios(linea){
+		var id = $(linea).find("td:eq(0)").text();
+		var encontro = false;
+		
+		$("#salida tr").each(function(){
+			if(id*1 == $(this).find("td:eq(1)").text()*1){
+				encontro = true;
+				var t = $(this).find("td:eq(4)").children();
+				t.val(t.val()*1+1);
+				modificasubtotal(t);
+			} 
+		});
+		
+		if(!encontro){
+			var l = `
+		  <tr>
+		   <td>
+		   <button type="button" class="btn btn-danger" onclick="eliminalineadetalle(this)">X</button>
+		   </td>
+		   <td>
+			   <input type="text" name="idp[]" style="display:none"
+			   value="`+
+					$(linea).find("td:eq(0)").text()+
+			   `"/>`+	
+					$(linea).find("td:eq(0)").text()+
+		   `</td>
+		   <td>`+
+					$(linea).find("td:eq(1)").text()+
+		   `</td>
+		    <td>
+		      <input type="text" name="cant[]" onkeyup="modificasubtotal(this)"  maxlength="10"/>
+		   </td>
+		   <td>`+
+					$(linea).find("td:eq(2)").text()+
+		   `</td>
+		   <td>`+
+					$(linea).find("td:eq(3)").text()+
+		   `</td>
+		   <td>`+
+					$(linea).find("td:eq(4)").text()+
+		   `</td>
+		    <td>`+
+			   redondearDecimales($(linea).find("td:eq(7)").text()*1,0)+
+		   `</td>
+		     <td>
+			  <input type="text" name="resta[]" style="display:none"/>
+		   </td>
+		   </tr>`;
+			$("#salida").append(l);
+		}
+	}
+	//fin de funcion colocar productos */
+
 	document.getElementById("cerrarModal").addEventListener("click", function() { 
 		$('#cantidadModal').modal('hide'); });
 	//funcion para modificar subtotal
@@ -110,8 +163,8 @@ $(document).ready(function(){
 	
 	
 	//funcion para colocar datos del servicio en pantalla
-	function colocaservicio(linea){
-		$("#idservicios").val($(linea).find("td:eq(1)").text()+
+	function colocaservicios(linea){
+		$("#codigoservicios").val($(linea).find("td:eq(1)").text()+
 		"  "+$(linea).find("td:eq(0)").text()+"  "+
 		$(linea).find("td:eq(2)").text());
 	}

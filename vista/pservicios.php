@@ -43,7 +43,7 @@ PAGO SERVICIOS
 	<div class="row">
 		<div class="col-md-8 input-group">
 		<input class="form-control" type="text" id="idservicios" name="idservicios"/>	 
-		   <input class="form-control" type="text" id="idservicios" name="idservicios" style="display:none" />
+		   <input class="form-control" type="text" id="codigoservicios" name="codigoservicios" style="display:none" />
 			 
 		   
 		</div>
@@ -54,7 +54,7 @@ PAGO SERVICIOS
 	<div class="row">
 		<div class="col-md-8 input-group">
 		<input class="form-control" type="text" id="costo" name="costo"/>	 
-		   <input class="form-control" type="text" id="costo" name="costo" style="display:none" />
+		   <input class="form-control" type="text" id="scosto" name="scosto" style="display:none" />
 			 
 		   
 		</div>
@@ -62,7 +62,7 @@ PAGO SERVICIOS
 
 	<div class="mb-3">
         <label for="pago"><h6>Metodo de Pago</h6></label>
-        <select class="form-select" aria-label="Default select example" id="pago">
+        <select class="form-select" aria-label="Default select example" id="spago">
             <option value="PAGOMOVIL">Pagomóvil</option> 
             <option value="EFECTIVO">Efectivo</option> 
         </select> 
@@ -89,11 +89,7 @@ PAGO SERVICIOS
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col">
-			<hr class="border border-success border-3 opacity-65"/>
-		</div>
-	</div>
+	
 	<!-- FILA DE DETALLES DE SALIDA -->
 	<div class="row">
 		<div class="col-md-12">
