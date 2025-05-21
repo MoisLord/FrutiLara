@@ -25,4 +25,18 @@ class datos{
         $this->pdo = null;
     }
 }
+class Database {
+    public static function conectarProto() {
+        $pdo = new PDO('mysql:host=localhost;dbname=protofrutilara;charset=utf8', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $pdo;
+    }
+
+    public static function conectarBitacora() {
+        $pdo = new PDO('mysql:host=localhost;dbname=bitacora_frutilara;charset=utf8', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $pdo;
+    }
+}
+
 ?>
