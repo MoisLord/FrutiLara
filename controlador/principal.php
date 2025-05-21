@@ -1,6 +1,9 @@
+
 <?php
 // Registro en bitácora al ingresar a cualquier módulo principal
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (isset($_SESSION['usuario'])) {
     require_once(__DIR__ . '/controlbitacora.php');
     $modulo = ucfirst($pagina); // Ejemplo: si $pagina = 'empleados' => 'Empleados'
