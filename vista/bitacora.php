@@ -9,6 +9,8 @@ if (!isset($entries) || !is_array($entries)) {
 ?>
 <?php require_once(__DIR__ . '/../comunes/encabezado.php'); ?>
 <?php require_once(__DIR__ . '/../comunes/menu.php'); ?>
+<?php require_once(__DIR__ . '/../modelo/session.php'); ?>
+
 <body>
 
 <div class="container mt-5">
