@@ -8,15 +8,51 @@ require_once('modelo/datos.php');
 class productosaj extends datos
 {
 
-	// se declaran como atributos privados
 
-	private $codigo; // las variables no tienen tipo predefinido
-	private $nombre;
-	private $minimo;
-	private $maximo;
-	private $id_modelo;
-	private $id_categoria;
-	private $estado_registro;
+// se declaran como atributos privados
+private $codigo;
+private $nombre;
+private $cantidad_total;
+private $minimo;
+private $maximo;
+private $nacionalidad_producto;
+private $id_modelo;
+private $id_categoria;
+private $marca_id_marca;
+private $unidades_de_medida_id_medidas;
+private $estado_registro;
+function set_cantidad_total($valor)
+{
+	$this->cantidad_total = $valor;
+}
+function set_nacionalidad_producto($valor)
+{
+	$this->nacionalidad_producto = $valor;
+}
+function set_marca_id_marca($valor)
+{
+	$this->marca_id_marca = $valor;
+}
+function set_unidades_de_medida_id_medidas($valor)
+{
+	$this->unidades_de_medida_id_medidas = $valor;
+}
+function get_cantidad_total()
+{
+	return $this->cantidad_total;
+}
+function get_nacionalidad_producto()
+{
+	return $this->nacionalidad_producto;
+}
+function get_marca_id_marca()
+{
+	return $this->marca_id_marca;
+}
+function get_unidades_de_medida_id_medidas()
+{
+	return $this->unidades_de_medida_id_medidas;
+}
 
 	// se colocan metodo (Que serian funciones) seria get o set
 
@@ -97,48 +133,54 @@ class productosaj extends datos
 	}
 
 
-	// metodos para incluir, consultar y eliminar
 
+	// metodos para incluir, consultar y eliminar
 	function incluir()
 	{
-
 		// se consulta en este caso codigo, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
-
 		if (!$this->existe($this->codigo)) {
 			//codigo no existe es decir se puede incluir
-			//funcion conecta 
 			$co = $this->conecta();
 			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//ejecuta el sql
 			$r = array();
 			try {
-
-				$p = $co->prepare("Insert into producto(
+				$p = $co->prepare("INSERT INTO producto (
 					codigo,
 					nombre,
+					cantidad_total,
 					minimo,
 					maximo,
+					nacionalidad_producto,
 					id_modelo,
 					id_categoria,
+					marca_id_marca,
+					unidades_de_medida_id_medidas,
 					estado_registro
-					)
-					Values(
+				) VALUES (
 					:codigo,
 					:nombre,
+					:cantidad_total,
 					:minimo,
 					:maximo,
+					:nacionalidad_producto,
 					:id_modelo,
 					:id_categoria,
+					:marca_id_marca,
+					:unidades_de_medida_id_medidas,
 					:estado_registro
-					)");
+				)");
 
 				$p->bindParam(':codigo', $this->codigo);
 				$p->bindParam(':nombre', $this->nombre);
+				$p->bindParam(':cantidad_total', $this->cantidad_total);
 				$p->bindParam(':minimo', $this->minimo);
 				$p->bindParam(':maximo', $this->maximo);
+				$p->bindParam(':nacionalidad_producto', $this->nacionalidad_producto);
 				$p->bindParam(':id_modelo', $this->id_modelo);
 				$p->bindParam(':id_categoria', $this->id_categoria);
+				$p->bindParam(':marca_id_marca', $this->marca_id_marca);
+				$p->bindParam(':unidades_de_medida_id_medidas', $this->unidades_de_medida_id_medidas);
 				$p->bindParam(':estado_registro', $this->estado_registro);
 				$p->execute();
 
