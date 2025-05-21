@@ -1,5 +1,5 @@
 <?php
-// app/controllers/BitacoraController.php
+// app/controllers/ControlBitacora.php
 
 require_once __DIR__ . '/ControladorBase.php';
 require_once __DIR__ . '/../modelo/Bitacora.php';
@@ -7,25 +7,25 @@ require_once __DIR__ . '/../modelo/Bitacora.php';
 class ControlBitacora extends ControladorBase {
     private $model;
 
-    public function __construct(PDO $pdo) {
-        parent::__construct($pdo);
-        $this->model = new Bitacora($pdo);
+    public function __construct() {
+        parent::__construct(); // si la Base ya incluye la conexión
+        $this->model = new Bitacora(); // conexión a BD secundaria desde el modelo
     }
 
     /**
-     * Registra una acción en la bitácora.
-     * @param string $usuario_id
+     * Registrar una acción en la bitácora
+     * @param string $usuario
+     * @param string $modulo
      * @param string $accion
      * @return bool
      */
-    public function registrarAccion(string $usuario_id, string $accion): bool {
-        // Control de acceso: sólo roles permitidos
+    public function registrarAccion(string $usuario, string $modulo, string $accion): bool {
         if (!in_array($_SESSION['rol'], ['ADMINISTRADOR','EMPLEADO','SUPERUSUARIO'])) {
             http_response_code(403);
             exit('Acceso denegado.');
         }
 
-        // Validación CSRF
+        // CSRF
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'] ?? '')) {
                 http_response_code(400);
@@ -33,30 +33,27 @@ class ControlBitacora extends ControladorBase {
             }
         }
 
-        // Lógica de registro
-        $ok = $this->model->registrar($usuario_id, $accion);
+        // Guardar registro
+        $ok = $this->model->registrar($usuario, $modulo, $accion);
         if ($ok) {
-            // Renovar token CSRF tras éxito
             unset($_SESSION['csrf_token']);
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-            header('Location: /bitacora?msg=registrado');
+            header('Location: ?pagina=bitacora&msg=registrado');
             exit;
         }
         return false;
     }
 
     /**
-     * Muestra todas las entradas de la bitácora.
-     * @return array
+     * Mostrar la vista de bitácora con sus registros
      */
-    public function listar(): array {
-        // Control de acceso: sólo dueño y super‑usuario pueden ver todo
-        if (!in_array($_SESSION['rol'], ['ADMINISTRADOR','SUPERUSUARIO'])) {
+    public function mostrarBitacora() {
+        if (!in_array($_SESSION['rol'], ['ADMINISTRADOR', 'SUPERUSUARIO'])) {
             http_response_code(403);
             exit('Acceso denegado.');
         }
-        return $this->model->listar();
+
+        $entries = $this->model->listar();
+        require_once __DIR__ . '/../vista/bitacora.php';
     }
 }
-// Control de acceso: sólo administrador y super‑usuario pueden ver todo
-$this->verificarRol(['ADMINISTRADOR', 'SUPERUSUARIO']);
