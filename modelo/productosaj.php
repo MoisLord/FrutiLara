@@ -16,7 +16,6 @@ private $cantidad_total;
 private $minimo;
 private $maximo;
 private $nacionalidad_producto;
-private $id_modelo;
 private $id_categoria;
 private $marca_id_marca;
 private $unidades_de_medida_id_medidas;
@@ -80,11 +79,6 @@ function get_unidades_de_medida_id_medidas()
 		$this->maximo = $valor;
 	}
 
-	function set_id_modelo($valor)
-	{
-		$this->id_modelo = $valor;
-	}
-
 	function set_id_categoria($valor)
 	{
 		$this->id_categoria = $valor;
@@ -115,11 +109,6 @@ function get_unidades_de_medida_id_medidas()
 	function get_maximo()
 	{
 		return $this->maximo;
-	}
-
-	function get_id_modelo()
-	{
-		return $this->id_modelo;
 	}
 
 	function get_id_categoria()
@@ -177,7 +166,6 @@ function get_unidades_de_medida_id_medidas()
 				$p->bindParam(':minimo', $this->minimo);
 				$p->bindParam(':maximo', $this->maximo);
 				$p->bindParam(':nacionalidad_producto', $this->nacionalidad_producto);
-				$p->bindParam(':id_modelo', $this->id_modelo);
 				$p->bindParam(':id_categoria', $this->id_categoria);
 				$p->bindParam(':marca_id_marca', $this->marca_id_marca);
 				$p->bindParam(':unidades_de_medida_id_medidas', $this->unidades_de_medida_id_medidas);
@@ -219,7 +207,6 @@ function get_unidades_de_medida_id_medidas()
 				$p->bindParam(':nombre', $this->nombre);
 				$p->bindParam(':minimo', $this->minimo);
 				$p->bindParam(':maximo', $this->maximo);
-				$p->bindParam(':id_modelo', $this->id_modelo);
 				$p->bindParam(':id_categoria', $this->id_categoria);
 				$p->bindParam(':estado_registro', $this->estado_registro);
 
