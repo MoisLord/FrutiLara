@@ -18,6 +18,13 @@
 			  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 			  //asigna una clave nivel con el valor obtenido de la base de datos
 			  $_SESSION['nivel'] = $m['mensaje'];
+
+			  // REGISTRO EN BITÁCORA: LOGIN
+			  require_once(__DIR__ . '/controlbitacora.php');
+			  $usuario = $_POST['cedula'];
+			  $bitacora = new ControlBitacora();
+			  $bitacora->registrarAccion($usuario, 'Sistema', 'Inició sesión');
+
 			  // Redirigir al sistema
 			  header('Location:?pagina=principal ');
 			  die();
