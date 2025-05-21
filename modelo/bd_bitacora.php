@@ -1,7 +1,7 @@
 <?php
 class bd_bitacora {
     private $ip  = 'localhost';
-    private $bd = 'protofrutilara';
+    private $bd = 'bitacora_frutilara';
     private $usuario = 'root';
     private $contrasena = "";
     private $charset = 'utf8mb4';
