@@ -2,18 +2,24 @@
 require_once 'BaseModel.php';
 
 class Bitacora extends ModeloBase {
-    private $table = 'bitacora';
+    private $pdo;
 
-    public function registrar($usuario_id, $accion) {
-        $sql = "INSERT INTO {$this->table} (usuario_id, accion) VALUES (:uid, :acc)";
-        $stmt = $this->bd->prepare($sql);
-        $stmt->bindValue(':uid', htmlspecialchars(strip_tags($usuario_id)), PDO::PARAM_STR);
-        $stmt->bindValue(':acc', htmlspecialchars(strip_tags($accion)),   PDO::PARAM_STR);
-        return $stmt->execute();
+    public function __construct() {
+        $this->pdo = Datos2::conectarBitacora(); // Conecta a la BD secundaria
     }
 
     public function listar() {
-        $sql = "SELECT * FROM {$this->table} ORDER BY fecha DESC";
-        return $this->bd->query($sql)->fetchAll();
+        $sql = "SELECT id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id DESC";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function registrar($usuario, $modulo, $accion) {
+        $sql = "INSERT INTO bitacora (usuario, modulo, accion, fecha) VALUES (?, ?, ?, NOW())";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$usuario, $modulo, $accion]);
     }
 }
+
+?>

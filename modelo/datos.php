@@ -25,7 +25,7 @@ class datos{
         $this->pdo = null;
     }
 }
-class Datos2{
+class Datos2 {
     public static function conectarProto() {
         $pdo = new PDO('mysql:host=localhost;dbname=protofrutilara;charset=utf8', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
