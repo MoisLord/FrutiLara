@@ -12,7 +12,7 @@ if (!isset($entries) || !is_array($entries)) {
 <body>
 
 <div class="container mt-5">
-    <h2 class="text-success text-center">BITÁCORA de usuarios</h2>
+    <h2 class="text-success text-center">BITÁCORA</h2>
     <hr class="border border-success border-2 opacity-75" />
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
