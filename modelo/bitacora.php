@@ -1,5 +1,5 @@
 <?php
-require_once 'BaseModel.php';
+require_once 'modelobase.php';
 
 class Bitacora extends ModeloBase {
     private $pdo;
