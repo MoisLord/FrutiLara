@@ -1,4 +1,11 @@
 <?php
+// Registro en bitácora al ingresar al módulo
+session_start();
+if (isset($_SESSION['usuario'])) {
+	require_once(__DIR__ . '/controlbitacora.php');
+	$bitacora = new ControlBitacora();
+	$bitacora->registrarAccion($_SESSION['usuario'], 'Cliente', 'Ingresó al módulo de Cliente');
+}
   
 //llamada al archivo que contiene la clase
 //empleados, en ella estara el codigo que me permitirá

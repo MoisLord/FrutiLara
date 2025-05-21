@@ -1,4 +1,11 @@
 <?php
+// Registro en bitácora al ingresar al módulo
+session_start();
+if (isset($_SESSION['usuario'])) {
+	require_once(__DIR__ . '/controlbitacora.php');
+	$bitacora = new ControlBitacora();
+	$bitacora->registrarAccion($_SESSION['usuario'], 'Producto', 'Ingresó al módulo de Producto');
+}
   
 //llamada al archivo que contiene la clase
 //productosaj, en ella estara el codigo que me permitirá
@@ -56,7 +63,7 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_nombre($_POST['nombre']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
-              $o->set_id_modelo($_POST['id_modelo']);
+			  $o->set_id_modelo($_POST['id_modelo']);
 			  $o->set_id_categoria($_POST['id_categoria']);
 			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){

@@ -1,4 +1,11 @@
 <?php
+// Registro en bitácora al ingresar al módulo
+session_start();
+if (isset($_SESSION['usuario'])) {
+	require_once(__DIR__ . '/controlbitacora.php');
+	$bitacora = new ControlBitacora();
+	$bitacora->registrarAccion($_SESSION['usuario'], 'Categoria', 'Ingresó al módulo de Categoria');
+}
 //llamada al archivo que contiene la clase
 //Se verificara que en el modelo exista el archivo
 if (!is_file("modelo/".$pagina.".php")){
@@ -45,7 +52,7 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_codigo_categoria($_POST['codigo_categoria']);
 			  $o->set_descripcion_categoria($_POST['descripcion_categoria']);
 			  $o->set_unidadMedNormal($_POST['unidadMedNormal']);
-              $o->set_unidadMedAlt($_POST['unidadMedAlt']);
+			  $o->set_unidadMedAlt($_POST['unidadMedAlt']);
 			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
 				echo  json_encode($o->incluir());
