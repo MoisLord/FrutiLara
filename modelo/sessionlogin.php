@@ -3,9 +3,10 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (isset($_SESSION['nivel']) && $_SESSION['nivel']) {
-    header('Location: /Frutilara/');
-    exit;
+if (@$_SESSION['nivel']) {
+    @header('Location: /Frutilara/');
+} else {
+    $type_user = $_SESSION['nivel'];
 }
 
 // if (isset($_GET['close_session'])) {
