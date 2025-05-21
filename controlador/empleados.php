@@ -11,7 +11,15 @@ if (!is_file("modelo/".$pagina.".php")){
 	echo "Falta definir la clase ".$pagina;
 	exit;
 }  
-require_once("modelo/".$pagina.".php");  
+require_once("modelo/".$pagina.".php");
+
+// ✅ REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
+if (isset($_SESSION['usuario'])) {
+    require_once("app/controllers/ControlBitacora.php");
+    $bitacora = new ControlBitacora();
+    $bitacora->registrarAccion($_SESSION['usuario'], 'Empleado', 'Ingresó al módulo de Empleado');
+}
+
   if(is_file("vista/".$pagina.".php")){
 	  
 	   //si existe creamos una intancia que es una variable local
