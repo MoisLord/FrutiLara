@@ -67,7 +67,6 @@ require_once("modelo/".$pagina.".php");
 			  $o->set_nombre($_POST['nombre']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
-			  $o->set_id_modelo($_POST['id_modelo']);
 			  $o->set_id_categoria($_POST['id_categoria']);
 			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
