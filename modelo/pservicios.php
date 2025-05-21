@@ -64,7 +64,7 @@ class pservicios extends datos{
 			$respuesta = '';
 			if($resultado){
 				foreach($resultado as $r){
-					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaservicio(this);'>";
+					$respuesta = $respuesta."<tr style='cursor:pointer' onclick='colocaservicios(this);'>";
 						$respuesta = $respuesta."<td>";
 							$respuesta = $respuesta.$r['codigo_servicio'];
 						$respuesta = $respuesta."</td>";
