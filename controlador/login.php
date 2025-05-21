@@ -8,7 +8,9 @@
 	  if(!empty($_POST)){
 		  $o = new login();
 		  if($_POST['accion']=='entrar'){
-			session_start();
+			if (session_status() === PHP_SESSION_NONE) {
+				session_start();
+			}
 			$o->set_cedula($_POST['cedula']);
 			$o->set_clave($_POST['clave']);  
 			$m = $o->existe();
@@ -16,8 +18,11 @@
 			  // Renovar token CSRF tras login exitoso
 			  unset($_SESSION['csrf_token']);
 			  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+
 			  //asigna una clave nivel con el valor obtenido de la base de datos
 			  $_SESSION['nivel'] = $m['mensaje'];
+			  // Asigna el rol para la bitácora y controladores
+			  $_SESSION['rol'] = $m['mensaje'];
 
 			  // REGISTRO EN BITÁCORA: LOGIN
 			  require_once(__DIR__ . '/controlbitacora.php');
