@@ -1,27 +1,35 @@
 <?php
-// controller ya habrá hecho: $entries = (new BitacoraController)->listar();
+// Verificamos si hay datos disponibles
 if (!isset($entries) || !is_array($entries)) {
     $entries = [];
 }
 ?>
-<table>
-  <thead>
-    <tr>
-        <th>ID</th>
-        <th>tipo de usuario</th>
-        <th>cedula</th>
-        <th>clave</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach($entries as $e): ?>
-      <tr>
-        <td><?=htmlspecialchars($e['id_usuarios'])?></td>
-        <td><?=htmlspecialchars($e['tipo_usuario'])?></td>
-        <td><?=htmlspecialchars($e['cedula'])?></td>
-        <td><?=htmlspecialchars($e['clave'])?></td>
-      </tr>
-      <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
-    <?php endforeach; ?>
-  </tbody>
+
+<link rel="stylesheet" href="/public/css/bitacora.css"> <!-- Asegúrate de tener estilos CSS apropiados -->
+
+<h2>Bitácora</h2>
+
+<table class="table table-striped table-bordered">
+    <thead style="background-color: #78c879; color: white;">
+        <tr>
+            <th>#</th>
+            <th>Usuario</th>
+            <th>Módulo</th>
+            <th>Acción</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($entries as $index => $e): ?>
+            <tr>
+                <td><?= htmlspecialchars($e['id']) ?></td>
+                <td><?= htmlspecialchars($e['usuario']) ?></td>
+                <td><?= htmlspecialchars($e['modulo']) ?></td>
+                <td><?= htmlspecialchars($e['accion']) ?></td>
+                <td><?= date('Y-m-d', strtotime($e['fecha'])) ?></td>
+                <td><?= date('H:i:s', strtotime($e['fecha'])) ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
 </table>
