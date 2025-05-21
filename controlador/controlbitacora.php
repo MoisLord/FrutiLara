@@ -8,8 +8,9 @@ class ControlBitacora extends ControladorBase {
     private $model;
 
     public function __construct() {
-        parent::__construct(); // si la Base ya incluye la conexión
-        $this->model = new Bitacora(); // conexión a BD secundaria desde el modelo
+        $pdo = \Datos2::conectarBitacora();
+        parent::__construct($pdo);
+        $this->model = new Bitacora($pdo);
     }
 
     /**

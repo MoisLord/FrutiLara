@@ -1,11 +1,13 @@
 <?php
 require_once 'modelobase.php';
 
+
 class Bitacora extends ModeloBase {
     private $pdo;
 
-    public function __construct() {
-        $this->pdo = Datos2::conectarBitacora(); // Conecta a la BD secundaria
+    public function __construct($pdo) {
+        parent::__construct($pdo);
+        $this->pdo = $pdo;
     }
 
     public function listar() {
