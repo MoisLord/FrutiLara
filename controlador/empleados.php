@@ -13,7 +13,7 @@ if (!is_file("modelo/".$pagina.".php")){
 }  
 require_once("modelo/".$pagina.".php");
 
-// ✅ REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
+//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
 if (isset($_SESSION['usuario'])) {
     require_once("app/controllers/ControlBitacora.php");
     $bitacora = new ControlBitacora();
