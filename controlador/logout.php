@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 $usuario = $_SESSION['usuario'] ?? null;
 if ($usuario) {
     require_once(__DIR__ . '/controlbitacora.php');
-    $bitacora = new ControlBitacora();
+    $bitacora = new ContBitacora();
     $bitacora->registrarAccion($usuario, 'Sistema', 'Cerró sesión');
 }
 

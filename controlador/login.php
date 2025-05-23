@@ -29,7 +29,7 @@
 			  // REGISTRO EN BITÁCORA: LOGIN
 			  require_once(__DIR__ . '/controlbitacora.php');
 			  $usuario = $_POST['cedula'];
-			  $bitacora = new ControlBitacora();
+			  $bitacora = new ContBitacora();
 			  $bitacora->registrarAccion($usuario, 'Sistema', 'Inició sesión');
 
 			  // Redirigir al sistema
