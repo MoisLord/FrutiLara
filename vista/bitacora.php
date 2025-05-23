@@ -19,6 +19,7 @@ require_once(__DIR__ . '/../modelo/session.php');
                 <tr>
                     <th>#</th>
                     <th>Usuario</th>
+                    <th>Modulo</th>
                     <th>Acción</th>
                     <th>Fecha</th>
                     <th>Hora</th>
