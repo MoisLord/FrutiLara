@@ -23,6 +23,8 @@
 			  $_SESSION['nivel'] = $m['mensaje'];
 			  // Asigna el rol para la bitácora y controladores
 			  $_SESSION['rol'] = $m['mensaje'];
+			  // Guarda el usuario en sesión
+			  $_SESSION['usuario'] = $usuario;
 
 			  // REGISTRO EN BITÁCORA: LOGIN
 			  require_once(__DIR__ . '/controlbitacora.php');
