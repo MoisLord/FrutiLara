@@ -8,7 +8,7 @@ require_once(__DIR__ . '/../modelo/session.php');
 <body>
 
 <div class="container mt-5">
-    <h2 class="text-success text-center">Bitácora de Sesiones</h2>
+    <h2 class="text-success text-center">Bitácora</h2>
     <hr class="border border-success border-2 opacity-75" />
     <div class="mb-3">
         <a href="../index.php?pagina=principal" class="btn btn-secondary">Regresar</a>
