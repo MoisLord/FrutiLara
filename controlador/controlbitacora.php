@@ -1,10 +1,10 @@
 <?php
-// app/controllers/ControlBitacora.php
+// app/contlers/ContBitacora.php
 
 require_once __DIR__ . '/ControladorBase.php';
 require_once __DIR__ . '/../modelo/Bitacora.php';
 
-class ControlBitacora extends ControladorBase {
+class ContBitacora extends ControladorBase {
     private $model;
 
     public function __construct() {
@@ -21,7 +21,7 @@ class ControlBitacora extends ControladorBase {
      * @return bool
      */
     public function registrarAccion(string $usuario, string $modulo, string $accion): bool {
-        if (!in_array($_SESSION['rol'], ['ADMINISTRADOR','EMPLEADO','SUPERUSUARIO'])) {
+        if (!in_array($_SESSION['usuario'], ['ADMINISTRADOR','EMPLEADO','SUPERUSUARIO'])) {
             http_response_code(403);
             exit('Acceso denegado.');
         }
@@ -49,7 +49,7 @@ class ControlBitacora extends ControladorBase {
      * Mostrar la vista de bitácora con sus registros
      */
     public function mostrarBitacora() {
-        if (!in_array($_SESSION['rol'], ['ADMINISTRADOR', 'SUPERUSUARIO'])) {
+        if (!in_array($_SESSION['usuario'], ['ADMINISTRADOR', 'SUPERUSUARIO'])) {
             http_response_code(403);
             exit('Acceso denegado.');
         }
