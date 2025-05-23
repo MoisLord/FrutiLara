@@ -27,16 +27,22 @@ class datos{
 }
 class Datos2 {
     public static function conectarProto() {
+    try {
         $pdo = new PDO('mysql:host=localhost;dbname=protofrutilara;charset=utf8', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
+    } catch (PDOException $e) {
+        die("Error de conexión: " . $e->getMessage());
     }
-
+}
     public static function conectarBitacora() {
+    try {
         $pdo = new PDO('mysql:host=localhost;dbname=bitacora_frutilara;charset=utf8', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
+    } catch (PDOException $e) {
+        die("Error de conexión: " . $e->getMessage());
     }
 }
-
+}
 ?>
