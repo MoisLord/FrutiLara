@@ -18,13 +18,15 @@
 			  // Renovar token CSRF tras login exitoso
 			  unset($_SESSION['csrf_token']);
 			  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+			  
+			  // Asigna el nombre de usuario (cedula)
+			  $usuario = $_POST['cedula'];
+			  $_SESSION['usuario'] = $usuario;
 
 			  //asigna una clave nivel con el valor obtenido de la base de datos
 			  $_SESSION['nivel'] = $m['mensaje'];
 			  // Asigna el rol para la bitácora y controladores
 			  $_SESSION['rol'] = $m['mensaje'];
-			  // Asigna el nombre de usuario
-			  $_SESSION['usuario'] = $usuario;
 
 			  // REGISTRO EN BITÁCORA: LOGIN
 			  require_once(__DIR__ . '/controlbitacora.php');
