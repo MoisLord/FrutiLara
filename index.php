@@ -41,7 +41,7 @@ require_once("modelo/verifica.php");
 
 // --- AGREGADO: Si no hay sesión y no está en login, forzar login ---
 if (empty($nivel) && $pagina != 'principal') {
-    $pagina = 'principal';
+    $pagina = 'login';
 }
 // ---------------------------------------------------------------
  
