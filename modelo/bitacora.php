@@ -11,7 +11,10 @@ class Bitacora extends ModeloBase {
     }
 
     public function listar() {
-        $sql = "SELECT id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id DESC";
+        $sql = "SELECT b.id, b.usuario, u.tipo_usuario, b.modulo, b.accion, b.fecha
+                FROM bitacora b
+                LEFT JOIN usuario u ON b.usuario = u.cedula
+                ORDER BY b.id DESC";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
