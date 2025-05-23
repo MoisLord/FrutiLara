@@ -1,5 +1,15 @@
 <?php
   
+// Solo iniciar sesión si no está activa
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
+//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
+if (isset($_SESSION['usuario'])) {
+    require_once("app/controllers/ControlBitacora.php");
+    $bitacora = new ContBitacora();
+    $bitacora->registrarAccion($_SESSION['usuario'], 'Empleado', 'Ingresó al módulo de Empleado');
+}
 //llamada al archivo que contiene la clase
 //empleados, en ella estara el codigo que me permitirá
 //guardar, consultar y modificar dentro de mi base de datos
@@ -12,13 +22,6 @@ if (!is_file("modelo/".$pagina.".php")){
 	exit;
 }  
 require_once("modelo/".$pagina.".php");
-
-//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
-if (isset($_SESSION['usuario'])) {
-    require_once("app/controllers/ControlBitacora.php");
-    $bitacora = new ControlBitacora();
-    $bitacora->registrarAccion($_SESSION['usuario'], 'Empleado', 'Ingresó al módulo de Empleado');
-}
 
   if(is_file("vista/".$pagina.".php")){
 	  
