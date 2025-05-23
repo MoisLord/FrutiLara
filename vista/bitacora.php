@@ -16,6 +16,11 @@ if (!isset($entries) || !is_array($entries)) {
 <div class="container mt-5">
     <h2 class="text-success text-center">BITÁCORA</h2>
     <hr class="border border-success border-2 opacity-75" />
+    <div class="mb-3">
+        <a href="principal.php" class="btn btn-secondary">
+            Regresar a Principal
+        </a>
+    </div>
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
             <thead class="bg-success text-white">
