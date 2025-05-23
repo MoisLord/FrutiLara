@@ -20,7 +20,6 @@ PAGO DEL EMPLEADO
 </div>
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
 <form method="post" action="" id="f">
-<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 <input type="text" name="accion" id="accion" style="display:none"/>
 <div class="container">
 	<!-- FILA DE BOTONES -->

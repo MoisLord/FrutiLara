@@ -1,10 +1,12 @@
 <html>
 <title>BITÁCORA DE SESIONES</title>
 <?php
-if (!isset($entries) || !is_array($entries)) $entries = [];
-require_once(__DIR__ . '/../comunes/encabezado.php');
-require_once(__DIR__ . '/../modelo/session.php');
+
+ require_once(__DIR__ . '/../comunes/encabezado.php');
+ require_once(__DIR__ . '/../modelo/session.php');
+ if (!isset($entries) || !is_array($entries)) $entries = [];
 ?>
+<body>
 <body>
 
 <div class="container mt-5">

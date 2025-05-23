@@ -27,6 +27,13 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `bitacora`
 --
 
+CREATE SCHEMA IF NOT EXISTS `bitacora_frutilara` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema new_schema1
+-- -----------------------------------------------------
+USE `bitacora_frutilara` ;
+
+
 CREATE TABLE `bitacora` (
   `id` int(11) NOT NULL,
   `usuario` varchar(50) DEFAULT NULL,

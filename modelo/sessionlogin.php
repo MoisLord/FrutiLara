@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
 }
 
 if (@$_SESSION['nivel']) {
-    @header('Location: . ');
+    @header('Location: /Frutilara/');
 } else {
     $type_user = $_SESSION['nivel'];
 }

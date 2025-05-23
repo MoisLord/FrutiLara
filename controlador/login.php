@@ -6,37 +6,35 @@
   require_once("modelo/".$pagina.".php"); 
   if(is_file("vista/".$pagina.".php")){ 
 	  if(!empty($_POST)){
+		  
 		  $o = new login();
+		  
 		  if($_POST['accion']=='entrar'){
-			if (session_status() === PHP_SESSION_NONE) {
-				session_start();
-			}
+			session_start();
 			$o->set_cedula($_POST['cedula']);
-			$o->set_clave($_POST['clave']);  
+		    $o->set_clave($_POST['clave']);  
 			$m = $o->existe();
 			if($m['resultado']=='existe'){
-				// Renovar token CSRF tras login exitoso
-				unset($_SESSION['csrf_token']);
-				$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-				
-				// Asigna el nombre de usuario (cedula)
-				$usuario = $_POST['cedula'];
-				$_SESSION['usuario'] = $usuario;
-				$_SESSION['rol'] = $m['mensaje']; // ADMINISTRADOR, EMPLEADO, etc.
-				
-				// REGISTRO EN BITÁCORA: LOGIN
-				require_once(__DIR__ . '/controlbitacora.php');
-				$bitacora = new ContBitacora();
-				$bitacora->registrarAccion($usuario, 'Sistema', 'Inició sesión');
-				
-				// Redirigir al sistema principal
-				header('Location: ?pagina=principal');
-				exit;
+			//   session_destroy(); //elimina cualquier version anterio de sesion	
+			//   session_start(); //inicia el entorno de sesion
+			  //asigna una clave nivel con el valor obtenido de la base de datos
+			  $_SESSION['nivel'] = $m['mensaje'];
+			  
+			  // Esta nueva instruccion lo que hace es 
+			  //redireccionar el flujo de nuevo al index.php FrontController
+			  //para obligar a que se carguen los privilegios de la sesion
+			  header('Location:?pagina=principal ');
+			  //Similar al exit, die termina la ejecucion de esta pagina 
+			  //y previene que se cargue de nuevo esta vista (entrada.php)
+			  die();
 			}
 			else{
 			  $mensaje = $m['mensaje'];
 			}
+			
 		  }
+		  
+		 
 	  }
 	  
 	  require_once("vista/".$pagina.".php"); 
@@ -44,7 +42,4 @@
   else{
 	  echo "Falta la vista";
   }
-  if (empty($_SESSION['csrf_token'])) {
-	$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
 ?>
