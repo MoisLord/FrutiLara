@@ -21,10 +21,10 @@ class Bitacora extends ModeloBase {
 }
 
     public function registrar($usuario, $modulo, $accion) {
-        $sql = "INSERT INTO bitacora (usuario, modulo, accion, fecha) VALUES (usuario, modulo, accion, fecha, NOW())";
-        $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute([$usuario, $modulo, $accion]);
-    }
+    $sql = "INSERT INTO bitacora (usuario, modulo, accion, fecha) VALUES (?, ?, ?, NOW())";
+    $stmt = $this->pdo->prepare($sql);
+    return $stmt->execute([$usuario, $modulo, $accion]);
+}
 }
 
 ?>
