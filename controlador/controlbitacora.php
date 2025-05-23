@@ -22,7 +22,7 @@ class ContBitacora extends ControladorBase {
      * @return bool
      */
     public function registrarAccion(string $usuario, string $modulo, string $accion): bool {
-        if (!in_array($_SESSION['usuario'], ['ADMINISTRADOR','EMPLEADO','SUPERUSUARIO'])) {
+        if (!in_array($_SESSION['rol'], ['ADMINISTRADOR','EMPLEADO','SUPERUSUARIO'])) {
             http_response_code(403);
             exit('Acceso denegado.');
         }
