@@ -15,28 +15,23 @@
 			$o->set_clave($_POST['clave']);  
 			$m = $o->existe();
 			if($m['resultado']=='existe'){
-			  // Renovar token CSRF tras login exitoso
-			  unset($_SESSION['csrf_token']);
-			  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-			  
-			  // Asigna el nombre de usuario (cedula)
-			  $usuario = $_POST['cedula'];
-			  $_SESSION['usuario'] = $usuario;
-
-			  //asigna una clave nivel con el valor obtenido de la base de datos
-			  $_SESSION['nivel'] = $m['mensaje'];
-			  // Asigna el rol para la bitácora y controladores
-			  $_SESSION['rol'] = $m['mensaje'];
-
-			  // REGISTRO EN BITÁCORA: LOGIN
-			  require_once(__DIR__ . '/controlbitacora.php');
-			  $usuario = $_POST['cedula'];
-			  $bitacora = new ContBitacora();
-			  $bitacora->registrarAccion($usuario, 'Sistema', 'Inició sesión');
-
-			  // Redirigir al sistema
-			  header('Location:?pagina=principal ');
-			  die();
+				// Renovar token CSRF tras login exitoso
+				unset($_SESSION['csrf_token']);
+				$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+				
+				// Asigna el nombre de usuario (cedula)
+				$usuario = $_POST['cedula'];
+				$_SESSION['usuario'] = $usuario;
+				$_SESSION['rol'] = $m['mensaje']; // ADMINISTRADOR, EMPLEADO, etc.
+				
+				// REGISTRO EN BITÁCORA: LOGIN
+				require_once(__DIR__ . '/controlbitacora.php');
+				$bitacora = new ContBitacora();
+				$bitacora->registrarAccion($usuario, 'Sistema', 'Inició sesión');
+				
+				// Redirigir al sistema principal
+				header('Location: ?pagina=principal');
+				exit;
 			}
 			else{
 			  $mensaje = $m['mensaje'];
