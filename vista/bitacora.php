@@ -1,24 +1,17 @@
-
-<html> 
-<title>BITÁCORA</title>
+<html>
+<title>BITÁCORA DE SESIONES</title>
 <?php
-// Evita warnings si $entries no está definido
-if (!isset($entries) || !is_array($entries)) {
-    $entries = [];
-}
+if (!isset($entries) || !is_array($entries)) $entries = [];
+require_once(__DIR__ . '/../comunes/encabezado.php');
+require_once(__DIR__ . '/../modelo/session.php');
 ?>
-<?php require_once(__DIR__ . '/../comunes/encabezado.php'); ?>
-<?php require_once(__DIR__ . '/../modelo/session.php'); ?>
-
 <body>
 
 <div class="container mt-5">
-    <h2 class="text-success text-center">BITÁCORA</h2>
+    <h2 class="text-success text-center">Bitácora de Sesiones</h2>
     <hr class="border border-success border-2 opacity-75" />
     <div class="mb-3">
-        <a href="../index.php?pagina=principal" class="btn btn-secondary">
-            Regresar
-        </a>
+        <a href="../index.php?pagina=principal" class="btn btn-secondary">Regresar</a>
     </div>
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
@@ -26,18 +19,16 @@ if (!isset($entries) || !is_array($entries)) {
                 <tr>
                     <th>#</th>
                     <th>Usuario</th>
-                    <th>Módulo</th>
                     <th>Acción</th>
                     <th>Fecha</th>
                     <th>Hora</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($entries as $e): ?>
+                <?php foreach ($entries as $i => $e): ?>
                     <tr>
-                        <td><?= htmlspecialchars($e['id']) ?></td>
+                        <td><?= $i + 1 ?></td>
                         <td><?= htmlspecialchars($e['usuario']) ?></td>
-                        <td><?= htmlspecialchars($e['modulo']) ?></td>
                         <td><?= htmlspecialchars($e['accion']) ?></td>
                         <td><?= date('Y-m-d', strtotime($e['fecha'])) ?></td>
                         <td><?= date('H:i:s', strtotime($e['fecha'])) ?></td>
