@@ -60,7 +60,7 @@ class marca extends datos{
 	
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
 	
-	private function incluir(){
+	function incluir(){
 		//ya hecho la base de datos y la funcion conecta dentro de la clase
 		//datos, ahora hay que ejecutar las operaciones para realizar las consultas 
 		
@@ -112,7 +112,7 @@ class marca extends datos{
 		
 	}
 	
-	private function modificar(){
+	function modificar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -143,7 +143,7 @@ class marca extends datos{
 		return $r;
 	}
 	
-	private function eliminar(){
+	function eliminar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
@@ -193,7 +193,7 @@ class marca extends datos{
 		return $r;
 	}
 	
-	private function restaurar(){
+	function restaurar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
