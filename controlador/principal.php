@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 if (isset($_SESSION['usuario'])) {
     require_once(__DIR__ . '/controlbitacora.php');
     $modulo = ucfirst($pagina); // Ejemplo: si $pagina = 'empleados' => 'Empleados'
-    (new ControlBitacora())->registrarAccion($_SESSION['usuario'], $modulo, 'Ingresó al módulo de ' . $modulo);
+    (new ContBitacora())->registrarAccion($_SESSION['usuario'], $modulo, 'Ingresó al Sistema ' . $modulo);
 }
 
 if(is_file("vista/".$pagina.".php")){
