@@ -23,7 +23,6 @@
 			  $_SESSION['nivel'] = $m['mensaje'];
 			  // Asigna el rol para la bitácora y controladores
 			  $_SESSION['rol'] = $m['mensaje'];
-			  $_SESSION['usuario'] = $m['cedula'];
 			  // Asigna el nombre de usuario
 			  $_SESSION['usuario'] = $usuario;
 
