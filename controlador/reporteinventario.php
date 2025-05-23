@@ -1,6 +1,15 @@
 <?php
   
-
+ // Solo iniciar sesión si no está activa
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
+//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
+if (isset($_SESSION['usuario'])) {
+    require_once("app/controllers/ControlBitacora.php");
+    $bitacora = new ContBitacora();
+    $bitacora->registrarAccion($_SESSION['usuario'], 'reporte General', 'Ingresó al módulo de reporte General');
+}
 
 
 //lo primero que se debe hacer es verificar al igual que en la vista es que exista el archivo
