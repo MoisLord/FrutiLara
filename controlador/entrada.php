@@ -10,22 +10,6 @@ if (isset($_SESSION['usuario'])) {
     $bitacora = new ContBitacora();
     $bitacora->registrarAccion($_SESSION['usuario'], 'Notas de Entrada', 'Ingresó al módulo de Notas de Entrada');
 }
-
-class entrada {
-
-    public function registrar($idproveedor, $idp, $cant) {
-        // Aquí va la lógica para registrar la entrada en la base de datos
-        try {
-            $pdo = $this->conecta(); // Usa método de conexión
-            $sql = "INSERT INTO nota_entrada (idproveedor, idp, cantidad) VALUES (?, ?, ?)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$idproveedor, $idp, $cant]);
-            return ['success' => true, 'mensaje' => 'Registro exitoso'];
-        } catch (PDOException $e) {
-            return ['success' => false, 'mensaje' => 'Error: ' . $e->getMessage()];
-        }
-    }
-}
 //llamada al archivo que contiene la clase
 //usuarios, en ella estara el codigo que me //permitirá
 //guardar, consultar y modificar dentro de mi base //de datos
