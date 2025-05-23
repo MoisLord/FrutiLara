@@ -1,5 +1,15 @@
 <?php
   
+// Solo iniciar sesión si no está activa
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
+//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
+if (isset($_SESSION['usuario'])) {
+    require_once("app/controllers/ControlBitacora.php");
+    $bitacora = new ContBitacora();
+    $bitacora->registrarAccion($_SESSION['usuario'], 'Marca', 'Ingresó al módulo de marca');
+}
 //llamada al archivo que contiene la clase
 //Marca, en ella estara el modelo que me permitirá
 //guardar osea incluir, consultar, eliminar y modificar dentro de la base de datos
