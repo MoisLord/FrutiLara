@@ -17,7 +17,7 @@ if (!isset($entries) || !is_array($entries)) {
     <hr class="border border-success border-2 opacity-75" />
     <div class="mb-3">
         <a href="../index.php?pagina=principal" class="btn btn-secondary">
-            Regresar a Principal
+            Regresar
         </a>
     </div>
     <div class="table-responsive">
