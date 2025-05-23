@@ -22,10 +22,13 @@ class ContBitacora extends ControladorBase {
      * @return bool
      */
     public function registrarAccion(string $usuario, string $modulo, string $accion): bool {
-        if (!in_array($_SESSION['rol'], ['ADMINISTRADOR','EMPLEADO','SUPERUSUARIO'])) {
-            http_response_code(403);
-            exit('Acceso denegado.');
-        }
+    if (!isset($_SESSION['rol'])) {
+        die('No hay rol en la sesión');
+    }
+    if (!in_array($_SESSION['rol'], ['ADMINISTRADOR','EMPLEADO','SUPERUSUARIO'])) {
+        http_response_code(403);
+        exit('Acceso denegado.');
+    }
 
         // CSRF
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -50,7 +53,7 @@ class ContBitacora extends ControladorBase {
      * Mostrar la vista de bitácora con sus registros
      */
     public function mostrarBitacora() {
-        if (!in_array($_SESSION['usuario'], ['ADMINISTRADOR', 'SUPERUSUARIO'])) {
+        if (!in_array($_SESSION['rol'], ['ADMINISTRADOR', 'SUPERUSUARIO'])) {
             http_response_code(403);
             exit('Acceso denegado.');
         }
