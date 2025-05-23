@@ -2,6 +2,7 @@
 // app/contlers/ContBitacora.php
 
 require_once __DIR__ . '/ControladorBase.php';
+require_once __DIR__ . '/../modelo/datos.php';
 require_once __DIR__ . '/../modelo/Bitacora.php';
 
 class ContBitacora extends ControladorBase {
