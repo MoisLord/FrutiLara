@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 // Registro en bitácora al ingresar al módulo
 if (isset($_SESSION['usuario'])) {
 	require_once(__DIR__ . '/controlbitacora.php');
-	$bitacora = new ControlBitacora();
+	$bitacora = new ContBitacora();
 	$bitacora->registrarAccion($_SESSION['usuario'], 'Producto', 'Ingresó al módulo de Producto');
 }
   
