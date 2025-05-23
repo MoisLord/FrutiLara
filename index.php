@@ -38,6 +38,12 @@ require_once("modelo/verifica.php");
 		$nivel = $v->leesesion();
 	}
 }
+
+// --- AGREGADO: Si no hay sesión y no está en login, forzar login ---
+if (empty($nivel) && $pagina != 'login') {
+    $pagina = 'login';
+}
+// ---------------------------------------------------------------
  
  //pregunta si existe el archivo
  //si existe lo trae, si no escribe pagina en costrucción
