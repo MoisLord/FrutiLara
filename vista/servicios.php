@@ -17,7 +17,6 @@ PANTALLA DE SERVICIOS
   <!-- Columna izquierda con el formulario -->
   <div class="col-4 p-2">
     <form method="post" id="f" autocomplete="off">
-      <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
       <h4 class="text-center text-success">REGISTRO DE SERVICIOS</h4>
 
       <div class="row mb-3">
