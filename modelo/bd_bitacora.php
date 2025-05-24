@@ -4,7 +4,7 @@ class bd_bitacora
     private $ip  = 'localhost';
     private $bd = 'bitacora_frutilara';
     private $usuario = 'root';
-    private $contrasena = "fuck24";
+    private $contrasena = "";
     private $charset = 'utf8mb4';
     public  $pdo;
 
