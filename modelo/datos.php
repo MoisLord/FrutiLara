@@ -1,10 +1,10 @@
 <?php
 class datos
 {
-    private $ip = "127.0.0.1:3306";
+    private $ip = "localhost";
     private $bd = "protofrutilara";
     private $usuario = "root";
-    private $contrasena = "fuck24";
+    private $contrasena = "";
     //  private $pdo; // Declaracion de la propiedad $pdo
 
     //     protected function conecta(){
