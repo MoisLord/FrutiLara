@@ -32,6 +32,7 @@
                     <tr>
                         <td><?= $i + 1 ?></td>
                         <td><?= htmlspecialchars($e['usuario']) ?></td>
+                        <td><?= htmlspecialchars($e['modulo']) ?></td>
                         <td><?= htmlspecialchars($e['accion']) ?></td>
                         <td><?= date('Y-m-d', strtotime($e['fecha'])) ?></td>
                         <td><?= date('H:i:s', strtotime($e['fecha'])) ?></td>

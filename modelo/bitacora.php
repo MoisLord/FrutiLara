@@ -14,7 +14,7 @@ class Bitacora extends ModeloBase
 
     public function listar()
     {
-        $sql = "SELECT b.id, b.usuario, u.tipo_usuario, b.modulo, b.accion, b.fecha
+        $sql = "SELECT b.id, b.usuario, b.modulo, b.accion, b.fecha
             FROM bitacora_frutilara.bitacora b
             LEFT JOIN protofrutilara.usuario u ON b.usuario = u.cedula
             ORDER BY b.id DESC";
