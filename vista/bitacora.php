@@ -16,7 +16,6 @@
         <a href="../index.php?pagina=principal" class="btn btn-secondary">Regresar</a>
     </div>
     <div class="table-responsive">
-        <?php var_dump($entries); ?>
         <table class="table table-bordered table-striped table-hover">
             <thead class="bg-success text-white">
                 <tr>
