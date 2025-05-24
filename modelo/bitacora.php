@@ -15,9 +15,7 @@ class Bitacora extends ModeloBase
     public function listar()
     {
         $sql = "SELECT b.id, b.usuario, b.modulo, b.accion, b.fecha
-            FROM bitacora_frutilara.bitacora b
-            LEFT JOIN protofrutilara.usuario u ON b.usuario = u.cedula
-            ORDER BY b.id DESC";
+            FROM bitacora_frutilara.bitacora b ORDER BY b.id DESC";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
