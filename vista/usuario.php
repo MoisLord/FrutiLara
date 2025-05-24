@@ -15,7 +15,6 @@ USUARIOS DEL SISTEMA
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
-   <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
    <h4 class="text-center text-success">Registro de Usuarios</h4>
 	
 	<div class="container">	
