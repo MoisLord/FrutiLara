@@ -16,7 +16,6 @@ CATEGORIAS DE PRODUCTOS
 </div>
 <div class="container-fluid row"> <!-- comienzo del contenedor de campos -->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
-   <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
    <h4 class="text-center text-success">Registro de Categorias de Productos</h4>
 	
 	<div class="container">	
