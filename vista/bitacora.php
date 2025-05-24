@@ -12,9 +12,6 @@
 <div class="container mt-5">
     <h2 class="text-success text-center">Bitácora</h2>
     <hr class="border border-success border-2 opacity-75" />
-    <div class="mb-3">
-        <a href="../index.php?pagina=principal" class="btn btn-secondary">Regresar</a>
-    </div>
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
             <thead class="bg-success text-white">
