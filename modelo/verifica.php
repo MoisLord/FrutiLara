@@ -13,6 +13,7 @@ class verifica{
 		}
 		return $s;
 	}
+	
 	function destruyesesion(){
 		session_start();
 		session_destroy();
