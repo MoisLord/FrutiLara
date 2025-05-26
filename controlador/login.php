@@ -3,6 +3,10 @@
 	  echo "Falta el modelo";
 	  exit;
   }
+  require_once(__DIR__ . '/controlbitacora.php');
+  $bitacora = new ContBitacora();
+  $bitacora->registrarAccion($usuario, 'Sistema', 'Inició sesión');
+
   require_once("modelo/".$pagina.".php"); 
   if(is_file("vista/".$pagina.".php")){ 
 	  if(!empty($_POST)){
