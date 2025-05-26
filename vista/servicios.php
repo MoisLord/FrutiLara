@@ -97,21 +97,21 @@ PANTALLA DE SERVICIOS
         </button>
     </div>
     <div class="modal-content">
-    <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-       
-        <th>Codigo</th>
-      <th>Descripciòn</th>
-      </tr>
-    </thead>
-    <tbody id="consultaDelete">
-      
-    </tbody>
-    </table>
+		<table class="table table-striped table-hover">
+		<thead>
+		  <tr>
+		   
+		  	<th>Codigo</th>
+			<th>Descripciòn</th>
+		  </tr>
+		</thead>
+		<tbody id="consultaDelete">
+		  
+		</tbody>
+		</table>
     </div>
-  <div class="modal-footer bg-light">
-  <span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
+	<div class="modal-footer bg-light">
+	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
   </div>

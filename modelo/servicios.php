@@ -1,6 +1,6 @@
 <?php
 /*La linea de codigo numero 3, llama una vez el archivo datos.php ubicado en la carpeta modelo  del mvc*/ 
-require_once ('modelo/datos.php');
+require_once('modelo/datos.php');
 
 /*Declaración de la clase proveedor en la cual hereda clase datos (La conexion de la base de datos)
 Claramente lo hereda con la palabra "Extends"*/ 
@@ -39,9 +39,29 @@ class servicios extends datos{
 	{
 		return $this->estado_registro;
 	}
+	function set_incluir() {
+		return $this->incluir(); // Retorna el resultado de incluir()
+	}
 	
-
-
+	function set_modificar() {
+		return $this->modificar(); // Retorna el resultado de modificar()
+	}
+	function set_eliminar() {
+		return $this->eliminar(); // Retorna el resultado de eliminar()
+	}
+	function set_restaurar(){
+		return $this->restaurar(); // Retorna el resultado de restaurar()
+	}
+	function set_consultadelete(){
+		return $this->consultadelete(); // Retorna el resultado de consultadelete()
+	}
+	function set_consultatr(){
+		return $this->consultatr(); // Retorna el resultado de consultr()
+	}
+	function set_consultar(){
+		return $this->consultar(); // Retorna el resultado de consultar()
+	}
+	
 	private function incluir(){
 		
 		
