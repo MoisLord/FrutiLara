@@ -10,7 +10,7 @@ $(document).ready(function(){
     $("#codigo_servicio").on("keyup",function(){
         var codigo = $(this).val();
         var encontro = false;
-        $("#consultaDelete tr").each(function(){
+        $("#consultadelete tr").each(function(){
             if(codigo == $(this).find("td:eq(1)").text()){
                 coloca($(this));
                 encontro = true;
@@ -57,7 +57,7 @@ $(document).ready(function(){
         
         var datos = new FormData();
         //a ese datos le añadimos la informacion a enviar
-        datos.append('accion','consultaDelete'); //le digo que me muestre un listado de aulas
+        datos.append('accion','consultadelete'); //le digo que me muestre un listado de aulas
         //ahora se envia el formdata por ajax
         enviaAjax(datos);
       }
@@ -128,10 +128,10 @@ $(document).ready(function(){
     //     enviaAjax(datos);
     // });
 
-    $("#consultadeDelete").on("click",function(){
+    $("#consultadelete").on("click",function(){
         $("#modalProveedor").modal("show");
         var datos = new FormData();
-        datos.append('accion','consultaDelete');
+        datos.append('accion','consultadelete');
         enviaAjax(datos);
       });
     //FIN DE CONTROL DE BOTONES	
@@ -273,9 +273,9 @@ $(document).ready(function(){
                            consultar();
                            
                         }
-                        else if(lee.resultado=='consultaDelete'){
+                        else if(lee.resultado=='consultadelete'){
                 
-                            $('#consultaDelete').html(lee.mensaje);
+                            $('#consultadelete').html(lee.mensaje);
                           }
                         else if (lee.resultado == "error") {
                            muestraMensaje(lee.mensaje);
