@@ -182,7 +182,7 @@
     <?php
           } else {
     ?>
-      <a href="?pagina=login" class="btn btn-outline-$my-soft-orange = shade-color($orange, 20%); my-2 my-sm-0">Entrar</a>
+      <a href="?pagina=login" class="btn btn-outline-success my-2 my-sm-0">Entrar</a>
 </div>
 
 <?php
