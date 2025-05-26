@@ -1,5 +1,6 @@
 <html>
 <title>BITÁCORA DE SESIONES</title>
+<?php require_once('comunes/menu.php'); ?>
 <?php
 
  require_once(__DIR__ . '/../comunes/encabezado.php');
