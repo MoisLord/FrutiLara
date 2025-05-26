@@ -5,6 +5,7 @@ class datos
     private $bd = "protofrutilara";
     private $usuario = "root";
     private $contrasena = "";
+    protected $pdo;
 
 
    
