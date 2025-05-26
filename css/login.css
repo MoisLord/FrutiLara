@@ -25,18 +25,6 @@ body{
     animation: parpadeo 2s infinite;
 }
 
-@keyframes parpadeo {
-    0% {
-        background: linear-gradient(to right, #45B649, #DCE35B); /* Verde */
-    }
-    50% {
-        background: linear-gradient(to right, #FF5733, #FFC300); /* Naranja y amarillo */
-    }
-    100% {
-        background: linear-gradient(to right, #45B649, #DCE35B); /* Vuelve al gradiente original */
-    }
-}
-
 
 .container{
     display: flex; /* Hace que el contenido se ajuste automáticamente */
