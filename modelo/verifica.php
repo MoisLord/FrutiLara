@@ -17,7 +17,7 @@ class verifica{
 	function destruyesesion(){
 		session_start();
 		session_destroy();
-		header("Location: . ");
+		header("Location: index.php?pagina=login");
 	}
 }
 ?>
