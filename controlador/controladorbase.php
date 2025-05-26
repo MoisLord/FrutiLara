@@ -22,8 +22,3 @@ class ControladorBase {
         }
     }
 }
-// Control de acceso: sólo administrador y super‑usuario pueden ver todo
-if (!in_array($_SESSION['rol'], ['ADMINISTRADOR','SUPERUSUARIO'])) {
-    http_response_code(403);
-    exit('Acceso denegado.');
-}

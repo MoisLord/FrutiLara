@@ -53,11 +53,7 @@ class ContBitacora extends ControladorBase {
      * Mostrar la vista de bitácora con sus registros
      */
     public function mostrarBitacora() {
-        if (!in_array($_SESSION['rol'], ['ADMINISTRADOR'])) {
-            http_response_code(403);
-            exit('Acceso denegado.');
-        }
-
+        $this->verificarRol(['ADMINISTRADOR','SUPERUSUARIO']);
         $entries = $this->model->listar();
         require_once __DIR__ . '/../vista/bitacora.php';
     }
