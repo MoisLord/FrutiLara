@@ -3,8 +3,8 @@
 <?php
 
  require_once(__DIR__ . '/../comunes/encabezado.php');
- require_once('./comunes/menu.php');
  require_once(__DIR__ . '/../modelo/session.php');
+ require_once(__DIR__ . '/../comunes/menu.php');
  if (!isset($entries) || !is_array($entries)) $entries = [];
 ?>
 <body>
