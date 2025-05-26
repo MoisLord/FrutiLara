@@ -41,6 +41,5 @@
 </div>
 
 <?php require_once(__DIR__ . '/../comunes/body.php'); ?>
-<?php require_once(__DIR__ . '/../comunes/menu.php'); ?>
 </body>
 </html>
