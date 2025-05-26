@@ -113,7 +113,7 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
-                      href="bitacora" target="_blank">
+                      href="vista/bitacora.php" target="_blank">
                       <img src="iconos/bitacora.svg" alt="bitacora" style="width:25px; height:25px; margin-bottom:3px;">
                       <span>BITACORA</span>
                     </a>
