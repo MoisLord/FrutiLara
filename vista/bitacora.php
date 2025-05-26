@@ -11,9 +11,6 @@
     <div class="container">
         <h5 class="modal-title text-center text-success">BITÁCORA DE SESIONES</h5>
         <hr class="border border-success border-3 opacity-65">
-        <span class="text-secondary">
-            *Ayuda: Aquí puedes ver los inicios y cierres de sesión, así como los módulos visitados por cada usuario*
-        </span>
         <div class="table-responsive mt-3">
             <table class="table table-striped table-hover border border-success" id="tablabitacora">
                 <thead class="bg-success text-white">
