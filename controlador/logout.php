@@ -7,10 +7,7 @@ $usuario = $_SESSION['usuario'] ?? null;
 if ($usuario) {
     require_once(__DIR__ . '/controlbitacora.php');
     $bitacora = new ContBitacora();
-    $bitacora->registrarAccion($_SESSION['usuario'], 'Sistema', 'Cerró sesión');
-    session_destroy();
-    header('Location: ?pagina=login');
-    exit;
+    $bitacora->registrarAccion($usuario, 'Sistema', 'Cerró sesión');
 }
 
 // Limpiar y destruir la sesión
