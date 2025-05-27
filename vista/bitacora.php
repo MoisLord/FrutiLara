@@ -34,7 +34,8 @@
                         <th>Usuario</th>
                         <th>Módulo</th>
                         <th>Acción</th>
-                        <th>Fecha/Hora</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,7 +45,8 @@
                             <td><?= htmlspecialchars($entry['usuario']) ?></td>
                             <td><?= htmlspecialchars($entry['modulo']) ?></td>
                             <td><?= htmlspecialchars($entry['accion']) ?></td>
-                            <td><?= date('d/m/Y H:i', strtotime($entry['fecha'])) ?></td>
+                            <td><?= date('d/m/Y', strtotime($entry['fecha'])) ?></td>
+                            <td><?= date('H:i', strtotime($entry['fecha'])) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
