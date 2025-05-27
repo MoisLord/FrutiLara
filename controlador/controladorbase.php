@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../modelo/Bitacora.php';
+require_once __DIR__ . '/../modelo/bitacora.php';
 
 abstract class ControladorBase {
     protected $bd;
@@ -15,14 +15,12 @@ abstract class ControladorBase {
             session_start();
         }
         
-        if (!isset($_SESSION['usuario'])) {
-            header('Location: ?pagina=login');
-            exit;
-        }
-        
-        if (!in_array($_SESSION['rol'], $rolesPermitidos)) {
-            http_response_code(403);
-            exit('Acceso denegado. Rol no autorizado.');
+        // Solo verificar roles si hay una sesión activa
+        if (isset($_SESSION['usuario'])) {
+            if (!in_array($_SESSION['rol'], $rolesPermitidos)) {
+                http_response_code(403);
+                exit('Acceso denegado. Rol no autorizado.');
+            }
         }
     }
 }
