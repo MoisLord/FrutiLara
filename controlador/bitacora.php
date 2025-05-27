@@ -13,9 +13,7 @@ class ContBitacora extends ControladorBase
         $this->model = new Bitacora($pdo);
     }
 
-    /**
-     * Registra una acción en la bitácora (usado desde otros módulos).
-     */
+    /* Registra una acción en la bitácora (usado desde otros módulos)*/
     public function registrarAccion($usuario, $modulo, $accion)
     {
         if (!in_array($_SESSION['rol'] ?? '', ['ADMINISTRADOR', 'SUPERUSUARIO', 'EMPLEADO'])) {
@@ -24,20 +22,19 @@ class ContBitacora extends ControladorBase
         return $this->model->registrar($usuario, $modulo, $accion);
     }
 
-    /**
-     * Muestra la vista principal de la bitácora.
-     */
+    /* Muestra la vista principal de la bitácora.*/
     public function mostrarBitacora()
     {
+        var_dump($this->model->listar()); // Verifica qué retorna el modelo
+        exit;
+
         $this->verificarRol(['ADMINISTRADOR']); // Solo este rol
 
         $entries = $this->model->listar();
         require_once (__DIR__ . '/../vista/bitacora.php');
     }
 
-    /**
-     * Filtra registros por fecha (opcional, si necesitas filtros).
-     */
+    /* Filtra registros por fecha */
     public function filtrarBitacora()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
