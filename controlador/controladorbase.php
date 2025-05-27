@@ -16,7 +16,12 @@ class ControladorBase {
     }
     // Método para verificar roles permitidos
     protected function verificarRol(array $rolesPermitidos) {
-        if (!in_array($_SESSION['rol'] ?? '', $rolesPermitidos)) {
+        // Verifica primero si la sesión y el rol existen
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
+        if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $rolesPermitidos)) {
             http_response_code(403);
             exit('Acceso denegado.');
         }
