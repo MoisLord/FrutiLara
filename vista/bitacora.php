@@ -8,19 +8,22 @@
         <h2 class="text-center text-success">REGISTROS DE BITÁCORA</h2>
         <hr class="border border-success border-2 opacity-50">
 
-        <!-- Filtro por fechas (para buscar por fechas las sesiones ingresadas) -->
+        <!-- Filtro por fechas -->
         <form method="post" class="mb-4">
             <div class="row">
                 <div class="col-md-4">
                     <label>Fecha inicio:</label>
-                    <input type="date" name="fecha_inicio" class="form-control">
+                    <input type="date" name="fecha_inicio" class="form-control" 
+                           value="<?= $_POST['fecha_inicio'] ?? date('Y-m-01') ?>">
                 </div>
                 <div class="col-md-4">
                     <label>Fecha fin:</label>
-                    <input type="date" name="fecha_fin" class="form-control">
+                    <input type="date" name="fecha_fin" class="form-control" 
+                           value="<?= $_POST['fecha_fin'] ?? date('Y-m-t') ?>">
                 </div>
                 <div class="col-md-4 d-flex align-items-end">
                     <button type="submit" class="btn btn-success">Filtrar</button>
+                    <a href="?pagina=bitacora" class="btn btn-secondary ms-2">Limpiar</a>
                 </div>
             </div>
         </form>
@@ -38,21 +41,21 @@
                         <th>Hora</th>
                     </tr>
                 </thead>
-                <tbody id="resultadoconsulta">
-                    <?php if (!empty($entries)): // Valida que $entries exista y no esté vacía ?>
-                    <?php foreach ($entries as $entry): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($entry['id']) ?></td>
-                            <td><?= htmlspecialchars($entry['usuario']) ?></td>
-                            <td><?= htmlspecialchars($entry['modulo']) ?></td>
-                            <td><?= htmlspecialchars($entry['accion']) ?></td>
-                            <td><?= date('d/m/Y', strtotime($entry['fecha'])) ?></td>
-                            <td><?= date('H:i', strtotime($entry['fecha'])) ?></td>
-                        </tr>
-                    <?php endforeach; ?>
+                <tbody>
+                    <?php if (!empty($entries)): ?>
+                        <?php foreach ($entries as $entry): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($entry['id']) ?></td>
+                                <td><?= htmlspecialchars($entry['usuario']) ?></td>
+                                <td><?= htmlspecialchars($entry['modulo']) ?></td>
+                                <td><?= htmlspecialchars($entry['accion']) ?></td>
+                                <td><?= date('d/m/Y', strtotime($entry['fecha'])) ?></td>
+                                <td><?= date('H:i:s', strtotime($entry['fecha'])) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="5" class="text-center">No hay registros en la bitácora</td>
+                            <td colspan="6" class="text-center">No hay registros en la bitácora</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
