@@ -17,7 +17,6 @@
 			if($m['resultado']=='existe'){
 				$_SESSION['nivel'] = $m['mensaje'];
 				$_SESSION['usuario'] = $_POST['cedula']; // Guardar cédula como usuario
-				$_SESSION['rol'] = 'USUARIO'; // Rol básico para todos los usuarios autenticados
 
 				// 🔴 Registra en bitácora (aquí se confirma que el login fue exitoso)
 				require_once("controlador/ControlBitacora.php");
