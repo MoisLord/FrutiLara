@@ -14,16 +14,19 @@ class ControladorBase {
         // Agrega el tercer argumento requerido por registrar, por ejemplo una descripción vacía o relevante
         $this->bitacora->registrar($usuario_id, $accion, '');
     }
-    // Método para verificar roles permitidos
     protected function verificarRol(array $rolesPermitidos) {
-        // Verifica primero si la sesión y el rol existen
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-        
-        if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $rolesPermitidos)) {
-            http_response_code(403);
-            exit('Acceso denegado.');
-        }
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
     }
+    
+    if (!isset($_SESSION['rol'])) {
+        header('Location: ?pagina=login');
+        exit;
+    }
+    
+    if (!in_array($_SESSION['rol'], $rolesPermitidos)) {
+        http_response_code(403);
+        exit('Acceso denegado. Rol no autorizado.');
+    }
+}
 }
