@@ -29,10 +29,10 @@ class ContBitacora extends ControladorBase
      */
     public function mostrarBitacora()
     {
-        $this->verificarRol(['ADMINISTRADOR', 'SUPERUSUARIO']); // Solo estos roles
+        $this->verificarRol(['ADMINISTRADOR']); // Solo este rol
 
         $entries = $this->model->listar();
-        require_once __DIR__ . '/../vista/bitacora.php';
+        require_once (__DIR__ . '/../vista/bitacora.php');
     }
 
     /**
@@ -44,7 +44,7 @@ class ContBitacora extends ControladorBase
             $fechaInicio = $_POST['fecha_inicio'] ?? date('Y-m-01');
             $fechaFin = $_POST['fecha_fin'] ?? date('Y-m-t');
             $entries = $this->model->filtrarPorFecha($fechaInicio, $fechaFin);
-            require_once __DIR__ . '/../vista/bitacora.php';
+            require_once (__DIR__ . '/../vista/bitacora.php');
         }
     }
 }

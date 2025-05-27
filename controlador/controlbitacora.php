@@ -59,6 +59,6 @@ class ContBitacora extends ControladorBase {
         }
 
         $entries = $this->model->listar();
-        require_once __DIR__ . '/../vista/bitacora.php';
+        require_once (__DIR__ . '/../vista/bitacora.php');
     }
 }
