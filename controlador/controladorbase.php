@@ -19,7 +19,7 @@ abstract class ControladorBase {
         if (isset($_SESSION['usuario'])) {
             if (!in_array($_SESSION['rol'], $rolesPermitidos)) {
                 http_response_code(403);
-                exit('Acceso denegado. No has podido ingresar al sistema >:].');
+                exit('Acceso denegado. No has podido ingresar al sistema >:]');
             }
         }
     }
