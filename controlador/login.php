@@ -12,27 +12,30 @@
 		  if($_POST['accion']=='entrar'){
 			session_start();
 			$o->set_cedula($_POST['cedula']);
-		    $o->set_clave($_POST['clave']);  
+			$o->set_clave($_POST['clave']);  
 			$m = $o->existe();
-			if($m['resultado']=='existe'){
-			//   session_destroy(); //elimina cualquier version anterio de sesion	
-			//   session_start(); //inicia el entorno de sesion
-			  //asigna una clave nivel con el valor obtenido de la base de datos
-			  $_SESSION['nivel'] = $m['mensaje'];
-			  
-			  // Esta nueva instruccion lo que hace es 
-			  //redireccionar el flujo de nuevo al index.php FrontController
-			  //para obligar a que se carguen los privilegios de la sesion
-			  header('Location:?pagina=principal ');
-			  //Similar al exit, die termina la ejecucion de esta pagina 
-			  //y previene que se cargue de nuevo esta vista (entrada.php)
-			  die();
-			}
-			else{
-			  $mensaje = $m['mensaje'];
-			}
 			
-		  }
+			if($m['resultado']=='existe'){
+				$_SESSION['nivel'] = $m['mensaje'];
+				$_SESSION['usuario'] = $_POST['cedula']; // Guardar cédula como usuario
+				
+				// 🔴 Registra en bitácora (aquí se confirma que el login fue exitoso)
+				require_once("controlador/ControlBitacora.php");
+				$bitacora = new ContBitacora();
+				$bitacora->registrarAccion($_POST['cedula'], 'Sistema', 'Inició sesión');
+				
+				header('Location:?pagina=principal');
+				die();
+			
+			} else{
+				// 🔴 Aqui Registra intento fallido
+				require_once("controlador/ControlBitacora.php");
+				$bitacora = new ContBitacora();
+				$bitacora->registrarAccion($_POST['cedula'], 'Sistema', 'Intento fallido de inicio de sesión');
+        
+				$mensaje = $m['mensaje'];
+			}
+		}
 		  
 		 
 	  }
