@@ -10,7 +10,6 @@
 		  $o = new login();
 		  
 		  if($_POST['accion']=='entrar'){
-			session_start();
 			$o->set_cedula($_POST['cedula']);
 			$o->set_clave($_POST['clave']);  
 			$m = $o->existe();
@@ -18,7 +17,8 @@
 			if($m['resultado']=='existe'){
 				$_SESSION['nivel'] = $m['mensaje'];
 				$_SESSION['usuario'] = $_POST['cedula']; // Guardar cédula como usuario
-				
+				$_SESSION['rol'] = 'ADMINISTRADOR, EMPLEADO'; // 🔴 Asigna el rol
+
 				// 🔴 Registra en bitácora (aquí se confirma que el login fue exitoso)
 				require_once("controlador/ControlBitacora.php");
 				$bitacora = new ContBitacora();
