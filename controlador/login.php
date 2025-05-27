@@ -16,12 +16,14 @@
 			
 			if($m['resultado']=='existe'){
 				$_SESSION['nivel'] = $m['mensaje'];
-				$_SESSION['usuario'] = $_POST['cedula']; // Guardar cédula como usuario
-
-				// 🔴 Registra en bitácora (aquí se confirma que el login fue exitoso)
-				require_once("controlador/ControlBitacora.php");
+				$_SESSION['usuario'] = $_POST['cedula'];
+				$_SESSION['rol'] = 'USUARIO'; // O el rol correspondiente
+				
+				//🔴  Registra en bitácora
+				require_once("controlador/bitacora.php");
 				$bitacora = new ContBitacora();
 				$bitacora->registrarAccion($_POST['cedula'], 'Sistema', 'Inició sesión');
+
 				
 				header('Location:?pagina=principal');
 				die();
