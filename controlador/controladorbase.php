@@ -15,7 +15,7 @@ abstract class ControladorBase {
             session_start();
         }
         
-        // Solo verificar roles si hay una sesión activa
+        // Solo verifica roles si hay una sesión activa
         if (isset($_SESSION['usuario'])) {
             if (!in_array($_SESSION['rol'], $rolesPermitidos)) {
                 http_response_code(403);
