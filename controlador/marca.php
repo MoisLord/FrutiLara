@@ -29,6 +29,10 @@ if (is_file("vista/" . $pagina . ".php")) {
 	//una instancia de la clase (instanciar) es crear una variable local,
 	//que contiene los metodos de la clase para poderlo usar
 
+	/* 
+		$o es un objeto que se esta creando de la clase marca
+		a lo que vendria siendo una instancia de la clase marca
+	*/
 	$o = new marca(); //ahora nuestro objeto se llama $o y
 	//es una copia en memoria de la clase Marca
 
