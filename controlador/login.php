@@ -23,7 +23,7 @@ if(is_file("vista/".$pagina.".php")){
                 $_SESSION['rol'] = $m['rol'] ?? 'USUARIO'; // Ahora el rol viene del modelo
                 
                 // Registro en bitácora
-                require_once("controlador/BitacoraController.php");
+                require_once("controlador/bitacora.php");
                 $bitacora = new BitacoraController();
                 $bitacora->registrarAccion($_POST['cedula'], 'Sistema', 'Inició sesión');
 
@@ -32,7 +32,7 @@ if(is_file("vista/".$pagina.".php")){
             
             } else{
                 // Registro de intento fallido
-                require_once("controlador/BitacoraController.php");
+                require_once("controlador/bitacora.php");
                 $bitacora = new BitacoraController();
                 $bitacora->registrarAccion($_POST['cedula'], 'Sistema', 'Intento fallido de inicio de sesión');
         
