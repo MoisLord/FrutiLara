@@ -1,7 +1,7 @@
 <?php
 require_once 'modelobase.php';
 
-class Bitacora extends modelobase
+class Bitacora extends ModeloBase
 {
     private $pdo;
 
@@ -11,7 +11,13 @@ class Bitacora extends modelobase
         $this->pdo = $pdo;
     }
 
-    // Registra una acción en la bitácora
+    /**
+     * Registra una acción en la bitácora
+     * @param string $usuario
+     * @param string $modulo
+     * @param string $accion
+     * @return bool
+     */
     public function registrar($usuario, $modulo, $accion)
     {
         $sql = "INSERT INTO bitacora (usuario, modulo, accion, fecha) VALUES (?, ?, ?, NOW())";
@@ -19,7 +25,10 @@ class Bitacora extends modelobase
         return $stmt->execute([$usuario, $modulo, $accion]);
     }
 
-    // Lista todos los registros de la bitácora
+    /**
+     * Lista todos los registros de la bitácora
+     * @return array
+     */
     public function listar()
     {
         $sql = "SELECT id, usuario, modulo, accion, fecha FROM bitacora ORDER BY fecha DESC";
@@ -28,7 +37,12 @@ class Bitacora extends modelobase
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Filtra registros por rango de fechas (opcional)
+    /**
+     * Filtra registros por rango de fechas
+     * @param string $fechaInicio
+     * @param string $fechaFin
+     * @return array
+     */
     public function filtrarPorFecha($fechaInicio, $fechaFin)
     {
         $sql = "SELECT * FROM bitacora WHERE fecha BETWEEN ? AND ? ORDER BY fecha DESC";
@@ -37,3 +51,4 @@ class Bitacora extends modelobase
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+?>
