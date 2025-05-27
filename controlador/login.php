@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
   if(!is_file("modelo/".$pagina.".php")){
 	  echo "Falta el modelo";
 	  exit;

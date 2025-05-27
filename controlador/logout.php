@@ -12,6 +12,6 @@ if ($usuario) {
 
 session_unset();
 session_destroy();
-header('Location: /FrutiLara/');
+header('Location: ?pagina=principal');
 exit;
 ?>
