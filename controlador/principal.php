@@ -5,9 +5,9 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if (isset($_SESSION['usuario'])) {
-    require_once(__DIR__ . '/controlbitacora.php');
+    require_once(__DIR__ . '/bitacora.php');
     $modulo = ucfirst($pagina); // Ejemplo: si $pagina = 'empleados' => 'Empleados'
-    (new ContBitacora())->registrarAccion($_SESSION['usuario'], $modulo, 'Ingresó al Sistema ' . $modulo);
+    (new BitacoraController())->registrarAccion($_SESSION['usuario'], $modulo, 'Ingresó al Sistema ' . $modulo);
 }
 
 if(is_file("vista/".$pagina.".php")){
