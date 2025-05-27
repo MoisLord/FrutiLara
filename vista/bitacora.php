@@ -38,7 +38,8 @@
                         <th>Hora</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="resultadoconsulta">
+                    <?php if (!empty($entries)): // Valida que $entries exista y no esté vacía ?>
                     <?php foreach ($entries as $entry): ?>
                         <tr>
                             <td><?= htmlspecialchars($entry['id']) ?></td>
@@ -49,6 +50,11 @@
                             <td><?= date('H:i', strtotime($entry['fecha'])) ?></td>
                         </tr>
                     <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="5" class="text-center">No hay registros en la bitácora</td>
+                        </tr>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
