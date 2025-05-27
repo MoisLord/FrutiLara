@@ -8,7 +8,7 @@
         <h2 class="text-center text-success">REGISTROS DE BITÁCORA</h2>
         <hr class="border border-success border-2 opacity-50">
 
-        <!-- Filtro por fechas (opcional) -->
+        <!-- Filtro por fechas (para buscar por fechas las sesiones ingresadas) -->
         <form method="post" class="mb-4">
             <div class="row">
                 <div class="col-md-4">
