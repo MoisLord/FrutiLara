@@ -113,7 +113,7 @@ class bitacora extends Datos2
     
     $r = array();
     try {
-        $p = $co->prepare("INSERT INTO bitacora_frutilara.bitacora(
+        $p = $co->prepare("INSERT INTO bitacora(
                 usuario,
                 modulo,
                 accion,
