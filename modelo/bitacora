@@ -107,7 +107,7 @@ class bitacora extends Datos2
 		//en este caso la de id_marca, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 
-		if (!$this->existe($this->id_marca)) {
+		if (!$this->existe($this->id_bitacora)) {
 			//como id_marca no existe, es decir, se puede incluir
 			//los pasos ahora son
 			//1) Se llama a la función conectarBitacora 
