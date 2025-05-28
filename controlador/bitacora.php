@@ -37,21 +37,24 @@ if (is_file("vista/" . $pagina . ".php")) {
 		if ($accion == 'consultar') {
 			echo  json_encode($o->consultar());
 		} elseif ($accion == 'consultatr') {
-			$o->set_id_marca($_POST['id_marca']);
+			$o->set_id_bitacora($_POST['id_bitacora']);
 			echo  json_encode($o->consultatr());
 		} elseif ($accion == 'eliminar') {
-			$o->set_id_marca($_POST['id_marca']);
+			$o->set_id_bitacora($_POST['id_bitacora']);
 			echo  json_encode($o->eliminar());
 		} elseif ($accion == 'consultaDelete') {
 			$respuesta = $o->consultadelete();
 			echo json_encode($respuesta);
 		} elseif ($accion == 'restaurar') {
-			$o->set_id_marca($_POST['id_marca']);
+			$o->set_id_bitacora($_POST['id_bitacora']);
 			echo  json_encode($o->restaurar());
 		} else {
-			$o->set_id_marca($_POST['id_marca']);
-			$o->set_descripcion_marca($_POST['descripcion_marca']);
-			$o->set_estado_registro($_POST['estado_registro']);
+			$o->set_id_bitacora($_POST['id_bitacora']);
+			$o->set_usuario($_POST['usuario']);
+			$o->set_modulo($_POST['modulo']);
+			$o->set_accion($_POST['accion']);
+			$o->set_fecha($_POST['fecha']);
+			$o->set_hora($_POST['hora']);
 			if ($accion == 'incluir') {
 				echo  json_encode($o->incluir());
 			} elseif ($accion == 'modificar') {
