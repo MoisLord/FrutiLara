@@ -1,16 +1,14 @@
 
 <?php
-// Solo iniciar sesión si no está activa
+ // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 }
-// Registro en bitácora al ingresar al módulo
-if (isset($_SESSION['usuario'])) {
-	require_once(__DIR__ . '/controlbitacora.php');
-	$bitacora = new ContBitacora();
-	$bitacora->registrarAccion($_SESSION['usuario'], 'Producto', 'Ingresó al módulo de Producto');
-}
-  
+//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
+$bitacora = new bitacora();
+$bitacora->set_usuario($_SESSION['usuario']);
+$resultado = $bitacora->registrarAccion('productos', 'Ingreso a Productos');
+
 //llamada al archivo que contiene la clase
 //productosaj, en ella estara el codigo que me permitirá
 //guardar, consultar y modificar dentro de mi base de datos

@@ -5,11 +5,9 @@ if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 }
 //REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
-if (isset($_SESSION['usuario'])) {
-    require_once("app/controllers/ControlBitacora.php");
-    $bitacora = new ContBitacora();
-    $bitacora->registrarAccion($_SESSION['usuario'], 'reporte de Prefacturacion', 'Ingresó al módulo de reporte de Prefacturacion');
-}
+$bitacora = new bitacora();
+$bitacora->set_usuario($_SESSION['usuario']);
+$resultado = $bitacora->registrarAccion('reporte de prefacturacion', 'Ingreso a Reporte de Prefacturación');
 
 
 //lo primero que se debe hacer es verificar al igual que en la vista es que exista el archivo
