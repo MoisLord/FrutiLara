@@ -50,8 +50,8 @@ if (is_file("vista/" . $pagina . ".php")) {
 			$o->set_accion($_POST['accion']);
 			$o->set_fecha($_POST['fecha']);
 			$o->set_hora($_POST['hora']);
-			if ($accion == 'incluir') {
-				echo  json_encode($o->incluir());
+			if ($accion == 'registrarAccion') {
+				echo  json_encode($o->registrarAccion($_POST));
 			}
 		}
 		exit;
