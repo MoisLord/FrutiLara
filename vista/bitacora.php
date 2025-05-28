@@ -2,7 +2,6 @@
 <title>BITÁCORA DEL SISTEMA</title>
 <?php require_once(__DIR__ . '/../comunes/encabezado.php'); ?>
 <body>
-    <?php require_once(__DIR__ . '/../comunes/menu.php'); ?>
 
     <div class="container mt-4">
         <h2 class="text-center text-success">REGISTROS DE BITÁCORA</h2>
