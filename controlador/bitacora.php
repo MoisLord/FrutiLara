@@ -1,7 +1,7 @@
 <?php
 //llamada al archivo que contiene la clase
-//Marca, en ella estara el modelo que me permitirá
-//guardar osea incluir, consultar, eliminar y modificar dentro de la base de datos
+//bitacora, en ella me permitirá
+//guardar el registro y el consultar dentro de la base de datos
 
 
 //aqui hice verificar si al igual que en la vista existe el archivo
@@ -22,8 +22,8 @@ if (is_file("vista/" . $pagina . ".php")) {
 		$o es un objeto que se esta creando de la clase marca
 		a lo que vendria siendo una instancia de la clase marca
 	*/
-	$o = new marca(); //ahora nuestro objeto se llama $o y
-	//es una copia en memoria de la clase Marca
+	$o = new bitacora(); //ahora nuestro objeto se llama $o y
+	//es una copia en memoria de la clase bitacora
 
 	if (!empty($_POST)) {
 
