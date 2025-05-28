@@ -5,11 +5,10 @@ if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 }
 //REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
-if (isset($_SESSION['usuario'])) {
-    require_once("app/controllers/ControlBitacora.php");
-    $bitacora = new ContBitacora();
-    $bitacora->registrarAccion($_SESSION['usuario'], 'proveedores', 'Ingresó al módulo de proveedores');
-}
+$bitacora = new bitacora();
+$bitacora->set_usuario($_SESSION['usuario']);
+$resultado = $bitacora->registrarAccion('proveedor', 'Ingreso a Proveedores');
+
 //llamada al archivo que contiene la clase
 //usuarios, en ella estara el codigo que me //permitirá
 //guardar, consultar y modificar dentro de mi base //de datos
