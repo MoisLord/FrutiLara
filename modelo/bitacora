@@ -162,7 +162,7 @@ class bitacora extends Datos2
 		$r = array();
 		try {
 
-			$resultado = $co->query("SELECT * from bitacora WHERE estado_registro = 1");
+			$resultado = $co->query("SELECT * from bitacora WHERE id_bitacora = 1");
 
 			if ($resultado) {
 
@@ -210,16 +210,28 @@ class bitacora extends Datos2
 		// se enviara la respuesta a la solicitud y el
 		// contenido de la respuesta
 		try {
-			$resultado = $co->query("SELECT * from marca WHERE marca.estado_registro = 0");
+			$resultado = $co->query("SELECT * from bitacora WHERE id_bitacora = 0");
 			$respuesta = '';
 			if ($resultado) {
 				foreach ($resultado as $r) {
 					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
 					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['codigo_marca'];
+					$respuesta = $respuesta . $r['id_bitacora'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['descripcion_marca'];
+					$respuesta = $respuesta . $r['usuario'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['modulo'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['accion'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['fecha'];
+					$respuesta = $respuesta . "</td>";
+					$respuesta = $respuesta . "<td>";
+					$respuesta = $respuesta . $r['hora'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "</tr>";
 				}
@@ -233,13 +245,13 @@ class bitacora extends Datos2
 		return $r;
 	}
 
-	private function existe($id_marca)
+	private function existe($id_bitacora)
 	{
 		$co = $this->conectarBitacora();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try {
 
-			$resultado = $co->query("Select * from marca where codigo_marca='$id_marca'");
+			$resultado = $co->query("Select * from bitacora where id_bitacora='$id_bitacora'");
 
 
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -262,7 +274,7 @@ class bitacora extends Datos2
 		$r = array();
 		try {
 
-			$resultado = $co->query("Select * from marca where codigo_marca='$this->id_marca'");
+			$resultado = $co->query("Select * from bitacora where id_bitacora='$this->id_bitacora'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if ($fila) {
 
