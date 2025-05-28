@@ -3,11 +3,12 @@
  // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
-}
-//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
+
+	//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
 $bitacora = new bitacora();
 $bitacora->set_usuario($_SESSION['usuario']);
 $resultado = $bitacora->registrarAccion('productos', 'Ingreso a Productos');
+}
 
 //llamada al archivo que contiene la clase
 //productosaj, en ella estara el codigo que me permitirá

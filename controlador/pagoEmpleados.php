@@ -3,11 +3,13 @@
  // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
-}
-//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
+
+  //REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
 $bitacora = new bitacora();
 $bitacora->set_usuario($_SESSION['usuario']);
 $resultado = $bitacora->registrarAccion('pago a empleados', 'Ingreso a Pago de Empleados');
+}
+
 
   //verifica que exista la vista de
   //la pagina
