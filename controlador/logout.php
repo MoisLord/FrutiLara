@@ -1,8 +1,4 @@
 <?php
-
-$bitacora->set_usuario($_SESSION['usuario']);
-$resultado = $bitacora->registrarAccion('Cierre de sesión');
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

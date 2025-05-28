@@ -1,10 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-
-
-	$bitacora->set_usuario($_SESSION['usuario']); // o la variable que contenga el nombre
-	$resultado = $bitacora->registrarAccion('Inicio de sesión');
 }
 
     if(!is_file("modelo/".$pagina.".php")){
