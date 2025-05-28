@@ -97,15 +97,14 @@ class bitacora extends Datos2
 	}
 
 	//Lo siguiente son los metodos para registrar, incluir y consultar
-	function registrarAccion($accion, $modulo = '')
+	function registrarAccion($accion, $modulo = 'Sistema')
 {
-    // Configurar los valores según la acción
+    // Configurar los valores para la bitácora
     $this->accion = $accion;
-    $this->modulo = $modulo ?: 'Sistema'; // Si no se especifica módulo, usar 'Sistema'
+    $this->modulo = $modulo;
     
-    // Obtener fecha y hora actual
-    $this->fecha = date('Y-m-d');
-    $this->hora = date('H:i:s');
+    // La fecha y hora ahora se manejarán automáticamente en la base de datos
+    // según el campo datetime con current_timestamp()
     
     // Conectar a la base de datos
     $co = $this->conectarBitacora();
@@ -113,25 +112,20 @@ class bitacora extends Datos2
     
     $r = array();
     try {
-        $p = $co->prepare("INSERT INTO bitacora(
+        $p = $co->prepare("INSERT INTO bitacora_frutilara.bitacora (
                 usuario,
                 modulo,
-                accion,
-                fecha,
-                hora
+                accion
                 )
-                VALUES(
+                VALUES (
                 :usuario,
                 :modulo,
-                :accion,
-                :fecha,
-                :hora
+                :accion
                 )");
+                
         $p->bindParam(':usuario', $this->usuario);
         $p->bindParam(':modulo', $this->modulo);
         $p->bindParam(':accion', $this->accion);
-        $p->bindParam(':fecha', $this->fecha);
-        $p->bindParam(':hora', $this->hora);
 
         $p->execute();
 
