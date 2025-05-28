@@ -3,11 +3,13 @@
 // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
+
+	$bitacora = new bitacora();
+	$bitacora->set_usuario($_SESSION['usuario']);
+	$resultado = $bitacora->registrarAccion('marca', 'Ingreso a Marcas');
 }
 
-$bitacora = new bitacora();
-$bitacora->set_usuario($_SESSION['usuario']);
-$resultado = $bitacora->registrarAccion('marca', 'Ingreso a Marcas');
+
 
 //llamada al archivo que contiene la clase
 //Marca, en ella estara el modelo que me permitirá
