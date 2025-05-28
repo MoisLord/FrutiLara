@@ -96,7 +96,54 @@ class bitacora extends Datos2
 		return $this->hora;
 	}
 
-	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
+	//Lo siguiente son los metodos para registrar, incluir y consultar
+	function registrarAccion($accion, $modulo = '')
+{
+    // Configurar los valores según la acción
+    $this->accion = $accion;
+    $this->modulo = $modulo ?: 'Sistema'; // Si no se especifica módulo, usar 'Sistema'
+    
+    // Obtener fecha y hora actual
+    $this->fecha = date('Y-m-d');
+    $this->hora = date('H:i:s');
+    
+    // Conectar a la base de datos
+    $co = $this->conectarBitacora();
+    $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    $r = array();
+    try {
+        $p = $co->prepare("INSERT INTO bitacora(
+                usuario,
+                modulo,
+                accion,
+                fecha,
+                hora
+                )
+                VALUES(
+                :usuario,
+                :modulo,
+                :accion,
+                :fecha,
+                :hora
+                )");
+        $p->bindParam(':usuario', $this->usuario);
+        $p->bindParam(':modulo', $this->modulo);
+        $p->bindParam(':accion', $this->accion);
+        $p->bindParam(':fecha', $this->fecha);
+        $p->bindParam(':hora', $this->hora);
+
+        $p->execute();
+
+        $r['resultado'] = 'exito';
+        $r['mensaje'] = 'Acción registrada en la bitácora';
+    } catch (Exception $e) {
+        $r['resultado'] = 'error';
+        $r['mensaje'] = $e->getMessage();
+    }
+    
+    return $r;
+}
 
 	function incluir()
 	{
@@ -104,11 +151,11 @@ class bitacora extends Datos2
 		//datos, ahora hay que ejecutar las operaciones para realizar las consultas 
 
 		//Lo primero que hay que hacer es consultar por el campo id_bitacora
-		//en este caso la de id_marca, para ello se creo la funcion existe
+		//en este caso la de id_bitacora, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
 
 		if (!$this->existe($this->id_bitacora)) {
-			//como id_marca no existe, es decir, se puede incluir
+			//como id_bitacora no existe, es decir, se puede incluir
 			//los pasos ahora son
 			//1) Se llama a la función conectarBitacora 
 			$co = $this->conectarBitacora();
