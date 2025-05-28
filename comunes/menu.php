@@ -177,7 +177,7 @@
 
           if (!empty($nivel) and $nivel != "") {
           ?>
-            <a href="logout" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
+            <a href="?pagina=logout" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
       </div>
     <?php
           } else {
