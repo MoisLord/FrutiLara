@@ -1,6 +1,10 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+
+	$bitacora = new bitacora();
+	$bitacora->set_usuario($_SESSION['usuario']); // o la variable que contenga el nombre
+	$resultado = $bitacora->registrarAccion('Inicio de sesión');
 }
 
     if(!is_file("modelo/".$pagina.".php")){
@@ -23,8 +27,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			//   session_start(); //inicia el entorno de sesion
 			  //asigna una clave nivel con el valor obtenido de la base de datos
 			  $_SESSION['nivel'] = $m['mensaje'];
-
-			  
 			  
 			  // Esta nueva instruccion lo que hace es 
 			  //redireccionar el flujo de nuevo al index.php FrontController
