@@ -1,10 +1,10 @@
 <?php
+$bitacora = new bitacora();
+$bitacora->set_usuario($_SESSION['usuario']);
+$resultado = $bitacora->registrarAccion('Cierre de sesión');
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-
-    $bitacora = new bitacora();
-    $bitacora->set_usuario($_SESSION['usuario']);
-    $resultado = $bitacora->registrarAccion('Cierre de sesión');
 }
 
 $usuario = $_SESSION['usuario'] ?? null;
