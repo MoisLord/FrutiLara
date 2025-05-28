@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 
-	$bitacora = new bitacora();
+
 	$bitacora->set_usuario($_SESSION['usuario']); // o la variable que contenga el nombre
 	$resultado = $bitacora->registrarAccion('Inicio de sesión');
 }
