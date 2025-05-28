@@ -177,7 +177,7 @@
 
           if (!empty($nivel) and $nivel != "") {
           ?>
-            <a href="/FrutiLara/controlador/logout.php" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
+            <a href="salir class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
       </div>
     <?php
           } else {
