@@ -90,7 +90,7 @@ class pservicios extends datos{
 
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
 
-	private function registrar($id_servicios,$servicios_codigo_servicio,$costo,$pago,$fecha_pago_servicio,$estado_registro){
+	function registrar($id_servicios,$servicios_codigo_servicio,$costo,$pago,$fecha_pago_servicio,$estado_registro){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
