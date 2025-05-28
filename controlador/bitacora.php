@@ -1,4 +1,8 @@
 <?php
+// Solo iniciar sesión si no está activa
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
 //llamada al archivo que contiene la clase
 //bitacora, en ella me permitirá
 //guardar el registro y el consultar dentro de la base de datos
@@ -39,15 +43,6 @@ if (is_file("vista/" . $pagina . ".php")) {
 		} elseif ($accion == 'consultatr') {
 			$o->set_id_bitacora($_POST['id_bitacora']);
 			echo  json_encode($o->consultatr());
-		} elseif ($accion == 'eliminar') {
-			$o->set_id_bitacora($_POST['id_bitacora']);
-			echo  json_encode($o->eliminar());
-		} elseif ($accion == 'consultaDelete') {
-			$respuesta = $o->consultadelete();
-			echo json_encode($respuesta);
-		} elseif ($accion == 'restaurar') {
-			$o->set_id_bitacora($_POST['id_bitacora']);
-			echo  json_encode($o->restaurar());
 		} else {
 			$o->set_id_bitacora($_POST['id_bitacora']);
 			$o->set_usuario($_POST['usuario']);
@@ -57,8 +52,6 @@ if (is_file("vista/" . $pagina . ".php")) {
 			$o->set_hora($_POST['hora']);
 			if ($accion == 'incluir') {
 				echo  json_encode($o->incluir());
-			} elseif ($accion == 'modificar') {
-				echo  json_encode($o->modificar());
 			}
 		}
 		exit;
