@@ -3,10 +3,94 @@
 require_once('modelo/datos.php');
 
 
-
 class pservicios extends datos{
-    
-	private function registrar($id_servicios,$servicios_codigo_servicio,$costo,$pago,){
+	//declaré los atributos (variables) que describen la clase
+	//para colocar los inputs del archivo (controles) de
+	//la vista como variables
+	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
+	//misma clase, la forma de colcocarlo en privado es usando la palabra private
+
+	//Aqui coloque los inputs de la vista en private
+	private $id_servicios; //recordatorio que en php, las variables no tienen tipo predefinido
+	private $servicios_codigo_servicio;
+	private $costo;
+	private $pago;
+	private $fecha_pago_servicio;
+	private $estado_registro;
+
+	//Ok ya puesto los atributos, pero ahora como son privados no podemos acceder a ellos
+	//desde afuera por lo que debemos colocar metodos (funciones)
+	//que me permitan leer (get) y colocar (set) valores en ello
+
+	function set_id_servicios($valor)
+	{
+		$this->id_servicios = $valor; //este es como se accede a los elementos dentro de una clase
+		//this singnifica (esto), es decir, esta clase luego se usa el simbolo ( -> )
+		// que indica que apunte a un elemento de this, osea esta clase
+		//luego el marca el elemento sin el simbolo ($)
+	}
+	//lo mismo que se hizo para id_marca se hace para marca
+
+	function set_servicios_codigo_servicio($valor)
+	{
+		$this->servicios_codigo_servicio = $valor;
+	}
+
+	function set_costo($valor)
+	{
+		$this->costo = $valor;
+	}
+
+	function set_pago($valor)
+	{
+		$this->pago = $valor;
+	}
+
+	function set_fecha_pago_servicio($valor)
+	{
+		$this->fecha_pago_servicio = $valor;
+	}
+
+	function set_estado_registro($valor)
+	{
+		$this->estado_registro = $valor;
+	}
+
+	//ahora el mismo procedimiento pero para leer, es decir (get)
+
+	function get_id_servicios()
+	{
+		return $this->id_servicios;
+	}
+
+	function get_servicios_codigo_servicio()
+	{
+		return $this->servicios_codigo_servicio;
+	}
+
+	function get_costo()
+	{
+		return $this->costo;
+	}
+
+	function get_pago()
+	{
+		return $this->pago;
+	}
+
+	function get_fecha_pago_servicio()
+	{
+		return $this->fecha_pago_servicio;
+	}
+
+	function get_estado_registro()
+	{
+		return $this->estado_registro;
+	}
+
+	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
+
+	private function registrar($id_servicios,$servicios_codigo_servicio,$costo,$pago,$fecha_pago_servicio,$estado_registro){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
