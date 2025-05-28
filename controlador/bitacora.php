@@ -1,3 +1,4 @@
+<?php
 //llamada al archivo que contiene la clase
 //Marca, en ella estara el modelo que me permitirá
 //guardar osea incluir, consultar, eliminar y modificar dentro de la base de datos
