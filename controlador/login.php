@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-  if(!is_file("modelo/".$pagina.".php")){
+    if(!is_file("modelo/".$pagina.".php")){
 	  echo "Falta el modelo";
 	  exit;
   }
@@ -23,11 +23,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			//   session_start(); //inicia el entorno de sesion
 			  //asigna una clave nivel con el valor obtenido de la base de datos
 			  $_SESSION['nivel'] = $m['mensaje'];
-
-			  // Registro en bitácora
-                require_once("controlador/bitacora.php");
-                $bitacora = new BitacoraController();
-                $bitacora->registrarAccion($_POST['cedula'], 'Sistema', 'Inició sesión');
 			  
 			  // Esta nueva instruccion lo que hace es 
 			  //redireccionar el flujo de nuevo al index.php FrontController
@@ -39,11 +34,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			}
 			else{
 			  $mensaje = $m['mensaje'];
-
-			  // Registro de intento fallido
-                require_once("controlador/bitacora.php");
-                $bitacora = new BitacoraController();
-                $bitacora->registrarAccion($_POST['cedula'], 'Sistema', 'Intento fallido de inicio de sesión');
 			}
 			
 		  }
