@@ -2,7 +2,7 @@
 //llamda al archivo que contiene la clase
 //datos, en ella esta guardada en la carpeta id_marca
 //para enlazar a la base de datos
-require_once('modelo/datos.php');
+require_once(__DIR__.'/../modelo/datos.php');
 
 //Aqui declare la clase Marca que hereda de la clase datos
 //la herencia se declara con la palabra extends y no es mas 
