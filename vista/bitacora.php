@@ -1,3 +1,8 @@
+<?php
+require_once('../../modelo/bitacora.php');
+$bitacora = new bitacora();
+$resultado = $bitacora->mostrarAccionesSesion();
+?>
 <html>
 <title>BITÁCORA DEL SISTEMA</title>
 <?php require_once(__DIR__ . '/../comunes/encabezado.php'); ?>
@@ -26,6 +31,12 @@
                 </div>
             </div>
         </form>
+
+        <?php
+        require_once('modelo/bitacora.php');
+        $bitacora = new bitacora();
+        $resultado = $bitacora->listarBitacora();
+        ?>
 
         <!-- Tabla de registros -->
         <div class="table-responsive">
