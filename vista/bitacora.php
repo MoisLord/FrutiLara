@@ -4,11 +4,12 @@ $bitacora = new bitacora();
 $resultado = $bitacora->mostrarAccionesSesion();
 ?>
 <html>
-<title>BITÁCORA DEL SISTEMA</title>
-<?php require_once(__DIR__ . '/../comunes/encabezado.php'); ?>
+<?php require_once("comunes/encabezado.php"); ?>
 <?php require_once("./modelo/session.php"); ?>
-<?php require_once(__DIR__ . '/../comunes/menu.php'); ?>
+<title>BITÁCORA DEL SISTEMA</title>
+
 <body>
+    <?php require_once("comunes/menu.php"); ?>
 
     <div class="container mt-4">
         <h2 class="text-center text-success">REGISTROS DE BITÁCORA</h2>
