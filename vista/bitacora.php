@@ -1,5 +1,5 @@
 <?php
-require_once('../../modelo/bitacora.php');
+require_once('modelo/bitacora.php');
 $bitacora = new bitacora();
 $resultado = $bitacora->mostrarAccionesSesion();
 ?>
