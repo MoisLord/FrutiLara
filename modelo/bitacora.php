@@ -96,7 +96,7 @@ class bitacora extends Datos2
 		return $this->hora;
 	}
 
-	//Lo siguiente son los metodos para registrar, incluir y consultar
+	//Lo siguiente son los metodos para registrar, listar, mostrar incluir y consultar
 	function registrarAccion($accion, $modulo = '')
 {
     // Configurar los valores según la acción
@@ -137,6 +137,79 @@ class bitacora extends Datos2
 
         $r['resultado'] = 'exito';
         $r['mensaje'] = 'Acción registrada en la bitácora';
+    } catch (Exception $e) {
+        $r['resultado'] = 'error';
+        $r['mensaje'] = $e->getMessage();
+    }
+    
+    return $r;
+}
+
+// Función para listar la bitácora
+function listarBitacora()
+{
+    $co = $this->conectarBitacora();
+    $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $r = array();
+    
+    try {
+        $resultado = $co->query("SELECT * FROM bitacora ORDER BY fecha DESC");
+        
+        if ($resultado) {
+            $respuesta = '';
+            foreach ($resultado as $registro) {
+                $respuesta .= "<tr>";
+                $respuesta .= "<td>".htmlspecialchars($registro['usuario'])."</td>";
+                $respuesta .= "<td>".htmlspecialchars($registro['modulo'])."</td>";
+                $respuesta .= "<td>".htmlspecialchars($registro['accion'])."</td>";
+                $respuesta .= "<td>".htmlspecialchars($registro['fecha'])."</td>";
+                $respuesta .= "</tr>";
+            }
+            
+            $r['resultado'] = 'exito';
+            $r['mensaje'] = $respuesta;
+        } else {
+            $r['resultado'] = 'vacio';
+            $r['mensaje'] = 'No hay registros en la bitácora';
+        }
+    } catch (Exception $e) {
+        $r['resultado'] = 'error';
+        $r['mensaje'] = $e->getMessage();
+    }
+    
+    return $r;
+}
+
+function mostrarAccionesSesion()
+{
+    $co = $this->conectarBitacora();
+    $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $r = array();
+    
+    try {
+        $sql = "SELECT * FROM bitacora 
+                WHERE accion LIKE '%sesión%' 
+                ORDER BY fecha DESC";
+                
+        $resultado = $co->query($sql);
+        
+        if ($resultado) {
+            $respuesta = '';
+            foreach ($resultado as $registro) {
+                $respuesta .= "<tr>";
+                $respuesta .= "<td>".htmlspecialchars($registro['usuario'])."</td>";
+                $respuesta .= "<td>".htmlspecialchars($registro['modulo'])."</td>";
+                $respuesta .= "<td>".htmlspecialchars($registro['accion'])."</td>";
+                $respuesta .= "<td>".htmlspecialchars($registro['fecha'])."</td>";
+                $respuesta .= "</tr>";
+            }
+            
+            $r['resultado'] = 'exito';
+            $r['mensaje'] = $respuesta;
+        } else {
+            $r['resultado'] = 'vacio';
+            $r['mensaje'] = 'No hay registros de sesiones';
+        }
     } catch (Exception $e) {
         $r['resultado'] = 'error';
         $r['mensaje'] = $e->getMessage();
