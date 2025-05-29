@@ -77,5 +77,6 @@ $resultado = $bitacora->mostrarAccionesSesion();
     </div>
 
     <?php require_once(__DIR__ . '/../comunes/body.php'); ?>
+    <script type="text/javascript" src="js/bitacora.js"></script>
 </body>
 </html>
