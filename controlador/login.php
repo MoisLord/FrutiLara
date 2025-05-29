@@ -38,7 +38,7 @@
 	  }
 	  
 	  require_once("vista/".$pagina.".php"); 
-	  require_once('modelo/bitacora.php');
+	  require_once(__DIR__.'/../modelo/bitacora.php');
 	  $bitacora = new bitacora();
 	  $bitacora->set_usuario($_SESSION['usuario']); // Ajusta según tu variable
 	  $bitacora->set_modulo('Autenticación');

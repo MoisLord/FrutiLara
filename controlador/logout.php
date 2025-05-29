@@ -1,5 +1,5 @@
 <?php
-require_once('modelo/bitacora.php');
+require_once(__DIR__.'/../modelo/bitacora.php');
 $bitacora = new bitacora();
 $bitacora->set_usuario($_SESSION['usuario']);
 $bitacora->set_modulo('Autenticación');
