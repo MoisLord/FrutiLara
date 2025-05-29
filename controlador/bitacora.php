@@ -1,63 +1,47 @@
 <?php
-// Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
-	session_start();
+    session_start();
 }
-//llamada al archivo que contiene la clase
-//bitacora, en ella me permitirá
-//guardar el registro y el consultar dentro de la base de datos
 
-
-//aqui hice verificar si al igual que en la vista existe el archivo
 if (!is_file("modelo/" . $pagina . ".php")) {
-	//alli pregunte que si no es un archivo se niega con (!)
-	//si no existe envio mensaje y me salgo
-	echo "Falta definir la clase " . $pagina;
-	exit;
+    echo "Falta definir la clase " . $pagina;
+    exit;
 }
+
 require_once("modelo/" . $pagina . ".php");
+
 if (is_file("vista/" . $pagina . ".php")) {
+    $o = new bitacora();
 
-	//bien si existe la vista y la clase, lo primero es realizar
-	//una instancia de la clase (instanciar) es crear una variable local,
-	//que contiene los metodos de la clase para poderlo usar
+    if (!empty($_POST)) {
+        $accion = $_POST['accion'];
+        $response = [];
 
-	/* 
-		$o es un objeto que se esta creando de la clase marca
-		a lo que vendria siendo una instancia de la clase marca
-	*/
-	$o = new bitacora(); //ahora nuestro objeto se llama $o y
-	//es una copia en memoria de la clase bitacora
+        switch ($accion) {
+            case 'listarBitacora':
+                $fecha_inicio = $_POST['fecha_inicio'] ?? null;
+                $fecha_fin = $_POST['fecha_fin'] ?? null;
+                $response = $o->listarBitacora($fecha_inicio, $fecha_fin);
+                break;
+                
+            case 'registrarAccion':
+                if (isset($_SESSION['usuario'])) {
+                    $o->set_usuario($_SESSION['usuario']);
+                    $response = $o->registrarAccion($_POST['modulo'], $_POST['accion']);
+                } else {
+                    $response = ['resultado' => 'error', 'mensaje' => 'Usuario no autenticado'];
+                }
+                break;
+                
+            default:
+                $response = ['resultado' => 'error', 'mensaje' => 'Acción no válida'];
+        }
 
-	if (!empty($_POST)) {
+        echo json_encode($response);
+        exit;
+    }
 
-		//ahora ya recibido alguna informacion
-		//de la vista, ya se hace una clase para guardar
-		//esos valores en ella con los metodos set
-		//para poder guardarlos en la base de datos
-
-		$accion = $_POST['accion'];
-
-		if ($accion == 'listarBitacora') {
-			echo  json_encode($o->listarBitacora());
-		} elseif ($accion == 'mostrarAccionesSesion') {
-			$o->set_id_bitacora($_POST['id_bitacora']);
-			echo  json_encode($o->mostrarAccionesSesion());
-		} else {
-			$o->set_id_bitacora($_POST['id_bitacora']);
-			$o->set_usuario($_POST['usuario']);
-			$o->set_modulo($_POST['modulo']);
-			$o->set_accion($_POST['accion']);
-			$o->set_fecha($_POST['fecha']);
-			$o->set_hora($_POST['hora']);
-			if ($accion == 'registrarAccion') {
-				echo  json_encode($o->registrarAccion($_POST));
-			}
-		}
-		exit;
-	}
-
-	require_once("vista/" . $pagina . ".php");
+    require_once("vista/" . $pagina . ".php");
 } else {
-	echo "pagina en construccion";
+    echo "Página en construcción";
 }
