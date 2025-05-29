@@ -6,6 +6,7 @@ $resultado = $bitacora->mostrarAccionesSesion();
 <html>
 <title>BITÁCORA DEL SISTEMA</title>
 <?php require_once(__DIR__ . '/../comunes/encabezado.php'); ?>
+<?php require_once("./modelo/session.php"); ?>
 <?php require_once(__DIR__ . '/../comunes/menu.php'); ?>
 <body>
 
