@@ -32,6 +32,9 @@ $resultado = $bitacora->mostrarAccionesSesion();
                     <button type="submit" class="btn btn-success">Filtrar</button>
                     <a href="?pagina=bitacora" class="btn btn-secondary ms-2">Limpiar</a>
                 </div>
+                <div class="col-md-3">	
+				   <a href="." class="btn btn-success">REGRESAR</a>
+			</div>
             </div>
         </form>
 
