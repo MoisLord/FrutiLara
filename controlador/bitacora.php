@@ -52,6 +52,10 @@ if (is_file("vista/" . $pagina . ".php")) {
 			$o->set_hora($_POST['hora']);
 			if ($accion == 'registrarAccion') {
 				echo  json_encode($o->registrarAccion($_POST));
+			}elseif ($accion == 'listarBitacora') {
+				echo  json_encode($o->listarBitacora());
+			}elseif ($accion == 'mostrarAccionesSesion') {
+				echo  json_encode($o->mostrarAccionesSesion());
 			}
 		}
 		exit;
