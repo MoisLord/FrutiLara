@@ -38,11 +38,11 @@ if (is_file("vista/" . $pagina . ".php")) {
 
 		$accion = $_POST['accion'];
 
-		if ($accion == 'consultar') {
-			echo  json_encode($o->consultar());
-		} elseif ($accion == 'consultatr') {
+		if ($accion == 'listarBitacora') {
+			echo  json_encode($o->listarBitacora());
+		} elseif ($accion == 'mostrarAccionesSesion') {
 			$o->set_id_bitacora($_POST['id_bitacora']);
-			echo  json_encode($o->consultatr());
+			echo  json_encode($o->mostrarAccionesSesion());
 		} else {
 			$o->set_id_bitacora($_POST['id_bitacora']);
 			$o->set_usuario($_POST['usuario']);
@@ -52,10 +52,6 @@ if (is_file("vista/" . $pagina . ".php")) {
 			$o->set_hora($_POST['hora']);
 			if ($accion == 'registrarAccion') {
 				echo  json_encode($o->registrarAccion($_POST));
-			}elseif ($accion == 'listarBitacora') {
-				echo  json_encode($o->listarBitacora());
-			}elseif ($accion == 'mostrarAccionesSesion') {
-				echo  json_encode($o->mostrarAccionesSesion());
 			}
 		}
 		exit;
