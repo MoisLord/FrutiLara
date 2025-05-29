@@ -113,7 +113,7 @@ class bitacora extends Datos2
     
     $r = array();
     try {
-        $p = $co->prepare("INSERT INTO bitacora(
+        $p = $co->prepare("INSERT INTO bitacora_frutilara.bitacora(
                 usuario,
                 modulo,
                 accion,
@@ -153,8 +153,8 @@ function listarBitacora()
     $r = array();
     
     try {
-        $resultado = $co->query("SELECT * FROM bitacora ORDER BY fecha DESC");
-        
+        $resultado = $co->query("SELECT * FROM bitacora_frutilara.bitacora ORDER BY fecha DESC");
+
         if ($resultado) {
             $respuesta = '';
             foreach ($resultado as $registro) {
@@ -187,7 +187,7 @@ function mostrarAccionesSesion()
     $r = array();
     
     try {
-        $sql = "SELECT * FROM bitacora 
+        $sql = "SELECT * FROM bitacora_frutilara.bitacora 
                 WHERE accion LIKE '%sesión%' 
                 ORDER BY fecha DESC";
                 
@@ -226,7 +226,7 @@ function mostrarAccionesSesion()
 		$r = array();
 		try {
 
-			$resultado = $co->query("SELECT * from bitacora WHERE id_bitacora = 1");
+			$resultado = $co->query("SELECT * from bitacora_frutilara.bitacora WHERE id_bitacora = 1");
 
 			if ($resultado) {
 
@@ -274,7 +274,7 @@ function mostrarAccionesSesion()
 		// se enviara la respuesta a la solicitud y el
 		// contenido de la respuesta
 		try {
-			$resultado = $co->query("SELECT * from bitacora WHERE id_bitacora = 0");
+			$resultado = $co->query("SELECT * from bitacora_frutilara.bitacora WHERE id_bitacora = 0");
 			$respuesta = '';
 			if ($resultado) {
 				foreach ($resultado as $r) {
@@ -315,7 +315,7 @@ function mostrarAccionesSesion()
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try {
 
-			$resultado = $co->query("Select * from bitacora where id_bitacora='$id_bitacora'");
+			$resultado = $co->query("Select * from bitacora_frutilara.bitacora where id_bitacora='$id_bitacora'");
 
 
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -338,7 +338,7 @@ function mostrarAccionesSesion()
 		$r = array();
 		try {
 
-			$resultado = $co->query("Select * from bitacora where id_bitacora='$this->id_bitacora'");
+			$resultado = $co->query("Select * from bitacora_frutilara.bitacora where id_bitacora='$this->id_bitacora'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if ($fila) {
 
