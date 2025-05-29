@@ -1,8 +1,4 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
     if(!is_file("modelo/".$pagina.".php")){
 	  echo "Falta el modelo";
 	  exit;
@@ -42,9 +38,9 @@ if (session_status() === PHP_SESSION_NONE) {
 	  }
 	  
 	  require_once("vista/".$pagina.".php"); 
-	  require_once('../modelo/bitacora.php');
+	  require_once('modelo/bitacora.php');
 	  $bitacora = new bitacora();
-	  $bitacora->set_usuario($_SESSION['nombre_usuario']); // Ajusta según tu variable
+	  $bitacora->set_usuario($_SESSION['usuario']); // Ajusta según tu variable
 	  $bitacora->set_modulo('Autenticación');
 	  $bitacora->set_accion('Inicio de sesión');
 	  $bitacora->registrarAccion('Inicio de sesión');
