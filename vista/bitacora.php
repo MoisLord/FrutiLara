@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/../modelo/bitacora.php');
+require_once("./modelo/bitacora.php"); ?>
 $bitacora = new bitacora();
 $resultado = $bitacora->mostrarAccionesSesion();
 ?>
@@ -36,7 +36,7 @@ $resultado = $bitacora->mostrarAccionesSesion();
         </form>
 
         <?php
-        require_once(__DIR__.'/../modelo/bitacora.php');
+        require_once("./modelo/bitacora.php"); ?>
         $bitacora = new bitacora();
         $resultado = $bitacora->listarBitacora();
         ?>
