@@ -44,10 +44,7 @@ require_once("modelo/".$pagina.".php");
 			 $o->set_codigo($_POST['codigo']);
 			 echo json_encode($o->eliminar());
 		  }
-		  elseif($accion=='listadoModelo'){
-			$respuesta = $o->listadomodelo();
-			echo json_encode($respuesta);
-		 }
+		  
 		 elseif($accion=='listadoCategoria'){
 			$respuesta = $o->listadocategoria();
 			echo json_encode($respuesta);

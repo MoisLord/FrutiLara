@@ -56,18 +56,7 @@ PRODUCTOS
 			</div>
 		</div>
 		
-		<div class="row mb-4">
-		<div class="input-group mb-3">
-		<button type="button" class="btn btn-success" id="listadodeModelo" name="listadodeModelo">LISTADO DE MODELO</button>
-		<input class="form-control" type="text" id="id_modelo" name="id_modelo"disabled/>
-		<span>*Ayuda: Presione el boton "LISTADO DE MODELO" para seleccionar el modelo*</span>
-		</div>
-		</div>
-
-	<div class="row">
-		<div class="col-md-12" id="datosmodelo">   
-		</div>
-	</div>
+		
 		
 		<div class="row mb-4">
 		<div class="input-group mb-3">
@@ -129,7 +118,6 @@ PRODUCTOS
 			<th>Nombre Productos</th>
 			<th>Minimo</th>	
 			<th>Maximo</th>
-			<th>Modelo</th>
 			<th>Categoria</th>
 		  </tr>
 		</thead>
@@ -159,7 +147,6 @@ PRODUCTOS
 			<th>Nombre Productos</th>
 			<th>Minimo</th>	
 			<th>Maximo</th>
-			<th>Modelo</th>
 			<th>Categoria</th>
 		  </tr>
 		</thead>
@@ -205,36 +192,6 @@ PRODUCTOS
   </div>
 </div>
 
-<!-- seccion del modal Modelo -->
-<div class="modal fade" tabindex="-1" role="dialog"  id="modalModelo">
-	<div class="modal-dialog modal-lg" role="document">
-	<div class="modal-header text-light bg-success">
-		<h5 class="modal-title">LISTADO DE MODELO</h5>
-		<button type="button" class="close bg-success" data-dismiss="modal" aria-label="Cerrar">
-		  <span aria-hidden="true">&times;</span>
-		</button>
-	</div>
-	<div class="modal-content">
-		<table class="table table-striped table-hover">
-		<thead>
-		  <tr>
-			<th>Codigo de Modelo</th>
-			<th>Modelo</th>
-			<th>Marca</th>
-		  </tr>
-		</thead>
-		<tbody id="listadoModelo">
-		 
-		</tbody>
-		</table>
-	</div>
-	<div class="modal-footer bg-light">
-	<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
-		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-	</div>
-  </div>
-</div>
-<!--fin de seccion modal-->
 
 
 <?php require_once("comunes/body.php"); ?>

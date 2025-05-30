@@ -15,7 +15,6 @@ private $nombre;
 private $cantidad_total;
 private $minimo;
 private $maximo;
-private $nacionalidad_producto;
 private $id_categoria;
 private $marca_id_marca;
 private $unidades_de_medida_id_medidas;
@@ -24,10 +23,7 @@ function set_cantidad_total($valor)
 {
 	$this->cantidad_total = $valor;
 }
-function set_nacionalidad_producto($valor)
-{
-	$this->nacionalidad_producto = $valor;
-}
+
 function set_marca_id_marca($valor)
 {
 	$this->marca_id_marca = $valor;
@@ -141,7 +137,7 @@ function get_unidades_de_medida_id_medidas()
 					minimo,
 					maximo,
 					nacionalidad_producto,
-					id_modelo,
+					
 					id_categoria,
 					marca_id_marca,
 					unidades_de_medida_id_medidas,
@@ -153,7 +149,7 @@ function get_unidades_de_medida_id_medidas()
 					:minimo,
 					:maximo,
 					:nacionalidad_producto,
-					:id_modelo,
+					:
 					:id_categoria,
 					:marca_id_marca,
 					:unidades_de_medida_id_medidas,
@@ -196,7 +192,7 @@ function get_unidades_de_medida_id_medidas()
 				nombre = :nombre,
 				minimo = :minimo,
 				maximo = :maximo,
-				id_modelo = :id_modelo,
+				id_modelo = :
 				id_categoria = :id_categoria,
 				estado_registro = :estado_registro
 				where
@@ -327,7 +323,7 @@ function get_unidades_de_medida_id_medidas()
 		$r = array();
 		try {
 
-			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto.id_modelo, categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 1");
+			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto. categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 1");
 
 			if ($resultado) {
 
@@ -381,7 +377,7 @@ function get_unidades_de_medida_id_medidas()
 		// se enviara la respuesta a la solicitud y el
 		// contenido de la respuesta
 		try {
-			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto.id_modelo, categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 0");
+			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto. categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 0");
 
 			if ($resultado) {
 
@@ -429,7 +425,7 @@ function get_unidades_de_medida_id_medidas()
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try {
-			$resultado = $co->query("SELECT id_modelo, codigo_modelo, descripcion_modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca WHERE modelo.estado_registro = 1");
+			$resultado = $co->query("SELECT  codigo_modelo, descripcion_modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca WHERE modelo.estado_registro = 1");
 
 			if ($resultado) {
 
