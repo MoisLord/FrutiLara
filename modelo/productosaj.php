@@ -13,6 +13,7 @@ class productosaj extends datos
 private $codigo;
 private $nombre;
 private $cantidad_total;
+private $nacionalidad_producto;
 private $minimo;
 private $maximo;
 private $id_categoria;
