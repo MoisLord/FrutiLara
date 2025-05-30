@@ -19,11 +19,16 @@ private $id_categoria;
 private $marca_id_marca;
 private $unidades_de_medida_id_medidas;
 private $estado_registro;
+
+
 function set_cantidad_total($valor)
 {
 	$this->cantidad_total = $valor;
 }
-
+function set_nacionalidad_producto($valor)
+{
+	$this->nacionalidad_producto = $valor;
+}
 function set_marca_id_marca($valor)
 {
 	$this->marca_id_marca = $valor;
