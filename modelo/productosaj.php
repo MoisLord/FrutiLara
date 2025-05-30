@@ -5,9 +5,7 @@
 require_once('modelo/datos.php');
 
 // se declara la clase productosaj que hereda de datos
-class productosaj extends datos
-{
-
+class productosaj extends datos {
 
 // se declaran como atributos privados
 private $codigo;
@@ -20,7 +18,6 @@ private $id_categoria;
 private $marca_id_marca;
 private $unidades_de_medida_id_medidas;
 private $estado_registro;
-
 
 function set_cantidad_total($valor)
 {
