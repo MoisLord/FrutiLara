@@ -3,7 +3,7 @@
  // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
-}
+
 //REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
 $bitacora = new bitacora();
 $bitacora->set_usuario($_SESSION['usuario']);
@@ -13,7 +13,7 @@ $resultado = $bitacora->registrarAccion('proveedor', 'Ingreso a Proveedores');
 //usuarios, en ella estara el codigo que me //permitirá
 //guardar, consultar y modificar dentro de mi base //de datos
 
-
+}
 //lo primero que se debe hacer es verificar al //igual que en la vista que exista el archivo
 if (!is_file("modelo/".$pagina.".php")){
 	//alli pregunte que si no es archivo se niega //con !

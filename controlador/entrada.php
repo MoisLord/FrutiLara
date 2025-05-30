@@ -3,11 +3,9 @@
   // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
-}
-//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
-if (isset($_SESSION['usuario'])) {
-    require_once("app/controllers/ControlBitacora.php");
+
     $bitacora = new ContBitacora();
+	$bitacora->set_usuario($_SESSION['usuario']);
     $bitacora->registrarAccion($_SESSION['usuario'], 'Notas de Entrada', 'Ingresó al módulo de Notas de Entrada');
 }
 //llamada al archivo que contiene la clase

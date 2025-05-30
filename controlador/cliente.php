@@ -2,11 +2,9 @@
 // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
-}
-// Registro en bitácora al ingresar al módulo
-if (isset($_SESSION['usuario'])) {
-	require_once(__DIR__ . '/controlbitacora.php');
+
 	$bitacora = new ContBitacora();
+	$bitacora->set_usuario($_SESSION['usuario']);
 	$bitacora->registrarAccion($_SESSION['usuario'], 'Cliente', 'Ingresó al módulo de Cliente');
 }
   
