@@ -74,7 +74,7 @@ GESTIÓN DE CLIENTES
 			</div>
 			<div class="row mt-3 justify-content-left">
 			<div class="col-md-3">	
-				   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
+				   <a href="." class="btn btn-success">REGRESAR</a>
 			</div>
 			<div class="col-md-4">	
 				   <button type="button" class="btn btn-success" id="consultadeDelete">CONSULTAS ELIMINADAS</button>

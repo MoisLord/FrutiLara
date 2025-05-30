@@ -29,7 +29,7 @@
 						<button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
 						<input type="button" class="btn btn-success" id="listadoservicios" name="listadoservicios" value="LISTADO DE SERVICIOS"/>
 
-						<a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
+						<a href="." class="btn btn-success">REGRESAR</a>
 					</div>
 				</div>
 				<!-- FIN DE FILA BOTONES -->

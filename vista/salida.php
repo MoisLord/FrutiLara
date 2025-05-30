@@ -29,7 +29,7 @@ Prefacturación
 			   <button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
 			   <button type="button" class="btn btn-success" id="listadodeclientes" name="listadodeclientes">LISTADO DE CLIENTES</button>
 			   <button type="button" class="btn btn-success" id="listadodeproductos" name="listadodeproductos">LISTADO DE PRODUCTOS</button>
-			   <a href="?pagina=principal" class="btn btn-success">REGRESAR</a>
+			   <a href="." class="btn btn-success">REGRESAR</a>
 		</div>
 	</div>
 	<!-- FIN DE FILA BOTONES -->
