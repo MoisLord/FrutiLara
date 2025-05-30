@@ -25,7 +25,7 @@ if (is_file("vista/" . $pagina . ".php")) {
 
 	//si existe creamos una intancia que es una variable local
 
-	$empleado = new empleados(); //ahora nuestro objeto se llama $o y es una copia en memoria de la clase empleados
+	$empleado = new empleados(); //ahora nuestro objeto se llama $empleadoy es una copia en memoria de la clase empleados
 
 	if (!empty($_POST)) {
 
@@ -33,13 +33,13 @@ if (is_file("vista/" . $pagina . ".php")) {
 		$accion = $_POST['accion'];
 
 		if ($accion == 'consultar') {
-			echo  json_encode($o->consultar());
+			echo  json_encode($empleado->consultar());
 		} elseif ($accion == 'consultatr') {
-			$o->set_cedula($_POST['cedula']);
-			echo  json_encode($o->consultatr());
+			$empleado->set_cedula($_POST['cedula']);
+			echo  json_encode($empleado->consultatr());
 		} elseif ($accion == 'eliminar') {
-			$o->set_cedula($_POST['cedula']);
-			echo  json_encode($o->eliminar());
+			$empleado->set_cedula($_POST['cedula']);
+			echo  json_encode($empleado->eliminar());
 		} else {
 			$empleado->set_cedula($_POST['cedula']);
 			$empleado->set_nombre_apellido($_POST['nombre_apellido']);
@@ -48,9 +48,9 @@ if (is_file("vista/" . $pagina . ".php")) {
 			$empleado->set_direccion($_POST['direccion']);
 			$empleado->set_fechaNacimiento($_POST['fechaNacimiento']);
 			if ($accion == 'incluir') {
-				echo  json_encode($o->incluir());
+				echo  json_encode($empleado->incluir());
 			} elseif ($accion == 'modificar') {
-				echo  json_encode($o->modificar());
+				echo  json_encode($empleado->modificar());
 			}
 		}
 		exit;
