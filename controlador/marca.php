@@ -6,13 +6,12 @@ if (session_status() === PHP_SESSION_NONE) {
 
 	$bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$resultado = $bitacora->registrarAccion('marca', 'Ingreso a Marcas');
+	$resultado = $bitacora->incluir('marca', 'Ingreso a Marcas');
 }
 
 
 
 //llamada al archivo que contiene la clase
-//Marca, en ella estara el modelo que me permitirá
 //guardar osea incluir, consultar, eliminar y modificar dentro de la base de datos
 
 
