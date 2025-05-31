@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<link rel="stylesheet" type="text/css" href="css/menu.css">
 
 <div class="col-12">
   <nav class="navbar navbar-expand-lg bg-success bg-gradient fixed-top">
@@ -107,7 +107,7 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
-                      href="vista/bitacora.php">
+                      href="vista/bitacora.php" target="_blank">
                       <img src="iconos/bitacora.svg" alt="bitacora" style="width:25px; height:25px; margin-bottom:3px;">
                       <span>BITACORA</span>
                     </a>
@@ -171,12 +171,12 @@
 
           if (!empty($nivel) and $nivel != "") {
           ?>
-            <a href="?pagina=logout" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
+            <a href="/FrutiLara/controlador/logout.php" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
       </div>
     <?php
           } else {
     ?>
-      <a href="?pagina=login" class="btn btn-outline-danger my-2 my-sm-0">Entrar</a>
+      <a href="?pagina=login" class="btn btn-outline-success my-2 my-sm-0">Entrar</a>
 </div>
 
 <?php
