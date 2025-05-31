@@ -182,13 +182,13 @@ function crearDT() {
  */
 function validarenvio() {
   // Valida campo ID (numérico, 1-10 dígitos)
-  if (validarkeyup(/^[0-9]{1,10}$/, $("#id_bitacora"), ...) == 0) {
-    muestraMensaje("El ID...");
+  if (validarkeyup(/^[0-9]{1,10}$/, $("#id_bitacora"), $("#sid_bitacora"), "El ID debe ser numérico con máximo 10 dígitos") == 0) {
+    muestraMensaje("El ID debe ser numérico con máximo 10 dígitos");
     return false;
   } 
   // Valida campo usuario (alfanumérico, 2-50 caracteres)
-  else if (validarkeyup(/^[A-Za-z0-9...]{2,50}$/, $("#usuario"), ...) == 0) {
-    muestraMensaje("Usuario...");
+  else if (validarkeyup(/^[A-Za-z0-9\s\u00f1\u00d1\u00E0-\u00FC-]{2,50}$/, $("#usuario"), $("#susuario"), "El usuario debe ser alfanumérico y tener entre 2 y 50 caracteres") == 0) {
+    muestraMensaje("Usuario inválido. Debe ser alfanumérico y tener entre 2 y 50 caracteres.");
     return false;
   }
   // ... validaciones similares para otros campos
