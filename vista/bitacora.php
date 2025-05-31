@@ -29,6 +29,7 @@ require_once(__DIR__.'/../modelo/session.php');
                 </div>
             </div>
         </form>
+        <hr class="border border-success border-2 opacity-50">
 
         <!-- Tabla de registros -->
         <div class="table-responsive">
