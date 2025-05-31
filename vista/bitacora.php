@@ -27,27 +27,6 @@ require_once(__DIR__.'/../modelo/session.php');
                     <button type="submit" class="btn btn-success">Filtrar</button>
                     <button type="button" id="limpiar-filtros" class="btn btn-secondary ms-2">Limpiar</button>
                 </div>
-                <br/>
-                <br/>
-                <div class="row mt-3 justify-content-left">
-                    <div class="col-md-3">	
-                        <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
-                    </div>
-                    <div class="col-md-2">	
-                        <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
-                    </div>
-                </div>
-                <div class="row mt-3 justify-content-left">
-                    <div class="col-md-3">	
-                        <a href="vista/principal.php" class="btn btn-success">REGRESAR</a>
-                    </div>
-                    <div class="col-md-4">	
-                        <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
-                    </div>
-                    <div class="col-md-2">	
-                        <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
-                    </div>
-                </div>
             </div>
         </form>
 
