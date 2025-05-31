@@ -10,7 +10,6 @@ require_once(__DIR__.'/../modelo/session.php');
     </div>
     <div class="container mt-4">
         <h2 class="text-center text-success">BITÁCORA</h2>
-        <span>Registro de acciones realizadas por los usuarios en el sistema</span>
         <hr class="border border-success border-2 opacity-50">
 
         <!-- Filtro por fechas -->
