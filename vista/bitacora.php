@@ -15,7 +15,7 @@ require_once(__DIR__.'/../modelo/session.php');
         <br/>
     </div>
     <div class="container mt-4">
-        <h2 class="text-center text-success">REGISTROS DE BITÁCORA</h2>
+        <h2 class="text-center text-success">BITÁCORA</h2>
         <hr class="border border-success border-2 opacity-50">
 
         <!-- Filtro por fechas -->
