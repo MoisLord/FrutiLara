@@ -47,6 +47,6 @@ require_once(__DIR__.'/../comunes/encabezado.php');
     </div>
 
     <?php require_once(__DIR__ . '/../comunes/body.php'); ?>
-    <script src="js/bitacora.js"></script>
+    <script src="../js/bitacora.js"></script>
 </body>
 </html>
