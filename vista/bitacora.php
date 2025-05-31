@@ -38,7 +38,6 @@ require_once(__DIR__.'/../comunes/encabezado.php');
                         <th>Módulo</th>
                         <th>Acción</th>
                         <th>Fecha</th>
-                        <th>Hora</th>
                     </tr>
                 </thead>
                 <tbody>
