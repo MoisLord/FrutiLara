@@ -6,7 +6,7 @@ require_once('modelo/datos.php');
 
 class entrada extends datos{
     
-	private function registrar($id_proveedor,$id_producto,$cantidad){
+	function registrar($id_proveedor,$id_producto,$cantidad){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
