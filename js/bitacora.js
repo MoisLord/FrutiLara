@@ -105,8 +105,8 @@ $(document).ready(function () {
    * Verifica que el ID sea válido antes de proceder
    */
   $("#eliminar").on("click", function () {
-    if (validarkeyup(...) == 0) {
-      muestraMensaje("El ID de la bitácora debe ser numérico");
+    if (validarkeyup(/^[0-9]{1,10}$/, $("#id_bitacora"), $("#sid_bitacora"), "El ID de la bitácora debe ser numérico con máximo 10 dígitos") == 0) {
+      muestraMensaje("El ID de la bitácora debe ser numérico con máximo 10 dígitos");
     } else {
       var datos = new FormData();
       datos.append("accion", "eliminar");
