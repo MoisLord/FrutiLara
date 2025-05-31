@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
 
 <div class="col-12">
   <nav class="navbar navbar-expand-lg bg-success bg-gradient fixed-top">
