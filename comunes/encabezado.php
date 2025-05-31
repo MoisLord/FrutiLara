@@ -11,7 +11,7 @@
  <script src="../js/popper.min.js" ></script>
  <script src="../js/bootstrap.min.js" ></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
- <link rel="icon" src="img/logo.png"></link>
+ <link rel="icon" href="img/logo.png">
  <!--Lineas para usar el DataTblet-->
  <link rel="stylesheet" type="text/css" href="../datatables/datatables.css"/> 
  <link href="../css/menu.css" rel="stylesheet">
