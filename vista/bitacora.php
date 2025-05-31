@@ -5,8 +5,15 @@ require_once(__DIR__.'/../modelo/session.php');
 <title>BITÁCORA DEL SISTEMA</title>
 
 <body>
+
     <?php require_once(__DIR__.'/../comunes/menu.php'); ?>
 
+    <!--Aqui coloque el Contenedor del Texto del Modulo Marca-->
+    <div class="container text-center h2 text-success">
+        <br/>
+        <br/>
+        <br/>
+    </div>
     <div class="container mt-4">
         <h2 class="text-center text-success">REGISTROS DE BITÁCORA</h2>
         <hr class="border border-success border-2 opacity-50">
@@ -25,6 +32,30 @@ require_once(__DIR__.'/../modelo/session.php');
                 <div class="col-md-4 d-flex align-items-end">
                     <button type="submit" class="btn btn-success">Filtrar</button>
                     <button type="button" id="limpiar-filtros" class="btn btn-secondary ms-2">Limpiar</button>
+                </div>
+                <br/>
+                <br/>
+                <div class="row mt-3 justify-content-left">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
+                    </div>
+                    <div class="col-md-3">	
+                        <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+                    </div>
+                    <div class="col-md-2">	
+                        <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
+                    </div>
+                </div>
+                <div class="row mt-3 justify-content-left">
+                    <div class="col-md-3">	
+                        <a href="." class="btn btn-success">REGRESAR</a>
+                    </div>
+                    <div class="col-md-4">	
+                        <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
+                    </div>
+                    <div class="col-md-2">	
+                        <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
+                    </div>
                 </div>
             </div>
         </form>
