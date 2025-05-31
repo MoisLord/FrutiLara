@@ -3,9 +3,9 @@
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 
-	$bitacora = new ContBitacora();
+	$bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$bitacora->registrarAccion($_SESSION['usuario'], 'Cliente', 'Ingresó al módulo de Cliente');
+	$bitacora->incluir($_SESSION['usuario'], 'Cliente', 'Ingresó al módulo de Cliente');
 }
   
 //llamada al archivo que contiene la clase

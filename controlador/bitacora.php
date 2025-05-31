@@ -61,8 +61,10 @@ if (is_file("vista/" . $pagina . ".php")) {
 			echo  json_encode($o->restaurar());
 		} else {
 			$o->set_id_bitacora($_POST['id_bitacora']);
+			$o->set_usuario($_POST['usuario']);
 			$o->set_modulo($_POST['modulo']);
-			$o->set_id_bitacora($_POST['id_bitacora']);
+            $o->set_accion($_POST['accion']);
+            $o->set_fecha($_POST['fecha']);
 			if ($accion == 'incluir') {
 				echo  json_encode($o->incluir());
 			} elseif ($accion == 'modificar') {

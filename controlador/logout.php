@@ -6,7 +6,7 @@ if (isset($_SESSION['usuario'])) {
     require_once(__DIR__.'/../modelo/bitacora.php');
     $bitacora = new bitacora();
     $bitacora->set_usuario($_SESSION['usuario']);
-    $bitacora->registrarAccion('Autenticación', 'Cierre de sesión');
+    $bitacora->incluir('Autenticación', 'Cierre de sesión');
 }
 
 session_unset();

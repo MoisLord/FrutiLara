@@ -24,7 +24,6 @@ class bitacora extends Datos2
 	private $modulo;
 	private $accion;
 	private $fecha;
-	private $hora;
 
 	//Ok ya puesto los atributos, pero ahora como son privados no podemos acceder a ellos
 	//desde afuera por lo que debemos colocar metodos (funciones)
@@ -59,11 +58,6 @@ class bitacora extends Datos2
 		$this->fecha = $valor;
 	}
 
-	function set_hora($valor)
-	{
-		$this->hora = $valor;
-	}
-
 	//ahora el mismo procedimiento pero para leer, es decir (get)
 
 	function get_id_bitacora()
@@ -91,10 +85,6 @@ class bitacora extends Datos2
 		return $this->fecha;
 	}
 
-	function get_hora()
-	{
-		return $this->hora;
-	}
 
 	//Lo siguiente son los metodos para registrar, listar, mostrar incluir y consultar
 	//comprueba que existen registros en la bitacora
@@ -143,21 +133,18 @@ class bitacora extends Datos2
 						usuario,
 						modulo,
 						accion,
-						fecha,
-						hora
+						fecha
 						)
 						Values(
 						:usuario,
 						:modulo,
 						:accion,
-						:fecha,
-						:hora
+						:fecha
 						)");
 				$p->bindParam(':usuario', $this->usuario);
 				$p->bindParam(':modulo', $this->modulo);
 				$p->bindParam(':accion', $this->accion);
 				$p->bindParam(':fecha', $this->fecha);
-				$p->bindParam(':hora', $this->hora);
 
 				$p->execute();
 
@@ -189,8 +176,7 @@ class bitacora extends Datos2
 						usuario = :usuario,
 						modulo = :modulo,
 						accion = :accion,
-						fecha = :fecha,
-						hora = :hora
+						fecha = :fecha
 						where
 						id_bitacora = :id_bitacora
 						");
@@ -199,7 +185,6 @@ class bitacora extends Datos2
 				$p->bindParam(':modulo', $this->modulo);
 				$p->bindParam(':accion', $this->accion);
 				$p->bindParam(':fecha', $this->fecha);
-				$p->bindParam(':hora', $this->hora);
 				$p->execute();
 
 				$r['resultado'] = 'modificar';
@@ -315,9 +300,6 @@ class bitacora extends Datos2
 					$respuesta = $respuesta . "<td>";
 					$respuesta = $respuesta . $r['fecha'];
 					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['hora'];
-					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "</tr>";
 
 					$r['resultado'] = 'consultar';
@@ -360,9 +342,6 @@ class bitacora extends Datos2
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td>";
 					$respuesta = $respuesta . $r['fecha'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['hora'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "</tr>";
 				}

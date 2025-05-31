@@ -24,7 +24,7 @@ if(is_file("vista/".$pagina.".php")){
                 require_once(__DIR__.'/../modelo/bitacora.php');
                 $bitacora = new bitacora();
                 $bitacora->set_usuario($_SESSION['usuario']);
-                $bitacora->registrarAccion('Autenticación', 'Inicio de sesión');
+                $bitacora->incluir('Autenticación', 'Inicio de sesión');
                 
                 header('Location:?pagina=principal');
                 exit;

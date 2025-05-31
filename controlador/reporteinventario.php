@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
 $bitacora = new bitacora();
 $bitacora->set_usuario($_SESSION['usuario']);
-$resultado = $bitacora->registrarAccion('reporte general', 'Ingreso a Reporte general');
+$resultado = $bitacora->incluir('reporte general', 'Ingreso a Reporte general');
 }
 
 //lo primero que se debe hacer es verificar al igual que en la vista es que exista el archivo
