@@ -34,7 +34,6 @@ require_once(__DIR__.'/../comunes/encabezado.php');
                 <thead class="bg-success text-white">
                     <tr>
                         <th>ID</th>
-                        <th>Cedula</th>
                         <th>Usuario</th>
                         <th>Módulo</th>
                         <th>Acción</th>
