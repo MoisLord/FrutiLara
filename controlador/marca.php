@@ -1,6 +1,6 @@
 <?php
 
-if($_POST['accion']=='salir'){
+if($_POST['accion']=='entrar'){
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }
