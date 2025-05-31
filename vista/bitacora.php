@@ -3,11 +3,8 @@ require_once(__DIR__.'/../comunes/encabezado.php');
 require_once(__DIR__.'/../modelo/session.php');
 ?>
 <title>BITÁCORA DEL SISTEMA</title>
-<link rel="stylesheet" type="text/css" href="css/menu.css">
 
 <body>
-    <?php require_once(__DIR__.'/../comunes/modal.php'); ?>
-    <?php require_once(__DIR__.'/../comunes/menu.php'); ?>
 
     <!--Aqui coloque el Contenedor del Texto del Modulo Marca-->
     <div class="container text-center h2 text-success">
