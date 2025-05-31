@@ -1,14 +1,27 @@
 <?php
 
+// Primero incluir el modelo antes de cualquier uso de la clase
+$modelo_path = __DIR__.'/../modelo/bitacora.php';
+$pagina = 'bitacora';
+
+if (!is_file($modelo_path)) {
+    echo "Falta definir la clase bitacora en: $modelo_path";
+    exit;
+}
+
+require_once($modelo_path);
+
 // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 
 	$bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$resultado = $bitacora->incluir('marca', 'Ingreso a Marcas');
+	$bitacora->set_modulo('bitacora');
+	$bitacora->set_accion('Ingreso a Bitácora');
+	$bitacora->set_fecha(date("Y-m-d H:i:s"));
+	$resultado = $bitacora->incluir('Marca', 'Ingreso a Marca');
 }
-
 
 
 //llamada al archivo que contiene la clase
