@@ -1,10 +1,11 @@
 <?php
 require_once(__DIR__.'/../comunes/encabezado.php');
-require_once(__DIR__.'/../comunes/menu.php');
+require_once(__DIR__.'/../modelo/session.php');
 ?>
 <title>BITÁCORA DEL SISTEMA</title>
 
 <body>
+    <?php require_once(__DIR__.'/../comunes/menu.php'); ?>
 
     <div class="container mt-4">
         <h2 class="text-center text-success">REGISTROS DE BITÁCORA</h2>
