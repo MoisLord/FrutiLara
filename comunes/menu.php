@@ -175,7 +175,7 @@
     <?php
           } else {
     ?>
-      <a href="?pagina=login" class="btn btn-outline-danger my-2 my-sm-0">Entrar</a>
+      <a href="?pagina=login" class="btn btn-outline-danger my-2 my-sm-0">Iniciar sesión</a>
 </div>
 
 <?php
