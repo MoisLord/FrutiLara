@@ -32,7 +32,7 @@ require_once(__DIR__.'/../comunes/encabezado.php');
             <table id="tabla-bitacora" class="table table-striped table-hover">
                 <thead class="bg-success text-white">
                     <tr>
-                        <th>ID</th>
+                        <th>id bitacora</th>
                         <th>Usuario</th>
                         <th>Módulo</th>
                         <th>Acción</th>
