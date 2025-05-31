@@ -15,7 +15,7 @@
  <!--Lineas para usar el DataTblet-->
  <link rel="stylesheet" type="text/css" href="../datatables/datatables.css"/> 
  <link href="../css/menu.css" rel="stylesheet">
- <script src="../js/menu.js"></script>
+ <script src="/FrutiLara/js/menu.js"></script>
  <script type="text/javascript" src="../datatables/datatables.min.js"></script>
  <!--linea para enlazar con las fuentes-->
  <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
