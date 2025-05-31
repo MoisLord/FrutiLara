@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__.'/../comunes/encabezado.php');
+require_once(__DIR__.'/../comunes/menu.php');
 ?>
 <title>BITÁCORA DEL SISTEMA</title>
 
