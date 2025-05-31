@@ -2,7 +2,9 @@
 //llamda al archivo que contiene la clase
 //datos, en ella esta guardada en la carpeta id_marca
 //para enlazar a la base de datos
-require_once(__DIR__.'/../modelo/datos.php');
+if (!class_exists('Datos2')) {
+  require_once(__DIR__.'./datos2.php');
+}
 
 //Aqui declare la clase Marca que hereda de la clase datos
 //la herencia se declara con la palabra extends y no es mas 
@@ -271,48 +273,51 @@ class bitacora extends Datos2
 		return $r;
 	}
 
-    function consultar()
+	function consultar()
 	{
-		$co = $this->conectarBitacora();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$r = array();
-		try {
-
-			$resultado = $co->query("SELECT * from bitacora WHERE id_bitacora = 1");
-
-			if ($resultado) {
-
-				$respuesta = '';
-				foreach ($resultado as $r) {
-					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['id_bitacora'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['usuario'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['modulo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['accion'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['fecha'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "</tr>";
-
-					$r['resultado'] = 'consultar';
-					$r['mensaje'] =  $respuesta;
-				}
-
-				return $r;
-			} else {
-				return '';
-			}
-		} catch (Exception $e) {
-			return $e->getMessage();
-		}
+    $co = $this->conectarBitacora();
+    $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $r = array();
+    try {
+        // Construir consulta base
+        $sql = "SELECT * from bitacora WHERE 1=1";
+        
+        // Agregar condición por ID si está establecido
+        if (!empty($this->id_bitacora)) {
+            $sql .= " AND id_bitacora = :id_bitacora";
+        }
+        
+        // Agregar condiciones por fecha si están establecidas
+        if (!empty($this->fecha)) {
+            // Asume que $this->fecha contiene la condición de fecha
+            $sql .= " AND DATE(fecha) = :fecha";
+        }
+        
+        // Preparar consulta
+        $p = $co->prepare($sql);
+        
+        // Bind parameters
+        if (!empty($this->id_bitacora)) {
+            $p->bindParam(':id_bitacora', $this->id_bitacora);
+        }
+        if (!empty($this->fecha)) {
+            $p->bindParam(':fecha', $this->fecha);
+        }
+        
+        // Ejecutar consulta
+        $p->execute();
+        
+        // Obtener resultados
+        $datos = $p->fetchAll(PDO::FETCH_ASSOC);
+        
+        $r['resultado'] = 'exito';
+        $r['datos'] = $datos;
+    } catch (Exception $e) {
+        $r['resultado'] = 'error';
+        $r['mensaje'] = $e->getMessage();
+    }
+    
+    return $r;
 	}
 
 	function consultadelete()
