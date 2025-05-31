@@ -38,7 +38,7 @@ function cargarBitacora() {
     mostrarCargando();
     
     $.ajax({
-        url: '?pagina=bitacora',
+        url: '../controlador/bitacora.php',
         type: 'POST',
         data: {
             accion: 'listarBitacora',
@@ -48,12 +48,17 @@ function cargarBitacora() {
         dataType: 'json',
         success: function(response) {
             if (response.resultado === 'exito') {
-                actualizarTabla(response.datos);
+                // Asegúrate que response.datos contiene los registros
+                if (response.datos && response.datos.length > 0) {
+                    actualizarTabla(response.datos);
+                } else {
+                    mostrarError("No se encontraron registros");
+                }
             } else {
                 mostrarError(response.mensaje);
             }
         },
-        error: function(xhr, status, error) {
+        error: function(xhr, status, error) { 
             mostrarError("Error al cargar bitácora: " + error);
         }
     });
@@ -79,7 +84,7 @@ function actualizarTabla(datos) {
         datos.forEach(function(registro) {
             let fila = `
                 <tr>
-                    <td>${registro.id_bitacora}</td>
+                    <td>${registro.id}</td>
                     <td>${registro.usuario}</td>
                     <td>${registro.modulo}</td>
                     <td>${registro.accion}</td>
