@@ -1,11 +1,13 @@
 <?php
-// Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 
 	$bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$resultado = $bitacora->incluir('marca', 'Ingreso a Marcas');
+	$bitacora->set_modulo('bitacora');
+	$bitacora->set_accion('Ingreso a Bitácora');
+	$bitacora->set_fecha(date("Y-m-d H:i:s"));
+	$resultado = $bitacora->incluir('marca', 'Ingreso a Marcas');
 }
 
 
