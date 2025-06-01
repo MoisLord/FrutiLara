@@ -1,15 +1,4 @@
 <?php
-// Primero incluir el modelo antes de cualquier uso de la clase
-$modelo_path = __DIR__.'/../modelo/bitacora.php';
-$pagina = 'bitacora';
-
-if (!is_file($modelo_path)) {
-    echo "Falta definir la clase bitacora en: $modelo_path";
-    exit;
-}
-
-require_once($modelo_path);
-
 // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
