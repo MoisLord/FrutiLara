@@ -3,7 +3,7 @@
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 
-	// Registrar inicio de sesión en bitácora
+	
 	$bitacora = new bitacora();
 	// Registrar el usuario actual
 	$bitacora->set_usuario($_SESSION['usuario']);
