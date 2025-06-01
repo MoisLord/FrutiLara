@@ -3,7 +3,7 @@
 //datos, en ella esta guardada en la carpeta id_marca
 //para enlazar a la base de datos
 if (!class_exists('Datos2')) {
-  require_once(__DIR__.'./datos2.php');
+  require_once('modelo/datos2.php');
 }
 
 //Aqui declare la clase Marca que hereda de la clase datos
