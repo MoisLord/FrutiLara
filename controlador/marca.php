@@ -5,7 +5,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
 if (isset($_SESSION['usuario'])) {
     // Registrar Ingreso a Marca en bitácora
-	require_once(__DIR__.'/../modelo/datos2.php');
     require_once(__DIR__.'/../modelo/bitacora.php');
     $bitacora = new bitacora();
     $bitacora->set_usuario($_SESSION['usuario']);
