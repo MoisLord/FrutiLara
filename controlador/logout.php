@@ -8,10 +8,10 @@ if (isset($_SESSION['usuario'])) {
     require_once(__DIR__.'/../modelo/bitacora.php');
     $bitacora = new bitacora();
     $bitacora->set_usuario($_SESSION['usuario']);
-    $bitacora->set_modulo('Autenticación');
+    $bitacora->set_modulo('Salio de sesión');
     $bitacora->set_accion('Cierre de sesión');
     $bitacora->set_fecha(date("Y-m-d H:i:s"));
-    $resultado = $bitacora->incluir('Autenticación', 'Cierre de sesión');
+    $resultado = $bitacora->incluir('Salio de sesión', 'Cierre de sesión');
 }
 
 session_unset();
