@@ -7,7 +7,7 @@ require_once('modelo/datos.php');
 class categoria extends datos{
 	
 	//Se declaran los atributos (variables) que describen la clase
-	
+	private $id_categoria; //Este campo es autoincremental, no se debe colocar en el formulario
 	private $codigo_categoria; 
 	private $descripcion_categoria;
 	private $unidadMedNormal;
@@ -17,7 +17,10 @@ class categoria extends datos{
 	
 	//Se añaden los metodos (funciones) que me permitan leer (get) y colocar (set)
 	//Comienzo del sector de metodos de set
-	
+
+	function set_id_categoria($valor){
+		$this->id_categoria = $valor;
+	}
 
 	function set_codigo_categoria($valor){
 		$this->codigo_categoria = $valor; 
@@ -42,6 +45,9 @@ class categoria extends datos{
 	//Final del sector de metodos de set
 
 	//Comienzo del sector de metodos de get
+	function get_id_categoria(){
+		return $this->id_categoria;
+	}
 	
 	function get_codigo_categoria(){
 		return $this->codigo_categoria;
@@ -80,8 +86,8 @@ class categoria extends datos{
 			//Se ejecuta el sql
 			$r = array();
 			try {
-				
 					$p = $co->prepare("Insert into categoria(
+						id_categoria,
 						codigo_categoria,
 						descripcion_categoria,
 						unidadMedNormal,
@@ -89,12 +95,14 @@ class categoria extends datos{
 						estado_registro
 						)
 						Values(
+						:id_categoria,
 						:codigo_categoria,
 						:descripcion_categoria,
 						:unidadMedNormal,
                         :unidadMedAlt,
 						:estado_registro
 						)");
+					$p->bindParam(':id_categoria',$this->id_categoria);
 					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
 					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);	
 					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
@@ -126,6 +134,7 @@ class categoria extends datos{
 		if($this->existe($this->codigo_categoria)){
 			try {
 				$p = $co->prepare("Update categoria set 
+						id_categoria = :id_categoria,
 						descripcion_categoria = :descripcion_categoria,
 						unidadMedNormal = :unidadMedNormal,
                         unidadMedAlt = :unidadMedAlt,
