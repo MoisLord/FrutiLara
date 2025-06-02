@@ -37,28 +37,10 @@ CATEGORIAS DE PRODUCTOS
 			<span id="sdescripcion_categoria" class="alert alert-success"></span>
 		</div>
 		<div class="row mb-3">    
-		<div class="col-md-12">
-					   <label for="unidadMedNormal">Unidad de medida común</label>
-					   <select class="form-control" id="unidadMedNormal">
-							<option selected>Seleccione una unidad de medida</option>
-							<option value="KILOGRAMOS">Kilogramos</option>
-							<option value="MILIGRAMOS">Miligramos</option>
-							<option value="LITROS">Litros</option>
-							<option value="MILITROS">Militros</option>
-							<option value="UNIDADES">Unidades</option>
-					   </select>
-					</div>
-					</div>
+		
 					<div class="row mb-3">
-					<div class="col-md-12">
-					   <label for="unidadMedAlt">Unidad de Medida Alternativa</label>
-					   <select class="form-control" id="unidadMedAlt">
-							<option selected>Seleccione una unidad de medida</option>
-							<option value="N/A">No aplica</option>
-							<option value="CAJAS">Cajas</option>
-							<option value="CESTAS">Cestas</option>
-							<option value="SACOS">Sacos</option>
-					   </select>
+					
+					   
 					</div>
 					</div>
 		</div> <!-- fin del contenedor de campos -->
@@ -109,8 +91,7 @@ CATEGORIAS DE PRODUCTOS
 		  <th style="display: none;">ID de categoria</th>
 			<th>Codigo de categoria</th>
 			<th>Descripción de la categoria</th>
-			<th>Unidad de medida común</th>	
-			<th>Unidad de Medida Alternativa</th>
+			<th>estado de registro</th>
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
@@ -135,8 +116,7 @@ CATEGORIAS DE PRODUCTOS
 		  <th style="display: none;">ID de categoria</th>
 			<th>Codigo de categoria</th>
 			<th>Descripción de la categoria</th>
-			<th>Unidad de medida común</th>	
-			<th>Unidad de Medida Alternativa</th>
+	
 		  </tr>
 		</thead>
 		<tbody id="consultaDelete">

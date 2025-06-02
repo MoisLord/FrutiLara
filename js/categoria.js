@@ -65,8 +65,6 @@ $(document).ready(function(){
             datos.append('accion','incluir');
             datos.append('codigo_categoria',$("#codigo_categoria").val());
             datos.append('descripcion_categoria',$("#descripcion_categoria").val());
-            datos.append('unidadMedNormal',$("#unidadMedNormal").val());
-            datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             datos.append('estado_registro',1);
             enviaAjax(datos);
             
@@ -79,8 +77,6 @@ $(document).ready(function(){
             datos.append('accion','modificar');
             datos.append('codigo_categoria',$("#codigo_categoria").val());
             datos.append('descripcion_categoria',$("#descripcion_categoria").val());
-            datos.append('unidadMedNormal',$("#unidadMedNormal").val());
-            datos.append('unidadMedAlt',$("#unidadMedAlt").val());
             datos.append('estado_registro',1);
             enviaAjax(datos);
             
@@ -232,8 +228,6 @@ $(document).ready(function(){
     function coloca(linea){
         $("#codigo_categoria").val($(linea).find("td:eq(1)").text());
         $("#descripcion_categoria").val($(linea).find("td:eq(2)").text());
-        $("#unidadMedNormal").val($(linea).find("td:eq(3)").text());
-        $("#unidadMedAlt").val($(linea).find("td:eq(4)").text());
         
     }
     
@@ -262,8 +256,6 @@ $(document).ready(function(){
                         }
                         else if (lee.resultado == "encontro") {
                            $("#descripcion_categoria").val(lee.mensaje[0][2]);
-                           $("#unidadMedNormal").val(lee.mensaje[0][3]);
-                           $("#unidadMedAlt").val(lee.mensaje[0][4]);
                            
                         }
                         else if (lee.resultado == "incluir" || 
@@ -308,7 +300,5 @@ $(document).ready(function(){
         
         $("#codigo_categoria").val("");
         $("#descripcion_categoria").val("");
-        $("#unidadMedNormal").val("");
-        $("#unidadMedAlt").val("");
         
     } //Fin de función "limpia" para retirar la info de los campos tras alguna acción

@@ -10,8 +10,6 @@ class categoria extends datos{
 	
 	private $codigo_categoria; 
 	private $descripcion_categoria;
-	private $unidadMedNormal;
-    private $unidadMedAlt;
 	private $estado_registro;
 	
 	
@@ -25,14 +23,6 @@ class categoria extends datos{
 	
 	function set_descripcion_categoria($valor){
 		$this->descripcion_categoria = $valor;
-	}
-	
-	function set_unidadMedNormal($valor){
-		$this->unidadMedNormal = $valor;
-	}
-	
-    function set_unidadMedAlt($valor){
-		$this->unidadMedAlt = $valor;
 	}
 
 	function set_estado_registro($valor)
@@ -50,15 +40,6 @@ class categoria extends datos{
 	function get_descripcion_categoria(){
 		return $this->descripcion_categoria;
 	}
-	
-	function get_unidadMedNormal(){
-		return $this->unidadMedNormal;
-	}
-
-    function get_unidadMedAlt(){
-		return $this->unidadMedAlt;
-	}
-
 	function get_estado_registro()
 	{
 		return $this->estado_registro;
@@ -81,24 +62,18 @@ class categoria extends datos{
 			$r = array();
 			try {
 				
-					$p = $co->prepare("Insert into categoria(
+					$p = $co->prepare("INSERT into categoria(
 						codigo_categoria,
 						descripcion_categoria,
-						unidadMedNormal,
-                        unidadMedAlt,
 						estado_registro
 						)
 						Values(
 						:codigo_categoria,
 						:descripcion_categoria,
-						:unidadMedNormal,
-                        :unidadMedAlt,
 						:estado_registro
 						)");
 					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
-					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);	
-					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
-                    $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
+					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);
 					$p->bindParam(':estado_registro',$this->estado_registro);
 					
 					$p->execute();
@@ -125,18 +100,14 @@ class categoria extends datos{
 		$r = array();
 		if($this->existe($this->codigo_categoria)){
 			try {
-				$p = $co->prepare("Update categoria set 
+				$p = $co->prepare("UPDATE categoria set 
 						descripcion_categoria = :descripcion_categoria,
-						unidadMedNormal = :unidadMedNormal,
-                        unidadMedAlt = :unidadMedAlt,
 						estado_registro = :estado_registro
 						where
 						codigo_categoria = :codigo_categoria
 						");
 					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
 					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);
-					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
-                    $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
 					$p->bindParam(':estado_registro',$this->estado_registro);
 					
 					$p->execute();
@@ -184,7 +155,7 @@ class categoria extends datos{
 		// return $r;
 		if ($this->existe($this->codigo_categoria)) {
 			try {
-				$p = $co->prepare("Update categoria set 
+				$p = $co->prepare("UPDATE categoria set 
 				estado_registro = 0
 				where
 				codigo_categoria = :codigo_categoria
@@ -213,7 +184,7 @@ class categoria extends datos{
 		if ($this->existe($this->codigo_categoria)) {
 			
 			try {
-				$p = $co->prepare("Update categoria set 
+				$p = $co->prepare("UPDATE categoria set 
 				estado_registro = 1
 				where
 				codigo_categoria = :codigo_categoria
@@ -260,12 +231,6 @@ class categoria extends datos{
 							$respuesta = $respuesta.$r['descripcion_categoria'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['unidadMedNormal'];
-						$respuesta = $respuesta."</td>";
-                        $respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['unidadMedAlt'];
-						$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."</tr>";
 					
 					$r['resultado'] = 'consultar';
 					$r['mensaje'] =  $respuesta;
@@ -309,12 +274,6 @@ class categoria extends datos{
 							$respuesta = $respuesta.$r['descripcion_categoria'];
 						$respuesta = $respuesta."</td>";
 						$respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['unidadMedNormal'];
-						$respuesta = $respuesta."</td>";
-                        $respuesta = $respuesta."<td>";
-							$respuesta = $respuesta.$r['unidadMedAlt'];
-						$respuesta = $respuesta."</td>";
-					$respuesta = $respuesta."</tr>";
 				}
 			}
 			$r['resultado'] = 'consultaDelete';
