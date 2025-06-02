@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 	$bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$resultado = $bitacora->registrarAccion('marca', 'Ingreso a Marcas');
+	$resultado = $bitacora->incluir('marca', 'Ingreso a Marcas');
 }
 
 
@@ -60,6 +60,19 @@ if (is_file("vista/" . $pagina . ".php")) {
 		} elseif ($accion == 'restaurar') {
 			$o->set_id_marca($_POST['id_marca']);
 			echo  json_encode($o->restaurar());
+
+			header('Content-Type: application/json');
+    if ($resultado['resultado'] === 'error') {
+        echo json_encode([
+            'resultado' => 'error',
+            'mensaje' => $resultado['mensaje']
+        ]);
+    }
+    
+    echo json_encode([
+        'resultado' => 'exito',
+        'datos' => $resultado['datos']
+    ]);
 		} else {
 			$o->set_id_marca($_POST['id_marca']);
 			$o->set_descripcion_marca($_POST['descripcion_marca']);
