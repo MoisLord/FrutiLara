@@ -11,7 +11,9 @@ if(is_file("vista/".$pagina.".php")){
         $o = new login();
         
         if($_POST['accion']=='entrar'){
-            session_start();
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
             $o->set_cedula($_POST['cedula']);
             $o->set_clave($_POST['clave']);  
             $m = $o->existe();
@@ -24,8 +26,10 @@ if(is_file("vista/".$pagina.".php")){
                 require_once(__DIR__.'/../modelo/bitacora.php');
                 $bitacora = new bitacora();
                 $bitacora->set_usuario($_SESSION['usuario']);
-                $bitacora->registrarAccion('Autenticación', 'Inicio de sesión');
-                
+                $bitacora->set_modulo('Autenticación');
+                $bitacora->set_accion('Inicio de sesión');
+                $bitacora->set_fecha(date("Y-m-d H:i:s"));
+                $resultado = $bitacora->incluir();
                 header('Location:?pagina=principal');
                 exit;
             }
