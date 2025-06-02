@@ -35,7 +35,14 @@ require_once("modelo/".$pagina.".php");
 		}
 		
 		elseif($accion=='registrar'){
-		    $respuesta = $o->registrar($_POST['id_servicios']);
+			$respuesta = $o->registrar(
+				$_POST['id_servicios'],
+				$_POST['servicios_codigo_servicio'],
+				$_POST['costo'],
+				$_POST['pago'],
+				$_POST['fecha_pago_servicio'],
+				$_POST['estado_registro']
+			);
 			echo json_encode($respuesta);
 	    }
 		exit; 
