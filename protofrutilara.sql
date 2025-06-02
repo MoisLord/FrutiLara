@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2025 a las 09:23:17
+-- Tiempo de generación: 02-06-2025 a las 09:41:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -34,6 +34,13 @@ CREATE TABLE `categoria` (
   `estado_registro` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id_categoria`, `codigo_categoria`, `descripcion_categoria`, `estado_registro`) VALUES
+(1, '87654321', 'bebida', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +54,13 @@ CREATE TABLE `cliente` (
   `direccion` varchar(45) NOT NULL,
   `estado_registro` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`cedula`, `nombre_apellido`, `telefono`, `direccion`, `estado_registro`) VALUES
+('90876543', 'Olga Suarez', '04247654321', 'cerca del negocio', 1);
 
 -- --------------------------------------------------------
 
@@ -110,6 +124,13 @@ CREATE TABLE `empleados` (
   `fechaNacimiento` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`cedula`, `nombre_apellido`, `telefono`, `correo`, `direccion`, `fechaNacimiento`) VALUES
+('30755344', 'Martin Tovar y Tovar', '04125554321', 'empleadoficticio@gmail.com', 'por ahi', '2002-02-02');
+
 -- --------------------------------------------------------
 
 --
@@ -122,18 +143,6 @@ CREATE TABLE `gastos_generales` (
   `prefacturacion_datos_salida` int(11) NOT NULL,
   `pago_servicios_datos_servicios` int(11) NOT NULL,
   `pago_empleados_datos_pago_empleados` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `gastos_generales_has_conciliacion_bancaria`
---
-
-CREATE TABLE `gastos_generales_has_conciliacion_bancaria` (
-  `gastos_generales_has_conciliacion_bancaria_id` int(11) NOT NULL,
-  `gastos_generales_id_gastos_generales` int(11) NOT NULL,
-  `conciliacion_bancaria_id_bancaria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -155,7 +164,8 @@ CREATE TABLE `marca` (
 
 INSERT INTO `marca` (`id_marca`, `codigo_marca`, `descripcion_marca`, `estado_registro`) VALUES
 (1, '4883477', 'Arroz Mary', 1),
-(2, '9277743', 'Bebida Toddy', 1);
+(2, '9277743', 'Bebida Toddy', 1),
+(3, '321654974', 'Salsa de tomate Heinz', 1);
 
 -- --------------------------------------------------------
 
@@ -231,6 +241,13 @@ CREATE TABLE `producto` (
   `estado_registro` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`codigo`, `id_modelo`, `id_categoria`, `marca_id_marca`, `unidades_de_medida_id_medidas`, `nombre`, `cantidad_total`, `minimo`, `maximo`, `nacionalidad_producto`, `estado_registro`) VALUES
+('098123666', 0, 1, 1, 2, 'Cocacola', '20 cajas', '1', '20', 'Estados Unidos', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -246,6 +263,13 @@ CREATE TABLE `proveedores` (
   `estado_registro` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`rif`, `documento`, `nombre`, `telefono`, `direccion`, `estado_registro`) VALUES
+('372585', 'Venezolano', 'Polar', '04121234567', 'fabrica la polar', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -257,6 +281,13 @@ CREATE TABLE `servicios` (
   `descripcion_servicio` varchar(45) NOT NULL,
   `estado_registro` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `servicios`
+--
+
+INSERT INTO `servicios` (`codigo_servicio`, `descripcion_servicio`, `estado_registro`) VALUES
+(987654321, 'mantenimiento', 1);
 
 -- --------------------------------------------------------
 
@@ -271,6 +302,14 @@ CREATE TABLE `unidades_de_medida` (
   `unidadMedAlt` varchar(45) NOT NULL,
   `estado_registro` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `unidades_de_medida`
+--
+
+INSERT INTO `unidades_de_medida` (`id_medidas`, `codigo_medida`, `unidadMedNormal`, `unidadMedAlt`, `estado_registro`) VALUES
+(1, '87654321', 'LITROS', 'CAJAS', 1),
+(2, '34527ert', 'LITROS', 'CAJAS', 1);
 
 -- --------------------------------------------------------
 
@@ -348,14 +387,6 @@ ALTER TABLE `gastos_generales`
   ADD KEY `fk_gastos_generales_pago_empleados1_idx` (`pago_empleados_datos_pago_empleados`);
 
 --
--- Indices de la tabla `gastos_generales_has_conciliacion_bancaria`
---
-ALTER TABLE `gastos_generales_has_conciliacion_bancaria`
-  ADD PRIMARY KEY (`gastos_generales_has_conciliacion_bancaria_id`),
-  ADD KEY `fk_gastos_generales_has_conciliacion_bancaria_conciliacion__idx` (`conciliacion_bancaria_id_bancaria`),
-  ADD KEY `fk_gastos_generales_has_conciliacion_bancaria_gastos_genera_idx` (`gastos_generales_id_gastos_generales`);
-
---
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
@@ -431,13 +462,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `nota_entrada`
@@ -455,7 +486,7 @@ ALTER TABLE `prefacturacion`
 -- AUTO_INCREMENT de la tabla `unidades_de_medida`
 --
 ALTER TABLE `unidades_de_medida`
-  MODIFY `id_medidas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_medidas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -489,13 +520,6 @@ ALTER TABLE `gastos_generales`
   ADD CONSTRAINT `fk_gastos_generales_pago_empleados1` FOREIGN KEY (`pago_empleados_datos_pago_empleados`) REFERENCES `pago_empleados` (`id_pago_empleados`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_gastos_generales_pago_servicios1` FOREIGN KEY (`pago_servicios_datos_servicios`) REFERENCES `pago_servicios` (`id_servicios`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_gastos_generales_prefacturacion1` FOREIGN KEY (`prefacturacion_datos_salida`) REFERENCES `prefacturacion` (`id_salida`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `gastos_generales_has_conciliacion_bancaria`
---
-ALTER TABLE `gastos_generales_has_conciliacion_bancaria`
-  ADD CONSTRAINT `fk_gastos_generales_has_conciliacion_bancaria_conciliacion_ba1` FOREIGN KEY (`conciliacion_bancaria_id_bancaria`) REFERENCES `conciliacion_bancaria` (`id_bancaria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_gastos_generales_has_conciliacion_bancaria_gastos_generales1` FOREIGN KEY (`gastos_generales_id_gastos_generales`) REFERENCES `gastos_generales` (`id_gastos_generales`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `nota_entrada`
