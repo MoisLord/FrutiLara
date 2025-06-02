@@ -75,6 +75,7 @@
               <li>Usuarios</a></li>
               <li>Reportes</li>
               <li>Manual del Sistema</a></li>
+              <li>Bitacora</a></li>
             </ul>
           </nav>
         </div>
