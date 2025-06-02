@@ -90,48 +90,41 @@ class pservicios extends datos{
 
 	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar, modificar y eliminar
 
-	function registrar($id_servicios,$servicios_codigo_servicio,$costo,$pago,$fecha_pago_servicio,$estado_registro){
+
+	function registrar($servicios_codigo_servicio, $descripcion_servicio, $estado_registro, $costo, $pago, $fecha_pago_servicio)
+	{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
-		try{
-		   $fecha = date('Y-m-d');
-		   $guarda = $co->query("insert into servicios (codigo_servicio, descripcion_servicio, estado_registro)
-		   values ('$servicios_codigo_servicio','$fecha_pago_servicio')");
-		   $lid = $co->lastInsertId(); //retorna el valor del campo
-		   //autoincremental
-		   
-		   //una vez que se tiene lleno el maestro de factura, se pasa a 
-		   //llenar el detalle de la venta
-		   
-		   //como los datos codigo_servicio, cantidad y precio son 
-		   //arreglos, los recorreresmo utilizando un for
-		   //para ello primero buscamos el tamaño del arreglos
-		   //y luego ubicamos cada posicion
-		   
-		   $tamano = count($id_servicios);
-		   
-		    for($i=0;$i<$tamano;$i++){
-			   $gd = $co->query("insert into `pago_servicios`(id_servicios, servicios_codigo_servicio,
-			   costo, pago, fecha_pago_servicio, estado_registro)
-			   values(
-			   '$lid',
-		       '$id_servicios[$i]',
-			   '$servicios_codigo_servicio[$i]',
-			   '$costo[$i]'
-			   '$pago[$i]'
-			   )");
-		   }
-		
-
-		   $r['resultado'] = 'registrar';
-		   $r['mensaje'] =  "Entrada de Inventario procesada, numero de entrada: $lid";
-		   
-		   
-		}	
-		catch(Exception $e){
+		try {
+			// Registrar en la tabla servicios
+			$p = $co->prepare("INSERT INTO servicios (codigo_servicio, descripcion_servicio, estado_registro)
+							   VALUES (:codigo_servicio, :descripcion_servicio, :estado_registro)");
+			$p->bindParam(':codigo_servicio', $servicios_codigo_servicio);
+			$p->bindParam(':descripcion_servicio', $descripcion_servicio);
+			$p->bindParam(':estado_registro', $estado_registro);
+			$p->execute();
+			$lid = $co->lastInsertId();
+	
+			// Registrar en la tabla pago_servicios
+			$tamano = count($costo); // Asume que $costo, $pago y $fecha_pago_servicio son arrays
+	
+			for ($i = 0; $i < $tamano; $i++) {
+				$p2 = $co->prepare("INSERT INTO pago_servicios (id_servicios, costo, pago, fecha_pago_servicio, estado_registro)
+									VALUES (:id_servicios, :costo, :pago, :fecha_pago_servicio, :estado_registro)");
+				$p2->bindParam(':id_servicios', $lid);
+				$p2->bindParam(':costo', $costo[$i]);
+				$p2->bindParam(':pago', $pago[$i]);
+				$p2->bindParam(':fecha_pago_servicio', $fecha_pago_servicio[$i]);
+				$p2->bindParam(':estado_registro', $estado_registro);
+				$p2->execute();
+			}
+	
+			$r['resultado'] = 'registrar';
+			$r['mensaje'] = "Entrada de servicios procesada, número de entrada: $lid";
+		} catch (Exception $e) {
 			$r['resultado'] = 'error';
-			$r['mensaje'] =  $e->getMessage();
+			$r['mensaje'] = $e->getMessage();
 		}
 		return $r;
 	}
