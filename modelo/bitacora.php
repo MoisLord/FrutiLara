@@ -235,7 +235,8 @@ class bitacora extends Datos2
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
 		if ($this->existe($this->id_bitacora)) {
-			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
+			$resultado = $co->query("SELECT id_bitacora FROM bitacora WHERE id_bitacora = " . $this->id_bitacora . "");
+
 			$respuesta = 0;
 			foreach ($resultado as $r) {
 				$respuesta = $r['id_bitacora'];
@@ -277,8 +278,8 @@ class bitacora extends Datos2
     $r = array();
     try {
         // Construir consulta base
-		$sql = "SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC";
-
+        $sql = "SELECT * from bitacora WHERE 1=1";
+        
         // Agregar condición por ID si está establecido
         if (!empty($this->id_bitacora)) {
             $sql .= " AND id_bitacora = :id_bitacora";
@@ -325,7 +326,7 @@ class bitacora extends Datos2
 		// se enviara la respuesta a la solicitud y el
 		// contenido de la respuesta
 		try {
-			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
+			$resultado = $co->query("SELECT * from bitacora WHERE id_bitacora = 0");
 			$respuesta = '';
 			if ($resultado) {
 				foreach ($resultado as $r) {
@@ -364,7 +365,7 @@ class bitacora extends Datos2
 		$r = array();
 		try {
 
-			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
+			$resultado = $co->query("Select * from bitacora where id_bitacora='$this->id_bitacora'");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if ($fila) {
 
