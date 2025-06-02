@@ -24,7 +24,7 @@ require_once("modelo/".$pagina.".php");
 	  
 	   //si existe creamos una intancia que es una variable local
 	  
-	  $o = new cliente(); //ahora nuestro objeto se llama $o y es una copia en memoria de la clase Cliente
+	  $cliente = new cliente(); //ahora nuestro objeto se llama $cliente y es una copia en memoria de la clase Cliente
 	  
 	  if(!empty($_POST)){
 		  
@@ -32,39 +32,39 @@ require_once("modelo/".$pagina.".php");
 		  $accion = $_POST['accion'];
 		  
 		  if($accion=='consultar'){
-			 echo  json_encode($o->consultar());  
+			 echo  json_encode($cliente->consultar());  
 		  }
 		  elseif($accion=='consultatr'){
-			 $o->set_cedula($_POST['cedula']); 
-			 echo  json_encode($o->consultatr());  
+			 $cliente->set_cedula($_POST['cedula']); 
+			 echo  json_encode($cliente->consultatr());  
 		  }
 
 		  elseif($accion=='eliminar'){
-			 $o->set_cedula($_POST['cedula']);
-			 echo  json_encode($o->eliminar());
+			 $cliente->set_cedula($_POST['cedula']);
+			 echo  json_encode($cliente->eliminar());
 		  }
 
 		  elseif($accion=='consultaDelete'){
-			$respuesta = $o->consultadelete();
+			$respuesta = $cliente->consultadelete();
 			echo json_encode($respuesta);
 		 }
 
 		 elseif($accion=='restaurar'){
-			$o->set_cedula($_POST['cedula']);
-			 echo  json_encode($o->restaurar());
+			$cliente->set_cedula($_POST['cedula']);
+			 echo  json_encode($cliente->restaurar());
 		 }
 		 
 		  else{		  
-			  $o->set_cedula($_POST['cedula']);
-			  $o->set_nombre_apellido($_POST['nombre_apellido']);
-			  $o->set_telefono($_POST['telefono']);
-			  $o->set_direccion($_POST['direccion']);
-			  $o->set_estado_registro($_POST['estado_registro']);
+			  $cliente->set_cedula($_POST['cedula']);
+			  $cliente->set_nombre_apellido($_POST['nombre_apellido']);
+			  $cliente->set_telefono($_POST['telefono']);
+			  $cliente->set_direccion($_POST['direccion']);
+			  $cliente->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
-				echo  json_encode($o->incluir());
+				echo  json_encode($cliente->incluir());
 			  }
 			  elseif($accion=='modificar'){
-				echo  json_encode($o->modificar());
+				echo  json_encode($cliente->modificar());
 			  }
 		  }
 		  exit;

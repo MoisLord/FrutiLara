@@ -309,7 +309,7 @@ function enviaAjax(datos){
 						lee.resultado == "modificar" ||
 						lee.resultado == "eliminar" ||
 						lee.resultado == "restaurar" ||
-						lee.resultado == "consultadeDelete") {
+						lee.resultado == "consultaDelete") {
 					   muestraMensaje(lee.mensaje);
 					   limpia();
 					   consultar();
