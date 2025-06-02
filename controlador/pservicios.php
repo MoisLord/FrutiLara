@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	
 	$bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$resultado = $bitacora->registrarAccion('pago de servicios', 'Ingreso a Pago de Servicios');
+	$resultado = $bitacora->incluir('pago de servicios', 'Ingreso a Pago de Servicios');
 }
 
 //llamada al archivo que contiene la clase
