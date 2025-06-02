@@ -4,9 +4,9 @@
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 
-    $bitacora = new ContBitacora();
+    $bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-    $bitacora->registrarAccion($_SESSION['usuario'], 'Notas de Entrada', 'Ingresó al módulo de Notas de Entrada');
+    $bitacora->incluir($_SESSION['usuario'], 'Notas de Entrada', 'Ingresó al módulo de Notas de Entrada');
 }
 //llamada al archivo que contiene la clase
 //usuarios, en ella estara el codigo que me //permitirá
