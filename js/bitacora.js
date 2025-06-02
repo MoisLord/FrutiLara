@@ -27,7 +27,6 @@ $(document).ready(function () {
     // Evento para seleccionar registros de la tabla
     $('#tabla-bitacora tbody').on('click', 'tr', function() {
         $(this).toggleClass('table-primary');
-        // Puedes agregar más lógica de selección aquí si es necesario
     });
 });
 
