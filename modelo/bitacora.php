@@ -325,7 +325,7 @@ class bitacora extends Datos2
 		// se enviara la respuesta a la solicitud y el
 		// contenido de la respuesta
 		try {
-			$resultado = $co->query("SELECT * from bitacora WHERE id_bitacora = 0");
+			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
 			$respuesta = '';
 			if ($resultado) {
 				foreach ($resultado as $r) {
