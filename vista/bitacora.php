@@ -27,6 +27,9 @@ require_once(__DIR__.'/../modelo/session.php');
                     <button type="submit" class="btn btn-success">Filtrar</button>
                     <button type="button" id="limpiar-filtros" class="btn btn-secondary ms-2">Limpiar</button>
                 </div>
+                <div class="col-md-3">	
+				   <a href="." class="btn btn-success">REGRESAR</a>
+			</div>
             </div>
         </form>
         <hr class="border border-success border-2 opacity-50">
