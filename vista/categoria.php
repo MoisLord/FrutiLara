@@ -44,7 +44,7 @@ CATEGORIAS DE PRODUCTOS
 							<option value="KILOGRAMOS">Kilogramos</option>
 							<option value="MILIGRAMOS">Miligramos</option>
 							<option value="LITROS">Litros</option>
-							<option value="MILITROS">Militros</option>
+							<option value="MILILITROS">Mililitros</option>
 							<option value="UNIDADES">Unidades</option>
 					   </select>
 					</div>
