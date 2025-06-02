@@ -96,7 +96,8 @@ class bitacora extends Datos2
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try {
 
-			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
+			$resultado = $co->query("Select * from bitacora where id_bitacora='$id_bitacora'");
+			
 
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if ($fila) {
@@ -365,7 +366,7 @@ class bitacora extends Datos2
 		$r = array();
 		try {
 
-			$resultado = $co->query("Select * from bitacora where id_bitacora='$this->id_bitacora'");
+			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if ($fila) {
 
