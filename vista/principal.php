@@ -72,10 +72,10 @@
               <li>Inventario</li>
               <li>Pago del Empleado</a></li>
               <li>Pago de Servicios</a></li>
+              <li>Conciliación Bancaria</a></li>
               <li>Usuarios</a></li>
               <li>Reportes</li>
               <li>Manual del Sistema</a></li>
-              <li>Bitacora</a></li>
             </ul>
           </nav>
         </div>

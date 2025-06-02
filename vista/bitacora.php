@@ -1,15 +1,13 @@
 <?php
 require_once(__DIR__.'/../comunes/encabezado.php');
-require_once(__DIR__.'/../modelo/session.php');
 ?>
 <title>BITÁCORA DEL SISTEMA</title>
 
 <body>
-    <!--Aqui coloque el Contenedor del Texto del Modulo Marca-->
-    <div class="container text-center h2 text-success">
-    </div>
+    <?php require_once(__DIR__.'/../comunes/menu.php'); ?>
+
     <div class="container mt-4">
-        <h2 class="text-center text-success">BITÁCORA</h2>
+        <h2 class="text-center text-success">REGISTROS DE BITÁCORA</h2>
         <hr class="border border-success border-2 opacity-50">
 
         <!-- Filtro por fechas -->
@@ -29,14 +27,14 @@ require_once(__DIR__.'/../modelo/session.php');
                 </div>
             </div>
         </form>
-        <hr class="border border-success border-2 opacity-50">
 
         <!-- Tabla de registros -->
         <div class="table-responsive">
             <table id="tabla-bitacora" class="table table-striped table-hover">
                 <thead class="bg-success text-white">
                     <tr>
-                        <th>id bitacora</th>
+                        <th>ID</th>
+                        <th>Cedula</th>
                         <th>Usuario</th>
                         <th>Módulo</th>
                         <th>Acción</th>
@@ -52,6 +50,6 @@ require_once(__DIR__.'/../modelo/session.php');
     </div>
 
     <?php require_once(__DIR__ . '/../comunes/body.php'); ?>
-    <script src="../js/bitacora.js"></script>
+    <script src="js/bitacora.js"></script>
 </body>
 </html>

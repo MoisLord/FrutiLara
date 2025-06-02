@@ -82,6 +82,12 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="conciliacion">
+                      <img src="iconos/conciliacion.svg" alt="conciliacion" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>CONCILIACIÓN BANCARIA</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="usuario">
                       <img src="iconos/usuarios.svg" alt="usuarios" style="width:25px; height:25px; margin-bottom:3px;">
                       <span>USUARIOS</span>
@@ -106,7 +112,8 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="vista/bitacora.php">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
+                      href="vista/bitacora.php">
                       <img src="iconos/bitacora.svg" alt="bitacora" style="width:25px; height:25px; margin-bottom:3px;">
                       <span>BITACORA</span>
                     </a>

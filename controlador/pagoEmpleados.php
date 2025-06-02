@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
   //REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
 $bitacora = new bitacora();
 $bitacora->set_usuario($_SESSION['usuario']);
-$resultado = $bitacora->incluir('pago a empleados', 'Ingreso a Pago de Empleados');
+$resultado = $bitacora->registrarAccion('pago a empleados', 'Ingreso a Pago de Empleados');
 }
 
 

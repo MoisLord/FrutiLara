@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 //REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
 $bitacora = new bitacora();
 $bitacora->set_usuario($_SESSION['usuario']);
-$resultado = $bitacora->incluir('proveedor', 'Ingreso a Proveedores');
+$resultado = $bitacora->registrarAccion('proveedor', 'Ingreso a Proveedores');
 
 //llamada al archivo que contiene la clase
 //usuarios, en ella estara el codigo que me //permitirá

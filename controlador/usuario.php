@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	//REGISTRO EN BITÁCORA: solo si la sesión está activa y hay un usuario definido
 $bitacora = new bitacora();
 $bitacora->set_usuario($_SESSION['usuario']);
-$resultado = $bitacora->incluir('usuario', 'Ingreso a Usuarios');
+$resultado = $bitacora->registrarAccion('usuario', 'Ingreso a Usuarios');
 }
 
 //llamada al archivo que contiene la clase

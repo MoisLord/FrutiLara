@@ -1,19 +1,18 @@
 <?php
+
 // Solo iniciar sesión si no está activa
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 
 	$bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$bitacora->set_usuario($_SESSION['usuario']);
-	$bitacora->set_modulo('bitacora');
-	$bitacora->set_accion('Ingreso a Bitácora');
-	$bitacora->set_fecha(date("Y-m-d H:i:s"));
-	$resultado = $bitacora->incluir('marca', 'Ingreso a Marcas');
+	$resultado = $bitacora->registrarAccion('marca', 'Ingreso a Marcas');
 }
 
 
+
 //llamada al archivo que contiene la clase
+//Marca, en ella estara el modelo que me permitirá
 //guardar osea incluir, consultar, eliminar y modificar dentro de la base de datos
 
 

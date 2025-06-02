@@ -7,7 +7,7 @@ require_once('modelo/datos.php');
 class categoria extends datos{
 	
 	//Se declaran los atributos (variables) que describen la clase
-	private $id_categoria; //Este campo es autoincremental, no se debe colocar en el formulario
+	
 	private $codigo_categoria; 
 	private $descripcion_categoria;
 	private $unidadMedNormal;
@@ -17,10 +17,7 @@ class categoria extends datos{
 	
 	//Se añaden los metodos (funciones) que me permitan leer (get) y colocar (set)
 	//Comienzo del sector de metodos de set
-
-	function set_id_categoria($valor){
-		$this->id_categoria = $valor;
-	}
+	
 
 	function set_codigo_categoria($valor){
 		$this->codigo_categoria = $valor; 
@@ -45,9 +42,6 @@ class categoria extends datos{
 	//Final del sector de metodos de set
 
 	//Comienzo del sector de metodos de get
-	function get_id_categoria(){
-		return $this->id_categoria;
-	}
 	
 	function get_codigo_categoria(){
 		return $this->codigo_categoria;
@@ -73,49 +67,57 @@ class categoria extends datos{
 	
 	//Creación de los metodos para incluir, consultar y eliminar
 	//Comienzo del sector del metodo "incluir"
-	// Modificar el método incluir para que solo maneje datos de categoría
-    function incluir() {
-        if(!$this->existe($this->codigo_categoria)) {
-            $co = $this->conecta();
-            $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $r = array();
-            
-            try {
-                $p = $co->prepare("INSERT INTO categoria(
-                    codigo_categoria,
-                    descripcion_categoria,
-                    estado_registro
-                ) VALUES(
-                    :codigo_categoria,
-                    :descripcion_categoria,
-                    :estado_registro
-                )");
-                
-                $p->bindParam(':codigo_categoria', $this->codigo_categoria);        
-                $p->bindParam(':descripcion_categoria', $this->descripcion_categoria);
-                $p->bindParam(':estado_registro', $this->estado_registro);
-                
-                $p->execute();
-                
-                // Obtener el ID generado
-                $this->id_categoria = $co->lastInsertId();
-                
-                $r['resultado'] = 'incluir';
-                $r['mensaje'] = 'Categoría registrada correctamente';
-                $r['id_categoria'] = $this->id_categoria; // Devolver el ID para usarlo en unidades de medida
-                
-            } catch(Exception $e) {
-                $r['resultado'] = 'error';
-                $r['mensaje'] = $e->getMessage();
-            }
-        } else {
-            $r['resultado'] = 'incluir';
-            $r['mensaje'] = 'Ya existe la categoría';
-        }
-        return $r;
-    }
+	function incluir(){
+		
+		
+		//Se consulta el campo clave, se comprueba que "codigo_categoria" no exista, es decir, se puede incluir
+		
+		
+		if(!$this->existe($this->codigo_categoria)){
+			//Se llama a la funcion conecta 
+			$co = $this->conecta();
+			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			//Se ejecuta el sql
+			$r = array();
+			try {
+				
+					$p = $co->prepare("Insert into categoria(
+						codigo_categoria,
+						descripcion_categoria,
+						unidadMedNormal,
+                        unidadMedAlt,
+						estado_registro
+						)
+						Values(
+						:codigo_categoria,
+						:descripcion_categoria,
+						:unidadMedNormal,
+                        :unidadMedAlt,
+						:estado_registro
+						)");
+					$p->bindParam(':codigo_categoria',$this->codigo_categoria);		
+					$p->bindParam(':descripcion_categoria',$this->descripcion_categoria);	
+					$p->bindParam(':unidadMedNormal',$this->unidadMedNormal);
+                    $p->bindParam(':unidadMedAlt',$this->unidadMedAlt);
+					$p->bindParam(':estado_registro',$this->estado_registro);
+					
+					$p->execute();
+					
+						$r['resultado'] = 'incluir';
+			            $r['mensaje'] =  'La Categoria ha sido Registrada';
+			} catch(Exception $e) {
+				$r['resultado'] = 'error';
+			    $r['mensaje'] =  $e->getMessage();
+			}
+		}
+		else{
+			$r['resultado'] = 'incluir';
+			$r['mensaje'] =  'Ya existe la categoria';
+		}
+		return $r;
+		
+	}
 	//Finalización del sector del metodo "incluir"
-	
 	//Comienzo del sector del metodo "modificar"
 	function modificar(){
 		$co = $this->conecta();
@@ -124,7 +126,6 @@ class categoria extends datos{
 		if($this->existe($this->codigo_categoria)){
 			try {
 				$p = $co->prepare("Update categoria set 
-						id_categoria = :id_categoria,
 						descripcion_categoria = :descripcion_categoria,
 						unidadMedNormal = :unidadMedNormal,
                         unidadMedAlt = :unidadMedAlt,

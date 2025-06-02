@@ -4,9 +4,9 @@
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 
-	$bitacora = new bitacora();
+	$bitacora = new ContBitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$bitacora->incluir($_SESSION['usuario'], 'Empleado', 'Ingresó al módulo de Empleado');
+	$bitacora->registrarAccion($_SESSION['usuario'], 'Empleado', 'Ingresó al módulo de Empleado');
 }
 //llamada al archivo que contiene la clase
 //empleados, en ella estara el codigo que me permitirá
