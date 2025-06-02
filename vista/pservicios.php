@@ -27,7 +27,7 @@
 				<div class="row">
 					<div class="col-md-8">
 						<button type="button" class="btn btn-success" id="registrar" name="registrar">REGISTRAR</button>
-						<input type="button" class="btn btn-success" id="listadoservicios" name="listadoservicios" value="LISTADO DE SERVICIOS"/>
+						<input type="button" class="btn btn-success" id="listadodeservicios" name="listadoservicios" value="LISTADO DE SERVICIOS"/>
 
 						<a href="." class="btn btn-success">REGRESAR</a>
 					</div>
