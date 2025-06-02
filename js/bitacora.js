@@ -118,7 +118,7 @@ function inicializarDataTable() {
                 previous: "Anterior"
             }
         },
-        order: [[4, "desc"]], // Ordena por fecha descendente
+        order: [[0, "desc"]], // Ordena por id descendente (más reciente primero)
         responsive: true,
         autoWidth: false,
         pageLength: 10
