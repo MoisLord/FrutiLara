@@ -96,8 +96,7 @@ class bitacora extends Datos2
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try {
 
-			$resultado = $co->query("Select * from bitacora where id_bitacora='$id_bitacora'");
-
+			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
 
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if ($fila) {
@@ -117,7 +116,6 @@ class bitacora extends Datos2
 	{
 		//ya hecho la base de datos y la funcion conecta dentro de la clase
 		//datos, ahora hay que ejecutar las operaciones para realizar las consultas 
-
 		//Lo primero que hay que hacer es consultar por el campo id_marca
 		//en este caso la de id_marca, para ello se creo la funcion existe
 		//que retorna true en caso de exitir el registro
@@ -237,8 +235,7 @@ class bitacora extends Datos2
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$r = array();
 		if ($this->existe($this->id_bitacora)) {
-			$resultado = $co->query("SELECT id_bitacora FROM bitacora WHERE id_bitacora = " . $this->id_bitacora . "");
-
+			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
 			$respuesta = 0;
 			foreach ($resultado as $r) {
 				$respuesta = $r['id_bitacora'];
@@ -280,8 +277,8 @@ class bitacora extends Datos2
     $r = array();
     try {
         // Construir consulta base
-        $sql = "SELECT * from bitacora WHERE 1=1";
-        
+		$sql = "SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC";
+
         // Agregar condición por ID si está establecido
         if (!empty($this->id_bitacora)) {
             $sql .= " AND id_bitacora = :id_bitacora";
@@ -367,7 +364,7 @@ class bitacora extends Datos2
 		$r = array();
 		try {
 
-			$resultado = $co->query("Select * from bitacora where id_bitacora='$this->id_bitacora'");
+			$resultado = $co->query("SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC");
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
 			if ($fila) {
 
