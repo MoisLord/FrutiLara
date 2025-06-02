@@ -279,8 +279,8 @@ class bitacora extends Datos2
     $r = array();
     try {
         // Construir consulta base
-        $sql = "SELECT * from bitacora WHERE 1=1";
-        
+		$sql = "SELECT id_bitacora AS id, usuario, modulo, accion, fecha FROM bitacora ORDER BY id_bitacora DESC";
+
         // Agregar condición por ID si está establecido
         if (!empty($this->id_bitacora)) {
             $sql .= " AND id_bitacora = :id_bitacora";
