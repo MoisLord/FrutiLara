@@ -155,7 +155,7 @@ PAGO DEL EMPLEADO
 
 <!--fin de seccion modal-->
 <?php require_once("comunes/body.php"); ?>
-<script type="text/javascript" src="js/salida.js"></script>
+<script type="text/javascript" src="js/PagoEmpleados.js"></script>
 
 </body>
 </html>
