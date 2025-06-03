@@ -2,7 +2,114 @@
 // lista la vista (cargado todo el texto)
 // ejecute la funcion anonima function()
 $(document).ready(function(){
-	// Si estoy aca es porque la 
+	// Si estoy aca es porque la     // js/PagoEmpleados.js
+    
+    $(document).ready(function(){
+        // Cargar la lista de empleados al cargar la vista
+        carga_empleados();
+    
+        // Botón para mostrar el modal de empleados
+        $("#listadodeclientes").on("click", function(){
+            $("#modalclientes").modal("show");
+        });
+    
+        // Evento para seleccionar un empleado del listado (al hacer click en una fila)
+        $("#listadoclientes").on("click", "tr", function(){
+            colocaempleado($(this));
+            $("#modalclientes").modal("hide");
+        });
+    
+        // Evento para registrar el pago
+        $("#registrar").on("click", function(){
+            if(existeempleado()){
+                $('#accion').val('registrar');
+                var datos = new FormData($('#f')[0]);
+                enviaAjax(datos);
+            } else {
+                muestraMensaje("Debe ingresar una cédula registrada !!!");
+            }
+        });
+    });
+    
+    // Cargar empleados desde el backend
+    function carga_empleados(){
+        var datos = new FormData();
+        datos.append('accion', 'listadodeclientes');
+        enviaAjax(datos);
+    }
+    
+    // Verifica si el empleado existe en el listado
+    function existeempleado(){
+        var codigo = $("#idcliente").val();
+        var existe = false;
+        $("#listadoclientes tr").each(function(){
+            if(codigo == $(this).find("td:eq(0)").text()){
+                existe = true;
+            }
+        });
+        return existe;
+    }
+    
+    // Coloca los datos del empleado seleccionado en los campos del formulario
+    function colocaempleado(linea){
+        $("#idcliente").val($(linea).find("td:eq(0)").text());
+        $("#cedulacliente").val($(linea).find("td:eq(1)").text());
+        $("#datosdelcliente").html(
+            $(linea).find("td:eq(1)").text() + " " +
+            $(linea).find("td:eq(2)").text() + " " +
+            $(linea).find("td:eq(3)").text()
+        );
+    }
+    
+    // Muestra un mensaje en el modal de aviso
+    function muestraMensaje(mensaje){
+        $("#cantidadModal .modal-body").html(mensaje);
+        $("#cantidadModal").modal("show");
+        setTimeout(function() {
+            $("#cantidadModal").modal("hide");
+        }, 3000);
+    }
+    
+    // Envía datos por AJAX y procesa la respuesta
+    function enviaAjax(datos){
+        $.ajax({
+            async: true,
+            url: '', // La misma página
+            type: 'POST',
+            contentType: false,
+            data: datos,
+            processData: false,
+            cache: false,
+            beforeSend: function(){
+                // Puedes mostrar un loader aquí si lo deseas
+            },
+            timeout: 10000,
+            success: function(respuesta){
+                try {
+                    var lee = JSON.parse(respuesta);
+                    if(lee.resultado == 'listadodeclientes'){
+                        $('#listadoclientes').html(lee.mensaje);
+                    } else if(lee.resultado == 'registrar'){
+                        muestraMensaje(lee.mensaje);
+                    } else if(lee.resultado == 'error'){
+                        muestraMensaje(lee.mensaje);
+                    }
+                } catch(e){
+                    alert("Error en JSON: " + e.name);
+                }
+            },
+            error: function(request, status, err){
+                if (status == "timeout") {
+                    muestraMensaje("Servidor ocupado, intente de nuevo");
+                } else {
+                    muestraMensaje("ERROR: <br/>" + request + status + err);
+                }
+            },
+            complete: function(){
+                // Oculta loader si lo usaste
+            }
+        });
+    }
 	// vista cargo correctamente por lo que ahora
 	// debo sacar de la base de datos los elementos que se mostraran
 	

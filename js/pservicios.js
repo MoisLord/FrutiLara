@@ -16,12 +16,6 @@ $(document).ready(function(){
 		$("#modalservicios").modal("show");
 	});
 	
-	//boton para levantar modal de productos
-	$("#listadodeproductos").on("click",function(){
-		$("#modalproductos").modal("show");
-	});
-	
-	
 	//evento keyup de input cedulacliente	
 	$("#codigoservicios").on("keyup",function(){
 		var codigo = $(this).val();
