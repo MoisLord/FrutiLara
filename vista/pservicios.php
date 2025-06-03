@@ -101,7 +101,7 @@
 									<th>X</th>
 									<th>Servicio</th>
 									<th>Costo</th>
-									<th>M Pago</th>
+									<th>Metodo de Pago</th>
 									<th>Fecha del pago</th>
 								</tr>
 							</thead>
