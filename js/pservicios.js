@@ -13,74 +13,50 @@ $(document).ready(function(){
         var encontro = false;
         
         $("#listadoservicios tr").each(function(){
-            if(codigo == $(this).find("td:eq(0)").text()){
+            if(codigo == $(this).find("td:eq(0)").text()){ // Busca por código de servicio
                 colocaservicios($(this));
                 encontro = true;
             } 
         });
         
-        if(!encontro && codigo != ""){
-            muestraMensaje("Servicio no encontrado");
+        if(!encontro){
+            $("#datosdelservicio").html("");
         }
     });
     
-    // Evento para agregar servicio a la tabla temporal
-    $("#agregar").on("click", function(){
-        if(validarCamposServicio()){
-            agregarServicioATabla();
-            limpiarCamposServicio();
-        }
-    });
-    
-    // Evento para registrar todos los servicios en BD
+    // Evento para registrar el pago de servicio
     $("#registrar").on("click", function(){
-        if($("#pservicios tr").length > 0){
-            registrarServicios();
+        if(existeservicio() == true){
+            // Agregar el servicio a la tabla antes de enviar
+            agregarServicioATabla();
+            
+            $('#accion').val('registrar');
+            var datos = new FormData($('#f')[0]);
+            
+            enviaAjax(datos);
         }
         else{
-            muestraMensaje("Debe agregar al menos un servicio para registrar");
+            muestraMensaje("Debe ingresar un servicio válido !!!");
         }
     });
 });
 
-// Función para validar campos del servicio
-function validarCamposServicio(){
-    var valido = true;
-    
-    if($("#codigoservicios").val() == ""){
-        muestraMensaje("Debe seleccionar un servicio");
-        valido = false;
-    }
-    else if($("#costo").val() == "" || isNaN($("#costo").val())){
-        muestraMensaje("Debe ingresar un costo válido");
-        valido = false;
-    }
-    else if($("#fservicio").val() == ""){
-        muestraMensaje("Debe seleccionar una fecha de pago");
-        valido = false;
-    }
-    
-    return valido;
-}
-
-// Función para agregar servicio a la tabla temporal
+// Función para agregar el servicio a la tabla visual
 function agregarServicioATabla() {
     var servicio = $("#datosdelservicio").text();
-    var codigo_servicio = $("#codigoservicios").val();
-    var id_servicio = $("#idservicios").val();
+    var codigo = $("#codigoservicios").val();
     var costo = $("#costo").val();
     var metodoPago = $("#spago").val();
     var fechaPago = $("#fservicio").val();
     
     // Crear la fila para la tabla
     var fila = `
-        <tr data-id="${id_servicio}" data-codigo="${codigo_servicio}">
+        <tr>
             <td>
                 <button type="button" class="btn btn-danger" onclick="eliminarFila(this)">X</button>
             </td>
             <td>
-                <input type="hidden" name="id_servicios[]" value="${id_servicio}">
-                <input type="hidden" name="servicios_codigo_servicio[]" value="${codigo_servicio}">
+                <input type="hidden" name="id_servicios[]" value="${codigo}">
                 ${servicio}
             </td>
             <td>
@@ -102,30 +78,12 @@ function agregarServicioATabla() {
     $("#pservicios").append(fila);
 }
 
-// Función para limpiar campos después de agregar
-function limpiarCamposServicio() {
-    $("#codigoservicios").val("");
-    $("#idservicios").val("");
-    $("#costo").val("");
-    $("#datosdelservicio").html("");
-}
-
-// Función para registrar servicios en BD
-function registrarServicios() {
-    if(confirm("¿Está seguro que desea registrar estos pagos de servicios?")){
-        $('#accion').val('registrar');
-        var datos = new FormData($('#f')[0]);
-        
-        enviaAjax(datos);
-    }
-}
-
-// Función para eliminar fila de la tabla
+// Función para eliminar una fila de la tabla
 function eliminarFila(boton) {
     $(boton).closest('tr').remove();
 }
 
-// Función para cargar servicios desde BD
+// Función para cargar los servicios desde el servidor
 function carga_servicios(){
     var datos = new FormData();
     datos.append('accion', 'listadoservicios');
@@ -146,15 +104,15 @@ function existeservicio(){
     return existe;
 }
 
-// Función para colocar datos del servicio en el formulario
+// Función para colocar los datos del servicio en el formulario
 function colocaservicios(linea){
     $("#codigoservicios").val($(linea).find("td:eq(0)").text());
-    $("#idservicios").val($(linea).find("td:eq(0)").text());
+    $("#idservicios").val($(linea).find("td:eq(0)").text()); // Asumiendo que el ID es el mismo que el código
     $("#datosdelservicio").html($(linea).find("td:eq(1)").text());
     $("#modalservicios").modal("hide");
 }
 
-// Función para mostrar mensajes
+// Función para mostrar mensajes al usuario
 function muestraMensaje(mensaje){
     $("#contenidodemodal").html(mensaje);
     $("#mostrarmodal").modal("show");
@@ -163,7 +121,7 @@ function muestraMensaje(mensaje){
     }, 5000);
 }
 
-// Función AJAX
+// Función para enviar datos via AJAX
 function enviaAjax(datos){
     $.ajax({
         async: true,
@@ -180,17 +138,19 @@ function enviaAjax(datos){
         success: function(respuesta) {
             try {
                 var lee = JSON.parse(respuesta);    
+                console.log(lee.resultado);
                 
                 if(lee.resultado == 'listadoservicios'){
                     $('#listadoservicios').html(lee.mensaje);
                 }
                 else if(lee.resultado == 'registrar'){
                     muestraMensaje(lee.mensaje);
-                    // Limpiar la tabla después de registrar
-                    $("#pservicios").empty();
-                    // Limpiar campos del formulario
-                    limpiarCamposServicio();
+                    // No limpiar la tabla, solo los campos del formulario
+                    $("#codigoservicios").val("");
+                    $("#idservicios").val("");
+                    $("#costo").val("");
                     $("#fservicio").val("");
+                    $("#datosdelservicio").html("");
                 }
                 else if(lee.resultado == 'error'){
                     muestraMensaje(lee.mensaje);
