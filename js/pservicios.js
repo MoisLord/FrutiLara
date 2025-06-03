@@ -27,6 +27,9 @@ $(document).ready(function(){
     // Evento para registrar el pago de servicio
     $("#registrar").on("click", function(){
         if(existeservicio() == true){
+            // Agregar el servicio a la tabla antes de enviar
+            agregarServicioATabla();
+            
             $('#accion').val('registrar');
             var datos = new FormData($('#f')[0]);
             
@@ -37,6 +40,48 @@ $(document).ready(function(){
         }
     });
 });
+
+// Función para agregar el servicio a la tabla visual
+function agregarServicioATabla() {
+    var servicio = $("#datosdelservicio").text();
+    var codigo = $("#codigoservicios").val();
+    var costo = $("#costo").val();
+    var metodoPago = $("#spago").val();
+    var fechaPago = $("#fservicio").val();
+    
+    // Crear la fila para la tabla
+    var fila = `
+        <tr>
+            <td>
+                <button type="button" class="btn btn-danger" onclick="eliminarFila(this)">X</button>
+            </td>
+            <td>
+                <input type="hidden" name="id_servicios[]" value="${codigo}">
+                ${servicio}
+            </td>
+            <td>
+                <input type="hidden" name="costo[]" value="${costo}">
+                ${costo}
+            </td>
+            <td>
+                <input type="hidden" name="pago[]" value="${metodoPago}">
+                ${metodoPago}
+            </td>
+            <td>
+                <input type="hidden" name="fecha_pago_servicio[]" value="${fechaPago}">
+                ${fechaPago}
+            </td>
+        </tr>
+    `;
+    
+    // Agregar la fila a la tabla
+    $("#pservicios").append(fila);
+}
+
+// Función para eliminar una fila de la tabla
+function eliminarFila(boton) {
+    $(boton).closest('tr').remove();
+}
 
 // Función para cargar los servicios desde el servidor
 function carga_servicios(){
@@ -100,8 +145,11 @@ function enviaAjax(datos){
                 }
                 else if(lee.resultado == 'registrar'){
                     muestraMensaje(lee.mensaje);
-                    // Limpiar el formulario después de registrar
-                    $("#f")[0].reset();
+                    // No limpiar la tabla, solo los campos del formulario
+                    $("#codigoservicios").val("");
+                    $("#idservicios").val("");
+                    $("#costo").val("");
+                    $("#fservicio").val("");
                     $("#datosdelservicio").html("");
                 }
                 else if(lee.resultado == 'error'){
