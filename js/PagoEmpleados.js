@@ -17,10 +17,10 @@ $(document).ready(function(){
 	});
 	
 	//evento keyup de input cedulacliente	
-	$("#codigoservicios").on("keyup",function(){
+	$("#cedulacliente").on("keyup",function(){
 		var codigo = $(this).val();
 		var encontro = false;
-		$("#listadoservicios tr").each(function(){
+		$("#listadodeclientes tr").each(function(){
 			if(codigo == $(this).find("td:eq(1)").text()){
 				colocaservicios($(this));
 				encontro = true;
@@ -29,17 +29,7 @@ $(document).ready(function(){
 		if(!encontro){
 			$("#datosdelservicio").html("");
 		}
-	});	
-	
-	//evento keyup de input codigoproducto
-	$("#codigoproducto").on("keyup",function(){
-		var codigo = $(this).val();
-		$("#listadoproductos tr").each(function(){
-			if(codigo == $(this).find("td:eq(1)").text()){
-				colocaproducto($(this));
-			}
-		});
-	});	
+	});		
 	
 	//evento click de boton facturar
 	$("#registrar").on("click",function(){
@@ -51,18 +41,18 @@ $(document).ready(function(){
 				enviaAjax(datos);
 			}
 			else{
-				muestraMensaje("Debe agregar algun producto al inventario !!!");
+				muestraMensaje("Debe agregar algun empleado al inventario !!!");
 			}
 		}
 		else{
-			muestraMensaje("Debe ingresar un proveedor registrado !!!");
+			muestraMensaje("Debe ingresar una cedula registrada !!!");
 		}
 	});
 		
 		
 	});
 	
-	function carga_servicios(){
+	function carga_empleados(){
 		// para cargar la lista de clientes
 		// utilizaremos una peticion ajax
 		// por lo que usaremos un objeto llamado 
@@ -72,35 +62,16 @@ $(document).ready(function(){
 		
 		var datos = new FormData();
 		//a ese datos le añadimos la informacion a enviar
-		datos.append('accion','listadoservicios'); //le digo que me muestre un listado de aulas
+		datos.append('accion','listadodeclientes'); //le digo que me muestre un listado de aulas
 		//ahora se envia el formdata por ajax
 		enviaAjax(datos);
 	}
-	function carga_productos(){
-		
-		
-		var datos = new FormData();
-		
-		datos.append('accion','listadoproductos'); //le digo que me muestre un listado de aulas
-		
-		enviaAjax(datos);
-	}
 	
-	//function para saber si selecciono algun productos
-	function verificaproductos(){
+	//function para buscar si existe el empleado
+	function existeempleado(){
+		var codigo = $("#cedulacliente").val();
 		var existe = false;
-		if($("#entrada tr").length > 0){
-			existe = true;
-		}
-		return existe;
-	}
-	//fin de verificar si selecciono procductos
-	
-	//function para buscar si existe el cliente 
-	function existeservicio(){
-		var codigo = $("#codigoservicios").val();
-		var existe = false;
-		$("#listadoservicios tr").each(function(){
+		$("#listadodeclientes tr").each(function(){
 			
 			if(codigo == $(this).find("td:eq(1)").text()){
 				existe = true;
@@ -110,10 +81,10 @@ $(document).ready(function(){
 		return existe;
 		
 	}
-	//fin de funcion existecliente
+	//fin de funcion existeempleado
 	
 	//funcion para colocar los productos
-	function colocaproducto(linea){
+	function colocaempleado(linea){
 		var id = $(linea).find("td:eq(0)").text();
 		var encontro = false;
 		
@@ -190,14 +161,14 @@ $(document).ready(function(){
 	
 	//funcion para colocar datos del cliente en pantalla
 	function colocaservicios(linea){
-		$("#codigoservicios").val($(linea).find("td:eq(1)").text());
-		$("#idservicios").val($(linea).find("td:eq(0)").text());
-		$("#datosdelservicio").html($(linea).find("td:eq(2)").text()+
+		$("#cedulacliente").val($(linea).find("td:eq(1)").text());
+		$("#idcliente").val($(linea).find("td:eq(0)").text());
+		$("#datosdelcliente").html($(linea).find("td:eq(2)").text()+
 		"  "+$(linea).find("td:eq(3)").text()+"  "+
 		$(linea).find("td:eq(4)").text());
 	}
 	
-	//fin de colocar datos del cliente
+	//fin de colocar datos del empleado
 	
 	
 	
@@ -275,17 +246,13 @@ $(document).ready(function(){
 					// error
 					var lee = JSON.parse(respuesta);	
 					console.log(lee.resultado);
-					if(lee.resultado=='listadoservicios'){
+					if(lee.resultado=='listadodeclientes'){
 						
 						//si el servidor retorno como
-						// resultado listadoclientes significa
+						// resultado listadodeclientes significa
 						// que se obtuvieron datos del json
 						// y se colocan esos resultados en la vista
-						$('#listadoservicios').html(lee.mensaje);
-					}
-					else if(lee.resultado=='listadoproductos'){
-						
-						$('#listadoproductos').html(lee.mensaje);
+						$('#listadodeclientes').html(lee.mensaje);
 					}
 					else if(lee.resultado=='registrar'){
 						
