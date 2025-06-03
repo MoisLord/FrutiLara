@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2025 a las 09:41:24
+-- Tiempo de generación: 03-06-2025 a las 04:24:06
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -39,7 +39,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `codigo_categoria`, `descripcion_categoria`, `estado_registro`) VALUES
-(1, '87654321', 'bebida', 1);
+(1, '87654321', 'bebida', 1),
+(3, '7348969', 'cereal', 1),
+(4, '82592375', 'legumbre', 1);
 
 -- --------------------------------------------------------
 
@@ -61,21 +63,6 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`cedula`, `nombre_apellido`, `telefono`, `direccion`, `estado_registro`) VALUES
 ('90876543', 'Olga Suarez', '04247654321', 'cerca del negocio', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `conciliacion_bancaria`
---
-
-CREATE TABLE `conciliacion_bancaria` (
-  `id_bancaria` int(11) NOT NULL,
-  `documento` varchar(45) NOT NULL,
-  `gasto_banco` varchar(45) NOT NULL,
-  `total_banco` varchar(45) NOT NULL,
-  `comparativa` varchar(45) NOT NULL,
-  `filtrar_fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -129,7 +116,8 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`cedula`, `nombre_apellido`, `telefono`, `correo`, `direccion`, `fechaNacimiento`) VALUES
-('30755344', 'Martin Tovar y Tovar', '04125554321', 'empleadoficticio@gmail.com', 'por ahi', '2002-02-02');
+('10841560', 'Lenny Reyes', '04245469835', 'reyeslennyf72@gmail.com', 'San Francisco', '1972-08-27'),
+('30755344', 'Martin Tovar y Tovar', '04125554321', 'empleadoficticio@gmail.com', 'Pueblo Nuevo', '2002-02-02');
 
 -- --------------------------------------------------------
 
@@ -165,7 +153,8 @@ CREATE TABLE `marca` (
 INSERT INTO `marca` (`id_marca`, `codigo_marca`, `descripcion_marca`, `estado_registro`) VALUES
 (1, '4883477', 'Arroz Mary', 1),
 (2, '9277743', 'Bebida Toddy', 1),
-(3, '321654974', 'Salsa de tomate Heinz', 1);
+(3, '321654974', 'Salsa de tomate Heinz', 1),
+(4, '6353565265', 'Mayonesa Kraft', 1);
 
 -- --------------------------------------------------------
 
@@ -268,7 +257,11 @@ CREATE TABLE `proveedores` (
 --
 
 INSERT INTO `proveedores` (`rif`, `documento`, `nombre`, `telefono`, `direccion`, `estado_registro`) VALUES
-('372585', 'Venezolano', 'Polar', '04121234567', 'fabrica la polar', 1);
+('000112233', 'jurídico', 'Suministros C.A', '02127890123', 'Calle 2 Centro Comercial La Candelaria', 1),
+('123456789', 'Venezolano', 'Maria Jose Perez', '04127654321', 'Av Libertador Edif EL Sol Caracas', 1),
+('20000000', 'Gobernamental', 'SENIAT', '08007364283', 'Edif Sede SENIAT', 0),
+('372585', 'Venezolano', 'Polar', '04121234567', 'fabrica la polar', 1),
+('626468', 'Gobernamental', 'Mercabar C.A', '02514463172', 'Zona Industrial III Barquisimeto', 1);
 
 -- --------------------------------------------------------
 
@@ -287,7 +280,9 @@ CREATE TABLE `servicios` (
 --
 
 INSERT INTO `servicios` (`codigo_servicio`, `descripcion_servicio`, `estado_registro`) VALUES
-(987654321, 'mantenimiento', 1);
+(99873441, 'Pago de Hidrolara', 1),
+(724492929, 'Pago de Servicio Eléctrico', 1),
+(987654321, 'Pago Aseo urbano', 1);
 
 -- --------------------------------------------------------
 
@@ -347,12 +342,6 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`cedula`);
-
---
--- Indices de la tabla `conciliacion_bancaria`
---
-ALTER TABLE `conciliacion_bancaria`
-  ADD PRIMARY KEY (`id_bancaria`);
 
 --
 -- Indices de la tabla `detalle_entrada`
@@ -462,13 +451,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `nota_entrada`
