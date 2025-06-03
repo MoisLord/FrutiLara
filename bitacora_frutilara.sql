@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2025 a las 03:04:55
+-- Tiempo de generación: 03-06-2025 a las 07:05:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -367,7 +367,71 @@ INSERT INTO `bitacora` (`id_bitacora`, `usuario`, `modulo`, `accion`, `fecha`) V
 (330, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 02:29:51'),
 (331, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 02:41:50'),
 (332, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 02:41:56'),
-(333, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 02:41:57');
+(333, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 02:41:57'),
+(334, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:22:27'),
+(335, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:38'),
+(336, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:39'),
+(337, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:39'),
+(338, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:40'),
+(339, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:40'),
+(340, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:40'),
+(341, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:40'),
+(342, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:41'),
+(343, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:41'),
+(344, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:41'),
+(345, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:42'),
+(346, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:43'),
+(347, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:43'),
+(348, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:46'),
+(349, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:51'),
+(350, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:52'),
+(351, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:52'),
+(352, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:52'),
+(353, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:26:53'),
+(354, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:27:00'),
+(355, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:27:24'),
+(356, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 03:27:40'),
+(357, '12345678', 'Marca', 'Ingreso a Marca', '2025-06-02 03:42:46'),
+(358, '12345678', 'Salio de sesión', 'Cierre de sesión', '2025-06-02 03:58:33'),
+(359, '12345678', 'Autenticación', 'Inicio de sesión', '2025-06-02 03:59:12'),
+(360, '12345678', 'Autenticación', 'Inicio de sesión', '2025-06-02 04:43:33'),
+(361, '12345678', 'Salio de sesión', 'Cierre de sesión', '2025-06-02 06:22:51'),
+(362, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 08:34:12'),
+(363, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 08:35:35'),
+(364, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:17:57'),
+(365, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:18:20'),
+(366, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:42:59'),
+(367, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:44:27'),
+(368, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:45:07'),
+(369, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:45:21'),
+(370, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:45:23'),
+(371, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:47:32'),
+(372, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:47:34'),
+(373, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:47:34'),
+(374, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:47:35'),
+(375, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:48:26'),
+(376, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:48:27'),
+(377, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:48:28'),
+(378, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:48:29'),
+(379, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:48:29'),
+(380, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:51:58'),
+(381, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:51:59'),
+(382, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:52:04'),
+(383, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:52:06'),
+(384, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:52:14'),
+(385, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:53:15'),
+(386, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 09:53:17'),
+(387, '12345678', 'Salio de sesión', 'Cierre de sesión', '2025-06-02 09:56:04'),
+(388, '12345678', 'Autenticación', 'Inicio de sesión', '2025-06-02 16:48:17'),
+(389, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 16:51:01'),
+(390, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 16:51:11'),
+(391, '12345678', 'Salio de sesión', 'Cierre de sesión', '2025-06-02 16:52:06'),
+(392, '12345678', 'Autenticación', 'Inicio de sesión', '2025-06-02 23:40:11'),
+(393, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 23:41:09'),
+(394, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-02 23:52:28'),
+(395, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-03 00:34:24'),
+(396, '12345678', 'bitacora', 'Ingreso a Bitácora', '2025-06-03 04:15:05'),
+(397, '12345678', 'Salio de sesión', 'Cierre de sesión', '2025-06-03 07:04:52');
 
 --
 -- Índices para tablas volcadas
@@ -387,7 +451,7 @@ ALTER TABLE `bitacora`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=334;
+  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=398;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
