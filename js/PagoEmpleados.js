@@ -20,7 +20,7 @@ $(document).ready(function(){
 	$("#cedulacliente").on("keyup",function(){
 		var codigo = $(this).val();
 		var encontro = false;
-		$("#listadodeclientes tr").each(function(){
+		$("#listadoclientes tr").each(function(){
 			if(codigo == $(this).find("td:eq(1)").text()){
 				colocaservicios($(this));
 				encontro = true;
