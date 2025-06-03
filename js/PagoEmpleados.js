@@ -27,7 +27,7 @@ $(document).ready(function(){
 			} 
 		});
 		if(!encontro){
-			$("#datosdelservicio").html("");
+			$("#datosdelcliente").html("");
 		}
 	});		
 	
