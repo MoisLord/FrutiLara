@@ -128,6 +128,48 @@ class pservicios extends datos{
 		}
 		return $r;
 	}
+
+	// NUEVO MÉTODO para registrar directamente en pago_servicios
+    function registrarPagosServicios($id_servicios, $servicios_codigo_servicio, $costo, $pago, $fecha_pago_servicio, $estado_registro) {
+        $co = $this->conecta();
+        $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $r = array();
+        
+        try {
+            // Iniciar transacción
+            $co->beginTransaction();
+            
+            // Insertar cada servicio del array
+            for ($i = 0; $i < count($id_servicios); $i++) {
+                $p = $co->prepare("INSERT INTO pago_servicios 
+                                  (id_servicios, servicios_codigo_servicio, costo, pago, fecha_pago_servicio, estado_registro) 
+                                  VALUES 
+                                  (:id_servicios, :codigo, :costo, :pago, :fecha, :estado)");
+                
+                $p->bindValue(':id_servicios', $id_servicios[$i]);
+                $p->bindValue(':codigo', $servicios_codigo_servicio[$i]);
+                $p->bindValue(':costo', $costo[$i]);
+                $p->bindValue(':pago', $pago[$i]);
+                $p->bindValue(':fecha', $fecha_pago_servicio[$i]);
+                $p->bindValue(':estado', $estado_registro);
+                
+                $p->execute();
+            }
+            
+            // Confirmar transacción
+            $co->commit();
+            
+            $r['resultado'] = 'registrar';
+            $r['mensaje'] = "Pagos de servicios registrados correctamente";
+        } catch (Exception $e) {
+            // Revertir transacción en caso de error
+            $co->rollBack();
+            $r['resultado'] = 'error';
+            $r['mensaje'] = $e->getMessage();
+        }
+        
+        return $r;
+    }
 	
 	
 	function listadoservicios(){
