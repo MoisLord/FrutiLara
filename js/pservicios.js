@@ -16,6 +16,12 @@ $(document).ready(function(){
 		$("#modalservicios").modal("show");
 	});
 	
+	//boton para levantar modal de productos
+	$("#listadodeproductos").on("click",function(){
+		$("#modalproductos").modal("show");
+	});
+	
+	
 	//evento keyup de input cedulacliente	
 	$("#codigoservicios").on("keyup",function(){
 		var codigo = $(this).val();
@@ -43,16 +49,21 @@ $(document).ready(function(){
 	
 	//evento click de boton facturar
 	$("#registrar").on("click",function(){
-    if(existeservicio() === true){
-        // Ya no se valida productos, solo servicios
-        $('#accion').val('registrar');
-        var datos = new FormData($('#f')[0]);
-        enviaAjax(datos);
-    }
-    else{
-        muestraMensaje("Debe ingresar un proveedor registrado !!!");
-    }
-});
+		if(existeservicio()==true){
+			if(verificaproductos()){
+				$('#accion').val('registrar');
+				var datos = new FormData($('#f')[0]);
+				
+				enviaAjax(datos);
+			}
+			else{
+				muestraMensaje("Debe agregar algun producto al inventario !!!");
+			}
+		}
+		else{
+			muestraMensaje("Debe ingresar un proveedor registrado !!!");
+		}
+	});
 		
 		
 	});
