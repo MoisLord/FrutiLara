@@ -55,7 +55,7 @@
       <div class="col-lg-6 col-md-8 order-2 order-md-2 order-lg-1">
         <div class="position-relative ms-md-5 mb-0 mb-md-7 mb-lg-0 d-none d-md-block d-lg-block d-xl-block h-75">
           <div class="bg-gradient-info w-100 h-100 border-radius-xl position-absolute" alt=""></div>
-          <img src="img/contenido 1.jpg" class="d-block w-100 h-100" class="w-100 border-radius-xl mt-6 ms-5 position-absolute" alt="">
+          <img src="img/.jpg" class="w-100 border-radius-xl mt-6 ms-5 position-absolute" alt="">
         </div>
       </div>
       <div class="col-lg-5 col-md-12 ms-auto order-1 order-md-1 order-lg-1">
