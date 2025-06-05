@@ -1,9 +1,4 @@
 /* Inicio de  la pagina Principal */
-/* Debug: Ver bordes de todos los elementos */
-* {
-  border: 1px solid red !important;
-}
-
 
 body {
     width: 100vw;
