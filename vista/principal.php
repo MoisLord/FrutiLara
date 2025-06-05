@@ -63,7 +63,7 @@
             <div class="icon icon-shape bg-gradient-info rounded-circle shadow text-center mb-4">
               <i class="ni ni-building"></i>
             </div>
-            <h4 class="text-gradient text-info mb-0">Social Conversations</h4>
+            <h4 class="text-gradient text-success mb-0">Social Conversations</h4>
             <h4 class="mb-4">Refreshing workspace atmosphere</h4>
             <p>We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. <br><br> If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed.</p>
             <a href="javascript:;" class="text-dark icon-move-right">More about us
