@@ -132,4 +132,48 @@ section {
     display: none !important;
   }
 }
+
+/* Efectos de animación */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ajustes para imágenes superpuestas */
+.position-relative.h-75 {
+  transition: height 0.3s ease;
+}
+
+/* Mejoras en el gradiente verde */
+.bg-gradient-success {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
+}
+
+/* Hover effects para tarjetas */
+.p-3 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.p-3:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividad mejorada */
+@media (max-width: 991.98px) {
+  .position-relative.h-75 {
+    height: auto !important;
+    margin-bottom: 2rem;
+  }
+  .ms-5, .ms-n5 {
+    margin-left: 0 !important;
+  }
+}
 /* fIN DE la pagina PRINCIPAL */
