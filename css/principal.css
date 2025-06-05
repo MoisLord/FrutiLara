@@ -54,4 +54,82 @@ body {
         font-size: 0.875rem;
     }
 }
+
+/* Estilos generales para la sección */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Gradientes de fondo (para las formas detrás de las imágenes) */
+.text-success {
+  background-image: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(135deg, #f5a623 0%, #f76b1c 100%);
+}
+
+/* Estilo del icono circular con sombra */
+.icon-shape {
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.icon-shape i {
+  font-size: 1.5rem;
+}
+
+/* Texto con gradiente (para los títulos) */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-info {
+  background-image: linear-gradient(135deg, #17ead9 0%, #6078ea 100%);
+}
+
+.text-warning {
+  background-image: linear-gradient(135deg, #f5a623 0%, #f76b1c 100%);
+}
+
+/* Bordes redondeados para imágenes y formas */
+.border-radius-xl {
+  border-radius: 1rem;
+}
+
+/* Posicionamiento relativo/absoluto para las imágenes superpuestas */
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Efecto de movimiento para el enlace "More about us" */
+.icon-move-right {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.icon-move-right:hover {
+  transform: translateX(5px);
+}
+
+/* Ajustes responsivos para las imágenes */
+@media (max-width: 767.98px) {
+  .d-none.d-md-block {
+    display: none !important;
+  }
+}
 /* fIN DE la pagina PRINCIPAL */
