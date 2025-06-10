@@ -140,7 +140,6 @@ function get_unidades_de_medida_id_medidas()
 					minimo,
 					maximo,
 					nacionalidad_producto,
-					
 					id_categoria,
 					marca_id_marca,
 					unidades_de_medida_id_medidas,
@@ -195,7 +194,6 @@ function get_unidades_de_medida_id_medidas()
 				nombre = :nombre,
 				minimo = :minimo,
 				maximo = :maximo,
-				id_modelo = :
 				id_categoria = :id_categoria,
 				estado_registro = :estado_registro
 				where
@@ -326,7 +324,7 @@ function get_unidades_de_medida_id_medidas()
 		$r = array();
 		try {
 
-			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto. categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 1");
+			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, producto. categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 1");
 
 			if ($resultado) {
 
@@ -344,12 +342,6 @@ function get_unidades_de_medida_id_medidas()
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td>";
 					$respuesta = $respuesta . $r['maximo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td style='display:none;'>";
-					$respuesta = $respuesta . $r['id_modelo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['descripcion_modelo'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td style='display:none;'>";
 					$respuesta = $respuesta . $r['id_categoria'];
@@ -400,12 +392,6 @@ function get_unidades_de_medida_id_medidas()
 					$respuesta = $respuesta . $r['maximo'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td style='display:none;'>";
-					$respuesta = $respuesta . $r['id_modelo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['descripcion_modelo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td style='display:none;'>";
 					$respuesta = $respuesta . $r['id_categoria'];
 					$respuesta = $respuesta . "</td>";
 					$respuesta = $respuesta . "<td>";
@@ -415,45 +401,6 @@ function get_unidades_de_medida_id_medidas()
 				}
 			}
 			$r['resultado'] = 'consultaDelete';
-			$r['mensaje'] =  $respuesta;
-		} catch (Exception $e) {
-			$r['resultado'] = 'error';
-			$r['mensaje'] =  $e->getMessage();
-		}
-		return $r;
-	}
-
-	function listadomodelo()
-	{
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		try {
-			$resultado = $co->query("SELECT  codigo_modelo, descripcion_modelo, modelo.id_marca, marca.descripcion_marca FROM modelo INNER JOIN marca ON modelo.id_marca=marca.id_marca WHERE modelo.estado_registro = 1");
-
-			if ($resultado) {
-
-				$respuesta = '';
-				foreach ($resultado as $r) {
-					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='colocamodelo(this);'>";
-					$respuesta = $respuesta . "<td style='display:none;'>";
-					$respuesta = $respuesta . $r['id_modelo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['codigo_modelo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['descripcion_modelo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td style='display:none;'>";
-					$respuesta = $respuesta . $r['id_marca'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['descripcion_marca'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "</tr>";
-				}
-			}
-			$r['resultado'] = 'listadoModelo';
 			$r['mensaje'] =  $respuesta;
 		} catch (Exception $e) {
 			$r['resultado'] = 'error';
