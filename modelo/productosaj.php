@@ -372,7 +372,7 @@ function get_unidades_de_medida_id_medidas()
 		// se enviara la respuesta a la solicitud y el
 		// contenido de la respuesta
 		try {
-			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, modelo.descripcion_modelo, producto. categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN modelo ON producto.id_modelo=modelo.id_modelo INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 0");
+			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, producto. categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 0");
 
 			if ($resultado) {
 
