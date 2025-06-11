@@ -50,20 +50,21 @@ MARCAS DE PRODUCTOS
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
 			
-			<div class="col-md-3">	
-		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
-			</div>
-			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
-			</div>
+
 			</div>
 			<div class="row mt-3 justify-content-left">
-			<div class="col-md-4">	
+				<div class="col-md-3">	
+		   		   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+				</div>
+				<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
+				</div>
+				<div class="col-md-4">	
 				   <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
-			</div>
-			<div class="col-md-2">	
+				</div>
+				<div class="col-md-2">	
 				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
-			</div>
+				</div>
 			</div>
 	</div>	
 	</form>
@@ -83,13 +84,27 @@ MARCAS DE PRODUCTOS
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
-		
+		<div class="row mt-3 justify-content-left">
+				<div class="col-md-3">	
+		   		   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+				</div>
+				<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
+				</div>
+				<div class="col-md-4">	
+				   <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
+				</div>
+				<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
+				</div>
+			</div>
 		</tbody>
 		</table>
 		
     </div>
-</div>
-</div> <!-- fin de container -->
+</div> 
+<!-- fin de container -->
+
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
