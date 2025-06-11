@@ -82,9 +82,7 @@ MARCAS DE PRODUCTOS
 			<th>Codigo de Marcas</th>
 			<th>Marcas</th>
 		  </tr>
-		</thead>
-		<tbody id="resultadoconsulta">
-		<div class="row mt-3 justify-content-left">
+		  <div class="row mt-3 justify-content-left">
 				<div class="col-md-3">	
 		   		   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 				</div>
@@ -98,13 +96,15 @@ MARCAS DE PRODUCTOS
 				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
 				</div>
 			</div>
+		</thead>
+		<tbody id="resultadoconsulta">
+		
 		</tbody>
 		</table>
 		
     </div>
 </div> 
 <!-- fin de container -->
-
 <div class="modal fade" tabindex="-1" role="dialog"  id="modalMarca">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header text-light bg-success">
