@@ -318,96 +318,111 @@ function get_unidades_de_medida_id_medidas()
 	}
 
 	function consultar()
-	{
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$r = array();
-		try {
+{
+    $co = $this->conecta();
+    $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $r = array();
+    try {
+        // Consulta corregida:  Asegúrate de que *selecciona* descripcion_categoria
+        $resultado = $co->query("SELECT
+            producto.codigo,
+            producto.nombre,
+            producto.minimo,
+            producto.maximo,
+            categoria.descripcion_categoria,  -- Importante: Seleccionar la columna
+            producto.id_categoria
+        FROM producto
+        INNER JOIN categoria ON producto.id_categoria = categoria.id_categoria
+        WHERE producto.estado_registro = 1");
 
-			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, producto. categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 1");
+        if ($resultado) {
+            $respuesta = '';
+            foreach ($resultado as $r) {
+                $respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['codigo'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['nombre'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['minimo'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['maximo'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td style='display:none;'>";
+                $respuesta = $respuesta . $r['id_categoria'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['descripcion_categoria'];  // Acceder a la columna correctamente
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "</tr>";
 
-			if ($resultado) {
+                $r['resultado'] = 'consultar';
+                $r['mensaje'] =  $respuesta;
+            }
 
-				$respuesta = '';
-				foreach ($resultado as $r) {
-					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['codigo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['nombre'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['minimo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['maximo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td style='display:none;'>";
-					$respuesta = $respuesta . $r['id_categoria'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['descripcion_categoria'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "</tr>";
-
-					$r['resultado'] = 'consultar';
-					$r['mensaje'] =  $respuesta;
-				}
-
-				return $r;
-			} else {
-				return '';
-			}
-		} catch (Exception $e) {
-			return $e->getMessage();
-		}
-	}
+            return $r;
+        } else {
+            return '';
+        }
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
 
 	function consultadelete()
-	{
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$r = array(); // en este arreglo
-		// se enviara la respuesta a la solicitud y el
-		// contenido de la respuesta
-		try {
-			$resultado = $co->query("SELECT codigo, nombre, minimo, maximo, producto. categoria.descripcion_categoria, producto.id_categoria FROM producto INNER JOIN categoria ON producto.id_categoria=categoria.id_categoria WHERE producto.estado_registro = 0");
+{
+    $co = $this->conecta();
+    $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $r = array();
+    try {
+        // Consulta corregida: Asegúrate de que *selecciona* descripcion_categoria
+        $resultado = $co->query("SELECT
+            producto.codigo,
+            producto.nombre,
+            producto.minimo,
+            producto.maximo,
+            categoria.descripcion_categoria,  -- Importante: Seleccionar la columna
+            producto.id_categoria
+        FROM producto
+        INNER JOIN categoria ON producto.id_categoria = categoria.id_categoria
+        WHERE producto.estado_registro = 0");
 
-			if ($resultado) {
-
-				$respuesta = '';
-				foreach ($resultado as $r) {
-					$respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['codigo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['nombre'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['minimo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['maximo'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td style='display:none;'>";
-					$respuesta = $respuesta . $r['id_categoria'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "<td>";
-					$respuesta = $respuesta . $r['descripcion_categoria'];
-					$respuesta = $respuesta . "</td>";
-					$respuesta = $respuesta . "</tr>";
-				}
-			}
-			$r['resultado'] = 'consultaDelete';
-			$r['mensaje'] =  $respuesta;
-		} catch (Exception $e) {
-			$r['resultado'] = 'error';
-			$r['mensaje'] =  $e->getMessage();
-		}
-		return $r;
-	}
+        if ($resultado) {
+            $respuesta = '';
+            foreach ($resultado as $r) {
+                $respuesta = $respuesta . "<tr style='cursor:pointer' onclick='coloca(this);'>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['codigo'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['nombre'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['minimo'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['maximo'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td style='display:none;'>";
+                $respuesta = $respuesta . $r['id_categoria'];
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "<td>";
+                $respuesta = $respuesta . $r['descripcion_categoria'];  // Acceder a la columna correctamente
+                $respuesta = $respuesta . "</td>";
+                $respuesta = $respuesta . "</tr>";
+            }
+        }
+        $r['resultado'] = 'consultaDelete';
+        $r['mensaje'] =  $respuesta;
+    } catch (Exception $e) {
+        $r['resultado'] = 'error';
+        $r['mensaje'] =  $e->getMessage();
+    }
+    return $r;
+}
 
 	function listadocategoria()
 	{
