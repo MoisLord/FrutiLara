@@ -49,23 +49,7 @@ MARCAS DE PRODUCTOS
 			<div class="col-md-4">
 				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
-			
-
-			</div>
-			<div class="row mt-3 justify-content-left">
-				<div class="col-md-3">	
-		   		   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
-				</div>
-				<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
-				</div>
-				<div class="col-md-4">	
-				   <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
-				</div>
-				<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
-				</div>
-			</div>
+		</div>
 	</div>	
 	</form>
 	<!--Fin de los botones del CRUD-->
@@ -81,8 +65,7 @@ MARCAS DE PRODUCTOS
 		  <tr>
 			<th>Codigo de Marcas</th>
 			<th>Marcas</th>
-		  </tr>
-		  <div class="row mt-3 justify-content-left">
+			<div class="row mt-3 justify-content-left">
 				<div class="col-md-3">	
 		   		   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 				</div>
@@ -96,6 +79,7 @@ MARCAS DE PRODUCTOS
 				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
 				</div>
 			</div>
+		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
 		
