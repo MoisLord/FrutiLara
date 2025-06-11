@@ -123,65 +123,61 @@ function get_unidades_de_medida_id_medidas()
 
 
 	// metodos para incluir, consultar y eliminar
-	function incluir()
+	function incluir() 
 	{
-		// se consulta en este caso codigo, para ello se creo la funcion existe
-		//que retorna true en caso de exitir el registro
-		if (!$this->existe($this->codigo)) {
-			//codigo no existe es decir se puede incluir
-			$co = $this->conecta();
-			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$r = array();
-			try {
-				$p = $co->prepare("INSERT INTO producto (
-					codigo,
-					nombre,
-					cantidad_total,
-					minimo,
-					maximo,
-					nacionalidad_producto,
-					id_categoria,
-					marca_id_marca,
-					unidades_de_medida_id_medidas,
-					estado_registro
-				) VALUES (
-					:codigo,
-					:nombre,
-					:cantidad_total,
-					:minimo,
-					:maximo,
-					:nacionalidad_producto,
-					:
-					:id_categoria,
-					:marca_id_marca,
-					:unidades_de_medida_id_medidas,
-					:estado_registro
-				)");
+    if (!$this->existe($this->codigo)) {
+        $co = $this->conecta();
+        $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $r = array();
+        try {
+            $p = $co->prepare("INSERT INTO producto (
+                codigo,
+                nombre,
+                cantidad_total,
+                minimo,
+                maximo,
+                nacionalidad_producto,
+                id_categoria,
+                marca_id_marca,
+                unidades_de_medida_id_medidas,
+                estado_registro
+            ) VALUES (
+                :codigo,
+                :nombre,
+                :cantidad_total,
+                :minimo,
+                :maximo,
+                :nacionalidad_producto,
+                :id_categoria,
+                :marca_id_marca,
+                :unidades_de_medida_id_medidas,
+                :estado_registro
+            )");
 
-				$p->bindParam(':codigo', $this->codigo);
-				$p->bindParam(':nombre', $this->nombre);
-				$p->bindParam(':cantidad_total', $this->cantidad_total);
-				$p->bindParam(':minimo', $this->minimo);
-				$p->bindParam(':maximo', $this->maximo);
-				$p->bindParam(':nacionalidad_producto', $this->nacionalidad_producto);
-				$p->bindParam(':id_categoria', $this->id_categoria);
-				$p->bindParam(':marca_id_marca', $this->marca_id_marca);
-				$p->bindParam(':unidades_de_medida_id_medidas', $this->unidades_de_medida_id_medidas);
-				$p->bindParam(':estado_registro', $this->estado_registro);
-				$p->execute();
+            $p->bindParam(':codigo', $this->codigo);
+            $p->bindParam(':nombre', $this->nombre);
+            $p->bindParam(':cantidad_total', $this->cantidad_total);
+            $p->bindParam(':minimo', $this->minimo);
+            $p->bindParam(':maximo', $this->maximo);
+            $p->bindParam(':nacionalidad_producto', $this->nacionalidad_producto);
+            $p->bindParam(':id_categoria', $this->id_categoria);
+            $p->bindParam(':marca_id_marca', $this->marca_id_marca);
+            $p->bindParam(':unidades_de_medida_id_medidas', $this->unidades_de_medida_id_medidas);
+            $p->bindParam(':estado_registro', $this->estado_registro);
+            $p->execute();
 
-				$r['resultado'] = 'incluir';
-				$r['mensaje'] =  'El producto ha sido registrado';
-			} catch (Exception $e) {
-				$r['resultado'] = 'error';
-				$r['mensaje'] =  $e->getMessage();
-			}
-		} else {
-			$r['resultado'] = 'incluir';
-			$r['mensaje'] =  'Ya existe';
-		}
-		return $r;
-	}
+            $r['resultado'] = 'incluir';
+            $r['mensaje'] =  'El producto ha sido registrado';
+        } catch (Exception $e) {
+            $r['resultado'] = 'error';
+            $r['mensaje'] =  $e->getMessage();
+        }
+    } else {
+        $r['resultado'] = 'incluir';
+        $r['mensaje'] =  'Ya existe';
+    }
+    return $r;
+}
 
 	function modificar()
 	{
