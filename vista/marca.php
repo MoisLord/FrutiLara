@@ -23,14 +23,14 @@ MARCAS DE PRODUCTOS
 		<div class="row mb-3">
 			<div class="col-md">
 			   <label for="id_marca">Codigo de la marca</label>
-			   <input class="form-control" type="text" id="id_marca" name="id_marca" maxlength="20"/>
+			   <input class="form-control" type="text" id="id_marca" name="id_marca"maxlength="20"/>
 			   <span id="sid_marca">El Formato Debe Ser Alfanúmerico</span>
 			</div>
-		</div>
-		<div class="row mb-3">
+			</div>
+			<div class="row mb-3">
 			<div class="col-md">
 			   <label for="descripcion_marca">Descripción de la Marca</label>
-			   <input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca" maxlength="40"/>
+			   <input class="form-control" type="text" id="descripcion_marca" name="descripcion_marca"maxlength="40"/>
 			   <span id="smarca">Solo letras entre 3 y 40 caracteres</span>
 			</div>
 		</div>
@@ -47,7 +47,7 @@ MARCAS DE PRODUCTOS
 		<!--Aqui Contiene los botones del CRUD-->
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-4">
-				<button type="button" class="btn btn-success" id="incluir">REGISTRAR</button>
+				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
 			</div>
 		</div>
 	</div>	
@@ -61,27 +61,26 @@ MARCAS DE PRODUCTOS
 	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablamarca">
-			<thead>
-				<tr>
-					<th>Codigo de Marcas</th>
-					<th>Marcas</th>
-					<th>Acciones</th> <!-- Nueva columna para los botones -->
-				</tr>
-			</thead>
-			<tbody id="resultadoconsulta">
-				<!-- Ejemplo de una fila de marca registrada -->
-				<tr>
-					<td>Codigo de Marca 1</td>
-					<td>Marca 1</td>
-					<td>
-						<button type="button" class="btn btn-success" id="modificar">EDITAR</button>
-						<button type="button" class="btn btn-danger" id="eliminar">BORRAR</button>
-						<button type="button" class="btn btn-info" id="consultadeDelete">CONSULTAS ELIMINADAS</button>
-						<button type="button" class="btn btn-warning" id="restaurar">RESTAURAR</button>
-					</td>
-				</tr>
-				<!-- Aquí puedes agregar más filas de marcas registradas -->
-			</tbody>
+		<thead>
+		  <tr>
+			<th>Codigo de Marcas</th>
+			<th>Marcas</th>
+		  </tr>
+		</thead>
+		<tbody id="resultadoconsulta">
+
+		<div class="row mt-3 justify-content-right">
+			<tr>
+				<td>
+					<button type="button" class="btn btn-success" id="modificar">EDITAR</button>
+					<button type="button" class="btn btn-danger" id="eliminar">BORRAR</button>
+					<button type="button" class="btn btn-info" id="consultadeDelete">CONSULTAS ELIMINADAS</button>
+					<button type="button" class="btn btn-warning" id="restaurar">RESTAURAR</button>
+				</td>
+			</tr>	
+		</div>
+		
+		</tbody>
 		</table>
 		
     </div>
