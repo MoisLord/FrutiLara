@@ -70,20 +70,14 @@ MARCAS DE PRODUCTOS
 		<tbody id="resultadoconsulta">
 
 		<div class="row mt-3 justify-content-left">
-			<th>
-				<div class="col-md-3">	
-		   		   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
-				</div>
-				<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
-				</div>
-				<div class="col-md-4">	
-				   <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
-				</div>
-				<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
-				</div>
-			</th>	
+			<tr>
+				<td>
+					<button type="button" class="btn btn-success" id="modificar">EDITAR</button>
+					<button type="button" class="btn btn-danger" id="eliminar">BORRAR</button>
+					<button type="button" class="btn btn-info" id="consultadeDelete">CONSULTAS ELIMINADAS</button>
+					<button type="button" class="btn btn-warning" id="restaurar">RESTAURAR</button>
+				</td>
+			</tr>	
 		</div>
 		
 		</tbody>
