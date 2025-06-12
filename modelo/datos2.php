@@ -1,5 +1,6 @@
 <?php
-class Datos2 {
+class Datos2 
+{
     private $ip = "localhost";
     private $bd = "bitacora_frutilara";
     private $usuario = "root";
