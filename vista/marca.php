@@ -61,27 +61,27 @@ MARCAS DE PRODUCTOS
 	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
 		<table class="table table-striped table-hover" id="tablamarca">
-		<thead>
-		  <tr>
-			<th>Codigo de Marcas</th>
-			<th>Marcas</th>
-			<th>Acciones</th> <!-- Nueva columna para los botones -->
-		  </tr>
-		</thead>
-		<tbody id="resultadoconsulta">
-			<!-- Ejemplo de una fila de marca registrada -->
-			<tr>
-				<td>Codigo de Marca 1</td>
-				<td>Marca 1</td>
-				<td>
-					<button type="button" class="btn btn-success" id="modificar">EDITAR</button>
-					<button type="button" class="btn btn-danger" id="eliminar">BORRAR</button>
-					<button type="button" class="btn btn-info" id="consultadeDelete">CONSULTAS ELIMINADAS</button>
-					<button type="button" class="btn btn-warning" id="restaurar">RESTAURAR</button>
-				</td>
-			</tr>
-			<!-- Aquí puedes agregar más filas de marcas registradas -->
-		</tbody>
+			<thead>
+				<tr>
+					<th>Codigo de Marcas</th>
+					<th>Marcas</th>
+					<th>Acciones</th> <!-- Nueva columna para los botones -->
+				</tr>
+			</thead>
+			<tbody id="resultadoconsulta">
+				<!-- Ejemplo de una fila de marca registrada -->
+				<tr>
+					<td>Codigo de Marca 1</td>
+					<td>Marca 1</td>
+					<td>
+						<button type="button" class="btn btn-success" id="modificar">EDITAR</button>
+						<button type="button" class="btn btn-danger" id="eliminar">BORRAR</button>
+						<button type="button" class="btn btn-info" id="consultadeDelete">CONSULTAS ELIMINADAS</button>
+						<button type="button" class="btn btn-warning" id="restaurar">RESTAURAR</button>
+					</td>
+				</tr>
+				<!-- Aquí puedes agregar más filas de marcas registradas -->
+			</tbody>
 		</table>
 		
     </div>
