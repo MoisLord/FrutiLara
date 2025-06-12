@@ -66,6 +66,20 @@ MARCAS DE PRODUCTOS
 			<th>Codigo de Marcas</th>
 			<th>Marcas</th>
 		  </tr>
+		  <td>
+			<div class="col-md-3">	
+		   		<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+			</div>
+			<div class="col-md-2">	
+				<button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
+			</div>
+			<div class="col-md-4">	
+				<button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
+			</div>
+			<div class="col-md-2">	
+				<button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
+			</div>
+		  </td>
 		</thead>
 		<tbody id="resultadoconsulta">
 
