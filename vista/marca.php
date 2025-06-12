@@ -65,16 +65,33 @@ MARCAS DE PRODUCTOS
 		  <tr>
 			<th>Codigo de Marcas</th>
 			<th>Marcas</th>
+			<th>Acciones</th>
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
 
-		<td>
-			<button type="button" class="btn btn-success" id="modificar">EDITAR</button>
-			<button type="button" class="btn btn-danger" id="eliminar">BORRAR</button>
-			<button type="button" class="btn btn-info" id="consultadeDelete">CONSULTAS ELIMINADAS</button>
-			<button type="button" class="btn btn-warning" id="restaurar">RESTAURAR</button>
-		</td>
+		<?php
+                require("modelo/datos.php");
+
+                $sql = $conexion->query("SELECT * FROM marca
+						WHERE estado_registro = 1
+                    ");
+
+                while ($resultado = $sql->fetch_assoc()) {
+                ?>
+
+                    <tr>
+                        <th>
+                            <a href="modelo/marca.php?Id=<?php echo $resultado['id_marca']?>" id="modificar" class="btn btn-success">Editar</a>
+							<a href="modelo/marca.php?Id=<?php echo $resultado['id_marca']?>" id="consultadeDelete" class="btn btn-success">CONSULTAS ELIMINADAS</a>
+							<a href="modelo/marca.php?Id=<?php echo $resultado['id_marca']?>" id="restaurar" class="btn btn-success">Restaurar</a>
+                            <a href="modelo/marca.php?Id=<?php echo $resultado['id_marca']?>" id="eliminar" class="btn btn-success">Borrar</a>
+                        </th>
+                    </tr>
+
+                <?php
+			}
+		?>
 		
 		</tbody>
 		</table>
