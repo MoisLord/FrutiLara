@@ -2,7 +2,7 @@
 class datos
 {
     private $ip = "localhost";
-    private $bd = "protofrutilara";
+    private $bd = "frutilara";
     private $usuario = "root";
     private $contrasena = "";
     protected $pdo;
