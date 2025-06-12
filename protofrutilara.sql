@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2025 a las 07:05:52
+-- Tiempo de generación: 12-06-2025 a las 02:25:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -154,7 +154,8 @@ INSERT INTO `marca` (`id_marca`, `codigo_marca`, `descripcion_marca`, `estado_re
 (1, '4883477', 'Arroz Mary', 1),
 (2, '9277743', 'Bebida Toddy', 1),
 (3, '321654974', 'Salsa de tomate Heinz', 1),
-(4, '6353565265', 'Mayonesa Kraft', 1);
+(4, '6353565265', 'Mayonesa Kraft', 1),
+(5, '5756788', 'Doña Emilia', 1);
 
 -- --------------------------------------------------------
 
@@ -218,7 +219,6 @@ CREATE TABLE `prefacturacion` (
 
 CREATE TABLE `producto` (
   `codigo` varchar(45) NOT NULL,
-  `id_modelo` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
   `marca_id_marca` int(11) NOT NULL,
   `unidades_de_medida_id_medidas` int(11) NOT NULL,
@@ -234,8 +234,8 @@ CREATE TABLE `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`codigo`, `id_modelo`, `id_categoria`, `marca_id_marca`, `unidades_de_medida_id_medidas`, `nombre`, `cantidad_total`, `minimo`, `maximo`, `nacionalidad_producto`, `estado_registro`) VALUES
-('098123666', 0, 1, 1, 2, 'Cocacola', '20 cajas', '1', '20', 'Estados Unidos', 0);
+INSERT INTO `producto` (`codigo`, `id_categoria`, `marca_id_marca`, `unidades_de_medida_id_medidas`, `nombre`, `cantidad_total`, `minimo`, `maximo`, `nacionalidad_producto`, `estado_registro`) VALUES
+('098123666', 1, 1, 2, 'Cocacola', '20 cajas', '1', '20', 'Estados Unidos', 0);
 
 -- --------------------------------------------------------
 
@@ -457,7 +457,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `nota_entrada`
