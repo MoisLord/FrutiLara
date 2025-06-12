@@ -68,9 +68,9 @@ MARCAS DE PRODUCTOS
 		  </tr>
 		</thead>
 		<tbody id="resultadoconsulta">
-		
-		</tbody>
+
 		<div class="row mt-3 justify-content-left">
+			<th>
 				<div class="col-md-3">	
 		   		   <button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
 				</div>
@@ -83,7 +83,10 @@ MARCAS DE PRODUCTOS
 				<div class="col-md-2">	
 				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
 				</div>
-			</div>
+			</th>	
+		</div>
+		
+		</tbody>
 		</table>
 		
     </div>
