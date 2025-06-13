@@ -300,7 +300,7 @@ function enviaAjax(datos) {
       }
     },
     error: function (request, status, err) {
-      // si ocurrio un error en la trasmision
+      // si ocurrio un error en la trasmicion
       // o recepcion via ajax entra aca
       // y se muestran los mensaje del error
       if (status == "timeout") {
