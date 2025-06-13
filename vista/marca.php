@@ -67,8 +67,8 @@ MARCAS DE PRODUCTOS
 			<th>Marcas</th>
 		  </tr>
 		  <tr>
-			<th colspan="2" class="text-center">
-			  <div class="row justify-content-center">
+			<th colspan="2" class="text-riht">
+			  <div class="row justify-content-end">
 				<div class="col-auto">
 				  <button type="button" class="btn btn-success" id="modificar">EDITAR</button>
 				</div>
