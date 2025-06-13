@@ -72,7 +72,7 @@ MARCAS DE PRODUCTOS
 		  <tbody id="resultadoconsulta">
 		    <?php foreach ($marcas as $marca): ?>
 		      <tr>
-		        <td><?= htmlspecialchars($marca['id_marca'] ?? $marca['codigo_marca']) ?></td>
+		        <td><?= htmlspecialchars($marca['codigo_marca'] ?? $marca['codigo_marca']) ?></td>
 		        <td><?= htmlspecialchars($marca['descripcion_marca']) ?></td>
 		        <td class="text-center">
 		          <button type="button" class="btn btn-success btn-sm modificar">EDITAR</button>
