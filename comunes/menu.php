@@ -1,166 +1,189 @@
 <link rel="stylesheet" type="text/css" href="css/menu.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
-<link rel="stylesheet" href="css/sidebar.css">
 
-<!-- Sidebar -->
-<nav class="sidebar">
-    <div class="sidebar__header">
-        <img src="img/logo.png" alt="Logo" class="sidebar__logo">
-        <span class="sidebar__title">FRUTILARA</span>
-    </div>
-
-    <div class="sidebar__content">
-        <?php if(!empty($nivel)): ?>
-            <?php if($nivel == 'SUPERUSUARIO'): ?>
-                <div class="sidebar__section">
-                    <div class="sidebar__item">
-                        <i class="ri-user-fill"></i>
-                        <a href="usuario">USUARIOS</a>
-                    </div>
-                </div>
-            <?php endif; ?>
-
-            <?php if($nivel == 'ADMINISTRADOR'): ?>
-                <div class="sidebar__section">
-                    <div class="sidebar__section-title">
-                        <i class="ri-edit-box-fill"></i>
-                        <span>REGISTRO DEL SISTEMA</span>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-price-tag-3-fill"></i>
-                        <a href="marca">MARCAS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-list-check-2"></i>
-                        <a href="categoria">CATEGORÍAS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-shopping-basket-fill"></i>
-                        <a href="productosaj">PRODUCTOS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-truck-fill"></i>
-                        <a href="proveedor">PROVEEDORES</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-team-fill"></i>
-                        <a href="empleados">EMPLEADOS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-service-fill"></i>
-                        <a href="servicios">SERVICIOS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-user-3-fill"></i>
-                        <a href="cliente">CLIENTES</a>
-                    </div>
-                </div>
-
-                <div class="sidebar__section">
-                    <div class="sidebar__section-title">
-                        <i class="ri-store-2-fill"></i>
-                        <span>INVENTARIO</span>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-arrow-down-circle-fill"></i>
-                        <a href="entrada">ENTRADAS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-arrow-up-circle-fill"></i>
-                        <a href="salida">SALIDAS</a>
-                    </div>
-                </div>
-
-                <div class="sidebar__section">
-                    <div class="sidebar__section-title">
-                        <i class="ri-money-dollar-circle-fill"></i>
-                        <span>PAGOS</span>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-employee-fill"></i>
-                        <a href="pagoEmpleados">EMPLEADOS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-bank-card-fill"></i>
-                        <a href="pservicios">SERVICIOS</a>
-                    </div>
-                </div>
-
-                <div class="sidebar__section">
-                    <div class="sidebar__section-title">
-                        <i class="ri-file-chart-fill"></i>
-                        <span>REPORTES</span>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-file-chart-line"></i>
-                        <a href="reportentrada">ENTRADAS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-file-chart-2-line"></i>
-                        <a href="reportesalida">SALIDAS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-file-info-line"></i>
-                        <a href="reporteinventario">GENERAL</a>
-                    </div>
-                </div>
-            <?php endif; ?>
-
-            <?php if($nivel == 'EMPLEADO'): ?>
-                <div class="sidebar__section">
-                    <div class="sidebar__item">
-                        <i class="ri-user-3-fill"></i>
-                        <a href="cliente">CLIENTES</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-arrow-up-circle-fill"></i>
-                        <a href="salida">SALIDAS</a>
-                    </div>
-                    <div class="sidebar__item">
-                        <i class="ri-file-info-line"></i>
-                        <a href="reporteinventario">REPORTE GENERAL</a>
-                    </div>
-                </div>
-            <?php endif; ?>
-        <?php endif; ?>
-
-        <div class="sidebar__section">
-            <div class="sidebar__item">
-                <i class="ri-book-2-fill"></i>
-                <a href="vista/manual.php" target="_blank">MANUAL</a>
-            </div>
-            <div class="sidebar__item">
-                <i class="ri-history-fill"></i>
-                <a href="vista/bitacora.php">BITÁCORA</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="sidebar__footer">
-        <?php if(!empty($nivel) && $nivel != ""): ?>
-            <a href="?pagina=logout" class="sidebar__logout">
-                <i class="ri-logout-box-r-fill"></i>
-                <span>CERRAR SESIÓN</span>
-            </a>
-        <?php else: ?>
-            <a href="?pagina=login" class="sidebar__login">
-                <i class="ri-login-box-fill"></i>
-                <span>INICIAR SESIÓN</span>
-            </a>
-        <?php endif; ?>
-    </div>
-</nav>
-
-<!-- llamadas a componentes -->
 <div class="col-12">
-    <?php require_once("comunes/encabezado.php"); ?>
-    <?php require_once("./modelo/session.php"); ?>
-    
-    <?php require_once("comunes/modal.php"); ?>
-    
-    <br/><br/><br/><br/><br/>
+  <nav class="navbar navbar-expand-lg bg-success bg-gradient fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
 
-    
-    <?php require_once("comunes/body.php"); ?>
-    <script type="text/javascript" src="js/menu.js"></script>
+        <img src="img/logo.png" alt="" style="width:50px;">
+        <a class="navbar-brand text-white" style="font-weight: 600; font-size: 14;" href=".">FRUTILARA</a>
+
+
+        <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end bg-success" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-warning" id="offcanvasNavbarLabel">Donde Comer Saludable es mas Sabroso</h5>
+            <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+
+            <?php
+            //verificamos que exista la variable nivel
+            //que es la que contiene el valor de la sesion
+            //aqui se coloca la vista del super usuario
+
+            if (!empty($nivel)) {
+              if ($nivel == 'SUPERUSUARIO') {
+            ?>
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
+                  </li>
+                </ul>
+            <?php
+              }
+            }
+            ?>
+
+            <?php
+            //aqui se coloca la vista del administrador
+            if (!empty($nivel)) {
+              if ($nivel == 'ADMINISTRADOR') {
+            ?>
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                      <img src="iconos/registro.svg" alt="registro" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>REGISTRO DEL SISTEMA</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="categoria">CATEGORIAS DE PRODUCTOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="productosaj">PRODUCTOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="proveedor">PROVEEDORES</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="empleados">EMPLEADOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="servicios">SERVICIOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="cliente">CLIENTES</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                      <img src="iconos/inventario.svg" alt="inventario" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>INVENTARIO</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="entrada">Notas de Entrada</a>
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">Prefacturación</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">
+                      <img src="iconos/empleado.svg" alt="empleados" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>PAGO DEL EMPLEADO</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="pservicios">
+                      <img src="iconos/servicios.svg" alt="servicios" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>PAGOS DE SERVICIOS</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="usuario">
+                      <img src="iconos/usuarios.svg" alt="usuarios" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>USUARIOS</span>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                      <img src="iconos/reportes.svg" alt="reportes" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>REPORTES</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportesalida">Reporte de Prefacturación</a>
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte General</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
+                      href="vista/manual.php" target="_blank">
+                      <img src="iconos/manual.svg" alt="manual" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>MANUAL DEL SISTEMA</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
+                      href="vista/bitacora.php">
+                      <img src="iconos/bitacora.svg" alt="bitacora" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>BITACORA</span>
+                    </a>
+                  </li>
+                </ul>
+              <?php
+              }
+              ?>
+              <?php
+              //aqui se coloca la vista del empleado
+              if ($nivel == 'EMPLEADO') {
+              ?>
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;"
+                      href="vista/manual.php" target="_blank">
+                      <img src="iconos/manual.svg" alt="manual" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>MANUAL DEL SISTEMA</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="cliente">
+                      <img src="iconos/clientes.svg" alt="empleados" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>CLIENTES</span>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                      <img src="iconos/inventario2.svg" alt="empleados" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>INVENTARIO</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">
+                        <span>Prefacturación</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                      <img src="iconos/reportes2.svg" alt="empleados" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>REPORTES</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">
+                        <span>Reporte General</span>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              <?php
+              }
+              ?>
+
+            <?php
+            }
+            ?>
+          </div>
+        </div>
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <?php
+
+          if (!empty($nivel) and $nivel != "") {
+          ?>
+            <a href="?pagina=logout" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
+      </div>
+    <?php
+          } else {
+    ?>
+      <a href="?pagina=login" class="btn btn-outline-danger my-2 my-sm-0">Entrar</a>
+</div>
+
+<?php
+          }
+?>
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+</div>
+</div>
+</nav>
 </div>
