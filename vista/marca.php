@@ -68,6 +68,7 @@ MARCAS DE PRODUCTOS
 			<th class="text-center">Acciones</th>
 		  </tr>
 		</thead>
+		<?php if (!isset($marcas) || !is_array($marcas)) $marcas = []; ?>
 		<tbody id="resultadoconsulta">
 		<?php foreach ($marcas as $marca): ?>
   <tr>
@@ -81,7 +82,7 @@ MARCAS DE PRODUCTOS
     </td>
   </tr>
 <?php endforeach; ?>
-		</tbody>
+</tbody>
 		</table>
 		
     </div>
