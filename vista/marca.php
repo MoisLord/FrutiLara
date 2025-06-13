@@ -60,34 +60,29 @@ MARCAS DE PRODUCTOS
 	<hr class="border border-success border-3 opacity-65">
 	<span>*Ayuda: Se debe seleccionar una fila para que envíe la información al formulario*</span>
 	    <!--se agrega un id para poder enlazar con el datatablet--> 
+		<?php if (!isset($marcas) || !is_array($marcas)) $marcas = []; ?>
 		<table class="table table-striped table-hover" id="tablamarca">
-		<thead>
-		  <tr>
-			<th>Codigo de Marcas</th>
-			<th>Marcas</th>
-		  </tr>
-		  <tr>
-			<th colspan="2" class="text-right">
-			  <div class="row justify-content-end">
-				<div class="col-auto">
-				  <button type="button" class="btn btn-success" id="modificar">EDITAR</button>
-				</div>
-				<div class="col-auto">
-				  <button type="button" class="btn btn-success" id="eliminar">BORRAR</button>
-				</div>
-				<div class="col-auto">
-				  <button type="button" class="btn btn-success" id="consultadeDelete">CONSULTAS ELIMINADAS</button>
-				</div>
-				<div class="col-auto">
-				  <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
-				</div>
-			  </div>
-			</th>
-		  </tr>
-		</thead>
-		<tbody id="resultadoconsulta">
-		  
-		</tbody>
+		  <thead>
+		    <tr>
+		      <th>Codigo de Marcas</th>
+		      <th>Marcas</th>
+		      <th class="text-center">Acciones</th>
+		    </tr>
+		  </thead>
+		  <tbody id="resultadoconsulta">
+		    <?php foreach ($marcas as $marca): ?>
+		      <tr>
+		        <td><?= htmlspecialchars($marca['id_marca'] ?? $marca['codigo_marca']) ?></td>
+		        <td><?= htmlspecialchars($marca['descripcion_marca']) ?></td>
+		        <td class="text-center">
+		          <button type="button" class="btn btn-success btn-sm modificar">EDITAR</button>
+		          <button type="button" class="btn btn-success btn-sm eliminar">BORRAR</button>
+		          <button type="button" class="btn btn-success btn-sm consultadeDelete">CONSULTAS ELIMINADAS</button>
+		          <button type="button" class="btn btn-success btn-sm restaurar">RESTAURAR</button>
+		        </td>
+		      </tr>
+		    <?php endforeach; ?>
+		  </tbody>
 		</table>
 		
     </div>
