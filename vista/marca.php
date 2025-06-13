@@ -70,18 +70,24 @@ MARCAS DE PRODUCTOS
 		    </tr>
 		  </thead>
 		  <tbody id="resultadoconsulta">
-		    <?php foreach ($marcas as $marca): ?>
+		    <?php if (empty($marcas)): ?>
 		      <tr>
-		        <td><?= htmlspecialchars($marca['codigo_marca'] ?? $marca['codigo_marca']) ?></td>
-		        <td><?= htmlspecialchars($marca['descripcion_marca']) ?></td>
-		        <td class="text-center">
-		          <button type="button" class="btn btn-success btn-sm modificar">EDITAR</button>
-		          <button type="button" class="btn btn-success btn-sm eliminar">BORRAR</button>
-		          <button type="button" class="btn btn-success btn-sm consultadeDelete">CONSULTAS ELIMINADAS</button>
-		          <button type="button" class="btn btn-success btn-sm restaurar">RESTAURAR</button>
-		        </td>
+		        <td colspan="3" class="text-center">No hay marcas registradas</td>
 		      </tr>
-		    <?php endforeach; ?>
+		    <?php else: ?>
+		      <?php foreach ($marcas as $marca): ?>
+		        <tr>
+		          <td><?= htmlspecialchars($marca['id_marca'] ?? $marca['codigo_marca']) ?></td>
+		          <td><?= htmlspecialchars($marca['descripcion_marca']) ?></td>
+		          <td class="text-center">
+		            <button type="button" class="btn btn-success btn-sm modificar">EDITAR</button>
+		            <button type="button" class="btn btn-success btn-sm eliminar">BORRAR</button>
+		            <button type="button" class="btn btn-success btn-sm consultadeDelete">CONSULTAS ELIMINADAS</button>
+		            <button type="button" class="btn btn-success btn-sm restaurar">RESTAURAR</button>
+		          </td>
+		        </tr>
+		      <?php endforeach; ?>
+		    <?php endif; ?>
 		  </tbody>
 		</table>
 		
