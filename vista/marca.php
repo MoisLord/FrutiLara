@@ -123,6 +123,11 @@ MARCAS DE PRODUCTOS
 </div>
 <?php require_once("comunes/body.php"); ?>
 <script type="text/javascript" src="js/marca.js"></script>
+<script>
+$(document).ready(function() {
+    $('#tablamarca').DataTable();
+});
+</script>
 
 </body>
 </html>
