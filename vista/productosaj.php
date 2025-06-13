@@ -139,7 +139,7 @@ PRODUCTOS
 	</div>
 	<div class="modal-content">
 		<table class="table table-striped table-hover">
-		<thead class="table-success">
+		<thead>
 		  <tr>
 			<th style="Display:none">Codigo Productos</th>
 			<th style="Display:none">Codigo Productos</th> <!-- filas para que funcione el datatable -->
