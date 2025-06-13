@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-06-2025 a las 02:25:45
+-- Tiempo de generación: 13-06-2025 a las 04:32:50
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `protofrutilara`
+-- Base de datos: `frutilara`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +41,8 @@ CREATE TABLE `categoria` (
 INSERT INTO `categoria` (`id_categoria`, `codigo_categoria`, `descripcion_categoria`, `estado_registro`) VALUES
 (1, '87654321', 'bebida', 1),
 (3, '7348969', 'cereal', 1),
-(4, '82592375', 'legumbre', 1);
+(4, '82592375', 'legumbre', 1),
+(5, '75849038', 'víveres', 0);
 
 -- --------------------------------------------------------
 
@@ -155,7 +156,8 @@ INSERT INTO `marca` (`id_marca`, `codigo_marca`, `descripcion_marca`, `estado_re
 (2, '9277743', 'Bebida Toddy', 1),
 (3, '321654974', 'Salsa de tomate Heinz', 1),
 (4, '6353565265', 'Mayonesa Kraft', 1),
-(5, '5756788', 'Doña Emilia', 1);
+(5, '5756788', 'Doña Emilia', 1),
+(6, '6475783', 'chinoto', 1);
 
 -- --------------------------------------------------------
 
@@ -451,13 +453,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `nota_entrada`
