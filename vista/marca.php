@@ -48,7 +48,7 @@ MARCAS DE PRODUCTOS
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-4">
 				<button type="button" class="btn btn-success" id="incluir" >
-					<img src="iconos/register.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px;">
+					<img src="iconos/register.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				</button>
 			</div>
 		</div>
