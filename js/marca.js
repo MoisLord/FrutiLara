@@ -132,38 +132,13 @@ $(document).ready(function () {
   });
 
   // Aquí esta todo las funciones del modal de consultaDelete
-    // que se encarga de listar los registros eliminados
+    // que se encarga de listar los registros
   $("#consultadeDelete").on("click", function () {
     $("#modalMarca").modal("show");
     var datos = new FormData();
     datos.append("accion", "consultaDelete");
     enviaAjax(datos);
   });
-
-  $('#restaurar').click(function() {
-    // Aquí va tu lógica para restaurar la marca seleccionada
-    let filaSeleccionada = $('#consultaDelete tr.selected');
-    if (filaSeleccionada.length === 0) {
-        alert('Seleccione una fila para restaurar.');
-        return;
-    }
-    let codigoMarca = filaSeleccionada.find('td:first').text();
-
-    // Aquí puedes hacer una petición AJAX para restaurar la marca
-    // $.post('ruta/restaurar.php', {codigo: codigoMarca}, function(respuesta) {
-    //     // Manejar respuesta
-    // });
-
-    alert('Marca restaurada: ' + codigoMarca);
-
-    // Opcional: cerrar el modal
-    $('#modalMarca').modal('hide');
-});
-
-// Para seleccionar una fila al hacer clic
-$('#consultaDelete').on('click', 'tr', function() {
-    $(this).addClass('selected').siblings().removeClass('selected');
-});
 });
 
 //FIN DE CONTROL DE BOTONES
@@ -327,7 +302,7 @@ function enviaAjax(datos) {
       }
     },
     error: function (request, status, err) {
-      // si ocurrio un error en la trasmision
+      // si ocurrio un error en la trasmicion
       // o recepcion via ajax entra aca
       // y se muestran los mensaje del error
       if (status == "timeout") {
