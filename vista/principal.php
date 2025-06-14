@@ -74,11 +74,8 @@
             </div>
             <h4 class="text-gradient text-success mb-0">FrutiLara Te brinda</h4>
             <h4 class="mb-4">para tu bienestar</h4>
-            <p>Como frutas, verduras, legumbres, hortalizas y más.
-              <br><br>
-              If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed.
-            </p>
-            <a href="javascript:;" class="text-dark icon-move-right">More about us
+            <p>Como frutas, verduras, legumbres, hortalizas y más.</p>
+            <a href="vista/manual.php:;" target="_blank" class="text-dark icon-move-right">Más sobre nosotros
               <i class="fas fa-arrow-right text-sm ms-1"></i>
             </a>
           </div>
@@ -90,12 +87,9 @@
             <div class="icon icon-shape bg-gradient-warning rounded-circle shadow text-center mb-4">
               <i class="fas fa-trophy"></i>
             </div>
-            <h4 class="text-gradient text-warning mb-0">Luxury Sensation</h4>
-            <h4 class="mb-4">Stand up for every move</h4>
-            <p>Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out.It’s like a little kid, a little boy, looking at colors. <br> <br> Before somebody tells you you shouldn’t like pink because that’s for girls, or you’d instantly become a gay two-year-old. Why would anyone pick blue over pink? Pink is obviously a better color.</p>
-            <a href="javascript:;" class="text-dark icon-move-right">More about us
-              <i class="fas fa-arrow-right text-sm ms-1"></i>
-            </a>
+            <h4 class="text-gradient text-warning mb-0">Negocio Familiar</h4>
+            <h4 class="mb-4">Donde la comida saludable es una tradición</h4>
+            <p>Como frutas, verduras, legumbres, hortalizas y más.</p>
           </div>
       </div>
       <div class="col-lg-6 col-md-8">
