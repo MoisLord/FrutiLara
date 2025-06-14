@@ -58,7 +58,7 @@
     <div>
       
     <!-- Inicio de la seccion de contenido -->
-<section class="py-9">
+<section class="py-6 position-relative">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-8 order-2 order-md-2 order-lg-1">
