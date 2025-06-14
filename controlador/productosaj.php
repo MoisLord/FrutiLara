@@ -61,9 +61,13 @@ require_once("modelo/".$pagina.".php");
 		  else{
 			  $o->set_codigo($_POST['codigo']);
 			  $o->set_nombre($_POST['nombre']);
+			  $o->set_cantidad_total($_POST['cantidad_total']);
+			  $o->set_nacionalidad_producto($_POST['nacionalidad_producto']);
 			  $o->set_minimo($_POST['minimo']);
 			  $o->set_maximo($_POST['maximo']);
 			  $o->set_id_categoria($_POST['id_categoria']);
+			  $o->set_marca_id_marca($_POST['marca_id_marca']);
+			  $o->set_unidades_de_medida_id_medidas($_POST['unidades_de_medida_id_medidas']);
 			  $o->set_estado_registro($_POST['estado_registro']);
 			  if($accion=='incluir'){
 				echo json_encode($o->incluir());
