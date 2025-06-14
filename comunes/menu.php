@@ -28,11 +28,77 @@
               if ($nivel == 'SUPERUSUARIO') {
             ?>
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                      <img src="iconos/registro.svg" alt="registro" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>REGISTRO DEL SISTEMA</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="categoria">CATEGORIAS DE PRODUCTOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="productosaj">PRODUCTOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="proveedor">PROVEEDORES</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="empleados">EMPLEADOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="servicios">SERVICIOS</a>
+                      <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="cliente">CLIENTES</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                      <img src="iconos/inventario.svg" alt="inventario" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>INVENTARIO</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="entrada">Notas de Entrada</a>
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="salida">Prefacturación</a>
+                    </div>
+                  </li>
                   <li class="nav-item">
-                    <a class="nav-link mx-lg-2" style="font-weight: 600; font-size: 12;" href="usuario">USUARIOS</a>
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="pagoEmpleados">
+                      <img src="iconos/empleado.svg" alt="empleados" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>PAGO DEL EMPLEADO</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="pservicios">
+                      <img src="iconos/servicios.svg" alt="servicios" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>PAGOS DE SERVICIOS</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="usuario">
+                      <img src="iconos/usuarios.svg" alt="usuarios" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>USUARIOS</span>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                      <img src="iconos/reportes.svg" alt="reportes" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>REPORTES</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportentrada">Reporte de Entrada</a>
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reportesalida">Reporte de Prefacturación</a>
+                      <a class="dropdown-item" style="font-weight: 600; font-size: 12;" href="reporteinventario">Reporte General</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
+                      href="vista/manual.php" target="_blank">
+                      <img src="iconos/manual.svg" alt="manual" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>MANUAL DEL SISTEMA</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2 d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;"
+                      href="vista/bitacora.php">
+                      <img src="iconos/bitacora.svg" alt="bitacora" style="width:25px; height:25px; margin-bottom:3px;">
+                      <span>BITACORA</span>
+                    </a>
                   </li>
                 </ul>
-            <?php
+              <?php
               }
             }
             ?>
