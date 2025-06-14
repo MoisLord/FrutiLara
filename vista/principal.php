@@ -74,7 +74,7 @@
             </div>
             <h4 class="text-gradient text-success mb-0">FrutiLara Te brinda</h4>
             <h4 class="mb-4">para tu bienestar</h4>
-            <p>Como frutas, verduras, legumbres, hortalizas y más.</p>
+            <p>frutas, verduras, legumbres, hortalizas y más.</p>
             <a href="vista/manual.php:;" target="_blank" class="text-dark icon-move-right">Más sobre nosotros
               <i class="fas fa-arrow-right text-sm ms-1"></i>
             </a>
