@@ -70,6 +70,7 @@ MARCAS DE PRODUCTOS
 			<th colspan="2" class="text-center">
 			  <div class="row justify-content-center">
 				<div class="col-auto">
+					<img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px;">
 				  <button type="button" class="btn btn-success" id="modificar">EDITAR</button>
 				</div>
 				<div class="col-auto">
