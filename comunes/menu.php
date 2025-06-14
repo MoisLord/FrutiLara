@@ -31,7 +31,7 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
                       <img src="iconos/registro.svg" alt="registro" style="width:25px; height:25px; margin-bottom:3px;">
-                      <span>REGISTRO DEL SISTEMA</span>
+                      <span>CONFIGURACIÓN</span>
                     </a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
@@ -112,7 +112,7 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex flex-column align-items-center justify-content-center" style="font-weight: 600; font-size: 12;" href="#" id="navbardrop" data-bs-toggle="dropdown">
                       <img src="iconos/registro.svg" alt="registro" style="width:25px; height:25px; margin-bottom:3px;">
-                      <span>REGISTRO DEL SISTEMA</span>
+                      <span>CONFIGURACIÓN</span>
                     </a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item mb-2" style="font-weight: 600; font-size: 12;" href="marca">MARCAS DE PRODUCTOS</a>
