@@ -73,22 +73,22 @@ MARCAS DE PRODUCTOS
 			  <div class="row justify-content-center">
 				<div class="col-auto">
 				  <button type="button" class="btn btn-success" src="iconos/delete.svg" alt="delete" id="modificar">
-					<img src="iconos/edit.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px;">
+					<img src="iconos/edit.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				  </button>
 				</div>
 				<div class="col-auto">
 				  <button type="button" class="btn btn-success" id="eliminar">
-					<img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px;">
+					<img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				  </button>
 				</div>
 				<div class="col-auto">
 				  <button type="button" class="btn btn-success" id="consultadeDelete">
-					<img src="iconos/list.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px;">
+					<img src="iconos/list.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				  </button>
 				</div>
 				<div class="col-auto">
 				  <button type="button" class="btn btn-success" id="restaurar">
-					<img src="iconos/restore.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px;">
+					<img src="iconos/restore.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				  </button>
 				</div>
 			  </div>
