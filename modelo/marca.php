@@ -216,7 +216,7 @@ class marca extends datos
 				$r['mensaje'] =  'La marca no esta eliminada';
 			} else {
 				try {
-					$p = $co->prepare("Update marca set 
+				$p = $co->prepare("UPDATE marca set 
 				estado_registro = 1
 				where
 				codigo_marca = :codigo_marca
