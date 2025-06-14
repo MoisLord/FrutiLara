@@ -108,7 +108,7 @@
         <div>
           <ul class="social-icon">
             <li class="icon-elem">
-              <a href="https://www.instagram.com/fruti_lara?igsh=MWh5MW9mb3JpOGlxYg==" class="icon">
+              <a href="iconos/fruits.svg" alt="fruits" class="icon" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
                 <ion-icon name="logo-instagram"></ion-icon>
                 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
                 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
