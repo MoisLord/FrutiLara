@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 	$bitacora = new bitacora();
 	$bitacora->set_usuario($_SESSION['usuario']);
-	$resultado = $bitacora -> registrarAccion($_SESSION['usuario'], 'categoria', 'Ingresó al módulo de Categoria');
+	$resultado = $bitacora -> incluir($_SESSION['usuario'], 'categoria', 'Ingresó al módulo de Categoria');
 }
 //llamada al archivo que contiene la clase
 //Se verificara que en el modelo exista el archivo
