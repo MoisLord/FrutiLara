@@ -126,6 +126,9 @@ MARCAS DE PRODUCTOS
     </div>
 	<div class="modal-footer bg-light">
 		<span>*Ayuda: Debe seleccionar una fila y presionar el boton "Cerrar" para salir*</span>
+		<button type="button" class="btn btn-success" id="restaurar">
+			<img src="iconos/restore.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+		</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
   </div>
