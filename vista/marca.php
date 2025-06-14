@@ -117,6 +117,9 @@ MARCAS DE PRODUCTOS
 		  <tr>
 			<th>Codigo de Marcas</th>
 			<th>Marca</th>
+			<button type="button" class="btn btn-success" id="restaurar">
+			<img src="iconos/restore.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+		</button>
 		  </tr>
 		</thead>
 		<tbody id="consultaDelete">
