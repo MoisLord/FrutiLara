@@ -49,6 +49,21 @@ require_once("modelo/".$pagina.".php");
 		  }elseif($accion=='listadoCategoria'){
 			$respuesta = $o->listadocategoria();
 			echo json_encode($respuesta);
+
+			$resultado = $o->consultar();
+    
+    header('Content-Type: application/json');
+    if ($resultado['resultado'] === 'error') {
+        echo json_encode([
+            'resultado' => 'error',
+            'mensaje' => $resultado['mensaje']
+        ]);
+    }
+    
+    echo json_encode([
+        'resultado' => 'exito',
+        'datos' => $resultado['datos']
+    ]);
 		 }
 		  else{
 			  $o->set_codigo($_POST['codigo']);
