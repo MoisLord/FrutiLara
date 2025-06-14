@@ -70,7 +70,7 @@
       <div class="col-lg-5 col-md-12 ms-auto order-1 order-md-1 order-lg-1">
         <div class="p-6 pt-0">
             <div class="icon icon-shape bg-gradient-info rounded-circle shadow text-center mb-4">
-              <img src="iconos/fruits.svg" alt="fruits" class="icon" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+              <img src="iconos/fruits.svg" alt="fruits" class="icon" style="width:12px; height:12px; margin-bottom:3px; filter: invert(1);">
             </div>
             <h4 class="text-gradient text-success mb-0">FrutiLara Te brinda</h4>
             <h4 class="mb-4">para tu bienestar</h4>
@@ -85,7 +85,7 @@
       <div class="col-lg-5 col-md-12 me-auto">
         <div class="p-3 pt-0">
             <div class="icon icon-shape bg-gradient-warning rounded-circle shadow text-center mb-4">
-              <img src="iconos/fruits.svg" alt="fruits" class="icon" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+              <img src="iconos/fruits.svg" alt="fruits" class="icon" style="width:12px; height:12px; margin-bottom:3px; filter: invert(1);">
             </div>
             <h4 class="text-gradient text-warning mb-0">Negocio Familiar</h4>
             <h4 class="mb-4">Donde la comida saludable es una tradición</h4>
