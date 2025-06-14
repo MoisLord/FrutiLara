@@ -34,29 +34,21 @@ require_once("modelo/".$pagina.".php");
 		  
 		  if($accion=='consultar'){
 			 echo json_encode($o->consultar());  
-		  }
-		  elseif($accion=='consultatr'){
+		  }elseif($accion=='consultatr'){
 			 $o->set_codigo($_POST['codigo']); 
 			 echo json_encode($o->consultatr());  
-		  }
-
-		  elseif($accion=='eliminar'){
+		  }elseif($accion=='eliminar'){
 			 $o->set_codigo($_POST['codigo']);
 			 echo json_encode($o->eliminar());
-		  }
-		  
-		 elseif($accion=='listadoCategoria'){
-			$respuesta = $o->listadocategoria();
-			echo json_encode($respuesta);
-		 }
-		 elseif($accion=='consultaDelete'){
+		  }elseif($accion=='consultaDelete'){
 			$respuesta = $o->consultadelete();
 			echo json_encode($respuesta);
-		 }
-
-		 elseif($accion=='restaurar'){
+		  }elseif($accion=='restaurar'){
 			$o->set_codigo($_POST['codigo']);
 			 echo  json_encode($o->restaurar());
+		  }elseif($accion=='listadoCategoria'){
+			$respuesta = $o->listadocategoria();
+			echo json_encode($respuesta);
 		 }
 		  else{
 			  $o->set_codigo($_POST['codigo']);
