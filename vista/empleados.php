@@ -32,16 +32,6 @@ GESTIÓN DE EMPLEADOS
 					   <img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				   </button>
 			</div>
-			<div class="col-auto">
-				  <button type="button" class="btn btn-success" id="consultadeDelete">
-					<img src="iconos/list.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
-				  </button>
-				</div>
-				<div class="col-auto">
-				  <button type="button" class="btn btn-success" id="restaurar">
-					<img src="iconos/restore.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
-				  </button>
-				</div>
 		</div>
 
 		<div class="row">
