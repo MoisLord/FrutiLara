@@ -57,7 +57,6 @@ PANTALLA DE SERVICIOS
             <img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
           </button>
         </div>
-      </div>
         <div class="col-md-3">
           <button type="button" class="btn btn-success" id="consultadeDelete">
             <img src="iconos/list.svg" alt="list" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
@@ -73,7 +72,7 @@ PANTALLA DE SERVICIOS
   </div>
 
   <!-- Columna derecha con la tabla -->
-  <div class="row mt-3 justify-content-left">
+  <div class="col-8 p-4">
     <div class="container">
       <h5 class="modal-title text-center text-success">SERVICIOS REGISTRADOS</h5>
       <hr class="border border-success border-3 opacity-65">
