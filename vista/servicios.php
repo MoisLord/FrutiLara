@@ -73,7 +73,7 @@ PANTALLA DE SERVICIOS
   </div>
 
   <!-- Columna derecha con la tabla -->
-  <div class="col-8 p-4">
+  <div class="row mt-3 justify-content-left">
     <div class="container">
       <h5 class="modal-title text-center text-success">SERVICIOS REGISTRADOS</h5>
       <hr class="border border-success border-3 opacity-65">
