@@ -15,6 +15,31 @@ GESTIÓN DE EMPLEADOS
 </div>
 <div class="container-fluid row"> <!-- todo el contenido ira dentro de esta etiqueta-->
    <form class="col-4 p-2" method="post" id="f" autocomplete="off">
+
+		<div class="row mt-3 justify-content-left">
+			<div class="col-md-3">
+				<button type="button" class="btn btn-success" id="incluir" >
+					<img src="iconos/register.svg" alt="register" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				</button>
+			</div>
+			<div class="col-md-3">	
+				<button type="button" class="btn btn-success" id="modificar" >
+					<img src="iconos/edit.svg" alt="edit" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				</button>
+			</div>
+			<div class="col-md-2">	
+				   <button type="button" class="btn btn-success" id="eliminar" >
+					   <img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				   </button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+			<hr class="border border-success border-3 opacity-65">
+			</div>
+		</div>
+		
    <h4 class="text-center text-success">Registro de Empleados</h4>
 
 	<div class="container">	
@@ -68,29 +93,6 @@ GESTIÓN DE EMPLEADOS
 			</div>
 		</div>
 			
-		<div class="row">
-			<div class="col-md-12">
-			<hr class="border border-success border-3 opacity-65">
-			</div>
-		</div>
-
-		<div class="row mt-3 justify-content-left">
-			<div class="col-md-3">
-				<button type="button" class="btn btn-success" id="incluir" >
-					<img src="iconos/register.svg" alt="register" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
-				</button>
-			</div>
-			<div class="col-md-3">	
-				<button type="button" class="btn btn-success" id="modificar" >
-					<img src="iconos/edit.svg" alt="edit" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
-				</button>
-			</div>
-			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="eliminar" >
-					   <img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
-				   </button>
-			</div>
-		</div>
 	</div>	
 	</form>
 
