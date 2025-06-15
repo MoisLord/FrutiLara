@@ -59,6 +59,8 @@ PANTALLA DE SERVICIOS
         </div>
       </div>
 
+
+      
         <div class="col-md-4">
           <button type="button" class="btn btn-success" id="consultadeDelete">
             <img src="iconos/list.svg" alt="list" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
