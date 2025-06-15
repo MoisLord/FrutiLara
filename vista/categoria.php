@@ -55,22 +55,32 @@ CATEGORIAS DE PRODUCTOS
 		<!-- Incio de la sección de contenedor de los botones -->
 		<div class="row mt-3 justify-content-left">
 			<div class="col-md-4">
-				<button type="button" class="btn btn-success" id="incluir" >REGISTRAR</button>
+				<button type="button" class="btn btn-success" id="incluir" >
+					<img src="iconos/register.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				</button>
 			</div>
-			
-			<div class="col-md-3">	
-				<button type="button" class="btn btn-success" id="modificar" >EDITAR</button>
+
+			<div class="col-md-3">
+				<button type="button" class="btn btn-success" id="modificar" >
+					<img src="iconos/edit.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				</button>
 			</div>
 			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="eliminar" >BORRAR</button>
+				   <button type="button" class="btn btn-success" id="eliminar" >
+					   <img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				   </button>
 			</div>
 			</div>
 			<div class="row mt-3 justify-content-left">
 			<div class="col-md-4">	
-				   <button type="button" class="btn btn-success" id="consultadeDelete" >CONSULTAS ELIMINADAS</button>
+				   <button type="button" class="btn btn-success" id="consultadeDelete" >
+					   <img src="iconos/list.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				   </button>
 			</div>
-			<div class="col-md-2">	
-				   <button type="button" class="btn btn-success" id="restaurar">RESTAURAR</button>
+			<div class="col-md-2">
+				   <button type="button" class="btn btn-success" id="restaurar">
+					   <img src="iconos/restore.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				   </button>
 			</div>
 			</div>
 	
