@@ -72,8 +72,8 @@ MARCAS DE PRODUCTOS
 			<th colspan="2" class="text-center">
 			  <div class="row justify-content-center">
 				<div class="col-auto">
-				  <button type="button" class="btn btn-success" src="iconos/delete.svg" alt="delete" id="modificar">
-					<img src="iconos/edit.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+				  <button type="button" class="btn btn-success" id="modificar">
+					<img src="iconos/edit.svg" alt="edit" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				  </button>
 				</div>
 				<div class="col-auto">
@@ -83,12 +83,12 @@ MARCAS DE PRODUCTOS
 				</div>
 				<div class="col-auto">
 				  <button type="button" class="btn btn-success" id="consultadeDelete">
-					<img src="iconos/list.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+					<img src="iconos/list.svg" alt="list" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				  </button>
 				</div>
 				<div class="col-auto">
 				  <button type="button" class="btn btn-success" id="restaurar">
-					<img src="iconos/restore.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
+					<img src="iconos/restore.svg" alt="restore" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				  </button>
 				</div>
 			  </div>
