@@ -70,8 +70,6 @@ CATEGORIAS DE PRODUCTOS
 					   <img src="iconos/delete.svg" alt="delete" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
 				   </button>
 			</div>
-			</div>
-			<div class="row mt-3 justify-content-left">
 			<div class="col-md-4">	
 				   <button type="button" class="btn btn-success" id="consultadeDelete" >
 					   <img src="iconos/list.svg" alt="list" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
