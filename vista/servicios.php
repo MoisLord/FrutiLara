@@ -59,10 +59,6 @@ PANTALLA DE SERVICIOS
         </div>
       </div>
 
-      <div class="row mt-3 justify-content-left">
-        <div class="col-md-3">
-          <a href="." class="btn btn-success">REGRESAR</a>
-        </div>
         <div class="col-md-4">
           <button type="button" class="btn btn-success" id="consultadeDelete">
             <img src="iconos/list.svg" alt="list" style="width:25px; height:25px; margin-bottom:3px; filter: invert(1);">
